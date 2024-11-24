@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
@@ -15,7 +15,7 @@
 
 	<ItemGroup>
 		<EmbeddedResource Include="UI\Window.ui">
-			<LogicalName>UI\Window.UI</LogicalName>
+			<LogicalName>UI\Window.ui</LogicalName>
 		</EmbeddedResource>
 	</ItemGroup>
 
