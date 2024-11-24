@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFrameworks>net8.0;net9.0</TargetFrameworks>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="GirCore.Adw-1" Version="0.6.0-preview.1" />
+		<PackageReference Include="GirCore.Gtk-4.0" Version="0.6.0-preview.1" />
+		<PackageReference Include="GirCore.WebKit-6.0" Version="0.6.0-preview.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="UI\Window.ui">
+			<LogicalName>UI\Window.UI</LogicalName>
+		</EmbeddedResource>
+	</ItemGroup>
+
+</Project>

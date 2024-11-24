@@ -1,0 +1,410 @@
+using Gtk 4.0;
+using Adw 1;
+
+Adw.ApplicationWindow window {
+	title: _("Ouch Browser");
+	default-height: 600;
+	default-width: 1100;
+	height-request: 500;
+	width-request: 350;
+
+	Adw.Breakpoint {
+		condition ("max-width: 600sp")
+
+		setters {
+			osv.collapsed: true;
+			bottom_hb.visible: true;
+			frame.margin-bottom: 0;
+			frame.margin-start: 10;
+			toggle_sidebar.active: false;
+			url_bar_button.visible: true;
+			button_forward.visible: false;
+			button_back.visible: false;
+			button_reload.visible: false;
+			button_stop.visible: false;
+			toggle_sidebar.visible: false;
+			mmenu.visible: true;
+		}
+	}
+
+	Adw.TabOverview overview {
+		enable-new-tab: true;
+		view: view;
+
+		Adw.ToastOverlay toast_overlay {
+			Adw.OverlaySplitView osv {
+				show-sidebar: true;
+				collapsed: false;
+
+				sidebar: Adw.NavigationPage {
+					title: _("Ouch Browser");
+
+					Adw.ToolbarView {
+						[top]
+						Adw.HeaderBar {
+							[start]
+							MenuButton menu {
+								icon-name: "open-menu-symbolic";
+								menu-model: main_menu;
+								tooltip-text: _("Menu");
+							}
+
+							[start]
+							Button {
+								icon-name: "folder-download-symbolic";
+								tooltip-text: _("Downloads");
+							}
+
+							show-title: false;
+						}
+
+						[bottom]
+						Adw.HeaderBar {
+							[start]
+							Button {
+								icon-name: "user-trash-symbolic";
+								tooltip-text: _("Archive");
+							}
+
+							[end]
+							MenuButton button_new {
+								icon-name: "list-add-symbolic";
+								tooltip-text: _("New…");
+								menu-model: new_menu;
+							}
+
+							show-title: false;
+						}
+
+						Box {
+							orientation: vertical;
+							spacing: 10;
+
+							Label {
+								label: _("Main");
+								halign: start;
+								margin-start: 10;
+								margin-end: 5;
+
+								styles [
+									"dim-label",
+									"caption-heading"
+								]
+							}
+
+							Separator sp {
+								margin-start: 10;
+								margin-end: 10;
+							}
+
+							// TODO: Migrate this to an Adw.ButtonRow when libadwaita 1.6 releases
+							Box tabs_list {
+								orientation: vertical;
+
+								Button {
+									margin-start: 5;
+									margin-end: 5;
+
+									Box {
+										orientation: horizontal;
+										spacing: 15;
+
+										Image {
+											icon-name: "list-add-symbolic";
+										}
+
+										Label {
+											label: _("New tab");
+
+											styles [
+												"heading"
+											]
+										}
+									}
+
+									styles [
+										"flat"
+									]
+								}
+
+								ScrolledWindow {
+									vexpand: true;
+
+									ListView tabs {
+										factory: BuilderListItemFactory {
+											template ListItem {
+												child: Box {
+													spacing: 10;
+
+													Image tab_icon {
+														icon-name: "image-missing-symbolic";
+													}
+
+													Label {
+														label: bind template.item as <Adw.TabPage>.title;
+														ellipsize: end;
+														halign: start;
+														hexpand: true;
+														tooltip-text: bind template.item as <Adw.TabPage>.keyword;
+													}
+												};
+											}
+										};
+
+										styles [
+											"navigation-sidebar",
+										]
+									}
+								}
+							}
+						}
+					}
+				};
+
+				content: Adw.NavigationPage {
+					title: _("Ouch Browser");
+
+					Adw.ToolbarView {
+						[top]
+						Adw.HeaderBar top_hb {
+							title-widget: Box {
+								orientation: horizontal;
+								spacing: 7;
+
+								Button copy_link_button {
+									icon-name: "edit-copy-symbolic";
+									tooltip-text: _("Copy link");
+									sensitive: false;
+								}
+
+								Button url_button {
+									Label {
+										label: "example.com";
+										margin-start: 6;
+										margin-end: 6;
+										ellipsize: end;
+
+										styles [
+											"header"
+										]
+									}
+								}
+
+								Button {
+									icon-name: "applications-system-symbolic";
+									tooltip-text: _("Website settings");
+									sensitive: false;
+								}
+							};
+
+							[start]
+							ToggleButton toggle_sidebar {
+								icon-name: "sidebar-show-symbolic";
+								tooltip-text: _("Toggle sidebar");
+								active: true;
+							}
+
+							[start]
+							MenuButton mmenu {
+								icon-name: "open-menu-symbolic";
+								menu-model: main_menu;
+								tooltip-text: _("Menu");
+								visible: false;
+							}
+
+							[start]
+							Button button_forward {
+								icon-name: "go-previous-symbolic";
+								tooltip-text: _("Back");
+							}
+
+							[start]
+							Button button_back {
+								icon-name: "go-next-symbolic";
+								tooltip-text: _("Forward");
+							}
+
+							[start]
+							Button button_reload {
+								icon-name: "view-refresh-symbolic";
+								tooltip-text: _("Refresh");
+							}
+
+							[start]
+							Button button_stop {
+								icon-name: "process-stop-symbolic";
+								tooltip-text: _("Stop loading");
+								visible: false;
+							}
+
+							[end]
+							ToggleButton {
+								icon-name: "view-dual-symbolic";
+								tooltip-text: _("Toggle split view");
+								sensitive: false;
+							}
+						}
+
+						[bottom]
+						Adw.HeaderBar bottom_hb {
+							visible: false;
+							show-end-title-buttons: false;
+
+							title-widget: Box {
+								orientation: horizontal;
+								spacing: 7;
+
+								Button {
+									icon-name: "go-previous-symbolic";
+									tooltip-text: _("Back");
+									hexpand: true;
+								}
+
+								Button {
+									icon-name: "go-next-symbolic";
+									tooltip-text: _("Forward");
+									hexpand: true;
+								}
+
+								Adw.TabButton tab_overview {
+									view: view;
+									action-name: "overview.open";
+									hexpand: true;
+									margin-start: 10;
+									margin-end: 10;
+								}
+
+								Button {
+									icon-name: "view-refresh-symbolic";
+									tooltip-text: _("Refresh");
+									hexpand: true;
+								}
+
+								Button {
+									icon-name: "process-stop-symbolic";
+									tooltip-text: _("Stop loading");
+									visible: false;
+									hexpand: true;
+								}
+
+								Button {
+									icon-name: "folder-download-symbolic";
+									tooltip-text: _("Downloads");
+									hexpand: true;
+								}
+							};
+						}
+
+						[top]
+						ProgressBar progress {
+							styles [
+								"osd"
+							]
+						}
+
+						Box {
+							orientation: horizontal;
+
+							Box {
+								orientation: horizontal;
+
+								Frame frame {
+									margin-end: 10;
+									margin-bottom: 10;
+									hexpand: true;
+
+									Adw.TabView view {}
+
+									styles [
+										"view",
+									]
+								}
+
+								Frame {
+									margin-start: 10;
+									margin-end: 10;
+									margin-bottom: 10;
+									hexpand: true;
+									visible: false;
+
+									styles [
+										"view"
+									]
+								}
+							}
+						}
+					}
+				};
+			}
+		}
+	}
+}
+
+Adw.Dialog url_dialog {
+	presentation-mode: auto;
+	can-close: false;
+	follows-content-size: true;
+
+	Adw.Clamp {
+		Box {
+			orientation: vertical;
+			margin-top: 10;
+			margin-bottom: 10;
+			margin-start: 10;
+			margin-end: 10;
+			spacing: 10;
+
+			Box {
+				orientation: horizontal;
+				spacing: 10;
+
+				Entry url_bar {
+					input-purpose: url;
+					hexpand: true;
+				}
+
+				Button url_bar_button {
+					icon-name: "go-next-symbolic";
+					visible: false;
+
+					styles [
+						"suggested-action"
+					]
+				}
+			}
+
+			/* Adw.ActionRow {
+				title: "what is y2k";
+				subtitle: "Search on Google";
+			}
+
+			Adw.ActionRow {
+				title: "what is yapping";
+				subtitle: "Search on Google";
+			} */
+		}
+	}
+}
+
+menu main_menu {
+	item (_("Settings"), "win.show-preferences")
+	item (_("Plugins"), "win.show-plugin-manager")
+	item (_("Keyboard Shortcuts"), "win.show-help-overlay")
+
+	section {
+		item (_("Show all tabs"), "overview.open")
+	}
+
+	section {
+		item (_("Replay tutorial"), "win.show-oobe-replay")
+	}
+
+	section {
+		item (_("About Shrimple Technologies"), "win.about-shrimple")
+		item (_("About Ouch Browser"), "win.about")
+	}
+}
+
+menu new_menu {
+	item (_("New room"))
+}
