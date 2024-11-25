@@ -15,7 +15,21 @@ run:
 		OuchBrowser/UI \
 		{{ BLUEPRINT_FILES }}
 	dotnet run --framework {{ DOTNET_TARGET_FRAMEWORK }} --project OuchBrowser
-	
+
+build:
+	blueprint-compiler batch-compile \
+		OuchBrowser/UI \
+		OuchBrowser/UI \
+		{{ BLUEPRINT_FILES }}
+	dotnet build OuchBrowser --framework {{ DOTNET_TARGET_FRAMEWORK }}
+
+publish:
+	blueprint-compiler batch-compile \
+		OuchBrowser/UI \
+		OuchBrowser/UI \
+		{{ BLUEPRINT_FILES }}
+	dotnet publish OuchBrowser --framework {{ DOTNET_TARGET_FRAMEWORK }}
+
 fmt:
 	blueprint-compiler format -f -t -s 4 {{ BLUEPRINT_FILES }}
 	dotnet format
