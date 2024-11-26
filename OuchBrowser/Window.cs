@@ -6,17 +6,14 @@ using Object = GObject.Object;
 
 namespace OuchBrowser;
 
-public class Window
-{
-	public void OnActivate(Object app, EventArgs args)
-	{
+public class Window {
+	public void OnActivate(Object app, EventArgs args) {
 		var window = new UI.Window();
 
 		window.SetApplication((Application)app);
 		window.Show();
 	}
 
-	public void OnStartup(Object app, EventArgs args)
-	{
+	public void OnStartup(Object app, EventArgs args) {
 	}
 }

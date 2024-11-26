@@ -4,10 +4,8 @@ using Application = Adw.Application;
 
 namespace OuchBrowser;
 
-internal class Program
-{
-	private static int Main(string[] args)
-	{
+internal class Program {
+	private static int Main(string[] args) {
 		var app =
 			Application.New(
 				"site.srht.shrimple.ouch",
