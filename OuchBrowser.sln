@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OuchBrowser", "OuchBrowser\OuchBrowser.csproj", "{160EA71C-2DBF-43C7-98B7-3CAD025DBC9F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OuchBrowser.Plugins", "OuchBrowser.Plugins\OuchBrowser.Plugins.csproj", "{0A71C683-D229-40C7-8EB9-B51987C010E9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{160EA71C-2DBF-43C7-98B7-3CAD025DBC9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{160EA71C-2DBF-43C7-98B7-3CAD025DBC9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{160EA71C-2DBF-43C7-98B7-3CAD025DBC9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A71C683-D229-40C7-8EB9-B51987C010E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A71C683-D229-40C7-8EB9-B51987C010E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A71C683-D229-40C7-8EB9-B51987C010E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A71C683-D229-40C7-8EB9-B51987C010E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

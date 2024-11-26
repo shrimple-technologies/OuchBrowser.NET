@@ -23,4 +23,8 @@
 		</EmbeddedResource>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\OuchBrowser.Plugins\OuchBrowser.Plugins.csproj" />
+	</ItemGroup>
+
 </Project>
