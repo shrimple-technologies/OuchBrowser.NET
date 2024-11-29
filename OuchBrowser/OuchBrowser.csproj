@@ -7,9 +7,11 @@
 		<Nullable>enable</Nullable>
 		<PublishSingleFile>true</PublishSingleFile>
 		<SelfContained>true</SelfContained>
-		<DebugType>embedded</DebugType>
-		<IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
 	</PropertyGroup>
+
+	<ItemGroup>
+		<SupportedPlatform Include="linux" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="GirCore.Adw-1" Version="0.6.0-preview.1" />
@@ -24,7 +26,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\OuchBrowser.Plugins\OuchBrowser.Plugins.csproj" />
+		<ProjectReference Include="..\OuchBrowser.Plugins\OuchBrowser.Plugins.csproj" />
 	</ItemGroup>
 
 </Project>
