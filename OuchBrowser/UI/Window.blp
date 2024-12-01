@@ -308,7 +308,7 @@ Adw.ApplicationWindow window {
 							Box {
 								orientation: horizontal;
 
-								Frame frame {
+								Adw.Bin frame {
 									margin-end: 10;
 									margin-bottom: 10;
 									hexpand: true;
@@ -317,6 +317,7 @@ Adw.ApplicationWindow window {
 
 									styles [
 										"view",
+										"card"
 									]
 								}
 
@@ -328,7 +329,8 @@ Adw.ApplicationWindow window {
 									visible: false;
 
 									styles [
-										"view"
+										"view",
+										"card"
 									]
 								}
 							}
