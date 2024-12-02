@@ -8,7 +8,7 @@ internal class Program {
 	private static int Main(string[] args) {
 		var app =
 			Application.New(
-				"site.srht.shrimple.ouch",
+				"site.srht.shrimple.OuchBrowserNET",
 				ApplicationFlags.FlagsNone
 			);
 		var window = new Window();
