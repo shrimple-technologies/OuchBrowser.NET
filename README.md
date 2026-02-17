@@ -10,9 +10,9 @@ A rewrite of Ouch Browser to C#.
 
 ## Running
 
-> **Note**
+> [!NOTE]
 > 
-> You need the dotnet 9.0 SDK, GTK 4, libadwaita, WebKitGTK, and Just to run
+> You need the dotnet 10.0 SDK, GTK 4, libadwaita, WebKitGTK, and Just to run
 > OuchBrowser.NET.
 
 ```sh

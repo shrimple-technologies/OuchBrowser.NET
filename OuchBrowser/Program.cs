@@ -13,8 +13,8 @@ internal class Program {
 			);
 		var window = new Window();
 
-		app.OnStartup += window.OnStartup;
-		app.OnActivate += window.OnActivate;
+		app.OnStartup += Window.OnStartup;
+		app.OnActivate += Window.OnActivate;
 
 		return app.RunWithSynchronizationContext(null);
 	}

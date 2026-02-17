@@ -8,17 +8,16 @@ using OuchBrowser;
 namespace OuchBrowser;
 
 public class Window {
-	public void OnActivate(Object app, EventArgs args) {
-		var window = new UI.Window();
-		var view = new View(window.view);
+	public static void OnActivate(Object app, EventArgs args) {
+		var window = new UI.Window((Application)app);
+		var view = new View(window.view!);
 
 		view.AddTab("https://start.ubuntu.com");
 
-		window.SetApplication((Application)app);
-		window.Show();
+		window.Present();
 	}
 
-	public void OnStartup(Object app, EventArgs args) {
+	public static void OnStartup(Object app, EventArgs args) {
 		return;
 	}
 }
