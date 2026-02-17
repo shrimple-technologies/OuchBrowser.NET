@@ -1,4 +1,4 @@
-> **Caution**
+> [!CAUTION]
 > 
 > OuchBrowser.NET is currently in alpha stage and is changing rapidly. See [the
 > original Rust codebase](https://git.sr.ht/~shrimple/ouch) for a more stable
