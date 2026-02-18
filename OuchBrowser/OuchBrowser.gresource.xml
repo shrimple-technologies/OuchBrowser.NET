@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <gresources>
 	<gresource prefix="/site/srht/shrimple/OuchBrowserNET/icons/scalable/actions/">
+		<file preprocess="xml-stripblanks">chain-link-loose-symbolic.svg</file>
 		<file preprocess="xml-stripblanks">shoe-box-symbolic.svg</file>
 		<file preprocess="xml-stripblanks">site.srht.shrimple.ouch-symbolic.svg</file>
+		<file preprocess="xml-stripblanks">sliders-horizontal-symbolic.svg</file>
 	</gresource>
 </gresources>

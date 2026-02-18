@@ -7,79 +7,6 @@ Adw.TabOverview overview {
 
 	Adw.ToastOverlay toast_overlay {
 		Adw.ToolbarView {
-			[top]
-			Adw.HeaderBar {
-				[start]
-				Button {
-					icon-name: "site.srht.shrimple.ouch-symbolic";
-				}
-
-				[start]
-				ToggleButton sidebar_toggle {
-					active: true;
-					icon-name: "sidebar-show-symbolic";
-				}
-
-				[start]
-				Separator {
-					styles [
-						"spacer",
-					]
-				}
-
-				[start]
-				Button {
-					icon-name: "go-previous-symbolic";
-				}
-
-				[start]
-				Button {
-					icon-name: "go-next-symbolic";
-				}
-
-				[start]
-				Button {
-					icon-name: "view-refresh-symbolic";
-				}
-
-				title-widget: Box {
-					orientation: horizontal;
-
-					Button copy_link_button {
-						icon-name: "edit-copy-symbolic";
-						tooltip-text: _("Copy link");
-					}
-
-					Button url_button {
-						Label {
-							label: "example.com";
-							margin-start: 6;
-							margin-end: 6;
-							ellipsize: end;
-
-							styles [
-								"header",
-							]
-						}
-					}
-
-					Button {
-						icon-name: "applications-system-symbolic";
-						tooltip-text: _("Website settings");
-					}
-
-					styles [
-						"linked",
-						"flat",
-					]
-				};
-
-				[end]
-				ToggleButton {
-					icon-name: "view-dual-symbolic";
-				}
-			}
-
 			Adw.OverlaySplitView osv {
 				show-sidebar: bind sidebar_toggle.active;
 
@@ -87,6 +14,24 @@ Adw.TabOverview overview {
 					title: _("Ouch Browser");
 
 					Adw.ToolbarView {
+						[top]
+						Adw.HeaderBar {
+							show-title: false;
+
+							[start]
+							Button {
+								icon-name: "site.srht.shrimple.ouch-symbolic";
+								tooltip-text: _("Menu");
+							}
+
+							[start]
+							ToggleButton sidebar_toggle {
+								active: true;
+								icon-name: "sidebar-show-symbolic";
+								tooltip-text: _("Hide sidebar");
+							}
+						}
+
 						ListView tabs {
 							model: bind view.pages;
 							margin-start: 0;
@@ -124,7 +69,14 @@ Adw.TabOverview overview {
 							[start]
 							Button {
 								icon-name: "shoe-box-symbolic";
+								tooltip-text: _("Archive");
 								action-name: "overview.open";
+							}
+
+							[end]
+							Button {
+								icon-name: "list-add-symbolic";
+								tooltip-text: _("New...");
 							}
 						}
 					}
@@ -137,18 +89,88 @@ Adw.TabOverview overview {
 				content: Adw.NavigationPage {
 					title: _("Ouch Browser");
 
-					Adw.Bin frame {
-						margin-start: 0;
-						margin-end: 10;
-						margin-top: 0;
-						margin-bottom: 10;
-						hexpand: true;
+					Adw.ToolbarView {
+						[top]
+						Adw.HeaderBar {
+							[start]
+							ToggleButton {
+								active: bind sidebar_toggle.active;
+								visible: bind sidebar_toggle.active inverted;
+								icon-name: "sidebar-show-symbolic";
+								tooltip-text: _("Reveal sidebar");
+							}
 
-						Adw.TabView view {}
+							[start]
+							Button {
+								icon-name: "go-previous-symbolic";
+								tooltip-text: _("Back");
+							}
 
-						styles [
-							"frame",
-						]
+							[start]
+							Button {
+								icon-name: "go-next-symbolic";
+								tooltip-text: _("Forward");
+							}
+
+							[start]
+							Button {
+								icon-name: "view-refresh-symbolic";
+								tooltip-text: _("Refresh page");
+							}
+
+							title-widget: Box {
+								orientation: horizontal;
+
+								Button copy_link_button {
+									icon-name: "chain-link-loose-symbolic";
+									tooltip-text: _("Copy link");
+								}
+
+								Button url_button {
+									Label {
+										label: "example.com";
+										margin-start: 6;
+										margin-end: 6;
+										ellipsize: end;
+										tooltip-text: _("Reveal Command Palette");
+
+										styles [
+											"header",
+										]
+									}
+								}
+
+								Button {
+									icon-name: "sliders-horizontal-symbolic";
+									tooltip-text: _("Website settings");
+								}
+
+								styles [
+									"linked",
+									"flat",
+								]
+							};
+
+							[end]
+							ToggleButton {
+								icon-name: "view-dual-symbolic";
+								tooltip-text: _("Toggle split view");
+							}
+						}
+
+						Adw.Bin frame {
+							margin-start: 0;
+							margin-end: 10;
+							margin-top: 0;
+							margin-bottom: 10;
+							hexpand: true;
+
+							Adw.TabView view {}
+
+							styles [
+								"frame",
+							]
+						}
 					}
 				};
 			}

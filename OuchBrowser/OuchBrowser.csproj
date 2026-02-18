@@ -20,9 +20,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<!-- Icons -->
 		<EmbeddedResource
 			Include="OuchBrowser.app.gresource"
 			LogicalName="OuchBrowser.app.gresource"
+		/>
+		<EmbeddedResource
+			Include="Icons\chain-link-loose-symbolic.svg"
+			LogicalName="chain-link-loose-symbolic.svg"
 		/>
 		<EmbeddedResource
 			Include="Icons\shoe-box-symbolic.svg"
@@ -32,7 +37,12 @@
 			Include="Icons\site.srht.shrimple.ouch-symbolic.svg"
 			LogicalName="site.srht.shrimple.ouch-symbolic.svg"
 		/>
-		
+		<EmbeddedResource
+			Include="Icons\sliders-horizontal-symbolic.svg"
+			LogicalName="sliders-horizontal-symbolic.svg"
+		/>
+
+		<!-- GtkBuilder Files -->
 		<EmbeddedResource Include="UI\Window.ui" LogicalName="UI\Window.ui" />
 	</ItemGroup>
 
