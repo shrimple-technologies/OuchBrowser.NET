@@ -20,9 +20,20 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<EmbeddedResource Include="UI\Window.ui">
-			<LogicalName>UI\Window.ui</LogicalName>
-		</EmbeddedResource>
+		<EmbeddedResource
+			Include="OuchBrowser.app.gresource"
+			LogicalName="OuchBrowser.app.gresource"
+		/>
+		<EmbeddedResource
+			Include="Icons\shoe-box-symbolic.svg"
+			LogicalName="shoe-box-symbolic.svg"
+		/>
+		<EmbeddedResource
+			Include="Icons\site.srht.shrimple.ouch-symbolic.svg"
+			LogicalName="site.srht.shrimple.ouch-symbolic.svg"
+		/>
+		
+		<EmbeddedResource Include="UI\Window.ui" LogicalName="UI\Window.ui" />
 	</ItemGroup>
 
 	<ItemGroup>

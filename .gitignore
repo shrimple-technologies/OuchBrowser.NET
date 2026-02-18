@@ -8,3 +8,6 @@ riderModule.iml
 
 # gtkbuilder ui files
 *.ui
+
+# compiled gresources
+*.gresource

@@ -11,7 +11,7 @@ Adw.TabOverview overview {
 			Adw.HeaderBar {
 				[start]
 				Button {
-					icon-name: "start-here-symbolic";
+					icon-name: "site.srht.shrimple.ouch-symbolic";
 				}
 
 				[start]
@@ -119,9 +119,11 @@ Adw.TabOverview overview {
 
 						[bottom]
 						Adw.HeaderBar {
+							show-title: false;
+
 							[start]
-							Adw.TabButton {
-								view: view;
+							Button {
+								icon-name: "shoe-box-symbolic";
 								action-name: "overview.open";
 							}
 						}
