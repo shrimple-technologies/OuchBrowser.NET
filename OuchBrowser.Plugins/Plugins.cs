@@ -1,5 +1,6 @@
 namespace OuchBrowser;
 
-public class Plugins {
+public class Plugins
+{
 	// TODO
 }

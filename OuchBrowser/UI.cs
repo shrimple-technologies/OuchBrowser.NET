@@ -1,13 +1,15 @@
+using System.Reflection;
 using Adw;
 using Gtk;
-using System.Reflection;
 
 namespace OuchBrowser.UI;
 
-public class Window : Adw.ApplicationWindow {
+public class Window : Adw.ApplicationWindow
+{
 	[Connect] public readonly TabView? view;
 
-	public Window(Adw.Application app) : base() {
+	public Window(Adw.Application app) : base()
+	{
 		var assembly = Assembly.GetExecutingAssembly();
 		using var stream = assembly.GetManifestResourceStream("UI/Window.ui");
 		using var reader = new StreamReader(stream!);

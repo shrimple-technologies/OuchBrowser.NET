@@ -7,8 +7,10 @@ using Application = Adw.Application;
 
 namespace OuchBrowser;
 
-internal class Program {
-	private static int Main(string[] args) {
+internal class Program
+{
+	private static int Main(string[] args)
+	{
 		var app =
 			Application.New(
 				"site.srht.shrimple.OuchBrowserNET",
@@ -25,7 +27,8 @@ internal class Program {
 		return app.RunWithSynchronizationContext(null);
 	}
 
-	private static void RegisterResources() {
+	private static void RegisterResources()
+	{
 		using var stream = Assembly.GetExecutingAssembly()
 			.GetManifestResourceStream("OuchBrowser.app.gresource");
 
@@ -38,7 +41,8 @@ internal class Program {
 	}
 
 	// adapted from <https://git.sr.ht/~shrimple/ouch/tree/main/item/src/css.rs>
-	private static void RegisterCss() {
+	private static void RegisterCss()
+	{
 		using var provider = CssProvider.New();
 		provider.LoadFromResource("/site/srht/shrimple/OuchBrowserNET/styles.css");
 
