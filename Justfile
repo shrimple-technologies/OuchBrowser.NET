@@ -8,7 +8,7 @@ run:
 		OuchBrowser/UI \
 		{{ BLUEPRINT_FILES }}
 	glib-compile-resources \
-		--sourcedir OuchBrowser/Icons \
+		--sourcedir OuchBrowser \
 		--target=OuchBrowser/OuchBrowser.app.gresource \
 		OuchBrowser/OuchBrowser.gresource.xml
 	dotnet run --project OuchBrowser
@@ -19,7 +19,7 @@ build:
 		OuchBrowser/UI \
 		{{ BLUEPRINT_FILES }}
 	glib-compile-resources \
-		--sourcedir OuchBrowser/Icons \
+		--sourcedir OuchBrowser \
 		--target=OuchBrowser/OuchBrowser.app.gresource \
 		OuchBrowser/OuchBrowser.gresource.xml
 	dotnet build OuchBrowser
@@ -30,7 +30,7 @@ publish:
 		OuchBrowser/UI \
 		{{ BLUEPRINT_FILES }}
 	glib-compile-resources \
-		--sourcedir OuchBrowser/Icons \
+		--sourcedir OuchBrowser \
 		--target=OuchBrowser/OuchBrowser.app.gresource \
 		OuchBrowser/OuchBrowser.gresource.xml
 	dotnet publish OuchBrowser

@@ -1,6 +1,8 @@
 using System.Reflection;
+using Gdk;
 using Gio;
 using GLib;
+using Gtk;
 using Application = Adw.Application;
 
 namespace OuchBrowser;
@@ -14,6 +16,7 @@ internal class Program {
 			);
 		var window = new Window();
 		RegisterResources();
+		RegisterCss();
 
 		app.OnStartup += Window.OnStartup;
 		app.OnActivate += Window.OnActivate;
@@ -37,5 +40,13 @@ internal class Program {
 
 		var iconTheme = Gtk.IconTheme.GetForDisplay(display);
 		iconTheme.AddResourcePath("/site/srht/shrimple/OuchBrowserNET/icons");
+	}
+
+	// adapted from <https://git.sr.ht/~shrimple/ouch/tree/main/item/src/css.rs>
+	private static void RegisterCss() {
+		using var provider = CssProvider.New();
+		provider.LoadFromResource("/site/srht/shrimple/OuchBrowserNET/styles.css");
+
+		StyleContext.AddProviderForDisplay(Display.GetDefault()!, provider, 600);
 	}
 }

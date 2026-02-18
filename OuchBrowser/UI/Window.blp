@@ -32,34 +32,79 @@ Adw.TabOverview overview {
 							}
 						}
 
-						ListView tabs {
-							model: bind view.pages;
-							margin-start: 0;
-							vexpand: true;
+						Box {
+							orientation: vertical;
 
-							factory: BuilderListItemFactory {
-								template ListItem {
-									child: Box {
-										spacing: 10;
+							Label {
+								label: _("Main");
+								halign: start;
+								margin-start: 10;
+								margin-end: 10;
 
-										Image tab_icon {
-											icon-name: "web-browser-symbolic";
-										}
+								styles [
+									"caption-heading",
+									"dimmed",
+								]
+							}
 
-										Label {
-											label: "Website"; // bind template.item as <Adw.TabPage>.title;
-											ellipsize: end;
-											halign: start;
-											hexpand: true;
-											tooltip-text: bind template.item as <Adw.TabPage>.keyword;
-										}
-									};
+							Separator {
+								orientation: horizontal;
+								margin-top: 10;
+								margin-bottom: 10;
+								margin-start: 10;
+								margin-end: 10;
+							}
+
+							Button {
+								margin-start: 6;
+								margin-end: 6;
+
+								Box {
+									spacing: 10;
+
+									Image {
+										icon-name: "list-add-symbolic";
+										styles ["dimmed"]
+									}
+
+									Label {
+										label: _("New tab");
+										styles ["dimmed"]
+									}
 								}
-							};
 
-							styles [
-								"navigation-sidebar",
-							]
+								styles [
+									"flat",
+								]
+							}
+
+							ListView tabs {
+								model: bind view.pages;
+
+								factory: BuilderListItemFactory {
+									template ListItem {
+										child: Box {
+											spacing: 10;
+
+											Image tab_icon {
+												icon-name: "web-browser-symbolic";
+											}
+
+											Label {
+												label: "Website"; // bind template.item as <Adw.TabPage>.title;
+												ellipsize: end;
+												halign: start;
+												hexpand: true;
+												tooltip-text: bind template.item as <Adw.TabPage>.keyword;
+											}
+										};
+									}
+								};
+
+								styles [
+									"navigation-sidebar",
+								]
+							}
 						}
 
 						[bottom]
@@ -67,16 +112,17 @@ Adw.TabOverview overview {
 							show-title: false;
 
 							[start]
-							Button {
+							MenuButton {
 								icon-name: "shoe-box-symbolic";
 								tooltip-text: _("Archive");
-								action-name: "overview.open";
+								menu-model: archive_menu;
 							}
 
 							[end]
-							Button {
-								icon-name: "list-add-symbolic";
+							MenuButton {
+								icon-name: "tab-new-symbolic";
 								tooltip-text: _("New...");
+								menu-model: new_menu;
 							}
 						}
 					}
@@ -176,4 +222,15 @@ Adw.TabOverview overview {
 			}
 		}
 	}
+}
+
+menu archive_menu {
+	section {
+		item (_("Show all tabs"), "overview.open")
+	}
+}
+
+menu new_menu {
+	item (_("New tab"))
+	item (_("New space"))
 }
