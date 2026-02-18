@@ -1,4 +1,3 @@
-using System.Runtime.Versioning;
 using Adw;
 
 namespace OuchBrowser;
