@@ -15,6 +15,7 @@ internal class Program {
 				ApplicationFlags.FlagsNone
 			);
 		var window = new Window();
+
 		RegisterResources();
 		RegisterCss();
 
@@ -34,12 +35,6 @@ internal class Program {
 		using var bytes = Bytes.New(buffer);
 		using var resource = Resource.NewFromData(bytes);
 		resource.Register();
-
-		var display = Gdk.Display.GetDefault();
-		if (display is null) return;
-
-		var iconTheme = Gtk.IconTheme.GetForDisplay(display);
-		iconTheme.AddResourcePath("/site/srht/shrimple/OuchBrowserNET/icons");
 	}
 
 	// adapted from <https://git.sr.ht/~shrimple/ouch/tree/main/item/src/css.rs>
