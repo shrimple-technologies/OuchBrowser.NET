@@ -35,11 +35,19 @@ Adw.TabOverview overview {
 						Box {
 							orientation: vertical;
 
+							Separator {
+								orientation: vertical;
+
+								styles [
+									"spacer",
+								]
+							}
+
 							Label {
 								label: _("Main");
 								halign: start;
-								margin-start: 10;
-								margin-end: 10;
+								margin-start: 14;
+								margin-end: 0;
 
 								styles [
 									"caption-heading",
@@ -51,13 +59,13 @@ Adw.TabOverview overview {
 								orientation: horizontal;
 								margin-top: 10;
 								margin-bottom: 10;
-								margin-start: 10;
-								margin-end: 10;
+								margin-start: 14;
+								margin-end: 0;
 							}
 
 							Button {
-								margin-start: 6;
-								margin-end: 6;
+								margin-start: 10;
+								margin-end: 0;
 
 								Box {
 									spacing: 10;
@@ -210,18 +218,14 @@ Adw.TabOverview overview {
 							}
 						}
 
-						Adw.Bin frame {
-							margin-start: 0;
+						Frame frame {
+							margin-start: 10;
 							margin-end: 10;
 							margin-top: 0;
 							margin-bottom: 10;
 							hexpand: true;
 
 							Adw.TabView view {}
-
-							styles [
-								"frame",
-							]
 						}
 					}
 				};
@@ -238,5 +242,5 @@ menu archive_menu {
 
 menu new_menu {
 	item (_("New tab"))
-	item (_("New space"))
+	item (_("New room"))
 }

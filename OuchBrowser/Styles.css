@@ -1,7 +1,15 @@
+frame {
+	border-radius: 7px;
+}
+
 .navigation-sidebar {
 	padding-top: 6px;
+	margin-left: 0;
+	margin-right: 0;
 }
 
 .navigation-sidebar > row {
 	margin-bottom: 6px;
+	margin-left: 10px;
+	margin-right: 0;
 } 
