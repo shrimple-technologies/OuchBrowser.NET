@@ -31,7 +31,7 @@
 		<!-- Icons -->
 		<EmbeddedResource Include="Icons\chain-link-loose-symbolic.svg" />
 		<EmbeddedResource Include="Icons\shoe-box-symbolic.svg" />
-		<EmbeddedResource Include="Icons\site.srht.shrimple.ouch-symbolic.svg" />
+		<EmbeddedResource Include="Icons\site.srht.shrimple.OuchBrowser-symbolic.svg" />
 		<EmbeddedResource Include="Icons\sliders-horizontal-symbolic.svg" />
 
 		<!-- GtkBuilder Files -->

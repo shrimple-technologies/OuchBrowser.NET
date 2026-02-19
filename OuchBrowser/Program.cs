@@ -13,7 +13,7 @@ internal class Program
 	{
 		var app =
 			Application.New(
-				"site.srht.shrimple.OuchBrowserNET",
+				"site.srht.shrimple.OuchBrowser",
 				ApplicationFlags.FlagsNone
 			);
 		var window = new Window();
@@ -44,7 +44,7 @@ internal class Program
 	private static void RegisterCss()
 	{
 		using var provider = CssProvider.New();
-		provider.LoadFromResource("/site/srht/shrimple/OuchBrowserNET/styles.css");
+		provider.LoadFromResource("/site/srht/shrimple/OuchBrowser/styles.css");
 
 		StyleContext.AddProviderForDisplay(Display.GetDefault()!, provider, 600);
 	}
