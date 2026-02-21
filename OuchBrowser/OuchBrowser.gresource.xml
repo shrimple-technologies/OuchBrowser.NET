@@ -10,6 +10,10 @@
 		>Icons/chain-link-loose-symbolic.svg</file>
 		<file
 			preprocess="xml-stripblanks"
+			alias="dot-symbolic.svg"
+		>Icons/dot-symbolic.svg</file>
+		<file
+			preprocess="xml-stripblanks"
 			alias="shoe-box-symbolic.svg"
 		>Icons/shoe-box-symbolic.svg</file>
 		<file

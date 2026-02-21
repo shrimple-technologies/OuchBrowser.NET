@@ -9,6 +9,8 @@ Adw.TabOverview overview {
 		Adw.ToolbarView {
 			Adw.OverlaySplitView osv {
 				show-sidebar: bind sidebar_toggle.active;
+				min-sidebar-width: 225;
+				max-sidebar-width: 225;
 
 				sidebar: Adw.NavigationPage {
 					title: _("Ouch Browser");
@@ -122,22 +124,43 @@ Adw.TabOverview overview {
 						}
 
 						[bottom]
-						Adw.HeaderBar {
-							show-title: false;
+						CenterBox {
+							margin-bottom: 6;
+							margin-start: 6;
 
-							[start]
-							MenuButton {
+							start-widget: MenuButton {
 								icon-name: "shoe-box-symbolic";
 								tooltip-text: _("Archive");
 								menu-model: archive_menu;
-							}
 
-							[end]
-							MenuButton {
+								styles [
+									"flat",
+								]
+							};
+
+							/* center-widget: Adw.ToggleGroup {
+								active-name: "space-1";
+
+								Adw.Toggle {
+									icon-name: "dot-symbolic";
+									name: "space-1";
+								}
+
+								Adw.Toggle {
+									icon-name: "dot-symbolic";
+									name: "space-2";
+								}
+							}; */
+
+							end-widget: MenuButton {
 								icon-name: "tab-new-symbolic";
 								tooltip-text: _("New...");
 								menu-model: new_menu;
-							}
+
+								styles [
+									"flat",
+								]
+							};
 						}
 					}
 

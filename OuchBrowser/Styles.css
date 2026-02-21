@@ -13,3 +13,9 @@ frame {
 	margin-left: 10px;
 	margin-right: 0;
 } 
+
+toggle-group > separator {
+	/* conventional methods for this like `display: none` don't work in GTK,
+	   therefore the opacity must be lowered */
+	opacity: 0; 
+}
