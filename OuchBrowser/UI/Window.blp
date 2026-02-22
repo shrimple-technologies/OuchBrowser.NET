@@ -12,7 +12,7 @@ Adw.TabOverview overview {
 				min-sidebar-width: 225;
 				max-sidebar-width: 225;
 
-				sidebar: Adw.NavigationPage {
+				sidebar: Adw.NavigationPage sidebar {
 					title: _("Ouch Browser");
 
 					Adw.ToolbarView sidebar_toolbar {
@@ -21,14 +21,24 @@ Adw.TabOverview overview {
 							margin-top: 6;
 							margin-start: 6;
 
-							start-widget: ToggleButton sidebar_toggle {
-								active: true;
-								icon-name: "sidebar-show-symbolic";
-								tooltip-text: _("Hide sidebar");
+							start-widget: Box {
+								orientation: horizontal;
+								// spacing: 5;
+								// TODO: support window controls on the left
+								// side
 
-								styles [
-									"flat",
-								]
+								/* WindowControls {
+									side: start;
+								} */
+								ToggleButton sidebar_toggle {
+									active: true;
+									icon-name: "sidebar-show-symbolic";
+									tooltip-text: _("Hide sidebar");
+
+									styles [
+										"flat",
+									]
+								}
 							};
 
 							end-widget: Box {
@@ -253,70 +263,16 @@ Adw.TabOverview overview {
 						Adw.HeaderBar content_headerbar {
 							show-title: false;
 
-							/* [start]
-							ToggleButton {
-								active: bind sidebar_toggle.active;
-								visible: bind sidebar_toggle.active inverted;
+							[start]
+							Button content_sidebar_toggle {
 								icon-name: "sidebar-show-symbolic";
-								tooltip-text: _("Reveal sidebar");
-							}
-
-							[start]
-							Button {
-								icon-name: "go-previous-symbolic";
-								tooltip-text: _("Back");
-							}
-
-							[start]
-							Button {
-								icon-name: "go-next-symbolic";
-								tooltip-text: _("Forward");
-							}
-
-							[start]
-							Button {
-								icon-name: "view-refresh-symbolic";
-								tooltip-text: _("Refresh page");
-							}
-
-							title-widget: Box {
-								orientation: horizontal;
-
-								Button copy_link_button {
-									icon-name: "chain-link-loose-symbolic";
-									tooltip-text: _("Copy link");
-								}
-
-								Button url_button {
-									Label {
-										label: "example.com";
-										margin-start: 6;
-										margin-end: 6;
-										ellipsize: end;
-										tooltip-text: _("Reveal Command Palette");
-
-										styles [
-											"header",
-										]
-									}
-								}
-
-								Button {
-									icon-name: "sliders-horizontal-symbolic";
-									tooltip-text: _("Website settings");
-								}
+								tooltip-text: _("Show sidebar");
+								visible: bind osv.show-sidebar inverted;
 
 								styles [
-									"linked",
 									"flat",
 								]
-							};
-
-							[end]
-							ToggleButton {
-								icon-name: "view-dual-symbolic";
-								tooltip-text: _("Toggle split view");
-							} */
+							}
 						}
 
 						Overlay {
