@@ -8,6 +8,10 @@
 
 A rewrite of Ouch Browser to C#.
 
+## Screenshots
+
+![Ouch Browser Screenshot](https://tangled.org/shrimple.srht.site/OuchBrowser.NET/raw/main/OuchBrowser/Screenshots/Screenshot.png)
+
 ## Running
 
 > [!NOTE]
