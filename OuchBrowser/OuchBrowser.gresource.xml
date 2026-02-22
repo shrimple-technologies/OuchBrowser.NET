@@ -6,6 +6,10 @@
 	<gresource prefix="/site/srht/shrimple/OuchBrowser/icons/scalable/actions/">
 		<file
 			preprocess="xml-stripblanks"
+			alias="box-dotted-symbolic.svg"
+		>Icons/box-dotted-symbolic.svg</file>
+		<file
+			preprocess="xml-stripblanks"
 			alias="chain-link-loose-symbolic.svg"
 		>Icons/chain-link-loose-symbolic.svg</file>
 		<file

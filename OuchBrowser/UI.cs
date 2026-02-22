@@ -15,6 +15,7 @@ public class Window : Adw.ApplicationWindow
 	[Connect] public readonly ToolbarView? sidebar_toolbar;
 	[Connect] public readonly Bin? topbar_hover;
 	[Connect] public readonly TabView? view;
+	[Connect] public readonly Label? hostname;
 
 	public Window(Adw.Application app) : base()
 	{

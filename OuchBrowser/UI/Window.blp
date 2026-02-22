@@ -98,7 +98,7 @@ Adw.TabOverview overview {
 								Button url_button {
 									hexpand: true;
 
-									Label {
+									Label hostname {
 										label: "example.com";
 										margin-start: 6;
 										margin-end: 6;
@@ -118,7 +118,6 @@ Adw.TabOverview overview {
 
 								styles [
 									"linked",
-									"flat",
 								]
 							}
 
@@ -188,11 +187,23 @@ Adw.TabOverview overview {
 											spacing: 10;
 
 											Image tab_icon {
-												icon-name: "web-browser-symbolic";
+												// gicon: bind template.item as <Adw.TabPage>.icon;
+												icon-name: "box-dotted-symbolic";
+												visible: bind spinner.visible inverted;
+
+												styles [
+													"dimmed",
+												]
+											}
+
+											Adw.Spinner spinner {
+												width-request: 16;
+												height-request: 16;
+												visible: bind template.item as <Adw.TabPage>.loading;
 											}
 
 											Label {
-												label: "Website"; // bind template.item as <Adw.TabPage>.title;
+												label: bind template.item as <Adw.TabPage>.title;
 												ellipsize: end;
 												halign: start;
 												hexpand: true;
