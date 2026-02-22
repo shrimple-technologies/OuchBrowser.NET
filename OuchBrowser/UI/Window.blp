@@ -15,27 +15,102 @@ Adw.TabOverview overview {
 				sidebar: Adw.NavigationPage {
 					title: _("Ouch Browser");
 
-					Adw.ToolbarView {
+					Adw.ToolbarView sidebar_toolbar {
 						[top]
-						Adw.HeaderBar {
-							show-title: false;
+						CenterBox {
+							margin-top: 6;
+							margin-start: 6;
 
-							[start]
-							Button {
-								icon-name: "site.srht.shrimple.OuchBrowser-symbolic";
-								tooltip-text: _("Menu");
-							}
-
-							[start]
-							ToggleButton sidebar_toggle {
+							start-widget: ToggleButton sidebar_toggle {
 								active: true;
 								icon-name: "sidebar-show-symbolic";
 								tooltip-text: _("Hide sidebar");
-							}
+
+								styles [
+									"flat",
+								]
+							};
+
+							end-widget: Box {
+								orientation: horizontal;
+								spacing: 5;
+
+								Button {
+									icon-name: "go-previous-symbolic";
+									tooltip-text: _("Back");
+
+									styles [
+										"flat",
+									]
+								}
+
+								Button {
+									icon-name: "go-next-symbolic";
+									tooltip-text: _("Forward");
+
+									styles [
+										"flat",
+									]
+								}
+
+								Button {
+									icon-name: "view-refresh-symbolic";
+									tooltip-text: _("Refresh page");
+
+									styles [
+										"flat",
+									]
+								}
+							};
 						}
 
 						Box {
 							orientation: vertical;
+
+							Separator {
+								orientation: vertical;
+
+								styles [
+									"spacer",
+								]
+							}
+
+							Box {
+								orientation: horizontal;
+								margin-start: 10;
+								margin-end: 0;
+
+								Button copy_link_button {
+									icon-name: "chain-link-loose-symbolic";
+									tooltip-text: _("Copy link");
+								}
+
+								Button url_button {
+									hexpand: true;
+
+									Label {
+										label: "example.com";
+										margin-start: 6;
+										margin-end: 6;
+										ellipsize: end;
+										tooltip-text: _("Reveal Command Palette");
+
+										styles [
+											"header",
+										]
+									}
+								}
+
+								Button {
+									icon-name: "sliders-horizontal-symbolic";
+									tooltip-text: _("Website settings");
+								}
+
+								styles [
+									"linked",
+									"flat",
+								]
+							}
 
 							Separator {
 								orientation: vertical;
@@ -151,7 +226,6 @@ Adw.TabOverview overview {
 									name: "space-2";
 								}
 							}; */
-
 							end-widget: MenuButton {
 								icon-name: "tab-new-symbolic";
 								tooltip-text: _("New...");
@@ -172,10 +246,14 @@ Adw.TabOverview overview {
 				content: Adw.NavigationPage {
 					title: _("Ouch Browser");
 
-					Adw.ToolbarView {
+					Adw.ToolbarView content_toolbar {
+						reveal-top-bars: false;
+
 						[top]
-						Adw.HeaderBar {
-							[start]
+						Adw.HeaderBar content_headerbar {
+							show-title: false;
+
+							/* [start]
 							ToggleButton {
 								active: bind sidebar_toggle.active;
 								visible: bind sidebar_toggle.active inverted;
@@ -238,17 +316,31 @@ Adw.TabOverview overview {
 							ToggleButton {
 								icon-name: "view-dual-symbolic";
 								tooltip-text: _("Toggle split view");
-							}
+							} */
 						}
 
-						Frame frame {
-							margin-start: 10;
-							margin-end: 10;
-							margin-top: 0;
-							margin-bottom: 10;
-							hexpand: true;
+						Overlay {
+							[overlay]
+							Adw.Bin topbar_hover {
+								height-request: 30;
+								hexpand: true;
+								valign: start;
+							}
 
-							Adw.TabView view {}
+							Box {
+								orientation: vertical;
+
+								Frame frame {
+									margin-start: 10;
+									margin-end: 10;
+									margin-top: 10;
+									margin-bottom: 10;
+									hexpand: true;
+									vexpand: true;
+
+									Adw.TabView view {}
+								}
+							}
 						}
 					}
 				};
