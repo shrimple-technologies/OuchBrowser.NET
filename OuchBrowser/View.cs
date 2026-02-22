@@ -5,20 +5,28 @@ namespace OuchBrowser;
 
 public class View
 {
+	private readonly TabView view;
 	private readonly UI.Window Window;
 
-	public View(UI.Window window)
+	public View(TabView tabview, UI.Window window)
 	{
+		view = tabview;
 		Window = window;
 		WebKit.Module.Initialize();
 	}
 
-	public WebView AddTab(string url)
+	public WebView AddTab(string url, bool pinned)
 	{
 		WebView webview = WebView.New();
 		webview.LoadUri(url);
+		TabPage page;
 
-		TabPage page = Window.view!.Append(webview);
+		if (pinned)
+		{
+			page = view.AppendPinned(webview);
+		} else {
+			page = view.Append(webview);
+		}
 
 		webview.OnNotify += (_, args) =>
 		{
@@ -33,12 +41,11 @@ public class View
 					Uri uri = new Uri(current_uri);
 					Window.hostname!.SetLabel(uri.Host);
 					break;
-				/* apparently there is a bug where this doesn't fire at all
 				case "favicon":
 					var favicon = webview.GetFavicon();
 					page.SetIcon(favicon);
 					Console.WriteLine("favicon set");
-					break; */
+					break;
 			}
 		};
 

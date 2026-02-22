@@ -8,9 +8,9 @@ public class Window
 	public static void OnActivate(Object app, EventArgs args)
 	{
 		var window = new UI.Window((Application)app);
-		var view = new View(window!);
+		var view = new View(window.view!, window!);
 
-		view.AddTab("https://start.ubuntu.com");
+		view.AddTab("https://start.ubuntu.com", true);
 
 		window.Present();
 	}

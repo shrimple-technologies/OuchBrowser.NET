@@ -89,12 +89,10 @@ Adw.TabOverview overview {
 								orientation: horizontal;
 								margin-start: 10;
 								margin-end: 0;
-
-								Button copy_link_button {
-									icon-name: "chain-link-loose-symbolic";
-									tooltip-text: _("Copy link");
-								}
-
+								// Button copy_link_button {
+								// 	icon-name: "chain-link-loose-symbolic";
+								// 	tooltip-text: _("Copy link");
+								// }
 								Button url_button {
 									hexpand: true;
 
@@ -104,18 +102,13 @@ Adw.TabOverview overview {
 										margin-end: 6;
 										ellipsize: end;
 										tooltip-text: _("Reveal Command Palette");
-
-										styles [
-											"header",
-										]
 									}
 								}
 
-								Button {
-									icon-name: "sliders-horizontal-symbolic";
-									tooltip-text: _("Website settings");
-								}
-
+								// Button {
+								// 	icon-name: "sliders-horizontal-symbolic";
+								// 	tooltip-text: _("Website settings");
+								// }
 								styles [
 									"linked",
 								]
@@ -183,32 +176,34 @@ Adw.TabOverview overview {
 
 								factory: BuilderListItemFactory {
 									template ListItem {
-										child: Box {
-											spacing: 10;
+										child: CenterBox {
+											start-widget: Box {
+												spacing: 10;
 
-											Image tab_icon {
-												// gicon: bind template.item as <Adw.TabPage>.icon;
-												icon-name: "box-dotted-symbolic";
-												visible: bind spinner.visible inverted;
+												Image tab_icon {
+													// gicon: bind template.item as <Adw.TabPage>.icon;
+													icon-name: "box-dotted-symbolic";
+													visible: bind spinner.visible inverted;
 
-												styles [
-													"dimmed",
-												]
-											}
+													styles [
+														"dimmed",
+													]
+												}
 
-											Adw.Spinner spinner {
-												width-request: 16;
-												height-request: 16;
-												visible: bind template.item as <Adw.TabPage>.loading;
-											}
+												Adw.Spinner spinner {
+													width-request: 16;
+													height-request: 16;
+													visible: bind template.item as <Adw.TabPage>.loading;
+												}
 
-											Label {
-												label: bind template.item as <Adw.TabPage>.title;
-												ellipsize: end;
-												halign: start;
-												hexpand: true;
-												tooltip-text: bind template.item as <Adw.TabPage>.keyword;
-											}
+												Label {
+													label: bind template.item as <Adw.TabPage>.title;
+													ellipsize: end;
+													halign: start;
+													hexpand: true;
+													tooltip-text: bind template.item as <Adw.TabPage>.keyword;
+												}
+											};
 										};
 									}
 								};
