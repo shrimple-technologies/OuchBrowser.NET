@@ -15,16 +15,35 @@ public class View
 		WebKit.Module.Initialize();
 	}
 
+	private static Settings InitSettings()
+	{
+		Settings settings = Settings.New();
+
+		settings.SetDefaultFontFamily("serif");
+		settings.SetSansSerifFontFamily("Adwaita Sans");
+		settings.SetSerifFontFamily("Noto Serif");
+		settings.SetMonospaceFontFamily("Adwaita Mono");
+		settings.SetEnableBackForwardNavigationGestures(true);
+		settings.SetEnableDeveloperExtras(true);
+
+		return settings;
+	}
+
 	public WebView AddTab(string url, bool pinned)
 	{
+		Settings settings = InitSettings();
 		WebView webview = WebView.New();
+
+		webview.SetSettings(settings);
 		webview.LoadUri(url);
 		TabPage page;
 
 		if (pinned)
 		{
 			page = view.AppendPinned(webview);
-		} else {
+		}
+		else
+		{
 			page = view.Append(webview);
 		}
 
@@ -42,9 +61,10 @@ public class View
 					Window.hostname!.SetLabel(uri.Host);
 					break;
 				case "favicon":
+					/* this doesn't work for some reason
 					var favicon = webview.GetFavicon();
 					page.SetIcon(favicon);
-					Console.WriteLine("favicon set");
+					Console.WriteLine("favicon set"); */
 					break;
 			}
 		};
