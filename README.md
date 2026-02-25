@@ -10,7 +10,7 @@ A rewrite of Ouch Browser to C#.
 
 ## Screenshots
 
-![Ouch Browser Screenshot](https://tangled.org/shrimple.srht.site/OuchBrowser.NET/raw/main/OuchBrowser/Screenshots/Screenshot.png)
+![Ouch Browser Screenshot](https://tangled.org/shrimple.srht.site/OuchBrowser.NET/raw/main/OuchBrowser/Screenshots/Screenshot%20with%20Sidebar%20Open.png)
 
 ## Running
 
