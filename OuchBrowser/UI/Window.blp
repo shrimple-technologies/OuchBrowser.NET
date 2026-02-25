@@ -313,11 +313,35 @@ Adw.TabOverview overview {
 
 menu archive_menu {
 	section {
+		label: _("Archive");
+		item (_("History"))
+		item (_("Downloads"))
+	}
+
+	section {
 		item (_("Show all tabs"), "overview.open")
+	}
+
+	section {
+		submenu {
+			label: _("More");
+			item (_("Preferences"))
+			item (_("Plugins manager"))
+
+			section {
+				item {
+					label: _("About Ouch Browser");
+					icon-name: "site.srht.shrimple.OuchBrowser-symbolic";
+				}
+			}
+		}
 	}
 }
 
 menu new_menu {
-	item (_("New tab"))
-	item (_("New room"))
+	section {
+		label: _("New...");
+		item (_("New tab"))
+		item (_("New room"))
+	}
 }
