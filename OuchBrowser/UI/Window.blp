@@ -102,6 +102,7 @@ Adw.TabOverview overview {
 										margin-end: 6;
 										ellipsize: end;
 										tooltip-text: _("Reveal Command Palette");
+										styles ["font-medium", "dimmed"]
 									}
 								}
 
@@ -304,6 +305,125 @@ Adw.TabOverview overview {
 								}
 							}
 						}
+					}
+				};
+			}
+		}
+	}
+}
+
+Adw.Dialog url_dialog {
+	presentation-mode: auto;
+	can-close: true;
+	follows-content-size: false;
+
+	Adw.Clamp {
+		Box {
+			orientation: vertical;
+			spacing: 10;
+
+			Box {
+				orientation: horizontal;
+				margin-top: 10;
+				margin-start: 10;
+				margin-end: 10;
+				spacing: 5;
+
+				Image {
+					icon-name: "site.srht.shrimple.OuchBrowser-symbolic";
+					pixel-size: 20;
+					margin-start: 10;
+
+					styles [
+						"dimmed",
+					]
+				}
+
+				Entry url_bar {
+					input-purpose: url;
+					hexpand: true;
+					placeholder-text: "Search or enter URL...";
+					width-request: 500;
+
+					styles [
+						"command-palette",
+					]
+				}
+
+				Button url_bar_button {
+					icon-name: "go-next-symbolic";
+					visible: false;
+
+					styles [
+						"suggested-action",
+					]
+				}
+			}
+
+			Separator {
+				orientation: horizontal;
+			}
+
+			/* Box {
+				orientation: vertical;
+				margin-top: 10;
+				margin-bottom: 10;
+				margin-start: 10;
+				margin-end: 10;
+				spacing: 10;
+
+				Adw.ActionRow {
+					title: "what is y2k";
+					subtitle: "Search on Google";
+				}
+
+				Adw.ActionRow {
+					title: "what is yapping";
+					subtitle: "Search on Google";
+				}
+			}
+
+			Separator {
+				orientation: horizontal;
+			} */
+			CenterBox {
+				margin-bottom: 10;
+				margin-start: 10;
+				margin-end: 10;
+
+				start-widget: Box {
+					orientation: horizontal;
+					spacing: 10;
+
+					Adw.ShortcutLabel {
+						accelerator: "Return";
+						opacity: 0.75;
+					}
+
+					Label {
+						label: "Go";
+
+						styles [
+							"dimmed",
+						]
+					}
+				};
+
+				end-widget: Box {
+					orientation: horizontal;
+					spacing: 10;
+
+					Label {
+						label: "Close Palette";
+
+						styles [
+							"dimmed",
+						]
+					}
+
+					Adw.ShortcutLabel {
+						accelerator: "Escape";
+						opacity: 0.75;
 					}
 				};
 			}

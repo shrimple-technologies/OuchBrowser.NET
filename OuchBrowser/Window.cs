@@ -13,6 +13,7 @@ public class Window
 		view.AddTab("https://start.ubuntu.com", true);
 
 		window.Present();
+		window.url_dialog!.Present(window);
 	}
 
 	public static void OnStartup(Object app, EventArgs args)

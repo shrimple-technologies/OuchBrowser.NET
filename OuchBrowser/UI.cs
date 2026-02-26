@@ -10,12 +10,13 @@ public class Window : Adw.ApplicationWindow
 	[Connect] public readonly ToolbarView? content_toolbar;
 	[Connect] public readonly Button? content_sidebar_toggle;
 	[Connect] public readonly Frame? frame;
+	[Connect] public readonly Label? hostname;
 	[Connect] public readonly OverlaySplitView? osv;
 	[Connect] public readonly ToggleButton? sidebar_toggle;
 	[Connect] public readonly ToolbarView? sidebar_toolbar;
 	[Connect] public readonly Bin? topbar_hover;
+	[Connect] public readonly Adw.Dialog? url_dialog;
 	[Connect] public readonly TabView? view;
-	[Connect] public readonly Label? hostname;
 
 	public Window(Adw.Application app) : base()
 	{

@@ -12,10 +12,26 @@ frame {
 	margin-bottom: 6px;
 	margin-left: 10px;
 	margin-right: 0;
-} 
+}
 
 toggle-group > separator {
 	/* conventional methods for this like `display: none` don't work in GTK,
 	   therefore the opacity must be lowered */
-	opacity: 0; 
+	opacity: 0;
+}
+
+.command-palette {
+	font-size: 20px;
+	min-height: 40px;
+	background-color: transparent;
+	outline-color: transparent;
+	font-weight: 500;
+}
+
+.reset-font-weight {
+	font-weight: 400;
+}
+
+.font-medium {
+	font-weight: 500;
 }
