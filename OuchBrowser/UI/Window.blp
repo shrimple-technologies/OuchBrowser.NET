@@ -95,6 +95,7 @@ Adw.TabOverview overview {
 								// }
 								Button url_button {
 									hexpand: true;
+									action-name: "win.palette";
 
 									Label hostname {
 										label: "example.com";
@@ -102,7 +103,11 @@ Adw.TabOverview overview {
 										margin-end: 6;
 										ellipsize: end;
 										tooltip-text: _("Reveal Command Palette");
-										styles ["font-medium", "dimmed"]
+
+										styles [
+											"font-medium",
+											"dimmed",
+										]
 									}
 								}
 
@@ -146,6 +151,7 @@ Adw.TabOverview overview {
 							Button {
 								margin-start: 10;
 								margin-end: 0;
+								action-name: "win.palette";
 
 								Box {
 									spacing: 10;
@@ -163,6 +169,7 @@ Adw.TabOverview overview {
 
 										styles [
 											"dimmed",
+											"reset-font-weight"
 										]
 									}
 								}
@@ -461,7 +468,7 @@ menu archive_menu {
 menu new_menu {
 	section {
 		label: _("New...");
-		item (_("New tab"))
+		item (_("New tab"), "win.palette")
 		item (_("New room"))
 	}
 }

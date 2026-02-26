@@ -9,8 +9,14 @@ public class Window
 	{
 		var window = new UI.Window((Application)app);
 		var view = new View(window.view!, window!);
+		var actions = new Actions(window);
 
 		view.AddTab("https://start.ubuntu.com", true);
+
+		actions.AddAction("palette", (action, parameter) =>
+		{
+			window.url_dialog!.Present(window);
+		});
 
 		window.Present();
 		window.url_dialog!.Present(window);
