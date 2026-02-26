@@ -45,6 +45,7 @@ public class View
 		else
 		{
 			page = view.Append(webview);
+			view.SetSelectedPage(page);
 		}
 
 		webview.OnNotify += (_, args) =>

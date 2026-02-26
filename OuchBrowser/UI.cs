@@ -16,6 +16,7 @@ public class Window : Adw.ApplicationWindow
 	[Connect] public readonly ToolbarView? sidebar_toolbar;
 	[Connect] public readonly Bin? topbar_hover;
 	[Connect] public readonly Adw.Dialog? url_dialog;
+	[Connect] public readonly Entry? url_entry;
 	[Connect] public readonly TabView? view;
 
 	public Window(Adw.Application app) : base()

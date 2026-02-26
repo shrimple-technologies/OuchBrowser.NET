@@ -151,7 +151,7 @@ Adw.TabOverview overview {
 							Button {
 								margin-start: 10;
 								margin-end: 0;
-								action-name: "win.palette";
+								action-name: "win.palette-new";
 
 								Box {
 									spacing: 10;
@@ -169,7 +169,7 @@ Adw.TabOverview overview {
 
 										styles [
 											"dimmed",
-											"reset-font-weight"
+											"reset-font-weight",
 										]
 									}
 								}
@@ -308,7 +308,11 @@ Adw.TabOverview overview {
 									hexpand: true;
 									vexpand: true;
 
-									Adw.TabView view {}
+									Adw.TabView view {
+										styles [
+											"view",
+										]
+									}
 								}
 							}
 						}
@@ -321,7 +325,7 @@ Adw.TabOverview overview {
 
 Adw.Dialog url_dialog {
 	presentation-mode: auto;
-	can-close: true;
+	can-close: false;
 	follows-content-size: false;
 
 	Adw.Clamp {
@@ -346,10 +350,11 @@ Adw.Dialog url_dialog {
 					]
 				}
 
-				Entry url_bar {
+				Entry url_entry {
 					input-purpose: url;
 					hexpand: true;
 					placeholder-text: "Search or enter URL...";
+					receives-default: true;
 					width-request: 500;
 
 					styles [
@@ -419,6 +424,7 @@ Adw.Dialog url_dialog {
 				end-widget: Box {
 					orientation: horizontal;
 					spacing: 10;
+					visible: bind url_dialog.can-close;
 
 					Label {
 						label: "Close Palette";
@@ -468,7 +474,7 @@ menu archive_menu {
 menu new_menu {
 	section {
 		label: _("New...");
-		item (_("New tab"), "win.palette")
+		item (_("New tab"), "win.palette-new")
 		item (_("New room"))
 	}
 }
