@@ -3,12 +3,17 @@ using Gtk;
 using WebKit;
 using Application = Adw.Application;
 using Object = GObject.Object;
+using OuchBrowser.Utils;
 
 namespace OuchBrowser;
 
 public class Window
 {
-	public static void OnActivate(Object app, EventArgs args)
+	private string palette_state = "new_tab";
+
+	public Window() { }
+
+	public void OnActivate(Object app, EventArgs args)
 	{
 		var application = (Application)app;
 		var window = new UI.Window(application);
@@ -23,6 +28,7 @@ public class Window
 			window.url_entry!.SetBuffer(buffer);
 			window.url_dialog!.Present(window);
 			window.url_entry!.GrabFocus();
+			palette_state = "new_tab";
 		});
 		actions.AddAction("palette", (action, parameter) =>
 		{
@@ -32,13 +38,64 @@ public class Window
 			window.url_entry!.SetBuffer(buffer);
 			window.url_dialog!.Present(window);
 			window.url_entry!.GrabFocus();
+			palette_state = "current_tab";
 		});
 		application.SetAccelsForAction("win.palette-new", ["<Ctrl>t"]);
 		application.SetAccelsForAction("win.palette", ["<Ctrl>l"]);
 
 		window.url_entry!.OnActivate += (entry, _) =>
 		{
-			view.AddTab($"https://google.com/search?q={entry.GetBuffer().GetText()}", false);
+			string query = entry.GetBuffer().GetText();
+
+			if (palette_state == "new_tab")
+			{
+				Console.WriteLine($"url: {query}");
+				Console.WriteLine($"isURL: {Url.IsUrl(query)}");
+				Console.WriteLine($"starts with https or http: {query.StartsWith("https://") || query.StartsWith("http://")}");
+				Console.WriteLine("");
+
+				if (Url.IsUrl(query))
+				{
+					if (query.StartsWith("https://") || query.StartsWith("http://"))
+					{
+						view.AddTab(query, false);
+					}
+					else
+					{
+						view.AddTab($"https://{query}", false);
+					}
+				}
+				else
+				{
+					view.AddTab($"https://google.com/search?q={query}", false);
+				}
+			}
+			else
+			{
+				TabPage page = window.view!.GetSelectedPage()!;
+				WebView webview = (WebView)page.Child!;
+				
+				Console.WriteLine($"url: {query}");
+				Console.WriteLine($"isURL: {Url.IsUrl(query)}");
+				Console.WriteLine($"starts with https or http: {query.StartsWith("https://") || query.StartsWith("http://")}");
+				Console.WriteLine("");
+
+				if (Url.IsUrl(query))
+				{
+					if (query.StartsWith("https://") || query.StartsWith("http://"))
+					{
+						webview.LoadUri(query);
+					}
+					else
+					{
+						webview.LoadUri($"https://{query}");
+					}
+				}
+				else
+				{
+					webview.LoadUri($"https://google.com/search?q={query}");
+				}
+			}
 
 			window.url_dialog!.ForceClose();
 			window.url_dialog!.SetCanClose(true);

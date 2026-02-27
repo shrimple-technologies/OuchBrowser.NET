@@ -21,8 +21,7 @@ internal class Program
 		RegisterResources();
 		RegisterCss();
 
-		app.OnStartup += Window.OnStartup;
-		app.OnActivate += Window.OnActivate;
+		app.OnActivate += window.OnActivate;
 
 		return app.RunWithSynchronizationContext(null);
 	}

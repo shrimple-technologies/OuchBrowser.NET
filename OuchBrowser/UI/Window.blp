@@ -148,77 +148,86 @@ Adw.TabOverview overview {
 								margin-end: 0;
 							}
 
-							Button {
-								margin-start: 10;
-								margin-end: 0;
-								action-name: "win.palette-new";
+							ScrolledWindow {
+								vscrollbar-policy: external;
 
 								Box {
-									spacing: 10;
+									orientation: vertical;
 
-									Image {
-										icon-name: "list-add-symbolic";
+									Button {
+										margin-start: 10;
+										margin-end: 0;
+										action-name: "win.palette-new";
+
+										Box {
+											spacing: 10;
+
+											Image {
+												icon-name: "list-add-symbolic";
+
+												styles [
+													"dimmed",
+												]
+											}
+
+											Label {
+												label: _("New tab");
+
+												styles [
+													"dimmed",
+													"font-medium",
+												]
+											}
+										}
 
 										styles [
-											"dimmed",
+											"flat",
 										]
 									}
 
-									Label {
-										label: _("New tab");
+									ListView tabs {
+										vexpand: true;
+										model: bind view.pages;
+
+										factory: BuilderListItemFactory {
+											template ListItem {
+												child: CenterBox {
+													start-widget: Box {
+														spacing: 10;
+
+														Image tab_icon {
+															// gicon: bind template.item as <Adw.TabPage>.icon;
+															icon-name: "box-dotted-symbolic";
+															visible: bind spinner.visible inverted;
+
+															styles [
+																"dimmed",
+															]
+														}
+
+														Adw.Spinner spinner {
+															width-request: 16;
+															height-request: 16;
+															visible: bind template.item as <Adw.TabPage>.loading;
+														}
+
+														Label {
+															label: bind template.item as <Adw.TabPage>.title;
+															ellipsize: end;
+															halign: start;
+															hexpand: true;
+															tooltip-text: bind template.item as <Adw.TabPage>.keyword;
+														}
+													};
+												};
+											}
+										};
 
 										styles [
-											"dimmed",
-											"reset-font-weight",
+											"navigation-sidebar",
 										]
 									}
 								}
-
-								styles [
-									"flat",
-								]
-							}
-
-							ListView tabs {
-								model: bind view.pages;
-
-								factory: BuilderListItemFactory {
-									template ListItem {
-										child: CenterBox {
-											start-widget: Box {
-												spacing: 10;
-
-												Image tab_icon {
-													// gicon: bind template.item as <Adw.TabPage>.icon;
-													icon-name: "box-dotted-symbolic";
-													visible: bind spinner.visible inverted;
-
-													styles [
-														"dimmed",
-													]
-												}
-
-												Adw.Spinner spinner {
-													width-request: 16;
-													height-request: 16;
-													visible: bind template.item as <Adw.TabPage>.loading;
-												}
-
-												Label {
-													label: bind template.item as <Adw.TabPage>.title;
-													ellipsize: end;
-													halign: start;
-													hexpand: true;
-													tooltip-text: bind template.item as <Adw.TabPage>.keyword;
-												}
-											};
-										};
-									}
-								};
-
-								styles [
-									"navigation-sidebar",
-								]
 							}
 						}
 
@@ -226,6 +235,7 @@ Adw.TabOverview overview {
 						CenterBox {
 							margin-bottom: 6;
 							margin-start: 6;
+							margin-top: 6;
 
 							start-widget: MenuButton {
 								icon-name: "shoe-box-symbolic";
