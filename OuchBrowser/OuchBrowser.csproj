@@ -34,6 +34,7 @@
 		<EmbeddedResource Include="Icons\sliders-horizontal-symbolic.svg" />
 
 		<!-- GtkBuilder Files -->
+		<EmbeddedResource Include="UI\Preferences.ui" LogicalName="UI\Preferences.ui" />
 		<EmbeddedResource Include="UI\Window.ui" LogicalName="UI\Window.ui" />
 	</ItemGroup>
 

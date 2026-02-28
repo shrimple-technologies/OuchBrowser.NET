@@ -4,6 +4,7 @@ using WebKit;
 using Application = Adw.Application;
 using Object = GObject.Object;
 using OuchBrowser.Utils;
+using OuchBrowser.UI;
 
 namespace OuchBrowser;
 
@@ -17,6 +18,7 @@ public class Window
 	{
 		var application = (Application)app;
 		var window = new UI.Window(application);
+		var preferences = Preferences.New();
 		var view = new View(window.view!, window!);
 
 		SetupActions(window, application, preferences);
@@ -98,7 +100,7 @@ public class Window
 		actions.AddAction("palette-new", ["<Ctrl>t"], (action, parameter) =>
 		{
 			window.overview!.SetOpen(false);
-			
+
 			EntryBuffer buffer = EntryBuffer.New("", -1);
 			window.url_entry!.SetBuffer(buffer);
 			window.url_dialog!.Present(window);
@@ -109,7 +111,7 @@ public class Window
 		actions.AddAction("palette", ["<Ctrl>l"], (action, parameter) =>
 		{
 			window.overview!.SetOpen(false);
-			
+
 			TabPage page = window.view!.GetSelectedPage()!;
 			WebView webview = (WebView)page.Child!;
 			EntryBuffer buffer = EntryBuffer.New(webview.GetUri(), -1);
@@ -148,6 +150,11 @@ public class Window
 					window.toast_overlay!.DismissAll();
 					window.toast_overlay!.AddToast(toast);
 				}
+			});
+
+			actions.AddAction("preferences", ["<Ctrl>comma"], (action, parameter) =>
+			{
+				preferences.Present(window);
 			});
 		}
 	}

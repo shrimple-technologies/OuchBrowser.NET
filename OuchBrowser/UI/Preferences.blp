@@ -1,0 +1,117 @@
+using Gtk 4.0;
+using Adw 1;
+
+Adw.PreferencesDialog preferences {
+	search-enabled: true;
+
+	Adw.PreferencesPage {
+		title: _("General");
+		icon-name: "applications-system-symbolic";
+
+		Adw.PreferencesGroup {
+			title: _("Accessibility");
+
+			Adw.SwitchRow {
+				title: _("Enable gestures");
+				subtitle: _("Gestures allow you to easily do actions by swiping. You may want to enable this setting if you are on a mobile device, or if you use a touchscreen device.");
+				active: false;
+			}
+		}
+
+		Adw.PreferencesGroup {
+			title: _("Appearance");
+
+			Adw.SwitchRow {
+				title: _("Force dark mode");
+				subtitle: _("Dark mode makes Ouch Browser use a dark appearance, meant to be easy on the eyes.");
+				active: false;
+			}
+		}
+
+		Adw.PreferencesGroup {
+			title: _("Developers");
+
+			Adw.SwitchRow {
+				title: _("Enable developer tools");
+				subtitle: _("Developer tools enables you to inspect a website, and make live changes to the website.");
+				active: false;
+			}
+		}
+	}
+
+	Adw.PreferencesPage {
+		title: _("Browser");
+		icon-name: "web-browser-symbolic";
+
+		Adw.PreferencesGroup {
+			title: _("Security");
+
+			Adw.SwitchRow {
+				title: _("JavaScript");
+				subtitle: _("JavaScript is required to make some websites work. If you disable this, then most websites will not load or work correctly anymore.");
+				active: true;
+			}
+
+			Adw.SwitchRow {
+				title: _("Enable clipboard access for websites");
+				subtitle: _("You may want to enable this setting if you mostly use websites that directly grab text from your clipboard (e.g. graphic design creation websites)");
+				active: false;
+			}
+		}
+
+		Adw.PreferencesGroup {
+			title: _("Privacy");
+
+			Adw.EntryRow {
+				title: _("User Agent");
+				show-apply-button: true;
+			}
+		}
+
+		Adw.PreferencesGroup {
+			title: _("Fonts");
+
+			Adw.ExpanderRow {
+				title: _("Sans-serif");
+
+				Adw.EntryRow {
+					title: _("Name");
+					show-apply-button: true;
+				}
+
+				Adw.SpinRow {
+					title: _("Size");
+					value: 12;
+				}
+			}
+
+			Adw.ExpanderRow {
+				title: _("Serif");
+
+				Adw.EntryRow {
+					title: _("Name");
+					show-apply-button: true;
+				}
+
+				Adw.SpinRow {
+					title: _("Size");
+					value: 12;
+				}
+			}
+
+			Adw.ExpanderRow {
+				title: _("Monospace");
+
+				Adw.EntryRow {
+					title: _("Name");
+					show-apply-button: true;
+				}
+
+				Adw.SpinRow {
+					title: _("Size");
+					value: 12;
+				}
+			}
+		}
+	}
+}

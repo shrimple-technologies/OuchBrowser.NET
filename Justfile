@@ -1,6 +1,6 @@
 set quiet
 
-BLUEPRINT_FILES := "OuchBrowser/UI/Window.blp"
+BLUEPRINT_FILES := "OuchBrowser/UI/Window.blp OuchBrowser/UI/Preferences.blp"
 
 run:
 	blueprint-compiler batch-compile \
