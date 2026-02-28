@@ -12,8 +12,10 @@ public class Window : Adw.ApplicationWindow
 	[Connect] public readonly Frame? frame;
 	[Connect] public readonly Label? hostname;
 	[Connect] public readonly OverlaySplitView? osv;
+	[Connect] public readonly TabOverview? overview;
 	[Connect] public readonly ToggleButton? sidebar_toggle;
 	[Connect] public readonly ToolbarView? sidebar_toolbar;
+	[Connect] public readonly ToastOverlay? toast_overlay;
 	[Connect] public readonly Bin? topbar_hover;
 	[Connect] public readonly Adw.Dialog? url_dialog;
 	[Connect] public readonly Entry? url_entry;
