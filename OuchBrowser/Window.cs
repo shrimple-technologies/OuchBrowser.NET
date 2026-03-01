@@ -111,7 +111,7 @@ public class Window
 		actions.AddAction("palette", ["<Ctrl>l"], (_, _) =>
 		{
 			if (window.view!.GetNPages() == 0) return;
-			
+
 			window.overview!.SetOpen(false);
 
 			TabPage page = window.view!.GetSelectedPage()!;
@@ -126,7 +126,7 @@ public class Window
 		actions.AddAction("sidebar-toggle", ["<Ctrl><Shift>s"], (_, _) =>
 		{
 			if (window.view!.GetNPages() == 0) return;
-			
+
 			if (window.osv!.GetShowSidebar())
 			{
 				window.sidebar_toggle!.Activate();
@@ -306,7 +306,6 @@ public class Window
 						window.toast_overlay!.AddToast(toast);
 						break;
 					case 5: // 500%
-							// you may not zoom in beyond 500%, beep to signify this
 						Gdk.Display.GetDefault()!.Beep();
 						break;
 				}
@@ -358,7 +357,7 @@ public class Window
 						break;
 					case 1.75: // 175%
 						webview.SetZoomLevel(1.5); // 150%
-						toast.SetTitle("250%");
+						toast.SetTitle("150%");
 						toast.SetTimeout(1);
 						window.toast_overlay!.DismissAll();
 						window.toast_overlay!.AddToast(toast);
@@ -427,7 +426,6 @@ public class Window
 						window.toast_overlay!.AddToast(toast);
 						break;
 					case 0.25: // 25%
-						// you may not zoom out beyond 25%, beep to signify this
 						Gdk.Display.GetDefault()!.Beep();
 						break;
 				}
