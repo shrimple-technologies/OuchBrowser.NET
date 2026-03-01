@@ -28,6 +28,7 @@
 		<!-- Icons -->
 		<EmbeddedResource Include="Icons\box-dotted-symbolic.svg" />
 		<EmbeddedResource Include="Icons\chain-link-loose-symbolic.svg" />
+		<EmbeddedResource Include="Icons\cross-large-symbolic.svg" />
 		<EmbeddedResource Include="Icons\dot-symbolic.svg" />
 		<EmbeddedResource Include="Icons\shoe-box-symbolic.svg" />
 		<EmbeddedResource Include="Icons\site.srht.shrimple.OuchBrowser-symbolic.svg" />

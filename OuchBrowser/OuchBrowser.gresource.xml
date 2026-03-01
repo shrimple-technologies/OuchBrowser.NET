@@ -14,6 +14,10 @@
 		>Icons/chain-link-loose-symbolic.svg</file>
 		<file
 			preprocess="xml-stripblanks"
+			alias="cross-large-symbolic.svg"
+		>Icons/cross-large-symbolic.svg</file>
+		<file
+			preprocess="xml-stripblanks"
 			alias="dot-symbolic.svg"
 		>Icons/dot-symbolic.svg</file>
 		<file

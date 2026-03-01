@@ -45,27 +45,31 @@ Adw.TabOverview overview {
 								orientation: horizontal;
 								spacing: 5;
 
-								Button {
+								Button go_back {
 									icon-name: "go-previous-symbolic";
 									tooltip-text: _("Back");
+									sensitive: false;
 
 									styles [
 										"flat",
 									]
 								}
 
-								Button {
+								Button go_forward {
 									icon-name: "go-next-symbolic";
 									tooltip-text: _("Forward");
+									sensitive: false;
 
 									styles [
 										"flat",
 									]
 								}
 
-								Button {
+								Button refresh {
 									icon-name: "view-refresh-symbolic";
 									tooltip-text: _("Refresh page");
+									action-name: "win.refresh";
+									sensitive: false;
 
 									styles [
 										"flat",
@@ -98,7 +102,7 @@ Adw.TabOverview overview {
 									action-name: "win.palette";
 
 									Label hostname {
-										label: "example.com";
+										label: "";
 										margin-start: 6;
 										margin-end: 6;
 										ellipsize: end;
@@ -319,6 +323,8 @@ Adw.TabOverview overview {
 									vexpand: true;
 
 									Adw.TabView view {
+										receives-default: true;
+
 										styles [
 											"view",
 										]

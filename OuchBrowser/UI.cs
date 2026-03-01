@@ -20,6 +20,9 @@ public class Window : Adw.ApplicationWindow
 	[Connect] public readonly Adw.Dialog? url_dialog;
 	[Connect] public readonly Entry? url_entry;
 	[Connect] public readonly TabView? view;
+	[Connect] public readonly Button? go_back;
+	[Connect] public readonly Button? go_forward;
+	[Connect] public readonly Button? refresh;
 
 	public Window(Adw.Application app) : base()
 	{

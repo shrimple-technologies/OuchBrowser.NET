@@ -75,9 +75,12 @@ public class View
 			switch (load_event.LoadEvent)
 			{
 				case LoadEvent.Started:
+					Window.refresh!.SetSensitive(true);
+					Window.refresh!.SetIconName("cross-large-symbolic");
 					page.SetLoading(true);
 					break;
 				case LoadEvent.Finished:
+					Window.refresh!.SetIconName("view-refresh-symbolic");
 					page.SetLoading(false);
 					break;
 			}
