@@ -46,13 +46,6 @@ public class Window : Adw.ApplicationWindow
 		SetupHoverController(hover_controller_topbar);
 		SetupHoverController(hover_controller_headerbar);
 
-		// TODO: maybe make this a little bit less "hacky?"
-		content_sidebar_toggle!.OnClicked += (_, _) =>
-		{
-			osv!.SetShowSidebar(true);
-			sidebar_toggle!.SetActive(true);
-		};
-
 		Maximized = true;
 		DefaultWidth = 1000;
 		DefaultHeight = 600;

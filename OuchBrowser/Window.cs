@@ -23,6 +23,13 @@ public class Window
 
 		SetupActions(window, application, preferences);
 
+		// TODO: maybe make this a little bit less "hacky?"
+		content_sidebar_toggle!.OnClicked += (_, _) =>
+		{
+			osv!.SetShowSidebar(true);
+			sidebar_toggle!.SetActive(true);
+		};	
+		
 		window.url_entry!.OnActivate += (entry, _) =>
 		{
 			string query = entry.GetBuffer().GetText();
