@@ -17,95 +17,110 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 5.8-dev\n"
 
-#: OuchBrowser/UI/Window.blp:16
-#: OuchBrowser/UI/Window.blp:287
+#: OuchBrowser/Builder/About.blp:10
+msgid "translator-credits"
+msgstr "Betty https://koko.micenest.xyz/users/betty"
+
+#: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.metainfo.xml:6
+#: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.desktop:3
+#: OuchBrowser/UI/Builder/Window.blp:16
+#: OuchBrowser/UI/Builder/Window.blp:287
 #: OuchBrowser/UI.cs:60
 msgid "Ouch Browser"
 msgstr "Ouch Browser"
 
-#: OuchBrowser/UI/Window.blp:36
+#: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.metainfo.xml:8
+msgid "Shrimple Technologies"
+msgstr "Shrimple Technologies"
+
+#: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.metainfo.xml:13
+#: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.desktop:4
+msgid "Focus on your browsing"
+msgstr "Foque em sua navegação"
+
+#: OuchBrowser/UI/Builder/Window.blp:36
 msgid "Hide sidebar"
 msgstr ""
 
-#: OuchBrowser/UI/Window.blp:51
+#: OuchBrowser/UI/Builder/Window.blp:51
 msgid "Back"
 msgstr "Voltar"
 
-#: OuchBrowser/UI/Window.blp:61
+#: OuchBrowser/UI/Builder/Window.blp:61
 msgid "Forward"
 msgstr "Avançar"
 
-#: OuchBrowser/UI/Window.blp:71
+#: OuchBrowser/UI/Builder/Window.blp:71
 msgid "Refresh"
 msgstr "Recarregar"
 
-#: OuchBrowser/UI/Window.blp:111
+#: OuchBrowser/UI/Builder/Window.blp:111
 msgid "Reveal command palette"
 msgstr ""
 
-#: OuchBrowser/UI/Window.blp:180
-#: OuchBrowser/UI/Window.blp:498
+#: OuchBrowser/UI/Builder/Window.blp:180
+#: OuchBrowser/UI/Builder/Window.blp:498
 msgid "New tab"
 msgstr "Nova aba"
 
-#: OuchBrowser/UI/Window.blp:248
-#: OuchBrowser/UI/Window.blp:467
+#: OuchBrowser/UI/Builder/Window.blp:248
+#: OuchBrowser/UI/Builder/Window.blp:467
 msgid "Archive"
 msgstr "Arquivar"
 
-#: OuchBrowser/UI/Window.blp:271
+#: OuchBrowser/UI/Builder/Window.blp:271
 msgid "New..."
 msgstr "Novo…"
 
-#: OuchBrowser/UI/Window.blp:299
+#: OuchBrowser/UI/Builder/Window.blp:299
 msgid "Show sidebar"
 msgstr ""
 
-#: OuchBrowser/UI/Window.blp:374
+#: OuchBrowser/UI/Builder/Window.blp:374
 msgid "Search or enter URL..."
 msgstr ""
 
-#: OuchBrowser/UI/Window.blp:434
+#: OuchBrowser/UI/Builder/Window.blp:434
 msgid "Go"
 msgstr ""
 
-#: OuchBrowser/UI/Window.blp:448
+#: OuchBrowser/UI/Builder/Window.blp:448
 msgid "Close Palette"
 msgstr ""
 
-#: OuchBrowser/UI/Window.blp:468
+#: OuchBrowser/UI/Builder/Window.blp:468
 msgid "History"
 msgstr ""
 
-#: OuchBrowser/UI/Window.blp:469
+#: OuchBrowser/UI/Builder/Window.blp:469
 msgid "Downloads"
 msgstr "Downloads"
 
-#: OuchBrowser/UI/Window.blp:473
+#: OuchBrowser/UI/Builder/Window.blp:473
 msgid "Show all tabs"
 msgstr ""
 
-#: OuchBrowser/UI/Window.blp:478
+#: OuchBrowser/UI/Builder/Window.blp:478
 msgid "More"
 msgstr ""
 
-#: OuchBrowser/UI/Window.blp:479
+#: OuchBrowser/UI/Builder/Window.blp:479
 msgid "Preferences"
 msgstr ""
 
-#: OuchBrowser/UI/Window.blp:480
+#: OuchBrowser/UI/Builder/Window.blp:480
 msgid "Plugins manager"
 msgstr ""
 
-#: OuchBrowser/UI/Window.blp:484
+#: OuchBrowser/UI/Builder/Window.blp:484
 msgid "About Ouch Browser"
 msgstr "Sobre o Ouch Browser"
 
-#: OuchBrowser/UI/Window.blp:494
+#: OuchBrowser/UI/Builder/Window.blp:494
 msgid "New room"
 msgstr ""
 
-#: OuchBrowser/UI/Window.blp:495
+#: OuchBrowser/UI/Builder/Window.blp:495
 msgid "New folder"
 msgstr ""
 

@@ -5,12 +5,10 @@
 			<choices>
 				<choice value="https://start.fedoraproject.org/"/>
 				<choice value="https://start.ubuntu.com/"/>
-				<choice value="https://search.vale.rocks/"/>
 			</choices>
 			<aliases>
 				<alias value="FedoraStart" target="https://start.fedoraproject.org/"/>
 				<alias value="UbuntuStartPage" target="https://start.ubuntu.com/"/>
-				<alias value="SearchValeRocks" target="https://search.vale.rocks/"/>
 			</aliases>
 
 			<default>"https://start.ubuntu.com/"</default>

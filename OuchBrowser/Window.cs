@@ -19,9 +19,10 @@ public class Window
 		var application = (Application)app;
 		var window = new UI.Window(application);
 		var preferences = Preferences.New();
+		var about = About.New();
 		var view = new View(window.view!, window!);
 
-		SetupActions(window, application, preferences);
+		SetupActions(window, application, preferences, about);
 
 		// TODO: maybe make this a little bit less "hacky?"
 		window.content_sidebar_toggle!.OnClicked += (_, _) =>
@@ -34,7 +35,7 @@ public class Window
 		{
 			string query = entry.GetBuffer().GetText();
 
-			if (query == "") return;
+			if (query == "") query = window.settings!.GetString("homepage");
 
 			if (palette_state == "new_tab")
 			{
@@ -101,7 +102,7 @@ public class Window
 		window.url_dialog!.Present(window);
 	}
 
-	public void SetupActions(UI.Window window, Application application, PreferencesDialog preferences)
+	public void SetupActions(UI.Window window, Application application, PreferencesDialog preferences, Adw.AboutDialog about)
 	{
 		var actions = new Actions(window, application);
 
@@ -165,6 +166,11 @@ public class Window
 			actions.AddAction("preferences", ["<Ctrl>comma"], (action, parameter) =>
 			{
 				preferences.Present(window);
+			});
+			
+			actions.AddAction("about", [], (action, parameter) =>
+			{
+				about.Present(window);
 			});
 
 			actions.AddAction("refresh", ["<Ctrl>r"], (_, _) =>

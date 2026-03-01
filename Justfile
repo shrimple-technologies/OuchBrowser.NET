@@ -2,7 +2,7 @@ set quiet
 
 PREFIX := "/usr"
 ID := "site.srht.shrimple.OuchBrowser"
-BLUEPRINT_FILES := "OuchBrowser/UI/Window.blp OuchBrowser/UI/Preferences.blp"
+BLUEPRINT_FILES := "OuchBrowser/UI/Builder/Window.blp OuchBrowser/UI/Builder/Preferences.blp OuchBrowser/UI/Builder/About.blp"
 
 run: build-blueprint compile-resources
 	dotnet run --project OuchBrowser
@@ -20,8 +20,8 @@ fmt:
 [group("build")]
 build-blueprint:
 	blueprint-compiler batch-compile \
-		OuchBrowser/UI \
-		OuchBrowser/UI \
+		OuchBrowser/UI/Builder \
+		OuchBrowser/UI/Builder \
 		{{ BLUEPRINT_FILES }}
 
 [group("build")]
