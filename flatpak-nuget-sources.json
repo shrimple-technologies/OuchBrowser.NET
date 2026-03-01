@@ -1,6 +1,13 @@
 [
     {
         "type": "file",
+        "url": "https://api.nuget.org/v3-flatcontainer/gettext.net/10.0.1/gettext.net.10.0.1.nupkg",
+        "sha512": "8bbc85bd485ae79286a9ff8cd0795157200d3b17c630420b8bdec424ae5b67481101defa8e63df7ab01c9d87634ebfd16a7e734b25ebf977001c05590e0df398",
+        "dest": "nuget-sources",
+        "dest-filename": "gettext.net.10.0.1.nupkg"
+    },
+    {
+        "type": "file",
         "url": "https://api.nuget.org/v3-flatcontainer/gircore.adw-1/0.7.0/gircore.adw-1.0.7.0.nupkg",
         "sha512": "1298f7513ed9fe550b3dae1f381a50c53d37cfb1fca0cb38ebcefeb5c08c8c86a3148259c84b86d8000e03898fe31521868bf413a2874033622279abf487cb30",
         "dest": "nuget-sources",

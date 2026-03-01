@@ -88,7 +88,11 @@
 			"build-commands": [
 				"just build-blueprint",
 				"just compile-resources",
+				"just PREFIX=${FLATPAK_DEST} build-translations",
 				"dotnet publish -c Release -o /app/bin --source ./nuget-sources",
+				
+				"install -Dm644 OuchBrowser/OuchBrowser.gschema.xml --target-directory ${FLATPAK_DEST}/share/glib-2.0/schemas",
+				"glib-compile-schemas ${FLATPAK_DEST}/share/glib-2.0/schemas",
 				
 				"install -Dm644 OuchBrowser/Icons/Symbolic/${FLATPAK_ID}-symbolic.svg --target-directory ${FLATPAK_DEST}/share/icons/hicolor/symbolic/apps/",
 				"install -Dm644 OuchBrowser/Icons/Hicolor/${FLATPAK_ID}.svg --target-directory ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/",

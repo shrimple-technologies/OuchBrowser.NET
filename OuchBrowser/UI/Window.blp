@@ -70,7 +70,7 @@ Adw.TabOverview overview {
 									icon-name: "view-refresh-symbolic";
 									tooltip-text: _("Refresh page");
 									action-name: "win.refresh";
-									sensitive: false;
+									sensitive: false; // this doesnt work for some reason now
 
 									styles [
 										"flat",
@@ -108,7 +108,7 @@ Adw.TabOverview overview {
 										margin-start: 6;
 										margin-end: 6;
 										ellipsize: end;
-										tooltip-text: _("Reveal Command Palette");
+										tooltip-text: _("Reveal command palette");
 
 										styles [
 											"font-medium",
@@ -135,7 +135,7 @@ Adw.TabOverview overview {
 							}
 
 							Label {
-								label: _("Main");
+								label: "Main";
 								halign: start;
 								margin-start: 14;
 								margin-end: 0;
@@ -371,7 +371,7 @@ Adw.Dialog url_dialog {
 				Entry url_entry {
 					input-purpose: url;
 					hexpand: true;
-					placeholder-text: "Search or enter URL...";
+					placeholder-text: _("Search or enter URL...");
 					receives-default: true;
 					width-request: 500;
 
@@ -431,7 +431,7 @@ Adw.Dialog url_dialog {
 					}
 
 					Label {
-						label: "Go";
+						label: _("Go");
 
 						styles [
 							"dimmed",
@@ -445,7 +445,7 @@ Adw.Dialog url_dialog {
 					visible: bind url_dialog.can-close;
 
 					Label {
-						label: "Close Palette";
+						label: _("Close Palette");
 
 						styles [
 							"dimmed",
@@ -491,8 +491,10 @@ menu archive_menu {
 
 menu new_menu {
 	section {
-		label: _("New...");
-		item (_("New tab"), "win.palette-new")
 		item (_("New room"))
+		item (_("New folder"))
+	}
+	section {
+		item (_("New tab"), "win.palette-new")
 	}
 }

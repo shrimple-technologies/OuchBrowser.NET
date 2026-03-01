@@ -1,11 +1,14 @@
 using System.Reflection;
 using Adw;
 using Gtk;
+using GetText;
 
 namespace OuchBrowser.UI;
 
 public class Window : Adw.ApplicationWindow
 {
+	public Gio.Settings settings;
+	public ICatalog gettext;
 	[Connect] public readonly Adw.HeaderBar? content_headerbar;
 	[Connect] public readonly ToolbarView? content_toolbar;
 	[Connect] public readonly Button? content_sidebar_toggle;
@@ -27,12 +30,16 @@ public class Window : Adw.ApplicationWindow
 
 	public Window(Adw.Application app) : base()
 	{
+		settings = Gio.Settings.New("site.srht.shrimple.OuchBrowser");
+		gettext = new Catalog("OuchBrowser", "/usr/share/locale");
+
 		var assembly = Assembly.GetExecutingAssembly();
 		using var stream = assembly.GetManifestResourceStream("UI/Window.ui");
 		using var reader = new StreamReader(stream!);
 		string xml = reader.ReadToEnd();
 
 		var builder = new Builder();
+		builder.SetTranslationDomain("OuchBrowser");
 		builder.AddFromString(xml, -1);
 		builder.Connect(this);
 
@@ -51,7 +58,7 @@ public class Window : Adw.ApplicationWindow
 		DefaultHeight = 600;
 		WidthRequest = 350;
 		HeightRequest = 500;
-		Title = "Ouch Browser";
+		Title = gettext.GetString("Ouch Browser");
 	}
 
 	private void SetupHoverController(EventControllerMotion controller)

@@ -1,0 +1,110 @@
+# bee <micenest@pm.me>, 2024.
+# grayairr <grayair@proton.me>, 2024.
+msgid ""
+msgstr ""
+"Project-Id-Version: devel\n"
+"Report-Msgid-Bugs-To: https://tangled.org/shrimple.srht.site/OuchBrowser.NET"
+"/issues\n"
+"POT-Creation-Date: 2026-03-01 12:29:28-0400\n"
+"PO-Revision-Date: 2024-10-11 21:16+0000\n"
+"Last-Translator: grayairr <grayair@proton.me>\n"
+"Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/ouch/"
+"ouch/pt_BR/>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 5.8-dev\n"
+
+#: OuchBrowser/UI/Window.blp:16
+#: OuchBrowser/UI/Window.blp:287
+#: OuchBrowser/UI.cs:60
+msgid "Ouch Browser"
+msgstr "Ouch Browser"
+
+#: OuchBrowser/UI/Window.blp:36
+msgid "Hide sidebar"
+msgstr ""
+
+#: OuchBrowser/UI/Window.blp:51
+msgid "Back"
+msgstr "Voltar"
+
+#: OuchBrowser/UI/Window.blp:61
+msgid "Forward"
+msgstr "Avançar"
+
+#: OuchBrowser/UI/Window.blp:71
+msgid "Refresh page"
+msgstr ""
+
+#: OuchBrowser/UI/Window.blp:111
+msgid "Reveal command palette"
+msgstr ""
+
+#: OuchBrowser/UI/Window.blp:180
+#: OuchBrowser/UI/Window.blp:498
+msgid "New tab"
+msgstr "Nova aba"
+
+#: OuchBrowser/UI/Window.blp:248
+#: OuchBrowser/UI/Window.blp:467
+msgid "Archive"
+msgstr "Arquivar"
+
+#: OuchBrowser/UI/Window.blp:271
+msgid "New..."
+msgstr "Novo…"
+
+#: OuchBrowser/UI/Window.blp:299
+msgid "Show sidebar"
+msgstr ""
+
+#: OuchBrowser/UI/Window.blp:374
+msgid "Search or enter URL..."
+msgstr ""
+
+#: OuchBrowser/UI/Window.blp:434
+msgid "Go"
+msgstr ""
+
+#: OuchBrowser/UI/Window.blp:448
+msgid "Close Palette"
+msgstr ""
+
+#: OuchBrowser/UI/Window.blp:468
+msgid "History"
+msgstr ""
+
+#: OuchBrowser/UI/Window.blp:469
+msgid "Downloads"
+msgstr ""
+
+#: OuchBrowser/UI/Window.blp:473
+msgid "Show all tabs"
+msgstr ""
+
+#: OuchBrowser/UI/Window.blp:478
+msgid "More"
+msgstr ""
+
+#: OuchBrowser/UI/Window.blp:479
+msgid "Preferences"
+msgstr ""
+
+#: OuchBrowser/UI/Window.blp:480
+msgid "Plugins manager"
+msgstr ""
+
+#: OuchBrowser/UI/Window.blp:484
+msgid "About Ouch Browser"
+msgstr "Sobre o Ouch Browser"
+
+#: OuchBrowser/UI/Window.blp:494
+msgid "New room"
+msgstr ""
+
+#: OuchBrowser/UI/Window.blp:495
+msgid "New folder"
+msgstr ""

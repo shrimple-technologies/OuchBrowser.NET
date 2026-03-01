@@ -24,10 +24,10 @@ public class Window
 		SetupActions(window, application, preferences);
 
 		// TODO: maybe make this a little bit less "hacky?"
-		content_sidebar_toggle!.OnClicked += (_, _) =>
+		window.content_sidebar_toggle!.OnClicked += (_, _) =>
 		{
-			osv!.SetShowSidebar(true);
-			sidebar_toggle!.SetActive(true);
+			window.osv!.SetShowSidebar(true);
+			window.sidebar_toggle!.SetActive(true);
 		};	
 		
 		window.url_entry!.OnActivate += (entry, _) =>
@@ -56,7 +56,7 @@ public class Window
 				}
 				else
 				{
-					view.AddTab($"https://google.com/search?q={query}", false);
+					view.AddTab($"{window.settings!.GetString("search-engine")}{query}", false);
 				}
 			}
 			else
@@ -82,12 +82,13 @@ public class Window
 				}
 				else
 				{
-					webview.LoadUri($"https://google.com/search?q={query}");
+					webview.LoadUri($"{window.settings!.GetString("search-engine")}{query}");
 				}
 			}
 
 			window.url_dialog!.ForceClose();
 			window.url_dialog!.SetCanClose(true);
+			window.overview!.SetOpen(false);
 		};
 
 		window.overview!.OnCreateTab += (_, _) =>
@@ -115,11 +116,9 @@ public class Window
 			palette_state = "new_tab";
 		});
 
-		actions.AddAction("palette", ["<Ctrl>l"], (_, _) =>
+		actions.AddAction("palette", ["<Ctrl>l", "<Alt>d"], (_, _) =>
 		{
 			if (window.view!.GetNPages() == 0) return;
-
-			window.overview!.SetOpen(false);
 
 			TabPage page = window.view!.GetSelectedPage()!;
 			WebView webview = (WebView)page.Child!;

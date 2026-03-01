@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+	<schema id="site.srht.shrimple.OuchBrowser" path="/site/srht/shrimple/OuchBrowser/" gettext-domain="OuchBrowser">
+		<key type="s" name="homepage">
+			<choices>
+				<choice value="https://start.fedoraproject.org/"/>
+				<choice value="https://start.ubuntu.com/"/>
+				<choice value="https://search.vale.rocks/"/>
+			</choices>
+			<aliases>
+				<alias value="FedoraStart" target="https://start.fedoraproject.org/"/>
+				<alias value="UbuntuStartPage" target="https://start.ubuntu.com/"/>
+				<alias value="SearchValeRocks" target="https://search.vale.rocks/"/>
+			</aliases>
+
+			<default>"https://start.ubuntu.com/"</default>
+			<summary>Homepage</summary>
+			<description>
+				This value is the homepage that will be shown if the user hits
+				the enter key when the command palette is shown and empty.
+			</description>
+		</key>
+
+		<key type="s" name="search-engine">
+			<choices>
+				<choice value="https://bing.com/search?q="/>
+				<choice value="https://duckduckgo.com/?q="/>
+				<choice value="https://ecosia.org/search?q="/>
+				<choice value="https://google.com/search?q="/>
+				<choice value="https://kagi.com/search?q="/>
+			</choices>
+			<aliases>
+				<alias value="Bing" target="https://bing.com/search?q="/>
+				<alias value="DuckDuckGo" target="https://duckduckgo.com/?q="/>
+				<alias value="Ecosia" target="https://ecosia.org/search?q="/>
+				<alias value="Google" target="https://google.com/search?q="/>
+				<alias value="Kagi" target="https://kagi.com/search?q="/>
+			</aliases>
+
+			<default>"https://duckduckgo.com/?q="</default>
+			<summary>Search engine</summary>
+			<description>
+				This value is the search engine that will be used when the user
+				enters a search query into the command palette.
+			</description>
+		</key>
+	</schema>
+</schemalist>
