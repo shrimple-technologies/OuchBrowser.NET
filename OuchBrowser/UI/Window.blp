@@ -34,6 +34,7 @@ Adw.TabOverview overview {
 									active: true;
 									icon-name: "sidebar-show-symbolic";
 									tooltip-text: _("Hide sidebar");
+									sensitive: false;
 
 									styles [
 										"flat",
@@ -99,6 +100,7 @@ Adw.TabOverview overview {
 								// }
 								Button url_button {
 									hexpand: true;
+									sensitive: false;
 									action-name: "win.palette";
 
 									Label hostname {

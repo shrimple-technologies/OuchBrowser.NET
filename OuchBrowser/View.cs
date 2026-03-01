@@ -76,6 +76,8 @@ public class View
 			{
 				case LoadEvent.Started:
 					Window.refresh!.SetSensitive(true);
+					Window.url_button!.SetSensitive(true);
+					Window.sidebar_toggle!.SetSensitive(true);
 					Window.refresh!.SetIconName("cross-large-symbolic");
 					page.SetLoading(true);
 					break;

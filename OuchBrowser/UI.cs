@@ -19,6 +19,7 @@ public class Window : Adw.ApplicationWindow
 	[Connect] public readonly Bin? topbar_hover;
 	[Connect] public readonly Adw.Dialog? url_dialog;
 	[Connect] public readonly Entry? url_entry;
+	[Connect] public readonly Button? url_button;
 	[Connect] public readonly TabView? view;
 	[Connect] public readonly Button? go_back;
 	[Connect] public readonly Button? go_forward;

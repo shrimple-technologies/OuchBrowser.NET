@@ -110,6 +110,8 @@ public class Window
 
 		actions.AddAction("palette", ["<Ctrl>l"], (_, _) =>
 		{
+			if (window.view!.GetNPages() == 0) return;
+			
 			window.overview!.SetOpen(false);
 
 			TabPage page = window.view!.GetSelectedPage()!;
@@ -123,6 +125,8 @@ public class Window
 
 		actions.AddAction("sidebar-toggle", ["<Ctrl><Shift>s"], (_, _) =>
 		{
+			if (window.view!.GetNPages() == 0) return;
+			
 			if (window.osv!.GetShowSidebar())
 			{
 				window.sidebar_toggle!.Activate();
@@ -426,6 +430,33 @@ public class Window
 						// you may not zoom out beyond 25%, beep to signify this
 						Gdk.Display.GetDefault()!.Beep();
 						break;
+				}
+			});
+
+			actions.AddAction("tab-close", ["<Ctrl>w"], (_, _) =>
+			{
+				if (window.view!.GetNPages() == 0)
+				{
+					window.Close();
+				}
+				else
+				{
+					TabPage page = window.view!.GetSelectedPage()!;
+					WebView webview = (WebView)page.Child!;
+
+					webview.TryClose();
+					window.view!.ClosePage(window.view!.GetSelectedPage()!);
+					if (window.view!.GetNPages() == 0)
+					{
+						window.refresh!.SetSensitive(false);
+						window.go_back!.SetSensitive(false);
+						window.go_forward!.SetSensitive(false);
+						window.url_button!.SetSensitive(false);
+						window.sidebar_toggle!.SetSensitive(false);
+						window.sidebar_toggle!.SetActive(true);
+						window.hostname!.SetLabel("");
+						window.osv!.SetShowSidebar(true);
+					}
 				}
 			});
 		}
