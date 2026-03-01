@@ -7,30 +7,30 @@
 		<file
 			preprocess="xml-stripblanks"
 			alias="box-dotted-symbolic.svg"
-		>Icons/box-dotted-symbolic.svg</file>
+		>Icons/Symbolic/box-dotted-symbolic.svg</file>
 		<file
 			preprocess="xml-stripblanks"
 			alias="chain-link-loose-symbolic.svg"
-		>Icons/chain-link-loose-symbolic.svg</file>
+		>Icons/Symbolic/chain-link-loose-symbolic.svg</file>
 		<file
 			preprocess="xml-stripblanks"
 			alias="cross-large-symbolic.svg"
-		>Icons/cross-large-symbolic.svg</file>
+		>Icons/Symbolic/cross-large-symbolic.svg</file>
 		<file
 			preprocess="xml-stripblanks"
 			alias="dot-symbolic.svg"
-		>Icons/dot-symbolic.svg</file>
+		>Icons/Symbolic/dot-symbolic.svg</file>
 		<file
 			preprocess="xml-stripblanks"
 			alias="shoe-box-symbolic.svg"
-		>Icons/shoe-box-symbolic.svg</file>
+		>Icons/Symbolic/shoe-box-symbolic.svg</file>
 		<file
 			preprocess="xml-stripblanks"
 			alias="site.srht.shrimple.OuchBrowser-symbolic.svg"
-		>Icons/site.srht.shrimple.OuchBrowser-symbolic.svg</file>
+		>Icons/Symbolic/site.srht.shrimple.OuchBrowser-symbolic.svg</file>
 		<file
 			preprocess="xml-stripblanks"
 			alias="sliders-horizontal-symbolic.svg"
-		>Icons/sliders-horizontal-symbolic.svg</file>
+		>Icons/Symbolic/sliders-horizontal-symbolic.svg</file>
 	</gresource>
 </gresources>

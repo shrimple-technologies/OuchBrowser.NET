@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+	<id>site.srht.shrimple.OuchBrowser</id>
+	<icon type="stock">site.srht.shrimple.OuchBrowser</icon>
+	<launchable type="desktop-id">site.srht.shrimple.OuchBrowser.desktop</launchable>
+	<name>Ouch Browser</name>
+	<developer id="site.srht.shrimple">
+		<name>Shrimple Technologies</name>
+		<url type="homepage">https://shrimple.srht.site/</url>
+	</developer>
+	<project_license>GPL-3.0-or-later</project_license>
+	<metadata_license>CC-BY-SA-4.0</metadata_license>
+	<summary>Focus on your browsing</summary>
+	<branding>
+		<color type="primary" scheme_preference="light">#cdab8f</color>
+		<color type="primary" scheme_preference="dark">#865e3c</color>
+	</branding>
+	<content_rating type="oars-1.1">
+		<content_attribute id="social-chat">intense</content_attribute>
+		<content_attribute id="social-info">intense</content_attribute>
+		<content_attribute id="social-audio">intense</content_attribute>
+		<content_attribute id="social-contacts">intense</content_attribute>
+	</content_rating>
+	<requires>
+		<internet>always</internet>
+		<display_length compare="lt">3840</display_length>
+		<display_length compare="gt">360</display_length>
+	</requires>
+	<recommends>
+		<control>pointing</control>
+		<control>keyboard</control>
+	</recommends>
+	<!-- LMAO
+	<supports>
+		<control>touch</control>
+	</supports>
+	-->
+	<categories>
+		<category>Network</category>
+		<category>WebBrowser</category>
+	</categories>
+	<keywords>
+		<keyword>browser</keyword>
+		<keyword>web browser</keyword>
+	</keywords>
+	<update_contact>mdwalters.pm@proton.me</update_contact>
+	<description>
+		<p>Ouch Browser isn't just another web browser, it's a whole new look on the web, with a modern look and feel, and a emphasis on productivity.</p>
+		<p>NOTE: This is the C# rewrite, which is constantly evolving, and may be less stable than the original codebase.</p>
+	</description>
+	<provides>
+		<mediatype>text/html</mediatype>
+	</provides>
+	<url type="homepage">https://shrimple.srht.site/blog/ouch/</url>
+	<url type="bugtracker">https://tangled.org/shrimple.srht.site/OuchBrowser.NET/issues</url>
+	<url type="vcs-browser">https://tangled.org/shrimple.srht.site/OuchBrowser.NET</url>
+	<screenshots>
+		<screenshot type="default">
+			<image>https://git.sr.ht/~shrimple/ouch/blob/main/res/screenshots/Desktop%20Layout%20with%20Sidebar%20Opened.png</image>
+			<caption>Ouch Browser's default layout.</caption>
+		</screenshot>
+		<screenshot>
+			<image>https://git.sr.ht/~shrimple/ouch/blob/main/res/screenshots/Desktop%20Layout%20with%20Sidebar%20Closed.png</image>
+			<caption>Ouch Browser's default layout with the sidebar closed.</caption>
+		</screenshot>
+		<screenshot>
+			<image>https://git.sr.ht/~shrimple/ouch/blob/main/res/screenshots/Desktop%20Layout%20with%20Command%20Palette%20Opened.png</image>
+			<caption>Ouch Browser's default layout with the command palette opened.</caption>
+		</screenshot>
+		<screenshot>
+			<image>https://git.sr.ht/~shrimple/ouch/blob/main/res/screenshots/Mobile%20Layout%20with%20Sidebar%20Closed.png</image>
+			<caption>Ouch Browser's mobile layout.</caption>
+		</screenshot>
+		<screenshot>
+			<image>https://git.sr.ht/~shrimple/ouch/blob/main/res/screenshots/Mobile%20Layout%20with%20Sidebar%20Opened.png</image>
+			<caption>Ouch Browser's mobile layout with the sidebar opened.</caption>
+		</screenshot>
+		<screenshot>
+			<image>https://git.sr.ht/~shrimple/ouch/blob/main/res/screenshots/Mobile%20Layout%20with%20Command%20Palette%20Opened.png</image>
+			<caption>Ouch Browser's mobile layout with the command palette opened.</caption>
+		</screenshot>
+	</screenshots>
+</component>

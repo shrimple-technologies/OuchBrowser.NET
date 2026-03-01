@@ -26,13 +26,13 @@
 		<EmbeddedResource Include="Styles.css" />
 
 		<!-- Icons -->
-		<EmbeddedResource Include="Icons\box-dotted-symbolic.svg" />
-		<EmbeddedResource Include="Icons\chain-link-loose-symbolic.svg" />
-		<EmbeddedResource Include="Icons\cross-large-symbolic.svg" />
-		<EmbeddedResource Include="Icons\dot-symbolic.svg" />
-		<EmbeddedResource Include="Icons\shoe-box-symbolic.svg" />
-		<EmbeddedResource Include="Icons\site.srht.shrimple.OuchBrowser-symbolic.svg" />
-		<EmbeddedResource Include="Icons\sliders-horizontal-symbolic.svg" />
+		<EmbeddedResource Include="Icons\Symbolic\box-dotted-symbolic.svg" />
+		<EmbeddedResource Include="Icons\Symbolic\chain-link-loose-symbolic.svg" />
+		<EmbeddedResource Include="Icons\Symbolic\cross-large-symbolic.svg" />
+		<EmbeddedResource Include="Icons\Symbolic\dot-symbolic.svg" />
+		<EmbeddedResource Include="Icons\Symbolic\shoe-box-symbolic.svg" />
+		<EmbeddedResource Include="Icons\Symbolic\site.srht.shrimple.OuchBrowser-symbolic.svg" />
+		<EmbeddedResource Include="Icons\Symbolic\sliders-horizontal-symbolic.svg" />
 
 		<!-- GtkBuilder Files -->
 		<EmbeddedResource Include="UI\Preferences.ui" LogicalName="UI\Preferences.ui" />
