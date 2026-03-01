@@ -11,3 +11,8 @@ riderModule.iml
 
 # compiled gresources
 *.gresource
+
+# generated flatpak files
+.build/
+.flatpak-builder/
+*.flatpak
