@@ -53,6 +53,7 @@ public class Window : Adw.ApplicationWindow
 			sidebar_toggle!.SetActive(true);
 		};
 
+		Maximized = true;
 		DefaultWidth = 1000;
 		DefaultHeight = 600;
 		WidthRequest = 350;
