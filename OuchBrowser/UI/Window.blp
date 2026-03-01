@@ -68,7 +68,7 @@ Adw.TabOverview overview {
 
 								Button refresh {
 									icon-name: "view-refresh-symbolic";
-									tooltip-text: _("Refresh page");
+									tooltip-text: _("Refresh");
 									action-name: "win.refresh";
 									sensitive: false; // this doesnt work for some reason now
 
@@ -476,7 +476,7 @@ menu archive_menu {
 	section {
 		submenu {
 			label: _("More");
-			item (_("Preferences"))
+			item (_("Preferences"), "win.preferences")
 			item (_("Plugins manager"))
 
 			section {

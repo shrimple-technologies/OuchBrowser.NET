@@ -76,12 +76,14 @@ public class View
 			{
 				case LoadEvent.Started:
 					Window.refresh!.SetSensitive(true);
+					Window.refresh!.SetTooltipText(Window.gettext.GetString("Stop loading"));
 					Window.url_button!.SetSensitive(true);
 					Window.sidebar_toggle!.SetSensitive(true);
 					Window.refresh!.SetIconName("cross-large-symbolic");
 					page.SetLoading(true);
 					break;
 				case LoadEvent.Finished:
+					Window.refresh!.SetTooltipText(Window.gettext.GetString("Refresh"));
 					Window.refresh!.SetIconName("view-refresh-symbolic");
 					page.SetLoading(false);
 					break;

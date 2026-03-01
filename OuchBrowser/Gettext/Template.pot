@@ -32,7 +32,7 @@ msgid "Forward"
 msgstr ""
 
 #: OuchBrowser/UI/Window.blp:71
-msgid "Refresh page"
+msgid "Refresh"
 msgstr ""
 
 #: OuchBrowser/UI/Window.blp:111
@@ -104,3 +104,7 @@ msgstr ""
 #: OuchBrowser/UI/Window.blp:495
 msgid "New folder"
 msgstr ""
+
+#: OuchBrowser/View.cs:79
+msgid "Stop loading"
+msgstr "Pare de recarregar"

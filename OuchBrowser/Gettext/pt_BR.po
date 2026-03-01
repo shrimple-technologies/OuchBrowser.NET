@@ -36,8 +36,8 @@ msgid "Forward"
 msgstr "Avançar"
 
 #: OuchBrowser/UI/Window.blp:71
-msgid "Refresh page"
-msgstr ""
+msgid "Refresh"
+msgstr "Recarregar"
 
 #: OuchBrowser/UI/Window.blp:111
 msgid "Reveal command palette"
@@ -79,7 +79,7 @@ msgstr ""
 
 #: OuchBrowser/UI/Window.blp:469
 msgid "Downloads"
-msgstr ""
+msgstr "Downloads"
 
 #: OuchBrowser/UI/Window.blp:473
 msgid "Show all tabs"
@@ -108,3 +108,7 @@ msgstr ""
 #: OuchBrowser/UI/Window.blp:495
 msgid "New folder"
 msgstr ""
+
+#: OuchBrowser/View.cs:79
+msgid "Stop loading"
+msgstr "Pare de recarregar"
