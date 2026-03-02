@@ -56,28 +56,13 @@
 	<url type="vcs-browser">https://tangled.org/shrimple.srht.site/OuchBrowser.NET</url>
 	<screenshots>
 		<screenshot type="default">
-			<image>https://git.sr.ht/~shrimple/ouch/blob/main/res/screenshots/Desktop%20Layout%20with%20Sidebar%20Opened.png</image>
-			<caption>Ouch Browser's default layout.</caption>
+			<image>https://tangled.org/shrimple.srht.site/OuchBrowser.NET/raw/main/OuchBrowser/Screenshots/Screenshot%20with%20Sidebar%20Open.png</image>
 		</screenshot>
 		<screenshot>
-			<image>https://git.sr.ht/~shrimple/ouch/blob/main/res/screenshots/Desktop%20Layout%20with%20Sidebar%20Closed.png</image>
-			<caption>Ouch Browser's default layout with the sidebar closed.</caption>
+			<image>https://tangled.org/shrimple.srht.site/OuchBrowser.NET/raw/main/OuchBrowser/Screenshots/Screenshot%20with%20Sidebar%20Closed.png</image>
 		</screenshot>
 		<screenshot>
-			<image>https://git.sr.ht/~shrimple/ouch/blob/main/res/screenshots/Desktop%20Layout%20with%20Command%20Palette%20Opened.png</image>
-			<caption>Ouch Browser's default layout with the command palette opened.</caption>
-		</screenshot>
-		<screenshot>
-			<image>https://git.sr.ht/~shrimple/ouch/blob/main/res/screenshots/Mobile%20Layout%20with%20Sidebar%20Closed.png</image>
-			<caption>Ouch Browser's mobile layout.</caption>
-		</screenshot>
-		<screenshot>
-			<image>https://git.sr.ht/~shrimple/ouch/blob/main/res/screenshots/Mobile%20Layout%20with%20Sidebar%20Opened.png</image>
-			<caption>Ouch Browser's mobile layout with the sidebar opened.</caption>
-		</screenshot>
-		<screenshot>
-			<image>https://git.sr.ht/~shrimple/ouch/blob/main/res/screenshots/Mobile%20Layout%20with%20Command%20Palette%20Opened.png</image>
-			<caption>Ouch Browser's mobile layout with the command palette opened.</caption>
+			<image>https://tangled.org/shrimple.srht.site/OuchBrowser.NET/raw/main/OuchBrowser/Screenshots/Screenshot%20with%20Command%20Palette%20Open.png</image>
 		</screenshot>
 	</screenshots>
 </component>
