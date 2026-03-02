@@ -29,8 +29,8 @@ public class Window
 		{
 			window.osv!.SetShowSidebar(true);
 			window.sidebar_toggle!.SetActive(true);
-		};	
-		
+		};
+
 		window.url_entry!.OnActivate += (entry, _) =>
 		{
 			string query = entry.GetBuffer().GetText();
@@ -167,7 +167,7 @@ public class Window
 			{
 				preferences.Present(window);
 			});
-			
+
 			actions.AddAction("about", [], (action, parameter) =>
 			{
 				about.Present(window);

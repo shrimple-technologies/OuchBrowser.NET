@@ -71,7 +71,6 @@ Adw.TabOverview overview {
 									tooltip-text: _("Refresh");
 									action-name: "win.refresh";
 									sensitive: false; // this doesnt work for some reason now
-
 									styles [
 										"flat",
 									]
@@ -188,6 +187,7 @@ Adw.TabOverview overview {
 
 										styles [
 											"flat",
+											"new-tab",
 										]
 									}
 
@@ -202,13 +202,8 @@ Adw.TabOverview overview {
 														spacing: 10;
 
 														Image tab_icon {
-															// gicon: bind template.item as <Adw.TabPage>.icon;
-															icon-name: "box-dotted-symbolic";
+															gicon: bind template.item as <Adw.TabPage>.icon;
 															visible: bind spinner.visible inverted;
-
-															styles [
-																"dimmed",
-															]
 														}
 
 														Adw.Spinner spinner {
@@ -491,6 +486,7 @@ menu new_menu {
 		item (_("New room"))
 		item (_("New folder"))
 	}
+
 	section {
 		item (_("New tab"), "win.palette-new")
 	}

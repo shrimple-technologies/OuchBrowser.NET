@@ -35,3 +35,7 @@ toggle-group > separator {
 .font-medium {
 	font-weight: 500;
 }
+
+.new-tab {
+	padding-left: 8px;
+}
