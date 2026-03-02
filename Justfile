@@ -26,7 +26,7 @@ build-blueprint:
 
 [group("build")]
 compile-resources:
-	glib-compile-resources \
+	@glib-compile-resources \
 		--sourcedir OuchBrowser \
 		--target=OuchBrowser/OuchBrowser.app.gresource \
 		OuchBrowser/OuchBrowser.gresource.xml
@@ -47,8 +47,9 @@ build-flatpak:
 
 [group("build")]
 build-schemas:
-	@sudo cp OuchBrowser/OuchBrowser.gschema.xml {{ PREFIX }}/share/glib-2.0/schemas
-	@sudo glib-compile-schemas \
+	@mkdir -p {{ PREFIX }}/share/glib-2.0/schemas
+	@cp OuchBrowser/OuchBrowser.gschema.xml {{ PREFIX }}/share/glib-2.0/schemas
+	@glib-compile-schemas \
 		{{ PREFIX }}/share/glib-2.0/schemas \
 		>/dev/null 2>/dev/null
 		
