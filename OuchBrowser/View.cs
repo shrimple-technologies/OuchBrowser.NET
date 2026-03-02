@@ -119,7 +119,7 @@ public class View
 			switch (load_event.LoadEvent)
 			{
 				case LoadEvent.Started:
-					page.SetIcon(Gio.ThemedIcon.New("box-dotted-symbolic")); // set this placeholder first 
+					page.SetIcon(Gio.ThemedIcon.New("box-dotted-symbolic")); // set this placeholder first
 					window.refresh!.SetSensitive(true);
 					window.refresh!.SetTooltipText(window.gettext.GetString("Stop loading"));
 					window.url_button!.SetSensitive(true);
@@ -143,6 +143,25 @@ public class View
 					window.refresh!.SetTooltipText(window.gettext.GetString("Refresh"));
 					window.refresh!.SetIconName("view-refresh-symbolic");
 					page.SetLoading(false);
+
+					if (webview.CanGoBack())
+					{
+						window.go_back!.SetSensitive(true);
+					}
+					else
+					{
+						window.go_back!.SetSensitive(false);
+					}
+
+					if (webview.CanGoForward())
+					{
+						window.go_forward!.SetSensitive(true);
+					}
+					else
+					{
+						window.go_forward!.SetSensitive(false);
+					}
+
 					break;
 			}
 		};

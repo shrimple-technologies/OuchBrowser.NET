@@ -49,7 +49,7 @@ Adw.TabOverview overview {
 								Button go_back {
 									icon-name: "go-previous-symbolic";
 									tooltip-text: _("Back");
-									sensitive: false;
+									action-name: "win.go-back";
 
 									styles [
 										"flat",
@@ -59,7 +59,7 @@ Adw.TabOverview overview {
 								Button go_forward {
 									icon-name: "go-next-symbolic";
 									tooltip-text: _("Forward");
-									sensitive: false;
+									action-name: "win.go-forward";
 
 									styles [
 										"flat",
@@ -70,7 +70,6 @@ Adw.TabOverview overview {
 									icon-name: "view-refresh-symbolic";
 									tooltip-text: _("Refresh");
 									action-name: "win.refresh";
-									sensitive: false; // this doesnt work for some reason now
 									styles [
 										"flat",
 									]

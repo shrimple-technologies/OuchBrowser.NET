@@ -24,6 +24,10 @@ public class Window
 
 		SetupActions(window, application, preferences, about);
 
+		window.go_back!.SetSensitive(false);
+		window.go_forward!.SetSensitive(false);
+		window.refresh!.SetSensitive(false);
+
 		// TODO: maybe make this a little bit less "hacky?"
 		window.content_sidebar_toggle!.OnClicked += (_, _) =>
 		{
@@ -162,313 +166,333 @@ public class Window
 					window.toast_overlay!.AddToast(toast);
 				}
 			});
+		}
 
-			actions.AddAction("preferences", ["<Ctrl>comma"], (action, parameter) =>
+		actions.AddAction("preferences", ["<Ctrl>comma"], (action, parameter) =>
+		{
+			preferences.Present(window);
+		});
+
+		actions.AddAction("about", [], (action, parameter) =>
+		{
+			about.Present(window);
+		});
+
+		actions.AddAction("refresh", ["<Ctrl>r"], (_, _) =>
+		{
+			TabPage page = window.view!.GetSelectedPage()!;
+			WebView webview = (WebView)page.Child!;
+
+			if (window.refresh!.GetIconName() == "cross-large-symbolic")
 			{
-				preferences.Present(window);
-			});
-
-			actions.AddAction("about", [], (action, parameter) =>
+				webview.StopLoading();
+			}
+			else
 			{
-				about.Present(window);
-			});
+				webview.Reload();
+			}
+		});
 
-			actions.AddAction("refresh", ["<Ctrl>r"], (_, _) =>
+		actions.AddAction("hard-refresh", ["<Ctrl><Shift>r"], (_, _) =>
+		{
+			TabPage page = window.view!.GetSelectedPage()!;
+			WebView webview = (WebView)page.Child!;
+
+			webview.ReloadBypassCache();
+		});
+
+		actions.AddAction("zoom-in", ["<Ctrl>equal"], (_, _) =>
+		{
+			TabPage page = window.view!.GetSelectedPage()!;
+			WebView webview = (WebView)page.Child!;
+			Toast toast = Toast.New("");
+
+			// these levels correspond to what would be seen in chromium
+			switch (webview.GetZoomLevel())
+			{
+				case 0.25: // 25%
+					webview.SetZoomLevel(0.33); // 33%
+					toast.SetTitle("33%");
+					toast.SetTimeout(1);
+					window.toast_overlay!.DismissAll();
+					window.toast_overlay!.AddToast(toast);
+					break;
+				case 0.33: // 33%
+					webview.SetZoomLevel(0.5); // 50%
+					toast.SetTitle("50%");
+					toast.SetTimeout(1);
+					window.toast_overlay!.DismissAll();
+					window.toast_overlay!.AddToast(toast);
+					break;
+				case 0.5: // 50%
+					webview.SetZoomLevel(0.67); // 67%
+					toast.SetTitle("67%");
+					toast.SetTimeout(1);
+					window.toast_overlay!.DismissAll();
+					window.toast_overlay!.AddToast(toast);
+					break;
+				case 0.67: // 67%
+					webview.SetZoomLevel(0.75); // 75%
+					toast.SetTitle("75%");
+					toast.SetTimeout(1);
+					window.toast_overlay!.DismissAll();
+					window.toast_overlay!.AddToast(toast);
+					break;
+				case 0.75: // 75%
+					webview.SetZoomLevel(0.8); // 80%
+					toast.SetTitle("80%");
+					toast.SetTimeout(1);
+					window.toast_overlay!.DismissAll();
+					window.toast_overlay!.AddToast(toast);
+					break;
+				case 0.8: // 80%
+					webview.SetZoomLevel(0.9); // 90%
+					toast.SetTitle("90%");
+					toast.SetTimeout(1);
+					window.toast_overlay!.DismissAll();
+					window.toast_overlay!.AddToast(toast);
+					break;
+				case 0.9: // 90%
+					webview.SetZoomLevel(1); // 100%
+					toast.SetTitle("100%");
+					toast.SetTimeout(1);
+					window.toast_overlay!.DismissAll();
+					window.toast_overlay!.AddToast(toast);
+					break;
+				case 1: // 100%
+					webview.SetZoomLevel(1.1); // 110%
+					toast.SetTitle("110%");
+					toast.SetTimeout(1);
+					window.toast_overlay!.DismissAll();
+					window.toast_overlay!.AddToast(toast);
+					break;
+				case 1.1: // 110%
+					webview.SetZoomLevel(1.25); // 125%
+					toast.SetTitle("125%");
+					toast.SetTimeout(1);
+					window.toast_overlay!.DismissAll();
+					window.toast_overlay!.AddToast(toast);
+					break;
+				case 1.25: // 125%
+					webview.SetZoomLevel(1.5); // 150%
+					toast.SetTitle("150%");
+					toast.SetTimeout(1);
+					window.toast_overlay!.DismissAll();
+					window.toast_overlay!.AddToast(toast);
+					break;
+				case 1.5: // 150%
+					webview.SetZoomLevel(1.75); // 175%
+					toast.SetTitle("175%");
+					toast.SetTimeout(1);
+					window.toast_overlay!.DismissAll();
+					window.toast_overlay!.AddToast(toast);
+					break;
+				case 1.75: // 175%
+					webview.SetZoomLevel(2); // 200%
+					toast.SetTitle("200%");
+					toast.SetTimeout(1);
+					window.toast_overlay!.DismissAll();
+					window.toast_overlay!.AddToast(toast);
+					break;
+				case 2: // 200%
+					webview.SetZoomLevel(2.5); // 250%
+					toast.SetTitle("250%");
+					toast.SetTimeout(1);
+					window.toast_overlay!.DismissAll();
+					window.toast_overlay!.AddToast(toast);
+					break;
+				case 2.5: // 250%
+					webview.SetZoomLevel(3); // 300%
+					toast.SetTitle("300%");
+					toast.SetTimeout(1);
+					window.toast_overlay!.DismissAll();
+					window.toast_overlay!.AddToast(toast);
+					break;
+				case 3: // 300%
+					webview.SetZoomLevel(4); // 400%
+					toast.SetTitle("400%");
+					toast.SetTimeout(1);
+					window.toast_overlay!.DismissAll();
+					window.toast_overlay!.AddToast(toast);
+					break;
+				case 4: // 400%
+					webview.SetZoomLevel(5); // 400%
+					toast.SetTitle("500%");
+					toast.SetTimeout(1);
+					window.toast_overlay!.DismissAll();
+					window.toast_overlay!.AddToast(toast);
+					break;
+				case 5: // 500%
+					Gdk.Display.GetDefault()!.Beep();
+					break;
+			}
+		});
+
+		actions.AddAction("zoom-out", ["<Ctrl>minus"], (_, _) =>
+		{
+			TabPage page = window.view!.GetSelectedPage()!;
+			WebView webview = (WebView)page.Child!;
+			Toast toast = Toast.New("");
+
+			// these levels correspond to what would be seen in chromium
+			switch (webview.GetZoomLevel())
+			{
+				case 5: // 500%
+					webview.SetZoomLevel(4); // 400%
+					toast.SetTitle("400%");
+					toast.SetTimeout(1);
+					window.toast_overlay!.DismissAll();
+					window.toast_overlay!.AddToast(toast);
+					break;
+				case 4: // 400%
+					webview.SetZoomLevel(3); // 300%
+					toast.SetTitle("300%");
+					toast.SetTimeout(1);
+					window.toast_overlay!.DismissAll();
+					window.toast_overlay!.AddToast(toast);
+					break;
+				case 3: // 300%
+					webview.SetZoomLevel(2.5); // 150%
+					toast.SetTitle("250%");
+					toast.SetTimeout(1);
+					window.toast_overlay!.DismissAll();
+					window.toast_overlay!.AddToast(toast);
+					break;
+				case 2.5: // 250%
+					webview.SetZoomLevel(2); // 200%
+					toast.SetTitle("200%");
+					toast.SetTimeout(1);
+					window.toast_overlay!.DismissAll();
+					window.toast_overlay!.AddToast(toast);
+					break;
+				case 2: // 200%
+					webview.SetZoomLevel(1.75); // 175%
+					toast.SetTitle("175%");
+					toast.SetTimeout(1);
+					window.toast_overlay!.DismissAll();
+					window.toast_overlay!.AddToast(toast);
+					break;
+				case 1.75: // 175%
+					webview.SetZoomLevel(1.5); // 150%
+					toast.SetTitle("150%");
+					toast.SetTimeout(1);
+					window.toast_overlay!.DismissAll();
+					window.toast_overlay!.AddToast(toast);
+					break;
+				case 1.5: // 150%
+					webview.SetZoomLevel(1.25); // 125%
+					toast.SetTitle("125%");
+					toast.SetTimeout(1);
+					window.toast_overlay!.DismissAll();
+					window.toast_overlay!.AddToast(toast);
+					break;
+				case 1.25: // 125%
+					webview.SetZoomLevel(1); // 400%
+					toast.SetTitle("100%");
+					toast.SetTimeout(1);
+					window.toast_overlay!.DismissAll();
+					window.toast_overlay!.AddToast(toast);
+					break;
+				case 1: // 100%
+					webview.SetZoomLevel(0.9); // 400%
+					toast.SetTitle("90%");
+					toast.SetTimeout(1);
+					window.toast_overlay!.DismissAll();
+					window.toast_overlay!.AddToast(toast);
+					break;
+				case 0.9: // 90%
+					webview.SetZoomLevel(0.8); // 80%
+					toast.SetTitle("80%");
+					toast.SetTimeout(1);
+					window.toast_overlay!.DismissAll();
+					window.toast_overlay!.AddToast(toast);
+					break;
+				case 0.8: // 80%
+					webview.SetZoomLevel(0.75); // 75%
+					toast.SetTitle("75%");
+					toast.SetTimeout(1);
+					window.toast_overlay!.DismissAll();
+					window.toast_overlay!.AddToast(toast);
+					break;
+				case 0.75: // 75%
+					webview.SetZoomLevel(0.67); // 67%
+					toast.SetTitle("67%");
+					toast.SetTimeout(1);
+					window.toast_overlay!.DismissAll();
+					window.toast_overlay!.AddToast(toast);
+					break;
+				case 0.67: // 67%
+					webview.SetZoomLevel(0.5); // 67%
+					toast.SetTitle("50%");
+					toast.SetTimeout(1);
+					window.toast_overlay!.DismissAll();
+					window.toast_overlay!.AddToast(toast);
+					break;
+				case 0.5: // 50%
+					webview.SetZoomLevel(0.33); // 33%
+					toast.SetTitle("33%");
+					toast.SetTimeout(1);
+					window.toast_overlay!.DismissAll();
+					window.toast_overlay!.AddToast(toast);
+					break;
+				case 0.33: // 33%
+					webview.SetZoomLevel(0.25); // 25%
+					toast.SetTitle("25%");
+					toast.SetTimeout(1);
+					window.toast_overlay!.DismissAll();
+					window.toast_overlay!.AddToast(toast);
+					break;
+				case 0.25: // 25%
+					Gdk.Display.GetDefault()!.Beep();
+					break;
+			}
+		});
+
+		actions.AddAction("tab-close", ["<Ctrl>w"], (_, _) =>
+		{
+			if (window.view!.GetNPages() == 0)
+			{
+				window.Close();
+			}
+			else
 			{
 				TabPage page = window.view!.GetSelectedPage()!;
 				WebView webview = (WebView)page.Child!;
 
-				if (window.refresh!.GetIconName() == "cross-large-symbolic")
-				{
-					webview.StopLoading();
-				}
-				else
-				{
-					webview.Reload();
-				}
-			});
-
-			actions.AddAction("hard-refresh", ["<Ctrl><Shift>r"], (_, _) =>
-			{
-				TabPage page = window.view!.GetSelectedPage()!;
-				WebView webview = (WebView)page.Child!;
-
-				webview.ReloadBypassCache();
-			});
-
-			actions.AddAction("zoom-in", ["<Ctrl>equal"], (_, _) =>
-			{
-				TabPage page = window.view!.GetSelectedPage()!;
-				WebView webview = (WebView)page.Child!;
-				Toast toast = Toast.New("");
-
-				// these levels correspond to what would be seen in chromium
-				switch (webview.GetZoomLevel())
-				{
-					case 0.25: // 25%
-						webview.SetZoomLevel(0.33); // 33%
-						toast.SetTitle("33%");
-						toast.SetTimeout(1);
-						window.toast_overlay!.DismissAll();
-						window.toast_overlay!.AddToast(toast);
-						break;
-					case 0.33: // 33%
-						webview.SetZoomLevel(0.5); // 50%
-						toast.SetTitle("50%");
-						toast.SetTimeout(1);
-						window.toast_overlay!.DismissAll();
-						window.toast_overlay!.AddToast(toast);
-						break;
-					case 0.5: // 50%
-						webview.SetZoomLevel(0.67); // 67%
-						toast.SetTitle("67%");
-						toast.SetTimeout(1);
-						window.toast_overlay!.DismissAll();
-						window.toast_overlay!.AddToast(toast);
-						break;
-					case 0.67: // 67%
-						webview.SetZoomLevel(0.75); // 75%
-						toast.SetTitle("75%");
-						toast.SetTimeout(1);
-						window.toast_overlay!.DismissAll();
-						window.toast_overlay!.AddToast(toast);
-						break;
-					case 0.75: // 75%
-						webview.SetZoomLevel(0.8); // 80%
-						toast.SetTitle("80%");
-						toast.SetTimeout(1);
-						window.toast_overlay!.DismissAll();
-						window.toast_overlay!.AddToast(toast);
-						break;
-					case 0.8: // 80%
-						webview.SetZoomLevel(0.9); // 90%
-						toast.SetTitle("90%");
-						toast.SetTimeout(1);
-						window.toast_overlay!.DismissAll();
-						window.toast_overlay!.AddToast(toast);
-						break;
-					case 0.9: // 90%
-						webview.SetZoomLevel(1); // 100%
-						toast.SetTitle("100%");
-						toast.SetTimeout(1);
-						window.toast_overlay!.DismissAll();
-						window.toast_overlay!.AddToast(toast);
-						break;
-					case 1: // 100%
-						webview.SetZoomLevel(1.1); // 110%
-						toast.SetTitle("110%");
-						toast.SetTimeout(1);
-						window.toast_overlay!.DismissAll();
-						window.toast_overlay!.AddToast(toast);
-						break;
-					case 1.1: // 110%
-						webview.SetZoomLevel(1.25); // 125%
-						toast.SetTitle("125%");
-						toast.SetTimeout(1);
-						window.toast_overlay!.DismissAll();
-						window.toast_overlay!.AddToast(toast);
-						break;
-					case 1.25: // 125%
-						webview.SetZoomLevel(1.5); // 150%
-						toast.SetTitle("150%");
-						toast.SetTimeout(1);
-						window.toast_overlay!.DismissAll();
-						window.toast_overlay!.AddToast(toast);
-						break;
-					case 1.5: // 150%
-						webview.SetZoomLevel(1.75); // 175%
-						toast.SetTitle("175%");
-						toast.SetTimeout(1);
-						window.toast_overlay!.DismissAll();
-						window.toast_overlay!.AddToast(toast);
-						break;
-					case 1.75: // 175%
-						webview.SetZoomLevel(2); // 200%
-						toast.SetTitle("200%");
-						toast.SetTimeout(1);
-						window.toast_overlay!.DismissAll();
-						window.toast_overlay!.AddToast(toast);
-						break;
-					case 2: // 200%
-						webview.SetZoomLevel(2.5); // 250%
-						toast.SetTitle("250%");
-						toast.SetTimeout(1);
-						window.toast_overlay!.DismissAll();
-						window.toast_overlay!.AddToast(toast);
-						break;
-					case 2.5: // 250%
-						webview.SetZoomLevel(3); // 300%
-						toast.SetTitle("300%");
-						toast.SetTimeout(1);
-						window.toast_overlay!.DismissAll();
-						window.toast_overlay!.AddToast(toast);
-						break;
-					case 3: // 300%
-						webview.SetZoomLevel(4); // 400%
-						toast.SetTitle("400%");
-						toast.SetTimeout(1);
-						window.toast_overlay!.DismissAll();
-						window.toast_overlay!.AddToast(toast);
-						break;
-					case 4: // 400%
-						webview.SetZoomLevel(5); // 400%
-						toast.SetTitle("500%");
-						toast.SetTimeout(1);
-						window.toast_overlay!.DismissAll();
-						window.toast_overlay!.AddToast(toast);
-						break;
-					case 5: // 500%
-						Gdk.Display.GetDefault()!.Beep();
-						break;
-				}
-			});
-
-			actions.AddAction("zoom-out", ["<Ctrl>minus"], (_, _) =>
-			{
-				TabPage page = window.view!.GetSelectedPage()!;
-				WebView webview = (WebView)page.Child!;
-				Toast toast = Toast.New("");
-
-				// these levels correspond to what would be seen in chromium
-				switch (webview.GetZoomLevel())
-				{
-					case 5: // 500%
-						webview.SetZoomLevel(4); // 400%
-						toast.SetTitle("400%");
-						toast.SetTimeout(1);
-						window.toast_overlay!.DismissAll();
-						window.toast_overlay!.AddToast(toast);
-						break;
-					case 4: // 400%
-						webview.SetZoomLevel(3); // 300%
-						toast.SetTitle("300%");
-						toast.SetTimeout(1);
-						window.toast_overlay!.DismissAll();
-						window.toast_overlay!.AddToast(toast);
-						break;
-					case 3: // 300%
-						webview.SetZoomLevel(2.5); // 150%
-						toast.SetTitle("250%");
-						toast.SetTimeout(1);
-						window.toast_overlay!.DismissAll();
-						window.toast_overlay!.AddToast(toast);
-						break;
-					case 2.5: // 250%
-						webview.SetZoomLevel(2); // 200%
-						toast.SetTitle("200%");
-						toast.SetTimeout(1);
-						window.toast_overlay!.DismissAll();
-						window.toast_overlay!.AddToast(toast);
-						break;
-					case 2: // 200%
-						webview.SetZoomLevel(1.75); // 175%
-						toast.SetTitle("175%");
-						toast.SetTimeout(1);
-						window.toast_overlay!.DismissAll();
-						window.toast_overlay!.AddToast(toast);
-						break;
-					case 1.75: // 175%
-						webview.SetZoomLevel(1.5); // 150%
-						toast.SetTitle("150%");
-						toast.SetTimeout(1);
-						window.toast_overlay!.DismissAll();
-						window.toast_overlay!.AddToast(toast);
-						break;
-					case 1.5: // 150%
-						webview.SetZoomLevel(1.25); // 125%
-						toast.SetTitle("125%");
-						toast.SetTimeout(1);
-						window.toast_overlay!.DismissAll();
-						window.toast_overlay!.AddToast(toast);
-						break;
-					case 1.25: // 125%
-						webview.SetZoomLevel(1); // 400%
-						toast.SetTitle("100%");
-						toast.SetTimeout(1);
-						window.toast_overlay!.DismissAll();
-						window.toast_overlay!.AddToast(toast);
-						break;
-					case 1: // 100%
-						webview.SetZoomLevel(0.9); // 400%
-						toast.SetTitle("90%");
-						toast.SetTimeout(1);
-						window.toast_overlay!.DismissAll();
-						window.toast_overlay!.AddToast(toast);
-						break;
-					case 0.9: // 90%
-						webview.SetZoomLevel(0.8); // 80%
-						toast.SetTitle("80%");
-						toast.SetTimeout(1);
-						window.toast_overlay!.DismissAll();
-						window.toast_overlay!.AddToast(toast);
-						break;
-					case 0.8: // 80%
-						webview.SetZoomLevel(0.75); // 75%
-						toast.SetTitle("75%");
-						toast.SetTimeout(1);
-						window.toast_overlay!.DismissAll();
-						window.toast_overlay!.AddToast(toast);
-						break;
-					case 0.75: // 75%
-						webview.SetZoomLevel(0.67); // 67%
-						toast.SetTitle("67%");
-						toast.SetTimeout(1);
-						window.toast_overlay!.DismissAll();
-						window.toast_overlay!.AddToast(toast);
-						break;
-					case 0.67: // 67%
-						webview.SetZoomLevel(0.5); // 67%
-						toast.SetTitle("50%");
-						toast.SetTimeout(1);
-						window.toast_overlay!.DismissAll();
-						window.toast_overlay!.AddToast(toast);
-						break;
-					case 0.5: // 50%
-						webview.SetZoomLevel(0.33); // 33%
-						toast.SetTitle("33%");
-						toast.SetTimeout(1);
-						window.toast_overlay!.DismissAll();
-						window.toast_overlay!.AddToast(toast);
-						break;
-					case 0.33: // 33%
-						webview.SetZoomLevel(0.25); // 25%
-						toast.SetTitle("25%");
-						toast.SetTimeout(1);
-						window.toast_overlay!.DismissAll();
-						window.toast_overlay!.AddToast(toast);
-						break;
-					case 0.25: // 25%
-						Gdk.Display.GetDefault()!.Beep();
-						break;
-				}
-			});
-
-			actions.AddAction("tab-close", ["<Ctrl>w"], (_, _) =>
-			{
+				webview.TryClose();
+				window.view!.ClosePage(window.view!.GetSelectedPage()!);
 				if (window.view!.GetNPages() == 0)
 				{
-					window.Close();
+					window.refresh!.SetSensitive(false);
+					window.go_back!.SetSensitive(false);
+					window.go_forward!.SetSensitive(false);
+					window.url_button!.SetSensitive(false);
+					window.sidebar_toggle!.SetSensitive(false);
+					window.sidebar_toggle!.SetActive(true);
+					window.hostname!.SetLabel("");
+					window.osv!.SetShowSidebar(true);
 				}
-				else
-				{
-					TabPage page = window.view!.GetSelectedPage()!;
-					WebView webview = (WebView)page.Child!;
+			}
+		});
 
-					webview.TryClose();
-					window.view!.ClosePage(window.view!.GetSelectedPage()!);
-					if (window.view!.GetNPages() == 0)
-					{
-						window.refresh!.SetSensitive(false);
-						window.go_back!.SetSensitive(false);
-						window.go_forward!.SetSensitive(false);
-						window.url_button!.SetSensitive(false);
-						window.sidebar_toggle!.SetSensitive(false);
-						window.sidebar_toggle!.SetActive(true);
-						window.hostname!.SetLabel("");
-						window.osv!.SetShowSidebar(true);
-					}
-				}
-			});
-		}
+		actions.AddAction("go-back", ["<Ctrl>Left"], (_, _) =>
+		{
+			if (window.view!.GetNPages() == 0) return;
+
+			TabPage page = window.view!.GetSelectedPage()!;
+			WebView webview = (WebView)page.Child!;
+
+			webview.GoBack();
+		});
+
+		actions.AddAction("go-forward", ["<Ctrl>Right"], (_, _) =>
+		{
+			if (window.view!.GetNPages() == 0) return;
+
+			TabPage page = window.view!.GetSelectedPage()!;
+			WebView webview = (WebView)page.Child!;
+
+			webview.GoForward();
+		});
 	}
 }
