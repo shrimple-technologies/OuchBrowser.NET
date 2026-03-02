@@ -19,7 +19,7 @@ msgstr ""
 
 #: OuchBrowser/Builder/About.blp:10
 msgid "translator-credits"
-msgstr "Betty https://koko.micenest.xyz/users/betty"
+msgstr "Betty https://bsky.app/profile/did:plc:c5c6etwketgk3q3gkafrgekl"
 
 #: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.metainfo.xml:6
 #: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.desktop:3
