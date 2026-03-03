@@ -45,6 +45,7 @@ Adw.TabOverview overview {
 							end-widget: Box {
 								orientation: horizontal;
 								spacing: 5;
+								margin-end: 10;
 
 								Button go_back {
 									icon-name: "go-previous-symbolic";
@@ -70,6 +71,7 @@ Adw.TabOverview overview {
 									icon-name: "view-refresh-symbolic";
 									tooltip-text: _("Refresh");
 									action-name: "win.refresh";
+
 									styles [
 										"flat",
 									]
@@ -91,7 +93,7 @@ Adw.TabOverview overview {
 							Box {
 								orientation: horizontal;
 								margin-start: 10;
-								margin-end: 0;
+								margin-end: 10;
 								// Button copy_link_button {
 								// 	icon-name: "chain-link-loose-symbolic";
 								// 	tooltip-text: _("Copy link");
@@ -136,7 +138,7 @@ Adw.TabOverview overview {
 								label: "Main";
 								halign: start;
 								margin-start: 14;
-								margin-end: 0;
+								margin-end: 10;
 
 								styles [
 									"caption-heading",
@@ -149,7 +151,40 @@ Adw.TabOverview overview {
 								margin-top: 10;
 								margin-bottom: 10;
 								margin-start: 14;
-								margin-end: 0;
+								margin-end: 10;
+							}
+
+							Button {
+								margin-start: 10;
+								margin-end: 10;
+								margin-bottom: 6;
+								action-name: "win.palette-new";
+
+								Box {
+									spacing: 10;
+
+									Image {
+										icon-name: "list-add-symbolic";
+
+										styles [
+											"dimmed",
+										]
+									}
+
+									Label {
+										label: _("New tab");
+
+										styles [
+											"dimmed",
+											"font-medium",
+										]
+									}
+								}
+
+								styles [
+									"flat",
+									"new-tab",
+								]
 							}
 
 							ScrolledWindow {
@@ -157,38 +192,7 @@ Adw.TabOverview overview {
 
 								Box {
 									orientation: vertical;
-
-									Button {
-										margin-start: 10;
-										margin-end: 0;
-										action-name: "win.palette-new";
-
-										Box {
-											spacing: 10;
-
-											Image {
-												icon-name: "list-add-symbolic";
-
-												styles [
-													"dimmed",
-												]
-											}
-
-											Label {
-												label: _("New tab");
-
-												styles [
-													"dimmed",
-													"font-medium",
-												]
-											}
-										}
-
-										styles [
-											"flat",
-											"new-tab",
-										]
-									}
+									margin-end: 10;
 
 									ListView tabs {
 										vexpand: true;
@@ -263,6 +267,7 @@ Adw.TabOverview overview {
 							end-widget: MenuButton {
 								icon-name: "tab-new-symbolic";
 								tooltip-text: _("New...");
+								margin-end: 10;
 								menu-model: new_menu;
 
 								styles [
@@ -311,7 +316,7 @@ Adw.TabOverview overview {
 								orientation: vertical;
 
 								Frame frame {
-									margin-start: 10;
+									// margin-start: 10;
 									margin-end: 10;
 									margin-top: 10;
 									margin-bottom: 10;

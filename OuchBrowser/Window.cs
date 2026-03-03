@@ -33,6 +33,11 @@ public class Window
 		{
 			window.osv!.SetShowSidebar(true);
 			window.sidebar_toggle!.SetActive(true);
+			window.frame!.SetMarginStart(0);
+		};
+		window.sidebar_toggle!.OnClicked += (_, _) =>
+		{
+			window.frame!.SetMarginStart(10);
 		};
 
 		window.url_entry!.OnActivate += (entry, _) =>
