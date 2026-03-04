@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: devel\n"
-"Report-Msgid-Bugs-To: https://tangled.org/shrimple.srht.site/OuchBrowser.NET"
-"/issues\n"
+"Report-Msgid-Bugs-To: https://tangled.org/shrimple.srht.site/OuchBrowser.NET/"
+"issues\n"
 "POT-Creation-Date: 2026-03-01 12:29:28-0400\n"
 "PO-Revision-Date: 2024-09-07 11:08+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
@@ -22,8 +22,7 @@ msgstr "Allan Nordhøy <epost@anotheragency.no>"
 
 #: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.metainfo.xml:6
 #: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.desktop:3
-#: OuchBrowser/UI/Builder/Window.blp:16
-#: OuchBrowser/UI/Builder/Window.blp:287
+#: OuchBrowser/UI/Builder/Window.blp:16 OuchBrowser/UI/Builder/Window.blp:287
 #: OuchBrowser/UI.cs:60
 msgid "Ouch Browser"
 msgstr "Ouch-nettleseren"
@@ -57,13 +56,11 @@ msgstr "Gjenoppfrisk"
 msgid "Reveal command palette"
 msgstr ""
 
-#: OuchBrowser/UI/Builder/Window.blp:180
-#: OuchBrowser/UI/Builder/Window.blp:498
+#: OuchBrowser/UI/Builder/Window.blp:180 OuchBrowser/UI/Builder/Window.blp:498
 msgid "New tab"
 msgstr "Ny fane"
 
-#: OuchBrowser/UI/Builder/Window.blp:248
-#: OuchBrowser/UI/Builder/Window.blp:467
+#: OuchBrowser/UI/Builder/Window.blp:248 OuchBrowser/UI/Builder/Window.blp:467
 msgid "Archive"
 msgstr "Arkiv"
 

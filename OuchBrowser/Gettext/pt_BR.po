@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: devel\n"
-"Report-Msgid-Bugs-To: https://tangled.org/shrimple.srht.site/OuchBrowser.NET"
-"/issues\n"
+"Report-Msgid-Bugs-To: https://tangled.org/shrimple.srht.site/OuchBrowser.NET/"
+"issues\n"
 "POT-Creation-Date: 2026-03-01 12:29:28-0400\n"
 "PO-Revision-Date: 2024-10-11 21:16+0000\n"
 "Last-Translator: grayairr <grayair@proton.me>\n"
@@ -23,8 +23,7 @@ msgstr "Betty https://bsky.app/profile/did:plc:c5c6etwketgk3q3gkafrgekl"
 
 #: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.metainfo.xml:6
 #: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.desktop:3
-#: OuchBrowser/UI/Builder/Window.blp:16
-#: OuchBrowser/UI/Builder/Window.blp:287
+#: OuchBrowser/UI/Builder/Window.blp:16 OuchBrowser/UI/Builder/Window.blp:287
 #: OuchBrowser/UI.cs:60
 msgid "Ouch Browser"
 msgstr "Ouch Browser"
@@ -58,13 +57,11 @@ msgstr "Recarregar"
 msgid "Reveal command palette"
 msgstr ""
 
-#: OuchBrowser/UI/Builder/Window.blp:180
-#: OuchBrowser/UI/Builder/Window.blp:498
+#: OuchBrowser/UI/Builder/Window.blp:180 OuchBrowser/UI/Builder/Window.blp:498
 msgid "New tab"
 msgstr "Nova aba"
 
-#: OuchBrowser/UI/Builder/Window.blp:248
-#: OuchBrowser/UI/Builder/Window.blp:467
+#: OuchBrowser/UI/Builder/Window.blp:248 OuchBrowser/UI/Builder/Window.blp:467
 msgid "Archive"
 msgstr "Arquivar"
 

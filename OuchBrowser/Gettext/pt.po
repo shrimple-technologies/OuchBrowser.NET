@@ -20,8 +20,7 @@ msgstr ""
 
 #: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.metainfo.xml:6
 #: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.desktop:3
-#: OuchBrowser/UI/Builder/Window.blp:16
-#: OuchBrowser/UI/Builder/Window.blp:287
+#: OuchBrowser/UI/Builder/Window.blp:16 OuchBrowser/UI/Builder/Window.blp:287
 #: OuchBrowser/UI.cs:60
 msgid "Ouch Browser"
 msgstr ""
@@ -55,13 +54,11 @@ msgstr ""
 msgid "Reveal command palette"
 msgstr ""
 
-#: OuchBrowser/UI/Builder/Window.blp:180
-#: OuchBrowser/UI/Builder/Window.blp:498
+#: OuchBrowser/UI/Builder/Window.blp:180 OuchBrowser/UI/Builder/Window.blp:498
 msgid "New tab"
 msgstr ""
 
-#: OuchBrowser/UI/Builder/Window.blp:248
-#: OuchBrowser/UI/Builder/Window.blp:467
+#: OuchBrowser/UI/Builder/Window.blp:248 OuchBrowser/UI/Builder/Window.blp:467
 msgid "Archive"
 msgstr ""
 
