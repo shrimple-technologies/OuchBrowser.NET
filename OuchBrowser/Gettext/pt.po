@@ -1,0 +1,126 @@
+# Languages add-on <noreply-addon-languages@weblate.org>, 2026.
+msgid ""
+msgstr ""
+"Project-Id-Version: devel\n"
+"Report-Msgid-Bugs-To: https://tangled.org/shrimple.srht.site/OuchBrowser.NET/"
+"issues\n"
+"POT-Creation-Date: 2026-03-01 12:29:28-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+
+#: OuchBrowser/Builder/About.blp:10
+msgid "translator-credits"
+msgstr ""
+
+#: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.metainfo.xml:6
+#: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.desktop:3
+#: OuchBrowser/UI/Builder/Window.blp:16
+#: OuchBrowser/UI/Builder/Window.blp:287
+#: OuchBrowser/UI.cs:60
+msgid "Ouch Browser"
+msgstr ""
+
+#: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.metainfo.xml:8
+msgid "Shrimple Technologies"
+msgstr ""
+
+#: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.metainfo.xml:13
+#: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.desktop:4
+msgid "Focus on your browsing"
+msgstr ""
+
+#: OuchBrowser/UI/Builder/Window.blp:36
+msgid "Hide sidebar"
+msgstr ""
+
+#: OuchBrowser/UI/Builder/Window.blp:51
+msgid "Back"
+msgstr ""
+
+#: OuchBrowser/UI/Builder/Window.blp:61
+msgid "Forward"
+msgstr ""
+
+#: OuchBrowser/UI/Builder/Window.blp:71
+msgid "Refresh"
+msgstr ""
+
+#: OuchBrowser/UI/Builder/Window.blp:111
+msgid "Reveal command palette"
+msgstr ""
+
+#: OuchBrowser/UI/Builder/Window.blp:180
+#: OuchBrowser/UI/Builder/Window.blp:498
+msgid "New tab"
+msgstr ""
+
+#: OuchBrowser/UI/Builder/Window.blp:248
+#: OuchBrowser/UI/Builder/Window.blp:467
+msgid "Archive"
+msgstr ""
+
+#: OuchBrowser/UI/Builder/Window.blp:271
+msgid "New..."
+msgstr ""
+
+#: OuchBrowser/UI/Builder/Window.blp:299
+msgid "Show sidebar"
+msgstr ""
+
+#: OuchBrowser/UI/Builder/Window.blp:374
+msgid "Search or enter URL..."
+msgstr ""
+
+#: OuchBrowser/UI/Builder/Window.blp:434
+msgid "Go"
+msgstr ""
+
+#: OuchBrowser/UI/Builder/Window.blp:448
+msgid "Close Palette"
+msgstr ""
+
+#: OuchBrowser/UI/Builder/Window.blp:468
+msgid "History"
+msgstr ""
+
+#: OuchBrowser/UI/Builder/Window.blp:469
+msgid "Downloads"
+msgstr ""
+
+#: OuchBrowser/UI/Builder/Window.blp:473
+msgid "Show all tabs"
+msgstr ""
+
+#: OuchBrowser/UI/Builder/Window.blp:478
+msgid "More"
+msgstr ""
+
+#: OuchBrowser/UI/Builder/Window.blp:479
+msgid "Preferences"
+msgstr ""
+
+#: OuchBrowser/UI/Builder/Window.blp:480
+msgid "Plugins manager"
+msgstr ""
+
+#: OuchBrowser/UI/Builder/Window.blp:484
+msgid "About Ouch Browser"
+msgstr ""
+
+#: OuchBrowser/UI/Builder/Window.blp:494
+msgid "New room"
+msgstr ""
+
+#: OuchBrowser/UI/Builder/Window.blp:495
+msgid "New folder"
+msgstr ""
+
+#: OuchBrowser/View.cs:79
+msgid "Stop loading"
+msgstr ""
