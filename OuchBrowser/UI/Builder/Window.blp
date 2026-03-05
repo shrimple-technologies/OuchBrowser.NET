@@ -223,6 +223,16 @@ Adw.TabOverview overview {
 															tooltip-text: bind template.item as <Adw.TabPage>.keyword;
 														}
 													};
+
+													end-widget: Button {
+														icon-name: "window-close-symbolic";
+														halign: center;
+														valign: center;
+														margin-start: 2;
+														visible: bind template.item as <Adw.TabPage>.selected;
+														tooltip-text: _("Close tab");
+														styles ["flat", "circular", "tab-close"]
+													};
 												};
 											}
 										};

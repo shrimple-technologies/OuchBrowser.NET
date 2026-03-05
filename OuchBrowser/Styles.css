@@ -28,14 +28,16 @@ toggle-group > separator {
 	font-weight: 500;
 }
 
-.reset-font-weight {
-	font-weight: 400;
-}
-
 .font-medium {
 	font-weight: 500;
 }
 
 .new-tab {
 	padding-left: 8px;
+}
+
+.tab-close {
+	min-height: 24px;
+	min-width: 24px;
+	padding: 0;
 }
