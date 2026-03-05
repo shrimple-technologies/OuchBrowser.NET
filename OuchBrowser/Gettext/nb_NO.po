@@ -65,7 +65,7 @@ msgid "Archive"
 msgstr "Arkiv"
 
 #: OuchBrowser/UI/Builder/Window.blp:271
-msgid "New..."
+msgid "New…"
 msgstr "Ny …"
 
 #: OuchBrowser/UI/Builder/Window.blp:299
@@ -73,7 +73,7 @@ msgid "Show sidebar"
 msgstr ""
 
 #: OuchBrowser/UI/Builder/Window.blp:374
-msgid "Search or enter URL..."
+msgid "Search or enter URL…"
 msgstr ""
 
 #: OuchBrowser/UI/Builder/Window.blp:434

@@ -45,7 +45,7 @@
 	</keywords>
 	<update_contact>mdwalters.pm@proton.me</update_contact>
 	<description>
-		<p>Ouch Browser isn't just another web browser, it's a whole new look on the web, with a modern look and feel, and a emphasis on productivity.</p>
+		<p>Ouch Browser isn’t just another web browser, it’s a whole new look on the web, with a modern look and feel, and a emphasis on productivity.</p>
 		<p>NOTE: This is the C# rewrite, which is constantly evolving, and may be less stable than the original codebase.</p>
 	</description>
 	<provides>
