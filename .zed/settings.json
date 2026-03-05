@@ -1,5 +1,9 @@
 {
-  "tab_size": 4,
-  "hard_tabs": true,
-  "disable_ai": true,
+	"tab_size": 4,
+	"hard_tabs": true,
+	"disable_ai": true,
+	"file_types": {
+		"XML": ["csproj"],
+		"ini": ["desktop"],
+	},
 }
