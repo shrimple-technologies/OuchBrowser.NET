@@ -44,7 +44,7 @@ public class Window
 		{
 			string query = entry.GetBuffer().GetText();
 
-			if (query == "") query = window.settings!.GetString("homepage");
+			if (query == "") return;
 
 			if (palette_state == "new_tab")
 			{
