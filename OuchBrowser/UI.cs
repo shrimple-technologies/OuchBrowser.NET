@@ -53,6 +53,8 @@ public class Window : Adw.ApplicationWindow
 		SetupHoverController(hover_controller_topbar);
 		SetupHoverController(hover_controller_headerbar);
 
+		AddBreakpoint(SetupBreakpoint());
+
 		Maximized = true;
 		DefaultWidth = 1000;
 		DefaultHeight = 600;
@@ -71,5 +73,32 @@ public class Window : Adw.ApplicationWindow
 		{
 			content_toolbar!.SetRevealTopBars(false);
 		};
+	}
+
+	private Breakpoint SetupBreakpoint()
+	{
+		// equivalent to condition ("max-width: 600sp") in blueprint
+		BreakpointCondition condition = BreakpointCondition.NewLength(
+			BreakpointConditionLengthType.MaxWidth,
+			600,
+			LengthUnit.Sp
+		);
+		Breakpoint breakpoint = Breakpoint.New(condition);
+
+		GObject.Value boolean = new GObject.Value();
+		GObject.Value number = new GObject.Value();
+		boolean.Init(GObject.Type.Boolean);
+		number.Init(GObject.Type.Int);
+
+		boolean.SetBoolean(true);
+		breakpoint.AddSetter(osv!, "collapsed", boolean);
+
+		number.SetInt(10);
+		breakpoint.AddSetter(frame!, "margin-start", number);
+
+		number.SetInt(0);
+		breakpoint.AddSetter(frame!, "margin-bottom", number);
+
+		return breakpoint;
 	}
 }

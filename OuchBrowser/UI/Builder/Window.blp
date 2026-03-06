@@ -226,12 +226,16 @@ Adw.TabOverview overview {
 
 													end-widget: Button {
 														icon-name: "window-close-symbolic";
-														halign: center;
 														valign: center;
 														margin-start: 2;
 														visible: bind template.item as <Adw.TabPage>.selected;
-														tooltip-text: _("Close tab");
-														styles ["flat", "circular", "tab-close"]
+														tooltip-text: _("Close Tab");
+
+														styles [
+															"flat",
+															"circular",
+															"tab-close",
+														]
 													};
 												};
 											}
@@ -297,6 +301,7 @@ Adw.TabOverview overview {
 
 					Adw.ToolbarView content_toolbar {
 						reveal-top-bars: false;
+						reveal-bottom-bars: bind osv.collapsed;
 
 						[top]
 						Adw.HeaderBar content_headerbar {
@@ -307,6 +312,80 @@ Adw.TabOverview overview {
 								icon-name: "sidebar-show-symbolic";
 								tooltip-text: _("Show sidebar");
 								visible: bind osv.show-sidebar inverted;
+
+								styles [
+									"flat",
+								]
+							}
+						}
+
+						[bottom]
+						Box {
+							orientation: horizontal;
+							margin-top: 10;
+							margin-bottom: 10;
+							margin-start: 10;
+							margin-end: 10;
+							spacing: 5;
+
+							Button {
+								icon-name: "go-previous-symbolic";
+								tooltip-text: _("Back");
+								action-name: "win.go-back";
+
+								styles [
+									"flat",
+								]
+							}
+
+							Box {
+								orientation: horizontal;
+
+								styles [
+									"linked",
+								]
+
+								Adw.TabButton {
+									view: view;
+									action-name: "overview.open";
+								}
+
+								Button {
+									icon-name: "view-refresh-symbolic";
+									tooltip-text: _("Refresh");
+									action-name: "win.refresh";
+								}
+
+								Button {
+									hexpand: true;
+									sensitive: false;
+									action-name: "win.palette";
+
+									Label {
+										label: "example.com";
+										margin-start: 6;
+										margin-end: 6;
+										ellipsize: end;
+										tooltip-text: _("Reveal command palette");
+
+										styles [
+											"font-medium",
+											"dimmed",
+										]
+									}
+								}
+
+								Button {
+									icon-name: "tab-new-symbolic";
+									action-name: "win.palette-new";
+									tooltip-text: _("New tab");
+								}
+							}
+
+							Button {
+								icon-name: "go-next-symbolic";
+								tooltip-text: _("Forward");
+								action-name: "win.go-forward";
 
 								styles [
 									"flat",
