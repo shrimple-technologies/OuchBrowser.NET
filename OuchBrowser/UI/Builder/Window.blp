@@ -33,7 +33,7 @@ Adw.TabOverview overview {
 								ToggleButton sidebar_toggle {
 									active: true;
 									icon-name: "sidebar-show-symbolic";
-									tooltip-text: _("Hide sidebar");
+									tooltip-text: _("Hide Sidebar");
 									sensitive: false;
 
 									styles [
@@ -108,7 +108,7 @@ Adw.TabOverview overview {
 										margin-start: 6;
 										margin-end: 6;
 										ellipsize: end;
-										tooltip-text: _("Reveal command palette");
+										tooltip-text: _("Reveal Command Palette");
 
 										styles [
 											"font-medium",
@@ -172,7 +172,7 @@ Adw.TabOverview overview {
 									}
 
 									Label {
-										label: _("New tab");
+										label: _("New Tab");
 
 										styles [
 											"dimmed",
@@ -310,7 +310,7 @@ Adw.TabOverview overview {
 							[start]
 							Button content_sidebar_toggle {
 								icon-name: "sidebar-show-symbolic";
-								tooltip-text: _("Show sidebar");
+								tooltip-text: _("Show Sidebar");
 								visible: bind osv.show-sidebar inverted;
 
 								styles [
@@ -366,7 +366,7 @@ Adw.TabOverview overview {
 										margin-start: 6;
 										margin-end: 6;
 										ellipsize: end;
-										tooltip-text: _("Reveal command palette");
+										tooltip-text: _("Reveal Command Palette");
 
 										styles [
 											"font-medium",
@@ -378,7 +378,7 @@ Adw.TabOverview overview {
 								Button {
 									icon-name: "tab-new-symbolic";
 									action-name: "win.palette-new";
-									tooltip-text: _("New tab");
+									tooltip-text: _("New Tab");
 								}
 							}
 
@@ -558,14 +558,14 @@ menu archive_menu {
 	}
 
 	section {
-		item (_("Show all tabs"), "overview.open")
+		item (_("Show All Tabs"), "overview.open")
 	}
 
 	section {
 		submenu {
 			label: _("More");
 			item (_("Preferences"), "win.preferences")
-			item (_("Plugins manager"))
+			item (_("Plugins Manager"))
 
 			section {
 				item (_("About Ouch Browser"), "win.about")
@@ -576,11 +576,11 @@ menu archive_menu {
 
 menu new_menu {
 	section {
-		item (_("New room"))
-		item (_("New folder"))
+		item (_("New Room"))
+		item (_("New Folder"))
 	}
 
 	section {
-		item (_("New tab"), "win.palette-new")
+		item (_("New Tab"), "win.palette-new")
 	}
 }
