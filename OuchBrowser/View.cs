@@ -20,10 +20,9 @@ public class View
 		Settings settings = Settings.New();
 
 		settings.SetDefaultFontFamily("serif");
-		settings.SetSansSerifFontFamily("Adwaita Sans");
+		settings.SetSansSerifFontFamily("Noto Sans");
 		settings.SetSerifFontFamily("Noto Serif");
-		settings.SetMonospaceFontFamily("Adwaita Mono");
-		settings.SetEnableBackForwardNavigationGestures(true);
+		settings.SetMonospaceFontFamily("Noto Mono");
 		settings.SetEnableDeveloperExtras(true);
 
 		return settings;
@@ -36,6 +35,7 @@ public class View
 
 		webview.SetSettings(settings);
 		webview.LoadUri(url);
+		webview.SetZoomLevel(Window.settings.GetInt("zoom"));
 		TabPage page;
 
 		if (pinned)
