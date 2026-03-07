@@ -4,6 +4,8 @@ PREFIX := "/usr"
 ID := "site.srht.shrimple.OuchBrowser"
 BLUEPRINT_FILES := "OuchBrowser/UI/Builder/Window.blp OuchBrowser/UI/Builder/Preferences.blp OuchBrowser/UI/Builder/About.blp"
 
+alias fmt := format
+
 run: build-blueprint compile-resources
 	dotnet run --project OuchBrowser
 	
@@ -13,10 +15,11 @@ build: build-blueprint compile-resources
 publish: build-blueprint compile-resources
 	dotnet publish OuchBrowser -c Release
 
-fmt:
+format:
 	blueprint-compiler format -f -t -s 4 {{ BLUEPRINT_FILES }}
 	dotnet format
-	
+
+# compiles all blueprint files
 [group("build")]
 build-blueprint:
 	blueprint-compiler batch-compile \
@@ -24,36 +27,41 @@ build-blueprint:
 		OuchBrowser/UI/Builder \
 		{{ BLUEPRINT_FILES }}
 
+# compiles gresources for icons and other miscellaneous assets
 [group("build")]
 compile-resources:
-	@glib-compile-resources \
+	glib-compile-resources \
 		--sourcedir OuchBrowser \
 		--target=OuchBrowser/OuchBrowser.app.gresource \
 		OuchBrowser/OuchBrowser.gresource.xml
 
+# builds an release flatpak file for distribution
 [group("build")]
 build-flatpak:
-	@flatpak-builder \
+	flatpak-builder \
 		--force-clean \
 		--user \
 		--repo=.build/repo \
 		.build \
 		{{ ID }}.json
-	@flatpak build-bundle \
+	flatpak build-bundle \
 		.build/repo \
 		{{ ID }}.flatpak \
 		{{ ID }} \
 		--runtime-repo=https://flathub.org/repo/flathub.flatpakrepo
+	rm -rf .flatpak-builder .repo
 
+# compiles gsettings schemas
 [group("build")]
 build-schemas:
-	@mkdir -p {{ PREFIX }}/share/glib-2.0/schemas
-	@cp OuchBrowser/OuchBrowser.gschema.xml {{ PREFIX }}/share/glib-2.0/schemas
-	@glib-compile-schemas \
+	mkdir -p {{ PREFIX }}/share/glib-2.0/schemas
+	cp OuchBrowser/OuchBrowser.gschema.xml {{ PREFIX }}/share/glib-2.0/schemas
+	glib-compile-schemas \
 		{{ PREFIX }}/share/glib-2.0/schemas \
 		>/dev/null 2>/dev/null
-		
+
+# compiles translations and installs them
 [group("build")]
 build-translations:
-	@mkdir -p {{ PREFIX }}/share/locale/pt_BR/LC_MESSAGES
-	@msgfmt -o {{ PREFIX }}/share/locale/pt_BR/LC_MESSAGES/OuchBrowser.mo OuchBrowser/Gettext/pt_BR.po
+	mkdir -p {{ PREFIX }}/share/locale/pt_BR/LC_MESSAGES
+	msgfmt -o {{ PREFIX }}/share/locale/pt_BR/LC_MESSAGES/OuchBrowser.mo OuchBrowser/Gettext/pt_BR.po
