@@ -25,7 +25,7 @@ Adw.TabOverview overview {
 							start-widget: Box {
 								orientation: horizontal;
 								spacing: 6;
-								
+
 								WindowControls left_controls {
 									side: start;
 								}
@@ -372,12 +372,6 @@ Adw.TabOverview overview {
 								}
 
 								Button {
-									icon-name: "view-refresh-symbolic";
-									tooltip-text: _("Refresh");
-									action-name: "win.refresh";
-								}
-
-								Button {
 									hexpand: true;
 									sensitive: false;
 									action-name: "win.palette";
@@ -397,9 +391,9 @@ Adw.TabOverview overview {
 								}
 
 								Button {
-									icon-name: "tab-new-symbolic";
-									action-name: "win.palette-new";
-									tooltip-text: _("New Tab");
+									icon-name: "view-refresh-symbolic";
+									tooltip-text: _("Refresh");
+									action-name: "win.refresh";
 								}
 							}
 
