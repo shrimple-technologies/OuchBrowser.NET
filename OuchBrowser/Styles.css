@@ -43,5 +43,5 @@ toggle-group > separator {
 }
 
 .top-bar.raised {
-	background: hsl(from var(--window-bg-color) h s l / 0.95);
+	background: var(--window-bg-color);
 }
