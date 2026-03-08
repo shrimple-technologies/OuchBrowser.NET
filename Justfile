@@ -57,8 +57,7 @@ build-schemas:
 	mkdir -p {{ PREFIX }}/share/glib-2.0/schemas
 	cp OuchBrowser/OuchBrowser.gschema.xml {{ PREFIX }}/share/glib-2.0/schemas
 	glib-compile-schemas \
-		{{ PREFIX }}/share/glib-2.0/schemas \
-		>/dev/null 2>/dev/null
+		{{ PREFIX }}/share/glib-2.0/schemas
 
 # compiles translations and installs them
 [group("build")]
