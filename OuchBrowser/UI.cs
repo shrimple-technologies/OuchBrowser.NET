@@ -55,7 +55,7 @@ public class Window : Adw.ApplicationWindow
 
 		AddBreakpoint(SetupBreakpoint());
 
-		Maximized = true;
+		Maximized = settings.GetBoolean("maximized");
 		DefaultWidth = 1000;
 		DefaultHeight = 600;
 		WidthRequest = 350;

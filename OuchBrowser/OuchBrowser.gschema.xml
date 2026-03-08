@@ -37,5 +37,13 @@
 				This value is the zoom level of the browser.
 			</description>
 		</key>
+
+		<key type="b" name="maximized">
+			<default>true</default>
+			<summary>Maximized?</summary>
+			<description>
+				This value is whether the window is maximized or not.
+			</description>
+		</key>
 	</schema>
 </schemalist>
