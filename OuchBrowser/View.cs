@@ -35,7 +35,7 @@ public class View
 
 		webview.SetSettings(settings);
 		webview.LoadUri(url);
-		webview.SetZoomLevel(Window.settings.GetInt("zoom"));
+		webview.SetZoomLevel(Window.settings.GetDouble("zoom"));
 		TabPage page;
 
 		if (pinned)

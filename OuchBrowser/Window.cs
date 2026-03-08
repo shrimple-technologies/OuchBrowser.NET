@@ -392,6 +392,13 @@ public class Window
 					window.toast_overlay!.AddToast(toast);
 					break;
 				case 1.25: // 125%
+					webview.SetZoomLevel(1.1); // 400%
+					toast.SetTitle("110%");
+					toast.SetTimeout(1);
+					window.toast_overlay!.DismissAll();
+					window.toast_overlay!.AddToast(toast);
+					break;
+				case 1.1: // 125%
 					webview.SetZoomLevel(1); // 400%
 					toast.SetTitle("100%");
 					toast.SetTimeout(1);

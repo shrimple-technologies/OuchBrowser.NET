@@ -29,29 +29,9 @@
 			</description>
 		</key>
 
-		<key type="i" name="zoom">
-			<choices>
-				<choice value="25" />
-				<choice value="33" />
-				<choice value="50" />
-				<choice value="67" />
-				<choice value="75" />
-				<choice value="80" />
-				<choice value="90" />
-				<choice value="100" />
-				<choice value="110" />
-				<choice value="125" />
-				<choice value="150" />
-				<choice value="175" />
-				<choice value="175" />
-				<choice value="200" />
-				<choice value="250" />
-				<choice value="300" />
-				<choice value="400" />
-				<choice value="500" />
-			</choices>
-
-			<default>100</default>
+		<key type="d" name="zoom">
+			<range min="0.25" max="5.0" />
+			<default>1.0</default>
 			<summary>Zoom</summary>
 			<description>
 				This value is the zoom level of the browser.
