@@ -90,7 +90,7 @@
 				"just compile-resources",
 				"just PREFIX=${FLATPAK_DEST} build-translations",
 				"just PREFIX=${FLATPAK_DEST} build-schemas",
-				"dotnet publish OuchBrowser -c Release -o /app/bin --source ./nuget-sources",
+				"dotnet publish OuchBrowser -c Release -o ${FLATPAK_DEST}/bin --source ./nuget-sources",
 				
 				"install -Dm644 OuchBrowser/Icons/Symbolic/${FLATPAK_ID}-symbolic.svg --target-directory ${FLATPAK_DEST}/share/icons/hicolor/symbolic/apps/",
 				"install -Dm644 OuchBrowser/Icons/Hicolor/${FLATPAK_ID}.svg --target-directory ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/",
