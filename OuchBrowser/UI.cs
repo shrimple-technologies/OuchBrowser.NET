@@ -27,6 +27,7 @@ public class Window : Adw.ApplicationWindow
 	[Connect] public readonly Button? go_back;
 	[Connect] public readonly Button? go_forward;
 	[Connect] public readonly Button? refresh;
+	[Connect] public readonly WindowControls? left_controls;
 
 	public Window(Adw.Application app) : base()
 	{
@@ -55,6 +56,12 @@ public class Window : Adw.ApplicationWindow
 
 		AddBreakpoint(SetupBreakpoint());
 
+		left_controls!.SetVisible(!left_controls!.GetEmpty());
+		left_controls!.OnNotify += (_, args) =>
+		{
+			if (args.Pspec.GetName() == "empty") left_controls!.SetVisible(!left_controls!.GetEmpty());
+		};
+
 		Maximized = settings.GetBoolean("maximized");
 		DefaultWidth = 1000;
 		DefaultHeight = 600;
@@ -67,7 +74,7 @@ public class Window : Adw.ApplicationWindow
 	{
 		controller.OnEnter += (_, _) =>
 		{
-			content_toolbar!.SetRevealTopBars(true);
+			content_toolbar!.SetRevealTopBars(!(left_controls!.GetEmpty() == false && osv!.GetShowSidebar() == true));
 		};
 		controller.OnLeave += (_, _) =>
 		{

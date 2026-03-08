@@ -41,3 +41,7 @@ toggle-group > separator {
 	min-width: 24px;
 	padding: 0;
 }
+
+.top-bar {
+	background: hsl(from var(--window-bg-color) h s l / 0.95);
+}

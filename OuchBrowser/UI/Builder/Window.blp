@@ -20,21 +20,32 @@ Adw.TabOverview overview {
 						CenterBox {
 							margin-top: 6;
 							margin-start: 6;
+							margin-bottom: 6;
 
 							start-widget: Box {
 								orientation: horizontal;
-								// spacing: 5;
-								// TODO: support window controls on the left
-								// side
-
-								/* WindowControls {
+								spacing: 6;
+								
+								WindowControls left_controls {
 									side: start;
-								} */
+								}
+
+								MenuButton {
+									icon-name: "site.srht.shrimple.OuchBrowser-symbolic";
+									tooltip-text: _("Menu");
+									menu-model: main_menu;
+
+									styles [
+										"flat",
+									]
+								}
+
 								ToggleButton sidebar_toggle {
 									active: true;
 									icon-name: "sidebar-show-symbolic";
 									tooltip-text: _("Hide Sidebar");
 									sensitive: false;
+									margin-end: 6;
 
 									styles [
 										"flat",
@@ -105,8 +116,6 @@ Adw.TabOverview overview {
 
 									Label hostname {
 										label: "";
-										margin-start: 6;
-										margin-end: 6;
 										ellipsize: end;
 										tooltip-text: _("Reveal Command Palette");
 
@@ -302,6 +311,8 @@ Adw.TabOverview overview {
 					Adw.ToolbarView content_toolbar {
 						reveal-top-bars: false;
 						reveal-bottom-bars: bind osv.collapsed;
+						top-bar-style: raised;
+						extend-content-to-top-edge: true;
 
 						[top]
 						Adw.HeaderBar content_headerbar {
@@ -556,31 +567,31 @@ menu archive_menu {
 		item (_("History"))
 		item (_("Downloads"))
 	}
-
-	section {
-		item (_("Show All Tabs"), "overview.open")
-	}
-
-	section {
-		submenu {
-			label: _("More");
-			item (_("Preferences"), "win.preferences")
-			item (_("Plugins Manager"))
-
-			section {
-				item (_("About Ouch Browser"), "win.about")
-			}
-		}
-	}
 }
 
 menu new_menu {
 	section {
+		label: _("New…");
 		item (_("New Room"))
 		item (_("New Folder"))
 	}
 
 	section {
 		item (_("New Tab"), "win.palette-new")
+	}
+}
+
+menu main_menu {
+	section {
+		item (_("Show All Tabs"), "overview.open")
+	}
+
+	section {
+		item (_("Preferences"), "win.preferences")
+		item (_("Plugins Manager"))
+
+		section {
+			item (_("About Ouch Browser"), "win.about")
+		}
 	}
 }
