@@ -49,7 +49,7 @@ build-flatpak:
 		{{ ID }}.flatpak \
 		{{ ID }} \
 		--runtime-repo=https://flathub.org/repo/flathub.flatpakrepo
-	rm -rf .flatpak-builder .repo
+	rm -rf .flatpak-builder .repo .build
 
 # compiles gsettings schemas
 [group("build")]
