@@ -123,6 +123,8 @@ public class View
 					window.refresh!.SetSensitive(true);
 					window.refresh!.SetTooltipText(window.gettext.GetString("Stop loading"));
 					window.url_button!.SetSensitive(true);
+					window.copy_link!.SetSensitive(true);
+					window.website_settings!.SetSensitive(true);
 					window.sidebar_toggle!.SetSensitive(true);
 					window.refresh!.SetIconName("cross-large-symbolic");
 					page.SetLoading(true);

@@ -45,3 +45,7 @@ toggle-group > separator {
 .top-bar.raised {
 	background: var(--window-bg-color);
 }
+
+.website-settings > contents {
+	border-radius: 20px;
+}

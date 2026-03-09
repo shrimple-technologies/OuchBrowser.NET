@@ -105,10 +105,7 @@ Adw.TabOverview overview {
 								orientation: horizontal;
 								margin-start: 10;
 								margin-end: 10;
-								// Button copy_link_button {
-								// 	icon-name: "chain-link-loose-symbolic";
-								// 	tooltip-text: _("Copy link");
-								// }
+
 								Button url_button {
 									hexpand: true;
 									sensitive: false;
@@ -126,20 +123,34 @@ Adw.TabOverview overview {
 									}
 								}
 
-								Button {
+								Button copy_link {
 									icon-name: "chain-link-loose-symbolic";
 									tooltip-text: _("Copy Link");
+									action-name: "win.copy-link";
 								}
 
-								Button {
+								MenuButton website_settings {
 									icon-name: "sliders-horizontal-symbolic";
 									tooltip-text: _("Website Settings");
+
+									popover: Popover {
+										width-request: 300;
+
+										styles [
+											"website-settings",
+										]
+
+										Adw.StatusPage {
+											icon-name: "sliders-horizontal-symbolic";
+											title: _("No Website Settings Available");
+
+											styles [
+												"compact",
+											]
+										}
+									};
 								}
 
-								// Button {
-								// 	icon-name: "sliders-horizontal-symbolic";
-								// 	tooltip-text: _("Website settings");
-								// }
 								styles [
 									"linked",
 								]
@@ -249,6 +260,7 @@ Adw.TabOverview overview {
 														margin-start: 2;
 														visible: bind template.item as <Adw.TabPage>.selected;
 														tooltip-text: _("Close Tab");
+														action-name: "win.tab-close";
 
 														styles [
 															"flat",
@@ -297,11 +309,12 @@ Adw.TabOverview overview {
 									name: "space-2";
 								}
 							}; */
-							end-widget: MenuButton {
+							end-widget: Adw.SplitButton {
 								icon-name: "tab-new-symbolic";
 								tooltip-text: _("New…");
 								margin-end: 10;
 								menu-model: new_menu;
+								action-name: "win.palette-new";
 
 								styles [
 									"flat",

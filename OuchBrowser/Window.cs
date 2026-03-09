@@ -27,6 +27,9 @@ public class Window
 		window.go_back!.SetSensitive(false);
 		window.go_forward!.SetSensitive(false);
 		window.refresh!.SetSensitive(false);
+		window.copy_link!.SetSensitive(false);
+		window.url_button!.SetSensitive(false);
+		window.website_settings!.SetSensitive(false);
 
 		// TODO: maybe make this a little bit less "hacky?"
 		window.content_sidebar_toggle!.OnClicked += (_, _) =>
@@ -479,6 +482,8 @@ public class Window
 					window.go_back!.SetSensitive(false);
 					window.go_forward!.SetSensitive(false);
 					window.url_button!.SetSensitive(false);
+					window.copy_link!.SetSensitive(false);
+					window.website_settings!.SetSensitive(false);
 					window.sidebar_toggle!.SetSensitive(false);
 					window.sidebar_toggle!.SetActive(true);
 					window.hostname!.SetLabel("");
@@ -503,6 +508,27 @@ public class Window
 
 			TabPage page = window.view!.GetSelectedPage()!;
 			WebView webview = (WebView)page.Child!;
+
+			webview.GoForward();
+		});
+
+		actions.AddAction("copy-link", ["<Ctrl><Shift>c"], (_, _) =>
+		{
+			if (window.view!.GetNPages() == 0) return;
+
+			TabPage page = window.view!.GetSelectedPage()!;
+			WebView webview = (WebView)page.Child!;
+			Toast toast = Toast.New("");
+
+			string uri = webview.GetUri();
+			Gdk.Display display = Gdk.Display.GetDefault()!;
+			Gdk.Clipboard clipboard = display!.GetClipboard();
+			clipboard.SetText(uri);
+
+			toast.SetTitle(window.gettext.GetString("Link copied"));
+			toast.SetTimeout(1);
+			window.toast_overlay!.DismissAll();
+			window.toast_overlay!.AddToast(toast);
 
 			webview.GoForward();
 		});

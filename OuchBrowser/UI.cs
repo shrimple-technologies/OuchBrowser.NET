@@ -28,6 +28,8 @@ public class Window : Adw.ApplicationWindow
 	[Connect] public readonly Button? go_forward;
 	[Connect] public readonly Button? refresh;
 	[Connect] public readonly WindowControls? left_controls;
+	[Connect] public readonly Button? copy_link;
+	[Connect] public readonly MenuButton? website_settings;
 
 	public Window(Adw.Application app) : base()
 	{
