@@ -1,0 +1,24 @@
+when:
+  - event: ["push", "manual"]
+    branch: ["main"]
+  - event: ["pull_request"]
+    branch: ["main"]
+
+engine: "nixery"
+
+clone:
+  skip: false
+  depth: 1
+  submodules: false
+
+dependencies:
+  nixpkgs:
+    - flatpak
+    - flatpak-builder
+    - just
+
+steps:
+  - name: "install gnome sdk and runtime"
+    command: "flatpak install org.gnome.Sdk//49 org.gnome.Platform//49"
+  - name: "build flatpak"
+    command: "just build-flatpak"
