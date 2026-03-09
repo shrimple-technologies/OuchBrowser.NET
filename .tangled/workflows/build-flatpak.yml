@@ -19,8 +19,8 @@ dependencies:
 
 steps:
   - name: "install flathub repo"
-    command: "flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo"
+    command: "flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo"
   - name: "install gnome sdk and runtime"
-    command: "flatpak install org.gnome.Sdk//49 org.gnome.Platform//49 -y"
+    command: "flatpak install org.gnome.Sdk//49 org.gnome.Platform//49 --user -y"
   - name: "build flatpak"
     command: "just build-flatpak"
