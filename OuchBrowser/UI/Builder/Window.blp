@@ -51,7 +51,7 @@ Adw.TabOverview overview {
 											styles [
 												"popover-menu",
 											]
-
+											
 											Button {
 												hexpand: true;
 												focus-on-click: false;
@@ -908,41 +908,6 @@ Adw.Dialog url_dialog {
 					}
 				};
 			}
-		}
-	}
-}
-
-menu archive_menu {
-	section {
-		label: _("Archive");
-		item (_("History"))
-		item (_("Downloads"))
-	}
-}
-
-menu new_menu {
-	section {
-		label: _("New…");
-		item (_("New Room"))
-		item (_("New Folder"))
-	}
-
-	section {
-		item (_("New Tab"), "win.palette-new")
-	}
-}
-
-menu main_menu {
-	section {
-		item (_("Show All Tabs"), "overview.open")
-	}
-
-	section {
-		item (_("Preferences"), "win.preferences")
-		item (_("Plugins Manager"))
-
-		section {
-			item (_("About Ouch Browser"), "win.about")
 		}
 	}
 }
