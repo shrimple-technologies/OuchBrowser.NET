@@ -33,8 +33,135 @@ Adw.TabOverview overview {
 								MenuButton {
 									icon-name: "site.srht.shrimple.OuchBrowser-symbolic";
 									tooltip-text: _("Menu");
-									menu-model: main_menu;
 									focus-on-click: false;
+
+									popover: Popover {
+										styles [
+											"background",
+											"menu",
+										]
+
+										Box {
+											orientation: vertical;
+											margin-top: 6;
+											margin-bottom: 6;
+											margin-start: 6;
+											margin-end: 6;
+
+											styles [
+												"popover-menu",
+											]
+
+											Button {
+												hexpand: true;
+												focus-on-click: false;
+												action-name: "overview.open";
+
+												Box {
+													halign: start;
+													spacing: 10;
+
+													Image {
+														icon-name: "view-grid-symbolic";
+													}
+
+													Label {
+														label: _("Show All Tabs");
+													}
+												}
+
+												styles [
+													"body",
+													"flat",
+												]
+											}
+
+											Separator {
+												orientation: horizontal;
+											}
+
+											Button {
+												hexpand: true;
+												focus-on-click: false;
+												action-name: "win.preferences";
+
+												CenterBox {
+													start-widget: Box {
+														halign: start;
+														spacing: 10;
+
+														Image {
+															icon-name: "preferences-symbolic";
+														}
+
+														Label {
+															label: _("Preferences");
+														}
+													};
+
+													end-widget: Label {
+														label: "Ctrl+,";
+
+														styles [
+															"dimmed",
+														]
+													};
+												}
+
+												styles [
+													"body",
+													"flat",
+												]
+											}
+
+											Button {
+												hexpand: true;
+												focus-on-click: false;
+
+												Box {
+													halign: start;
+													spacing: 10;
+
+													Image {
+														icon-name: "puzzle-piece-symbolic";
+													}
+
+													Label {
+														label: _("Plugins Manager");
+													}
+												}
+
+												styles [
+													"body",
+													"flat",
+												]
+											}
+
+											Button {
+												hexpand: true;
+												focus-on-click: false;
+												action-name: "win.about";
+
+												Box {
+													halign: start;
+													spacing: 10;
+
+													Image {
+														icon-name: "site.srht.shrimple.OuchBrowser-symbolic";
+													}
+
+													Label {
+														label: _("About Ouch Browser");
+													}
+												}
+
+												styles [
+													"body",
+													"flat",
+												]
+											}
+										}
+									};
 
 									styles [
 										"flat",
@@ -299,8 +426,72 @@ Adw.TabOverview overview {
 							start-widget: MenuButton {
 								icon-name: "shoe-box-symbolic";
 								tooltip-text: _("Archive");
-								menu-model: archive_menu;
 								focus-on-click: false;
+
+								popover: Popover {
+									styles [
+										"background",
+										"menu",
+									]
+
+									Box {
+										orientation: vertical;
+										margin-top: 6;
+										margin-bottom: 6;
+										margin-start: 6;
+										margin-end: 6;
+
+										styles [
+											"popover-menu",
+										]
+
+										Button {
+											hexpand: true;
+											focus-on-click: false;
+
+											Box {
+												halign: start;
+												spacing: 10;
+
+												Image {
+													icon-name: "history-symbolic";
+												}
+
+												Label {
+													label: _("History");
+												}
+											}
+
+											styles [
+												"body",
+												"flat",
+											]
+										}
+
+										Button {
+											hexpand: true;
+											focus-on-click: false;
+
+											Box {
+												halign: start;
+												spacing: 10;
+
+												Image {
+													icon-name: "folder-download-symbolic";
+												}
+
+												Label {
+													label: _("Downloads");
+												}
+											}
+
+											styles [
+												"body",
+												"flat",
+											]
+										}
+									}
+								};
 
 								styles [
 									"flat",
@@ -342,9 +533,111 @@ Adw.TabOverview overview {
 								}
 
 								MenuButton {
-									menu-model: new_menu;
 									tooltip-text: _("New…");
 									focus-on-click: false;
+
+									popover: Popover {
+										styles [
+											"background",
+											"menu",
+										]
+
+										Box {
+											orientation: vertical;
+											margin-top: 6;
+											margin-bottom: 6;
+											margin-start: 6;
+											margin-end: 6;
+
+											styles [
+												"popover-menu",
+											]
+
+											Button {
+												hexpand: true;
+												focus-on-click: false;
+
+												Box {
+													halign: start;
+													spacing: 10;
+
+													Image {
+														icon-name: "multitasking-symbolic";
+													}
+
+													Label {
+														label: _("New Room");
+													}
+												}
+
+												styles [
+													"body",
+													"flat",
+												]
+											}
+
+											Button {
+												hexpand: true;
+												focus-on-click: false;
+
+												Box {
+													halign: start;
+													spacing: 10;
+
+													Image {
+														icon-name: "folder-symbolic";
+													}
+
+													Label {
+														label: _("New Folder");
+													}
+												}
+
+												styles [
+													"body",
+													"flat",
+												]
+											}
+
+											Separator {
+												orientation: horizontal;
+											}
+
+											Button {
+												hexpand: true;
+												focus-on-click: false;
+												action-name: "win.palette-new";
+
+												CenterBox {
+													start-widget: Box {
+														halign: start;
+														spacing: 10;
+
+														Image {
+															icon-name: "tab-new-symbolic";
+														}
+
+														Label {
+															label: _("New Tab");
+														}
+													};
+
+													end-widget: Label {
+														label: "Ctrl+T";
+
+														styles [
+															"dimmed",
+														]
+													};
+												}
+
+												styles [
+													"body",
+													"flat",
+												]
+											}
+										}
+									};
 
 									Image {
 										icon-name: "pan-down-symbolic";

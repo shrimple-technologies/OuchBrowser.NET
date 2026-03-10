@@ -22,6 +22,22 @@
 		>Icons/Symbolic/dot-symbolic.svg</file>
 		<file
 			preprocess="xml-stripblanks"
+			alias="history-symbolic.svg"
+		>Icons/Symbolic/history-symbolic.svg</file>
+		<file
+			preprocess="xml-stripblanks"
+			alias="multitasking-symbolic.svg"
+		>Icons/Symbolic/multitasking-symbolic.svg</file>
+		<file
+			preprocess="xml-stripblanks"
+			alias="preferences-symbolic.svg"
+		>Icons/Symbolic/preferences-symbolic.svg</file>
+		<file
+			preprocess="xml-stripblanks"
+			alias="puzzle-piece-symbolic.svg"
+		>Icons/Symbolic/puzzle-piece-symbolic.svg</file>
+		<file
+			preprocess="xml-stripblanks"
 			alias="shoe-box-symbolic.svg"
 		>Icons/Symbolic/shoe-box-symbolic.svg</file>
 		<file

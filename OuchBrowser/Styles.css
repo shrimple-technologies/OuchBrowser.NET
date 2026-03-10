@@ -50,3 +50,7 @@ toggle-group > separator {
 .website-settings > contents {
 	border-radius: 20px;
 }
+
+.popover-menu > button {
+	transition: none;
+}
