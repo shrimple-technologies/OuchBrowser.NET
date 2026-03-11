@@ -20,5 +20,6 @@ A rewrite of Ouch Browser to C#.
 > OuchBrowser.NET.
 
 ```sh
+git clone --recurse-submodules https://tangled.org/shrimple.srht.site/OuchBrowser.NET
 just run
 ```

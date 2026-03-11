@@ -21,6 +21,7 @@ public class Window
 		var preferences = Preferences.New();
 		var about = About.New();
 		var view = new View(window.view!, window!);
+		var bangs = new Bangs(window.settings.GetString("search-engine"));
 
 		SetupActions(window, application, preferences, about);
 
@@ -69,7 +70,14 @@ public class Window
 				}
 				else
 				{
-					view.AddTab($"{window.settings!.GetString("search-engine")}{query}", false);
+					if (query.StartsWith('!'))
+					{
+						view.AddTab(bangs.ExpandBang(query), false);
+					}
+					else
+					{
+						view.AddTab($"{window.settings!.GetString("search-engine")}{query}", false);
+					}
 				}
 			}
 			else
@@ -80,6 +88,7 @@ public class Window
 				Console.WriteLine($"url: {query}");
 				Console.WriteLine($"isURL: {Url.IsUrl(query)}");
 				Console.WriteLine($"starts with https or http: {query.StartsWith("https://") || query.StartsWith("http://")}");
+				Console.WriteLine($"is bang: {query.StartsWith('!')}");
 				Console.WriteLine("");
 
 				if (Url.IsUrl(query))
@@ -95,7 +104,14 @@ public class Window
 				}
 				else
 				{
-					webview.LoadUri($"{window.settings!.GetString("search-engine")}{query}");
+					if (query.StartsWith('!'))
+					{
+						webview.LoadUri(bangs.ExpandBang(query));
+					}
+					else
+					{
+						webview.LoadUri($"{window.settings!.GetString("search-engine")}{query}");
+					}
 				}
 			}
 

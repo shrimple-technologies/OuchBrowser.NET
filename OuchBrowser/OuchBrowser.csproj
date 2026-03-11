@@ -43,6 +43,9 @@
 		<EmbeddedResource Include="UI\Builder\About.ui" LogicalName="UI\About.ui" />
 		<EmbeddedResource Include="UI\Builder\Preferences.ui" LogicalName="UI\Preferences.ui" />
 		<EmbeddedResource Include="UI\Builder\Window.ui" LogicalName="UI\Window.ui" />
+		
+		<!-- Bangs (via Kagi) -->
+		<EmbeddedResource Include="Bangs\data\bangs.json" LogicalName="Bangs.json" />
 	</ItemGroup>
 
 	<ItemGroup>

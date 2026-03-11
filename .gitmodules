@@ -1,0 +1,3 @@
+[submodule "OuchBrowser/Bangs"]
+	path = OuchBrowser/Bangs
+	url = https://github.com/kagisearch/bangs
