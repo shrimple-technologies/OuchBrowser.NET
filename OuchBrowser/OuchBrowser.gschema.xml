@@ -45,5 +45,19 @@
 				This value is whether the window is maximized or not.
 			</description>
 		</key>
+
+		<key type="a(ssas)" name="rooms">
+			<default>
+				[
+					("Main", "dot-symbolic", [])
+				]
+			</default>
+			<summary>Rooms</summary>
+			<description>
+				This value stores the rooms data.
+				
+				Each entry is a tuple: (room name, room icon, pinned urls).
+			</description>
+		</key>
 	</schema>
 </schemalist>
