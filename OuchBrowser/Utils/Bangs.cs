@@ -39,6 +39,6 @@ class Bangs
 			}
 		}
 
-		return $"{default_search}{string.Join(" ", text.Split(' ').Skip(1))}";
+		return $"{default_search}{text}";
 	}
 }
