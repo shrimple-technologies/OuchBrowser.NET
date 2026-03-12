@@ -127,7 +127,19 @@ public class Window
 		};
 
 		window.Present();
-		window.url_dialog!.Present(window);
+
+		if (window.settings.GetStrv("restore-tabs").Length == 0)
+		{
+			window.url_dialog!.Present(window);
+		}
+		else
+		{
+			foreach (string url in window.settings.GetStrv("restore-tabs"))
+			{
+				window.url_dialog!.SetCanClose(true);
+				view.AddTab(url, false);
+			}
+		}
 	}
 
 	public void SetupActions(UI.Window window, Application application, PreferencesDialog preferences, Adw.AboutDialog about)

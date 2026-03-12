@@ -799,11 +799,11 @@ Adw.Dialog url_dialog {
 	Adw.Clamp {
 		Box {
 			orientation: vertical;
-			spacing: 10;
 
 			Box {
 				orientation: horizontal;
 				margin-top: 10;
+				margin-bottom: 10;
 				margin-start: 10;
 				margin-end: 10;
 				spacing: 5;
@@ -844,29 +844,44 @@ Adw.Dialog url_dialog {
 				orientation: horizontal;
 			}
 
-			/* Box {
-				orientation: vertical;
-				margin-top: 10;
-				margin-bottom: 10;
-				margin-start: 10;
-				margin-end: 10;
-				spacing: 10;
+			Revealer {
+				Box {
+					orientation: vertical;
+					margin-top: 10;
+					spacing: 10;
 
-				Adw.ActionRow {
-					title: "what is y2k";
-					subtitle: "Search on Google";
-				}
+					Adw.ActionRow {
+						[prefix]
+						Image {
+							icon-name: "search-symbolic";
+						}
 
-				Adw.ActionRow {
-					title: "what is yapping";
-					subtitle: "Search on Google";
+						title: "what is y2k";
+						subtitle: "Search on Google";
+						margin-start: 10;
+						margin-end: 10;
+					}
+
+					Adw.ActionRow {
+						[prefix]
+						Image {
+							icon-name: "search-symbolic";
+						}
+
+						title: "what is yapping";
+						subtitle: "Search on Google";
+						margin-start: 10;
+						margin-end: 10;
+					}
+
+					Separator {
+						orientation: horizontal;
+					}
 				}
 			}
 
-			Separator {
-				orientation: horizontal;
-			} */
 			CenterBox {
+				margin-top: 10;
 				margin-bottom: 10;
 				margin-start: 10;
 				margin-end: 10;

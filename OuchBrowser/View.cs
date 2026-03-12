@@ -5,7 +5,7 @@ namespace OuchBrowser;
 
 public class View
 {
-	private readonly TabView view;
+	public readonly TabView view;
 	private readonly UI.Window Window;
 
 	public View(TabView tabview, UI.Window window)
@@ -169,6 +169,24 @@ public class View
 		};
 	}
 
+	public string[] GetAllTabUrls()
+	{
+		List<string> urls = new List<string>();
+
+		if (view.GetNPages() != 0)
+		{
+			for (int i = 1; i < view.GetNPages(); i++)
+			{
+				TabPage page = view.GetNthPage(i);
+				WebView web_view = (WebView)page.Child!;
+
+				urls.Add(web_view.GetUri());
+			}
+		}
+
+		return urls.ToArray();
+	}
+	
 	private static async Task<Gio.Icon> GetFavicon(string domain)
 	{
 		try
