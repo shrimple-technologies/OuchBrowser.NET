@@ -192,7 +192,7 @@ public class View
 		try
 		{
 			using var http = new HttpClient();
-			using var remoteStream = await http.GetStreamAsync($"https://www.google.com/s2/favicons?domain={domain}&sz=16");
+			using var remoteStream = await http.GetStreamAsync($"https://www.google.com/s2/favicons?domain={Uri.EscapeDataString(domain)}&sz=16");
 			using var memoryStream = new MemoryStream();
 
 			await remoteStream.CopyToAsync(memoryStream);
