@@ -150,7 +150,7 @@ public class Window
 					}
 					else
 					{
-						view.AddTab($"{window.settings!.GetString("search-engine")}{query}", false);
+						view.AddTab($"{window.settings!.GetString("search-engine")}{Uri.EscapeDataString(query)}", false);
 					}
 				}
 			}
@@ -184,7 +184,7 @@ public class Window
 					}
 					else
 					{
-						webview.LoadUri($"{window.settings!.GetString("search-engine")}{query}");
+						webview.LoadUri($"{window.settings!.GetString("search-engine")}{Uri.EscapeDataString(query)}");
 					}
 				}
 			}

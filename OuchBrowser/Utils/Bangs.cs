@@ -35,7 +35,7 @@ class Bangs
 			if (trigger == bang.Trigger || (bang.AdditionalTriggers != null && bang.AdditionalTriggers.Contains(trigger)))
 			{
 				string query = string.Join(" ", text.Split(' ').Skip(1));
-				return bang.TemplateUrl.Replace("{{{s}}}", query);
+				return bang.TemplateUrl.Replace("{{{s}}}", Uri.EscapeDataString(query));
 			}
 		}
 
