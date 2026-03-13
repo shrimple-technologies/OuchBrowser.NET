@@ -108,7 +108,7 @@ public class Window
 						}
 
 						Box box = Box.New(Orientation.Vertical, 10);
-						Label section_label = Label.New("SUGGESTIONS");
+						Label section_label = Label.New(window.gettext.GetString("SUGGESTIONS"));
 						Separator separator = Separator.New(Orientation.Horizontal);
 						section_label.SetCssClasses(["caption-heading", "dimmed"]);
 						section_label.SetHalign(Align.Start);
