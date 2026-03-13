@@ -80,7 +80,7 @@ public class Window
 					{
 						await Task.Delay(200, debounceCts.Token);
 						if (lastInvokeTime != now) return;
-						if (text.Length == 1) window.url_stack!.SetVisibleChildName("spinner");
+						if (text.Length <= 1) window.url_stack!.SetVisibleChildName("spinner");
 
 						string textNow = window.url_entry!.GetBuffer().GetText();
 
