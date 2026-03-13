@@ -1,10 +1,11 @@
 using Adw;
 using Gtk;
+using OuchBrowser.Types;
+using OuchBrowser.UI;
+using OuchBrowser.Utils;
 using WebKit;
 using Application = Adw.Application;
 using Object = GObject.Object;
-using OuchBrowser.Utils;
-using OuchBrowser.UI;
 
 namespace OuchBrowser;
 
@@ -42,6 +43,61 @@ public class Window
 		window.sidebar_toggle!.OnClicked += (_, _) =>
 		{
 			window.frame!.SetMarginStart(10);
+		};
+
+		window.url_entry!.OnNotify += async (_, args) =>
+		{
+			if (args.Pspec.GetName() == "text")
+			{
+				string text = window.url_entry!.GetBuffer().GetText();
+				if (text == "")
+				{
+					window.url_autocomplete!.SetRevealChild(false);
+					window.url_stack!.SetVisibleChildName("main");
+				}
+				else
+				{
+					if (text != window.url_entry!.GetBuffer().GetText()) return;
+					await Task.Delay(200);
+					if (text.Length == 1) window.url_stack!.SetVisibleChildName("spinner");
+					Autocompletion[] ac = await Autocomplete.CompletionResults(window.url_entry!.GetBuffer().GetText());
+					if (ac.Length == 0)
+					{
+						window.url_autocomplete!.SetRevealChild(false);
+						return;
+					}
+
+					Box box = Box.New(Orientation.Vertical, 10);
+					box.SetMarginTop(10);
+
+					foreach (Autocompletion phrase in ac)
+					{
+						Button button = Button.New();
+						Box button_box = Box.New(Orientation.Horizontal, 15);
+						Label button_label = Label.New(phrase.phrase);
+						button.SetMarginStart(10);
+						button.SetMarginEnd(10);
+						button.SetHexpand(true);
+						button.SetCssClasses(["flat"]);
+						button_label.SetCssClasses(["body"]);
+						button_box.Append(Image.NewFromIconName("search-symbolic"));
+						button_box.Append(button_label);
+						button.SetChild(button_box);
+						button.OnClicked += (_, _) =>
+						{
+							EntryBuffer buffer = EntryBuffer.New(phrase.phrase, -1);
+							window.url_entry.SetBuffer(buffer);
+							window.url_entry.GrabFocus();
+							// window.url_entry!.Activate();
+						};
+						box.Append(button);
+					}
+
+					window.url_autocomplete!.SetChild(box);
+					window.url_autocomplete!.SetRevealChild(true);
+					window.url_stack!.SetVisibleChildName("search");
+				}
+			}
 		};
 
 		window.url_entry!.OnActivate += (entry, _) =>

@@ -186,7 +186,7 @@ public class View
 
 		return urls.ToArray();
 	}
-	
+
 	private static async Task<Gio.Icon> GetFavicon(string domain)
 	{
 		try

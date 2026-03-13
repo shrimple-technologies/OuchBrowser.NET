@@ -808,14 +808,48 @@ Adw.Dialog url_dialog {
 				margin-end: 10;
 				spacing: 5;
 
-				Image {
-					icon-name: "site.srht.shrimple.OuchBrowser-symbolic";
-					pixel-size: 20;
-					margin-start: 10;
+				Stack url_stack {
+					transition-type: crossfade;
 
-					styles [
-						"dimmed",
-					]
+					StackPage {
+						name: "main";
+
+						child: Image {
+							icon-name: "site.srht.shrimple.OuchBrowser-symbolic";
+							pixel-size: 20;
+							margin-start: 10;
+
+							styles [
+								"dimmed",
+							]
+						};
+					}
+
+					StackPage {
+						name: "spinner";
+
+						child: Adw.Spinner {
+							margin-start: 10;
+
+							styles [
+								"dimmed",
+							]
+						};
+					}
+
+					StackPage {
+						name: "search";
+
+						child: Image {
+							icon-name: "search-symbolic";
+							pixel-size: 20;
+							margin-start: 10;
+
+							styles [
+								"dimmed",
+							]
+						};
+					}
 				}
 
 				Entry url_entry {
@@ -844,41 +878,7 @@ Adw.Dialog url_dialog {
 				orientation: horizontal;
 			}
 
-			Revealer {
-				Box {
-					orientation: vertical;
-					margin-top: 10;
-					spacing: 10;
-
-					Adw.ActionRow {
-						[prefix]
-						Image {
-							icon-name: "search-symbolic";
-						}
-
-						title: "what is y2k";
-						subtitle: "Search on Google";
-						margin-start: 10;
-						margin-end: 10;
-					}
-
-					Adw.ActionRow {
-						[prefix]
-						Image {
-							icon-name: "search-symbolic";
-						}
-
-						title: "what is yapping";
-						subtitle: "Search on Google";
-						margin-start: 10;
-						margin-end: 10;
-					}
-
-					Separator {
-						orientation: horizontal;
-					}
-				}
-			}
+			Revealer url_autocomplete {}
 
 			CenterBox {
 				margin-top: 10;

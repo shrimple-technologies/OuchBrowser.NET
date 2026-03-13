@@ -30,6 +30,8 @@ public class Window : Adw.ApplicationWindow
 	[Connect] public readonly WindowControls? left_controls;
 	[Connect] public readonly Button? copy_link;
 	[Connect] public readonly MenuButton? website_settings;
+	[Connect] public readonly Revealer? url_autocomplete;
+	[Connect] public readonly Stack? url_stack;
 
 	public Window(Adw.Application app) : base()
 	{
