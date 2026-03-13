@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 namespace OuchBrowser.Utils;
 
 class Url
@@ -8,7 +9,7 @@ class Url
 		{
 			return true;
 		}
-		else if (url.Contains('.')) // e.g. example.com
+		else if (url.Contains('.') && Regex.IsMatch(url, @"\.[a-zA-Z]{2,63}$")) // e.g. example.com
 		{
 			return true;
 		}
