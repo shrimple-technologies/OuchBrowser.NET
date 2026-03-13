@@ -68,7 +68,13 @@ public class Window
 					}
 
 					Box box = Box.New(Orientation.Vertical, 10);
+					Label section_label = Label.New("SUGGESTIONS");
+					Separator separator = Separator.New(Orientation.Horizontal);
+					section_label.SetCssClasses(["caption-heading", "dimmed"]);
+					section_label.SetHalign(Align.Start);
+					section_label.SetMarginStart(10);
 					box.SetMarginTop(10);
+					box.Append(section_label);
 
 					foreach (Autocompletion phrase in ac)
 					{
@@ -93,6 +99,7 @@ public class Window
 						box.Append(button);
 					}
 
+					box.Append(separator);
 					window.url_autocomplete!.SetChild(box);
 					window.url_autocomplete!.SetRevealChild(true);
 					window.url_stack!.SetVisibleChildName("search");
