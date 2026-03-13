@@ -22,6 +22,10 @@
 		>Icons/Symbolic/dot-symbolic.svg</file>
 		<file
 			preprocess="xml-stripblanks"
+			alias="exclaimation-symbolic.svg"
+		>Icons/Symbolic/exclaimation-symbolic.svg</file>
+		<file
+			preprocess="xml-stripblanks"
 			alias="history-symbolic.svg"
 		>Icons/Symbolic/history-symbolic.svg</file>
 		<file
@@ -48,5 +52,9 @@
 			preprocess="xml-stripblanks"
 			alias="sliders-horizontal-symbolic.svg"
 		>Icons/Symbolic/sliders-horizontal-symbolic.svg</file>
+		<file
+			preprocess="xml-stripblanks"
+			alias="web-symbolic.svg"
+		>Icons/Symbolic/web-symbolic.svg</file>
 	</gresource>
 </gresources>

@@ -31,6 +31,7 @@
 		<EmbeddedResource Include="Icons\Symbolic\chain-link-loose-symbolic.svg" />
 		<EmbeddedResource Include="Icons\Symbolic\cross-large-symbolic.svg" />
 		<EmbeddedResource Include="Icons\Symbolic\dot-symbolic.svg" />
+		<EmbeddedResource Include="Icons\Symbolic\exclaimation-symbolic.svg" />
 		<EmbeddedResource Include="Icons\Symbolic\history-symbolic.svg" />
 		<EmbeddedResource Include="Icons\Symbolic\multitasking-symbolic.svg" />
 		<EmbeddedResource Include="Icons\Symbolic\preferences-symbolic.svg" />
@@ -38,6 +39,7 @@
 		<EmbeddedResource Include="Icons\Symbolic\shoe-box-symbolic.svg" />
 		<EmbeddedResource Include="Icons\Symbolic\site.srht.shrimple.OuchBrowser-symbolic.svg" />
 		<EmbeddedResource Include="Icons\Symbolic\sliders-horizontal-symbolic.svg" />
+		<EmbeddedResource Include="Icons\Symbolic\web-symbolic.svg" />
 
 		<!-- GtkBuilder Files -->
 		<EmbeddedResource Include="UI\Builder\About.ui" LogicalName="UI\About.ui" />

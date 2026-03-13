@@ -55,6 +55,16 @@ public class Window
 					window.url_autocomplete!.SetRevealChild(false);
 					window.url_stack!.SetVisibleChildName("main");
 				}
+				else if (text.StartsWith('!'))
+				{
+					window.url_autocomplete!.SetRevealChild(false);
+					window.url_stack!.SetVisibleChildName("bang");
+				}
+				else if (Url.IsUrl(text))
+				{
+					window.url_autocomplete!.SetRevealChild(false);
+					window.url_stack!.SetVisibleChildName("website");
+				}
 				else
 				{
 					if (text != window.url_entry!.GetBuffer().GetText()) return;
