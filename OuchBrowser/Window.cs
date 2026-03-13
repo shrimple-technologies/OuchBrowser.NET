@@ -12,6 +12,8 @@ namespace OuchBrowser;
 public class Window
 {
 	private string palette_state = "new_tab";
+	private DateTime lastInvokeTime = DateTime.MinValue;
+	private CancellationTokenSource? debounceCts;
 
 	public Window() { }
 
@@ -67,51 +69,87 @@ public class Window
 				}
 				else
 				{
-					if (text != window.url_entry!.GetBuffer().GetText()) return;
-					await Task.Delay(200);
-					if (text.Length == 1) window.url_stack!.SetVisibleChildName("spinner");
-					Autocompletion[] ac = await Autocomplete.CompletionResults(window.url_entry!.GetBuffer().GetText());
-					if (ac.Length == 0)
-					{
-						window.url_autocomplete!.SetRevealChild(false);
-						return;
-					}
+					var now = DateTime.UtcNow;
+					lastInvokeTime = now;
 
-					Box box = Box.New(Orientation.Vertical, 10);
-					Label section_label = Label.New("SUGGESTIONS");
-					Separator separator = Separator.New(Orientation.Horizontal);
-					section_label.SetCssClasses(["caption-heading", "dimmed"]);
-					section_label.SetHalign(Align.Start);
-					section_label.SetMarginStart(10);
-					box.SetMarginTop(10);
-					box.Append(section_label);
+					debounceCts?.Cancel();
+					debounceCts?.Dispose();
+					debounceCts = new CancellationTokenSource();
 
-					foreach (Autocompletion phrase in ac)
+					try
 					{
-						Button button = Button.New();
-						Box button_box = Box.New(Orientation.Horizontal, 15);
-						Label button_label = Label.New(phrase.phrase);
-						button.SetMarginStart(10);
-						button.SetMarginEnd(10);
-						button.SetHexpand(true);
-						button.SetCssClasses(["flat"]);
-						button_label.SetCssClasses(["body"]);
-						button_box.Append(Image.NewFromIconName("search-symbolic"));
-						button_box.Append(button_label);
-						button.SetChild(button_box);
-						button.OnClicked += (_, _) =>
+						await Task.Delay(200, debounceCts.Token);
+						if (lastInvokeTime != now) return;
+						if (text.Length == 1) window.url_stack!.SetVisibleChildName("spinner");
+
+						string textNow = window.url_entry!.GetBuffer().GetText();
+
+						if (textNow == "")
 						{
-							EntryBuffer buffer = EntryBuffer.New(phrase.phrase, -1);
-							window.url_entry.SetBuffer(buffer);
-							window.url_bar_button!.Activate();
-						};
-						box.Append(button);
-					}
+							window.url_autocomplete!.SetRevealChild(false);
+							window.url_stack!.SetVisibleChildName("main");
+						}
+						else if (textNow.StartsWith('!'))
+						{
+							window.url_autocomplete!.SetRevealChild(false);
+							window.url_stack!.SetVisibleChildName("bang");
+						}
+						else if (Url.IsUrl(textNow))
+						{
+							window.url_autocomplete!.SetRevealChild(false);
+							window.url_stack!.SetVisibleChildName("website");
+						}
 
-					box.Append(separator);
-					window.url_autocomplete!.SetChild(box);
-					window.url_autocomplete!.SetRevealChild(true);
-					window.url_stack!.SetVisibleChildName("search");
+						Autocompletion[] ac = await Autocomplete.CompletionResults(textNow);
+						if (ac.Length == 0)
+						{
+							window.url_autocomplete!.SetRevealChild(false);
+							return;
+						}
+
+						Box box = Box.New(Orientation.Vertical, 10);
+						Label section_label = Label.New("SUGGESTIONS");
+						Separator separator = Separator.New(Orientation.Horizontal);
+						section_label.SetCssClasses(["caption-heading", "dimmed"]);
+						section_label.SetHalign(Align.Start);
+						section_label.SetMarginStart(10);
+						box.SetMarginTop(10);
+						box.Append(section_label);
+
+						foreach (Autocompletion phrase in ac)
+						{
+							Button button = Button.New();
+							Box button_box = Box.New(Orientation.Horizontal, 15);
+							Label button_label = Label.New(phrase.phrase);
+							button.SetMarginStart(10);
+							button.SetMarginEnd(10);
+							button.SetHexpand(true);
+							button.SetCssClasses(["flat"]);
+							button_label.SetCssClasses(["body"]);
+							button_box.Append(Image.NewFromIconName("search-symbolic"));
+							button_box.Append(button_label);
+							button.SetChild(button_box);
+							button.OnClicked += (_, _) =>
+							{
+								EntryBuffer buffer = EntryBuffer.New(phrase.phrase, -1);
+								window.url_entry.SetBuffer(buffer);
+								window.url_bar_button!.Activate();
+							};
+							box.Append(button);
+						}
+
+						box.Append(separator);
+						window.url_autocomplete!.SetChild(box);
+						window.url_autocomplete!.SetRevealChild(true);
+						window.url_stack!.SetVisibleChildName("search");
+					}
+					catch (TaskCanceledException) { }
+					finally
+					{
+						if (debounceCts?.IsCancellationRequested == false)
+							debounceCts?.Dispose();
+						debounceCts = null;
+					}
 				}
 			}
 		};
