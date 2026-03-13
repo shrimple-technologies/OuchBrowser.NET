@@ -103,8 +103,7 @@ public class Window
 						{
 							EntryBuffer buffer = EntryBuffer.New(phrase.phrase, -1);
 							window.url_entry.SetBuffer(buffer);
-							window.url_entry.GrabFocus();
-							// window.url_entry!.Activate();
+							window.url_bar_button!.Activate();
 						};
 						box.Append(button);
 					}
@@ -117,9 +116,11 @@ public class Window
 			}
 		};
 
-		window.url_entry!.OnActivate += (entry, _) =>
+		window.url_entry.OnActivate += (_, _) => window.url_bar_button!.Activate();
+
+		window.url_bar_button!.OnActivate += (_, _) =>
 		{
-			string query = entry.GetBuffer().GetText();
+			string query = window.url_entry.GetBuffer().GetText();
 
 			if (query == "") return;
 
