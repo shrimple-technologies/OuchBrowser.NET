@@ -32,6 +32,8 @@ public class Window : Adw.ApplicationWindow
 	[Connect] public readonly MenuButton? website_settings;
 	[Connect] public readonly Revealer? url_autocomplete;
 	[Connect] public readonly Stack? url_stack;
+	[Connect] public readonly Stack? url_disclosure;
+	[Connect] public readonly Label? url_custom_disclosure;
 	[Connect] public readonly Button? url_bar_button;
 
 	public Window(Adw.Application app) : base()

@@ -908,48 +908,97 @@ Adw.Dialog url_dialog {
 
 			Revealer url_autocomplete {}
 
-			CenterBox {
-				margin-top: 10;
-				margin-bottom: 10;
-				margin-start: 10;
-				margin-end: 10;
+			Box url_hints {
+				orientation: vertical;
 
-				start-widget: Box {
+				Separator {
 					orientation: horizontal;
-					spacing: 10;
+					visible: bind url_autocomplete.child-revealed;
+				}
 
-					Adw.ShortcutLabel {
-						accelerator: "Return";
-						opacity: 0.75;
-					}
+				CenterBox {
+					margin-start: 10;
+					margin-end: 10;
 
-					Label {
-						label: _("Go");
+					start-widget: Box {
+						orientation: horizontal;
+						margin-top: 10;
+						margin-bottom: 10;
+						spacing: 10;
 
-						styles [
-							"dimmed",
-						]
-					}
-				};
+						Adw.ShortcutLabel {
+							accelerator: "Return";
+							opacity: 0.75;
+						}
 
-				end-widget: Box {
-					orientation: horizontal;
-					spacing: 10;
-					visible: bind url_dialog.can-close;
+						Label {
+							label: _("Go");
 
-					Label {
-						label: _("Close Palette");
+							styles [
+								"dimmed",
+							]
+						}
+					};
 
-						styles [
-							"dimmed",
-						]
-					}
+					center-widget: Stack url_disclosure {
+						transition-type: slide_up_down;
 
-					Adw.ShortcutLabel {
-						accelerator: "Escape";
-						opacity: 0.75;
-					}
-				};
+						StackPage {
+							name: "none";
+
+							child: Adw.Bin {};
+						}
+
+						StackPage {
+							name: "bang";
+
+							child: Label {
+								halign: center;
+								label: _("!bangs provided by Kagi");
+
+								styles [
+									"caption-heading",
+									"dimmed",
+								]
+							};
+						}
+
+						StackPage {
+							name: "custom";
+
+							child: Label url_custom_disclosure {
+								halign: center;
+								label: "";
+
+								styles [
+									"caption-heading",
+									"dimmed",
+								]
+							};
+						}
+					};
+
+					end-widget: Box {
+						orientation: horizontal;
+						margin-top: 10;
+						margin-bottom: 10;
+						spacing: 10;
+						visible: bind url_dialog.can-close;
+
+						Label {
+							label: _("Close Palette");
+
+							styles [
+								"dimmed",
+							]
+						}
+
+						Adw.ShortcutLabel {
+							accelerator: "Escape";
+							opacity: 0.75;
+						}
+					};
+				}
 			}
 		}
 	}

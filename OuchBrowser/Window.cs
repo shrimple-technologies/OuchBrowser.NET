@@ -56,19 +56,112 @@ public class Window
 				{
 					window.url_autocomplete!.SetRevealChild(false);
 					window.url_stack!.SetVisibleChildName("main");
+					window.url_disclosure!.SetVisibleChildName("none");
 				}
 				else if (text.StartsWith('!'))
 				{
-					window.url_autocomplete!.SetRevealChild(false);
 					window.url_stack!.SetVisibleChildName("bang");
+
+					if (1 < text.Split(' ').Length)
+					{
+						window.url_autocomplete!.SetRevealChild(false);
+						window.url_disclosure!.SetVisibleChildName("custom");
+						Bang? current_bang = bangs.GetBang(text)!;
+						if (current_bang != null)
+						{
+							window.url_custom_disclosure!.SetLabel(window.gettext.GetString("Searching using {0}", current_bang.WebsiteName));
+						}
+						else
+						{
+							window.url_disclosure!.SetVisibleChildName("none");
+						}
+					}
+					else
+					{
+						window.url_disclosure!.SetVisibleChildName("bang");
+						window.url_autocomplete!.SetRevealChild(true);
+						Box box = Box.New(Orientation.Vertical, 10);
+						Label section_label = Label.New(window.gettext.GetString("BANGS"));
+						ScrolledWindow sw = ScrolledWindow.New();
+						sw.SetPropagateNaturalHeight(true);
+						sw.SetVexpand(true);
+						sw.SetMinContentHeight(399);
+						sw.SetMaxContentHeight(400);
+						section_label.SetCssClasses(["caption-heading", "dimmed"]);
+						section_label.SetHalign(Align.Start);
+						section_label.SetMarginStart(10);
+						box.SetMarginTop(10);
+						box.SetMarginBottom(10);
+						box.Append(section_label);
+						int i = 0;
+
+						Bang[] bang = bangs.AutocompleteBang(text);
+						if (bang.Length == 0) window.url_autocomplete!.SetRevealChild(false);
+						foreach (Bang b in bang)
+						{
+							Button button = Button.New();
+							Box button_box = Box.New(Orientation.Horizontal, 15);
+							Label button_label = Label.New(b.WebsiteName);
+							Label button_trigger;
+							if (b.AdditionalTriggers != null)
+							{
+								List<string> triggers = new List<string>();
+								foreach (string trigger in b.AdditionalTriggers)
+								{
+									triggers.Add($"!{trigger}");
+								}
+
+								button_trigger = Label.New($"!{b.Trigger}, {string.Join(", ", triggers.ToArray())} ");
+							}
+							else
+							{
+								button_trigger = Label.New($"!{b.Trigger}");
+							}
+							button.SetMarginStart(10);
+							button.SetMarginEnd(10);
+							button.SetHexpand(true);
+							button.SetCssClasses(["flat"]);
+							button_label.SetCssClasses(["body"]);
+							button_label.SetEllipsize(Pango.EllipsizeMode.End);
+							button_trigger.SetCssClasses(["body", "dimmed"]);
+							button_box.Append(Image.NewFromIconName("exclaimation-symbolic"));
+							button_box.Append(button_label);
+							button_box.Append(button_trigger);
+							button.SetChild(button_box);
+							button.OnClicked += (_, _) =>
+							{
+								EntryBuffer buffer = EntryBuffer.New($"!{b.Trigger} ", -1);
+								int length = Convert.ToInt32(buffer.GetLength());
+								window.url_entry.SetBuffer(buffer);
+								window.url_entry.GrabFocusWithoutSelecting();
+								window.url_entry.SetPosition(length);
+							};
+							box.Append(button);
+							i++;
+						}
+
+						if (i < 8)
+						{
+							window.url_autocomplete!.SetChild(box);
+						}
+						else
+						{
+							sw.SetChild(box);
+							window.url_autocomplete!.SetChild(sw);
+						}
+					}
 				}
 				else if (Url.IsUrl(text))
 				{
 					window.url_autocomplete!.SetRevealChild(false);
 					window.url_stack!.SetVisibleChildName("website");
+					window.url_disclosure!.SetVisibleChildName("none");
+					window.url_custom_disclosure!.SetLabel("");
 				}
 				else
 				{
+					window.url_disclosure!.SetVisibleChildName("none");
+					window.url_custom_disclosure!.SetLabel("");
 					var now = DateTime.UtcNow;
 					lastInvokeTime = now;
 
@@ -109,7 +202,6 @@ public class Window
 
 						Box box = Box.New(Orientation.Vertical, 10);
 						Label section_label = Label.New(window.gettext.GetString("SUGGESTIONS"));
-						Separator separator = Separator.New(Orientation.Horizontal);
 						section_label.SetCssClasses(["caption-heading", "dimmed"]);
 						section_label.SetHalign(Align.Start);
 						section_label.SetMarginStart(10);
@@ -138,7 +230,6 @@ public class Window
 							box.Append(button);
 						}
 
-						box.Append(separator);
 						window.url_autocomplete!.SetChild(box);
 						window.url_autocomplete!.SetRevealChild(true);
 						window.url_stack!.SetVisibleChildName("search");
