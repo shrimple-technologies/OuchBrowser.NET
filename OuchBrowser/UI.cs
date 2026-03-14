@@ -35,6 +35,7 @@ public class Window : Adw.ApplicationWindow
 	[Connect] public readonly Stack? url_disclosure;
 	[Connect] public readonly Label? url_custom_disclosure;
 	[Connect] public readonly Button? url_bar_button;
+	[Connect] public readonly Image? url_favicon;
 
 	public Window(Adw.Application app) : base()
 	{

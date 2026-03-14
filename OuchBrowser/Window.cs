@@ -60,7 +60,6 @@ public class Window
 				}
 				else if (text.StartsWith('!'))
 				{
-					window.url_stack!.SetVisibleChildName("bang");
 
 					if (1 < text.Split(' ').Length)
 					{
@@ -70,14 +69,19 @@ public class Window
 						if (current_bang != null)
 						{
 							window.url_custom_disclosure!.SetLabel(window.gettext.GetString("Searching using {0}", current_bang.WebsiteName));
+							Gio.Icon icon = await Favicon.GetFavicon(current_bang.Domain);
+							window.url_favicon!.SetFromGicon(icon);
+							window.url_stack!.SetVisibleChildName("website");
 						}
 						else
 						{
+							window.url_stack!.SetVisibleChildName("bang");
 							window.url_disclosure!.SetVisibleChildName("none");
 						}
 					}
 					else
 					{
+						window.url_stack!.SetVisibleChildName("bang");
 						window.url_disclosure!.SetVisibleChildName("bang");
 						window.url_autocomplete!.SetRevealChild(true);
 						Box box = Box.New(Orientation.Vertical, 10);
@@ -157,11 +161,13 @@ public class Window
 					window.url_stack!.SetVisibleChildName("website");
 					window.url_disclosure!.SetVisibleChildName("none");
 					window.url_custom_disclosure!.SetLabel("");
+					window.url_favicon!.SetFromGicon(await Favicon.GetFavicon(text));
 				}
 				else
 				{
 					window.url_disclosure!.SetVisibleChildName("none");
 					window.url_custom_disclosure!.SetLabel("");
+
 					var now = DateTime.UtcNow;
 					lastInvokeTime = now;
 
@@ -206,6 +212,7 @@ public class Window
 						section_label.SetHalign(Align.Start);
 						section_label.SetMarginStart(10);
 						box.SetMarginTop(10);
+						box.SetMarginBottom(10);
 						box.Append(section_label);
 
 						foreach (Autocompletion phrase in ac)
