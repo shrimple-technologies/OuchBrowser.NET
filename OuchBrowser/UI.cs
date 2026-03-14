@@ -111,6 +111,9 @@ public class Window : Adw.ApplicationWindow
 		number.SetInt(0);
 		breakpoint.AddSetter(frame!, "margin-bottom", number);
 
+		number.SetInt(-1);
+		breakpoint.AddSetter(url_entry!, "width-request", number);
+
 		return breakpoint;
 	}
 }
