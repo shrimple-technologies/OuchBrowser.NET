@@ -68,6 +68,7 @@ public class Window
 						Bang? current_bang = bangs.GetBang(text)!;
 						if (current_bang != null)
 						{
+							if (text.Split(' ')[1].Length == 0) window.url_stack!.SetVisibleChildName("spinner");
 							window.url_custom_disclosure!.SetLabel(window.gettext.GetString("Searching using {0}", current_bang.WebsiteName));
 							Gio.Icon icon = await Favicon.GetFavicon(current_bang.Domain);
 							window.url_favicon!.SetFromGicon(icon);
