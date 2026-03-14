@@ -721,7 +721,7 @@ Adw.TabOverview overview {
 									action-name: "win.palette";
 
 									Label {
-										label: "example.com";
+										label: bind hostname.label;
 										margin-start: 6;
 										margin-end: 6;
 										ellipsize: end;
@@ -954,6 +954,7 @@ Adw.Dialog url_dialog {
 
 							child: Label {
 								halign: center;
+								ellipsize: end;
 								label: _("!bangs provided by Kagi");
 
 								styles [
@@ -968,6 +969,7 @@ Adw.Dialog url_dialog {
 
 							child: Label url_custom_disclosure {
 								halign: center;
+								ellipsize: end;
 								label: "";
 
 								styles [
