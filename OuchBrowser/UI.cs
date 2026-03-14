@@ -72,7 +72,7 @@ public class Window : Adw.ApplicationWindow
 		Maximized = settings.GetBoolean("maximized");
 		DefaultWidth = 1000;
 		DefaultHeight = 600;
-		WidthRequest = 350;
+		WidthRequest = 360;
 		HeightRequest = 500;
 		Title = gettext.GetString("Ouch Browser");
 	}
