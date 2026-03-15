@@ -19,7 +19,7 @@ Adw.Dialog preferences {
 					margin-end: 10;
 					spacing: 6;
 
-					Button {
+					/* Button {
 						margin-start: 10;
 
 						styles [
@@ -63,8 +63,7 @@ Adw.Dialog preferences {
 								}
 							}
 						}
-					}
-
+					} */
 					ListView {
 						vexpand: true;
 						model: bind view.pages;
@@ -138,6 +137,7 @@ Adw.Dialog preferences {
 										title: _("Session");
 
 										Adw.SwitchRow {
+											icon-name: "view-grid-symbolic";
 											title: _("Restore Tabs on Startup");
 										}
 									}
@@ -146,11 +146,13 @@ Adw.Dialog preferences {
 										title: _("Autocomplete");
 
 										Adw.SwitchRow {
+											icon-name: "search-symbolic";
 											title: _("Enable Search Autocomplete");
 											active: true;
 										}
 
 										Adw.SwitchRow {
+											icon-name: "exclaimation-symbolic";
 											title: _("Enable !bang Autocomplete");
 											active: true;
 										}
@@ -160,6 +162,7 @@ Adw.Dialog preferences {
 										title: _("Developer");
 
 										Adw.SwitchRow {
+											icon-name: "code-symbolic";
 											title: _("Enable Developer Tools");
 										}
 									}
@@ -187,12 +190,55 @@ Adw.Dialog preferences {
 						icon-name: "search-symbolic";
 						title: _("Search Engine");
 
-						child: Label {
-							label: "Content";
+						child: ScrolledWindow {
+							Adw.Clamp {
+								Box {
+									orientation: vertical;
+									spacing: 24;
+									margin-top: 15;
+									margin-bottom: 15;
 
-							styles [
-								"title-1",
-							]
+									ListBox {
+										selection-mode: none;
+
+										styles [
+											"boxed-list",
+										]
+
+										Adw.ComboRow {
+											icon-name: "search-symbolic";
+											title: _("Search Engine");
+
+											model: StringList {
+												strings [
+													"Bing",
+													"DuckDuckGo",
+													"Ecosia",
+													"Google",
+													"Kagi",
+												]
+											};
+										}
+									}
+
+									Adw.PreferencesGroup {
+										title: _("Custom Search Engines");
+
+										Adw.ButtonRow {
+											start-icon-name: "list-add-symbolic";
+											title: _("New Search Engine…");
+										}
+									}
+
+									Label {
+										label: _("See !bangs preferences for more options");
+
+										styles [
+											"dimmed",
+										]
+									}
+								}
+							}
 						};
 					}
 
@@ -222,7 +268,6 @@ Adw.Dialog preferences {
 										label: _("!bangs provided by Kagi");
 
 										styles [
-											"caption",
 											"dimmed",
 										]
 									}
