@@ -353,7 +353,7 @@ public class Window
 		}
 	}
 
-	public void SetupActions(UI.Window window, Application application, PreferencesDialog preferences, Adw.AboutDialog about)
+	public void SetupActions(UI.Window window, Application application, Adw.Dialog preferences, Adw.AboutDialog about)
 	{
 		var actions = new Actions(window, application);
 

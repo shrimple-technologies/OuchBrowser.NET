@@ -6,9 +6,9 @@ namespace OuchBrowser.UI;
 
 public class Preferences
 {
-	public static PreferencesDialog New()
+	public static Adw.Dialog New()
 	{
-		var dialog = PreferencesDialog.New();
+		var dialog = Adw.Dialog.New();
 
 		var assembly = Assembly.GetExecutingAssembly();
 		using var stream = assembly.GetManifestResourceStream("UI/Preferences.ui");
@@ -19,6 +19,6 @@ public class Preferences
 		builder.AddFromString(xml, -1);
 		builder.Connect(dialog);
 
-		return (PreferencesDialog)builder!.GetObject("preferences")!;
+		return (Adw.Dialog)builder!.GetObject("preferences")!;
 	}
 }
