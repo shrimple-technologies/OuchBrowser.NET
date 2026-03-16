@@ -21,7 +21,7 @@ public class Window
 	{
 		var application = (Application)app;
 		var window = new UI.Window(application);
-		var preferences = Preferences.New();
+		var preferences = new Preferences(window.settings, window.gettext);
 		var about = About.New();
 		var view = new View(window.view!, window!);
 		var bangs = new Bangs(window.settings.GetString("search-engine"));
@@ -84,75 +84,79 @@ public class Window
 					{
 						window.url_stack!.SetVisibleChildName("bang");
 						window.url_disclosure!.SetVisibleChildName("bang");
-						window.url_autocomplete!.SetRevealChild(true);
-						Box box = Box.New(Orientation.Vertical, 10);
-						Label section_label = Label.New(window.gettext.GetString("BANGS"));
-						ScrolledWindow sw = ScrolledWindow.New();
-						sw.SetPropagateNaturalHeight(true);
-						sw.SetVexpand(true);
-						sw.SetMinContentHeight(399);
-						sw.SetMaxContentHeight(400);
-						section_label.SetCssClasses(["caption-heading", "dimmed"]);
-						section_label.SetHalign(Align.Start);
-						section_label.SetMarginStart(10);
-						box.SetMarginTop(10);
-						box.SetMarginBottom(10);
-						box.Append(section_label);
-						int i = 0;
-
-						Bang[] bang = bangs.AutocompleteBang(text);
-						if (bang.Length == 0) window.url_autocomplete!.SetRevealChild(false);
-						foreach (Bang b in bang)
+						
+						if (window.settings.GetBoolean("bang-autocomplete-enabled"))
 						{
-							Button button = Button.New();
-							Box button_box = Box.New(Orientation.Horizontal, 15);
-							Label button_label = Label.New(b.WebsiteName);
-							Label button_trigger;
-							if (b.AdditionalTriggers != null)
-							{
-								List<string> triggers = new List<string>();
-								foreach (string trigger in b.AdditionalTriggers)
-								{
-									triggers.Add($"!{trigger}");
-								}
+							window.url_autocomplete!.SetRevealChild(true);
+							Box box = Box.New(Orientation.Vertical, 10);
+							Label section_label = Label.New(window.gettext.GetString("BANGS"));
+							ScrolledWindow sw = ScrolledWindow.New();
+							sw.SetPropagateNaturalHeight(true);
+							sw.SetVexpand(true);
+							sw.SetMinContentHeight(399);
+							sw.SetMaxContentHeight(400);
+							section_label.SetCssClasses(["caption-heading", "dimmed"]);
+							section_label.SetHalign(Align.Start);
+							section_label.SetMarginStart(10);
+							box.SetMarginTop(10);
+							box.SetMarginBottom(10);
+							box.Append(section_label);
+							int i = 0;
 
-								button_trigger = Label.New($"!{b.Trigger}, {string.Join(", ", triggers.ToArray())} ");
+							Bang[] bang = bangs.AutocompleteBang(text);
+							if (bang.Length == 0) window.url_autocomplete!.SetRevealChild(false);
+							foreach (Bang b in bang)
+							{
+								Button button = Button.New();
+								Box button_box = Box.New(Orientation.Horizontal, 15);
+								Label button_label = Label.New(b.WebsiteName);
+								Label button_trigger;
+								if (b.AdditionalTriggers != null)
+								{
+									List<string> triggers = new List<string>();
+									foreach (string trigger in b.AdditionalTriggers)
+									{
+										triggers.Add($"!{trigger}");
+									}
+
+									button_trigger = Label.New($"!{b.Trigger}, {string.Join(", ", triggers.ToArray())} ");
+								}
+								else
+								{
+									button_trigger = Label.New($"!{b.Trigger}");
+								}
+								button.SetMarginStart(10);
+								button.SetMarginEnd(10);
+								button.SetHexpand(true);
+								button.SetCssClasses(["flat"]);
+								button_label.SetCssClasses(["body"]);
+								button_label.SetEllipsize(Pango.EllipsizeMode.End);
+								button_trigger.SetCssClasses(["body", "dimmed"]);
+								button_box.Append(Image.NewFromIconName("exclaimation-symbolic"));
+								button_box.Append(button_label);
+								button_box.Append(button_trigger);
+								button.SetChild(button_box);
+								button.OnClicked += (_, _) =>
+								{
+									EntryBuffer buffer = EntryBuffer.New($"!{b.Trigger} ", -1);
+									int length = Convert.ToInt32(buffer.GetLength());
+									window.url_entry.SetBuffer(buffer);
+									window.url_entry.GrabFocusWithoutSelecting();
+									window.url_entry.SetPosition(length);
+								};
+								box.Append(button);
+								i++;
+							}
+
+							if (i < 8)
+							{
+								window.url_autocomplete!.SetChild(box);
 							}
 							else
 							{
-								button_trigger = Label.New($"!{b.Trigger}");
+								sw.SetChild(box);
+								window.url_autocomplete!.SetChild(sw);
 							}
-							button.SetMarginStart(10);
-							button.SetMarginEnd(10);
-							button.SetHexpand(true);
-							button.SetCssClasses(["flat"]);
-							button_label.SetCssClasses(["body"]);
-							button_label.SetEllipsize(Pango.EllipsizeMode.End);
-							button_trigger.SetCssClasses(["body", "dimmed"]);
-							button_box.Append(Image.NewFromIconName("exclaimation-symbolic"));
-							button_box.Append(button_label);
-							button_box.Append(button_trigger);
-							button.SetChild(button_box);
-							button.OnClicked += (_, _) =>
-							{
-								EntryBuffer buffer = EntryBuffer.New($"!{b.Trigger} ", -1);
-								int length = Convert.ToInt32(buffer.GetLength());
-								window.url_entry.SetBuffer(buffer);
-								window.url_entry.GrabFocusWithoutSelecting();
-								window.url_entry.SetPosition(length);
-							};
-							box.Append(button);
-							i++;
-						}
-
-						if (i < 8)
-						{
-							window.url_autocomplete!.SetChild(box);
-						}
-						else
-						{
-							sw.SetChild(box);
-							window.url_autocomplete!.SetChild(sw);
 						}
 					}
 				}
@@ -169,85 +173,93 @@ public class Window
 					window.url_disclosure!.SetVisibleChildName("none");
 					window.url_custom_disclosure!.SetLabel("");
 
-					var now = DateTime.UtcNow;
-					lastInvokeTime = now;
 
-					debounceCts?.Cancel();
-					debounceCts?.Dispose();
-					debounceCts = new CancellationTokenSource();
-
-					try
+					if (window.settings.GetBoolean("search-autocomplete-enabled"))
 					{
-						await Task.Delay(200, debounceCts.Token);
-						if (lastInvokeTime != now) return;
-						if (text.Length <= 1) window.url_stack!.SetVisibleChildName("spinner");
+						var now = DateTime.UtcNow;
+						lastInvokeTime = now;
 
-						string textNow = window.url_entry!.GetBuffer().GetText();
+						debounceCts?.Cancel();
+						debounceCts?.Dispose();
+						debounceCts = new CancellationTokenSource();
 
-						if (textNow == "")
+						try
 						{
-							window.url_autocomplete!.SetRevealChild(false);
-							window.url_stack!.SetVisibleChildName("main");
-						}
-						else if (textNow.StartsWith('!'))
-						{
-							window.url_autocomplete!.SetRevealChild(false);
-							window.url_stack!.SetVisibleChildName("bang");
-						}
-						else if (Url.IsUrl(textNow))
-						{
-							window.url_autocomplete!.SetRevealChild(false);
-							window.url_stack!.SetVisibleChildName("website");
-						}
+							await Task.Delay(200, debounceCts.Token);
+							if (lastInvokeTime != now) return;
+							if (text.Length <= 1) window.url_stack!.SetVisibleChildName("spinner");
 
-						Autocompletion[] ac = await Autocomplete.CompletionResults(textNow);
-						if (ac.Length == 0)
-						{
-							window.url_autocomplete!.SetRevealChild(false);
-							return;
-						}
+							string textNow = window.url_entry!.GetBuffer().GetText();
 
-						Box box = Box.New(Orientation.Vertical, 10);
-						Label section_label = Label.New(window.gettext.GetString("SUGGESTIONS"));
-						section_label.SetCssClasses(["caption-heading", "dimmed"]);
-						section_label.SetHalign(Align.Start);
-						section_label.SetMarginStart(10);
-						box.SetMarginTop(10);
-						box.SetMarginBottom(10);
-						box.Append(section_label);
-
-						foreach (Autocompletion phrase in ac)
-						{
-							Button button = Button.New();
-							Box button_box = Box.New(Orientation.Horizontal, 15);
-							Label button_label = Label.New(phrase.phrase);
-							button.SetMarginStart(10);
-							button.SetMarginEnd(10);
-							button.SetHexpand(true);
-							button.SetCssClasses(["flat"]);
-							button_label.SetCssClasses(["body"]);
-							button_box.Append(Image.NewFromIconName("search-symbolic"));
-							button_box.Append(button_label);
-							button.SetChild(button_box);
-							button.OnClicked += (_, _) =>
+							if (textNow == "")
 							{
-								EntryBuffer buffer = EntryBuffer.New(phrase.phrase, -1);
-								window.url_entry.SetBuffer(buffer);
-								window.url_bar_button!.Activate();
-							};
-							box.Append(button);
-						}
+								window.url_autocomplete!.SetRevealChild(false);
+								window.url_stack!.SetVisibleChildName("main");
+							}
+							else if (textNow.StartsWith('!'))
+							{
+								window.url_autocomplete!.SetRevealChild(false);
+								window.url_stack!.SetVisibleChildName("bang");
+							}
+							else if (Url.IsUrl(textNow))
+							{
+								window.url_autocomplete!.SetRevealChild(false);
+								window.url_stack!.SetVisibleChildName("website");
+							}
 
-						window.url_autocomplete!.SetChild(box);
-						window.url_autocomplete!.SetRevealChild(true);
-						window.url_stack!.SetVisibleChildName("search");
+							Autocompletion[] ac = await Autocomplete.CompletionResults(textNow);
+							if (ac.Length == 0)
+							{
+								window.url_autocomplete!.SetRevealChild(false);
+								return;
+							}
+
+							Box box = Box.New(Orientation.Vertical, 10);
+							Label section_label = Label.New(window.gettext.GetString("SUGGESTIONS"));
+							section_label.SetCssClasses(["caption-heading", "dimmed"]);
+							section_label.SetHalign(Align.Start);
+							section_label.SetMarginStart(10);
+							box.SetMarginTop(10);
+							box.SetMarginBottom(10);
+							box.Append(section_label);
+
+							foreach (Autocompletion phrase in ac)
+							{
+								Button button = Button.New();
+								Box button_box = Box.New(Orientation.Horizontal, 15);
+								Label button_label = Label.New(phrase.phrase);
+								button.SetMarginStart(10);
+								button.SetMarginEnd(10);
+								button.SetHexpand(true);
+								button.SetCssClasses(["flat"]);
+								button_label.SetCssClasses(["body"]);
+								button_box.Append(Image.NewFromIconName("search-symbolic"));
+								button_box.Append(button_label);
+								button.SetChild(button_box);
+								button.OnClicked += (_, _) =>
+								{
+									EntryBuffer buffer = EntryBuffer.New(phrase.phrase, -1);
+									window.url_entry.SetBuffer(buffer);
+									window.url_bar_button!.Activate();
+								};
+								box.Append(button);
+							}
+
+							window.url_autocomplete!.SetChild(box);
+							window.url_autocomplete!.SetRevealChild(true);
+							window.url_stack!.SetVisibleChildName("search");
+						}
+						catch (TaskCanceledException) { }
+						finally
+						{
+							if (debounceCts?.IsCancellationRequested == false)
+								debounceCts?.Dispose();
+							debounceCts = null;
+						}
 					}
-					catch (TaskCanceledException) { }
-					finally
+					else
 					{
-						if (debounceCts?.IsCancellationRequested == false)
-							debounceCts?.Dispose();
-						debounceCts = null;
+						window.url_stack!.SetVisibleChildName("search");
 					}
 				}
 			}

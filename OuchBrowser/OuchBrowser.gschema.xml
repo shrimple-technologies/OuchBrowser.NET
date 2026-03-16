@@ -67,5 +67,29 @@
 				This value stores the tabs to restore.
 			</description>
 		</key>
+
+		<key type="b" name="search-autocomplete-enabled">
+			<default>true</default>
+			<summary>Search Autocomplete enabled?</summary>
+			<description>
+				This value is whether search autocomplete is enabled or not.
+			</description>
+		</key>
+
+		<key type="b" name="bang-autocomplete-enabled">
+			<default>true</default>
+			<summary>!bang Autocomplete enabled?</summary>
+			<description>
+				This value is whether !bang autocomplete is enabled or not.
+			</description>
+		</key>
+		
+		<key type="b" name="devtools-enabled">
+			<default>false</default>
+			<summary>Developer Tools enabled?</summary>
+			<description>
+				This value is whether developer tools is enabled or not.
+			</description>
+		</key>
 	</schema>
 </schemalist>

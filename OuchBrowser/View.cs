@@ -16,7 +16,7 @@ public class View
 		WebKit.Module.Initialize();
 	}
 
-	private static Settings InitSettings()
+	private Settings InitSettings()
 	{
 		Settings settings = Settings.New();
 
@@ -24,7 +24,7 @@ public class View
 		settings.SetSansSerifFontFamily("Noto Sans");
 		settings.SetSerifFontFamily("Noto Serif");
 		settings.SetMonospaceFontFamily("Noto Mono");
-		settings.SetEnableDeveloperExtras(true);
+		settings.SetEnableDeveloperExtras(Window.settings.GetBoolean("devtools-enabled"));
 
 		return settings;
 	}

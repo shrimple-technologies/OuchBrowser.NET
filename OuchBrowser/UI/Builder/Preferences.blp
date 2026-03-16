@@ -1,25 +1,21 @@
 using Gtk 4.0;
 using Adw 1;
 
-Adw.Dialog preferences {
-	Adw.NavigationSplitView {
-		height-request: 500;
-		width-request: 800;
+Adw.NavigationSplitView nsv {
+	sidebar: Adw.NavigationPage {
+		title: _("Preferences");
 
-		sidebar: Adw.NavigationPage {
-			title: _("Preferences");
+		Adw.ToolbarView {
+			[top]
+			Adw.HeaderBar {}
 
-			Adw.ToolbarView {
-				[top]
-				Adw.HeaderBar {}
+			Box {
+				orientation: vertical;
+				margin-bottom: 10;
+				margin-end: 10;
+				spacing: 6;
 
-				Box {
-					orientation: vertical;
-					margin-bottom: 10;
-					margin-end: 10;
-					spacing: 6;
-
-					/* Button {
+				/* Button {
 						margin-start: 10;
 
 						styles [
@@ -64,233 +60,237 @@ Adw.Dialog preferences {
 							}
 						}
 					} */
-					ListView {
-						vexpand: true;
-						model: bind view.pages;
+				ListView listview {
+					vexpand: true;
+					model: bind view.pages;
 
-						factory: BuilderListItemFactory {
-							template ListItem {
-								child: Box {
-									margin-start: 5;
-									spacing: 10;
+					factory: BuilderListItemFactory {
+						template ListItem {
+							child: Box {
+								margin-start: 5;
+								spacing: 10;
 
-									Image {
-										icon-name: bind template.item as <Adw.ViewStackPage>.icon-name;
+								Image {
+									icon-name: bind template.item as <Adw.ViewStackPage>.icon-name;
+								}
+
+								Label {
+									label: bind template.item as <Adw.ViewStackPage>.title;
+								}
+							};
+						}
+					};
+
+					styles [
+						"navigation-sidebar",
+					]
+				}
+			}
+		}
+	};
+
+	content: Adw.NavigationPage {
+		title: _("Preferences");
+
+		Adw.ToolbarView {
+			[top]
+			Adw.HeaderBar {
+				show-title: false;
+			}
+
+			Adw.ViewStack view {
+				enable-transitions: true;
+
+				Adw.ViewStackPage {
+					name: "general";
+					icon-name: "preferences-symbolic";
+					title: _("General");
+
+					child: ScrolledWindow {
+						Adw.Clamp {
+							margin-start: 10;
+							margin-end: 10;
+
+							Box {
+								orientation: vertical;
+								spacing: 24;
+								margin-top: 15;
+								margin-bottom: 15;
+
+								Adw.PreferencesGroup {
+									title: _("Content Blocking");
+									description: _("Powered by uBlock Origin");
+
+									Adw.SwitchRow {
+										title: _("Block Advertisments");
+										sensitive: false;
 									}
 
-									Label {
-										label: bind template.item as <Adw.ViewStackPage>.title;
+									Adw.SwitchRow {
+										title: _("Block Pop-up Windows");
+										sensitive: false;
 									}
-								};
+								}
+
+								Adw.PreferencesGroup {
+									title: _("Session");
+
+									Adw.SwitchRow setting_restore_tabs {
+										icon-name: "view-grid-symbolic";
+										title: _("Restore Tabs on Startup");
+									}
+								}
+
+								Adw.PreferencesGroup {
+									title: _("Autocomplete");
+
+									Adw.SwitchRow setting_search_autocomplete {
+										icon-name: "search-symbolic";
+										title: _("Enable Search Autocomplete");
+									}
+
+									Adw.SwitchRow setting_bang_autocomplete {
+										icon-name: "exclaimation-symbolic";
+										title: _("Enable !bang Autocomplete");
+									}
+								}
+
+								Adw.PreferencesGroup {
+									title: _("Developer");
+
+									Adw.SwitchRow setting_devtools {
+										icon-name: "code-symbolic";
+										title: _("Enable Developer Tools");
+										subtitle: _("This will allow access to the Web Inspector. Will be applied to new tabs only.");
+									}
+								}
 							}
-						};
+						}
+					};
+				}
+
+				Adw.ViewStackPage {
+					name: "appearance";
+					icon-name: "color-select-symbolic";
+					title: _("Appearance");
+
+					child: Label {
+						label: "Content";
 
 						styles [
-							"navigation-sidebar",
+							"title-1",
 						]
-					}
-				}
-			}
-		};
-
-		content: Adw.NavigationPage {
-			title: bind view.visible-child-name;
-
-			Adw.ToolbarView {
-				[top]
-				Adw.HeaderBar {
-					show-title: false;
+					};
 				}
 
-				Adw.ViewStack view {
-					enable-transitions: true;
+				Adw.ViewStackPage {
+					name: "search-engine";
+					icon-name: "search-symbolic";
+					title: _("Search Engine");
 
-					Adw.ViewStackPage {
-						name: "general";
-						icon-name: "preferences-symbolic";
-						title: _("General");
+					child: ScrolledWindow {
+						Adw.Clamp {
+							margin-start: 10;
+							margin-end: 10;
 
-						child: ScrolledWindow {
-							Adw.Clamp {
-								Box {
-									orientation: vertical;
-									spacing: 24;
-									margin-top: 15;
-									margin-bottom: 15;
+							Box {
+								orientation: vertical;
+								spacing: 24;
+								margin-top: 15;
+								margin-bottom: 15;
 
-									Adw.PreferencesGroup {
-										title: _("Content Blocking");
-										description: _("Powered by uBlock Origin");
+								ListBox {
+									selection-mode: none;
 
-										Adw.SwitchRow {
-											title: _("Block Advertisments");
-											active: true;
-										}
+									styles [
+										"boxed-list",
+									]
 
-										Adw.SwitchRow {
-											title: _("Block Pop-up Windows");
-											active: true;
-										}
-									}
+									Adw.ComboRow setting_search_engine {
+										icon-name: "search-symbolic";
+										title: _("Search Engine");
 
-									Adw.PreferencesGroup {
-										title: _("Session");
-
-										Adw.SwitchRow {
-											icon-name: "view-grid-symbolic";
-											title: _("Restore Tabs on Startup");
-										}
-									}
-
-									Adw.PreferencesGroup {
-										title: _("Autocomplete");
-
-										Adw.SwitchRow {
-											icon-name: "search-symbolic";
-											title: _("Enable Search Autocomplete");
-											active: true;
-										}
-
-										Adw.SwitchRow {
-											icon-name: "exclaimation-symbolic";
-											title: _("Enable !bang Autocomplete");
-											active: true;
-										}
-									}
-
-									Adw.PreferencesGroup {
-										title: _("Developer");
-
-										Adw.SwitchRow {
-											icon-name: "code-symbolic";
-											title: _("Enable Developer Tools");
-										}
+										model: StringList {
+											strings [
+												"Bing",
+												"DuckDuckGo",
+												"Ecosia",
+												"Google",
+												"Kagi",
+											]
+										};
 									}
 								}
-							}
-						};
-					}
 
-					Adw.ViewStackPage {
-						name: "appearance";
-						icon-name: "color-select-symbolic";
-						title: _("Appearance");
+								Adw.PreferencesGroup {
+									title: _("Custom Search Engines");
 
-						child: Label {
-							label: "Content";
-
-							styles [
-								"title-1",
-							]
-						};
-					}
-
-					Adw.ViewStackPage {
-						name: "search-engine";
-						icon-name: "search-symbolic";
-						title: _("Search Engine");
-
-						child: ScrolledWindow {
-							Adw.Clamp {
-								Box {
-									orientation: vertical;
-									spacing: 24;
-									margin-top: 15;
-									margin-bottom: 15;
-
-									ListBox {
-										selection-mode: none;
-
-										styles [
-											"boxed-list",
-										]
-
-										Adw.ComboRow {
-											icon-name: "search-symbolic";
-											title: _("Search Engine");
-
-											model: StringList {
-												strings [
-													"Bing",
-													"DuckDuckGo",
-													"Ecosia",
-													"Google",
-													"Kagi",
-												]
-											};
-										}
-									}
-
-									Adw.PreferencesGroup {
-										title: _("Custom Search Engines");
-
-										Adw.ButtonRow {
-											start-icon-name: "list-add-symbolic";
-											title: _("New Search Engine…");
-										}
-									}
-
-									Label {
-										label: _("See !bangs preferences for more options");
-
-										styles [
-											"dimmed",
-										]
+									Adw.ButtonRow {
+										start-icon-name: "list-add-symbolic";
+										title: _("New Search Engine…");
 									}
 								}
-							}
-						};
-					}
 
-					Adw.ViewStackPage {
-						name: "bangs";
-						icon-name: "exclaimation-symbolic";
-						title: _("!bangs");
+								Label {
+									label: _("See !bangs preferences for more options");
 
-						child: ScrolledWindow {
-							Adw.Clamp {
-								Box {
-									orientation: vertical;
-									spacing: 24;
-									margin-top: 15;
-									margin-bottom: 15;
-
-									Adw.PreferencesGroup {
-										title: _("Custom Bangs");
-
-										Adw.ButtonRow {
-											start-icon-name: "list-add-symbolic";
-											title: _("New Bang…");
-										}
-									}
-
-									Label {
-										label: _("!bangs provided by Kagi");
-
-										styles [
-											"dimmed",
-										]
-									}
+									styles [
+										"dimmed",
+									]
 								}
 							}
-						};
-					}
+						}
+					};
+				}
 
-					Adw.ViewStackPage {
-						name: "extensions";
+				Adw.ViewStackPage {
+					name: "bangs";
+					icon-name: "exclaimation-symbolic";
+					title: _("!bangs");
+
+					child: ScrolledWindow {
+						Adw.Clamp {
+							margin-start: 10;
+							margin-end: 10;
+
+							Box {
+								orientation: vertical;
+								spacing: 24;
+								margin-top: 15;
+								margin-bottom: 15;
+
+								Adw.PreferencesGroup {
+									title: _("Custom Bangs");
+
+									Adw.ButtonRow {
+										start-icon-name: "list-add-symbolic";
+										title: _("New Bang…");
+									}
+								}
+
+								Label {
+									label: _("!bangs provided by Kagi");
+
+									styles [
+										"dimmed",
+									]
+								}
+							}
+						}
+					};
+				}
+
+				Adw.ViewStackPage {
+					name: "extensions";
+					icon-name: "puzzle-piece-symbolic";
+					title: _("Extensions");
+
+					child: Adw.StatusPage {
 						icon-name: "puzzle-piece-symbolic";
-						title: _("Extensions");
-
-						child: Label {
-							label: "Content";
-
-							styles [
-								"title-1",
-							]
-						};
-					}
+						title: _("Extensions are Not Supported Yet");
+					};
 				}
 			}
-		};
-	}
+		}
+	};
 }
