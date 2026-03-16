@@ -38,7 +38,7 @@ msgid "Focus on your browsing"
 msgstr "Foco na sua navegação"
 
 #: OuchBrowser/UI/Builder/Window.blp:36
-msgid "Hide sidebar"
+msgid "Hide Sidebar"
 msgstr ""
 
 #: OuchBrowser/UI/Builder/Window.blp:51
@@ -54,11 +54,13 @@ msgid "Refresh"
 msgstr "Recarregar"
 
 #: OuchBrowser/UI/Builder/Window.blp:111
-msgid "Reveal command palette"
+msgid "Reveal Command Palette"
 msgstr ""
 
 #: OuchBrowser/UI/Builder/Window.blp:180 OuchBrowser/UI/Builder/Window.blp:498
-msgid "New tab"
+#, fuzzy
+#| msgid "New tab"
+msgid "New Tab"
 msgstr "Nova guia"
 
 #: OuchBrowser/UI/Builder/Window.blp:248 OuchBrowser/UI/Builder/Window.blp:467
@@ -70,7 +72,7 @@ msgid "New…"
 msgstr "Novo…"
 
 #: OuchBrowser/UI/Builder/Window.blp:299
-msgid "Show sidebar"
+msgid "Show Sidebar"
 msgstr ""
 
 #: OuchBrowser/UI/Builder/Window.blp:374
@@ -94,7 +96,7 @@ msgid "Downloads"
 msgstr "Descargas"
 
 #: OuchBrowser/UI/Builder/Window.blp:473
-msgid "Show all tabs"
+msgid "Show All Tabs"
 msgstr ""
 
 #: OuchBrowser/UI/Builder/Window.blp:478
@@ -106,7 +108,7 @@ msgid "Preferences"
 msgstr ""
 
 #: OuchBrowser/UI/Builder/Window.blp:480
-msgid "Plugins manager"
+msgid "Plugins Manager"
 msgstr ""
 
 #: OuchBrowser/UI/Builder/Window.blp:484
@@ -114,13 +116,15 @@ msgid "About Ouch Browser"
 msgstr "Sobre o Ouch Browser"
 
 #: OuchBrowser/UI/Builder/Window.blp:494
-msgid "New room"
+msgid "New Room"
 msgstr ""
 
 #: OuchBrowser/UI/Builder/Window.blp:495
-msgid "New folder"
+msgid "New Folder"
 msgstr ""
 
 #: OuchBrowser/View.cs:79
-msgid "Stop loading"
+#, fuzzy
+#| msgid "Stop loading"
+msgid "Stop Loading"
 msgstr "Pare de recarregar"
