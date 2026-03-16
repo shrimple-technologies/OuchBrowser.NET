@@ -5,30 +5,31 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://tangled.org/shrimple.srht.site/OuchBrowser.NET/"
 "issues\n"
 "POT-Creation-Date: 2026-03-01 12:29:28-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2026-03-17 18:09+0000\n"
+"Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
+"Language-Team: Estonian <https://hosted.weblate.org/projects/ouch/net/et/>\n"
 "Language: et\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 # TRANSLATORS: This is not a string that is a part of the source code. This is your name (or username), followed by your email enclosed in angles (<example@domain.com>) or your website. This will be shown in Ouch Browser's credits.
 #: OuchBrowser/Builder/About.blp:10
 msgid "translator-credits"
-msgstr ""
+msgstr "Priit Jõerüüt 2026"
 
 #: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.metainfo.xml:6
 #: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.desktop:3
 #: OuchBrowser/UI/Builder/Window.blp:16 OuchBrowser/UI/Builder/Window.blp:287
 #: OuchBrowser/UI.cs:60
 msgid "Ouch Browser"
-msgstr ""
+msgstr "Veebibrauser Ouch"
 
 #: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.metainfo.xml:8
 msgid "Shrimple Technologies"
-msgstr ""
+msgstr "Shrimple Technologies"
 
 #: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.metainfo.xml:13
 #: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.desktop:4
