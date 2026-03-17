@@ -34,6 +34,9 @@ public class Preferences : Adw.Dialog
 
 		AddBreakpoint(SetupBreakpoint());
 
+		ViewStackPage page = view!.GetPage(view!.GetVisibleChild()!);
+		nsv!.GetContent()!.SetTitle(page!.GetTitle()!);
+
 		// the user has the option to modify settings via means, such as dconf
 		// Editor and the gsettings command, while Ouch Browser is open.
 		// Every time the dialog is presented, it should use the current
@@ -68,7 +71,12 @@ public class Preferences : Adw.Dialog
 
 		view!.OnNotify += (_, args) =>
 		{
-			if (args.Pspec.GetName() == "visible-child") nsv!.SetShowContent(true);
+			if (args.Pspec.GetName() == "visible-child")
+			{
+				ViewStackPage page = view!.GetPage(view!.GetVisibleChild()!);
+				nsv!.GetContent()!.SetTitle(page!.GetTitle()!);
+				nsv!.SetShowContent(true);
+			}
 		};
 
 		setting_search_autocomplete!.OnNotify += (_, args) =>
