@@ -94,9 +94,7 @@ Adw.NavigationSplitView nsv {
 
 		Adw.ToolbarView {
 			[top]
-			Adw.HeaderBar {
-				show-title: false;
-			}
+			Adw.HeaderBar {}
 
 			Adw.ViewStack view {
 				enable-transitions: true;
@@ -108,8 +106,8 @@ Adw.NavigationSplitView nsv {
 
 					child: ScrolledWindow {
 						Adw.Clamp {
-							margin-start: 10;
-							margin-end: 10;
+							margin-start: 15;
+							margin-end: 15;
 
 							Box {
 								orientation: vertical;
@@ -170,28 +168,14 @@ Adw.NavigationSplitView nsv {
 				}
 
 				Adw.ViewStackPage {
-					name: "appearance";
-					icon-name: "color-select-symbolic";
-					title: _("Appearance");
-
-					child: Label {
-						label: "Content";
-
-						styles [
-							"title-1",
-						]
-					};
-				}
-
-				Adw.ViewStackPage {
 					name: "search-engine";
 					icon-name: "search-symbolic";
 					title: _("Search Engine");
 
 					child: ScrolledWindow {
 						Adw.Clamp {
-							margin-start: 10;
-							margin-end: 10;
+							margin-start: 15;
+							margin-end: 15;
 
 							Box {
 								orientation: vertical;
@@ -250,8 +234,8 @@ Adw.NavigationSplitView nsv {
 
 					child: ScrolledWindow {
 						Adw.Clamp {
-							margin-start: 10;
-							margin-end: 10;
+							margin-start: 15;
+							margin-end: 15;
 
 							Box {
 								orientation: vertical;
@@ -288,6 +272,88 @@ Adw.NavigationSplitView nsv {
 					child: Adw.StatusPage {
 						icon-name: "puzzle-piece-symbolic";
 						title: _("Extensions are Not Supported Yet");
+					};
+				}
+
+				Adw.ViewStackPage {
+					name: "cards";
+					icon-name: "dialog-question-symbolic";
+					title: _("Cards");
+
+					child: ScrolledWindow {
+						Adw.Clamp {
+							margin-start: 15;
+							margin-end: 15;
+
+							Box {
+								orientation: vertical;
+								spacing: 24;
+								margin-top: 15;
+								margin-bottom: 15;
+
+								Label {
+									halign: start;
+									wrap: true;
+									label: _("Cards are non-obtrusive persistent notifications shown inside the sidebar, which are used for displaying information, such as updates, tips, media controls, and more.");
+
+									styles [
+										"dimmed",
+									]
+								}
+
+								ListBox infobar_listbox {
+									selection-mode: none;
+
+									styles [
+										"boxed-list",
+									]
+
+									Adw.SwitchRow {
+										icon-name: "dialog-question-symbolic";
+										title: _("Enable Cards");
+										active: true;
+									}
+								}
+
+								Adw.PreferencesGroup {
+									title: _("Tips and Tricks");
+									description: _("Shown throughout your browing to provide tips and tricks for Ouch Browser");
+
+									Adw.SwitchRow {
+										icon-name: "search-symbolic";
+										title: _("Search Engine Suggestions");
+										subtitle: _("When you search using a supported search engine, Ouch Browser will suggest setting it as your default search engine");
+									}
+								}
+
+								Adw.PreferencesGroup {
+									title: _("Media Controls");
+									description: _("Shown when media is playing");
+
+									Adw.SwitchRow {
+										icon-name: "applications-multimedia-symbolic";
+										title: _("Enable Media Controls");
+									}
+								}
+
+								Adw.PreferencesGroup {
+									title: _("Updates");
+									description: _("Shown when an update is available or installed");
+
+									Adw.SwitchRow {
+										icon-name: "software-update-available-symbolic";
+										title: _("Updated to New Version");
+										subtitle: _("When a new version of Ouch Browser is installed, it will inform you of the update's details and allow you to read the changelog");
+									}
+
+									Adw.SwitchRow {
+										icon-name: "system-software-update-symbolic";
+										title: _("New Version Found");
+										subtitle: _("When a new version of Ouch Browser is found, it will notify you to update as soon as possible");
+									}
+								}
+							}
+						}
 					};
 				}
 			}

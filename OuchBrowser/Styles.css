@@ -54,3 +54,7 @@ toggle-group > separator {
 .popover-menu > button {
 	transition: none;
 }
+
+.infobar > row {
+	padding: 0;
+}
