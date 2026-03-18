@@ -159,7 +159,58 @@ Adw.NavigationSplitView nsv {
 									Adw.SwitchRow setting_devtools {
 										icon-name: "code-symbolic";
 										title: _("Enable Developer Tools");
-										subtitle: _("This will allow access to the Web Inspector. Will be applied to new tabs only.");
+										subtitle: _("This will allow access to the Web Inspector");
+									}
+								}
+							}
+						}
+					};
+				}
+
+				Adw.ViewStackPage {
+					name: "accessibility";
+					icon-name: "preferences-desktop-accessibility-symbolic";
+					title: _("Accessibility");
+
+					child: ScrolledWindow {
+						Adw.Clamp {
+							margin-start: 15;
+							margin-end: 15;
+
+							Box {
+								orientation: vertical;
+								spacing: 24;
+								margin-top: 15;
+								margin-bottom: 15;
+
+								Adw.PreferencesGroup {
+									title: _("Content");
+
+									Adw.ComboRow setting_zoom {
+										icon-name: "zoom-fit-best-symbolic";
+										title: _("Page Zoom");
+
+										model: StringList {
+											strings [
+												"25%",
+												"33%",
+												"50%",
+												"67%",
+												"75%",
+												"80%",
+												"90%",
+												"100%",
+												"110%",
+												"125%",
+												"150%",
+												"175%",
+												"200%",
+												"250%",
+												"300%",
+												"400%",
+												"500%",
+											]
+										};
 									}
 								}
 							}
@@ -265,17 +316,6 @@ Adw.NavigationSplitView nsv {
 				}
 
 				Adw.ViewStackPage {
-					name: "extensions";
-					icon-name: "puzzle-piece-symbolic";
-					title: _("Extensions");
-
-					child: Adw.StatusPage {
-						icon-name: "puzzle-piece-symbolic";
-						title: _("Extensions are Not Supported Yet");
-					};
-				}
-
-				Adw.ViewStackPage {
 					name: "cards";
 					icon-name: "dialog-question-symbolic";
 					title: _("Cards");
@@ -354,6 +394,17 @@ Adw.NavigationSplitView nsv {
 								}
 							}
 						}
+					};
+				}
+
+				Adw.ViewStackPage {
+					name: "extensions";
+					icon-name: "puzzle-piece-symbolic";
+					title: _("Extensions");
+
+					child: Adw.StatusPage {
+						icon-name: "puzzle-piece-symbolic";
+						title: _("Extensions are Not Supported Yet");
 					};
 				}
 			}

@@ -13,8 +13,9 @@ public class Preferences : Adw.Dialog
 	[Connect] public readonly SwitchRow? setting_bang_autocomplete;
 	[Connect] public readonly SwitchRow? setting_devtools;
 	[Connect] public readonly ComboRow? setting_search_engine;
+	[Connect] public readonly ComboRow? setting_zoom;
 
-	public Preferences(Gio.Settings settings, ICatalog gettext) : base()
+	public Preferences(UI.Window window) : base()
 	{
 		var assembly = Assembly.GetExecutingAssembly();
 		using var stream = assembly.GetManifestResourceStream("UI/Preferences.ui");
@@ -45,10 +46,10 @@ public class Preferences : Adw.Dialog
 		{
 			if (args.Pspec.GetName() == "parent")
 			{
-				setting_search_autocomplete!.SetActive(settings.GetBoolean("search-autocomplete-enabled"));
-				setting_bang_autocomplete!.SetActive(settings.GetBoolean("bang-autocomplete-enabled"));
-				setting_devtools!.SetActive(settings.GetBoolean("devtools-enabled"));
-				switch (settings.GetString("search-engine"))
+				setting_search_autocomplete!.SetActive(window.settings.GetBoolean("search-autocomplete-enabled"));
+				setting_bang_autocomplete!.SetActive(window.settings.GetBoolean("bang-autocomplete-enabled"));
+				setting_devtools!.SetActive(window.settings.GetBoolean("devtools-enabled"));
+				switch (window.settings.GetString("search-engine"))
 				{
 					case "https://bing.com/search?q=":
 						setting_search_engine!.SetSelected(0);
@@ -66,6 +67,60 @@ public class Preferences : Adw.Dialog
 						setting_search_engine!.SetSelected(4);
 						break;
 				}
+				switch (window.settings.GetDouble("zoom"))
+				{
+					case 0.25:
+						setting_zoom!.SetSelected(0);
+						break;
+					case 0.33:
+						setting_zoom!.SetSelected(1);
+						break;
+					case 0.5:
+						setting_zoom!.SetSelected(2);
+						break;
+					case 0.67:
+						setting_zoom!.SetSelected(3);
+						break;
+					case 0.75:
+						setting_zoom!.SetSelected(4);
+						break;
+					case 0.8:
+						setting_zoom!.SetSelected(5);
+						break;
+					case 0.9:
+						setting_zoom!.SetSelected(6);
+						break;
+					case 1:
+						setting_zoom!.SetSelected(7);
+						break;
+					case 1.1:
+						setting_zoom!.SetSelected(8);
+						break;
+					case 1.25:
+						setting_zoom!.SetSelected(9);
+						break;
+					case 1.5:
+						setting_zoom!.SetSelected(10);
+						break;
+					case 1.75:
+						setting_zoom!.SetSelected(11);
+						break;
+					case 2:
+						setting_zoom!.SetSelected(12);
+						break;
+					case 2.5:
+						setting_zoom!.SetSelected(13);
+						break;
+					case 3:
+						setting_zoom!.SetSelected(14);
+						break;
+					case 4:
+						setting_zoom!.SetSelected(15);
+						break;
+					case 5:
+						setting_zoom!.SetSelected(16);
+						break;
+				}
 			}
 		};
 
@@ -81,17 +136,29 @@ public class Preferences : Adw.Dialog
 
 		setting_search_autocomplete!.OnNotify += (_, args) =>
 		{
-			if (args.Pspec.GetName() == "active") settings.SetBoolean("search-autocomplete-enabled", setting_search_autocomplete.GetActive());
+			if (args.Pspec.GetName() == "active") window.settings.SetBoolean("search-autocomplete-enabled", setting_search_autocomplete.GetActive());
 		};
 
 		setting_bang_autocomplete!.OnNotify += (_, args) =>
 		{
-			if (args.Pspec.GetName() == "active") settings.SetBoolean("bang-autocomplete-enabled", setting_bang_autocomplete.GetActive());
+			if (args.Pspec.GetName() == "active") window.settings.SetBoolean("bang-autocomplete-enabled", setting_bang_autocomplete.GetActive());
 		};
 
 		setting_devtools!.OnNotify += (_, args) =>
 		{
-			if (args.Pspec.GetName() == "active") settings.SetBoolean("devtools-enabled", setting_devtools.GetActive());
+			if (args.Pspec.GetName() == "active")
+			{
+				window.settings.SetBoolean("devtools-enabled", setting_devtools.GetActive());
+				int npages = window.view!.GetNPages()!;
+
+				for (int i = 1; i <= npages; i++)
+				{
+					TabPage page = window.view!.GetNthPage(i - 1);
+					WebKit.WebView webview = (WebKit.WebView)page.GetChild();
+					WebKit.Settings settings = webview.GetSettings();
+					settings.SetEnableDeveloperExtras(setting_devtools.GetActive());
+				}
+			}
 		};
 
 		setting_search_engine!.OnNotify += (_, args) =>
@@ -101,20 +168,64 @@ public class Preferences : Adw.Dialog
 				switch (setting_search_engine!.GetSelected())
 				{
 					case 0:
-						settings.SetString("search-engine", "https://bing.com/search?q=");
+						window.settings.SetString("search-engine", "https://bing.com/search?q=");
 						break;
 					case 1:
-						settings.SetString("search-engine", "https://duckduckgo.com/?q=");
+						window.settings.SetString("search-engine", "https://duckduckgo.com/?q=");
 						break;
 					case 2:
-						settings.SetString("search-engine", "https://ecosia.org/search?q=");
+						window.settings.SetString("search-engine", "https://ecosia.org/search?q=");
 						break;
 					case 3:
-						settings.SetString("search-engine", "https://google.com/search?q=");
+						window.settings.SetString("search-engine", "https://google.com/search?q=");
 						break;
 					case 4:
-						settings.SetString("search-engine", "https://kagi.com/search?q=");
+						window.settings.SetString("search-engine", "https://kagi.com/search?q=");
 						break;
+				}
+			}
+		};
+
+		setting_zoom!.OnNotify += (_, args) =>
+		{
+			if (args.Pspec.GetName() == "selected")
+			{
+				double prev_default = window.settings.GetDouble("zoom");
+
+				switch (setting_zoom!.GetSelected())
+				{
+					case 0:
+						window.settings.SetDouble("zoom", 0.25);
+						break;
+					case 1:
+						window.settings.SetDouble("zoom", 0.33);
+						break;
+					case 2:
+						window.settings.SetDouble("zoom", 0.5);
+						break;
+					case 3:
+						window.settings.SetDouble("zoom", 0.67);
+						break;
+					case 4:
+						window.settings.SetDouble("zoom", 0.75);
+						break;
+					case 5:
+						window.settings.SetDouble("zoom", 0.8);
+						break;
+					case 6:
+						window.settings.SetDouble("zoom", 0.9);
+						break;
+					case 7:
+						window.settings.SetDouble("zoom", 1);
+						break;
+				}
+
+				int npages = window.view!.GetNPages()!;
+				for (int i = 1; i <= npages; i++)
+				{
+					TabPage page = window.view!.GetNthPage(i - 1);
+					WebKit.WebView webview = (WebKit.WebView)page.GetChild();
+					if (prev_default == webview.GetZoomLevel()) webview.SetZoomLevel(window.settings.GetDouble("zoom"));
 				}
 			}
 		};

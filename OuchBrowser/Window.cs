@@ -21,7 +21,7 @@ public class Window
 	{
 		var application = (Application)app;
 		var window = new UI.Window(application);
-		var preferences = new Preferences(window.settings, window.gettext);
+		var preferences = new Preferences(window);
 		var about = About.New();
 		var view = new View(window.view!, window!);
 		var bangs = new Bangs(window.settings.GetString("search-engine"));
@@ -132,7 +132,7 @@ public class Window
 								button_label.SetCssClasses(["body"]);
 								button_label.SetEllipsize(Pango.EllipsizeMode.End);
 								button_trigger.SetCssClasses(["body", "dimmed"]);
-								button_box.Append(Image.NewFromIconName("exclaimation-symbolic"));
+								button_box.Append(Image.NewFromIconName("box-dotted-symbolic"));
 								button_box.Append(button_label);
 								button_box.Append(button_trigger);
 								button.SetChild(button_box);

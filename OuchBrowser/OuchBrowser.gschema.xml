@@ -34,7 +34,9 @@
 			<default>1.0</default>
 			<summary>Zoom</summary>
 			<description>
-				This value is the zoom level of the browser.
+				This value is the zoom level of the browser. Please do not
+				modify this value yourself as this can create unintended
+				side effects.
 			</description>
 		</key>
 
