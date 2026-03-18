@@ -1,0 +1,4 @@
+<Solution>
+	<Project Path="OuchBrowser.Plugins/OuchBrowser.Plugins.csproj" />
+	<Project Path="OuchBrowser/OuchBrowser.csproj" />
+</Solution>
