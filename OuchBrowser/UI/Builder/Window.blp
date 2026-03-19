@@ -393,11 +393,10 @@ Adw.TabOverview overview {
 								}
 							}
 
-							/* Revealer cards_revealer {
+							Revealer card_revealer {
 								transition-type: slide_up;
-								reveal-child: true;
 
-								ListBox cards_listbox {
+								ListBox card_listbox {
 									selection-mode: none;
 									margin-top: 10;
 									margin-bottom: 5;
@@ -409,26 +408,8 @@ Adw.TabOverview overview {
 										"infobar",
 										"font-medium",
 									]
-
-									Adw.ActionRow {
-										icon-name: "dialog-information-symbolic";
-										title: _("Tip");
-										subtitle: _("You can change search engines in preferences");
-										selectable: false;
-										focusable: false;
-									}
-
-									Adw.ButtonRow {
-										start-icon-name: "preferences-symbolic";
-										title: _("Open Preferences");
-									}
-
-									Adw.ButtonRow {
-										start-icon-name: "cross-large-symbolic";
-										title: _("Close");
-									}
 								}
-							} */
+							}
 						}
 
 						[bottom]

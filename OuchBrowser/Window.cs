@@ -22,6 +22,7 @@ public class Window
 		var application = (Application)app;
 		var window = new UI.Window(application);
 		var preferences = new Preferences(window);
+		var cards = new Cards(window);
 		var about = About.New();
 		var view = new View(window.view!, window!);
 		var bangs = new Bangs(window.settings.GetString("search-engine"));
