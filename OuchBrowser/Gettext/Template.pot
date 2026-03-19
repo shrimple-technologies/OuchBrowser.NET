@@ -14,113 +14,227 @@ msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
 # TRANSLATORS: This is not a string that is a part of the source code. This is your name (or username), followed by your email enclosed in angles (<example@domain.com>) or your website. This will be shown in Ouch Browser's credits.
-#: OuchBrowser/Builder/About.blp:10
 msgid "translator-credits"
 msgstr ""
 
-#: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.metainfo.xml:6
-#: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.desktop:3
-#: OuchBrowser/UI/Builder/Window.blp:16
-#: OuchBrowser/UI/Builder/Window.blp:287
-#: OuchBrowser/UI.cs:60
 msgid "Ouch Browser"
 msgstr ""
 
-#: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.metainfo.xml:8
 msgid "Shrimple Technologies"
 msgstr ""
 
-#: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.metainfo.xml:13
-#: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.desktop:4
 msgid "Focus on your browsing"
 msgstr ""
 
-#: OuchBrowser/UI/Builder/Window.blp:36
 msgid "Hide Sidebar"
 msgstr ""
 
-#: OuchBrowser/UI/Builder/Window.blp:51
 msgid "Back"
 msgstr ""
 
-#: OuchBrowser/UI/Builder/Window.blp:61
 msgid "Forward"
 msgstr ""
 
-#: OuchBrowser/UI/Builder/Window.blp:71
 msgid "Refresh"
 msgstr ""
 
-#: OuchBrowser/UI/Builder/Window.blp:111
 msgid "Reveal Command Palette"
 msgstr ""
 
-#: OuchBrowser/UI/Builder/Window.blp:180
-#: OuchBrowser/UI/Builder/Window.blp:498
 msgid "New Tab"
 msgstr ""
 
-#: OuchBrowser/UI/Builder/Window.blp:248
-#: OuchBrowser/UI/Builder/Window.blp:467
 msgid "Archive"
 msgstr ""
 
-#: OuchBrowser/UI/Builder/Window.blp:271
 msgid "New…"
 msgstr ""
 
-#: OuchBrowser/UI/Builder/Window.blp:299
 msgid "Show Sidebar"
 msgstr ""
 
-#: OuchBrowser/UI/Builder/Window.blp:374
 msgid "Search or enter URL…"
 msgstr ""
 
-#: OuchBrowser/UI/Builder/Window.blp:434
 msgid "Go"
 msgstr ""
 
-#: OuchBrowser/UI/Builder/Window.blp:448
 msgid "Close Palette"
 msgstr ""
 
-#: OuchBrowser/UI/Builder/Window.blp:468
 msgid "History"
 msgstr ""
 
-#: OuchBrowser/UI/Builder/Window.blp:469
 msgid "Downloads"
 msgstr ""
 
-#: OuchBrowser/UI/Builder/Window.blp:473
 msgid "Show All Tabs"
 msgstr ""
 
-#: OuchBrowser/UI/Builder/Window.blp:478
 msgid "More"
 msgstr ""
 
-#: OuchBrowser/UI/Builder/Window.blp:479
 msgid "Preferences"
 msgstr ""
 
-#: OuchBrowser/UI/Builder/Window.blp:480
 msgid "Plugins Manager"
 msgstr ""
 
-#: OuchBrowser/UI/Builder/Window.blp:484
 msgid "About Ouch Browser"
 msgstr ""
 
-#: OuchBrowser/UI/Builder/Window.blp:494
 msgid "New Room"
 msgstr ""
 
-#: OuchBrowser/UI/Builder/Window.blp:495
 msgid "New Folder"
 msgstr ""
 
-#: OuchBrowser/View.cs:79
 msgid "Stop Loading"
+msgstr ""
+
+msgid "Close Tab"
+msgstr ""
+
+msgid "General"
+msgstr ""
+
+msgid "Content Blocking"
+msgstr ""
+
+msgid "Powered by uBlock Origin"
+msgstr ""
+
+msgid "Block Advertisments"
+msgstr ""
+
+msgid "Block Pop-up Windows"
+msgstr ""
+
+msgid "Session"
+msgstr ""
+
+msgid "Restore Tabs on Startup"
+msgstr ""
+
+msgid "Autocomplete"
+msgstr ""
+
+msgid "Enable Search Autocomplete"
+msgstr ""
+
+msgid "Enable !bang Autocomplete"
+msgstr ""
+
+msgid "Developer"
+msgstr ""
+
+msgid "Enable Developer Tools"
+msgstr ""
+
+msgid "This will allow access to the Web Inspector"
+msgstr ""
+
+msgid "Accessibility"
+msgstr ""
+
+msgid "Content"
+msgstr ""
+
+msgid "Page Zoom"
+msgstr ""
+
+msgid "Search Engine"
+msgstr ""
+
+msgid "Custom Search Engines"
+msgstr ""
+
+msgid "New Search Engine…"
+msgstr ""
+
+msgid "See !bangs preferences for more options"
+msgstr ""
+
+msgid "!bangs"
+msgstr ""
+
+msgid "Custom Bangs"
+msgstr ""
+
+msgid "!bangs provided by Kagi"
+msgstr ""
+
+msgid "Cards"
+msgstr ""
+
+msgid ""
+"Cards are non-obtrusive persistent notifications shown inside the sidebar, \n"
+"which are used for displaying information, such as updates, tips, media \n"
+"controls, and more."
+""
+msgstr ""
+
+msgid "Enable Cards"
+msgstr ""
+
+msgid "Tips and Tricks"
+msgstr ""
+
+msgid ""
+"Shown throughout yout browsing to provide tips and tricks for Ouch Browser"
+""
+msgstr ""
+
+msgid "Search Engine Suggestions"
+msgstr ""
+
+msgid ""
+"When you search using a supported search engine, Ouch Browser will suggest \n"
+"setting it as your default search engine"
+""
+msgstr ""
+
+msgid "Media Controls"
+msgstr ""
+
+msgid "Shwon when media is playing"
+msgstr ""
+
+msgid "Enable Media Controls"
+msgstr ""
+
+msgid "Updates"
+msgstr ""
+
+msgid "Shown when an update is available or installed"
+msgstr ""
+
+msgid "Updated to New Version"
+msgstr ""
+
+msgid ""
+"When a new version of Ouch Browser is installed, it will inform you of the \n"
+"update's details and allow you to read the changelog"
+""
+msgstr ""
+
+msgid "New Version Found"
+msgstr ""
+
+msgid ""
+"When a new version of Ouch Browser is found, it will notify you to update \n"
+"as soon as possible"
+""
+msgstr ""
+
+msgid "Extensions"
+msgstr ""
+
+msgid "Searching using %s"
+msgstr ""
+
+msgid "BANGS"
+msgstr ""
+
+msgid "SUGGESTIONS"
 msgstr ""

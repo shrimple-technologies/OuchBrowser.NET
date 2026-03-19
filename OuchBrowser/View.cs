@@ -122,7 +122,7 @@ public class View
 				case LoadEvent.Started:
 					page.SetIcon(Gio.ThemedIcon.New("box-dotted-symbolic")); // set this placeholder first
 					window.refresh!.SetSensitive(true);
-					window.refresh!.SetTooltipText(window.gettext.GetString("Stop loading"));
+					window.refresh!.SetTooltipText(window.gettext.GetString("Stop Loading"));
 					window.url_button!.SetSensitive(true);
 					window.copy_link!.SetSensitive(true);
 					window.website_settings!.SetSensitive(true);
