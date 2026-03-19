@@ -53,7 +53,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\OuchBrowser.Plugins\OuchBrowser.Plugins.csproj" />
+		<ProjectReference Include="..\OuchBrowser.WebExtensions\OuchBrowser.WebExtensions.csproj" />
 	</ItemGroup>
 
 </Project>
