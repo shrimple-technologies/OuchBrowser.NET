@@ -1,7 +1,7 @@
 {
 	"id": "site.srht.shrimple.OuchBrowser",
 	"runtime": "org.gnome.Platform",
-	"runtime-version": "49",
+	"runtime-version": "50",
 	"sdk": "org.gnome.Sdk",
 	"sdk-extensions": [
 		"org.freedesktop.Sdk.Extension.dotnet10"
