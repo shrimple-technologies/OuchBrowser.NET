@@ -249,9 +249,6 @@ public class Preferences : Adw.Dialog
 		boolean.SetBoolean(true);
 		breakpoint.AddSetter(nsv!, "collapsed", boolean);
 
-		boolean.SetBoolean(false);
-		breakpoint.AddSetter(view!, "enable-transitions", boolean);
-
 		return breakpoint;
 	}
 }
