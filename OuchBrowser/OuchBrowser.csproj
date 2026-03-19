@@ -28,9 +28,10 @@
 
 		<!-- Icons -->
 		<EmbeddedResource Include="Icons\Symbolic\archive-symbolic.svg" />
-		<EmbeddedResource Include="Icons\Symbolic\code-symbolic.svg" />
 		<EmbeddedResource Include="Icons\Symbolic\box-dotted-symbolic.svg" />
 		<EmbeddedResource Include="Icons\Symbolic\chain-link-loose-symbolic.svg" />
+		<EmbeddedResource Include="Icons\Symbolic\circle-crossed-symbolic.svg" />
+		<EmbeddedResource Include="Icons\Symbolic\code-symbolic.svg" />
 		<EmbeddedResource Include="Icons\Symbolic\cross-large-symbolic.svg" />
 		<EmbeddedResource Include="Icons\Symbolic\dot-symbolic.svg" />
 		<EmbeddedResource Include="Icons\Symbolic\exclaimation-symbolic.svg" />

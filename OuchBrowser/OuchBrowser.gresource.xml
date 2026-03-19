@@ -10,16 +10,20 @@
 		>Icons/Symbolic/archive-symbolic.svg</file>
 		<file
 			preprocess="xml-stripblanks"
-			alias="code-symbolic.svg"
-		>Icons/Symbolic/code-symbolic.svg</file>
-		<file
-			preprocess="xml-stripblanks"
 			alias="box-dotted-symbolic.svg"
 		>Icons/Symbolic/box-dotted-symbolic.svg</file>
 		<file
 			preprocess="xml-stripblanks"
 			alias="chain-link-loose-symbolic.svg"
 		>Icons/Symbolic/chain-link-loose-symbolic.svg</file>
+		<file
+			preprocess="xml-stripblanks"
+			alias="circle-crossed-symbolic.svg"
+		>Icons/Symbolic/circle-crossed-symbolic.svg</file>
+		<file
+			preprocess="xml-stripblanks"
+			alias="code-symbolic.svg"
+		>Icons/Symbolic/code-symbolic.svg</file>
 		<file
 			preprocess="xml-stripblanks"
 			alias="cross-large-symbolic.svg"
