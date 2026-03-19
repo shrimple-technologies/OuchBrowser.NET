@@ -85,7 +85,7 @@ public class Window
 					{
 						window.url_stack!.SetVisibleChildName("bang");
 						window.url_disclosure!.SetVisibleChildName("bang");
-						
+
 						if (window.settings.GetBoolean("bang-autocomplete-enabled"))
 						{
 							window.url_autocomplete!.SetRevealChild(true);
@@ -366,7 +366,7 @@ public class Window
 		}
 	}
 
-	public void SetupActions(UI.Window window, Application application, Adw.Dialog preferences, Adw.AboutDialog about)
+	public void SetupActions(UI.Window window, Application application, Preferences preferences, Adw.AboutDialog about)
 	{
 		var actions = new Actions(window, application);
 
@@ -430,6 +430,7 @@ public class Window
 
 		actions.AddAction("preferences", ["<Ctrl>comma"], (action, parameter) =>
 		{
+			preferences.FocusPane("general");
 			preferences.Present(window);
 		});
 
