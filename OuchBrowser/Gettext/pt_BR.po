@@ -1,21 +1,22 @@
 # bee <micenest@pm.me>, 2024.
 # grayairr <grayair@proton.me>, 2024.
+# Wiliam <wilian4512@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://tangled.org/shrimple.srht.site/OuchBrowser.NET/"
 "issues\n"
 "POT-Creation-Date: 2026-03-01 12:29:28-0400\n"
-"PO-Revision-Date: 2024-10-11 21:16+0000\n"
-"Last-Translator: grayairr <grayair@proton.me>\n"
+"PO-Revision-Date: 2026-03-19 15:39+0000\n"
+"Last-Translator: Wiliam <wilian4512@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/ouch/"
-"ouch/pt_BR/>\n"
+"net/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.8-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: OuchBrowser/Builder/About.blp:10
 msgid "translator-credits"
@@ -39,7 +40,7 @@ msgstr "Foque em sua navegação"
 
 #: OuchBrowser/UI/Builder/Window.blp:36
 msgid "Hide Sidebar"
-msgstr ""
+msgstr "Ocultar Barra Lateral"
 
 #: OuchBrowser/UI/Builder/Window.blp:51
 msgid "Back"
@@ -55,7 +56,7 @@ msgstr "Recarregar"
 
 #: OuchBrowser/UI/Builder/Window.blp:111
 msgid "Reveal Command Palette"
-msgstr ""
+msgstr "Mostrar Paleta de Comandos"
 
 #: OuchBrowser/UI/Builder/Window.blp:180 OuchBrowser/UI/Builder/Window.blp:498
 #, fuzzy
@@ -73,23 +74,23 @@ msgstr "Novo…"
 
 #: OuchBrowser/UI/Builder/Window.blp:299
 msgid "Show Sidebar"
-msgstr ""
+msgstr "Mostrar Barra Lateral"
 
 #: OuchBrowser/UI/Builder/Window.blp:374
 msgid "Search or enter URL…"
-msgstr ""
+msgstr "Pesquisar ou Inserir Endereço Web…"
 
 #: OuchBrowser/UI/Builder/Window.blp:434
 msgid "Go"
-msgstr ""
+msgstr "Ir"
 
 #: OuchBrowser/UI/Builder/Window.blp:448
 msgid "Close Palette"
-msgstr ""
+msgstr "Fechar Paleta"
 
 #: OuchBrowser/UI/Builder/Window.blp:468
 msgid "History"
-msgstr ""
+msgstr "Histórico"
 
 #: OuchBrowser/UI/Builder/Window.blp:469
 msgid "Downloads"
@@ -97,19 +98,19 @@ msgstr "Downloads"
 
 #: OuchBrowser/UI/Builder/Window.blp:473
 msgid "Show All Tabs"
-msgstr ""
+msgstr "Mostrar Todas as Abas"
 
 #: OuchBrowser/UI/Builder/Window.blp:478
 msgid "More"
-msgstr ""
+msgstr "Mais"
 
 #: OuchBrowser/UI/Builder/Window.blp:479
 msgid "Preferences"
-msgstr ""
+msgstr "Preferências"
 
 #: OuchBrowser/UI/Builder/Window.blp:480
 msgid "Plugins Manager"
-msgstr ""
+msgstr "Gerenciador de Plugins"
 
 #: OuchBrowser/UI/Builder/Window.blp:484
 msgid "About Ouch Browser"
@@ -117,14 +118,12 @@ msgstr "Sobre o Ouch Browser"
 
 #: OuchBrowser/UI/Builder/Window.blp:494
 msgid "New Room"
-msgstr ""
+msgstr "Nova Sala"
 
 #: OuchBrowser/UI/Builder/Window.blp:495
 msgid "New Folder"
-msgstr ""
+msgstr "Nova Pasta"
 
 #: OuchBrowser/View.cs:79
-#, fuzzy
-#| msgid "Stop loading"
 msgid "Stop Loading"
-msgstr "Pare de recarregar"
+msgstr "Parar de Carregar"
