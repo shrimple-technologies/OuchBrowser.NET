@@ -1,7 +1,7 @@
 using Adw;
 using OuchBrowser.Types;
 
-namespace OuchBrowser;
+namespace OuchBrowser.Utils;
 
 public class Cards
 {
