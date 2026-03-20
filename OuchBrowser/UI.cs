@@ -121,10 +121,4 @@ public class Window : Adw.ApplicationWindow
 
 		return breakpoint;
 	}
-
-	// [Connect]
-	private void OnMenuButtonCLicked(object sender, EventArgs args)
-	{
-		Console.WriteLine("AGJSKHJS");
-	}
 }
