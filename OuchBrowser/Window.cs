@@ -778,7 +778,7 @@ public class Window
 			Gdk.Clipboard clipboard = display!.GetClipboard();
 			clipboard.SetText(uri);
 
-			toast.SetTitle(window.gettext.GetString("Link copied"));
+			toast.SetTitle(window.gettext.GetString("Link Copied"));
 			toast.SetTimeout(1);
 			window.toast_overlay!.DismissAll();
 			window.toast_overlay!.AddToast(toast);
