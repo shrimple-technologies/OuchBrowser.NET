@@ -1,6 +1,6 @@
 using Gio;
 
-namespace OuchBrowser;
+namespace OuchBrowser.Utils;
 
 public class Actions
 {
