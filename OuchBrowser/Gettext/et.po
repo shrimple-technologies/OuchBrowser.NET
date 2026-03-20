@@ -17,7 +17,7 @@ msgstr ""
 
 # TRANSLATORS: This is not a string that is a part of the source code. This is your name (or username), followed by your email enclosed in angles (<example@domain.com>) or your website. This will be shown in Ouch Browser's credits.
 msgid "translator-credits"
-msgstr "Priit Jõerüüt 2026"
+msgstr "Priit Jõerüüt"
 
 msgid "Ouch Browser"
 msgstr "Veebibrauser Ouch"
