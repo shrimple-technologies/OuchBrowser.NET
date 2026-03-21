@@ -5,7 +5,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://tangled.org/shrimple.srht.site/OuchBrowser.NET/"
 "issues\n"
 "POT-Creation-Date: 2026-03-01 12:29:28-0400\n"
-"PO-Revision-Date: 2026-03-17 18:09+0000\n"
+"PO-Revision-Date: 2026-03-22 19:09+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/ouch/net/et/>\n"
 "Language: et\n"
@@ -29,97 +29,97 @@ msgid "Focus on your browsing"
 msgstr ""
 
 msgid "Hide Sidebar"
-msgstr ""
+msgstr "Peida külgriba"
 
 msgid "Back"
-msgstr ""
+msgstr "Tagasi"
 
 msgid "Forward"
-msgstr ""
+msgstr "Edasi"
 
 msgid "Refresh"
-msgstr ""
+msgstr "Laadi uuesti"
 
 msgid "Reveal Command Palette"
 msgstr ""
 
 msgid "New Tab"
-msgstr ""
+msgstr "Uus vahekaart"
 
 msgid "Archive"
-msgstr ""
+msgstr "Arhiveeri"
 
 msgid "New…"
-msgstr ""
+msgstr "Uus…"
 
 msgid "Show Sidebar"
-msgstr ""
+msgstr "Näita külgriba"
 
 msgid "Search or enter URL…"
-msgstr ""
+msgstr "Otsi või sisesta võrguaadress…"
 
 msgid "Go"
-msgstr ""
+msgstr "Mine"
 
 msgid "Close Palette"
 msgstr ""
 
 msgid "History"
-msgstr ""
+msgstr "Ajalugu"
 
 msgid "Downloads"
-msgstr ""
+msgstr "Allalaadimised"
 
 msgid "Show All Tabs"
-msgstr ""
+msgstr "Näita kõiki vahekaarte"
 
 msgid "More"
-msgstr ""
+msgstr "Veel"
 
 msgid "Preferences"
-msgstr ""
+msgstr "Eelistused"
 
 msgid "Plugins Manager"
-msgstr ""
+msgstr "Lisamoodulite haldur"
 
 msgid "About Ouch Browser"
-msgstr ""
+msgstr "Rakenduse teave: veebibrauser Ouch"
 
 msgid "New Room"
 msgstr ""
 
 msgid "New Folder"
-msgstr ""
+msgstr "Uus kaust"
 
 msgid "Stop Loading"
-msgstr ""
+msgstr "Lõpeta laadimine"
 
 msgid "Close Tab"
-msgstr ""
+msgstr "Sulge vahekaart"
 
 msgid "General"
 msgstr ""
 
 msgid "Content Blocking"
-msgstr ""
+msgstr "Sisu blokeerimine"
 
 msgid "Powered by uBlock Origin"
-msgstr ""
+msgstr "Kasutusel on uBlock Origin"
 
 msgid "Block Advertisments"
-msgstr ""
+msgstr "Blokeeri reklaame"
 
 msgid "Block Pop-up Windows"
-msgstr ""
+msgstr "Blokeeri hüpikaknaid"
 
 msgid "Session"
-msgstr ""
+msgstr "Sessioon"
 
 msgid "Restore Tabs on Startup"
-msgstr ""
+msgstr "Käivitamisel taasta viimatiavatud vahekaardid"
 
 msgid "Autocomplete"
-msgstr ""
+msgstr "Automaattäide"
 
 msgid "Enable Search Autocomplete"
 msgstr ""
