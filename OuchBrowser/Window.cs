@@ -96,6 +96,8 @@ public class Window
 							sw.SetVexpand(true);
 							sw.SetMinContentHeight(399);
 							sw.SetMaxContentHeight(400);
+							sw.AddCssClass("undershoot-top");
+							sw.AddCssClass("undershoot-bottom");
 							section_label.SetCssClasses(["caption-heading", "dimmed"]);
 							section_label.SetHalign(Align.Start);
 							section_label.SetMarginStart(10);
