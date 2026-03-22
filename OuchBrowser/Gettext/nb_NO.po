@@ -241,3 +241,12 @@ msgstr ""
 
 msgid "SUGGESTIONS"
 msgstr ""
+
+msgid "Select an Extension"
+msgstr ""
+
+msgid "Zoom Text"
+msgstr ""
+
+msgid "Zooms text and images instead of the view"
+msgstr ""
