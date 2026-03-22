@@ -176,7 +176,6 @@ public class Window
 					window.url_disclosure!.SetVisibleChildName("none");
 					window.url_custom_disclosure!.SetLabel("");
 
-
 					if (window.settings.GetBoolean("search-autocomplete-enabled"))
 					{
 						var now = DateTime.UtcNow;
@@ -342,7 +341,6 @@ public class Window
 			}
 
 			window.url_dialog!.ForceClose();
-			window.url_dialog!.SetCanClose(true);
 			window.overview!.SetOpen(false);
 		};
 
@@ -360,11 +358,7 @@ public class Window
 		}
 		else
 		{
-			foreach (string url in window.settings.GetStrv("restore-tabs"))
-			{
-				window.url_dialog!.SetCanClose(true);
-				view.AddTab(url, false);
-			}
+			foreach (string url in window.settings.GetStrv("restore-tabs")) view.AddTab(url, false);
 		}
 	}
 

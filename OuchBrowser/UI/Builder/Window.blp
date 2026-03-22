@@ -788,7 +788,6 @@ Adw.TabOverview overview {
 
 Adw.Dialog url_dialog {
 	presentation-mode: auto;
-	can-close: false;
 	follows-content-size: false;
 
 	Adw.Clamp {
@@ -975,7 +974,6 @@ Adw.Dialog url_dialog {
 						margin-top: 10;
 						margin-bottom: 10;
 						spacing: 10;
-						visible: bind url_dialog.can-close;
 
 						Label {
 							label: _("Close Palette");
