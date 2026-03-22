@@ -8,6 +8,7 @@ namespace OuchBrowser.UI;
 public class Preferences : Adw.Dialog
 {
 	[Connect] public readonly NavigationSplitView? nsv;
+	[Connect] public readonly NavigationView? nv;
 	[Connect] public readonly ViewStack? view;
 	[Connect] public readonly SwitchRow? setting_search_autocomplete;
 	[Connect] public readonly SwitchRow? setting_bang_autocomplete;
@@ -29,8 +30,9 @@ public class Preferences : Adw.Dialog
 		nsv!.SetShowContent(true);
 
 		Child = nsv!;
-		HeightRequest = 500;
+		HeightRequest = 360;
 		WidthRequest = 360;
+		ContentHeight = 500;
 		ContentWidth = 800;
 
 		AddBreakpoint(SetupBreakpoint());
@@ -130,7 +132,14 @@ public class Preferences : Adw.Dialog
 			{
 				ViewStackPage page = view!.GetPage(view!.GetVisibleChild()!);
 				nsv!.GetContent()!.SetTitle(window.gettext.GetString(page!.GetTitle()!));
-				nsv!.SetShowContent(true);
+				if (view!.GetVisibleChildName() == "extensions")
+				{
+					nv!.PushByTag("extensions");
+				}
+				else
+				{
+					nsv!.SetShowContent(true);
+				}
 			}
 		};
 

@@ -5,17 +5,21 @@ Adw.NavigationSplitView nsv {
 	sidebar: Adw.NavigationPage {
 		title: _("Preferences");
 
-		Adw.ToolbarView {
-			[top]
-			Adw.HeaderBar {}
+		Adw.NavigationView nv {
+			Adw.NavigationPage {
+				title: _("Preferences");
 
-			Box {
-				orientation: vertical;
-				margin-bottom: 10;
-				margin-end: 10;
-				spacing: 6;
+				Adw.ToolbarView {
+					[top]
+					Adw.HeaderBar {}
 
-				/* Button {
+					Box {
+						orientation: vertical;
+						margin-bottom: 10;
+						margin-end: 10;
+						spacing: 6;
+
+						/* Button {
 						margin-start: 10;
 
 						styles [
@@ -60,30 +64,50 @@ Adw.NavigationSplitView nsv {
 							}
 						}
 					} */
-				ListView listview {
-					vexpand: true;
-					model: bind view.pages;
+						ListView listview {
+							vexpand: true;
+							model: bind view.pages;
 
-					factory: BuilderListItemFactory {
-						template ListItem {
-							child: Box {
-								margin-start: 5;
-								spacing: 10;
+							factory: BuilderListItemFactory {
+								template ListItem {
+									child: Box {
+										margin-start: 5;
+										spacing: 10;
 
-								Image {
-									icon-name: bind template.item as <Adw.ViewStackPage>.icon-name;
-								}
+										Image {
+											icon-name: bind template.item as <Adw.ViewStackPage>.icon-name;
+										}
 
-								Label {
-									label: bind template.item as <Adw.ViewStackPage>.title;
+										Label {
+											label: bind template.item as <Adw.ViewStackPage>.title;
+										}
+									};
 								}
 							};
-						}
-					};
 
-					styles [
-						"navigation-sidebar",
-					]
+							styles [
+								"navigation-sidebar",
+							]
+						}
+					}
+				}
+			}
+
+			Adw.NavigationPage {
+				title: _("Extensions");
+				tag: "extensions";
+
+				Adw.ToolbarView {
+					[top]
+					Adw.HeaderBar {}
+
+					Adw.StatusPage {
+						icon-name: "puzzle-piece-symbolic";
+
+						styles [
+							"compact",
+						]
+					}
 				}
 			}
 		}
@@ -211,6 +235,12 @@ Adw.NavigationSplitView nsv {
 												"500%",
 											]
 										};
+									}
+
+									Adw.SwitchRow {
+										icon-name: "format-text-rich-symbolic";
+										title: _("Zoom Text");
+										subtitle: _("Zooms text and images instead of the view");
 									}
 								}
 							}
@@ -404,7 +434,7 @@ Adw.NavigationSplitView nsv {
 
 					child: Adw.StatusPage {
 						icon-name: "puzzle-piece-symbolic";
-						title: _("Extensions are Not Supported Yet");
+						title: _("Select an Extension");
 					};
 				}
 			}
