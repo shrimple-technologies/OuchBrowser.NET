@@ -62,5 +62,17 @@ build-schemas:
 # compiles translations and installs them
 [group("build")]
 build-translations:
+	mkdir -p {{ PREFIX }}/share/locale/eo/LC_MESSAGES
+	mkdir -p {{ PREFIX }}/share/locale/et/LC_MESSAGES
+	mkdir -p {{ PREFIX }}/share/locale/fr/LC_MESSAGES
+	mkdir -p {{ PREFIX }}/share/locale/nb_NO/LC_MESSAGES
+	mkdir -p {{ PREFIX }}/share/locale/pt/LC_MESSAGES
 	mkdir -p {{ PREFIX }}/share/locale/pt_BR/LC_MESSAGES
+	mkdir -p {{ PREFIX }}/share/locale/ta/LC_MESSAGES
+	msgfmt -o {{ PREFIX }}/share/locale/eo/LC_MESSAGES/OuchBrowser.mo OuchBrowser/Gettext/eo.po
+	msgfmt -o {{ PREFIX }}/share/locale/en/LC_MESSAGES/OuchBrowser.mo OuchBrowser/Gettext/et.po
+	msgfmt -o {{ PREFIX }}/share/locale/fr/LC_MESSAGES/OuchBrowser.mo OuchBrowser/Gettext/fr.po
+	msgfmt -o {{ PREFIX }}/share/locale/nb_NO/LC_MESSAGES/OuchBrowser.mo OuchBrowser/Gettext/nb_NO.po
+	msgfmt -o {{ PREFIX }}/share/locale/pt/LC_MESSAGES/OuchBrowser.mo OuchBrowser/Gettext/pt.po
 	msgfmt -o {{ PREFIX }}/share/locale/pt_BR/LC_MESSAGES/OuchBrowser.mo OuchBrowser/Gettext/pt_BR.po
+	msgfmt -o {{ PREFIX }}/share/locale/ta/LC_MESSAGES/OuchBrowser.mo OuchBrowser/Gettext/ta.po

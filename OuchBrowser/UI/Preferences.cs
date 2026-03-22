@@ -24,6 +24,7 @@ public class Preferences : Adw.Dialog
 		string xml = reader.ReadToEnd();
 
 		var builder = new Builder();
+		builder.SetTranslationDomain("OuchBrowser");
 		builder.AddFromString(xml, -1);
 		builder.Connect(this);
 
