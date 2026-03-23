@@ -6,8 +6,17 @@ class Favicon
 	{
 		try
 		{
+			Uri hostname;
+			if (domain.StartsWith("https://") || domain.StartsWith("http://"))
+			{
+				hostname = new Uri(domain);
+			}
+			else
+			{
+				hostname = new Uri($"https://{domain}");
+			}
 			using var http = new HttpClient();
-			using var remoteStream = await http.GetStreamAsync($"https://www.google.com/s2/favicons?domain={Uri.EscapeDataString(domain)}&sz=16");
+			using var remoteStream = await http.GetStreamAsync($"https://twenty-icons.com/{Uri.EscapeDataString(hostname.Host)}/32");
 			using var memoryStream = new MemoryStream();
 
 			await remoteStream.CopyToAsync(memoryStream);
