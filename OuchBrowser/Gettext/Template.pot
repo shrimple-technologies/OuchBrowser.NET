@@ -68,7 +68,7 @@ msgstr ""
 msgid "Downloads"
 msgstr ""
 
-msgid "Show All Tabs"
+msgid "View All Tabs"
 msgstr ""
 
 msgid "More"

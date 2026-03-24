@@ -58,3 +58,7 @@ toggle-group > separator {
 .infobar > row {
 	padding: 0;
 }
+
+.toolbar {
+	padding: 0;
+}
