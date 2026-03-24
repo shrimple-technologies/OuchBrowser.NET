@@ -7,7 +7,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://tangled.org/shrimple.srht.site/OuchBrowser.NET/"
 "issues\n"
 "POT-Creation-Date: 2026-03-01 12:29:28-0400\n"
-"PO-Revision-Date: 2026-03-19 15:39+0000\n"
+"PO-Revision-Date: 2026-03-25 06:09+0000\n"
 "Last-Translator: Wiliam <wilian4512@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/ouch/"
 "net/pt_BR/>\n"
@@ -19,7 +19,9 @@ msgstr ""
 "X-Generator: Weblate 5.17-dev\n"
 
 msgid "translator-credits"
-msgstr "Betty https://bsky.app/profile/did:plc:c5c6etwketgk3q3gkafrgekl"
+msgstr ""
+"Betty https://bsky.app/profile/did:plc:c5c6etwketgk3q3gkafrgekl, Wiliam: "
+"https://x.com/khotyz"
 
 msgid "Ouch Browser"
 msgstr "Ouch Browser"
@@ -45,10 +47,8 @@ msgstr "Recarregar"
 msgid "Reveal Command Palette"
 msgstr "Mostrar Paleta de Comandos"
 
-#, fuzzy
-#| msgid "New tab"
 msgid "New Tab"
-msgstr "Nova aba"
+msgstr "Nova Aba"
 
 msgid "Archive"
 msgstr "Arquivar"
@@ -98,155 +98,166 @@ msgstr "Nova Pasta"
 msgid "Stop Loading"
 msgstr "Parar de Carregar"
 
-#, fuzzy
-#| msgid "Close Palette"
 msgid "Close Tab"
-msgstr "Fechar Paleta"
+msgstr "Fechar Aba"
 
 msgid "General"
-msgstr ""
+msgstr "Geral"
 
 msgid "Content Blocking"
-msgstr ""
+msgstr "Bloqueador de Conteúdo"
 
 msgid "Powered by uBlock Origin"
-msgstr ""
+msgstr "Desenvolvido por uBlock Origin"
 
 msgid "Block Advertisments"
-msgstr ""
+msgstr "Bloqueio de Anúncios"
 
 msgid "Block Pop-up Windows"
-msgstr ""
+msgstr "Bloquear janelas pop-up"
 
 msgid "Session"
-msgstr ""
+msgstr "Sessão"
 
 msgid "Restore Tabs on Startup"
-msgstr ""
+msgstr "Restaurar Abas ao Iniciar"
 
 msgid "Autocomplete"
-msgstr ""
+msgstr "Preenchimento Automático"
 
 msgid "Enable Search Autocomplete"
-msgstr ""
+msgstr "Ativar preenchimento automático da pesquisa"
 
 msgid "Enable !bang Autocomplete"
-msgstr ""
+msgstr "Ativar preenchimento automático de !bangs"
 
 msgid "Developer"
-msgstr ""
+msgstr "Desenvolvedor"
 
 msgid "Enable Developer Tools"
-msgstr ""
+msgstr "Habilitar Ferramentas de Desenvolvedor"
 
 msgid "This will allow access to the Web Inspector"
-msgstr ""
+msgstr "Isso habilitará o acesso ao Inspetor da Web"
 
 msgid "Accessibility"
-msgstr ""
+msgstr "Acessibilidade"
 
 msgid "Content"
-msgstr ""
+msgstr "Conteúdo"
 
 msgid "Page Zoom"
-msgstr ""
+msgstr "Zoom da Página"
 
 msgid "Search Engine"
-msgstr ""
+msgstr "Mecanismo de Busca"
 
 msgid "Custom Search Engines"
-msgstr ""
+msgstr "Mecanismos de busca personalizados"
 
 msgid "New Search Engine…"
-msgstr ""
+msgstr "Novo Mecanismo de Busca…"
 
 msgid "See !bangs preferences for more options"
-msgstr ""
+msgstr "Veja as preferências de !bangs para mais opções"
 
 msgid "!bangs"
-msgstr ""
+msgstr "!bangs"
 
 msgid "Custom Bangs"
-msgstr ""
+msgstr "Bangs Customizados"
 
 msgid "!bangs provided by Kagi"
-msgstr ""
+msgstr "!bangs fornecidos pelo Kagi"
 
 msgid "Cards"
-msgstr ""
+msgstr "Cartões"
 
 msgid ""
 "Cards are non-obtrusive persistent notifications shown inside the sidebar, \n"
 "which are used for displaying information, such as updates, tips, media \n"
 "controls, and more."
 msgstr ""
+"Os cartões são notificações persistentes e discretas exibidas na barra "
+"lateral,\n"
+"usadas para mostrar informações como atualizações, dicas, controles de "
+"mídia,\n"
+"e muito mais."
 
 msgid "Enable Cards"
-msgstr ""
+msgstr "Ativar cartões"
 
 msgid "Tips and Tricks"
-msgstr ""
+msgstr "Dicas úteis"
 
 msgid ""
 "Shown throughout yout browsing to provide tips and tricks for Ouch Browser"
 msgstr ""
+"Exibidas durante a navegação para fornecer dicas úteis sobre o Ouch Browser"
 
 msgid "Search Engine Suggestions"
-msgstr ""
+msgstr "Sugestões do mecanismo de busca"
 
 msgid ""
 "When you search using a supported search engine, Ouch Browser will suggest \n"
 "setting it as your default search engine"
 msgstr ""
+"Quando você fizer uma pesquisa usando um mecanismo de busca compatível,\n"
+"o Ouch Browser sugerirá defini-lo como seu mecanismo de busca padrão"
 
 msgid "Media Controls"
-msgstr ""
+msgstr "Controles de Mídia"
 
 msgid "Shwon when media is playing"
-msgstr ""
+msgstr "Exibido quando a mídia está sendo reproduzida"
 
 msgid "Enable Media Controls"
-msgstr ""
+msgstr "Ativar Controles de Mídia"
 
 msgid "Updates"
-msgstr ""
+msgstr "Atualizações"
 
 msgid "Shown when an update is available or installed"
-msgstr ""
+msgstr "Exibido quando uma atualização está disponível ou instalada"
 
 msgid "Updated to New Version"
-msgstr ""
+msgstr "Atualizado para a Nova Versão"
 
 msgid ""
 "When a new version of Ouch Browser is installed, it will inform you of the \n"
 "update's details and allow you to read the changelog"
 msgstr ""
+"Quando uma nova versão do Ouch Browser for instalada, ele informará os "
+"detalhes da atualização\n"
+" e permitirá que você leia as notas de atualização"
 
 msgid "New Version Found"
-msgstr ""
+msgstr "Nova Versão Encontrada"
 
 msgid ""
 "When a new version of Ouch Browser is found, it will notify you to update \n"
 "as soon as possible"
 msgstr ""
+"Quando uma nova versão do Ouch Browser for encontrada, \n"
+"você será notificado para atualizar o mais rápido possível."
 
 msgid "Extensions"
-msgstr ""
+msgstr "Extensões"
 
 msgid "Searching using %s"
-msgstr ""
+msgstr "Procurar usando %s"
 
 msgid "BANGS"
-msgstr ""
+msgstr "BANGS"
 
 msgid "SUGGESTIONS"
-msgstr ""
+msgstr "SUGESTÕES"
 
 msgid "Select an Extension"
-msgstr ""
+msgstr "Selecionar uma extensão"
 
 msgid "Zoom Text"
-msgstr ""
+msgstr "Ampliar Texto"
 
 msgid "Zooms text and images instead of the view"
-msgstr ""
+msgstr "Amplia texto e imagens em vez da página inteira"
