@@ -5,11 +5,21 @@ class Url
 {
 	public static bool IsUrl(string url)
 	{
-		if (url.StartsWith("https://") || url.StartsWith("http://") && Regex.IsMatch(url, @"\.[a-zA-Z]{2,63}(\:(6553[0-5]|655[0-2][0-9]|65[0-4][0-9]{2}|6[0-4][0-9]{3}|[1-5][0-9]{4}|[0-9]{1,4}))?(\/([^?#\s]*))?$")) // e.g. https://example.com
+		// e.g. https://example.com
+		// (also matches ports and paths)
+		if (url.StartsWith("https://") || url.StartsWith("http://") && Regex.IsMatch(url, @"\.[a-zA-Z]{2,63}(\:(6553[0-5]|655[0-2][0-9]|65[0-4][0-9]{2}|6[0-4][0-9]{3}|[1-5][0-9]{4}|[0-9]{1,4}))?(\/([^?#\s]*))?$"))
 		{
 			return true;
 		}
-		else if (url.Contains('.') && Regex.IsMatch(url, @"\.[a-zA-Z]{2,63}(\:(6553[0-5]|655[0-2][0-9]|65[0-4][0-9]{2}|6[0-4][0-9]{3}|[1-5][0-9]{4}|[0-9]{1,4}))?(\/([^?#\s]*))?$")) // e.g. example.com
+		// e.g. example.com
+		// (also matches ports and paths)
+		else if (url.Contains('.') && Regex.IsMatch(url, @"\.[a-zA-Z]{2,63}(\:(6553[0-5]|655[0-2][0-9]|65[0-4][0-9]{2}|6[0-4][0-9]{3}|[1-5][0-9]{4}|[0-9]{1,4}))?(\/([^?#\s]*))?$"))
+		{
+			return true;
+		}
+		// e.g. 127.0.0.1
+		// (also matches schemes, ports, and paths)
+		else if (Regex.IsMatch(url, @"^((https|http)\:\/\/)?(?:25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])\.(?:25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])\.(?:25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])\.(?:25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])(\:(6553[0-5]|655[0-2][0-9]|65[0-4][0-9]{2}|6[0-4][0-9]{3}|[1-5][0-9]{4}|[0-9]{1,4}))?(\/([^?#\s]*))?$"))
 		{
 			return true;
 		}
