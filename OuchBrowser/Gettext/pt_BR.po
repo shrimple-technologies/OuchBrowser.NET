@@ -74,7 +74,9 @@ msgstr "Histórico"
 msgid "Downloads"
 msgstr "Downloads"
 
-msgid "Show All Tabs"
+#, fuzzy
+#| msgid "Show All Tabs"
+msgid "View All Tabs"
 msgstr "Mostrar Todas as Abas"
 
 msgid "More"

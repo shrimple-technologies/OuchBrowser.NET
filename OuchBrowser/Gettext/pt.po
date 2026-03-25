@@ -73,8 +73,10 @@ msgstr ""
 msgid "Downloads"
 msgstr "Descargas"
 
-msgid "Show All Tabs"
-msgstr ""
+#, fuzzy
+#| msgid "New tab"
+msgid "View All Tabs"
+msgstr "Nova guia"
 
 msgid "More"
 msgstr ""

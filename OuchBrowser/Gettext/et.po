@@ -70,7 +70,9 @@ msgstr "Ajalugu"
 msgid "Downloads"
 msgstr "Allalaadimised"
 
-msgid "Show All Tabs"
+#, fuzzy
+#| msgid "Show All Tabs"
+msgid "View All Tabs"
 msgstr "Näita kõiki vahekaarte"
 
 msgid "More"
