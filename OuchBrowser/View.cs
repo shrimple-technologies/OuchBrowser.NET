@@ -115,7 +115,24 @@ public class View
 		webview.OnLoadChanged += async (_, load_event) =>
 		{
 			string current_uri = webview.GetUri();
-			Uri uri = new Uri(current_uri);
+			Uri uri;
+			try
+			{
+				uri = new Uri(current_uri);
+			}
+			catch
+			{
+				page.SetIcon(Gio.ThemedIcon.New("box-dotted-symbolic")); // set this placeholder first
+				window.refresh!.SetSensitive(true);
+				window.refresh!.SetTooltipText(window.gettext.GetString("Stop Loading"));
+				window.url_button!.SetSensitive(true);
+				window.copy_link!.SetSensitive(true);
+				window.website_settings!.SetSensitive(true);
+				window.sidebar_toggle!.SetSensitive(true);
+				window.refresh!.SetIconName("cross-large-symbolic");
+				page.SetLoading(true);
+				return;
+			}
 
 			switch (load_event.LoadEvent)
 			{
@@ -132,7 +149,7 @@ public class View
 					page.SetIcon(await Favicon.GetFavicon(uri.Host));
 					break;
 				case LoadEvent.Committed:
-					if (uri.IsLoopback)
+					if (Url.IsIpAddress(uri.AbsoluteUri))
 					{
 						window.hostname!.SetLabel(uri.Host + ":" + uri.Port);
 					}
