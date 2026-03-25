@@ -282,7 +282,7 @@ public class Window
 				Console.WriteLine($"starts with https or http: {query.StartsWith("https://") || query.StartsWith("http://")}");
 				Console.WriteLine("");
 
-				if (Url.IsUrl(query))
+				if (Url.IsUrl(query) && !query.StartsWith('!'))
 				{
 					if (query.StartsWith("https://") || query.StartsWith("http://"))
 					{
