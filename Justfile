@@ -71,4 +71,3 @@ build-translations:
 	msgfmt -o {{ PREFIX }}/share/locale/nb_NO/LC_MESSAGES/OuchBrowser.mo OuchBrowser/Gettext/nb_NO.po
 	msgfmt -o {{ PREFIX }}/share/locale/pt/LC_MESSAGES/OuchBrowser.mo OuchBrowser/Gettext/pt.po
 	msgfmt -o {{ PREFIX }}/share/locale/pt_BR/LC_MESSAGES/OuchBrowser.mo OuchBrowser/Gettext/pt_BR.po
-	msgfmt -o {{ PREFIX }}/share/locale/ta/LC_MESSAGES/OuchBrowser.mo OuchBrowser/Gettext/ta.po
