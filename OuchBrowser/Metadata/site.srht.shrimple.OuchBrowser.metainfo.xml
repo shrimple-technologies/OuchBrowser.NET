@@ -55,25 +55,25 @@
 	<url type="homepage">https://shrimple.srht.site/blog/ouch/</url>
 	<url
 		type="bugtracker"
-	>https://tangled.org/shrimple.srht.site/OuchBrowser.NET/issues</url>
+	>https://codeberg.org/shrimple/OuchBrowser.NET/issues</url>
 	<url
 		type="vcs-browser"
-	>https://tangled.org/shrimple.srht.site/OuchBrowser.NET</url>
+	>https://codeberg.org/shrimple/OuchBrowser.NET</url>
 	<url
 		type="translate"
 	>https://hosted.weblate.org/projects/ouch/net/</url>
 	<screenshots>
 		<screenshot type="default">
 			<image
-			>https://tangled.org/shrimple.srht.site/OuchBrowser.NET/raw/main/OuchBrowser/Screenshots/Screenshot%20with%20Sidebar%20Open.png</image>
+			>https://codeberg.org/shrimple/OuchBrowser.NET/raw/branch/main/OuchBrowser/Screenshots/Screenshot%20with%20Sidebar%20Open.png</image>
 		</screenshot>
 		<screenshot>
 			<image
-			>https://tangled.org/shrimple.srht.site/OuchBrowser.NET/raw/main/OuchBrowser/Screenshots/Screenshot%20with%20Sidebar%20Closed.png</image>
+			>https://codeberg.org/shrimple/OuchBrowser.NET/raw/branch/main/OuchBrowser/Screenshots/Screenshot%20with%20Sidebar%20Closed.png</image>
 		</screenshot>
 		<screenshot>
 			<image
-			>https://tangled.org/shrimple.srht.site/OuchBrowser.NET/raw/main/OuchBrowser/Screenshots/Screenshot%20with%20Command%20Palette%20Open.png</image>
+			>https://codeberg.org/shrimple/OuchBrowser.NET/raw/branch/main/OuchBrowser/Screenshots/Screenshot%20with%20Command%20Palette%20Open.png</image>
 		</screenshot>
 	</screenshots>
 </component>
