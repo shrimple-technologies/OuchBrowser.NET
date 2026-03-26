@@ -243,10 +243,8 @@ msgstr ""
 msgid "Extensions"
 msgstr "Extensões"
 
-#, fuzzy
-#| msgid "Searching using {0}"
 msgid "Searching using %s"
-msgstr "Procurar usando {0}"
+msgstr "Procurar usando %s"
 
 msgid "BANGS"
 msgstr "BANGS"
