@@ -172,8 +172,8 @@ msgid "Cards"
 msgstr ""
 
 msgid ""
-"Cards are non-obtrusive persistent notifications shown inside the sidebar, \n"
-"which are used for displaying information, such as updates, tips, media \n"
+"Cards are non-obtrusive persistent notifications shown inside the sidebar, "
+"which are used for displaying information, such as updates, tips, media "
 "controls, and more."
 msgstr ""
 
@@ -184,21 +184,21 @@ msgid "Tips and Tricks"
 msgstr ""
 
 msgid ""
-"Shown throughout yout browsing to provide tips and tricks for Ouch Browser"
+"Shown throughout your broswing to provide tips and tricks for Ouch Browser"
 msgstr ""
 
 msgid "Search Engine Suggestions"
 msgstr ""
 
 msgid ""
-"When you search using a supported search engine, Ouch Browser will suggest \n"
+"When you search using a supported search engine, Ouch Browser will suggest "
 "setting it as your default search engine"
 msgstr ""
 
 msgid "Media Controls"
 msgstr ""
 
-msgid "Shwon when media is playing"
+msgid "Shown when media is playing"
 msgstr ""
 
 msgid "Enable Media Controls"
@@ -214,7 +214,7 @@ msgid "Updated to New Version"
 msgstr ""
 
 msgid ""
-"When a new version of Ouch Browser is installed, it will inform you of the \n"
+"When a new version of Ouch Browser is installed, it will inform you of the "
 "update's details and allow you to read the changelog"
 msgstr ""
 
@@ -222,8 +222,8 @@ msgid "New Version Found"
 msgstr ""
 
 msgid ""
-"When a new version of Ouch Browser is found, it will notify you to update \n"
-"as soon as possible"
+"When a new version of Ouch Browser is found, it will notify you to update as "
+"soon as possible"
 msgstr ""
 
 msgid "Extensions"
