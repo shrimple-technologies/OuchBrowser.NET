@@ -1019,40 +1019,21 @@ Adw.Dialog url_dialog {
 
 			Revealer url_autocomplete {}
 
-			Box url_hints {
-				orientation: vertical;
+			Revealer url_disclosure_revealer {
+				Box {
+					orientation: vertical;
 
-				Separator {
-					orientation: horizontal;
-					visible: bind url_autocomplete.child-revealed;
-				}
-
-				CenterBox {
-					margin-start: 10;
-					margin-end: 10;
-
-					start-widget: Box {
+					Separator {
 						orientation: horizontal;
+						visible: bind url_autocomplete.child-revealed;
+					}
+
+					Stack url_disclosure {
+						transition-type: crossfade;
+						margin-start: 10;
+						margin-end: 10;
 						margin-top: 10;
 						margin-bottom: 10;
-						spacing: 10;
-
-						Adw.ShortcutLabel {
-							accelerator: "Return";
-							opacity: 0.75;
-						}
-
-						Label {
-							label: _("Go");
-
-							styles [
-								"dimmed",
-							]
-						}
-					};
-
-					center-widget: Stack url_disclosure {
-						transition-type: slide_up_down;
 
 						StackPage {
 							name: "none";
@@ -1088,6 +1069,45 @@ Adw.Dialog url_dialog {
 									"dimmed",
 								]
 							};
+						}
+					}
+
+					Separator {
+						orientation: horizontal;
+						visible: bind url_autocomplete.child-revealed inverted;
+					}
+				}
+			}
+
+			Box url_hints {
+				orientation: vertical;
+
+				Separator {
+					orientation: horizontal;
+					visible: bind url_autocomplete.child-revealed;
+				}
+
+				CenterBox {
+					margin-start: 10;
+					margin-end: 10;
+
+					start-widget: Box {
+						orientation: horizontal;
+						margin-top: 10;
+						margin-bottom: 10;
+						spacing: 10;
+
+						Adw.ShortcutLabel {
+							accelerator: "Return";
+							opacity: 0.75;
+						}
+
+						Label {
+							label: _("Go");
+
+							styles [
+								"dimmed",
+							]
 						}
 					};
 

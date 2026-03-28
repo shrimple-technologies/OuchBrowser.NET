@@ -58,6 +58,7 @@ public class Window
 					window.url_autocomplete!.SetRevealChild(false);
 					window.url_stack!.SetVisibleChildName("main");
 					window.url_disclosure!.SetVisibleChildName("none");
+					window.url_disclosure_revealer!.SetRevealChild(false);
 				}
 				else if (text.StartsWith('!'))
 				{
@@ -65,7 +66,6 @@ public class Window
 					if (1 < text.Split(' ').Length)
 					{
 						window.url_autocomplete!.SetRevealChild(false);
-						window.url_disclosure!.SetVisibleChildName("custom");
 						Bang? current_bang = bangs.GetBang(text)!;
 						if (current_bang != null)
 						{
@@ -74,17 +74,21 @@ public class Window
 							Gio.Icon icon = await Favicon.GetFavicon(current_bang.Domain);
 							window.url_favicon!.SetFromGicon(icon);
 							window.url_stack!.SetVisibleChildName("website");
+							window.url_disclosure!.SetVisibleChildName("custom");
+							window.url_disclosure_revealer!.SetRevealChild(true);
 						}
 						else
 						{
 							window.url_stack!.SetVisibleChildName("bang");
 							window.url_disclosure!.SetVisibleChildName("none");
+							window.url_disclosure_revealer!.SetRevealChild(false);
 						}
 					}
 					else
 					{
 						window.url_stack!.SetVisibleChildName("bang");
 						window.url_disclosure!.SetVisibleChildName("bang");
+						window.url_disclosure_revealer!.SetRevealChild(true);
 
 						if (window.settings.GetBoolean("bang-autocomplete-enabled"))
 						{

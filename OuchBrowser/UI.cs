@@ -38,6 +38,7 @@ public class Window : Adw.ApplicationWindow
 	[Connect] public readonly Image? url_favicon;
 	[Connect] public readonly Revealer? card_revealer;
 	[Connect] public readonly ListBox? card_listbox;
+	[Connect] public readonly Revealer? url_disclosure_revealer;
 
 	public Window(Adw.Application app) : base()
 	{
