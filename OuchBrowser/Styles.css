@@ -62,3 +62,7 @@ toggle-group > separator {
 .toolbar {
 	padding: 0;
 }
+
+.url-preview {
+	border-radius: 10px;
+}

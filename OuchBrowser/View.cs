@@ -185,6 +185,18 @@ public class View
 					break;
 			}
 		};
+
+		webview.OnMouseTargetChanged += (_, res) => {
+			if (res.HitTestResult.ContextIsLink())
+			{
+				window.url_preview!.SetVisible(true);
+				window.url_preview_label!.SetLabel(res.HitTestResult.GetLinkUri());
+			}
+			else
+			{
+				window.url_preview!.SetVisible(false);
+			}
+		};
 	}
 
 	public string[] GetAllTabUrls()

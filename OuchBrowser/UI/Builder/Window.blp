@@ -880,23 +880,57 @@ Adw.TabOverview overview {
 								valign: start;
 							}
 
-							Box {
-								orientation: vertical;
+							Overlay {
+								[overlay]
+								Box url_preview {
+									halign: start;
+									valign: end;
+									margin-start: 10;
+									margin-bottom: 20;
+									visible: false;
 
-								Frame frame {
-									// margin-start: 10;
-									margin-end: 10;
-									margin-top: 10;
-									margin-bottom: 10;
-									hexpand: true;
-									vexpand: true;
-
-									Adw.TabView view {
-										receives-default: true;
-
+									Adw.Bin {
 										styles [
-											"view",
+											"osd",
+											"url-preview",
 										]
+
+										Label url_preview_label {
+											halign: start;
+											margin-start: 10;
+											margin-end: 10;
+											margin-top: 5;
+											margin-bottom: 5;
+											ellipsize: middle;
+											max-width-chars: 50;
+											label: "";
+
+											styles [
+												"caption",
+												"font-medium",
+											]
+										}
+									}
+								}
+
+								Box {
+									orientation: vertical;
+
+									Frame frame {
+										// margin-start: 10;
+										margin-end: 10;
+										margin-top: 10;
+										margin-bottom: 10;
+										hexpand: true;
+										vexpand: true;
+
+										Adw.TabView view {
+											receives-default: true;
+
+											styles [
+												"view",
+											]
+										}
 									}
 								}
 							}
