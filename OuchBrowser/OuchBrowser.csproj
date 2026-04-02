@@ -21,7 +21,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<EmbeddedResource Include="OuchBrowser.app.gresource" LogicalName="OuchBrowser.app.gresource" />
+		<EmbeddedResource
+			Include="OuchBrowser.app.gresource"
+			LogicalName="OuchBrowser.app.gresource"
+		/>
 
 		<!-- CSS -->
 		<EmbeddedResource Include="Styles.css" />
@@ -40,21 +43,34 @@
 		<EmbeddedResource Include="Icons\Symbolic\preferences-symbolic.svg" />
 		<EmbeddedResource Include="Icons\Symbolic\puzzle-piece-symbolic.svg" />
 		<EmbeddedResource Include="Icons\Symbolic\shoe-box-symbolic.svg" />
-		<EmbeddedResource Include="Icons\Symbolic\site.srht.shrimple.OuchBrowser-symbolic.svg" />
+		<EmbeddedResource
+			Include="Icons\Symbolic\site.srht.shrimple.OuchBrowser-symbolic.svg"
+		/>
 		<EmbeddedResource Include="Icons\Symbolic\sliders-horizontal-symbolic.svg" />
 		<EmbeddedResource Include="Icons\Symbolic\web-symbolic.svg" />
 
 		<!-- GtkBuilder Files -->
 		<EmbeddedResource Include="UI\Builder\About.ui" LogicalName="UI\About.ui" />
-		<EmbeddedResource Include="UI\Builder\Preferences.ui" LogicalName="UI\Preferences.ui" />
+		<EmbeddedResource
+			Include="UI\Builder\Preferences.ui"
+			LogicalName="UI\Preferences.ui"
+		/>
 		<EmbeddedResource Include="UI\Builder\Window.ui" LogicalName="UI\Window.ui" />
-		
+
 		<!-- Bangs (via Kagi) -->
 		<EmbeddedResource Include="Bangs\data\bangs.json" LogicalName="Bangs.json" />
+
+		<!-- Metainfo -->
+		<EmbeddedResource
+			Include="Metadata\site.srht.shrimple.OuchBrowser.metainfo.xml"
+			LogicalName="site.srht.shrimple.OuchBrowser.metainfo.xml"
+		/>
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\OuchBrowser.WebExtensions\OuchBrowser.WebExtensions.csproj" />
+		<ProjectReference
+			Include="..\OuchBrowser.WebExtensions\OuchBrowser.WebExtensions.csproj"
+		/>
 	</ItemGroup>
 
 </Project>

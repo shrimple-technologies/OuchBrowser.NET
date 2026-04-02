@@ -2,6 +2,7 @@
 <gresources>
 	<gresource prefix="/site/srht/shrimple/OuchBrowser/">
 		<file alias="styles.css">Styles.css</file>
+		<file>site.srht.shrimple.OuchBrowser.metainfo.xml</file>
 	</gresource>
 	<gresource prefix="/site/srht/shrimple/OuchBrowser/icons/scalable/actions/">
 		<file
