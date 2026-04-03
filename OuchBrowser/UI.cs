@@ -77,10 +77,10 @@ public class Window : Adw.ApplicationWindow
 		};
 
 		Maximized = settings.GetBoolean("maximized");
-		DefaultWidth = 1000;
-		DefaultHeight = 600;
+		DefaultWidth = 1100;
+		DefaultHeight = 650;
 		WidthRequest = 360;
-		HeightRequest = 500;
+		HeightRequest = 360;
 		Title = gettext.GetString("Ouch Browser");
 	}
 
