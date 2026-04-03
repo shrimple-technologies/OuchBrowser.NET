@@ -106,10 +106,8 @@ public class Window : Adw.ApplicationWindow
 		);
 		Breakpoint breakpoint = Breakpoint.New(condition);
 
-		GObject.Value boolean = new GObject.Value();
 		GObject.Value number = new GObject.Value();
 		GObject.Value str = new GObject.Value();
-		boolean.Init(GObject.Type.Boolean);
 		number.Init(GObject.Type.Int);
 		str.Init(GObject.Type.String);
 
