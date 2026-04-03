@@ -6,10 +6,10 @@ Adw.TabOverview overview {
 	view: view;
 
 	Adw.ToastOverlay toast_overlay {
-		Adw.MultiLayoutView {
+		Adw.MultiLayoutView mlv {
 			Adw.Layout {
 				name: "default";
-			
+
 				content: Adw.ToolbarView {
 					Adw.OverlaySplitView osv {
 						show-sidebar: bind sidebar_toggle.active;
@@ -34,119 +34,8 @@ Adw.TabOverview overview {
 											side: start;
 										}
 
-										MenuButton {
-											icon-name: "site.srht.shrimple.OuchBrowser-symbolic";
-											tooltip-text: _("Menu");
-											focus-on-click: false;
-
-											popover: Popover {
-												styles [
-													"background",
-													"menu",
-												]
-
-												Box {
-													orientation: vertical;
-													margin-top: 6;
-													margin-bottom: 6;
-													margin-start: 6;
-													margin-end: 6;
-
-													styles [
-														"popover-menu",
-													]
-
-													Button {
-														hexpand: true;
-														focus-on-click: false;
-														action-name: "overview.open";
-
-														Box {
-															halign: start;
-															spacing: 10;
-
-															Image {
-																icon-name: "view-grid-symbolic";
-															}
-
-															Label {
-																label: _("View All Tabs");
-															}
-														}
-
-														styles [
-															"body",
-															"flat",
-														]
-													}
-
-													Separator {
-														orientation: horizontal;
-													}
-
-													Button {
-														hexpand: true;
-														focus-on-click: false;
-														action-name: "win.preferences";
-
-														CenterBox {
-															start-widget: Box {
-																halign: start;
-																spacing: 10;
-
-																Image {
-																	icon-name: "preferences-symbolic";
-																}
-
-																Label {
-																	label: _("Preferences");
-																}
-															};
-
-															end-widget: Label {
-																label: "Ctrl+,";
-
-																styles [
-																	"dimmed",
-																]
-															};
-														}
-
-														styles [
-															"body",
-															"flat",
-														]
-													}
-
-													Button {
-														hexpand: true;
-														focus-on-click: false;
-														action-name: "win.about";
-
-														Box {
-															halign: start;
-															spacing: 10;
-
-															Image {
-																icon-name: "site.srht.shrimple.OuchBrowser-symbolic";
-															}
-
-															Label {
-																label: _("About Ouch Browser");
-															}
-														}
-
-														styles [
-															"body",
-															"flat",
-														]
-													}
-												}
-											};
-
-											styles [
-												"flat",
-											]
+										Adw.LayoutSlot {
+											id: "menu-main";
 										}
 
 										ToggleButton sidebar_toggle {
@@ -168,37 +57,16 @@ Adw.TabOverview overview {
 										spacing: 5;
 										margin-end: 10;
 
-										Button go_back {
-											icon-name: "go-previous-symbolic";
-											tooltip-text: _("Back");
-											action-name: "win.go-back";
-											focus-on-click: false;
-
-											styles [
-												"flat",
-											]
+										Adw.LayoutSlot {
+											id: "go-back";
 										}
 
-										Button go_forward {
-											icon-name: "go-next-symbolic";
-											tooltip-text: _("Forward");
-											action-name: "win.go-forward";
-											focus-on-click: false;
-
-											styles [
-												"flat",
-											]
+										Adw.LayoutSlot {
+											id: "go-forward";
 										}
 
-										Button refresh {
-											icon-name: "view-refresh-symbolic";
-											tooltip-text: _("Refresh");
-											action-name: "win.refresh";
-											focus-on-click: false;
-
-											styles [
-												"flat",
-											]
+										Adw.LayoutSlot {
+											id: "refresh";
 										}
 									};
 								}
@@ -214,62 +82,8 @@ Adw.TabOverview overview {
 										]
 									}
 
-									Box {
-										orientation: horizontal;
-										margin-start: 10;
-										margin-end: 10;
-
-										Button url_button {
-											hexpand: true;
-											sensitive: false;
-											action-name: "win.palette";
-											focus-on-click: false;
-
-											Label hostname {
-												label: "";
-												ellipsize: end;
-												tooltip-text: _("Reveal Command Palette");
-
-												styles [
-													"font-medium",
-													"dimmed",
-												]
-											}
-										}
-
-										Button copy_link {
-											icon-name: "chain-link-loose-symbolic";
-											tooltip-text: _("Copy Link");
-											action-name: "win.copy-link";
-											focus-on-click: false;
-										}
-
-										MenuButton website_settings {
-											icon-name: "sliders-horizontal-symbolic";
-											tooltip-text: _("Website Settings");
-											focus-on-click: false;
-
-											popover: Popover {
-												width-request: 300;
-
-												styles [
-													"website-settings",
-												]
-
-												Adw.StatusPage {
-													icon-name: "sliders-horizontal-symbolic";
-													title: _("No Website Settings Available");
-
-													styles [
-														"compact",
-													]
-												}
-											};
-										}
-
-										styles [
-											"linked",
-										]
+									Adw.LayoutSlot {
+										id: "palette";
 									}
 
 									Separator {
@@ -422,79 +236,8 @@ Adw.TabOverview overview {
 									margin-start: 6;
 									margin-top: 6;
 
-									start-widget: MenuButton {
-										icon-name: "shoe-box-symbolic";
-										tooltip-text: _("Archive");
-										focus-on-click: false;
-
-										popover: Popover {
-											styles [
-												"background",
-												"menu",
-											]
-
-											Box {
-												orientation: vertical;
-												margin-top: 6;
-												margin-bottom: 6;
-												margin-start: 6;
-												margin-end: 6;
-
-												styles [
-													"popover-menu",
-												]
-
-												Button {
-													hexpand: true;
-													focus-on-click: false;
-
-													Box {
-														halign: start;
-														spacing: 10;
-
-														Image {
-															icon-name: "history-symbolic";
-														}
-
-														Label {
-															label: _("History");
-														}
-													}
-
-													styles [
-														"body",
-														"flat",
-													]
-												}
-
-												Button {
-													hexpand: true;
-													focus-on-click: false;
-
-													Box {
-														halign: start;
-														spacing: 10;
-
-														Image {
-															icon-name: "folder-download-symbolic";
-														}
-
-														Label {
-															label: _("Downloads");
-														}
-													}
-
-													styles [
-														"body",
-														"flat",
-													]
-												}
-											}
-										};
-
-										styles [
-											"flat",
-										]
+									start-widget: Adw.LayoutSlot {
+										id: "menu-archive";
 									};
 
 									/* center-widget: Adw.ToggleGroup {
@@ -510,138 +253,8 @@ Adw.TabOverview overview {
 									name: "space-2";
 								}
 							}; */
-									end-widget: Box {
-										orientation: horizontal;
-										margin-end: 10;
-										css-name: "splitbutton";
-
-										styles [
-											"image-button",
-											"flat",
-										]
-
-										Button {
-											icon-name: "tab-new-symbolic";
-											tooltip-text: _("New Tab");
-											action-name: "win.palette-new";
-											focus-on-click: false;
-										}
-
-										Separator {
-											orientation: vertical;
-										}
-
-										MenuButton {
-											tooltip-text: _("New…");
-											focus-on-click: false;
-
-											popover: Popover {
-												styles [
-													"background",
-													"menu",
-												]
-
-												Box {
-													orientation: vertical;
-													margin-top: 6;
-													margin-bottom: 6;
-													margin-start: 6;
-													margin-end: 6;
-
-													styles [
-														"popover-menu",
-													]
-
-													Button {
-														hexpand: true;
-														focus-on-click: false;
-
-														Box {
-															halign: start;
-															spacing: 10;
-
-															Image {
-																icon-name: "multitasking-symbolic";
-															}
-
-															Label {
-																label: _("New Room");
-															}
-														}
-
-														styles [
-															"body",
-															"flat",
-														]
-													}
-
-													Button {
-														hexpand: true;
-														focus-on-click: false;
-
-														Box {
-															halign: start;
-															spacing: 10;
-
-															Image {
-																icon-name: "folder-symbolic";
-															}
-
-															Label {
-																label: _("New Folder");
-															}
-														}
-
-														styles [
-															"body",
-															"flat",
-														]
-													}
-
-													Separator {
-														orientation: horizontal;
-													}
-
-													Button {
-														hexpand: true;
-														focus-on-click: false;
-														action-name: "win.palette-new";
-
-														CenterBox {
-															start-widget: Box {
-																halign: start;
-																spacing: 10;
-
-																Image {
-																	icon-name: "tab-new-symbolic";
-																}
-
-																Label {
-																	label: _("New Tab");
-																}
-															};
-
-															end-widget: Label {
-																label: "Ctrl+T";
-
-																styles [
-																	"dimmed",
-																]
-															};
-														}
-
-														styles [
-															"body",
-															"flat",
-														]
-													}
-												}
-											};
-
-											Image {
-												icon-name: "pan-down-symbolic";
-											}
-										}
+									end-widget: Adw.LayoutSlot {
+										id: "menu-new";
 									};
 								}
 							}
@@ -678,201 +291,6 @@ Adw.TabOverview overview {
 										styles [
 											"flat",
 										]
-									}
-								}
-
-								[bottom]
-								Box {
-									orientation: vertical;
-									margin-top: 10;
-									margin-bottom: 10;
-									margin-start: 10;
-									margin-end: 10;
-									spacing: 10;
-
-									Box {
-										styles [
-											"linked",
-										]
-
-										Button {
-											hexpand: true;
-											sensitive: bind url_button.sensitive;
-											action-name: "win.palette";
-
-											Label {
-												label: bind hostname.label;
-												margin-start: 6;
-												margin-end: 6;
-												ellipsize: end;
-												tooltip-text: _("Reveal Command Palette");
-												focus-on-click: false;
-
-												styles [
-													"font-medium",
-													"dimmed",
-												]
-											}
-										}
-
-										Button {
-											icon-name: "chain-link-loose-symbolic";
-											tooltip-text: _("Copy Link");
-											action-name: "win.copy-link";
-											sensitive: bind copy_link.sensitive;
-											focus-on-click: false;
-										}
-
-										MenuButton {
-											icon-name: "sliders-horizontal-symbolic";
-											tooltip-text: _("Website Settings");
-											sensitive: bind website_settings.sensitive;
-											focus-on-click: false;
-
-											popover: Popover {
-												width-request: 300;
-
-												styles [
-													"website-settings",
-												]
-
-												Adw.StatusPage {
-													icon-name: "sliders-horizontal-symbolic";
-													title: _("No Website Settings Available");
-
-													styles [
-														"compact",
-													]
-												}
-											};
-										}
-									}
-
-									Box {
-										orientation: horizontal;
-										spacing: 5;
-
-										styles [
-											"toolbar",
-										]
-
-										Button {
-											icon-name: "go-previous-symbolic";
-											tooltip-text: _("Back");
-											action-name: "win.go-back";
-											sensitive: bind go_back.sensitive;
-											focus-on-click: false;
-											hexpand: true;
-										}
-
-										Button {
-											icon-name: "go-next-symbolic";
-											tooltip-text: _("Forward");
-											action-name: "win.go-forward";
-											sensitive: bind go_forward.sensitive;
-											focus-on-click: false;
-											hexpand: true;
-										}
-
-										Button {
-											icon-name: "view-refresh-symbolic";
-											tooltip-text: _("Refresh");
-											action-name: "win.refresh";
-											sensitive: bind refresh.sensitive;
-											focus-on-click: false;
-											hexpand: true;
-										}
-
-										Adw.TabButton {
-											view: view;
-											action-name: "overview.open";
-											focus-on-click: false;
-											hexpand: true;
-										}
-
-										MenuButton {
-											icon-name: "site.srht.shrimple.OuchBrowser-symbolic";
-											tooltip-text: _("Menu");
-											focus-on-click: false;
-											hexpand: true;
-
-											popover: Popover {
-												styles [
-													"background",
-													"menu",
-												]
-
-												Box {
-													orientation: vertical;
-													margin-top: 6;
-													margin-bottom: 6;
-													margin-start: 6;
-													margin-end: 6;
-
-													styles [
-														"popover-menu",
-													]
-
-													Button {
-														hexpand: true;
-														focus-on-click: false;
-														action-name: "win.preferences";
-
-														CenterBox {
-															start-widget: Box {
-																halign: start;
-																spacing: 10;
-
-																Image {
-																	icon-name: "preferences-symbolic";
-																}
-
-																Label {
-																	label: _("Preferences");
-																}
-															};
-
-															end-widget: Label {
-																label: "Ctrl+,";
-
-																styles [
-																	"dimmed",
-																]
-															};
-														}
-
-														styles [
-															"body",
-															"flat",
-														]
-													}
-
-													Button {
-														hexpand: true;
-														focus-on-click: false;
-														action-name: "win.about";
-
-														Box {
-															halign: start;
-															spacing: 10;
-
-															Image {
-																icon-name: "site.srht.shrimple.OuchBrowser-symbolic";
-															}
-
-															Label {
-																label: _("About Ouch Browser");
-															}
-														}
-
-														styles [
-															"body",
-															"flat",
-														]
-													}
-												}
-											};
-										}
 									}
 								}
 
@@ -920,21 +338,8 @@ Adw.TabOverview overview {
 										Box {
 											orientation: vertical;
 
-											Frame frame {
-												// margin-start: 10;
-												margin-end: 10;
-												margin-top: 10;
-												margin-bottom: 10;
-												hexpand: true;
-												vexpand: true;
-
-												Adw.TabView view {
-													receives-default: true;
-
-													styles [
-														"view",
-													]
-												}
+											Adw.LayoutSlot {
+												id: "webview";
 											}
 										}
 									}
@@ -943,6 +348,506 @@ Adw.TabOverview overview {
 						};
 					}
 				};
+			}
+
+			Adw.Layout {
+				name: "mobile";
+
+				content: Adw.ToolbarView {
+					Adw.LayoutSlot {
+						id: "webview";
+					}
+
+					[bottom]
+					Box {
+						orientation: vertical;
+						margin-top: 10;
+						margin-bottom: 10;
+						spacing: 10;
+
+						Adw.LayoutSlot {
+							id: "palette";
+						}
+
+						Box {
+							orientation: horizontal;
+							margin-start: 10;
+							margin-end: 10;
+							spacing: 5;
+
+							styles [
+								"toolbar",
+							]
+
+							Adw.LayoutSlot {
+								id: "go-back";
+								hexpand: true;
+							}
+
+							Adw.LayoutSlot {
+								id: "go-forward";
+								hexpand: true;
+							}
+
+							Adw.LayoutSlot {
+								id: "refresh";
+								hexpand: true;
+							}
+
+							Adw.TabButton {
+								view: view;
+								action-name: "overview.open";
+								focus-on-click: false;
+								hexpand: true;
+							}
+
+							Adw.LayoutSlot {
+								id: "menu-main";
+								hexpand: true;
+							}
+						}
+					}
+				};
+			}
+
+			[menu-main]
+			MenuButton {
+				icon-name: "site.srht.shrimple.OuchBrowser-symbolic";
+				tooltip-text: _("Menu");
+				focus-on-click: false;
+
+				popover: Popover {
+					styles [
+						"background",
+						"menu",
+					]
+
+					Box {
+						orientation: vertical;
+						margin-top: 6;
+						margin-bottom: 6;
+						margin-start: 6;
+						margin-end: 6;
+
+						styles [
+							"popover-menu",
+						]
+
+						Button {
+							hexpand: true;
+							focus-on-click: false;
+							action-name: "overview.open";
+
+							Box {
+								halign: start;
+								spacing: 10;
+
+								Image {
+									icon-name: "view-grid-symbolic";
+								}
+
+								Label {
+									label: _("View All Tabs");
+								}
+							}
+
+							styles [
+								"body",
+								"flat",
+							]
+						}
+
+						Separator {
+							orientation: horizontal;
+						}
+
+						Button {
+							hexpand: true;
+							focus-on-click: false;
+							action-name: "win.preferences";
+
+							CenterBox {
+								start-widget: Box {
+									halign: start;
+									spacing: 10;
+
+									Image {
+										icon-name: "preferences-symbolic";
+									}
+
+									Label {
+										label: _("Preferences");
+									}
+								};
+
+								end-widget: Label {
+									label: "Ctrl+,";
+
+									styles [
+										"dimmed",
+									]
+								};
+							}
+
+							styles [
+								"body",
+								"flat",
+							]
+						}
+
+						Button {
+							hexpand: true;
+							focus-on-click: false;
+							action-name: "win.about";
+
+							Box {
+								halign: start;
+								spacing: 10;
+
+								Image {
+									icon-name: "site.srht.shrimple.OuchBrowser-symbolic";
+								}
+
+								Label {
+									label: _("About Ouch Browser");
+								}
+							}
+
+							styles [
+								"body",
+								"flat",
+							]
+						}
+					}
+				};
+
+				styles [
+					"flat",
+				]
+			}
+
+			[go-back]
+			Button go_back {
+				icon-name: "go-previous-symbolic";
+				tooltip-text: _("Back");
+				action-name: "win.go-back";
+				focus-on-click: false;
+
+				styles [
+					"flat",
+				]
+			}
+
+			[go-forward]
+			Button go_forward {
+				icon-name: "go-next-symbolic";
+				tooltip-text: _("Forward");
+				action-name: "win.go-forward";
+				focus-on-click: false;
+
+				styles [
+					"flat",
+				]
+			}
+
+			[refresh]
+			Button refresh {
+				icon-name: "view-refresh-symbolic";
+				tooltip-text: _("Refresh");
+				action-name: "win.refresh";
+				focus-on-click: false;
+
+				styles [
+					"flat",
+				]
+			}
+
+			[palette]
+			Box {
+				orientation: horizontal;
+				margin-start: 10;
+				margin-end: 10;
+
+				Button url_button {
+					hexpand: true;
+					sensitive: false;
+					action-name: "win.palette";
+					focus-on-click: false;
+					tooltip-text: _("Reveal Command Palette");
+
+					Label hostname {
+						label: "";
+						ellipsize: end;
+
+						styles [
+							"font-medium",
+							"dimmed",
+						]
+					}
+				}
+
+				Button copy_link {
+					icon-name: "chain-link-loose-symbolic";
+					tooltip-text: _("Copy Link");
+					action-name: "win.copy-link";
+					focus-on-click: false;
+				}
+
+				MenuButton website_settings {
+					icon-name: "sliders-horizontal-symbolic";
+					tooltip-text: _("Website Settings");
+					focus-on-click: false;
+
+					popover: Popover {
+						width-request: 300;
+
+						styles [
+							"website-settings",
+						]
+
+						Adw.StatusPage {
+							icon-name: "sliders-horizontal-symbolic";
+							title: _("No Website Settings Available");
+
+							styles [
+								"compact",
+							]
+						}
+					};
+				}
+
+				styles [
+					"linked",
+				]
+			}
+
+			[menu-archive]
+			MenuButton {
+				icon-name: "shoe-box-symbolic";
+				tooltip-text: _("Archive");
+				focus-on-click: false;
+
+				popover: Popover {
+					styles [
+						"background",
+						"menu",
+					]
+
+					Box {
+						orientation: vertical;
+						margin-top: 6;
+						margin-bottom: 6;
+						margin-start: 6;
+						margin-end: 6;
+
+						styles [
+							"popover-menu",
+						]
+
+						Button {
+							hexpand: true;
+							focus-on-click: false;
+
+							Box {
+								halign: start;
+								spacing: 10;
+
+								Image {
+									icon-name: "history-symbolic";
+								}
+
+								Label {
+									label: _("History");
+								}
+							}
+
+							styles [
+								"body",
+								"flat",
+							]
+						}
+
+						Button {
+							hexpand: true;
+							focus-on-click: false;
+
+							Box {
+								halign: start;
+								spacing: 10;
+
+								Image {
+									icon-name: "folder-download-symbolic";
+								}
+
+								Label {
+									label: _("Downloads");
+								}
+							}
+
+							styles [
+								"body",
+								"flat",
+							]
+						}
+					}
+				};
+
+				styles [
+					"flat",
+				]
+			}
+
+			[menu-new]
+			Box {
+				orientation: horizontal;
+				margin-end: 10;
+				css-name: "splitbutton";
+
+				styles [
+					"image-button",
+					"flat",
+				]
+
+				Button {
+					icon-name: "tab-new-symbolic";
+					tooltip-text: _("New Tab");
+					action-name: "win.palette-new";
+					focus-on-click: false;
+				}
+
+				Separator {
+					orientation: vertical;
+				}
+
+				MenuButton {
+					tooltip-text: _("New…");
+					focus-on-click: false;
+
+					popover: Popover {
+						styles [
+							"background",
+							"menu",
+						]
+
+						Box {
+							orientation: vertical;
+							margin-top: 6;
+							margin-bottom: 6;
+							margin-start: 6;
+							margin-end: 6;
+
+							styles [
+								"popover-menu",
+							]
+
+							Button {
+								hexpand: true;
+								focus-on-click: false;
+
+								Box {
+									halign: start;
+									spacing: 10;
+
+									Image {
+										icon-name: "multitasking-symbolic";
+									}
+
+									Label {
+										label: _("New Room");
+									}
+								}
+
+								styles [
+									"body",
+									"flat",
+								]
+							}
+
+							Button {
+								hexpand: true;
+								focus-on-click: false;
+
+								Box {
+									halign: start;
+									spacing: 10;
+
+									Image {
+										icon-name: "folder-symbolic";
+									}
+
+									Label {
+										label: _("New Folder");
+									}
+								}
+
+								styles [
+									"body",
+									"flat",
+								]
+							}
+
+							Separator {
+								orientation: horizontal;
+							}
+
+							Button {
+								hexpand: true;
+								focus-on-click: false;
+								action-name: "win.palette-new";
+
+								CenterBox {
+									start-widget: Box {
+										halign: start;
+										spacing: 10;
+
+										Image {
+											icon-name: "tab-new-symbolic";
+										}
+
+										Label {
+											label: _("New Tab");
+										}
+									};
+
+									end-widget: Label {
+										label: "Ctrl+T";
+
+										styles [
+											"dimmed",
+										]
+									};
+								}
+
+								styles [
+									"body",
+									"flat",
+								]
+							}
+						}
+					};
+
+					Image {
+						icon-name: "pan-down-symbolic";
+					}
+				}
+			}
+
+			[webview]
+			Frame frame {
+				// margin-start: 10;
+				margin-end: 10;
+				margin-top: 10;
+				margin-bottom: 10;
+				hexpand: true;
+				vexpand: true;
+
+				Adw.TabView view {
+					receives-default: true;
+
+					styles [
+						"view",
+					]
+				}
 			}
 		}
 	}

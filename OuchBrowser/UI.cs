@@ -41,6 +41,7 @@ public class Window : Adw.ApplicationWindow
 	[Connect] public readonly Revealer? url_disclosure_revealer;
 	[Connect] public readonly Box? url_preview;
 	[Connect] public readonly Label? url_preview_label;
+	[Connect] public readonly MultiLayoutView? mlv;
 
 	public Window(Adw.Application app) : base()
 	{
@@ -107,11 +108,13 @@ public class Window : Adw.ApplicationWindow
 
 		GObject.Value boolean = new GObject.Value();
 		GObject.Value number = new GObject.Value();
+		GObject.Value str = new GObject.Value();
 		boolean.Init(GObject.Type.Boolean);
 		number.Init(GObject.Type.Int);
+		str.Init(GObject.Type.String);
 
-		boolean.SetBoolean(true);
-		breakpoint.AddSetter(osv!, "collapsed", boolean);
+		str.SetString("mobile");
+		breakpoint.AddSetter(mlv!, "layout-name", str);
 
 		number.SetInt(10);
 		breakpoint.AddSetter(frame!, "margin-start", number);
