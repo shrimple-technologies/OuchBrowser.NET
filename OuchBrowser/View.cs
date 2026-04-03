@@ -186,7 +186,8 @@ public class View
 			}
 		};
 
-		webview.OnMouseTargetChanged += (_, res) => {
+		webview.OnMouseTargetChanged += (_, res) =>
+		{
 			if (res.HitTestResult.ContextIsLink())
 			{
 				window.url_preview!.SetVisible(true);

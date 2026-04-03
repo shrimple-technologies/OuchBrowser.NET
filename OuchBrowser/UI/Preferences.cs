@@ -240,7 +240,7 @@ public class Preferences : Adw.Dialog
 			}
 		};
 	}
-	
+
 	public void FocusPane(string section)
 	{
 		view!.SetVisibleChildName(section);
