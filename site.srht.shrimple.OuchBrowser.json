@@ -95,7 +95,7 @@
 				"dotnet publish OuchBrowser -c Release -o ${FLATPAK_DEST}/bin --source ./nuget-sources",
 				
 				"install -Dm644 OuchBrowser/Icons/Symbolic/${FLATPAK_ID}-symbolic.svg --target-directory ${FLATPAK_DEST}/share/icons/hicolor/symbolic/apps/",
-				"install -Dm644 OuchBrowser/Icons/Hicolor/${FLATPAK_ID}.svg --target-directory ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/",
+				"install -Dm644 OuchBrowser/Icons/Scalable/${FLATPAK_ID}.svg --target-directory ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/",
 				"install -Dm644 OuchBrowser/Metadata/${FLATPAK_ID}.desktop --target-directory ${FLATPAK_DEST}/share/applications",
 				"install -Dm644 OuchBrowser/Metadata/${FLATPAK_ID}.metainfo.xml --target-directory ${FLATPAK_DEST}/share/metainfo"
 			],
