@@ -385,15 +385,20 @@ public class Window
 
 		actions.AddAction("palette", ["<Ctrl>l", "<Alt>d"], (_, _) =>
 		{
-			if (window.view!.GetNPages() == 0) return;
-
-			TabPage page = window.view!.GetSelectedPage()!;
-			WebView webview = (WebView)page.Child!;
-			EntryBuffer buffer = EntryBuffer.New(webview.GetUri(), -1);
-			window.url_entry!.SetBuffer(buffer);
-			window.url_dialog!.Present(window);
-			window.url_entry!.GrabFocus();
-			palette_state = "current_tab";
+			if (window.view!.GetNPages() == 0)
+			{
+				window.ActivateAction("palette-new", null);
+			}
+			else
+			{
+				TabPage page = window.view!.GetSelectedPage()!;
+				WebView webview = (WebView)page.Child!;
+				EntryBuffer buffer = EntryBuffer.New(webview.GetUri(), -1);
+				window.url_entry!.SetBuffer(buffer);
+				window.url_dialog!.Present(window);
+				window.url_entry!.GrabFocus();
+				palette_state = "current_tab";
+			}
 		});
 
 		actions.AddAction("sidebar-toggle", ["<Ctrl><Shift>s"], (_, _) =>
