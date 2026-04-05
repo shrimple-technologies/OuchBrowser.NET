@@ -718,6 +718,21 @@ public class Window
 			}
 		});
 
+		actions.AddAction("zoom-reset", ["<Ctrl>0"], (_, _) =>
+		{
+			TabPage page = window.view!.GetSelectedPage()!;
+			WebView webview = (WebView)page.Child!;
+			Toast toast = Toast.New("");
+
+			if (webview.GetZoomLevel() == window.settings.GetDouble("zoom")) return;
+			
+			webview.SetZoomLevel(window.settings.GetDouble("zoom"));
+			toast.SetTitle($"{window.settings.GetDouble("zoom") * 100}%");
+			toast.SetTimeout(1);
+			window.toast_overlay!.DismissAll();
+			window.toast_overlay!.AddToast(toast);
+		});
+
 		actions.AddAction("tab-close", ["<Ctrl>w"], (_, _) =>
 		{
 			if (window.view!.GetNPages() == 0)
