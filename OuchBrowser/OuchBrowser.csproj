@@ -55,6 +55,7 @@
 			Include="UI\Builder\Preferences.ui"
 			LogicalName="UI\Preferences.ui"
 		/>
+		<EmbeddedResource Include="UI\Builder\Shortcuts.ui" LogicalName="UI\Shortcuts.ui" />
 		<EmbeddedResource Include="UI\Builder\Window.ui" LogicalName="UI\Window.ui" />
 
 		<!-- Bangs (via Kagi) -->

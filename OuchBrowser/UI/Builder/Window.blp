@@ -497,6 +497,41 @@ Adw.TabOverview overview {
 						Button {
 							hexpand: true;
 							focus-on-click: false;
+							action-name: "win.shortcuts";
+
+							CenterBox {
+								start-widget: Box {
+									halign: start;
+									spacing: 10;
+
+									Image {
+										icon-name: "keyboard-symbolic";
+									}
+
+									Label {
+										label: _("Keyboard Shortcuts");
+									}
+								};
+
+								end-widget: Adw.ShortcutLabel {
+									accelerator: "<Ctrl>question";
+
+									styles [
+										"dimmed",
+										"compact",
+									]
+								};
+							}
+
+							styles [
+								"body",
+								"flat",
+							]
+						}
+
+						Button {
+							hexpand: true;
+							focus-on-click: false;
 							action-name: "win.about";
 
 							Box {

@@ -1,0 +1,100 @@
+using Gtk 4.0;
+using Adw 1;
+
+Adw.ShortcutsDialog shortcuts {
+	Adw.ShortcutsSection {
+		title: _("General");
+
+		Adw.ShortcutsItem {
+			title: _("Copy Current URL");
+			action-name: "win.copy-link";
+		}
+
+		Adw.ShortcutsItem {
+			title: _("Open Keyboard Shortcuts");
+			action-name: "win.shortcuts";
+		}
+
+		Adw.ShortcutsItem {
+			title: _("Open Preferences");
+			accelerator: "<Ctrl>comma";
+		}
+
+		Adw.ShortcutsItem {
+			title: _("Toggle Tabs Sidebar");
+			action-name: "win.sidebar-toggle";
+		}
+	}
+
+	Adw.ShortcutsSection {
+		title: _("Command Palette");
+
+		Adw.ShortcutsItem {
+			title: _("Change Current Tab URL");
+			action-name: "win.palette";
+		}
+
+		Adw.ShortcutsItem {
+			title: _("New Tab");
+			action-name: "win.palette-new";
+		}
+
+		Adw.ShortcutsItem {
+			title: _("Search Bangs");
+			accelerator: "<Ctrl>l+exclam";
+		}
+	}
+
+	Adw.ShortcutsSection {
+		title: _("Navigation");
+
+		Adw.ShortcutsItem {
+			title: _("Close Tab");
+			action-name: "win.tab-close";
+		}
+
+		Adw.ShortcutsItem {
+			title: _("Go Back a Page");
+			action-name: "win.go-back";
+		}
+
+		Adw.ShortcutsItem {
+			title: _("Go Forward a Page");
+			action-name: "win.go-forward";
+		}
+
+		Adw.ShortcutsItem {
+			title: _("Hard Refresh Tab");
+			action-name: "win.hard-refresh";
+		}
+
+		Adw.ShortcutsItem {
+			title: _("Refresh Tab");
+			action-name: "win.refresh";
+		}
+
+		Adw.ShortcutsItem {
+			title: _("Switch to Tab");
+			accelerator: "<Ctrl>1...9";
+		}
+	}
+
+	Adw.ShortcutsSection {
+		title: _("Zoom");
+
+		Adw.ShortcutsItem {
+			title: _("Zoom In");
+			accelerator: "<Ctrl>plus";
+		}
+
+		Adw.ShortcutsItem {
+			title: _("Zoom Out");
+			action-name: "win.zoom-out";
+		}
+
+		Adw.ShortcutsItem {
+			title: _("Reset Zoom");
+			action-name: "win.zoom-reset";
+		}
+	}
+}

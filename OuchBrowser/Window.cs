@@ -24,10 +24,11 @@ public class Window
 		var preferences = new Preferences(window);
 		var cards = new Cards(window);
 		var about = About.New();
+		var shortcuts = Shortcuts.New();
 		var view = new View(window.view!, window!);
 		var bangs = new Bangs(window.settings.GetString("search-engine"));
 
-		SetupActions(window, application, preferences, about);
+		SetupActions(window, application, preferences, about, shortcuts);
 
 		window.go_back!.SetSensitive(false);
 		window.go_forward!.SetSensitive(false);
@@ -368,7 +369,7 @@ public class Window
 		}
 	}
 
-	public void SetupActions(UI.Window window, Application application, Preferences preferences, Adw.AboutDialog about)
+	public void SetupActions(UI.Window window, Application application, Preferences preferences, Adw.AboutDialog about, Adw.ShortcutsDialog shortcuts)
 	{
 		var actions = new Actions(window, application);
 
@@ -444,6 +445,11 @@ public class Window
 		actions.AddAction("about", [], (action, parameter) =>
 		{
 			about.Present(window);
+		});
+
+		actions.AddAction("shortcuts", ["<Ctrl>question"], (action, parameter) =>
+		{
+			shortcuts.Present(window);
 		});
 
 		actions.AddAction("refresh", ["<Ctrl>r"], (_, _) =>
@@ -730,7 +736,7 @@ public class Window
 			Toast toast = Toast.New("");
 
 			if (webview.GetZoomLevel() == window.settings.GetDouble("zoom")) return;
-			
+
 			webview.SetZoomLevel(window.settings.GetDouble("zoom"));
 			toast.SetTitle($"{window.settings.GetDouble("zoom") * 100}%");
 			toast.SetTimeout(1);

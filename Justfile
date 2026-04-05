@@ -2,7 +2,7 @@ set quiet
 
 PREFIX := "/usr"
 ID := "site.srht.shrimple.OuchBrowser"
-BLUEPRINT_FILES := "OuchBrowser/UI/Builder/Window.blp OuchBrowser/UI/Builder/Preferences.blp OuchBrowser/UI/Builder/About.blp"
+BLUEPRINT_FILES := "OuchBrowser/UI/Builder/Window.blp OuchBrowser/UI/Builder/Preferences.blp OuchBrowser/UI/Builder/About.blp OuchBrowser/UI/Builder/Shortcuts.blp"
 
 alias fmt := format
 
