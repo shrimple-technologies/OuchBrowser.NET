@@ -63,7 +63,6 @@ build-schemas:
 [group("build")]
 build-translations:
 	mkdir -p {{ PREFIX }}/share/locale/et/LC_MESSAGES
-	mkdir -p {{ PREFIX }}/share/locale/fr/LC_MESSAGES
 	mkdir -p {{ PREFIX }}/share/locale/nb_NO/LC_MESSAGES
 	mkdir -p {{ PREFIX }}/share/locale/pt/LC_MESSAGES
 	mkdir -p {{ PREFIX }}/share/locale/pt_BR/LC_MESSAGES
