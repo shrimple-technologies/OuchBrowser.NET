@@ -66,3 +66,9 @@ toggle-group > separator {
 .url-preview {
 	border-radius: 10px;
 }
+
+shortcut-label.compact > box > .keycap {
+	padding: 0;
+	padding-left: 6px;
+	padding-right: 6px;
+}

@@ -478,11 +478,12 @@ Adw.TabOverview overview {
 									}
 								};
 
-								end-widget: Label {
-									label: "Ctrl+,";
+								end-widget: Adw.ShortcutLabel {
+									accelerator: "<Ctrl>comma";
 
 									styles [
 										"dimmed",
+										"compact",
 									]
 								};
 							}
