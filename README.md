@@ -1,8 +1,9 @@
 > [!CAUTION]
 > 
-> OuchBrowser.NET is currently in alpha stage and is changing rapidly. See [the
-> original Rust codebase](https://git.sr.ht/~shrimple/ouch) for a more stable
-> variant.
+> OuchBrowser.NET (or simply Ouch Browser) is currently in alpha stage and is
+> changing rapidly. While it is in a usable state, it does not have a large
+> number of common web browser functions, and can have many bugs, which
+> [can be reported here](https://codeberg.org/shrimple/OuchBrowser.NET/issues).
 
 # OuchBrowser.NET
 
