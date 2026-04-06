@@ -12,6 +12,8 @@
 
 A web browser with vertical tabs for GNOME.
 
+<br />
+
 ## Screenshots
 
 ![Ouch Browser Screenshot](https://codeberg.org/shrimple/OuchBrowser.NET/raw/branch/main/OuchBrowser/Screenshots/Screenshot%20with%20Sidebar%20Open.png)
@@ -21,7 +23,7 @@ A web browser with vertical tabs for GNOME.
 > [!NOTE]
 > 
 > You need the dotnet 10.0 SDK, GTK 4, libadwaita, WebKitGTK, and Just to run
-> OuchBrowser.NET.
+> Ouch Browser.
 
 ```sh
 git clone --recurse-submodules https://codeberg.org/shrimple/OuchBrowser.NET
