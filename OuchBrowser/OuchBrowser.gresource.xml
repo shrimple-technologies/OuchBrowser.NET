@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <gresources>
 	<gresource prefix="/site/srht/shrimple/OuchBrowser/">
-		<file alias="styles.css">Styles.css</file>
+		<file alias="style.css">Style.css</file>
 		<file
 			alias="site.srht.shrimple.OuchBrowser.metainfo.xml"
 		>Metadata/site.srht.shrimple.OuchBrowser.metainfo.xml</file>

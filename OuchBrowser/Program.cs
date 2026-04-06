@@ -19,7 +19,6 @@ internal class Program
 		var window = new Window();
 
 		RegisterResources();
-		RegisterCss();
 
 		app.OnActivate += window.OnActivate;
 
@@ -37,14 +36,5 @@ internal class Program
 		using var bytes = Bytes.New(buffer);
 		using var resource = Resource.NewFromData(bytes);
 		resource.Register();
-	}
-
-	// adapted from <https://git.sr.ht/~shrimple/ouch/tree/main/item/src/css.rs>
-	private static void RegisterCss()
-	{
-		using var provider = CssProvider.New();
-		provider.LoadFromResource("/site/srht/shrimple/OuchBrowser/styles.css");
-
-		StyleContext.AddProviderForDisplay(Display.GetDefault()!, provider, 600);
 	}
 }
