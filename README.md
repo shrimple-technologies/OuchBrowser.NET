@@ -4,6 +4,8 @@
 > in a usable state, it does not have a large number of common web browser
 > functions, and can have many bugs, which [can be reported here](https://codeberg.org/shrimple/OuchBrowser.NET/issues).
 
+---
+
 <img src="https://codeberg.org/shrimple/OuchBrowser.NET/raw/branch/main/OuchBrowser/Icons/Scalable/site.srht.shrimple.OuchBrowser.svg" align="left" />
 
 # Ouch Browser
