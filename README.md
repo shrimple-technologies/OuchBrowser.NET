@@ -1,13 +1,14 @@
 > [!CAUTION]
 > 
-> OuchBrowser.NET (or simply Ouch Browser) is currently in alpha stage and is
-> changing rapidly. While it is in a usable state, it does not have a large
-> number of common web browser functions, and can have many bugs, which
-> [can be reported here](https://codeberg.org/shrimple/OuchBrowser.NET/issues).
+> Ouch Browser is currently in alpha stage and is changing rapidly. While it is
+> in a usable state, it does not have a large number of common web browser
+> functions, and can have many bugs, which [can be reported here](https://codeberg.org/shrimple/OuchBrowser.NET/issues).
 
-# OuchBrowser.NET
+<img src="https://codeberg.org/shrimple/OuchBrowser.NET/raw/branch/main/OuchBrowser/Icons/Scalable/site.srht.shrimple.OuchBrowser.svg" align="left" />
 
-A rewrite of Ouch Browser to C#.
+# Ouch Browser
+
+A web browser with vertical tabs for GNOME.
 
 ## Screenshots
 
@@ -21,6 +22,6 @@ A rewrite of Ouch Browser to C#.
 > OuchBrowser.NET.
 
 ```sh
-git clone --recurse-submodules https://tangled.org/shrimple.srht.site/OuchBrowser.NET
+git clone --recurse-submodules https://codeberg.org/shrimple/OuchBrowser.NET
 just run
 ```
