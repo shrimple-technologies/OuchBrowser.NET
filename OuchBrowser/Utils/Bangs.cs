@@ -18,10 +18,7 @@ class Bangs
 			Converters = { new JsonStringEnumConverter() }
 		};
 
-		var assembly = Assembly.GetExecutingAssembly();
-		using var stream = assembly.GetManifestResourceStream("Bangs.json");
-		using var reader = new StreamReader(stream!);
-		string list = reader.ReadToEnd();
+		EmbeddedResource.Load("Bangs.json", out string list);
 		bangs = JsonSerializer.Deserialize<List<Bang>>(list, options)!;
 		default_search = fallback;
 	}

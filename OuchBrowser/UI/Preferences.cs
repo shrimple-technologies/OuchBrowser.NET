@@ -18,14 +18,9 @@ public class Preferences : Adw.Dialog
 
 	public Preferences(UI.Window window) : base()
 	{
-		var assembly = Assembly.GetExecutingAssembly();
-		using var stream = assembly.GetManifestResourceStream("UI/Preferences.ui");
-		using var reader = new StreamReader(stream!);
-		string xml = reader.ReadToEnd();
-
 		var builder = new Builder();
 		builder.SetTranslationDomain("OuchBrowser");
-		builder.AddFromString(xml, -1);
+		builder.AddFromString("/site/srht/shrimple/OuchBrowser/ui/preferences.ui");
 		builder.Connect(this);
 
 		nsv!.SetShowContent(true);

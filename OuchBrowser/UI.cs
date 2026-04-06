@@ -47,15 +47,10 @@ public class Window : Adw.ApplicationWindow
 	{
 		settings = Gio.Settings.New("site.srht.shrimple.OuchBrowser");
 		gettext = new Catalog("OuchBrowser", "/usr/share/locale");
-
-		var assembly = Assembly.GetExecutingAssembly();
-		using var stream = assembly.GetManifestResourceStream("UI/Window.ui");
-		using var reader = new StreamReader(stream!);
-		string xml = reader.ReadToEnd();
-
+		
 		var builder = new Builder();
 		builder.SetTranslationDomain("OuchBrowser");
-		builder.AddFromString(xml, -1);
+		builder.AddFromResource("/site/srht/shrimple/OuchBrowser/ui/window.ui");
 		builder.Connect(this);
 
 		Content = builder.GetObject("overview") as Widget;

@@ -26,46 +26,8 @@
 			LogicalName="OuchBrowser.app.gresource"
 		/>
 
-		<!-- CSS -->
-		<EmbeddedResource Include="Styles.css" />
-
-		<!-- Icons -->
-		<EmbeddedResource Include="Icons\Symbolic\archive-symbolic.svg" />
-		<EmbeddedResource Include="Icons\Symbolic\box-dotted-symbolic.svg" />
-		<EmbeddedResource Include="Icons\Symbolic\chain-link-loose-symbolic.svg" />
-		<EmbeddedResource Include="Icons\Symbolic\circle-crossed-symbolic.svg" />
-		<EmbeddedResource Include="Icons\Symbolic\code-symbolic.svg" />
-		<EmbeddedResource Include="Icons\Symbolic\cross-large-symbolic.svg" />
-		<EmbeddedResource Include="Icons\Symbolic\dot-symbolic.svg" />
-		<EmbeddedResource Include="Icons\Symbolic\exclaimation-symbolic.svg" />
-		<EmbeddedResource Include="Icons\Symbolic\history-symbolic.svg" />
-		<EmbeddedResource Include="Icons\Symbolic\multitasking-symbolic.svg" />
-		<EmbeddedResource Include="Icons\Symbolic\preferences-symbolic.svg" />
-		<EmbeddedResource Include="Icons\Symbolic\puzzle-piece-symbolic.svg" />
-		<EmbeddedResource Include="Icons\Symbolic\shoe-box-symbolic.svg" />
-		<EmbeddedResource
-			Include="Icons\Symbolic\site.srht.shrimple.OuchBrowser-symbolic.svg"
-		/>
-		<EmbeddedResource Include="Icons\Symbolic\sliders-horizontal-symbolic.svg" />
-		<EmbeddedResource Include="Icons\Symbolic\web-symbolic.svg" />
-
-		<!-- GtkBuilder Files -->
-		<EmbeddedResource Include="UI\Builder\About.ui" LogicalName="UI\About.ui" />
-		<EmbeddedResource
-			Include="UI\Builder\Preferences.ui"
-			LogicalName="UI\Preferences.ui"
-		/>
-		<EmbeddedResource Include="UI\Builder\Shortcuts.ui" LogicalName="UI\Shortcuts.ui" />
-		<EmbeddedResource Include="UI\Builder\Window.ui" LogicalName="UI\Window.ui" />
-
 		<!-- Bangs (via Kagi) -->
 		<EmbeddedResource Include="Bangs\data\bangs.json" LogicalName="Bangs.json" />
-
-		<!-- Metainfo -->
-		<EmbeddedResource
-			Include="Metadata\site.srht.shrimple.OuchBrowser.metainfo.xml"
-			LogicalName="site.srht.shrimple.OuchBrowser.metainfo.xml"
-		/>
 	</ItemGroup>
 
 	<ItemGroup>

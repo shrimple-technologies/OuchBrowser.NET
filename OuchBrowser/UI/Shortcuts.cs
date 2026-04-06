@@ -10,13 +10,8 @@ public class Shortcuts
 	{
 		var dialog = Adw.ShortcutsDialog.New();
 
-		var assembly = Assembly.GetExecutingAssembly();
-		using var stream = assembly.GetManifestResourceStream("UI/Shortcuts.ui");
-		using var reader = new StreamReader(stream!);
-		string xml = reader.ReadToEnd();
-
 		var builder = new Builder();
-		builder.AddFromString(xml, -1);
+		builder.AddFromResource("/site/srht/shrimple/OuchBrowser/ui/shortcuts.ui");
 		builder.Connect(dialog);
 
 		return (Adw.ShortcutsDialog)builder!.GetObject("shortcuts")!;
