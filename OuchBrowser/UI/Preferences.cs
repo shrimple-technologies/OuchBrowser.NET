@@ -7,7 +7,7 @@ namespace OuchBrowser.UI;
 
 internal class Preferences : Adw.Dialog
 {
-	#pragma warning disable CS0649
+#pragma warning disable CS0649
 	[Connect] private readonly NavigationSplitView? nsv;
 	[Connect] private readonly NavigationView? nv;
 	[Connect] private readonly ViewStack? view;
@@ -16,7 +16,7 @@ internal class Preferences : Adw.Dialog
 	[Connect] private readonly SwitchRow? setting_devtools;
 	[Connect] private readonly ComboRow? setting_search_engine;
 	[Connect] private readonly ComboRow? setting_zoom;
-	#pragma warning restore CS0649
+#pragma warning restore CS0649
 
 	public Preferences(UI.Window window) : base()
 	{

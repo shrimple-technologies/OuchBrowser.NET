@@ -9,7 +9,7 @@ internal class Window : Adw.ApplicationWindow
 {
 	public Gio.Settings settings;
 	public ICatalog gettext;
-	#pragma warning disable CS0649
+#pragma warning disable CS0649
 	[Connect] public readonly Adw.HeaderBar? content_headerbar;
 	[Connect] public readonly ToolbarView? content_toolbar;
 	[Connect] public readonly Button? content_sidebar_toggle;
@@ -43,13 +43,13 @@ internal class Window : Adw.ApplicationWindow
 	[Connect] public readonly Box? url_preview;
 	[Connect] public readonly Label? url_preview_label;
 	[Connect] public readonly MultiLayoutView? mlv;
-	#pragma warning restore CS0649
+#pragma warning restore CS0649
 
 	public Window(Adw.Application app) : base()
 	{
 		settings = Gio.Settings.New("site.srht.shrimple.OuchBrowser");
 		gettext = new Catalog("OuchBrowser", "/usr/share/locale");
-		
+
 		var builder = new Builder();
 		builder.SetTranslationDomain("OuchBrowser");
 		builder.AddFromResource("/site/srht/shrimple/OuchBrowser/ui/window.ui");
