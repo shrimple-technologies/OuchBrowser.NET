@@ -12,7 +12,7 @@
 
 A web browser with vertical tabs for GNOME.
 
-<br />
+Made for focusing on your browsing, Ouch Browser comes with !bangs support, a multi-purpose command palette, and mobile support.
 
 ## Screenshots
 
