@@ -5,7 +5,7 @@ using Gio;
 
 namespace OuchBrowser.Utils;
 
-public class Actions
+internal class Actions
 {
 	private readonly UI.Window? win;
 	private readonly Adw.Application? app;

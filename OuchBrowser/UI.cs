@@ -5,10 +5,11 @@ using Gtk;
 
 namespace OuchBrowser.UI;
 
-public class Window : Adw.ApplicationWindow
+internal class Window : Adw.ApplicationWindow
 {
 	public Gio.Settings settings;
 	public ICatalog gettext;
+	#pragma warning disable CS0649
 	[Connect] public readonly Adw.HeaderBar? content_headerbar;
 	[Connect] public readonly ToolbarView? content_toolbar;
 	[Connect] public readonly Button? content_sidebar_toggle;
@@ -42,6 +43,7 @@ public class Window : Adw.ApplicationWindow
 	[Connect] public readonly Box? url_preview;
 	[Connect] public readonly Label? url_preview_label;
 	[Connect] public readonly MultiLayoutView? mlv;
+	#pragma warning restore CS0649
 
 	public Window(Adw.Application app) : base()
 	{

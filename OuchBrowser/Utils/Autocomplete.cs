@@ -6,7 +6,7 @@ using OuchBrowser.Types;
 
 namespace OuchBrowser.Utils;
 
-class Autocomplete
+internal class Autocomplete
 {
 	public static async Task<Autocompletion[]> CompletionResults(string text)
 	{

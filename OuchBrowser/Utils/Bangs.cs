@@ -9,7 +9,7 @@ using OuchBrowser.Types;
 
 namespace OuchBrowser.Utils;
 
-class Bangs
+internal class Bangs
 {
 	private readonly List<Bang> bangs;
 	private readonly string default_search;

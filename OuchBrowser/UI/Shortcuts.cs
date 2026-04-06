@@ -4,7 +4,7 @@ using Gtk;
 
 namespace OuchBrowser.UI;
 
-public class Shortcuts
+internal class Shortcuts
 {
 	public static Adw.ShortcutsDialog New()
 	{

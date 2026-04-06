@@ -4,9 +4,9 @@ using Gtk;
 
 namespace OuchBrowser.UI;
 
-public class About
+internal class About
 {
-	public static Adw.AboutDialog New()
+	internal static Adw.AboutDialog New()
 	{
 		var dialog = Adw.AboutDialog.New();
 		

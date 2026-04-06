@@ -3,7 +3,7 @@
 
 namespace OuchBrowser.Utils;
 
-class Favicon
+internal class Favicon
 {
 	public static async Task<Gio.Icon> GetFavicon(string domain)
 	{

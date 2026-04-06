@@ -4,7 +4,7 @@
 using System.Text.RegularExpressions;
 namespace OuchBrowser.Utils;
 
-class Url
+internal class Url
 {
 	public static bool IsUrl(string url)
 	{

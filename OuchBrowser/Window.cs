@@ -9,7 +9,7 @@ using Object = GObject.Object;
 
 namespace OuchBrowser;
 
-public class Window
+internal class Window
 {
 	private string palette_state = "new_tab";
 	private DateTime lastInvokeTime = DateTime.MinValue;

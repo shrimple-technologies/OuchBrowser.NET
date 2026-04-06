@@ -4,7 +4,7 @@ using OuchBrowser.Utils;
 
 namespace OuchBrowser;
 
-public class View
+internal class View
 {
 	public readonly TabView view;
 	private readonly UI.Window Window;

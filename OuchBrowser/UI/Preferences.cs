@@ -5,16 +5,18 @@ using Gtk;
 
 namespace OuchBrowser.UI;
 
-public class Preferences : Adw.Dialog
+internal class Preferences : Adw.Dialog
 {
-	[Connect] public readonly NavigationSplitView? nsv;
-	[Connect] public readonly NavigationView? nv;
-	[Connect] public readonly ViewStack? view;
-	[Connect] public readonly SwitchRow? setting_search_autocomplete;
-	[Connect] public readonly SwitchRow? setting_bang_autocomplete;
-	[Connect] public readonly SwitchRow? setting_devtools;
-	[Connect] public readonly ComboRow? setting_search_engine;
-	[Connect] public readonly ComboRow? setting_zoom;
+	#pragma warning disable CS0649
+	[Connect] private readonly NavigationSplitView? nsv;
+	[Connect] private readonly NavigationView? nv;
+	[Connect] private readonly ViewStack? view;
+	[Connect] private readonly SwitchRow? setting_search_autocomplete;
+	[Connect] private readonly SwitchRow? setting_bang_autocomplete;
+	[Connect] private readonly SwitchRow? setting_devtools;
+	[Connect] private readonly ComboRow? setting_search_engine;
+	[Connect] private readonly ComboRow? setting_zoom;
+	#pragma warning restore CS0649
 
 	public Preferences(UI.Window window) : base()
 	{

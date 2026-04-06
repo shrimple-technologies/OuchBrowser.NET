@@ -6,7 +6,7 @@ using OuchBrowser.Types;
 
 namespace OuchBrowser.Utils;
 
-public class Cards
+internal class Cards
 {
 	private readonly UI.Window window;
 

@@ -7,10 +7,8 @@ using System.Reflection;
 
 namespace OuchBrowser.Utils;
 
-class EmbeddedResource
+internal class EmbeddedResource
 {
-	public EmbeddedResource() { }
-
 	public static void Load(string filename, out string result)
 	{
 		var assembly = Assembly.GetExecutingAssembly();
