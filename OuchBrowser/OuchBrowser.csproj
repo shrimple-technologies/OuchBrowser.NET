@@ -29,6 +29,7 @@
 
 		<!-- Bangs (via Kagi) -->
 		<EmbeddedResource Include="Bangs\data\bangs.json" LogicalName="Bangs.json" />
+		<EmbeddedResource Include="Bangs\data\kagi_bangs.json" LogicalName="Bangs.Kagi.json" />
 	</ItemGroup>
 
 	<ItemGroup>

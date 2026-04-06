@@ -22,7 +22,11 @@ internal class Bangs
 		};
 
 		EmbeddedResource.Load("Bangs.json", out string list);
+		EmbeddedResource.Load("Bangs.Kagi.json", out string list_kagi);
+		List<Bang> bangs_kagi = JsonSerializer.Deserialize<List<Bang>>(list_kagi, options)!;
 		bangs = JsonSerializer.Deserialize<List<Bang>>(list, options)!;
+		bangs.AddRange(bangs_kagi);
+
 		default_search = fallback;
 	}
 
