@@ -21,6 +21,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<!-- GResource -->
 		<EmbeddedResource
 			Include="OuchBrowser.app.gresource"
 			LogicalName="OuchBrowser.app.gresource"

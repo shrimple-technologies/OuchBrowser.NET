@@ -1,3 +1,6 @@
+// Utils/Autocomplete.cs
+// Utilities for interacting with the DuckDuckGo autocomplete API.
+
 using System.Net.Http.Json;
 using OuchBrowser.Types;
 

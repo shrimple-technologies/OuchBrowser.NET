@@ -1,3 +1,6 @@
+// Utils/Actions.cs
+// Utilities for creating SimpleActions.
+
 using Gio;
 
 namespace OuchBrowser.Utils;

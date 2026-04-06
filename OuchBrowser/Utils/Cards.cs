@@ -1,3 +1,6 @@
+// Utils/Cards.cs
+// Utilities for Cards.
+
 using Adw;
 using OuchBrowser.Types;
 

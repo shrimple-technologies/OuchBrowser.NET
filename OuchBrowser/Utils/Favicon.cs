@@ -1,3 +1,6 @@
+// Utils/Favicon.cs
+// Utilities for loading favicons via Twenty Icons.
+
 namespace OuchBrowser.Utils;
 
 class Favicon
