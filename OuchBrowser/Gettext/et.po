@@ -5,7 +5,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://tangled.org/shrimple.srht.site/OuchBrowser.NET/"
 "issues\n"
 "POT-Creation-Date: 2026-03-01 12:29:28-0400\n"
-"PO-Revision-Date: 2026-03-22 19:09+0000\n"
+"PO-Revision-Date: 2026-04-09 18:09+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/ouch/net/et/>\n"
 "Language: et\n"
@@ -26,7 +26,7 @@ msgid "Shrimple Technologies"
 msgstr "Shrimple Technologies"
 
 msgid "Focus on your browsing"
-msgstr ""
+msgstr "Keskendu veebis surfamisele"
 
 msgid "Hide Sidebar"
 msgstr "Peida külgriba"
@@ -41,7 +41,7 @@ msgid "Refresh"
 msgstr "Laadi uuesti"
 
 msgid "Reveal Command Palette"
-msgstr ""
+msgstr "Näita käsupaletti"
 
 msgid "New Tab"
 msgstr "Uus vahekaart"
@@ -62,7 +62,7 @@ msgid "Go"
 msgstr "Mine"
 
 msgid "Close Palette"
-msgstr ""
+msgstr "Sulge värvipalett"
 
 msgid "History"
 msgstr "Ajalugu"
@@ -70,10 +70,8 @@ msgstr "Ajalugu"
 msgid "Downloads"
 msgstr "Allalaadimised"
 
-#, fuzzy
-#| msgid "Show All Tabs"
 msgid "View All Tabs"
-msgstr "Näita kõiki vahekaarte"
+msgstr "Vaata kõiki vahekaarte"
 
 msgid "More"
 msgstr "Veel"
@@ -88,7 +86,7 @@ msgid "About Ouch Browser"
 msgstr "Rakenduse teave: veebibrauser Ouch"
 
 msgid "New Room"
-msgstr ""
+msgstr "Uus tuba"
 
 msgid "New Folder"
 msgstr "Uus kaust"
@@ -100,7 +98,7 @@ msgid "Close Tab"
 msgstr "Sulge vahekaart"
 
 msgid "General"
-msgstr ""
+msgstr "Üldist"
 
 msgid "Content Blocking"
 msgstr "Sisu blokeerimine"
@@ -124,43 +122,43 @@ msgid "Autocomplete"
 msgstr "Automaattäide"
 
 msgid "Enable Search Autocomplete"
-msgstr ""
+msgstr "Kasuta otsimisel automaattäidet"
 
 msgid "Enable !bang Autocomplete"
-msgstr ""
+msgstr "Kasuta !bang automaattäidet"
 
 msgid "Developer"
-msgstr ""
+msgstr "Arendaja"
 
 msgid "Enable Developer Tools"
-msgstr ""
+msgstr "Kasuta arendustarvikuid"
 
 msgid "This will allow access to the Web Inspector"
-msgstr ""
+msgstr "See annab võimaluse kasutada veebisaidi inspekteerijat"
 
 msgid "Accessibility"
-msgstr ""
+msgstr "Hõlbustus"
 
 msgid "Content"
-msgstr ""
+msgstr "Sisu"
 
 msgid "Page Zoom"
-msgstr ""
+msgstr "Lehe suum"
 
 msgid "Search Engine"
-msgstr ""
+msgstr "Otsingumootor"
 
 msgid "Custom Search Engines"
-msgstr ""
+msgstr "Sinu lisatud otsingumootorid"
 
 msgid "New Search Engine…"
-msgstr ""
+msgstr "Uus otsingumootor…"
 
 msgid "See !bangs preferences for more options"
-msgstr ""
+msgstr "Lisavalikud leiad !bangs käskude eelistustest"
 
 msgid "!bangs"
-msgstr ""
+msgstr "!bangs"
 
 msgid "Custom Bangs"
 msgstr ""
