@@ -3,7 +3,7 @@
 	"hard_tabs": true,
 	"disable_ai": true,
 	"file_types": {
-		"XML": ["csproj"],
+		"XML": ["csproj", "slnx"],
 		"ini": ["desktop"],
 	},
 }
