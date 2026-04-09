@@ -252,3 +252,55 @@ msgstr ""
 
 msgid "Zooms text and images instead of the view"
 msgstr ""
+
+msgid "Copy Current URL"
+msgstr ""
+
+msgid "Open Keyboard Shortcuts"
+msgstr ""
+
+msgid "Open Preferences"
+msgstr ""
+
+msgid "Toggle Tabs Sidebar"
+msgstr ""
+
+msgid "Command Palette"
+msgstr ""
+
+msgid "Change Current Tab URL"
+msgstr ""
+
+msgid "Search Bangs"
+msgstr ""
+
+msgid "Navigation"
+msgstr ""
+
+msgid "Go Back a Page"
+msgstr ""
+
+msgid "Go Forward a Page"
+msgstr ""
+
+#, fuzzy
+#| msgid "Refresh"
+msgid "Hard Refresh Tab"
+msgstr "Gjenoppfrisk"
+
+#, fuzzy
+#| msgid "Refresh"
+msgid "Refresh Tab"
+msgstr "Gjenoppfrisk"
+
+msgid "Switch to Tab"
+msgstr ""
+
+msgid "Zoom In"
+msgstr ""
+
+msgid "Zoom Out"
+msgstr ""
+
+msgid "Reset Zoom"
+msgstr ""

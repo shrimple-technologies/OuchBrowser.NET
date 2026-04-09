@@ -244,3 +244,63 @@ msgstr ""
 
 msgid "Zooms text and images instead of the view"
 msgstr ""
+
+msgid "Copy Current URL"
+msgstr ""
+
+msgid "Open Keyboard Shortcuts"
+msgstr ""
+
+#, fuzzy
+#| msgid "Preferences"
+msgid "Open Preferences"
+msgstr "Eelistused"
+
+msgid "Toggle Tabs Sidebar"
+msgstr ""
+
+#, fuzzy
+#| msgid "Reveal Command Palette"
+msgid "Command Palette"
+msgstr "Näita käsupaletti"
+
+msgid "Change Current Tab URL"
+msgstr ""
+
+#, fuzzy
+#| msgid "Search Engine"
+msgid "Search Bangs"
+msgstr "Otsingumootor"
+
+msgid "Navigation"
+msgstr ""
+
+msgid "Go Back a Page"
+msgstr ""
+
+msgid "Go Forward a Page"
+msgstr ""
+
+#, fuzzy
+#| msgid "Refresh"
+msgid "Hard Refresh Tab"
+msgstr "Laadi uuesti"
+
+#, fuzzy
+#| msgid "Refresh"
+msgid "Refresh Tab"
+msgstr "Laadi uuesti"
+
+msgid "Switch to Tab"
+msgstr ""
+
+msgid "Zoom In"
+msgstr ""
+
+msgid "Zoom Out"
+msgstr ""
+
+#, fuzzy
+#| msgid "Page Zoom"
+msgid "Reset Zoom"
+msgstr "Lehe suum"

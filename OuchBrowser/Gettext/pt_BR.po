@@ -260,3 +260,67 @@ msgstr "Ampliar Texto"
 
 msgid "Zooms text and images instead of the view"
 msgstr "Amplia texto e imagens em vez da página inteira"
+
+msgid "Copy Current URL"
+msgstr ""
+
+msgid "Open Keyboard Shortcuts"
+msgstr ""
+
+#, fuzzy
+#| msgid "Preferences"
+msgid "Open Preferences"
+msgstr "Preferências"
+
+msgid "Toggle Tabs Sidebar"
+msgstr ""
+
+#, fuzzy
+#| msgid "Reveal Command Palette"
+msgid "Command Palette"
+msgstr "Mostrar Paleta de Comandos"
+
+msgid "Change Current Tab URL"
+msgstr ""
+
+#, fuzzy
+#| msgid "Search Engine"
+msgid "Search Bangs"
+msgstr "Mecanismo de Busca"
+
+msgid "Navigation"
+msgstr ""
+
+msgid "Go Back a Page"
+msgstr ""
+
+msgid "Go Forward a Page"
+msgstr ""
+
+#, fuzzy
+#| msgid "Refresh"
+msgid "Hard Refresh Tab"
+msgstr "Recarregar"
+
+#, fuzzy
+#| msgid "Refresh"
+msgid "Refresh Tab"
+msgstr "Recarregar"
+
+msgid "Switch to Tab"
+msgstr ""
+
+#, fuzzy
+#| msgid "Zoom Text"
+msgid "Zoom In"
+msgstr "Ampliar Texto"
+
+#, fuzzy
+#| msgid "Zoom Text"
+msgid "Zoom Out"
+msgstr "Ampliar Texto"
+
+#, fuzzy
+#| msgid "Page Zoom"
+msgid "Reset Zoom"
+msgstr "Zoom da Página"
