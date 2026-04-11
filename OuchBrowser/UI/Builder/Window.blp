@@ -336,8 +336,16 @@ Adw.TabOverview overview {
 										Box {
 											orientation: vertical;
 
-											Adw.LayoutSlot {
-												id: "webview";
+											Frame frame {
+												margin-end: 10;
+												margin-top: 10;
+												margin-bottom: 10;
+												hexpand: true;
+												vexpand: true;
+
+												Adw.LayoutSlot {
+													id: "webview";
+												}
 											}
 										}
 									}
@@ -352,8 +360,16 @@ Adw.TabOverview overview {
 				name: "mobile";
 
 				content: Adw.ToolbarView {
-					Adw.LayoutSlot {
-						id: "webview";
+					Frame {
+						margin-start: 10;
+						margin-end: 10;
+						margin-top: 10;
+						hexpand: true;
+						vexpand: true;
+
+						Adw.LayoutSlot {
+							id: "webview";
+						}
 					}
 
 					[bottom]
@@ -405,6 +421,14 @@ Adw.TabOverview overview {
 							}
 						}
 					}
+				};
+			}
+
+			Adw.Layout {
+				name: "fullscreen";
+
+				content: Adw.LayoutSlot {
+					id: "webview";
 				};
 			}
 
@@ -869,21 +893,12 @@ Adw.TabOverview overview {
 			}
 
 			[webview]
-			Frame frame {
-				// margin-start: 10;
-				margin-end: 10;
-				margin-top: 10;
-				margin-bottom: 10;
-				hexpand: true;
-				vexpand: true;
+			Adw.TabView view {
+				receives-default: true;
 
-				Adw.TabView view {
-					receives-default: true;
-
-					styles [
-						"view",
-					]
-				}
+				styles [
+					"view",
+				]
 			}
 		}
 	}

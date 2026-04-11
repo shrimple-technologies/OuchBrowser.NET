@@ -67,7 +67,7 @@ internal class View
 
 		page.OnNotify += (_, args) =>
 		{
-			if (args.Pspec.GetName() == "selected")
+			if (args.Pspec.GetName() == "selected" && page.GetSelected() == true)
 			{
 				string current_uri = webview.GetUri();
 				Uri uri = new Uri(current_uri);
@@ -99,7 +99,7 @@ internal class View
 		return webview;
 	}
 
-	private static void Connect(WebView webview, UI.Window window, TabPage page)
+	private void Connect(WebView webview, UI.Window window, TabPage page)
 	{
 		webview.OnNotify += (_, args) =>
 		{
@@ -196,6 +196,21 @@ internal class View
 			else
 			{
 				window.url_preview!.SetVisible(false);
+			}
+		};
+
+		window.OnNotify += (_, args) =>
+		{
+			if (args.Pspec.GetName() == "fullscreened")
+			{
+				if (window.IsFullscreen())
+				{
+					window.mlv!.SetLayoutName("fullscreen");
+				}
+				else
+				{
+					window.mlv!.SetLayoutName("default");
+				}
 			}
 		};
 	}
