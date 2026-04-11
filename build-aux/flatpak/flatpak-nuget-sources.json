@@ -127,13 +127,6 @@
     },
     {
         "type": "file",
-        "url": "https://api.nuget.org/v3-flatcontainer/luacsharp/0.5.3/luacsharp.0.5.3.nupkg",
-        "sha512": "cea55001197e87b04cb980e3c3db4fe33c002aaf862b163f0f82287066136434cbf869c8654d8ac1532b2de5aaeddd2e57762ca364ca70cd1f7e3a68e7c22d9f",
-        "dest": "nuget-sources",
-        "dest-filename": "luacsharp.0.5.3.nupkg"
-    },
-    {
-        "type": "file",
         "url": "https://api.nuget.org/v3-flatcontainer/microsoft.aspnetcore.app.runtime.linux-x64/10.0.5/microsoft.aspnetcore.app.runtime.linux-x64.10.0.5.nupkg",
         "sha512": "4bf719e0518e58209d91e57b8ada8a4b98fb92e8bc1839c95b5eb2016093e9045191b5c5d323fb344d7c85d9c4c9d65a413f0d8c40b1463a779a4c25ff191ac1",
         "dest": "nuget-sources",
