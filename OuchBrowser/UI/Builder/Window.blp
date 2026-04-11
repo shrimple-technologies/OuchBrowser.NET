@@ -171,9 +171,7 @@ Adw.TabOverview overview {
 																Adw.Spinner spinner {
 																	width-request: 16;
 																	height-request: 16;
-																	visible: bind template
-																		.item as <Adw.TabPage>
-																		.loading;
+																	visible: bind template.item as <Adw.TabPage>.loading;
 																}
 
 																Label {
@@ -181,9 +179,7 @@ Adw.TabOverview overview {
 																	ellipsize: end;
 																	halign: start;
 																	hexpand: true;
-																	tooltip-text: bind template
-																		.item as <Adw.TabPage>
-																		.title;
+																	tooltip-text: bind template.item as <Adw.TabPage>.title;
 																}
 															};
 
@@ -848,11 +844,12 @@ Adw.TabOverview overview {
 										}
 									};
 
-									end-widget: Label {
-										label: "Ctrl+T";
+									end-widget: Adw.ShortcutLabel {
+										accelerator: "<Ctrl>T";
 
 										styles [
 											"dimmed",
+											"compact",
 										]
 									};
 								}
