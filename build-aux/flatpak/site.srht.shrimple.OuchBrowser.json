@@ -103,7 +103,7 @@
 				"flatpak-nuget-sources.json",
 				{
 					"type": "dir",
-					"path": "."
+					"path": "../.."
 				}
 			]
 		}
