@@ -120,6 +120,9 @@ internal class Window : Adw.ApplicationWindow
 		number.SetInt(-1);
 		breakpoint.AddSetter(url_entry!, "width-request", number);
 
+		number.SetInt(0);
+		breakpoint.AddSetter(hostname!, "halign", number); // halign = fill
+		
 		return breakpoint;
 	}
 }

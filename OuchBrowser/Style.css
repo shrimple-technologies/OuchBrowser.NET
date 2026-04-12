@@ -72,3 +72,20 @@ shortcut-label.compact > box > .keycap {
 	padding-left: 6px;
 	padding-right: 6px;
 }
+
+.joined > button,
+.joined > menubutton > button {
+	border-radius: 0;
+}
+
+.joined > button:first-child,
+.joined > menubutton:first-child > button {
+	border-top-left-radius: 9px;
+	border-bottom-left-radius: 9px;
+}
+
+.joined > button:last-child,
+.joined > menubutton:last-child > button {
+	border-top-right-radius: 9px;
+	border-bottom-right-radius: 9px;
+}
