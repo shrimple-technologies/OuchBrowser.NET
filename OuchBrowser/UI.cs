@@ -37,8 +37,6 @@ internal class Window : Adw.ApplicationWindow
 	[Connect] public readonly Label? url_custom_disclosure;
 	[Connect] public readonly Button? url_bar_button;
 	[Connect] public readonly Image? url_favicon;
-	[Connect] public readonly Revealer? card_revealer;
-	[Connect] public readonly ListBox? card_listbox;
 	[Connect] public readonly Revealer? url_disclosure_revealer;
 	[Connect] public readonly Box? url_preview;
 	[Connect] public readonly Label? url_preview_label;

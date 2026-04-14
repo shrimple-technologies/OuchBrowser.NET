@@ -30,7 +30,6 @@ internal partial class Window
 		application = (Application)app;
 		window = new UI.Window(application);
 		preferences = new Preferences(window);
-		var cards = new Cards(window);
 		about = About.New();
 		shortcuts = Shortcuts.New();
 		view = new View(window.view!, window!);
