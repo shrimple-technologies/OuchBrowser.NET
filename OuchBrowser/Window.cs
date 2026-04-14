@@ -347,7 +347,7 @@ internal class Window
 				}
 			}
 
-			window.url_dialog!.ForceClose();
+			window.url_dialog!.Close();
 			window.overview!.SetOpen(false);
 		};
 
