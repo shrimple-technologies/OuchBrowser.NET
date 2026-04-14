@@ -164,69 +164,6 @@ msgstr ""
 msgid "!bangs provided by Kagi"
 msgstr ""
 
-msgid "Cards"
-msgstr ""
-
-msgid ""
-"Cards are non-obtrusive persistent notifications shown inside the sidebar, "
-"which are used for displaying information, such as updates, tips, media "
-"controls, and more."
-""
-msgstr ""
-
-msgid "Enable Cards"
-msgstr ""
-
-msgid "Tips and Tricks"
-msgstr ""
-
-msgid ""
-"Shown throughout your broswing to provide tips and tricks for Ouch Browser"
-""
-msgstr ""
-
-msgid "Search Engine Suggestions"
-msgstr ""
-
-msgid ""
-"When you search using a supported search engine, Ouch Browser will suggest "
-"setting it as your default search engine"
-""
-msgstr ""
-
-msgid "Media Controls"
-msgstr ""
-
-msgid "Shown when media is playing"
-msgstr ""
-
-msgid "Enable Media Controls"
-msgstr ""
-
-msgid "Updates"
-msgstr ""
-
-msgid "Shown when an update is available or installed"
-msgstr ""
-
-msgid "Updated to New Version"
-msgstr ""
-
-msgid ""
-"When a new version of Ouch Browser is installed, it will inform you of the "
-"update's details and allow you to read the changelog"
-""
-msgstr ""
-
-msgid "New Version Found"
-msgstr ""
-
-msgid ""
-"When a new version of Ouch Browser is found, it will notify you to update "
-"as soon as possible"
-""
-msgstr ""
-
 msgid "Extensions"
 msgstr ""
 
