@@ -9,26 +9,34 @@ using Object = GObject.Object;
 
 namespace OuchBrowser;
 
-internal class Window
+internal partial class Window
 {
 	private string palette_state = "new_tab";
 	private DateTime lastInvokeTime = DateTime.MinValue;
 	private CancellationTokenSource? debounceCts;
 
+	private UI.Window? window;
+	private Application? application;
+	private Preferences? preferences;
+	private Adw.AboutDialog? about;
+	private ShortcutsDialog? shortcuts;
+	private View? view;
+	private Bangs? bangs;
+
 	public Window() { }
 
 	public void OnActivate(Object app, EventArgs args)
 	{
-		var application = (Application)app;
-		var window = new UI.Window(application);
-		var preferences = new Preferences(window);
+		application = (Application)app;
+		window = new UI.Window(application);
+		preferences = new Preferences(window);
 		var cards = new Cards(window);
-		var about = About.New();
-		var shortcuts = Shortcuts.New();
-		var view = new View(window.view!, window!);
-		var bangs = new Bangs(window.settings.GetString("search-engine"));
+		about = About.New();
+		shortcuts = Shortcuts.New();
+		view = new View(window.view!, window!);
+		bangs = new Bangs(window.settings.GetString("search-engine"));
 
-		SetupActions(window, application, preferences, about, shortcuts);
+		SetupActions();
 
 		window.go_back!.SetSensitive(false);
 		window.go_forward!.SetSensitive(false);
@@ -51,305 +59,10 @@ internal class Window
 			window.url_preview!.SetMarginStart(30);
 		};
 
-		window.url_entry!.OnNotify += async (_, args) =>
-		{
-			if (args.Pspec.GetName() == "text")
-			{
-				string text = window.url_entry!.GetBuffer().GetText();
-				if (text == "")
-				{
-					window.url_autocomplete!.SetRevealChild(false);
-					window.url_stack!.SetVisibleChildName("main");
-					window.url_disclosure!.SetVisibleChildName("none");
-					window.url_disclosure_revealer!.SetRevealChild(false);
-				}
-				else if (text.StartsWith('!'))
-				{
+		window.url_entry!.OnActivate += (_, _) => window.url_bar_button!.Activate();
 
-					if (1 < text.Split(' ').Length)
-					{
-						window.url_autocomplete!.SetRevealChild(false);
-						Bang? current_bang = bangs.GetBang(text)!;
-						if (current_bang != null)
-						{
-							if (text.Split(' ')[1].Length == 0) window.url_stack!.SetVisibleChildName("spinner");
-							window.url_custom_disclosure!.SetLabel(window.gettext.GetString("Searching using {0}", current_bang.WebsiteName));
-							Gio.Icon icon = await Favicon.GetFavicon(current_bang.Domain);
-							window.url_favicon!.SetFromGicon(icon);
-							window.url_stack!.SetVisibleChildName("website");
-							window.url_disclosure!.SetVisibleChildName("custom");
-							window.url_disclosure_revealer!.SetRevealChild(true);
-						}
-						else
-						{
-							window.url_stack!.SetVisibleChildName("bang");
-							window.url_disclosure!.SetVisibleChildName("none");
-							window.url_disclosure_revealer!.SetRevealChild(false);
-						}
-					}
-					else
-					{
-						window.url_stack!.SetVisibleChildName("bang");
-						window.url_disclosure!.SetVisibleChildName("bang");
-						window.url_disclosure_revealer!.SetRevealChild(true);
-
-						if (window.settings.GetBoolean("bang-autocomplete-enabled"))
-						{
-							window.url_autocomplete!.SetRevealChild(true);
-							Box box = Box.New(Orientation.Vertical, 10);
-							Label section_label = Label.New(window.gettext.GetString("BANGS"));
-							ScrolledWindow sw = ScrolledWindow.New();
-							sw.SetPropagateNaturalHeight(true);
-							sw.SetVexpand(true);
-							sw.SetMinContentHeight(399);
-							sw.SetMaxContentHeight(400);
-							sw.AddCssClass("undershoot-top");
-							sw.AddCssClass("undershoot-bottom");
-							section_label.SetCssClasses(["caption-heading", "dimmed"]);
-							section_label.SetHalign(Align.Start);
-							section_label.SetMarginStart(10);
-							box.SetMarginTop(10);
-							box.SetMarginBottom(10);
-							box.Append(section_label);
-							int i = 0;
-
-							Bang[] bang = bangs.AutocompleteBang(text);
-							if (bang.Length == 0) window.url_autocomplete!.SetRevealChild(false);
-							foreach (Bang b in bang)
-							{
-								Button button = Button.New();
-								Box button_box = Box.New(Orientation.Horizontal, 15);
-								Label button_label = Label.New(b.WebsiteName);
-								Label button_trigger;
-								if (b.AdditionalTriggers != null)
-								{
-									List<string> triggers = new List<string>();
-									foreach (string trigger in b.AdditionalTriggers)
-									{
-										triggers.Add($"!{trigger}");
-									}
-
-									button_trigger = Label.New($"!{b.Trigger}, {string.Join(", ", triggers.ToArray())} ");
-								}
-								else
-								{
-									button_trigger = Label.New($"!{b.Trigger}");
-								}
-								button.SetMarginStart(10);
-								button.SetMarginEnd(10);
-								button.SetHexpand(true);
-								button.SetCssClasses(["flat"]);
-								button_label.SetCssClasses(["body"]);
-								button_label.SetEllipsize(Pango.EllipsizeMode.End);
-								button_trigger.SetCssClasses(["body", "dimmed"]);
-								button_box.Append(Image.NewFromIconName("box-dotted-symbolic"));
-								button_box.Append(button_label);
-								button_box.Append(button_trigger);
-								button.SetChild(button_box);
-								button.OnClicked += (_, _) =>
-								{
-									EntryBuffer buffer = EntryBuffer.New($"!{b.Trigger} ", -1);
-									int length = Convert.ToInt32(buffer.GetLength());
-									window.url_entry.SetBuffer(buffer);
-									window.url_entry.GrabFocusWithoutSelecting();
-									window.url_entry.SetPosition(length);
-								};
-								box.Append(button);
-								i++;
-							}
-
-							if (i < 8)
-							{
-								window.url_autocomplete!.SetChild(box);
-							}
-							else
-							{
-								sw.SetChild(box);
-								window.url_autocomplete!.SetChild(sw);
-							}
-						}
-					}
-				}
-				else if (Url.IsUrl(text))
-				{
-					window.url_autocomplete!.SetRevealChild(false);
-					window.url_stack!.SetVisibleChildName("website");
-					window.url_disclosure!.SetVisibleChildName("none");
-					window.url_custom_disclosure!.SetLabel("");
-					window.url_favicon!.SetFromGicon(await Favicon.GetFavicon(text));
-				}
-				else
-				{
-					window.url_disclosure!.SetVisibleChildName("none");
-					window.url_custom_disclosure!.SetLabel("");
-
-					if (window.settings.GetBoolean("search-autocomplete-enabled"))
-					{
-						var now = DateTime.UtcNow;
-						lastInvokeTime = now;
-
-						debounceCts?.Cancel();
-						debounceCts?.Dispose();
-						debounceCts = new CancellationTokenSource();
-
-						try
-						{
-							await Task.Delay(200, debounceCts.Token);
-							if (lastInvokeTime != now) return;
-							if (text.Length <= 1) window.url_stack!.SetVisibleChildName("spinner");
-
-							string textNow = window.url_entry!.GetBuffer().GetText();
-
-							if (textNow == "")
-							{
-								window.url_autocomplete!.SetRevealChild(false);
-								window.url_stack!.SetVisibleChildName("main");
-							}
-							else if (textNow.StartsWith('!'))
-							{
-								window.url_autocomplete!.SetRevealChild(false);
-								window.url_stack!.SetVisibleChildName("bang");
-							}
-							else if (Url.IsUrl(textNow))
-							{
-								window.url_autocomplete!.SetRevealChild(false);
-								window.url_stack!.SetVisibleChildName("website");
-							}
-
-							Autocompletion[] ac = await Autocomplete.CompletionResults(textNow);
-							if (ac.Length == 0)
-							{
-								window.url_autocomplete!.SetRevealChild(false);
-								return;
-							}
-
-							Box box = Box.New(Orientation.Vertical, 10);
-							Label section_label = Label.New(window.gettext.GetString("SUGGESTIONS"));
-							section_label.SetCssClasses(["caption-heading", "dimmed"]);
-							section_label.SetHalign(Align.Start);
-							section_label.SetMarginStart(10);
-							box.SetMarginTop(10);
-							box.SetMarginBottom(10);
-							box.Append(section_label);
-
-							foreach (Autocompletion phrase in ac)
-							{
-								Button button = Button.New();
-								Box button_box = Box.New(Orientation.Horizontal, 15);
-								Label button_label = Label.New(phrase.phrase);
-								button.SetMarginStart(10);
-								button.SetMarginEnd(10);
-								button.SetHexpand(true);
-								button.SetCssClasses(["flat"]);
-								button_label.SetCssClasses(["body"]);
-								button_box.Append(Image.NewFromIconName("search-symbolic"));
-								button_box.Append(button_label);
-								button.SetChild(button_box);
-								button.OnClicked += (_, _) =>
-								{
-									EntryBuffer buffer = EntryBuffer.New(phrase.phrase, -1);
-									window.url_entry.SetBuffer(buffer);
-									window.url_bar_button!.Activate();
-								};
-								box.Append(button);
-							}
-
-							window.url_autocomplete!.SetChild(box);
-							window.url_autocomplete!.SetRevealChild(true);
-							window.url_stack!.SetVisibleChildName("search");
-						}
-						catch (TaskCanceledException) { }
-						finally
-						{
-							if (debounceCts?.IsCancellationRequested == false)
-								debounceCts?.Dispose();
-							debounceCts = null;
-						}
-					}
-					else
-					{
-						window.url_stack!.SetVisibleChildName("search");
-					}
-				}
-			}
-		};
-
-		window.url_entry.OnActivate += (_, _) => window.url_bar_button!.Activate();
-
-		window.url_bar_button!.OnActivate += (_, _) =>
-		{
-			string query = window.url_entry.GetBuffer().GetText();
-
-			if (query == "") return;
-
-			if (palette_state == "new_tab")
-			{
-				Console.WriteLine($"url: {query}");
-				Console.WriteLine($"isURL: {Url.IsUrl(query)}");
-				Console.WriteLine($"starts with https or http: {query.StartsWith("https://") || query.StartsWith("http://")}");
-				Console.WriteLine("");
-
-				if (Url.IsUrl(query) && !query.StartsWith('!'))
-				{
-					if (query.StartsWith("https://") || query.StartsWith("http://"))
-					{
-						view.AddTab(query, false);
-					}
-					else
-					{
-						view.AddTab($"https://{query}", false);
-					}
-				}
-				else
-				{
-					if (query.StartsWith('!'))
-					{
-						view.AddTab(bangs.ExpandBang(query), false);
-					}
-					else
-					{
-						view.AddTab($"{window.settings!.GetString("search-engine")}{Uri.EscapeDataString(query)}", false);
-					}
-				}
-			}
-			else
-			{
-				TabPage page = window.view!.GetSelectedPage()!;
-				WebView webview = (WebView)page.Child!;
-
-				Console.WriteLine($"url: {query}");
-				Console.WriteLine($"isURL: {Url.IsUrl(query)}");
-				Console.WriteLine($"starts with https or http: {query.StartsWith("https://") || query.StartsWith("http://")}");
-				Console.WriteLine($"is bang: {query.StartsWith('!')}");
-				Console.WriteLine("");
-
-				if (Url.IsUrl(query))
-				{
-					if (query.StartsWith("https://") || query.StartsWith("http://"))
-					{
-						webview.LoadUri(query);
-					}
-					else
-					{
-						webview.LoadUri($"https://{query}");
-					}
-				}
-				else
-				{
-					if (query.StartsWith('!'))
-					{
-						webview.LoadUri(bangs.ExpandBang(query));
-					}
-					else
-					{
-						webview.LoadUri($"{window.settings!.GetString("search-engine")}{Uri.EscapeDataString(query)}");
-					}
-				}
-			}
-
-			window.url_dialog!.Close();
-			window.overview!.SetOpen(false);
-		};
+		HandlePaletteUpdate();
+		HandlePaletteActivate();
 
 		window.overview!.OnCreateTab += (_, _) =>
 		{
@@ -369,13 +82,13 @@ internal class Window
 		}
 	}
 
-	public void SetupActions(UI.Window window, Application application, Preferences preferences, Adw.AboutDialog about, Adw.ShortcutsDialog shortcuts)
+	private void SetupActions()
 	{
-		var actions = new Actions(window, application);
+		var actions = new Actions(window!, application!);
 
 		actions.AddAction("palette-new", ["<Ctrl>t"], (_, _) =>
 		{
-			window.overview!.SetOpen(false);
+			window!.overview!.SetOpen(false);
 
 			EntryBuffer buffer = EntryBuffer.New("", -1);
 			window.url_entry!.SetBuffer(buffer);
@@ -386,7 +99,7 @@ internal class Window
 
 		actions.AddAction("palette", ["<Ctrl>l", "<Alt>d"], (_, _) =>
 		{
-			if (window.view!.GetNPages() == 0)
+			if (window!.view!.GetNPages() == 0)
 			{
 				window.ActivateAction("palette-new", null);
 			}
@@ -404,7 +117,7 @@ internal class Window
 
 		actions.AddAction("sidebar-toggle", ["<Ctrl><Shift>s"], (_, _) =>
 		{
-			if (window.view!.GetNPages() == 0) return;
+			if (window!.view!.GetNPages() == 0) return;
 
 			if (window.osv!.GetShowSidebar())
 			{
@@ -420,7 +133,7 @@ internal class Window
 		{
 			actions.AddAction($"tab-{i}", [$"<Ctrl>{i}"], (_, _) =>
 			{
-				if (window.view!.GetNPages() < i) return;
+				if (window!.view!.GetNPages() < i) return;
 				if (window.view!.GetNthPage(i - 1) == window.view!.GetSelectedPage()) return;
 
 				TabPage page = window.view!.GetNthPage(i - 1);
@@ -438,23 +151,23 @@ internal class Window
 
 		actions.AddAction("preferences", ["<Ctrl>comma"], (action, parameter) =>
 		{
-			preferences.FocusPane("general");
+			preferences!.FocusPane("general");
 			preferences.Present(window);
 		});
 
 		actions.AddAction("about", [], (action, parameter) =>
 		{
-			about.Present(window);
+			about!.Present(window);
 		});
 
 		actions.AddAction("shortcuts", ["<Ctrl>question"], (action, parameter) =>
 		{
-			shortcuts.Present(window);
+			shortcuts!.Present(window);
 		});
 
 		actions.AddAction("refresh", ["<Ctrl>r"], (_, _) =>
 		{
-			TabPage page = window.view!.GetSelectedPage()!;
+			TabPage page = window!.view!.GetSelectedPage()!;
 			WebView webview = (WebView)page.Child!;
 
 			if (window.refresh!.GetIconName() == "cross-large-symbolic")
@@ -469,7 +182,7 @@ internal class Window
 
 		actions.AddAction("hard-refresh", ["<Ctrl><Shift>r"], (_, _) =>
 		{
-			TabPage page = window.view!.GetSelectedPage()!;
+			TabPage page = window!.view!.GetSelectedPage()!;
 			WebView webview = (WebView)page.Child!;
 
 			webview.ReloadBypassCache();
@@ -477,7 +190,7 @@ internal class Window
 
 		actions.AddAction("zoom-in", ["<Ctrl>equal"], (_, _) =>
 		{
-			TabPage page = window.view!.GetSelectedPage()!;
+			TabPage page = window!.view!.GetSelectedPage()!;
 			WebView webview = (WebView)page.Child!;
 			Toast toast = Toast.New("");
 
@@ -604,7 +317,7 @@ internal class Window
 
 		actions.AddAction("zoom-out", ["<Ctrl>minus"], (_, _) =>
 		{
-			TabPage page = window.view!.GetSelectedPage()!;
+			TabPage page = window!.view!.GetSelectedPage()!;
 			WebView webview = (WebView)page.Child!;
 			Toast toast = Toast.New("");
 
@@ -731,7 +444,7 @@ internal class Window
 
 		actions.AddAction("zoom-reset", ["<Ctrl>0"], (_, _) =>
 		{
-			TabPage page = window.view!.GetSelectedPage()!;
+			TabPage page = window!.view!.GetSelectedPage()!;
 			WebView webview = (WebView)page.Child!;
 			Toast toast = Toast.New("");
 
@@ -746,7 +459,7 @@ internal class Window
 
 		actions.AddAction("tab-close", ["<Ctrl>w"], (_, _) =>
 		{
-			if (window.view!.GetNPages() == 0)
+			if (window!.view!.GetNPages() == 0)
 			{
 				window.Close();
 			}
@@ -775,7 +488,7 @@ internal class Window
 
 		actions.AddAction("go-back", ["<Ctrl>Left"], (_, _) =>
 		{
-			if (window.view!.GetNPages() == 0) return;
+			if (window!.view!.GetNPages() == 0) return;
 
 			TabPage page = window.view!.GetSelectedPage()!;
 			WebView webview = (WebView)page.Child!;
@@ -785,7 +498,7 @@ internal class Window
 
 		actions.AddAction("go-forward", ["<Ctrl>Right"], (_, _) =>
 		{
-			if (window.view!.GetNPages() == 0) return;
+			if (window!.view!.GetNPages() == 0) return;
 
 			TabPage page = window.view!.GetSelectedPage()!;
 			WebView webview = (WebView)page.Child!;
@@ -795,7 +508,7 @@ internal class Window
 
 		actions.AddAction("copy-link", ["<Ctrl><Shift>c"], (_, _) =>
 		{
-			if (window.view!.GetNPages() == 0) return;
+			if (window!.view!.GetNPages() == 0) return;
 
 			TabPage page = window.view!.GetSelectedPage()!;
 			WebView webview = (WebView)page.Child!;

@@ -122,7 +122,7 @@ internal class Window : Adw.ApplicationWindow
 
 		number.SetInt(0);
 		breakpoint.AddSetter(hostname!, "halign", number); // halign = fill
-		
+
 		return breakpoint;
 	}
 }
