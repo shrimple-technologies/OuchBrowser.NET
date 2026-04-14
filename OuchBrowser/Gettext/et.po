@@ -5,7 +5,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://tangled.org/shrimple.srht.site/OuchBrowser.NET/"
 "issues\n"
 "POT-Creation-Date: 2026-03-01 12:29:28-0400\n"
-"PO-Revision-Date: 2026-04-09 18:09+0000\n"
+"PO-Revision-Date: 2026-04-15 13:09+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/ouch/net/et/>\n"
 "Language: et\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 5.17.1-dev\n"
 
 # TRANSLATORS: This is not a string that is a part of the source code. This is your name (or username), followed by your email enclosed in angles (<example@domain.com>) or your website. This will be shown in Ouch Browser's credits.
 msgid "translator-credits"
@@ -158,149 +158,147 @@ msgid "See !bangs preferences for more options"
 msgstr "Lisavalikud leiad !bangs käskude eelistustest"
 
 msgid "!bangs"
-msgstr "!bangs"
+msgstr "!bang-käsud"
 
 msgid "Custom Bangs"
-msgstr ""
+msgstr "Sinu lisatud bang-käsud"
 
 msgid "!bangs provided by Kagi"
-msgstr ""
+msgstr "!bang-käsud Kagi kogumikust"
 
 msgid "Cards"
-msgstr ""
+msgstr "Kaardid"
 
 msgid ""
 "Cards are non-obtrusive persistent notifications shown inside the sidebar, "
 "which are used for displaying information, such as updates, tips, media "
 "controls, and more."
 msgstr ""
+"Kaardid on külgribal kuvatavad märkamatuid püsiteateid, mida kasutatakse "
+"teabe, näiteks uuenduste, näpunäidete, multimeedianuppude jms kuvamiseks."
 
 msgid "Enable Cards"
-msgstr ""
+msgstr "Võta kaardid kasutusele"
 
 msgid "Tips and Tricks"
-msgstr ""
+msgstr "Nõuanded ja nipid"
 
 msgid ""
 "Shown throughout your broswing to provide tips and tricks for Ouch Browser"
 msgstr ""
+"Need kuvatakse veebilehe sirvimise ajal, et pakkuda näpunäiteid ja nippe "
+"Ouch-brauseri kasutamiseks"
 
 msgid "Search Engine Suggestions"
-msgstr ""
+msgstr "Otsingumootori soovitused"
 
 msgid ""
 "When you search using a supported search engine, Ouch Browser will suggest "
 "setting it as your default search engine"
 msgstr ""
+"Kui kasutad otsingumootorit, mille tugi on Ouch Browseris olemas, siis "
+"soovitab ta selle lisamist vaikimisi otsingumootoriks"
 
 msgid "Media Controls"
-msgstr ""
+msgstr "Multimeedia juhtnupud"
 
 msgid "Shown when media is playing"
-msgstr ""
+msgstr "Näidatakse, kui meedium on esitamisel"
 
 msgid "Enable Media Controls"
-msgstr ""
+msgstr "Näita multimeedia juhtnuppe"
 
 msgid "Updates"
-msgstr ""
+msgstr "Uuendused"
 
 msgid "Shown when an update is available or installed"
-msgstr ""
+msgstr "Näidatakse, kui uuendus on olemas või paigaldatud"
 
 msgid "Updated to New Version"
-msgstr ""
+msgstr "Uuendus uue versioonini on tehtud"
 
 msgid ""
 "When a new version of Ouch Browser is installed, it will inform you of the "
 "update's details and allow you to read the changelog"
 msgstr ""
+"Ouch Browseri uue versiooni paigaldamisel me anname sulle teada uuenduse "
+"üksikasjadest ja pakume võimaluse lugeda muutelugu"
 
 msgid "New Version Found"
-msgstr ""
+msgstr "Rakenduse uue versiooni tuvastamine"
 
 msgid ""
 "When a new version of Ouch Browser is found, it will notify you to update as "
 "soon as possible"
 msgstr ""
+"Ouch Browseri uue versiooni olemasolu tuvastamisel me anname sulle niipea, "
+"kui võimalik uuendamise võimalusest"
 
 msgid "Extensions"
-msgstr ""
+msgstr "Lisamoodulid/laiendused"
 
 msgid "Searching using %s"
-msgstr ""
+msgstr "Otsing kasutades teenust %s"
 
 msgid "BANGS"
-msgstr ""
+msgstr "BANG-käsud"
 
 msgid "SUGGESTIONS"
-msgstr ""
+msgstr "SOOVITUSED"
 
 msgid "Select an Extension"
-msgstr ""
+msgstr "Vali lisamoodul/laiendus"
 
 msgid "Zoom Text"
-msgstr ""
+msgstr "Teksti suurendamine"
 
 msgid "Zooms text and images instead of the view"
-msgstr ""
+msgstr "Vaate asemel suurenda terve vaate asemel teksti ja pilte"
 
 msgid "Copy Current URL"
-msgstr ""
+msgstr "Kopeeri praegune võrguaadress"
 
 msgid "Open Keyboard Shortcuts"
-msgstr ""
+msgstr "Ava klaviatuuri kiirklahvide vaade"
 
-#, fuzzy
-#| msgid "Preferences"
 msgid "Open Preferences"
-msgstr "Eelistused"
+msgstr "Ava eelistused"
 
 msgid "Toggle Tabs Sidebar"
-msgstr ""
+msgstr "Lülita vahekaartide külgriba sisse/välja"
 
-#, fuzzy
-#| msgid "Reveal Command Palette"
 msgid "Command Palette"
-msgstr "Näita käsupaletti"
+msgstr "Käsupalett"
 
 msgid "Change Current Tab URL"
-msgstr ""
+msgstr "Muuda praeguse vahekaardi võrguaadressi"
 
-#, fuzzy
-#| msgid "Search Engine"
 msgid "Search Bangs"
-msgstr "Otsingumootor"
+msgstr "Bang-käsud otsimiseks"
 
 msgid "Navigation"
-msgstr ""
+msgstr "Liikumine rakenduses"
 
 msgid "Go Back a Page"
-msgstr ""
+msgstr "Tagasi ühe lehe võrra"
 
 msgid "Go Forward a Page"
-msgstr ""
+msgstr "Edasi ühe lehe võrra"
 
-#, fuzzy
-#| msgid "Refresh"
 msgid "Hard Refresh Tab"
-msgstr "Laadi uuesti"
+msgstr "Laadi vahekaart täielikult uuesti"
 
-#, fuzzy
-#| msgid "Refresh"
 msgid "Refresh Tab"
-msgstr "Laadi uuesti"
+msgstr "Laadi vahekaart uuesti"
 
 msgid "Switch to Tab"
-msgstr ""
+msgstr "Lülitu vahekaardile"
 
 msgid "Zoom In"
-msgstr ""
+msgstr "Suumi sisse"
 
 msgid "Zoom Out"
-msgstr ""
+msgstr "Suumi välja"
 
-#, fuzzy
-#| msgid "Page Zoom"
 msgid "Reset Zoom"
-msgstr "Lehe suum"
+msgstr "Lähtesta suum"
