@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-04-14 22:49-0400\n"
+"POT-Creation-Date: 2026-04-15 09:28-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,8 @@ msgstr ""
 msgid "Shrimple Technologies"
 msgstr ""
 
-#: OuchBrowser/UI/Builder/About.blp:10
+#. TRANSLATORS: This is not a string that is a part of the source code. This is your name (or username), followed by your email enclosed in angles (<example@domain.com>) or your website. This will be shown in Ouch Browser's credits.
+#: OuchBrowser/UI/Builder/About.blp:11
 msgid "translator-credits"
 msgstr ""
 
@@ -195,9 +196,8 @@ msgstr ""
 msgid "Change Current Tab URL"
 msgstr ""
 
-#: OuchBrowser/UI/Builder/Shortcuts.blp:38
-#: OuchBrowser/UI/Builder/Window.blp:136 OuchBrowser/UI/Builder/Window.blp:755
-#: OuchBrowser/UI/Builder/Window.blp:850
+#: OuchBrowser/UI/Builder/Shortcuts.blp:38 OuchBrowser/UI/Builder/Window.blp:136
+#: OuchBrowser/UI/Builder/Window.blp:755 OuchBrowser/UI/Builder/Window.blp:850
 msgid "New Tab"
 msgstr ""
 
@@ -209,8 +209,7 @@ msgstr ""
 msgid "Navigation"
 msgstr ""
 
-#: OuchBrowser/UI/Builder/Shortcuts.blp:52
-#: OuchBrowser/UI/Builder/Window.blp:191
+#: OuchBrowser/UI/Builder/Shortcuts.blp:52 OuchBrowser/UI/Builder/Window.blp:191
 msgid "Close Tab"
 msgstr ""
 
