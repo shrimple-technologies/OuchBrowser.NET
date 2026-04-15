@@ -2,9 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: devel\n"
-"Report-Msgid-Bugs-To: https://tangled.org/shrimple.srht.site/OuchBrowser.NET/"
-"issues\n"
-"POT-Creation-Date: 2026-03-01 12:29:28-0400\n"
+"Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
+"POT-Creation-Date: 2026-04-14 22:49-0400\n"
 "PO-Revision-Date: 2026-04-15 13:09+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/ouch/net/et/>\n"
@@ -15,290 +14,425 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.17.1-dev\n"
 
-# TRANSLATORS: This is not a string that is a part of the source code. This is your name (or username), followed by your email enclosed in angles (<example@domain.com>) or your website. This will be shown in Ouch Browser's credits.
-msgid "translator-credits"
-msgstr "Priit Jõerüüt"
-
+#: OuchBrowser/UI/Builder/About.blp:6 OuchBrowser/UI.cs:77
+#: OuchBrowser/UI/Builder/Window.blp:20 OuchBrowser/UI/Builder/Window.blp:248
 msgid "Ouch Browser"
 msgstr "Veebibrauser Ouch"
 
+#: OuchBrowser/UI/Builder/About.blp:7
 msgid "Shrimple Technologies"
 msgstr "Shrimple Technologies"
 
-msgid "Focus on your browsing"
-msgstr "Keskendu veebis surfamisele"
-
-msgid "Hide Sidebar"
-msgstr "Peida külgriba"
-
-msgid "Back"
-msgstr "Tagasi"
-
-msgid "Forward"
-msgstr "Edasi"
-
-msgid "Refresh"
-msgstr "Laadi uuesti"
-
-msgid "Reveal Command Palette"
-msgstr "Näita käsupaletti"
-
-msgid "New Tab"
-msgstr "Uus vahekaart"
-
-msgid "Archive"
-msgstr "Arhiveeri"
-
-msgid "New…"
-msgstr "Uus…"
-
-msgid "Show Sidebar"
-msgstr "Näita külgriba"
-
-msgid "Search or enter URL…"
-msgstr "Otsi või sisesta võrguaadress…"
-
-msgid "Go"
-msgstr "Mine"
-
-msgid "Close Palette"
-msgstr "Sulge värvipalett"
-
-msgid "History"
-msgstr "Ajalugu"
-
-msgid "Downloads"
-msgstr "Allalaadimised"
-
-msgid "View All Tabs"
-msgstr "Vaata kõiki vahekaarte"
-
-msgid "More"
-msgstr "Veel"
-
-msgid "Preferences"
-msgstr "Eelistused"
-
-msgid "Plugins Manager"
-msgstr "Lisamoodulite haldur"
-
-msgid "About Ouch Browser"
-msgstr "Rakenduse teave: veebibrauser Ouch"
-
-msgid "New Room"
-msgstr "Uus tuba"
-
-msgid "New Folder"
-msgstr "Uus kaust"
-
-msgid "Stop Loading"
-msgstr "Lõpeta laadimine"
-
-msgid "Close Tab"
-msgstr "Sulge vahekaart"
-
-msgid "General"
-msgstr "Üldist"
-
-msgid "Content Blocking"
-msgstr "Sisu blokeerimine"
-
-msgid "Powered by uBlock Origin"
-msgstr "Kasutusel on uBlock Origin"
-
-msgid "Block Advertisments"
-msgstr "Blokeeri reklaame"
-
-msgid "Block Pop-up Windows"
-msgstr "Blokeeri hüpikaknaid"
-
-msgid "Session"
-msgstr "Sessioon"
-
-msgid "Restore Tabs on Startup"
-msgstr "Käivitamisel taasta viimatiavatud vahekaardid"
-
-msgid "Autocomplete"
-msgstr "Automaattäide"
-
-msgid "Enable Search Autocomplete"
-msgstr "Kasuta otsimisel automaattäidet"
-
-msgid "Enable !bang Autocomplete"
-msgstr "Kasuta !bang automaattäidet"
-
-msgid "Developer"
-msgstr "Arendaja"
-
-msgid "Enable Developer Tools"
-msgstr "Kasuta arendustarvikuid"
-
-msgid "This will allow access to the Web Inspector"
-msgstr "See annab võimaluse kasutada veebisaidi inspekteerijat"
-
-msgid "Accessibility"
-msgstr "Hõlbustus"
-
-msgid "Content"
-msgstr "Sisu"
-
-msgid "Page Zoom"
-msgstr "Lehe suum"
-
-msgid "Search Engine"
-msgstr "Otsingumootor"
-
-msgid "Custom Search Engines"
-msgstr "Sinu lisatud otsingumootorid"
-
-msgid "New Search Engine…"
-msgstr "Uus otsingumootor…"
-
-msgid "See !bangs preferences for more options"
-msgstr "Lisavalikud leiad !bangs käskude eelistustest"
-
-msgid "!bangs"
-msgstr "!bang-käsud"
-
-msgid "Custom Bangs"
-msgstr "Sinu lisatud bang-käsud"
-
-msgid "!bangs provided by Kagi"
-msgstr "!bang-käsud Kagi kogumikust"
-
-msgid "Cards"
-msgstr "Kaardid"
-
-msgid ""
-"Cards are non-obtrusive persistent notifications shown inside the sidebar, "
-"which are used for displaying information, such as updates, tips, media "
-"controls, and more."
-msgstr ""
-"Kaardid on külgribal kuvatavad märkamatuid püsiteateid, mida kasutatakse "
-"teabe, näiteks uuenduste, näpunäidete, multimeedianuppude jms kuvamiseks."
-
-msgid "Enable Cards"
-msgstr "Võta kaardid kasutusele"
-
-msgid "Tips and Tricks"
-msgstr "Nõuanded ja nipid"
-
-msgid ""
-"Shown throughout your broswing to provide tips and tricks for Ouch Browser"
-msgstr ""
-"Need kuvatakse veebilehe sirvimise ajal, et pakkuda näpunäiteid ja nippe "
-"Ouch-brauseri kasutamiseks"
-
-msgid "Search Engine Suggestions"
-msgstr "Otsingumootori soovitused"
-
-msgid ""
-"When you search using a supported search engine, Ouch Browser will suggest "
-"setting it as your default search engine"
-msgstr ""
-"Kui kasutad otsingumootorit, mille tugi on Ouch Browseris olemas, siis "
-"soovitab ta selle lisamist vaikimisi otsingumootoriks"
-
-msgid "Media Controls"
-msgstr "Multimeedia juhtnupud"
-
-msgid "Shown when media is playing"
-msgstr "Näidatakse, kui meedium on esitamisel"
-
-msgid "Enable Media Controls"
-msgstr "Näita multimeedia juhtnuppe"
-
-msgid "Updates"
-msgstr "Uuendused"
-
-msgid "Shown when an update is available or installed"
-msgstr "Näidatakse, kui uuendus on olemas või paigaldatud"
-
-msgid "Updated to New Version"
-msgstr "Uuendus uue versioonini on tehtud"
-
-msgid ""
-"When a new version of Ouch Browser is installed, it will inform you of the "
-"update's details and allow you to read the changelog"
-msgstr ""
-"Ouch Browseri uue versiooni paigaldamisel me anname sulle teada uuenduse "
-"üksikasjadest ja pakume võimaluse lugeda muutelugu"
-
-msgid "New Version Found"
-msgstr "Rakenduse uue versiooni tuvastamine"
-
-msgid ""
-"When a new version of Ouch Browser is found, it will notify you to update as "
-"soon as possible"
-msgstr ""
-"Ouch Browseri uue versiooni olemasolu tuvastamisel me anname sulle niipea, "
-"kui võimalik uuendamise võimalusest"
-
-msgid "Extensions"
-msgstr "Lisamoodulid/laiendused"
-
-msgid "Searching using %s"
+# TRANSLATORS: This is not a string that is a part of the source code. This is your name (or username), followed by your email enclosed in angles (<example@domain.com>) or your website. This will be shown in Ouch Browser's credits.
+#: OuchBrowser/UI/Builder/About.blp:10
+msgid "translator-credits"
+msgstr "Priit Jõerüüt"
+
+#: OuchBrowser/CommandPalette.cs:35
+#, fuzzy, csharp-format
+#| msgid "Searching using %s"
+msgid "Searching using {0}"
 msgstr "Otsing kasutades teenust %s"
 
+#: OuchBrowser/CommandPalette.cs:59
 msgid "BANGS"
 msgstr "BANG-käsud"
 
+#: OuchBrowser/CommandPalette.cs:186
 msgid "SUGGESTIONS"
 msgstr "SOOVITUSED"
 
-msgid "Select an Extension"
-msgstr "Vali lisamoodul/laiendus"
+#: OuchBrowser/CommandPalette.cs:271 OuchBrowser/CommandPalette.cs:305
+#: OuchBrowser/Window.cs:36
+#, fuzzy
+#| msgid "Search Engine"
+msgid "search-engine"
+msgstr "Otsingumootor"
 
+#: OuchBrowser/UI/Builder/Preferences.blp:6
+#: OuchBrowser/UI/Builder/Preferences.blp:10
+#: OuchBrowser/UI/Builder/Preferences.blp:117
+#: OuchBrowser/UI/Builder/Window.blp:484
+msgid "Preferences"
+msgstr "Eelistused"
+
+#: OuchBrowser/UI/Builder/Preferences.blp:97
+#: OuchBrowser/UI/Builder/Preferences.blp:351
+msgid "Extensions"
+msgstr "Lisamoodulid/laiendused"
+
+#: OuchBrowser/UI/Builder/Preferences.blp:127
+#: OuchBrowser/UI/Builder/Shortcuts.blp:6
+msgid "General"
+msgstr "Üldist"
+
+#: OuchBrowser/UI/Builder/Preferences.blp:141
+msgid "Content Blocking"
+msgstr "Sisu blokeerimine"
+
+#: OuchBrowser/UI/Builder/Preferences.blp:142
+msgid "Powered by uBlock Origin"
+msgstr "Kasutusel on uBlock Origin"
+
+#: OuchBrowser/UI/Builder/Preferences.blp:146
+msgid "Block Advertisments"
+msgstr "Blokeeri reklaame"
+
+#: OuchBrowser/UI/Builder/Preferences.blp:152
+msgid "Block Pop-up Windows"
+msgstr "Blokeeri hüpikaknaid"
+
+#: OuchBrowser/UI/Builder/Preferences.blp:158
+msgid "Session"
+msgstr "Sessioon"
+
+#: OuchBrowser/UI/Builder/Preferences.blp:162
+msgid "Restore Tabs on Startup"
+msgstr "Käivitamisel taasta viimatiavatud vahekaardid"
+
+#: OuchBrowser/UI/Builder/Preferences.blp:167
+msgid "Autocomplete"
+msgstr "Automaattäide"
+
+#: OuchBrowser/UI/Builder/Preferences.blp:171
+msgid "Enable Search Autocomplete"
+msgstr "Kasuta otsimisel automaattäidet"
+
+#: OuchBrowser/UI/Builder/Preferences.blp:176
+msgid "Enable !bang Autocomplete"
+msgstr "Kasuta !bang automaattäidet"
+
+#: OuchBrowser/UI/Builder/Preferences.blp:181
+msgid "Developer"
+msgstr "Arendaja"
+
+#: OuchBrowser/UI/Builder/Preferences.blp:185
+msgid "Enable Developer Tools"
+msgstr "Kasuta arendustarvikuid"
+
+#: OuchBrowser/UI/Builder/Preferences.blp:186
+msgid "This will allow access to the Web Inspector"
+msgstr "See annab võimaluse kasutada veebisaidi inspekteerijat"
+
+#: OuchBrowser/UI/Builder/Preferences.blp:197
+msgid "Accessibility"
+msgstr "Hõlbustus"
+
+#: OuchBrowser/UI/Builder/Preferences.blp:211
+msgid "Content"
+msgstr "Sisu"
+
+#: OuchBrowser/UI/Builder/Preferences.blp:215
+msgid "Page Zoom"
+msgstr "Lehe suum"
+
+#: OuchBrowser/UI/Builder/Preferences.blp:242
 msgid "Zoom Text"
 msgstr "Teksti suurendamine"
 
+#: OuchBrowser/UI/Builder/Preferences.blp:243
 msgid "Zooms text and images instead of the view"
 msgstr "Vaate asemel suurenda terve vaate asemel teksti ja pilte"
 
+#: OuchBrowser/UI/Builder/Preferences.blp:254
+#: OuchBrowser/UI/Builder/Preferences.blp:276
+msgid "Search Engine"
+msgstr "Otsingumootor"
+
+#: OuchBrowser/UI/Builder/Preferences.blp:291
+msgid "Custom Search Engines"
+msgstr "Sinu lisatud otsingumootorid"
+
+#: OuchBrowser/UI/Builder/Preferences.blp:295
+msgid "New Search Engine…"
+msgstr "Uus otsingumootor…"
+
+#: OuchBrowser/UI/Builder/Preferences.blp:300
+msgid "See !bangs preferences for more options"
+msgstr "Lisavalikud leiad !bangs käskude eelistustest"
+
+#: OuchBrowser/UI/Builder/Preferences.blp:314
+msgid "!bangs"
+msgstr "!bang-käsud"
+
+#: OuchBrowser/UI/Builder/Preferences.blp:328
+msgid "Custom Bangs"
+msgstr "Sinu lisatud bang-käsud"
+
+#: OuchBrowser/UI/Builder/Preferences.blp:332
+#, fuzzy
+#| msgid "New Search Engine…"
+msgid "New Bang…"
+msgstr "Uus otsingumootor…"
+
+#: OuchBrowser/UI/Builder/Preferences.blp:337
+#: OuchBrowser/UI/Builder/Window.blp:1029
+msgid "!bangs provided by Kagi"
+msgstr "!bang-käsud Kagi kogumikust"
+
+#: OuchBrowser/UI/Builder/Preferences.blp:355
+msgid "Select an Extension"
+msgstr "Vali lisamoodul/laiendus"
+
+#: OuchBrowser/UI/Builder/Shortcuts.blp:9
 msgid "Copy Current URL"
 msgstr "Kopeeri praegune võrguaadress"
 
+#: OuchBrowser/UI/Builder/Shortcuts.blp:14
 msgid "Open Keyboard Shortcuts"
 msgstr "Ava klaviatuuri kiirklahvide vaade"
 
+#: OuchBrowser/UI/Builder/Shortcuts.blp:19
 msgid "Open Preferences"
 msgstr "Ava eelistused"
 
+#: OuchBrowser/UI/Builder/Shortcuts.blp:24
 msgid "Toggle Tabs Sidebar"
 msgstr "Lülita vahekaartide külgriba sisse/välja"
 
+#: OuchBrowser/UI/Builder/Shortcuts.blp:30
 msgid "Command Palette"
 msgstr "Käsupalett"
 
+#: OuchBrowser/UI/Builder/Shortcuts.blp:33
 msgid "Change Current Tab URL"
 msgstr "Muuda praeguse vahekaardi võrguaadressi"
 
+#: OuchBrowser/UI/Builder/Shortcuts.blp:38
+#: OuchBrowser/UI/Builder/Window.blp:136 OuchBrowser/UI/Builder/Window.blp:755
+#: OuchBrowser/UI/Builder/Window.blp:850
+msgid "New Tab"
+msgstr "Uus vahekaart"
+
+#: OuchBrowser/UI/Builder/Shortcuts.blp:43
 msgid "Search Bangs"
 msgstr "Bang-käsud otsimiseks"
 
+#: OuchBrowser/UI/Builder/Shortcuts.blp:49
 msgid "Navigation"
 msgstr "Liikumine rakenduses"
 
+#: OuchBrowser/UI/Builder/Shortcuts.blp:52
+#: OuchBrowser/UI/Builder/Window.blp:191
+msgid "Close Tab"
+msgstr "Sulge vahekaart"
+
+#: OuchBrowser/UI/Builder/Shortcuts.blp:57
 msgid "Go Back a Page"
 msgstr "Tagasi ühe lehe võrra"
 
+#: OuchBrowser/UI/Builder/Shortcuts.blp:62
 msgid "Go Forward a Page"
 msgstr "Edasi ühe lehe võrra"
 
+#: OuchBrowser/UI/Builder/Shortcuts.blp:67
 msgid "Hard Refresh Tab"
 msgstr "Laadi vahekaart täielikult uuesti"
 
+#: OuchBrowser/UI/Builder/Shortcuts.blp:72
 msgid "Refresh Tab"
 msgstr "Laadi vahekaart uuesti"
 
+#: OuchBrowser/UI/Builder/Shortcuts.blp:77
 msgid "Switch to Tab"
 msgstr "Lülitu vahekaardile"
 
+#: OuchBrowser/UI/Builder/Shortcuts.blp:83
+#, fuzzy
+#| msgid "Zoom In"
+msgid "Zoom"
+msgstr "Suumi sisse"
+
+#: OuchBrowser/UI/Builder/Shortcuts.blp:86
 msgid "Zoom In"
 msgstr "Suumi sisse"
 
+#: OuchBrowser/UI/Builder/Shortcuts.blp:91
 msgid "Zoom Out"
 msgstr "Suumi välja"
 
+#: OuchBrowser/UI/Builder/Shortcuts.blp:96
 msgid "Reset Zoom"
 msgstr "Lähtesta suum"
+
+#: OuchBrowser/View.cs:86
+#, fuzzy
+#| msgid "Stop Loading"
+msgid "Stop loading"
+msgstr "Lõpeta laadimine"
+
+#: OuchBrowser/View.cs:91 OuchBrowser/View.cs:163
+#: OuchBrowser/UI/Builder/Window.blp:597
+msgid "Refresh"
+msgstr "Laadi uuesti"
+
+#: OuchBrowser/View.cs:127 OuchBrowser/View.cs:142
+msgid "Stop Loading"
+msgstr "Lõpeta laadimine"
+
+#: OuchBrowser/UI/Builder/Window.blp:44
+msgid "Hide Sidebar"
+msgstr "Peida külgriba"
+
+#: OuchBrowser/UI/Builder/Window.blp:267
+msgid "Show Sidebar"
+msgstr "Näita külgriba"
+
+#: OuchBrowser/UI/Builder/Window.blp:420
+msgid "Menu"
+msgstr ""
+
+#: OuchBrowser/UI/Builder/Window.blp:455
+msgid "View All Tabs"
+msgstr "Vaata kõiki vahekaarte"
+
+#: OuchBrowser/UI/Builder/Window.blp:519
+#, fuzzy
+#| msgid "Open Keyboard Shortcuts"
+msgid "Keyboard Shortcuts"
+msgstr "Ava klaviatuuri kiirklahvide vaade"
+
+#: OuchBrowser/UI/Builder/Window.blp:553
+msgid "About Ouch Browser"
+msgstr "Rakenduse teave: veebibrauser Ouch"
+
+#: OuchBrowser/UI/Builder/Window.blp:573
+msgid "Back"
+msgstr "Tagasi"
+
+#: OuchBrowser/UI/Builder/Window.blp:585
+msgid "Forward"
+msgstr "Edasi"
+
+#: OuchBrowser/UI/Builder/Window.blp:617
+msgid "Reveal Command Palette"
+msgstr "Näita käsupaletti"
+
+#: OuchBrowser/UI/Builder/Window.blp:633
+msgid "Copy Link"
+msgstr ""
+
+#: OuchBrowser/UI/Builder/Window.blp:640
+msgid "Website Settings"
+msgstr ""
+
+#: OuchBrowser/UI/Builder/Window.blp:652
+msgid "No Website Settings Available"
+msgstr ""
+
+#: OuchBrowser/UI/Builder/Window.blp:669
+msgid "Archive"
+msgstr "Arhiveeri"
+
+#: OuchBrowser/UI/Builder/Window.blp:702
+msgid "History"
+msgstr "Ajalugu"
+
+#: OuchBrowser/UI/Builder/Window.blp:725
+msgid "Downloads"
+msgstr "Allalaadimised"
+
+#: OuchBrowser/UI/Builder/Window.blp:765
+msgid "New…"
+msgstr "Uus…"
+
+#: OuchBrowser/UI/Builder/Window.blp:798
+msgid "New Room"
+msgstr "Uus tuba"
+
+#: OuchBrowser/UI/Builder/Window.blp:821
+msgid "New Folder"
+msgstr "Uus kaust"
+
+#: OuchBrowser/UI/Builder/Window.blp:976
+msgid "Search or enter URL…"
+msgstr "Otsi või sisesta võrguaadress…"
+
+#: OuchBrowser/UI/Builder/Window.blp:1085
+msgid "Go"
+msgstr "Mine"
+
+#: OuchBrowser/UI/Builder/Window.blp:1100
+msgid "Close Palette"
+msgstr "Sulge värvipalett"
+
+#: OuchBrowser/Window.cs:521
+msgid "Link Copied"
+msgstr ""
+
+#~ msgid "Focus on your browsing"
+#~ msgstr "Keskendu veebis surfamisele"
+
+#~ msgid "More"
+#~ msgstr "Veel"
+
+#~ msgid "Plugins Manager"
+#~ msgstr "Lisamoodulite haldur"
+
+#~ msgid "Cards"
+#~ msgstr "Kaardid"
+
+#~ msgid ""
+#~ "Cards are non-obtrusive persistent notifications shown inside the "
+#~ "sidebar, which are used for displaying information, such as updates, "
+#~ "tips, media controls, and more."
+#~ msgstr ""
+#~ "Kaardid on külgribal kuvatavad märkamatuid püsiteateid, mida kasutatakse "
+#~ "teabe, näiteks uuenduste, näpunäidete, multimeedianuppude jms kuvamiseks."
+
+#~ msgid "Enable Cards"
+#~ msgstr "Võta kaardid kasutusele"
+
+#~ msgid "Tips and Tricks"
+#~ msgstr "Nõuanded ja nipid"
+
+#~ msgid ""
+#~ "Shown throughout your broswing to provide tips and tricks for Ouch Browser"
+#~ msgstr ""
+#~ "Need kuvatakse veebilehe sirvimise ajal, et pakkuda näpunäiteid ja nippe "
+#~ "Ouch-brauseri kasutamiseks"
+
+#~ msgid "Search Engine Suggestions"
+#~ msgstr "Otsingumootori soovitused"
+
+#~ msgid ""
+#~ "When you search using a supported search engine, Ouch Browser will "
+#~ "suggest setting it as your default search engine"
+#~ msgstr ""
+#~ "Kui kasutad otsingumootorit, mille tugi on Ouch Browseris olemas, siis "
+#~ "soovitab ta selle lisamist vaikimisi otsingumootoriks"
+
+#~ msgid "Media Controls"
+#~ msgstr "Multimeedia juhtnupud"
+
+#~ msgid "Shown when media is playing"
+#~ msgstr "Näidatakse, kui meedium on esitamisel"
+
+#~ msgid "Enable Media Controls"
+#~ msgstr "Näita multimeedia juhtnuppe"
+
+#~ msgid "Updates"
+#~ msgstr "Uuendused"
+
+#~ msgid "Shown when an update is available or installed"
+#~ msgstr "Näidatakse, kui uuendus on olemas või paigaldatud"
+
+#~ msgid "Updated to New Version"
+#~ msgstr "Uuendus uue versioonini on tehtud"
+
+#~ msgid ""
+#~ "When a new version of Ouch Browser is installed, it will inform you of "
+#~ "the update's details and allow you to read the changelog"
+#~ msgstr ""
+#~ "Ouch Browseri uue versiooni paigaldamisel me anname sulle teada uuenduse "
+#~ "üksikasjadest ja pakume võimaluse lugeda muutelugu"
+
+#~ msgid "New Version Found"
+#~ msgstr "Rakenduse uue versiooni tuvastamine"
+
+#~ msgid ""
+#~ "When a new version of Ouch Browser is found, it will notify you to update "
+#~ "as soon as possible"
+#~ msgstr ""
+#~ "Ouch Browseri uue versiooni olemasolu tuvastamisel me anname sulle "
+#~ "niipea, kui võimalik uuendamise võimalusest"
