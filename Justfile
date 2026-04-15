@@ -79,8 +79,8 @@ generate-pot:
 		--output OuchBrowser/Gettext/Template.pot \
 		--from-code UTF-8 \
 		--add-comments \
-		--keyword _ \
-		--keyword C_:1c,2 \
-		--keyword __ \
+		--keyword=_ \
+		--keyword=C_:1c,2 \
+		--keyword=__ \
 		--width 80 \
 		--msgid-bugs-address https://codeberg.org/shrimple/OuchBrowser.NET/issues

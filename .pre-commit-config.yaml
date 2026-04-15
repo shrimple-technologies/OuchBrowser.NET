@@ -6,10 +6,10 @@ repos:
         entry: just fmt
         language: system
         files: \.(cs|blp)$
-        pass_filenames: true
+        pass_filenames: false
       - id: xgettext
         name: Run xgettext
         entry: just generate-pot
         language: system
         files: \.(cs|blp)$
-        pass_filenames: true
+        pass_filenames: false
