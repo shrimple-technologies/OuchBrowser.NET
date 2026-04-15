@@ -8,7 +8,6 @@ namespace OuchBrowser.UI;
 internal class Window : Adw.ApplicationWindow
 {
 	public Gio.Settings settings;
-	public ICatalog gettext;
 #pragma warning disable CS0649
 	[Connect] public readonly Adw.HeaderBar? content_headerbar;
 	[Connect] public readonly ToolbarView? content_toolbar;
@@ -46,7 +45,6 @@ internal class Window : Adw.ApplicationWindow
 	public Window(Adw.Application app) : base()
 	{
 		settings = Gio.Settings.New("site.srht.shrimple.OuchBrowser");
-		gettext = new Catalog("OuchBrowser", "/usr/share/locale");
 
 		var builder = new Builder();
 		builder.SetTranslationDomain("OuchBrowser");
@@ -76,7 +74,7 @@ internal class Window : Adw.ApplicationWindow
 		DefaultHeight = 650;
 		WidthRequest = 360;
 		HeightRequest = 360;
-		Title = gettext.GetString("Ouch Browser");
+		Title = __("Ouch Browser");
 	}
 
 	private void SetupHoverController(EventControllerMotion controller)

@@ -83,12 +83,12 @@ internal class View
 
 				if (webview.GetIsLoading())
 				{
-					Window.refresh!.SetTooltipText(Window.gettext.GetString("Stop loading"));
+					Window.refresh!.SetTooltipText(__("Stop loading"));
 					Window.refresh!.SetIconName("cross-large-symbolic");
 				}
 				else
 				{
-					Window.refresh!.SetTooltipText(Window.gettext.GetString("Refresh"));
+					Window.refresh!.SetTooltipText(__("Refresh"));
 					Window.refresh!.SetIconName("view-refresh-symbolic");
 				}
 
@@ -124,7 +124,7 @@ internal class View
 			{
 				page.SetIcon(Gio.ThemedIcon.New("box-dotted-symbolic")); // set this placeholder first
 				window.refresh!.SetSensitive(true);
-				window.refresh!.SetTooltipText(window.gettext.GetString("Stop Loading"));
+				window.refresh!.SetTooltipText(__("Stop Loading"));
 				window.url_button!.SetSensitive(true);
 				window.copy_link!.SetSensitive(true);
 				window.website_settings!.SetSensitive(true);
@@ -139,7 +139,7 @@ internal class View
 				case LoadEvent.Started:
 					page.SetIcon(Gio.ThemedIcon.New("box-dotted-symbolic")); // set this placeholder first
 					window.refresh!.SetSensitive(true);
-					window.refresh!.SetTooltipText(window.gettext.GetString("Stop Loading"));
+					window.refresh!.SetTooltipText(__("Stop Loading"));
 					window.url_button!.SetSensitive(true);
 					window.copy_link!.SetSensitive(true);
 					window.website_settings!.SetSensitive(true);
@@ -160,7 +160,7 @@ internal class View
 					}
 					break;
 				case LoadEvent.Finished:
-					window.refresh!.SetTooltipText(window.gettext.GetString("Refresh"));
+					window.refresh!.SetTooltipText(__("Refresh"));
 					window.refresh!.SetIconName("view-refresh-symbolic");
 					page.SetLoading(false);
 

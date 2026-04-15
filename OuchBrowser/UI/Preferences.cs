@@ -129,7 +129,7 @@ internal class Preferences : Adw.Dialog
 			if (args.Pspec.GetName() == "visible-child")
 			{
 				ViewStackPage page = view!.GetPage(view!.GetVisibleChild()!);
-				nsv!.GetContent()!.SetTitle(window.gettext.GetString(page!.GetTitle()!));
+				nsv!.GetContent()!.SetTitle(__(page!.GetTitle()!));
 				if (view!.GetVisibleChildName() == "extensions")
 				{
 					nv!.PushByTag("extensions");

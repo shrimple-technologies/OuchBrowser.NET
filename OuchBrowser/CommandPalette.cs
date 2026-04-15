@@ -32,7 +32,7 @@ internal partial class Window
 						if (current_bang != null)
 						{
 							if (text.Split(' ')[1].Length == 0) window.url_stack!.SetVisibleChildName("spinner");
-							window.url_custom_disclosure!.SetLabel(window.gettext.GetString("Searching using {0}", current_bang.WebsiteName));
+							window.url_custom_disclosure!.SetLabel(__("Searching using {0}", current_bang.WebsiteName));
 							Gio.Icon icon = await Favicon.GetFavicon(current_bang.Domain);
 							window.url_favicon!.SetFromGicon(icon);
 							window.url_stack!.SetVisibleChildName("website");
@@ -56,7 +56,7 @@ internal partial class Window
 						{
 							window.url_autocomplete!.SetRevealChild(true);
 							Box box = Box.New(Orientation.Vertical, 10);
-							Label section_label = Label.New(window.gettext.GetString("BANGS"));
+							Label section_label = Label.New(__("BANGS"));
 							ScrolledWindow sw = ScrolledWindow.New();
 							sw.SetPropagateNaturalHeight(true);
 							sw.SetVexpand(true);
@@ -183,7 +183,7 @@ internal partial class Window
 							}
 
 							Box box = Box.New(Orientation.Vertical, 10);
-							Label section_label = Label.New(window.gettext.GetString("SUGGESTIONS"));
+							Label section_label = Label.New(__("SUGGESTIONS"));
 							section_label.SetCssClasses(["caption-heading", "dimmed"]);
 							section_label.SetHalign(Align.Start);
 							section_label.SetMarginStart(10);
