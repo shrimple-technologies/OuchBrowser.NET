@@ -1,0 +1,15 @@
+repos:
+  - repo: local
+    hooks:
+      - id: format
+        name: Run Formatter
+        entry: just fmt
+        language: system
+        files: \.(cs|blp)$
+        pass_filenames: true
+      - id: xgettext
+        name: Run xgettext
+        entry: just generate-pot
+        language: system
+        files: \.(cs|blp)$
+        pass_filenames: true
