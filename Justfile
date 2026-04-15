@@ -82,5 +82,5 @@ generate-pot:
 		--keyword _ \
 		--keyword C_:1c,2 \
 		--keyword __ \
-		--width 80
+		--width 80 \
 		--msgid-bugs-address https://codeberg.org/shrimple/OuchBrowser.NET/issues
