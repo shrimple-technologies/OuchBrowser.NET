@@ -5,6 +5,7 @@ ID := "site.srht.shrimple.OuchBrowser"
 BLUEPRINT_FILES := "OuchBrowser/UI/Builder/Window.blp OuchBrowser/UI/Builder/Preferences.blp OuchBrowser/UI/Builder/About.blp OuchBrowser/UI/Builder/Shortcuts.blp"
 
 alias fmt := format
+alias pot := generate-pot
 
 run: build-blueprint compile-resources
 	dotnet run --project OuchBrowser
@@ -70,3 +71,15 @@ build-translations:
 	msgfmt -o {{ PREFIX }}/share/locale/nb_NO/LC_MESSAGES/OuchBrowser.mo OuchBrowser/Gettext/nb_NO.po
 	msgfmt -o {{ PREFIX }}/share/locale/pt/LC_MESSAGES/OuchBrowser.mo OuchBrowser/Gettext/pt.po
 	msgfmt -o {{ PREFIX }}/share/locale/pt_BR/LC_MESSAGES/OuchBrowser.mo OuchBrowser/Gettext/pt_BR.po
+
+[group("utils")]
+generate-pot:
+	xgettext \
+		-f OuchBrowser/Gettext/POTFILES \
+		--output OuchBrowser/Gettext/Template.pot \
+		--from-code UTF-8 \
+		--add-comments \
+		--keyword=_ \
+		--keyword=C_:1c,2 \
+		--keyword=__ \
+		--msgid-bugs-address https://codeberg.org/shrimple/OuchBrowser.NET/issues

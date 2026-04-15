@@ -1,0 +1,9 @@
+OuchBrowser/UI/Builder/About.blp
+OuchBrowser/CommandPalette.cs
+OuchBrowser/UI/Builder/Preferences.blp
+OuchBrowser/Program.cs
+OuchBrowser/UI/Builder/Shortcuts.blp
+OuchBrowser/UI.cs
+OuchBrowser/View.cs
+OuchBrowser/UI/Builder/Window.blp
+OuchBrowser/Window.cs
