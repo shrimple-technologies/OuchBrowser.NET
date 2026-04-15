@@ -2,7 +2,7 @@ set quiet
 
 PREFIX := "/usr"
 ID := "site.srht.shrimple.OuchBrowser"
-BLUEPRINT_FILES := "OuchBrowser/UI/Builder/Window.blp OuchBrowser/UI/Builder/Preferences.blp OuchBrowser/UI/Builder/About.blp OuchBrowser/UI/Builder/Shortcuts.blp"
+BLUEPRINT_FILES := "OuchBrowser/UI/Builder/Window.blp OuchBrowser/UI/Builder/Preferences.blp OuchBrowser/UI/Builder/About.blp OuchBrowser/UI/Builder/Shortcuts.blp OuchBrowser/UI/Builder/TabList.blp"
 
 alias fmt := format
 alias pot := generate-pot
@@ -79,6 +79,7 @@ generate-pot:
 		--output OuchBrowser/Po/TEMPLATE.pot \
 		--from-code UTF-8 \
 		--add-comments \
+		--keyword \
 		--keyword=_ \
 		--keyword=C_:1c,2 \
 		--keyword=__ \

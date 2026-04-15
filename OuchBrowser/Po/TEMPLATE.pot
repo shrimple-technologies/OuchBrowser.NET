@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-04-15 09:28-0400\n"
+"POT-Creation-Date: 2026-04-15 18:29-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -42,11 +42,6 @@ msgstr ""
 
 #: OuchBrowser/CommandPalette.cs:186
 msgid "SUGGESTIONS"
-msgstr ""
-
-#: OuchBrowser/CommandPalette.cs:271 OuchBrowser/CommandPalette.cs:305
-#: OuchBrowser/Window.cs:36
-msgid "search-engine"
 msgstr ""
 
 #: OuchBrowser/UI/Builder/Preferences.blp:6
@@ -196,8 +191,9 @@ msgstr ""
 msgid "Change Current Tab URL"
 msgstr ""
 
-#: OuchBrowser/UI/Builder/Shortcuts.blp:38 OuchBrowser/UI/Builder/Window.blp:136
-#: OuchBrowser/UI/Builder/Window.blp:755 OuchBrowser/UI/Builder/Window.blp:850
+#: OuchBrowser/UI/Builder/Shortcuts.blp:38
+#: OuchBrowser/UI/Builder/Window.blp:136 OuchBrowser/UI/Builder/Window.blp:755
+#: OuchBrowser/UI/Builder/Window.blp:850
 msgid "New Tab"
 msgstr ""
 
@@ -209,7 +205,8 @@ msgstr ""
 msgid "Navigation"
 msgstr ""
 
-#: OuchBrowser/UI/Builder/Shortcuts.blp:52 OuchBrowser/UI/Builder/Window.blp:191
+#: OuchBrowser/UI/Builder/Shortcuts.blp:52
+#: OuchBrowser/UI/Builder/Window.blp:191
 msgid "Close Tab"
 msgstr ""
 
