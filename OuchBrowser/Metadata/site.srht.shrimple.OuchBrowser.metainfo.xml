@@ -36,11 +36,11 @@
 		<category>WebBrowser</category>
 	</categories>
 	<keywords>
-		<keyword>browser</keyword>
-		<keyword>internet</keyword>
-		<keyword>www</keyword>
-		<keyword>web</keyword>
-		<keyword>explorer</keyword>
+		<keyword translate="no">browser</keyword>
+		<keyword translate="no">internet</keyword>
+		<keyword translate="no">www</keyword>
+		<keyword translate="no">web</keyword>
+		<keyword translate="no">explorer</keyword>
 	</keywords>
 	<update_contact>max@woof.monster</update_contact>
 	<description>

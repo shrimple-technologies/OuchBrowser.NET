@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-04-15 18:29-0400\n"
+"POT-Creation-Date: 2026-04-16 07:32-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,12 +17,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: OuchBrowser/UI/Builder/About.blp:6 OuchBrowser/UI.cs:77
-#: OuchBrowser/UI/Builder/Window.blp:20 OuchBrowser/UI/Builder/Window.blp:248
+#: OuchBrowser/UI/Builder/About.blp:6
+#: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.metainfo.xml:8
+#: OuchBrowser/UI.cs:77 OuchBrowser/UI/Builder/Window.blp:20
+#: OuchBrowser/UI/Builder/Window.blp:248
 msgid "Ouch Browser"
 msgstr ""
 
 #: OuchBrowser/UI/Builder/About.blp:7
+#: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.metainfo.xml:10
 msgid "Shrimple Technologies"
 msgstr ""
 
@@ -244,6 +247,24 @@ msgstr ""
 
 #: OuchBrowser/UI/Builder/Shortcuts.blp:96
 msgid "Reset Zoom"
+msgstr ""
+
+#: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.metainfo.xml:15
+msgid "Focus on your browsing"
+msgstr ""
+
+#: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.metainfo.xml:47
+msgid ""
+"Ouch Browser is a browser that utilizes the vertical tabs layout, which "
+"allows for better tab management for more heavy browser users. Made for "
+"focusing on your browsing, Ouch Browser comes with !bangs support, a multi-"
+"purpose command palette, and mobile support."
+msgstr ""
+
+#: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.metainfo.xml:55
+msgid ""
+"NOTE: This is the C# rewrite, which is constantly evolving, and may be less "
+"stable than the original codebase."
 msgstr ""
 
 #: OuchBrowser/View.cs:86

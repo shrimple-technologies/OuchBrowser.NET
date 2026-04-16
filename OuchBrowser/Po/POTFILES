@@ -3,6 +3,7 @@ OuchBrowser/CommandPalette.cs
 OuchBrowser/UI/Builder/Preferences.blp
 OuchBrowser/Program.cs
 OuchBrowser/UI/Builder/Shortcuts.blp
+OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.metainfo.xml
 OuchBrowser/UI.cs
 OuchBrowser/View.cs
 OuchBrowser/UI/Builder/Window.blp
