@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
 "POT-Creation-Date: 2026-04-14 22:49-0400\n"
-"PO-Revision-Date: 2026-04-15 13:09+0000\n"
+"PO-Revision-Date: 2026-04-17 03:06+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/ouch/net/et/>\n"
 "Language: et\n"
@@ -29,10 +29,9 @@ msgid "translator-credits"
 msgstr "Priit Jõerüüt"
 
 #: OuchBrowser/CommandPalette.cs:35
-#, fuzzy, csharp-format
-#| msgid "Searching using %s"
+#, csharp-format
 msgid "Searching using {0}"
-msgstr "Otsing kasutades teenust %s"
+msgstr "Otsing kasutades teenust {0}"
 
 #: OuchBrowser/CommandPalette.cs:59
 msgid "BANGS"
@@ -44,8 +43,6 @@ msgstr "SOOVITUSED"
 
 #: OuchBrowser/CommandPalette.cs:271 OuchBrowser/CommandPalette.cs:305
 #: OuchBrowser/Window.cs:36
-#, fuzzy
-#| msgid "Search Engine"
 msgid "search-engine"
 msgstr "Otsingumootor"
 
@@ -160,10 +157,8 @@ msgid "Custom Bangs"
 msgstr "Sinu lisatud bang-käsud"
 
 #: OuchBrowser/UI/Builder/Preferences.blp:332
-#, fuzzy
-#| msgid "New Search Engine…"
 msgid "New Bang…"
-msgstr "Uus otsingumootor…"
+msgstr "Uus bang-otsing…"
 
 #: OuchBrowser/UI/Builder/Preferences.blp:337
 #: OuchBrowser/UI/Builder/Window.blp:1029
@@ -238,10 +233,8 @@ msgid "Switch to Tab"
 msgstr "Lülitu vahekaardile"
 
 #: OuchBrowser/UI/Builder/Shortcuts.blp:83
-#, fuzzy
-#| msgid "Zoom In"
 msgid "Zoom"
-msgstr "Suumi sisse"
+msgstr "Suum"
 
 #: OuchBrowser/UI/Builder/Shortcuts.blp:86
 msgid "Zoom In"
@@ -256,8 +249,6 @@ msgid "Reset Zoom"
 msgstr "Lähtesta suum"
 
 #: OuchBrowser/View.cs:86
-#, fuzzy
-#| msgid "Stop Loading"
 msgid "Stop loading"
 msgstr "Lõpeta laadimine"
 
@@ -280,17 +271,15 @@ msgstr "Näita külgriba"
 
 #: OuchBrowser/UI/Builder/Window.blp:420
 msgid "Menu"
-msgstr ""
+msgstr "Menüü"
 
 #: OuchBrowser/UI/Builder/Window.blp:455
 msgid "View All Tabs"
 msgstr "Vaata kõiki vahekaarte"
 
 #: OuchBrowser/UI/Builder/Window.blp:519
-#, fuzzy
-#| msgid "Open Keyboard Shortcuts"
 msgid "Keyboard Shortcuts"
-msgstr "Ava klaviatuuri kiirklahvide vaade"
+msgstr "Klaviatuuri kiirklahvid"
 
 #: OuchBrowser/UI/Builder/Window.blp:553
 msgid "About Ouch Browser"
@@ -310,15 +299,15 @@ msgstr "Näita käsupaletti"
 
 #: OuchBrowser/UI/Builder/Window.blp:633
 msgid "Copy Link"
-msgstr ""
+msgstr "Kopeeri link"
 
 #: OuchBrowser/UI/Builder/Window.blp:640
 msgid "Website Settings"
-msgstr ""
+msgstr "Veebisaidi seadistused"
 
 #: OuchBrowser/UI/Builder/Window.blp:652
 msgid "No Website Settings Available"
-msgstr ""
+msgstr "Veebisaidi seadistusi pole saadaval"
 
 #: OuchBrowser/UI/Builder/Window.blp:669
 msgid "Archive"
@@ -358,7 +347,7 @@ msgstr "Sulge värvipalett"
 
 #: OuchBrowser/Window.cs:521
 msgid "Link Copied"
-msgstr ""
+msgstr "Link on kopeeritud"
 
 #~ msgid "Focus on your browsing"
 #~ msgstr "Keskendu veebis surfamisele"
