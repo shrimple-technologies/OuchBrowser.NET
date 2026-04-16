@@ -19,7 +19,7 @@
 	<translation type="gettext">OuchBrowser</translation>
 	<branding>
 		<color type="primary" scheme_preference="light">#cdab8f</color>
-		<color type="primary" scheme_preference="dark">#865e3c</color>
+		<color type="primary" scheme_preference="dark">#b5835a</color>
 	</branding>
 	<content_rating type="oars-1.1" />
 	<requires>
@@ -44,8 +44,13 @@
 	</keywords>
 	<update_contact>max@woof.monster</update_contact>
 	<description>
-		<p
-		>Ouch Browser isn’t just another web browser, it’s a whole new look on the web, with a modern look and feel, and a emphasis on productivity.</p>
+		<p>
+			Ouch Browser is a browser that utilizes the vertical tabs layout,
+			which allows for better tab management for more heavy browser
+			users. Made for focusing on your browsing, Ouch Browser comes with
+			!bangs support, a multi-purpose command palette, and mobile
+			support.
+		</p>
 		<p
 		>NOTE: This is the C# rewrite, which is constantly evolving, and may be less stable than the original codebase.</p>
 	</description>
