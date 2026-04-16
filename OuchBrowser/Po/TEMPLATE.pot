@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-04-16 07:32-0400\n"
+"POT-Creation-Date: 2026-04-16 07:40-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,23 +16,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: OuchBrowser/UI/Builder/About.blp:6
-#: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.metainfo.xml:8
-#: OuchBrowser/UI.cs:77 OuchBrowser/UI/Builder/Window.blp:20
-#: OuchBrowser/UI/Builder/Window.blp:248
-msgid "Ouch Browser"
-msgstr ""
-
-#: OuchBrowser/UI/Builder/About.blp:7
-#: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.metainfo.xml:10
-msgid "Shrimple Technologies"
-msgstr ""
-
-#. TRANSLATORS: This is not a string that is a part of the source code. This is your name (or username), followed by your email enclosed in angles (<example@domain.com>) or your website. This will be shown in Ouch Browser's credits.
-#: OuchBrowser/UI/Builder/About.blp:11
-msgid "translator-credits"
-msgstr ""
 
 #: OuchBrowser/CommandPalette.cs:35
 #, csharp-format
@@ -45,6 +28,57 @@ msgstr ""
 
 #: OuchBrowser/CommandPalette.cs:186
 msgid "SUGGESTIONS"
+msgstr ""
+
+#: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.metainfo.xml:8
+#: OuchBrowser/UI.cs:77 OuchBrowser/UI/Builder/About.blp:6
+#: OuchBrowser/UI/Builder/Window.blp:20 OuchBrowser/UI/Builder/Window.blp:248
+msgid "Ouch Browser"
+msgstr ""
+
+#: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.metainfo.xml:10
+#: OuchBrowser/UI/Builder/About.blp:7
+msgid "Shrimple Technologies"
+msgstr ""
+
+#: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.metainfo.xml:15
+msgid "Focus on your browsing"
+msgstr ""
+
+#: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.metainfo.xml:47
+msgid ""
+"Ouch Browser is a browser that utilizes the vertical tabs layout, which "
+"allows for better tab management for more heavy browser users. Made for "
+"focusing on your browsing, Ouch Browser comes with !bangs support, a multi-"
+"purpose command palette, and mobile support."
+msgstr ""
+
+#: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.metainfo.xml:55
+msgid ""
+"NOTE: This is the C# rewrite, which is constantly evolving, and may be less "
+"stable than the original codebase."
+msgstr ""
+
+#: OuchBrowser/View.cs:86
+msgid "Stop loading"
+msgstr ""
+
+#: OuchBrowser/View.cs:91 OuchBrowser/View.cs:163
+#: OuchBrowser/UI/Builder/Window.blp:597
+msgid "Refresh"
+msgstr ""
+
+#: OuchBrowser/View.cs:127 OuchBrowser/View.cs:142
+msgid "Stop Loading"
+msgstr ""
+
+#: OuchBrowser/Window.cs:521
+msgid "Link Copied"
+msgstr ""
+
+#. TRANSLATORS: This is not a string that is a part of the source code. This is your name (or username), followed by your email enclosed in angles (<example@domain.com>) or your website. This will be shown in Ouch Browser's credits.
+#: OuchBrowser/UI/Builder/About.blp:11
+msgid "translator-credits"
 msgstr ""
 
 #: OuchBrowser/UI/Builder/Preferences.blp:6
@@ -249,37 +283,6 @@ msgstr ""
 msgid "Reset Zoom"
 msgstr ""
 
-#: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.metainfo.xml:15
-msgid "Focus on your browsing"
-msgstr ""
-
-#: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.metainfo.xml:47
-msgid ""
-"Ouch Browser is a browser that utilizes the vertical tabs layout, which "
-"allows for better tab management for more heavy browser users. Made for "
-"focusing on your browsing, Ouch Browser comes with !bangs support, a multi-"
-"purpose command palette, and mobile support."
-msgstr ""
-
-#: OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.metainfo.xml:55
-msgid ""
-"NOTE: This is the C# rewrite, which is constantly evolving, and may be less "
-"stable than the original codebase."
-msgstr ""
-
-#: OuchBrowser/View.cs:86
-msgid "Stop loading"
-msgstr ""
-
-#: OuchBrowser/View.cs:91 OuchBrowser/View.cs:163
-#: OuchBrowser/UI/Builder/Window.blp:597
-msgid "Refresh"
-msgstr ""
-
-#: OuchBrowser/View.cs:127 OuchBrowser/View.cs:142
-msgid "Stop Loading"
-msgstr ""
-
 #: OuchBrowser/UI/Builder/Window.blp:44
 msgid "Hide Sidebar"
 msgstr ""
@@ -362,8 +365,4 @@ msgstr ""
 
 #: OuchBrowser/UI/Builder/Window.blp:1100
 msgid "Close Palette"
-msgstr ""
-
-#: OuchBrowser/Window.cs:521
-msgid "Link Copied"
 msgstr ""
