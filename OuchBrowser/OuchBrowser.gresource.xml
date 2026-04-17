@@ -24,7 +24,7 @@
 		<file
 			preprocess="xml-stripblanks"
 			alias="site.srht.shrimple.OuchBrowser.svg"
-		>Data/Icons/Hicolor/Symbolic/Apps/site.srht.shrimple.OuchBrowser.svg</file>
+		>Data/Icons/Hicolor/Scalable/Apps/site.srht.shrimple.OuchBrowser.svg</file>
 	</gresource>
 
 	<gresource prefix="/site/srht/shrimple/OuchBrowser/icons/symbolic/apps">
