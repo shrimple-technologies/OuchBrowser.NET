@@ -76,7 +76,7 @@ build-translations:
 generate-pot:
 	xgettext \
 		-f OuchBrowser/Po/POTFILES \
-		--output OuchBrowser/Po/TEMPLATE.pot \
+		--output OuchBrowser/Po/OuchBrowser.pot \
 		--from-code UTF-8 \
 		--add-comments \
 		--keyword \
