@@ -22,7 +22,7 @@
 			</aliases>
 
 			<default>"https://duckduckgo.com/?q="</default>
-			<summary>Search engine</summary>
+			<summary>Search Engine</summary>
 			<description>
 				This value is the search engine that will be used when the user
 				enters a search query into the command palette.

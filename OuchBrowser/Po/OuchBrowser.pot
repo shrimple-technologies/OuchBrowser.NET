@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-04-16 22:02-0400\n"
+"POT-Creation-Date: 2026-04-17 11:53-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,9 +30,82 @@ msgstr ""
 msgid "SUGGESTIONS"
 msgstr ""
 
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:25
+#: OuchBrowser/Data/UI/Preferences.blp:254
+#: OuchBrowser/Data/UI/Preferences.blp:276
+msgid "Search Engine"
+msgstr ""
+
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:26
+msgid ""
+"This value is the search engine that will be used when the user enters a "
+"search query into the command palette."
+msgstr ""
+
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:35
+#: OuchBrowser/Data/UI/Shortcuts.blp:83
+msgid "Zoom"
+msgstr ""
+
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:36
+msgid ""
+"This value is the zoom level of the browser. Please do not modify this value "
+"yourself as this can create unintended side effects."
+msgstr ""
+
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:45
+msgid "Maximized?"
+msgstr ""
+
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:46
+msgid "This value is whether the window is maximized or not."
+msgstr ""
+
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:57
+msgid "Rooms"
+msgstr ""
+
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:58
+msgid ""
+"This value stores the rooms data. Each entry is a tuple: (room name, room "
+"icon, pinned urls)."
+msgstr ""
+
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:67
+msgid "Restored Tabs"
+msgstr ""
+
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:68
+msgid "This value stores the tabs to restore."
+msgstr ""
+
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:75
+msgid "Search Autocomplete enabled?"
+msgstr ""
+
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:76
+msgid "This value is whether search autocomplete is enabled or not."
+msgstr ""
+
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:83
+msgid "!bang Autocomplete enabled?"
+msgstr ""
+
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:84
+msgid "This value is whether !bang autocomplete is enabled or not."
+msgstr ""
+
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:91
+msgid "Developer Tools enabled?"
+msgstr ""
+
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:92
+msgid "This value is whether developer tools is enabled or not."
+msgstr ""
+
 #: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:8
-#: OuchBrowser/UI.cs:77 OuchBrowser/Data/UI/About.blp:6
-#: OuchBrowser/Data/UI/Window.blp:20 OuchBrowser/Data/UI/Window.blp:248
+#: OuchBrowser/Data/UI/About.blp:6 OuchBrowser/Data/UI/Window.blp:20
+#: OuchBrowser/Data/UI/Window.blp:248 OuchBrowser/UI.cs:77
 msgid "Ouch Browser"
 msgstr ""
 
@@ -57,23 +130,6 @@ msgstr ""
 msgid ""
 "NOTE: This is the C# rewrite, which is constantly evolving, and may be less "
 "stable than the original codebase."
-msgstr ""
-
-#: OuchBrowser/View.cs:86
-msgid "Stop loading"
-msgstr ""
-
-#: OuchBrowser/View.cs:91 OuchBrowser/View.cs:163
-#: OuchBrowser/Data/UI/Window.blp:597
-msgid "Refresh"
-msgstr ""
-
-#: OuchBrowser/View.cs:127 OuchBrowser/View.cs:142
-msgid "Stop Loading"
-msgstr ""
-
-#: OuchBrowser/Window.cs:521
-msgid "Link Copied"
 msgstr ""
 
 #. TRANSLATORS: This is not a string that is a part of the source code. This is your name (or username), followed by your email enclosed in angles (<example@domain.com>) or your website. This will be shown in Ouch Browser's credits.
@@ -161,11 +217,6 @@ msgstr ""
 
 #: OuchBrowser/Data/UI/Preferences.blp:243
 msgid "Zooms text and images instead of the view"
-msgstr ""
-
-#: OuchBrowser/Data/UI/Preferences.blp:254
-#: OuchBrowser/Data/UI/Preferences.blp:276
-msgid "Search Engine"
 msgstr ""
 
 #: OuchBrowser/Data/UI/Preferences.blp:291
@@ -261,10 +312,6 @@ msgstr ""
 msgid "Switch to Tab"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Shortcuts.blp:83
-msgid "Zoom"
-msgstr ""
-
 #: OuchBrowser/Data/UI/Shortcuts.blp:86
 msgid "Zoom In"
 msgstr ""
@@ -307,6 +354,11 @@ msgstr ""
 
 #: OuchBrowser/Data/UI/Window.blp:585
 msgid "Forward"
+msgstr ""
+
+#: OuchBrowser/Data/UI/Window.blp:597 OuchBrowser/View.cs:91
+#: OuchBrowser/View.cs:163
+msgid "Refresh"
 msgstr ""
 
 #: OuchBrowser/Data/UI/Window.blp:617
@@ -359,4 +411,16 @@ msgstr ""
 
 #: OuchBrowser/Data/UI/Window.blp:1100
 msgid "Close Palette"
+msgstr ""
+
+#: OuchBrowser/View.cs:86
+msgid "Stop loading"
+msgstr ""
+
+#: OuchBrowser/View.cs:127 OuchBrowser/View.cs:142
+msgid "Stop Loading"
+msgstr ""
+
+#: OuchBrowser/Window.cs:521
+msgid "Link Copied"
 msgstr ""

@@ -78,10 +78,9 @@ generate-pot:
 		-f OuchBrowser/Po/POTFILES \
 		--output OuchBrowser/Po/OuchBrowser.pot \
 		--from-code UTF-8 \
-		--add-comments \
+		--add-comments=TRANSLATORS: \
 		--keyword \
 		--keyword=_ \
 		--keyword=C_:1c,2 \
 		--keyword=__ \
-		--add-comments=TRANSLATORS: \
 		--msgid-bugs-address https://codeberg.org/shrimple/OuchBrowser.NET/issues
