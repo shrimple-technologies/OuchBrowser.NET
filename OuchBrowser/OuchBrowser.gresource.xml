@@ -8,19 +8,16 @@
 	</gresource>
 
 	<gresource prefix="/site/srht/shrimple/OuchBrowser/ui">
-		<file
-			preprocess="xml-stripblanks"
-			alias="about.ui"
-		>UI/Builder/About.ui</file>
+		<file preprocess="xml-stripblanks" alias="about.ui">Data/UI/About.ui</file>
 		<file
 			preprocess="xml-stripblanks"
 			alias="preferences.ui"
-		>UI/Builder/Preferences.ui</file>
+		>Data/UI/Preferences.ui</file>
 		<file
 			preprocess="xml-stripblanks"
 			alias="shortcuts.ui"
-		>UI/Builder/Shortcuts.ui</file>
-		<file preprocess="xml-stripblanks" alias="window.ui">UI/Builder/Window.ui</file>
+		>Data/UI/Shortcuts.ui</file>
+		<file preprocess="xml-stripblanks" alias="window.ui">Data/UI/Window.ui</file>
 	</gresource>
 
 	<gresource prefix="/site/srht/shrimple/OuchBrowser/icons/scalable/apps">

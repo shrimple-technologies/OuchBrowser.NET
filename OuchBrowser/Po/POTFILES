@@ -1,10 +1,10 @@
 OuchBrowser/CommandPalette.cs
-OuchBrowser/Metadata/site.srht.shrimple.OuchBrowser.metainfo.xml
+OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml
 OuchBrowser/Program.cs
 OuchBrowser/UI.cs
 OuchBrowser/View.cs
 OuchBrowser/Window.cs
-OuchBrowser/UI/Builder/About.blp
-OuchBrowser/UI/Builder/Preferences.blp
-OuchBrowser/UI/Builder/Shortcuts.blp
-OuchBrowser/UI/Builder/Window.blp
+OuchBrowser/Data/UI/About.blp
+OuchBrowser/Data/UI/Preferences.blp
+OuchBrowser/Data/UI/Shortcuts.blp
+OuchBrowser/Data/UI/Window.blp

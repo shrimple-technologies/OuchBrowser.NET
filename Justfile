@@ -1,11 +1,11 @@
 set quiet
 
-PREFIX := "/usr"
-ID := "site.srht.shrimple.OuchBrowser"
-BLUEPRINT_FILES := "OuchBrowser/UI/Builder/Window.blp OuchBrowser/UI/Builder/Preferences.blp OuchBrowser/UI/Builder/About.blp OuchBrowser/UI/Builder/Shortcuts.blp"
-
 alias fmt := format
 alias pot := generate-pot
+
+PREFIX := "/usr"
+ID := "site.srht.shrimple.OuchBrowser"
+BLUEPRINT_FILES := "OuchBrowser/Data/UI/Window.blp OuchBrowser/Data/UI/Preferences.blp OuchBrowser/Data/UI/About.blp OuchBrowser/Data/UI/Shortcuts.blp"
 
 run: build-blueprint compile-resources
 	dotnet run --project OuchBrowser
@@ -24,8 +24,8 @@ format:
 [group("build")]
 build-blueprint:
 	blueprint-compiler batch-compile \
-		OuchBrowser/UI/Builder \
-		OuchBrowser/UI/Builder \
+		OuchBrowser/Data/UI \
+		OuchBrowser/Data/UI \
 		{{ BLUEPRINT_FILES }}
 
 # compiles gresources for icons and other miscellaneous assets
