@@ -6,6 +6,7 @@
 			alias="site.srht.shrimple.OuchBrowser.metainfo.xml"
 		>Data/site.srht.shrimple.OuchBrowser.metainfo.xml</file>
 	</gresource>
+
 	<gresource prefix="/site/srht/shrimple/OuchBrowser/ui">
 		<file
 			preprocess="xml-stripblanks"
@@ -19,11 +20,23 @@
 			preprocess="xml-stripblanks"
 			alias="shortcuts.ui"
 		>UI/Builder/Shortcuts.ui</file>
+		<file preprocess="xml-stripblanks" alias="window.ui">UI/Builder/Window.ui</file>
+	</gresource>
+
+	<gresource prefix="/site/srht/shrimple/OuchBrowser/icons/scalable/apps">
 		<file
 			preprocess="xml-stripblanks"
-			alias="window.ui"
-		>UI/Builder/Window.ui</file>
+			alias="site.srht.shrimple.OuchBrowser.svg"
+		>Data/Icons/Hicolor/Symbolic/Apps/site.srht.shrimple.OuchBrowser.svg</file>
 	</gresource>
+
+	<gresource prefix="/site/srht/shrimple/OuchBrowser/icons/symbolic/apps">
+		<file
+			preprocess="xml-stripblanks"
+			alias="site.srht.shrimple.OuchBrowser-symbolic.svg"
+		>Data/Icons/Hicolor/Symbolic/Apps/site.srht.shrimple.OuchBrowser-symbolic.svg</file>
+	</gresource>
+
 	<gresource prefix="/site/srht/shrimple/OuchBrowser/icons/scalable/actions/">
 		<file
 			preprocess="xml-stripblanks"
@@ -77,10 +90,6 @@
 			preprocess="xml-stripblanks"
 			alias="shoe-box-symbolic.svg"
 		>Data/Icons/Hicolor/Scalable/Actions/shoe-box-symbolic.svg</file>
-		<file
-			preprocess="xml-stripblanks"
-			alias="site.srht.shrimple.OuchBrowser-symbolic.svg"
-		>Data/Icons/Hicolor/Symbolic/Apps/site.srht.shrimple.OuchBrowser-symbolic.svg</file>
 		<file
 			preprocess="xml-stripblanks"
 			alias="sliders-horizontal-symbolic.svg"
