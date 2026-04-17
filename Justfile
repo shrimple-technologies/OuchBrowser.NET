@@ -56,7 +56,7 @@ build-flatpak:
 [group("build")]
 build-schemas:
 	mkdir -p {{ PREFIX }}/share/glib-2.0/schemas
-	cp OuchBrowser/OuchBrowser.gschema.xml {{ PREFIX }}/share/glib-2.0/schemas
+	cp OuchBrowser/Data/OuchBrowser.gschema.xml {{ PREFIX }}/share/glib-2.0/schemas
 	glib-compile-schemas \
 		{{ PREFIX }}/share/glib-2.0/schemas
 

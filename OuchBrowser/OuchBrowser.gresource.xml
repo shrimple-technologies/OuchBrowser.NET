@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <gresources>
 	<gresource prefix="/site/srht/shrimple/OuchBrowser/">
-		<file alias="style.css">Style.css</file>
+		<file alias="style.css">Data/Style.css</file>
 		<file
 			alias="site.srht.shrimple.OuchBrowser.metainfo.xml"
-		>Metadata/site.srht.shrimple.OuchBrowser.metainfo.xml</file>
+		>Data/site.srht.shrimple.OuchBrowser.metainfo.xml</file>
 	</gresource>
 	<gresource prefix="/site/srht/shrimple/OuchBrowser/ui">
 		<file
@@ -28,66 +28,66 @@
 		<file
 			preprocess="xml-stripblanks"
 			alias="archive-symbolic.svg"
-		>Icons/Symbolic/archive-symbolic.svg</file>
+		>Data/Icons/Hicolor/Scalable/Actions/archive-symbolic.svg</file>
 		<file
 			preprocess="xml-stripblanks"
 			alias="box-dotted-symbolic.svg"
-		>Icons/Symbolic/box-dotted-symbolic.svg</file>
+		>Data/Icons/Hicolor/Scalable/Actions/box-dotted-symbolic.svg</file>
 		<file
 			preprocess="xml-stripblanks"
 			alias="chain-link-loose-symbolic.svg"
-		>Icons/Symbolic/chain-link-loose-symbolic.svg</file>
+		>Data/Icons/Hicolor/Scalable/Actions/chain-link-loose-symbolic.svg</file>
 		<file
 			preprocess="xml-stripblanks"
 			alias="circle-crossed-symbolic.svg"
-		>Icons/Symbolic/circle-crossed-symbolic.svg</file>
+		>Data/Icons/Hicolor/Scalable/Actions/circle-crossed-symbolic.svg</file>
 		<file
 			preprocess="xml-stripblanks"
 			alias="code-symbolic.svg"
-		>Icons/Symbolic/code-symbolic.svg</file>
+		>Data/Icons/Hicolor/Scalable/Actions/code-symbolic.svg</file>
 		<file
 			preprocess="xml-stripblanks"
 			alias="cross-large-symbolic.svg"
-		>Icons/Symbolic/cross-large-symbolic.svg</file>
+		>Data/Icons/Hicolor/Scalable/Actions/cross-large-symbolic.svg</file>
 		<file
 			preprocess="xml-stripblanks"
 			alias="dot-symbolic.svg"
-		>Icons/Symbolic/dot-symbolic.svg</file>
+		>Data/Icons/Hicolor/Scalable/Actions/dot-symbolic.svg</file>
 		<file
 			preprocess="xml-stripblanks"
 			alias="exclaimation-symbolic.svg"
-		>Icons/Symbolic/exclaimation-symbolic.svg</file>
+		>Data/Icons/Hicolor/Scalable/Actions/exclaimation-symbolic.svg</file>
 		<file
 			preprocess="xml-stripblanks"
 			alias="history-symbolic.svg"
-		>Icons/Symbolic/history-symbolic.svg</file>
+		>Data/Icons/Hicolor/Scalable/Actions/history-symbolic.svg</file>
 		<file
 			preprocess="xml-stripblanks"
 			alias="multitasking-symbolic.svg"
-		>Icons/Symbolic/multitasking-symbolic.svg</file>
+		>Data/Icons/Hicolor/Scalable/Actions/multitasking-symbolic.svg</file>
 		<file
 			preprocess="xml-stripblanks"
 			alias="preferences-symbolic.svg"
-		>Icons/Symbolic/preferences-symbolic.svg</file>
+		>Data/Icons/Hicolor/Scalable/Actions/preferences-symbolic.svg</file>
 		<file
 			preprocess="xml-stripblanks"
 			alias="puzzle-piece-symbolic.svg"
-		>Icons/Symbolic/puzzle-piece-symbolic.svg</file>
+		>Data/Icons/Hicolor/Scalable/Actions/puzzle-piece-symbolic.svg</file>
 		<file
 			preprocess="xml-stripblanks"
 			alias="shoe-box-symbolic.svg"
-		>Icons/Symbolic/shoe-box-symbolic.svg</file>
+		>Data/Icons/Hicolor/Scalable/Actions/shoe-box-symbolic.svg</file>
 		<file
 			preprocess="xml-stripblanks"
 			alias="site.srht.shrimple.OuchBrowser-symbolic.svg"
-		>Icons/Symbolic/site.srht.shrimple.OuchBrowser-symbolic.svg</file>
+		>Data/Icons/Hicolor/Symbolic/Apps/site.srht.shrimple.OuchBrowser-symbolic.svg</file>
 		<file
 			preprocess="xml-stripblanks"
 			alias="sliders-horizontal-symbolic.svg"
-		>Icons/Symbolic/sliders-horizontal-symbolic.svg</file>
+		>Data/Icons/Hicolor/Scalable/Actions/sliders-horizontal-symbolic.svg</file>
 		<file
 			preprocess="xml-stripblanks"
 			alias="web-symbolic.svg"
-		>Icons/Symbolic/web-symbolic.svg</file>
+		>Data/Icons/Hicolor/Scalable/Actions/web-symbolic.svg</file>
 	</gresource>
 </gresources>
