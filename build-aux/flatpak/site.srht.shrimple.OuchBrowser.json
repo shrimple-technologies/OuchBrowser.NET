@@ -93,7 +93,7 @@
 				"install -Dm644 OuchBrowser/Data/${FLATPAK_ID}.metainfo.xml --target-directory ${FLATPAK_DEST}/share/metainfo"
 			],
 			"sources": [
-				"flatpak-nuget-sources.json",
+				"nuget-sources.json",
 				{
 					"type": "dir",
 					"path": "../.."
