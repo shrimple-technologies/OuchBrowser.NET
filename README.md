@@ -6,7 +6,7 @@
 
 ---
 
-<img src="https://codeberg.org/shrimple/OuchBrowser.NET/raw/branch/main/OuchBrowser/Icons/Scalable/site.srht.shrimple.OuchBrowser.svg" align="left" />
+<img src="https://codeberg.org/shrimple/OuchBrowser.NET/raw/branch/main/OuchBrowser/Data/Icons/Hicolor/Scalable/Apps/site.srht.shrimple.OuchBrowser.svg" align="left" />
 
 # Ouch Browser
 
@@ -16,7 +16,7 @@ Made for focusing on your browsing, Ouch Browser comes with !bangs support, a mu
 
 ## Screenshots
 
-![Ouch Browser Screenshot](https://codeberg.org/shrimple/OuchBrowser.NET/raw/branch/main/OuchBrowser/Screenshots/Screenshot%20with%20Sidebar%20Open.png)
+![Ouch Browser Screenshot](https://codeberg.org/shrimple/OuchBrowser.NET/raw/branch/main/OuchBrowser/Data/Screenshots/Screenshot%20with%20Sidebar%20Open.png)
 
 ## Running
 
