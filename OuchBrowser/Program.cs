@@ -22,7 +22,7 @@ internal class Program
 
 		app.OnActivate += window.OnActivate;
 
-		return app.RunWithSynchronizationContext(null);
+		return app.RunWithSynchronizationContext(args);
 	}
 
 	private static void RegisterResources()
