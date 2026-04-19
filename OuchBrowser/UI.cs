@@ -70,11 +70,31 @@ internal class Window : Adw.ApplicationWindow
 		};
 
 		Maximized = settings.GetBoolean("maximized");
-		DefaultWidth = 1100;
-		DefaultHeight = 650;
+		DefaultWidth = settings.GetValue("initial-size").GetChildValue(0).GetInt32();
+		DefaultHeight = settings.GetValue("initial-size").GetChildValue(1).GetInt32();
 		WidthRequest = 360;
 		HeightRequest = 360;
 		Title = __("Ouch Browser");
+
+		OnNotify += (_, args) =>
+		{
+			switch (args.Pspec.GetName())
+			{
+				case "maximized":
+					settings.SetBoolean("maximized", Maximized);
+					break;
+				case "default-width":
+				case "default-height":
+					settings.SetValue(
+						"initial-size",
+						GLib.Variant.NewTuple([
+							GLib.Variant.NewInt32(DefaultWidth),
+							GLib.Variant.NewInt32(DefaultHeight)
+						])
+					);
+					break;
+			}
+		};
 	}
 
 	private void SetupHoverController(EventControllerMotion controller)

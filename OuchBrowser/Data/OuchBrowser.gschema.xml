@@ -85,12 +85,20 @@
 				This value is whether !bang autocomplete is enabled or not.
 			</description>
 		</key>
-		
+
 		<key type="b" name="devtools-enabled">
 			<default>false</default>
 			<summary>Developer Tools enabled?</summary>
 			<description>
 				This value is whether developer tools is enabled or not.
+			</description>
+		</key>
+
+		<key type="(ii)" name="initial-size">
+			<default>(1000,650)</default>
+			<summary>Initial Window Size</summary>
+			<description>
+				This value is the main window's size.
 			</description>
 		</key>
 	</schema>
