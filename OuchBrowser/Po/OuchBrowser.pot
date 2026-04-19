@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-04-17 11:53-0400\n"
+"POT-Creation-Date: 2026-04-19 00:01-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -101,6 +101,14 @@ msgstr ""
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:92
 msgid "This value is whether developer tools is enabled or not."
+msgstr ""
+
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:99
+msgid "Initial Window Size"
+msgstr ""
+
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:100
+msgid "This value is the main window's size."
 msgstr ""
 
 #: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:8
