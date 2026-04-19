@@ -160,6 +160,7 @@ internal class View
 					}
 					break;
 				case LoadEvent.Finished:
+					page.SetKeyword(current_uri);
 					window.refresh!.SetTooltipText(__("Refresh"));
 					window.refresh!.SetIconName("view-refresh-symbolic");
 					page.SetLoading(false);
