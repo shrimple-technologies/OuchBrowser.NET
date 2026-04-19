@@ -2,6 +2,7 @@
 // Utilities for handling URLs and IP addresses.
 
 using System.Text.RegularExpressions;
+
 namespace OuchBrowser.Utils;
 
 internal class Url

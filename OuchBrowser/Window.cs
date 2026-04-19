@@ -1,10 +1,8 @@
 using Adw;
 using Gtk;
-using OuchBrowser.Types;
 using OuchBrowser.UI;
 using OuchBrowser.Utils;
 using WebKit;
-using Application = Adw.Application;
 using Object = GObject.Object;
 
 namespace OuchBrowser;

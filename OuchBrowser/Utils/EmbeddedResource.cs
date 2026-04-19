@@ -2,7 +2,6 @@
 // Utilities for loading embedded resources. Please use GResources instead
 // of embedded resources whenever possible.
 
-using System;
 using System.Reflection;
 
 namespace OuchBrowser.Utils;

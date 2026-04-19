@@ -1,8 +1,6 @@
 // Utils/Bangs.cs
 // Utilities for handling !bangs via Kagi.
 
-using System;
-using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using OuchBrowser.Types;

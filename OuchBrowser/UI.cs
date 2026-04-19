@@ -1,6 +1,4 @@
-using System.Reflection;
 using Adw;
-using GetText;
 using Gtk;
 
 namespace OuchBrowser.UI;
