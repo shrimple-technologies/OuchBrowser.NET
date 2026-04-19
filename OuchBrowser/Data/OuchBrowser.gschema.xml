@@ -41,7 +41,7 @@
 		</key>
 
 		<key type="b" name="maximized">
-			<default>true</default>
+			<default>false</default>
 			<summary>Maximized?</summary>
 			<description>
 				This value is whether the window is maximized or not.
