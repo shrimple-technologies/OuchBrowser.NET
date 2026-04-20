@@ -10,51 +10,51 @@ internal partial class Window
 {
 	private void HandlePaletteUpdate()
 	{
-		window!.url_entry!.OnNotify += async (_, args) =>
+		url_entry!.OnNotify += async (_, args) =>
 		{
 			if (args.Pspec.GetName() == "text")
 			{
-				string text = window.url_entry!.GetBuffer().GetText();
+				string text = url_entry!.GetBuffer().GetText();
 				if (text == "")
 				{
-					window.url_autocomplete!.SetRevealChild(false);
-					window.url_stack!.SetVisibleChildName("main");
-					window.url_disclosure!.SetVisibleChildName("none");
-					window.url_disclosure_revealer!.SetRevealChild(false);
+					url_autocomplete!.SetRevealChild(false);
+					url_stack!.SetVisibleChildName("main");
+					url_disclosure!.SetVisibleChildName("none");
+					url_disclosure_revealer!.SetRevealChild(false);
 				}
 				else if (text.StartsWith('!'))
 				{
 
 					if (1 < text.Split(' ').Length)
 					{
-						window.url_autocomplete!.SetRevealChild(false);
+						url_autocomplete!.SetRevealChild(false);
 						Bang? current_bang = bangs!.GetBang(text)!;
 						if (current_bang != null)
 						{
-							if (text.Split(' ')[1].Length == 0) window.url_stack!.SetVisibleChildName("spinner");
-							window.url_custom_disclosure!.SetLabel(__("Searching using {0}", current_bang.WebsiteName));
+							if (text.Split(' ')[1].Length == 0) url_stack!.SetVisibleChildName("spinner");
+							url_custom_disclosure!.SetLabel(__("Searching using {0}", current_bang.WebsiteName));
 							Gio.Icon icon = await Favicon.GetFavicon(current_bang.Domain);
-							window.url_favicon!.SetFromGicon(icon);
-							window.url_stack!.SetVisibleChildName("website");
-							window.url_disclosure!.SetVisibleChildName("custom");
-							window.url_disclosure_revealer!.SetRevealChild(true);
+							url_favicon!.SetFromGicon(icon);
+							url_stack!.SetVisibleChildName("website");
+							url_disclosure!.SetVisibleChildName("custom");
+							url_disclosure_revealer!.SetRevealChild(true);
 						}
 						else
 						{
-							window.url_stack!.SetVisibleChildName("bang");
-							window.url_disclosure!.SetVisibleChildName("none");
-							window.url_disclosure_revealer!.SetRevealChild(false);
+							url_stack!.SetVisibleChildName("bang");
+							url_disclosure!.SetVisibleChildName("none");
+							url_disclosure_revealer!.SetRevealChild(false);
 						}
 					}
 					else
 					{
-						window.url_stack!.SetVisibleChildName("bang");
-						window.url_disclosure!.SetVisibleChildName("bang");
-						window.url_disclosure_revealer!.SetRevealChild(true);
+						url_stack!.SetVisibleChildName("bang");
+						url_disclosure!.SetVisibleChildName("bang");
+						url_disclosure_revealer!.SetRevealChild(true);
 
-						if (window.settings.GetBoolean("bang-autocomplete-enabled"))
+						if (settings.GetBoolean("bang-autocomplete-enabled"))
 						{
-							window.url_autocomplete!.SetRevealChild(true);
+							url_autocomplete!.SetRevealChild(true);
 							Box box = Box.New(Orientation.Vertical, 10);
 							Label section_label = Label.New(__("BANGS"));
 							ScrolledWindow sw = ScrolledWindow.New();
@@ -73,7 +73,7 @@ internal partial class Window
 							int i = 0;
 
 							Bang[] bang = bangs!.AutocompleteBang(text);
-							if (bang.Length == 0) window.url_autocomplete!.SetRevealChild(false);
+							if (bang.Length == 0) url_autocomplete!.SetRevealChild(false);
 							foreach (Bang b in bang)
 							{
 								Button button = Button.New();
@@ -109,9 +109,9 @@ internal partial class Window
 								{
 									EntryBuffer buffer = EntryBuffer.New($"!{b.Trigger} ", -1);
 									int length = Convert.ToInt32(buffer.GetLength());
-									window.url_entry.SetBuffer(buffer);
-									window.url_entry.GrabFocusWithoutSelecting();
-									window.url_entry.SetPosition(length);
+									url_entry.SetBuffer(buffer);
+									url_entry.GrabFocusWithoutSelecting();
+									url_entry.SetPosition(length);
 								};
 								box.Append(button);
 								i++;
@@ -119,30 +119,30 @@ internal partial class Window
 
 							if (i < 8)
 							{
-								window.url_autocomplete!.SetChild(box);
+								url_autocomplete!.SetChild(box);
 							}
 							else
 							{
 								sw.SetChild(box);
-								window.url_autocomplete!.SetChild(sw);
+								url_autocomplete!.SetChild(sw);
 							}
 						}
 					}
 				}
 				else if (Url.IsUrl(text))
 				{
-					window.url_autocomplete!.SetRevealChild(false);
-					window.url_stack!.SetVisibleChildName("website");
-					window.url_disclosure!.SetVisibleChildName("none");
-					window.url_custom_disclosure!.SetLabel("");
-					window.url_favicon!.SetFromGicon(await Favicon.GetFavicon(text));
+					url_autocomplete!.SetRevealChild(false);
+					url_stack!.SetVisibleChildName("website");
+					url_disclosure!.SetVisibleChildName("none");
+					url_custom_disclosure!.SetLabel("");
+					url_favicon!.SetFromGicon(await Favicon.GetFavicon(text));
 				}
 				else
 				{
-					window.url_disclosure!.SetVisibleChildName("none");
-					window.url_custom_disclosure!.SetLabel("");
+					url_disclosure!.SetVisibleChildName("none");
+					url_custom_disclosure!.SetLabel("");
 
-					if (window.settings.GetBoolean("search-autocomplete-enabled"))
+					if (settings.GetBoolean("search-autocomplete-enabled"))
 					{
 						var now = DateTime.UtcNow;
 						lastInvokeTime = now;
@@ -155,30 +155,30 @@ internal partial class Window
 						{
 							await Task.Delay(200, debounceCts.Token);
 							if (lastInvokeTime != now) return;
-							if (text.Length <= 1) window.url_stack!.SetVisibleChildName("spinner");
+							if (text.Length <= 1) url_stack!.SetVisibleChildName("spinner");
 
-							string textNow = window.url_entry!.GetBuffer().GetText();
+							string textNow = url_entry!.GetBuffer().GetText();
 
 							if (textNow == "")
 							{
-								window.url_autocomplete!.SetRevealChild(false);
-								window.url_stack!.SetVisibleChildName("main");
+								url_autocomplete!.SetRevealChild(false);
+								url_stack!.SetVisibleChildName("main");
 							}
 							else if (textNow.StartsWith('!'))
 							{
-								window.url_autocomplete!.SetRevealChild(false);
-								window.url_stack!.SetVisibleChildName("bang");
+								url_autocomplete!.SetRevealChild(false);
+								url_stack!.SetVisibleChildName("bang");
 							}
 							else if (Url.IsUrl(textNow))
 							{
-								window.url_autocomplete!.SetRevealChild(false);
-								window.url_stack!.SetVisibleChildName("website");
+								url_autocomplete!.SetRevealChild(false);
+								url_stack!.SetVisibleChildName("website");
 							}
 
 							Autocompletion[] ac = await Autocomplete.CompletionResults(textNow);
 							if (ac.Length == 0)
 							{
-								window.url_autocomplete!.SetRevealChild(false);
+								url_autocomplete!.SetRevealChild(false);
 								return;
 							}
 
@@ -207,15 +207,15 @@ internal partial class Window
 								button.OnClicked += (_, _) =>
 								{
 									EntryBuffer buffer = EntryBuffer.New(phrase.phrase, -1);
-									window.url_entry.SetBuffer(buffer);
-									window.url_bar_button!.Activate();
+									url_entry.SetBuffer(buffer);
+									url_bar_button!.Activate();
 								};
 								box.Append(button);
 							}
 
-							window.url_autocomplete!.SetChild(box);
-							window.url_autocomplete!.SetRevealChild(true);
-							window.url_stack!.SetVisibleChildName("search");
+							url_autocomplete!.SetChild(box);
+							url_autocomplete!.SetRevealChild(true);
+							url_stack!.SetVisibleChildName("search");
 						}
 						catch (TaskCanceledException) { }
 						finally
@@ -227,7 +227,7 @@ internal partial class Window
 					}
 					else
 					{
-						window.url_stack!.SetVisibleChildName("search");
+						url_stack!.SetVisibleChildName("search");
 					}
 				}
 			}
@@ -236,9 +236,9 @@ internal partial class Window
 
 	private void HandlePaletteActivate()
 	{
-		window!.url_bar_button!.OnActivate += (_, _) =>
+		url_bar_button!.OnActivate += (_, _) =>
 		{
-			string query = window!.url_entry!.GetBuffer().GetText();
+			string query = url_entry!.GetBuffer().GetText();
 
 			if (query == "") return;
 
@@ -268,13 +268,13 @@ internal partial class Window
 					}
 					else
 					{
-						view!.AddTab($"{window.settings!.GetString("search-engine")}{Uri.EscapeDataString(query)}", false);
+						view!.AddTab($"{settings!.GetString("search-engine")}{Uri.EscapeDataString(query)}", false);
 					}
 				}
 			}
 			else
 			{
-				TabPage page = window.view!.GetSelectedPage()!;
+				TabPage page = tabview!.GetSelectedPage()!;
 				WebView webview = (WebView)page.Child!;
 
 				Console.WriteLine($"url: {query}");
@@ -302,13 +302,13 @@ internal partial class Window
 					}
 					else
 					{
-						webview.LoadUri($"{window.settings!.GetString("search-engine")}{Uri.EscapeDataString(query)}");
+						webview.LoadUri($"{settings!.GetString("search-engine")}{Uri.EscapeDataString(query)}");
 					}
 				}
 			}
 
-			window.url_dialog!.Close();
-			window.overview!.SetOpen(false);
+			url_dialog!.Close();
+			overview!.SetOpen(false);
 		};
 	}
 }

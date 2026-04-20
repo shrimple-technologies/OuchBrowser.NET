@@ -3,7 +3,7 @@ using Adw 1;
 
 Adw.TabOverview overview {
 	enable-new-tab: true;
-	view: view;
+	view: tabview;
 
 	Adw.ToastOverlay toast_overlay {
 		Adw.MultiLayoutView mlv {
@@ -155,7 +155,7 @@ Adw.TabOverview overview {
 
 											ListView tabs {
 												vexpand: true;
-												model: bind view.pages;
+												model: bind tabview.pages;
 
 												factory: BuilderListItemFactory {
 													template ListItem {
@@ -391,7 +391,7 @@ Adw.TabOverview overview {
 							}
 
 							Adw.TabButton {
-								view: view;
+								view: tabview;
 								action-name: "overview.open";
 								focus-on-click: false;
 								hexpand: true;
@@ -876,7 +876,7 @@ Adw.TabOverview overview {
 			}
 
 			[webview]
-			Adw.TabView view {
+			Adw.TabView tabview {
 				receives-default: true;
 
 				styles [

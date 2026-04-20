@@ -8,12 +8,13 @@ internal class Application : Adw.Application
 {
 	public Application()
 	{
-		var window = new Window();
-
 		ApplicationId = "site.srht.shrimple.OuchBrowser";
 		Flags = ApplicationFlags.DefaultFlags;
 		ResourceBasePath = "/site/srht/shrimple/OuchBrowser";
-		OnActivate += window.OnActivate;
+		OnActivate += (self, args) => {
+			var window = new Window(this);
+			window.OnActivate(self, args);
+		};
 
 		using var stream = Assembly.GetExecutingAssembly()
 			.GetManifestResourceStream("OuchBrowser.app.gresource");
