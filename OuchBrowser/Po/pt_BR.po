@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
 "POT-Creation-Date: 2026-04-17 11:53-0400\n"
-"PO-Revision-Date: 2026-03-25 06:09+0000\n"
+"PO-Revision-Date: 2026-04-20 19:54+0000\n"
 "Last-Translator: Wiliam <wilian4512@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/ouch/"
 "net/pt_BR/>\n"
@@ -15,13 +15,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.17-dev\n"
+"X-Generator: Weblate 5.17.1-dev\n"
 
 #: OuchBrowser/CommandPalette.cs:35
-#, fuzzy, csharp-format
-#| msgid "Searching using %s"
+#, csharp-format
 msgid "Searching using {0}"
-msgstr "Procurar usando %s"
+msgstr "Procurar usando {0}"
 
 #: OuchBrowser/CommandPalette.cs:59
 msgid "BANGS"
@@ -45,10 +44,8 @@ msgstr ""
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:35
 #: OuchBrowser/Data/UI/Shortcuts.blp:83
-#, fuzzy
-#| msgid "Zoom Text"
 msgid "Zoom"
-msgstr "Ampliar Texto"
+msgstr "Zoom"
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:36
 msgid ""
@@ -65,56 +62,54 @@ msgid "This value is whether the window is maximized or not."
 msgstr ""
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:57
-#, fuzzy
-#| msgid "New Room"
 msgid "Rooms"
-msgstr "Nova Sala"
+msgstr "Salas"
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:58
 msgid ""
 "This value stores the rooms data. Each entry is a tuple: (room name, room "
 "icon, pinned urls)."
 msgstr ""
+"Este valor armazena os dados das salas. Cada entrada é uma tupla: (nome da "
+"sala, ícone da sala, urls fixadas)."
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:67
-#, fuzzy
-#| msgid "Restore Tabs on Startup"
 msgid "Restored Tabs"
-msgstr "Restaurar Abas ao Iniciar"
+msgstr "Abas Restauradas"
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:68
 msgid "This value stores the tabs to restore."
-msgstr ""
+msgstr "Este valor armazena as abas a serem restauradas."
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:75
-#, fuzzy
-#| msgid "Enable Search Autocomplete"
 msgid "Search Autocomplete enabled?"
-msgstr "Ativar preenchimento automático da pesquisa"
+msgstr "Preenchimento automático da pesquisa habilitado?"
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:76
 msgid "This value is whether search autocomplete is enabled or not."
 msgstr ""
+"Este valor indica se o preenchimento automático da pesquisa está habilitado "
+"ou não."
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:83
-#, fuzzy
-#| msgid "Enable !bang Autocomplete"
 msgid "!bang Autocomplete enabled?"
-msgstr "Ativar preenchimento automático de !bangs"
+msgstr "Preenchimento automático do !bang habilitado?"
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:84
 msgid "This value is whether !bang autocomplete is enabled or not."
 msgstr ""
+"Este valor indica se o preenchimento automático do !bang está habilitado ou "
+"não."
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:91
-#, fuzzy
-#| msgid "Enable Developer Tools"
 msgid "Developer Tools enabled?"
-msgstr "Habilitar Ferramentas de Desenvolvedor"
+msgstr "Ferramentas de desenvolvedor habilitadas?"
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:92
 msgid "This value is whether developer tools is enabled or not."
 msgstr ""
+"Este valor indica se as ferramentas de desenvolvedor estão habilitadas ou "
+"não."
 
 #: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:8
 #: OuchBrowser/Data/UI/About.blp:6 OuchBrowser/Data/UI/Window.blp:20
@@ -255,10 +250,8 @@ msgid "Custom Bangs"
 msgstr "Bangs Customizados"
 
 #: OuchBrowser/Data/UI/Preferences.blp:332
-#, fuzzy
-#| msgid "New Search Engine…"
 msgid "New Bang…"
-msgstr "Novo Mecanismo de Busca…"
+msgstr "Novo Bang…"
 
 #: OuchBrowser/Data/UI/Preferences.blp:337 OuchBrowser/Data/UI/Window.blp:1029
 msgid "!bangs provided by Kagi"
@@ -277,20 +270,16 @@ msgid "Open Keyboard Shortcuts"
 msgstr ""
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:19
-#, fuzzy
-#| msgid "Preferences"
 msgid "Open Preferences"
-msgstr "Preferências"
+msgstr "Abrir Configurações"
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:24
 msgid "Toggle Tabs Sidebar"
 msgstr ""
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:30
-#, fuzzy
-#| msgid "Reveal Command Palette"
 msgid "Command Palette"
-msgstr "Mostrar Paleta de Comandos"
+msgstr "Paleta de Comandos"
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:33
 msgid "Change Current Tab URL"
@@ -302,10 +291,8 @@ msgid "New Tab"
 msgstr "Nova Aba"
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:43
-#, fuzzy
-#| msgid "Search Engine"
 msgid "Search Bangs"
-msgstr "Mecanismo de Busca"
+msgstr "Pesquisar Bangs"
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:49
 msgid "Navigation"
@@ -324,38 +311,28 @@ msgid "Go Forward a Page"
 msgstr ""
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:67
-#, fuzzy
-#| msgid "Refresh"
 msgid "Hard Refresh Tab"
-msgstr "Recarregar"
+msgstr "Recarregar Aba (Forçar)"
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:72
-#, fuzzy
-#| msgid "Refresh"
 msgid "Refresh Tab"
-msgstr "Recarregar"
+msgstr "Recarregar Aba"
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:77
 msgid "Switch to Tab"
 msgstr ""
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:86
-#, fuzzy
-#| msgid "Zoom Text"
 msgid "Zoom In"
-msgstr "Ampliar Texto"
+msgstr "Ampliar Zoom"
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:91
-#, fuzzy
-#| msgid "Zoom Text"
 msgid "Zoom Out"
-msgstr "Ampliar Texto"
+msgstr "Reduzir Zoom"
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:96
-#, fuzzy
-#| msgid "Page Zoom"
 msgid "Reset Zoom"
-msgstr "Zoom da Página"
+msgstr "Restaurar Zoom"
 
 #: OuchBrowser/Data/UI/Window.blp:44
 msgid "Hide Sidebar"
@@ -367,17 +344,15 @@ msgstr "Mostrar Barra Lateral"
 
 #: OuchBrowser/Data/UI/Window.blp:420
 msgid "Menu"
-msgstr ""
+msgstr "Menu"
 
 #: OuchBrowser/Data/UI/Window.blp:455
-#, fuzzy
-#| msgid "Show All Tabs"
 msgid "View All Tabs"
 msgstr "Mostrar Todas as Abas"
 
 #: OuchBrowser/Data/UI/Window.blp:519
 msgid "Keyboard Shortcuts"
-msgstr ""
+msgstr "Atalhos do Teclado"
 
 #: OuchBrowser/Data/UI/Window.blp:553
 msgid "About Ouch Browser"
@@ -449,10 +424,8 @@ msgid "Close Palette"
 msgstr "Fechar Paleta"
 
 #: OuchBrowser/View.cs:86
-#, fuzzy
-#| msgid "Stop Loading"
 msgid "Stop loading"
-msgstr "Parar de Carregar"
+msgstr "Parar de carregar"
 
 #: OuchBrowser/View.cs:127 OuchBrowser/View.cs:142
 msgid "Stop Loading"
