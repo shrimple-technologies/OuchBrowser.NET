@@ -18,7 +18,7 @@ internal class Preferences : Adw.Dialog
 	[Connect] private readonly ComboRow? setting_zoom;
 #pragma warning restore CS0649
 
-	public Preferences(UI.Window window) : base()
+	public Preferences(Window window) : base()
 	{
 		var builder = new Builder();
 		builder.SetTranslationDomain("OuchBrowser");
@@ -156,11 +156,11 @@ internal class Preferences : Adw.Dialog
 			if (args.Pspec.GetName() == "active")
 			{
 				window.settings.SetBoolean("devtools-enabled", setting_devtools.GetActive());
-				int npages = window.view!.GetNPages()!;
+				int npages = window.tabview!.GetNPages()!;
 
 				for (int i = 1; i <= npages; i++)
 				{
-					TabPage page = window.view!.GetNthPage(i - 1);
+					TabPage page = window.tabview!.GetNthPage(i - 1);
 					WebKit.WebView webview = (WebKit.WebView)page.GetChild();
 					WebKit.Settings settings = webview.GetSettings();
 					settings.SetEnableDeveloperExtras(setting_devtools.GetActive());
@@ -227,10 +227,10 @@ internal class Preferences : Adw.Dialog
 						break;
 				}
 
-				int npages = window.view!.GetNPages()!;
+				int npages = window.tabview!.GetNPages()!;
 				for (int i = 1; i <= npages; i++)
 				{
-					TabPage page = window.view!.GetNthPage(i - 1);
+					TabPage page = window.tabview!.GetNthPage(i - 1);
 					WebKit.WebView webview = (WebKit.WebView)page.GetChild();
 					if (prev_default == webview.GetZoomLevel()) webview.SetZoomLevel(window.settings.GetDouble("zoom"));
 				}

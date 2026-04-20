@@ -7,10 +7,10 @@ namespace OuchBrowser.Utils;
 
 internal class Actions
 {
-	private readonly UI.Window? win;
+	private readonly Window? win;
 	private readonly Adw.Application? app;
 
-	public Actions(UI.Window window, Adw.Application application)
+	public Actions(Window window, Adw.Application application)
 	{
 		win = window;
 		app = application;

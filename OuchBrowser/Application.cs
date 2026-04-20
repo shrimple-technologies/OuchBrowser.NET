@@ -8,7 +8,7 @@ internal class Application : Adw.Application
 {
 	public Application()
 	{
-		var window = new Window();
+		var window = new Window(this);
 
 		ApplicationId = "site.srht.shrimple.OuchBrowser";
 		Flags = ApplicationFlags.DefaultFlags;

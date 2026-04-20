@@ -7,12 +7,12 @@ namespace OuchBrowser;
 internal class View
 {
 	public readonly TabView view;
-	private readonly UI.Window Window;
+	private readonly Window win;
 
-	public View(TabView tabview, UI.Window window)
+	public View(TabView tabview, Window window)
 	{
 		view = tabview;
-		Window = window;
+		win = window;
 		WebKit.Module.Initialize();
 	}
 
@@ -24,7 +24,7 @@ internal class View
 		settings.SetSansSerifFontFamily("Noto Sans");
 		settings.SetSerifFontFamily("Noto Serif");
 		settings.SetMonospaceFontFamily("Noto Mono");
-		settings.SetEnableDeveloperExtras(Window.settings.GetBoolean("devtools-enabled"));
+		settings.SetEnableDeveloperExtras(win.settings.GetBoolean("devtools-enabled"));
 
 		return settings;
 	}
@@ -36,7 +36,7 @@ internal class View
 
 		webview.SetSettings(settings);
 		webview.LoadUri(url);
-		webview.SetZoomLevel(Window.settings.GetDouble("zoom"));
+		webview.SetZoomLevel(win.settings.GetDouble("zoom"));
 		TabPage page;
 
 		if (pinned)
@@ -53,17 +53,17 @@ internal class View
 		Uri uri = new Uri(url);
 		if (uri.IsLoopback)
 		{
-			Window.hostname!.SetLabel(uri.Host + ":" + uri.Port);
+			win.hostname!.SetLabel(uri.Host + ":" + uri.Port);
 			page.SetTitle(uri.Host + ":" + uri.Port);
 		}
 		else
 		{
 			// TODO: this should also show the search query too maybe
-			Window.hostname!.SetLabel(uri.Host);
+			win.hostname!.SetLabel(uri.Host);
 			page.SetTitle(uri.Host);
 		}
 
-		Connect(webview, Window, page);
+		Connect(webview, win, page);
 
 		page.OnNotify += (_, args) =>
 		{
@@ -73,33 +73,33 @@ internal class View
 				Uri uri = new Uri(current_uri);
 				if (uri.IsLoopback)
 				{
-					Window.hostname!.SetLabel(uri.Host + ":" + uri.Port);
+					win.hostname!.SetLabel(uri.Host + ":" + uri.Port);
 				}
 				else
 				{
 					// TODO: this should also show the search query too maybe
-					Window.hostname!.SetLabel(uri.Host);
+					win.hostname!.SetLabel(uri.Host);
 				}
 
 				if (webview.GetIsLoading())
 				{
-					Window.refresh!.SetTooltipText(__("Stop loading"));
-					Window.refresh!.SetIconName("cross-large-symbolic");
+					win.refresh!.SetTooltipText(__("Stop loading"));
+					win.refresh!.SetIconName("cross-large-symbolic");
 				}
 				else
 				{
-					Window.refresh!.SetTooltipText(__("Refresh"));
-					Window.refresh!.SetIconName("view-refresh-symbolic");
+					win.refresh!.SetTooltipText(__("Refresh"));
+					win.refresh!.SetIconName("view-refresh-symbolic");
 				}
 
-				Connect(webview, Window, page);
+				Connect(webview, win, page);
 			}
 		};
 
 		return webview;
 	}
 
-	private void Connect(WebView webview, UI.Window window, TabPage page)
+	private void Connect(WebView webview, Window window, TabPage page)
 	{
 		webview.OnNotify += (_, args) =>
 		{
