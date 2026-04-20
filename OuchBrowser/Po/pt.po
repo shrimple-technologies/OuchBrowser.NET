@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-04-17 11:53-0400\n"
+"POT-Creation-Date: 2026-04-20 01:31-0400\n"
 "PO-Revision-Date: 2025-08-13 22:02+0000\n"
 "Last-Translator: ssantos <ssantos@web.de>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/ouch/net/pt/"
@@ -103,9 +103,17 @@ msgstr ""
 msgid "This value is whether developer tools is enabled or not."
 msgstr ""
 
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:99
+msgid "Initial Window Size"
+msgstr ""
+
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:100
+msgid "This value is the main window's size."
+msgstr ""
+
 #: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:8
 #: OuchBrowser/Data/UI/About.blp:6 OuchBrowser/Data/UI/Window.blp:20
-#: OuchBrowser/Data/UI/Window.blp:248 OuchBrowser/UI.cs:77
+#: OuchBrowser/Data/UI/Window.blp:248 OuchBrowser/Window.cs:89
 msgid "Ouch Browser"
 msgstr "Ouch Browser"
 
@@ -368,7 +376,7 @@ msgid "Forward"
 msgstr "Avançar"
 
 #: OuchBrowser/Data/UI/Window.blp:597 OuchBrowser/View.cs:91
-#: OuchBrowser/View.cs:163
+#: OuchBrowser/View.cs:164
 msgid "Refresh"
 msgstr "Recarregar"
 
@@ -436,6 +444,6 @@ msgstr "Pare de recarregar"
 msgid "Stop Loading"
 msgstr "Pare de recarregar"
 
-#: OuchBrowser/Window.cs:521
+#: OuchBrowser/Window.cs:603
 msgid "Link Copied"
 msgstr ""
