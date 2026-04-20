@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
 "POT-Creation-Date: 2026-04-17 11:53-0400\n"
-"PO-Revision-Date: 2026-04-19 00:12+0000\n"
+"PO-Revision-Date: 2026-04-20 19:54+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/ouch/net/et/>\n"
 "Language: et\n"
@@ -38,6 +38,8 @@ msgid ""
 "This value is the search engine that will be used when the user enters a "
 "search query into the command palette."
 msgstr ""
+"See väärtus on otsingumootor, mida kasutatakse, kui kasutaja sisestab "
+"otsingupäringu käsupaletti."
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:35
 #: OuchBrowser/Data/UI/Shortcuts.blp:83
@@ -49,66 +51,65 @@ msgid ""
 "This value is the zoom level of the browser. Please do not modify this value "
 "yourself as this can create unintended side effects."
 msgstr ""
+"See väärtus näitab brauseri suumitaset. Palun ära muuda seda väärtust ise, "
+"kuna see võib põhjustada soovimatuid kõrvalmõjusid."
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:45
 msgid "Maximized?"
-msgstr ""
+msgstr "Kas on täisvaates?"
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:46
 msgid "This value is whether the window is maximized or not."
-msgstr ""
+msgstr "See väärtus näitab, kas aken on täisvaates (maksimumvaates) või mitte."
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:57
-#, fuzzy
-#| msgid "New Room"
 msgid "Rooms"
-msgstr "Uus tuba"
+msgstr "Toad"
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:58
 msgid ""
 "This value stores the rooms data. Each entry is a tuple: (room name, room "
 "icon, pinned urls)."
 msgstr ""
+"Selles väärtuses salvestuvad tubade andmed. Iga kirje on järjendina: (toa "
+"nimi, toa ikoon, kinnitatud veebiaadressid)."
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:67
-#, fuzzy
-#| msgid "Restore Tabs on Startup"
 msgid "Restored Tabs"
-msgstr "Käivitamisel taasta viimatiavatud vahekaardid"
+msgstr "Taastatud vahekaardid"
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:68
 msgid "This value stores the tabs to restore."
-msgstr ""
+msgstr "Selles väärtuses salvestatakse taastatavad vahekaardid."
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:75
-#, fuzzy
-#| msgid "Enable Search Autocomplete"
 msgid "Search Autocomplete enabled?"
-msgstr "Kasuta otsimisel automaattäidet"
+msgstr "Kas otsimise automaattäide on kasutusel?"
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:76
 msgid "This value is whether search autocomplete is enabled or not."
 msgstr ""
+"See väärtus määratleb, kas otsimise automaattäide on kasutusel või mitte."
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:83
-#, fuzzy
-#| msgid "Enable !bang Autocomplete"
 msgid "!bang Autocomplete enabled?"
-msgstr "Kasuta !bang automaattäidet"
+msgstr "Kas !bang-käskude automaattäide on kasutusel?"
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:84
 msgid "This value is whether !bang autocomplete is enabled or not."
 msgstr ""
+"See väärtus määratleb, kas !bang-käskude automaattäide on kasutusel või "
+"mitte."
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:91
-#, fuzzy
-#| msgid "Enable Developer Tools"
 msgid "Developer Tools enabled?"
-msgstr "Kasuta arendustarvikuid"
+msgstr "Kas arendustarvikud on kasutusel?"
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:92
 msgid "This value is whether developer tools is enabled or not."
 msgstr ""
+"See väärtus määratleb, kas veebiarenduseks mõeldud tarvikus on kasutusel või "
+"mitte."
 
 #: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:8
 #: OuchBrowser/Data/UI/About.blp:6 OuchBrowser/Data/UI/Window.blp:20
