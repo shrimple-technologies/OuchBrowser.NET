@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
 "POT-Creation-Date: 2026-04-20 01:31-0400\n"
-"PO-Revision-Date: 2026-04-20 19:54+0000\n"
+"PO-Revision-Date: 2026-04-21 11:22+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/ouch/net/et/>\n"
 "Language: et\n"
@@ -113,13 +113,11 @@ msgstr ""
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:99
 msgid "Initial Window Size"
-msgstr ""
+msgstr "Akna algne suurus"
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:100
-#, fuzzy
-#| msgid "This value is whether the window is maximized or not."
 msgid "This value is the main window's size."
-msgstr "See väärtus näitab, kas aken on täisvaates (maksimumvaates) või mitte."
+msgstr "See väärtus näitab põhiakna suurust."
 
 #: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:8
 #: OuchBrowser/Data/UI/About.blp:6 OuchBrowser/Data/UI/Window.blp:20
