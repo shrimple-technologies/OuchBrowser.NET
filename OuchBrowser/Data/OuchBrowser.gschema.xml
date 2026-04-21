@@ -95,7 +95,7 @@
 		</key>
 
 		<key type="(ii)" name="initial-size">
-			<default>(1000,650)</default>
+			<default>(890, 550)</default>
 			<summary>Initial Window Size</summary>
 			<description>
 				This value is the main window's size.
