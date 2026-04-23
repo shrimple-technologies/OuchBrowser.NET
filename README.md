@@ -6,13 +6,11 @@
 
 ---
 
-<img src="https://codeberg.org/shrimple/OuchBrowser.NET/raw/branch/main/OuchBrowser/Data/Icons/Hicolor/Scalable/Apps/site.srht.shrimple.OuchBrowser.svg" align="left" />
+<img src="https://codeberg.org/shrimple/OuchBrowser.NET/raw/branch/main/OuchBrowser/Data/Icons/Hicolor/Scalable/Apps/site.srht.shrimple.OuchBrowser.svg" width="112" height="112" align="left" style="vertical-align: middle;" />
 
 # Ouch Browser
 
-A web browser with vertical tabs for GNOME.
-
-Made for focusing on your browsing, Ouch Browser comes with !bangs support, a multi-purpose command palette, and mobile support.
+Focus on your browsing
 
 ## Screenshots
 
