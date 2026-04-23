@@ -616,6 +616,10 @@ Adw.TabOverview overview {
 					focus-on-click: false;
 					tooltip-text: _("Reveal Command Palette");
 
+					styles [
+						"flat",
+					]
+
 					Label hostname {
 						label: "";
 						ellipsize: end;
@@ -633,12 +637,20 @@ Adw.TabOverview overview {
 					tooltip-text: _("Copy Link");
 					action-name: "win.copy-link";
 					focus-on-click: false;
+
+					styles [
+						"flat",
+					]
 				}
 
 				MenuButton website_settings {
 					icon-name: "sliders-horizontal-symbolic";
 					tooltip-text: _("Website Settings");
 					focus-on-click: false;
+
+					styles [
+						"flat",
+					]
 
 					popover: Popover {
 						width-request: 300;
@@ -660,6 +672,8 @@ Adw.TabOverview overview {
 
 				styles [
 					"joined",
+					"card",
+					"palette-button",
 				]
 			}
 

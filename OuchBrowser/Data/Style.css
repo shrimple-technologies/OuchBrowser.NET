@@ -89,3 +89,7 @@ shortcut-label.compact > box > .keycap {
 	border-top-right-radius: 9px;
 	border-bottom-right-radius: 9px;
 }
+
+.palette-button.card {
+	border-radius: 9px;
+}
