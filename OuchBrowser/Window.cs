@@ -29,6 +29,7 @@ internal partial class Window : Adw.ApplicationWindow
 	[Connect] public readonly Button? go_forward;
 	[Connect] public readonly Button? refresh;
 	[Connect] public readonly WindowControls? left_controls;
+	[Connect] public readonly WindowControls? right_controls;
 	[Connect] public readonly Button? copy_link;
 	[Connect] public readonly MenuButton? website_settings;
 	[Connect] public readonly Revealer? url_autocomplete;
@@ -613,7 +614,7 @@ internal partial class Window : Adw.ApplicationWindow
 	{
 		controller.OnEnter += (_, _) =>
 		{
-			content_toolbar!.SetRevealTopBars(!(left_controls!.GetEmpty() == false && osv!.GetShowSidebar() == true));
+			content_toolbar!.SetRevealTopBars(!(right_controls!.GetEmpty() && osv!.GetShowSidebar() == true));
 		};
 		controller.OnLeave += (_, _) =>
 		{
