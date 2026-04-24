@@ -284,10 +284,12 @@ Adw.TabOverview overview {
 
 								Overlay {
 									[overlay]
-									Adw.Bin topbar_hover {
+									WindowHandle {
 										height-request: 20;
 										hexpand: true;
 										valign: start;
+
+										Adw.Bin topbar_hover {}
 									}
 
 									Overlay {
