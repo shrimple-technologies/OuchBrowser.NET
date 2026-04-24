@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-04-23 20:05-0400\n"
+"POT-Creation-Date: 2026-04-24 15:36-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -113,7 +113,7 @@ msgstr ""
 
 #: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:8
 #: OuchBrowser/Data/UI/About.blp:6 OuchBrowser/Data/UI/Window.blp:20
-#: OuchBrowser/Data/UI/Window.blp:248 OuchBrowser/Window.cs:90
+#: OuchBrowser/Data/UI/Window.blp:250 OuchBrowser/Window.cs:90
 msgid "Ouch Browser"
 msgstr ""
 
@@ -146,7 +146,7 @@ msgid "translator-credits"
 msgstr ""
 
 #: OuchBrowser/Data/UI/Preferences.blp:6 OuchBrowser/Data/UI/Preferences.blp:10
-#: OuchBrowser/Data/UI/Preferences.blp:117 OuchBrowser/Data/UI/Window.blp:490
+#: OuchBrowser/Data/UI/Preferences.blp:117 OuchBrowser/Data/UI/Window.blp:494
 msgid "Preferences"
 msgstr ""
 
@@ -251,7 +251,7 @@ msgstr ""
 msgid "New Bang…"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:337 OuchBrowser/Data/UI/Window.blp:1049
+#: OuchBrowser/Data/UI/Preferences.blp:337 OuchBrowser/Data/UI/Window.blp:1053
 msgid "!bangs provided by Kagi"
 msgstr ""
 
@@ -283,8 +283,8 @@ msgstr ""
 msgid "Change Current Tab URL"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Shortcuts.blp:38 OuchBrowser/Data/UI/Window.blp:136
-#: OuchBrowser/Data/UI/Window.blp:775 OuchBrowser/Data/UI/Window.blp:870
+#: OuchBrowser/Data/UI/Shortcuts.blp:38 OuchBrowser/Data/UI/Window.blp:138
+#: OuchBrowser/Data/UI/Window.blp:779 OuchBrowser/Data/UI/Window.blp:874
 msgid "New Tab"
 msgstr ""
 
@@ -296,7 +296,7 @@ msgstr ""
 msgid "Navigation"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Shortcuts.blp:52 OuchBrowser/Data/UI/Window.blp:191
+#: OuchBrowser/Data/UI/Shortcuts.blp:52 OuchBrowser/Data/UI/Window.blp:193
 msgid "Close Tab"
 msgstr ""
 
@@ -336,88 +336,88 @@ msgstr ""
 msgid "Hide Sidebar"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:267
+#: OuchBrowser/Data/UI/Window.blp:269
 msgid "Show Sidebar"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:426
+#: OuchBrowser/Data/UI/Window.blp:430
 msgid "Menu"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:461
+#: OuchBrowser/Data/UI/Window.blp:465
 msgid "View All Tabs"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:525
+#: OuchBrowser/Data/UI/Window.blp:529
 msgid "Keyboard Shortcuts"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:559
+#: OuchBrowser/Data/UI/Window.blp:563
 msgid "About Ouch Browser"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:579
+#: OuchBrowser/Data/UI/Window.blp:583
 msgid "Back"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:591
+#: OuchBrowser/Data/UI/Window.blp:595
 msgid "Forward"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:603 OuchBrowser/View.cs:91
+#: OuchBrowser/Data/UI/Window.blp:607 OuchBrowser/View.cs:91
 #: OuchBrowser/View.cs:164
 msgid "Refresh"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:623
+#: OuchBrowser/Data/UI/Window.blp:627
 msgid "Reveal Command Palette"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:643
+#: OuchBrowser/Data/UI/Window.blp:647
 msgid "Copy Link"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:654
+#: OuchBrowser/Data/UI/Window.blp:658
 msgid "Website Settings"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:670
+#: OuchBrowser/Data/UI/Window.blp:674
 msgid "No Website Settings Available"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:689
+#: OuchBrowser/Data/UI/Window.blp:693
 msgid "Archive"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:722
+#: OuchBrowser/Data/UI/Window.blp:726
 msgid "History"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:745
+#: OuchBrowser/Data/UI/Window.blp:749
 msgid "Downloads"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:785
+#: OuchBrowser/Data/UI/Window.blp:789
 msgid "New…"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:818
+#: OuchBrowser/Data/UI/Window.blp:822
 msgid "New Room"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:841
+#: OuchBrowser/Data/UI/Window.blp:845
 msgid "New Folder"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:996
+#: OuchBrowser/Data/UI/Window.blp:1000
 msgid "Search or enter URL…"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1105
+#: OuchBrowser/Data/UI/Window.blp:1109
 msgid "Go"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1120
+#: OuchBrowser/Data/UI/Window.blp:1124
 msgid "Close Palette"
 msgstr ""
 
