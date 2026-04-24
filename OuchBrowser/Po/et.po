@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-04-20 01:31-0400\n"
+"POT-Creation-Date: 2026-04-23 20:05-0400\n"
 "PO-Revision-Date: 2026-04-21 11:22+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/ouch/net/et/>\n"
@@ -121,7 +121,7 @@ msgstr "See väärtus näitab põhiakna suurust."
 
 #: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:8
 #: OuchBrowser/Data/UI/About.blp:6 OuchBrowser/Data/UI/Window.blp:20
-#: OuchBrowser/Data/UI/Window.blp:248 OuchBrowser/Window.cs:89
+#: OuchBrowser/Data/UI/Window.blp:248 OuchBrowser/Window.cs:90
 msgid "Ouch Browser"
 msgstr "Veebibrauser Ouch"
 
@@ -162,7 +162,7 @@ msgid "translator-credits"
 msgstr "Priit Jõerüüt"
 
 #: OuchBrowser/Data/UI/Preferences.blp:6 OuchBrowser/Data/UI/Preferences.blp:10
-#: OuchBrowser/Data/UI/Preferences.blp:117 OuchBrowser/Data/UI/Window.blp:484
+#: OuchBrowser/Data/UI/Preferences.blp:117 OuchBrowser/Data/UI/Window.blp:490
 msgid "Preferences"
 msgstr "Eelistused"
 
@@ -267,7 +267,7 @@ msgstr "Sinu lisatud bang-käsud"
 msgid "New Bang…"
 msgstr "Uus bang-otsing…"
 
-#: OuchBrowser/Data/UI/Preferences.blp:337 OuchBrowser/Data/UI/Window.blp:1029
+#: OuchBrowser/Data/UI/Preferences.blp:337 OuchBrowser/Data/UI/Window.blp:1049
 msgid "!bangs provided by Kagi"
 msgstr "!bang-käsud Kagi kogumikust"
 
@@ -300,7 +300,7 @@ msgid "Change Current Tab URL"
 msgstr "Muuda praeguse vahekaardi võrguaadressi"
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:38 OuchBrowser/Data/UI/Window.blp:136
-#: OuchBrowser/Data/UI/Window.blp:755 OuchBrowser/Data/UI/Window.blp:850
+#: OuchBrowser/Data/UI/Window.blp:775 OuchBrowser/Data/UI/Window.blp:870
 msgid "New Tab"
 msgstr "Uus vahekaart"
 
@@ -356,84 +356,84 @@ msgstr "Peida külgriba"
 msgid "Show Sidebar"
 msgstr "Näita külgriba"
 
-#: OuchBrowser/Data/UI/Window.blp:420
+#: OuchBrowser/Data/UI/Window.blp:426
 msgid "Menu"
 msgstr "Menüü"
 
-#: OuchBrowser/Data/UI/Window.blp:455
+#: OuchBrowser/Data/UI/Window.blp:461
 msgid "View All Tabs"
 msgstr "Vaata kõiki vahekaarte"
 
-#: OuchBrowser/Data/UI/Window.blp:519
+#: OuchBrowser/Data/UI/Window.blp:525
 msgid "Keyboard Shortcuts"
 msgstr "Klaviatuuri kiirklahvid"
 
-#: OuchBrowser/Data/UI/Window.blp:553
+#: OuchBrowser/Data/UI/Window.blp:559
 msgid "About Ouch Browser"
 msgstr "Rakenduse teave: veebibrauser Ouch"
 
-#: OuchBrowser/Data/UI/Window.blp:573
+#: OuchBrowser/Data/UI/Window.blp:579
 msgid "Back"
 msgstr "Tagasi"
 
-#: OuchBrowser/Data/UI/Window.blp:585
+#: OuchBrowser/Data/UI/Window.blp:591
 msgid "Forward"
 msgstr "Edasi"
 
-#: OuchBrowser/Data/UI/Window.blp:597 OuchBrowser/View.cs:91
+#: OuchBrowser/Data/UI/Window.blp:603 OuchBrowser/View.cs:91
 #: OuchBrowser/View.cs:164
 msgid "Refresh"
 msgstr "Laadi uuesti"
 
-#: OuchBrowser/Data/UI/Window.blp:617
+#: OuchBrowser/Data/UI/Window.blp:623
 msgid "Reveal Command Palette"
 msgstr "Näita käsupaletti"
 
-#: OuchBrowser/Data/UI/Window.blp:633
+#: OuchBrowser/Data/UI/Window.blp:643
 msgid "Copy Link"
 msgstr "Kopeeri link"
 
-#: OuchBrowser/Data/UI/Window.blp:640
+#: OuchBrowser/Data/UI/Window.blp:654
 msgid "Website Settings"
 msgstr "Veebisaidi seadistused"
 
-#: OuchBrowser/Data/UI/Window.blp:652
+#: OuchBrowser/Data/UI/Window.blp:670
 msgid "No Website Settings Available"
 msgstr "Veebisaidi seadistusi pole saadaval"
 
-#: OuchBrowser/Data/UI/Window.blp:669
+#: OuchBrowser/Data/UI/Window.blp:689
 msgid "Archive"
 msgstr "Arhiveeri"
 
-#: OuchBrowser/Data/UI/Window.blp:702
+#: OuchBrowser/Data/UI/Window.blp:722
 msgid "History"
 msgstr "Ajalugu"
 
-#: OuchBrowser/Data/UI/Window.blp:725
+#: OuchBrowser/Data/UI/Window.blp:745
 msgid "Downloads"
 msgstr "Allalaadimised"
 
-#: OuchBrowser/Data/UI/Window.blp:765
+#: OuchBrowser/Data/UI/Window.blp:785
 msgid "New…"
 msgstr "Uus…"
 
-#: OuchBrowser/Data/UI/Window.blp:798
+#: OuchBrowser/Data/UI/Window.blp:818
 msgid "New Room"
 msgstr "Uus tuba"
 
-#: OuchBrowser/Data/UI/Window.blp:821
+#: OuchBrowser/Data/UI/Window.blp:841
 msgid "New Folder"
 msgstr "Uus kaust"
 
-#: OuchBrowser/Data/UI/Window.blp:976
+#: OuchBrowser/Data/UI/Window.blp:996
 msgid "Search or enter URL…"
 msgstr "Otsi või sisesta võrguaadress…"
 
-#: OuchBrowser/Data/UI/Window.blp:1085
+#: OuchBrowser/Data/UI/Window.blp:1105
 msgid "Go"
 msgstr "Mine"
 
-#: OuchBrowser/Data/UI/Window.blp:1100
+#: OuchBrowser/Data/UI/Window.blp:1120
 msgid "Close Palette"
 msgstr "Sulge värvipalett"
 
@@ -445,7 +445,7 @@ msgstr "Lõpeta laadimine"
 msgid "Stop Loading"
 msgstr "Lõpeta laadimine"
 
-#: OuchBrowser/Window.cs:603
+#: OuchBrowser/Window.cs:604
 msgid "Link Copied"
 msgstr "Link on kopeeritud"
 
