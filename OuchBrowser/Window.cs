@@ -276,124 +276,27 @@ internal partial class Window : Adw.ApplicationWindow
 			WebView webview = (WebView)page.Child!;
 			Toast toast = Toast.New("");
 
-			// these levels correspond to what would be seen in chromium
-			switch (webview.GetZoomLevel())
+			double[] levels = { 0.25, 0.33, 0.5, 0.67, 0.75, 0.8, 0.9, 1, 1.1, 1.25, 1.5, 1.75, 2, 2.5, 3, 4, 5 };
+
+			for (int i = 0; i < levels.Length; i++)
 			{
-				case 0.25: // 25%
-					webview.SetZoomLevel(0.33); // 33%
-					toast.SetTitle("33%");
-					toast.SetTimeout(1);
-					toast_overlay!.DismissAll();
-					toast_overlay!.AddToast(toast);
-					break;
-				case 0.33: // 33%
-					webview.SetZoomLevel(0.5); // 50%
-					toast.SetTitle("50%");
-					toast.SetTimeout(1);
-					toast_overlay!.DismissAll();
-					toast_overlay!.AddToast(toast);
-					break;
-				case 0.5: // 50%
-					webview.SetZoomLevel(0.67); // 67%
-					toast.SetTitle("67%");
-					toast.SetTimeout(1);
-					toast_overlay!.DismissAll();
-					toast_overlay!.AddToast(toast);
-					break;
-				case 0.67: // 67%
-					webview.SetZoomLevel(0.75); // 75%
-					toast.SetTitle("75%");
-					toast.SetTimeout(1);
-					toast_overlay!.DismissAll();
-					toast_overlay!.AddToast(toast);
-					break;
-				case 0.75: // 75%
-					webview.SetZoomLevel(0.8); // 80%
-					toast.SetTitle("80%");
-					toast.SetTimeout(1);
-					toast_overlay!.DismissAll();
-					toast_overlay!.AddToast(toast);
-					break;
-				case 0.8: // 80%
-					webview.SetZoomLevel(0.9); // 90%
-					toast.SetTitle("90%");
-					toast.SetTimeout(1);
-					toast_overlay!.DismissAll();
-					toast_overlay!.AddToast(toast);
-					break;
-				case 0.9: // 90%
-					webview.SetZoomLevel(1); // 100%
-					toast.SetTitle("100%");
-					toast.SetTimeout(1);
-					toast_overlay!.DismissAll();
-					toast_overlay!.AddToast(toast);
-					break;
-				case 1: // 100%
-					webview.SetZoomLevel(1.1); // 110%
-					toast.SetTitle("110%");
-					toast.SetTimeout(1);
-					toast_overlay!.DismissAll();
-					toast_overlay!.AddToast(toast);
-					break;
-				case 1.1: // 110%
-					webview.SetZoomLevel(1.25); // 125%
-					toast.SetTitle("125%");
-					toast.SetTimeout(1);
-					toast_overlay!.DismissAll();
-					toast_overlay!.AddToast(toast);
-					break;
-				case 1.25: // 125%
-					webview.SetZoomLevel(1.5); // 150%
-					toast.SetTitle("150%");
-					toast.SetTimeout(1);
-					toast_overlay!.DismissAll();
-					toast_overlay!.AddToast(toast);
-					break;
-				case 1.5: // 150%
-					webview.SetZoomLevel(1.75); // 175%
-					toast.SetTitle("175%");
-					toast.SetTimeout(1);
-					toast_overlay!.DismissAll();
-					toast_overlay!.AddToast(toast);
-					break;
-				case 1.75: // 175%
-					webview.SetZoomLevel(2); // 200%
-					toast.SetTitle("200%");
-					toast.SetTimeout(1);
-					toast_overlay!.DismissAll();
-					toast_overlay!.AddToast(toast);
-					break;
-				case 2: // 200%
-					webview.SetZoomLevel(2.5); // 250%
-					toast.SetTitle("250%");
-					toast.SetTimeout(1);
-					toast_overlay!.DismissAll();
-					toast_overlay!.AddToast(toast);
-					break;
-				case 2.5: // 250%
-					webview.SetZoomLevel(3); // 300%
-					toast.SetTitle("300%");
-					toast.SetTimeout(1);
-					toast_overlay!.DismissAll();
-					toast_overlay!.AddToast(toast);
-					break;
-				case 3: // 300%
-					webview.SetZoomLevel(4); // 400%
-					toast.SetTitle("400%");
-					toast.SetTimeout(1);
-					toast_overlay!.DismissAll();
-					toast_overlay!.AddToast(toast);
-					break;
-				case 4: // 400%
-					webview.SetZoomLevel(5); // 400%
-					toast.SetTitle("500%");
-					toast.SetTimeout(1);
-					toast_overlay!.DismissAll();
-					toast_overlay!.AddToast(toast);
-					break;
-				case 5: // 500%
+				try
+				{
+					if (levels[i] == webview.GetZoomLevel())
+					{
+						webview.SetZoomLevel(levels[i + 1]);
+						toast.SetTitle($"{Math.Round(levels[i + 1] * 100)}%");
+						toast.SetTimeout(1);
+						toast_overlay!.DismissAll();
+						toast_overlay!.AddToast(toast);
+						break;
+					}
+				}
+				catch (System.IndexOutOfRangeException)
+				{
 					Gdk.Display.GetDefault()!.Beep();
 					break;
+				}
 			}
 		});
 
@@ -403,124 +306,27 @@ internal partial class Window : Adw.ApplicationWindow
 			WebView webview = (WebView)page.Child!;
 			Toast toast = Toast.New("");
 
-			// these levels correspond to what would be seen in chromium
-			switch (webview.GetZoomLevel())
+			double[] levels = { 0.25, 0.33, 0.5, 0.67, 0.75, 0.8, 0.9, 1, 1.1, 1.25, 1.5, 1.75, 2, 2.5, 3, 4, 5 };
+
+			for (int i = levels.Length - 1; i >= 0; i--)
 			{
-				case 5: // 500%
-					webview.SetZoomLevel(4); // 400%
-					toast.SetTitle("400%");
-					toast.SetTimeout(1);
-					toast_overlay!.DismissAll();
-					toast_overlay!.AddToast(toast);
-					break;
-				case 4: // 400%
-					webview.SetZoomLevel(3); // 300%
-					toast.SetTitle("300%");
-					toast.SetTimeout(1);
-					toast_overlay!.DismissAll();
-					toast_overlay!.AddToast(toast);
-					break;
-				case 3: // 300%
-					webview.SetZoomLevel(2.5); // 150%
-					toast.SetTitle("250%");
-					toast.SetTimeout(1);
-					toast_overlay!.DismissAll();
-					toast_overlay!.AddToast(toast);
-					break;
-				case 2.5: // 250%
-					webview.SetZoomLevel(2); // 200%
-					toast.SetTitle("200%");
-					toast.SetTimeout(1);
-					toast_overlay!.DismissAll();
-					toast_overlay!.AddToast(toast);
-					break;
-				case 2: // 200%
-					webview.SetZoomLevel(1.75); // 175%
-					toast.SetTitle("175%");
-					toast.SetTimeout(1);
-					toast_overlay!.DismissAll();
-					toast_overlay!.AddToast(toast);
-					break;
-				case 1.75: // 175%
-					webview.SetZoomLevel(1.5); // 150%
-					toast.SetTitle("150%");
-					toast.SetTimeout(1);
-					toast_overlay!.DismissAll();
-					toast_overlay!.AddToast(toast);
-					break;
-				case 1.5: // 150%
-					webview.SetZoomLevel(1.25); // 125%
-					toast.SetTitle("125%");
-					toast.SetTimeout(1);
-					toast_overlay!.DismissAll();
-					toast_overlay!.AddToast(toast);
-					break;
-				case 1.25: // 125%
-					webview.SetZoomLevel(1.1); // 400%
-					toast.SetTitle("110%");
-					toast.SetTimeout(1);
-					toast_overlay!.DismissAll();
-					toast_overlay!.AddToast(toast);
-					break;
-				case 1.1: // 110%
-					webview.SetZoomLevel(1); // 400%
-					toast.SetTitle("100%");
-					toast.SetTimeout(1);
-					toast_overlay!.DismissAll();
-					toast_overlay!.AddToast(toast);
-					break;
-				case 1: // 100%
-					webview.SetZoomLevel(0.9); // 400%
-					toast.SetTitle("90%");
-					toast.SetTimeout(1);
-					toast_overlay!.DismissAll();
-					toast_overlay!.AddToast(toast);
-					break;
-				case 0.9: // 90%
-					webview.SetZoomLevel(0.8); // 80%
-					toast.SetTitle("80%");
-					toast.SetTimeout(1);
-					toast_overlay!.DismissAll();
-					toast_overlay!.AddToast(toast);
-					break;
-				case 0.8: // 80%
-					webview.SetZoomLevel(0.75); // 75%
-					toast.SetTitle("75%");
-					toast.SetTimeout(1);
-					toast_overlay!.DismissAll();
-					toast_overlay!.AddToast(toast);
-					break;
-				case 0.75: // 75%
-					webview.SetZoomLevel(0.67); // 67%
-					toast.SetTitle("67%");
-					toast.SetTimeout(1);
-					toast_overlay!.DismissAll();
-					toast_overlay!.AddToast(toast);
-					break;
-				case 0.67: // 67%
-					webview.SetZoomLevel(0.5); // 67%
-					toast.SetTitle("50%");
-					toast.SetTimeout(1);
-					toast_overlay!.DismissAll();
-					toast_overlay!.AddToast(toast);
-					break;
-				case 0.5: // 50%
-					webview.SetZoomLevel(0.33); // 33%
-					toast.SetTitle("33%");
-					toast.SetTimeout(1);
-					toast_overlay!.DismissAll();
-					toast_overlay!.AddToast(toast);
-					break;
-				case 0.33: // 33%
-					webview.SetZoomLevel(0.25); // 25%
-					toast.SetTitle("25%");
-					toast.SetTimeout(1);
-					toast_overlay!.DismissAll();
-					toast_overlay!.AddToast(toast);
-					break;
-				case 0.25: // 25%
+				try
+				{
+					if (levels[i] == webview.GetZoomLevel())
+					{
+						webview.SetZoomLevel(levels[i - 1]);
+						toast.SetTitle($"{Math.Round(levels[i - 1] * 100)}%");
+						toast.SetTimeout(1);
+						toast_overlay!.DismissAll();
+						toast_overlay!.AddToast(toast);
+						break;
+					}
+				}
+				catch (System.IndexOutOfRangeException)
+				{
 					Gdk.Display.GetDefault()!.Beep();
 					break;
+				}
 			}
 		});
 
