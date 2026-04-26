@@ -49,9 +49,6 @@ internal class Preferences : Adw.Dialog
 				setting_devtools!.SetActive(window.settings.GetBoolean("devtools-enabled"));
 				switch (window.settings.GetString("search-engine"))
 				{
-					case "https://bing.com/search?q=":
-						setting_search_engine!.SetSelected(0);
-						break;
 					case "https://duckduckgo.com/?q=":
 						setting_search_engine!.SetSelected(1);
 						break;
@@ -173,18 +170,15 @@ internal class Preferences : Adw.Dialog
 				switch (setting_search_engine!.GetSelected())
 				{
 					case 0:
-						window.settings.SetString("search-engine", "https://bing.com/search?q=");
-						break;
-					case 1:
 						window.settings.SetString("search-engine", "https://duckduckgo.com/?q=");
 						break;
-					case 2:
+					case 1:
 						window.settings.SetString("search-engine", "https://ecosia.org/search?q=");
 						break;
-					case 3:
+					case 2:
 						window.settings.SetString("search-engine", "https://google.com/search?q=");
 						break;
-					case 4:
+					case 3:
 						window.settings.SetString("search-engine", "https://kagi.com/search?q=");
 						break;
 				}

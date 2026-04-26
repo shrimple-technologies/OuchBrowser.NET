@@ -7,14 +7,12 @@
 	>
 		<key type="s" name="search-engine">
 			<choices>
-				<choice value="https://bing.com/search?q=" />
 				<choice value="https://duckduckgo.com/?q=" />
 				<choice value="https://ecosia.org/search?q=" />
 				<choice value="https://google.com/search?q=" />
 				<choice value="https://kagi.com/search?q=" />
 			</choices>
 			<aliases>
-				<alias value="Bing" target="https://bing.com/search?q=" />
 				<alias value="DuckDuckGo" target="https://duckduckgo.com/?q=" />
 				<alias value="Ecosia" target="https://ecosia.org/search?q=" />
 				<alias value="Google" target="https://google.com/search?q=" />
