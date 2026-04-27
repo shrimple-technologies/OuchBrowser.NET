@@ -50,16 +50,16 @@ internal class Preferences : Adw.Dialog
 				switch (window.settings.GetString("search-engine"))
 				{
 					case "https://duckduckgo.com/?q=":
-						setting_search_engine!.SetSelected(1);
+						setting_search_engine!.SetSelected(0);
 						break;
 					case "https://ecosia.org/search?q=":
-						setting_search_engine!.SetSelected(2);
+						setting_search_engine!.SetSelected(1);
 						break;
 					case "https://google.com/search?q=":
-						setting_search_engine!.SetSelected(3);
+						setting_search_engine!.SetSelected(2);
 						break;
 					case "https://kagi.com/search?q=":
-						setting_search_engine!.SetSelected(4);
+						setting_search_engine!.SetSelected(3);
 						break;
 				}
 				switch (window.settings.GetDouble("zoom"))
