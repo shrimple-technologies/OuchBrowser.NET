@@ -29,7 +29,7 @@ These are official packages built and maintained by the Shrimple Technologies
 team. Any packages not listed here are unofficial, and you must proceed with
 caution with those packages.
 
-### Fedora COPR
+### Fedora COPR [![Copr build status](https://copr.fedorainfracloud.org/coprs/shrimple/OuchBrowser/package/OuchBrowser/status_image/last_build.png)](https://copr.fedorainfracloud.org/coprs/shrimple/OuchBrowser/package/OuchBrowser/)
 
 > [!NOTE]
 > 
