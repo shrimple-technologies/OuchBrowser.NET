@@ -19,6 +19,8 @@ BuildRequires: just
 BuildRequires: dotnet-sdk-10.0
 BuildRequires: dotnet-runtime-10.0
 BuildRequires: blueprint-compiler
+BuildRequires: gtk4-devel
+BuildRequires: libadwaita-devel
 Requires: libadwaita
 Requires: gtk4
 Requires: webkitgtk6.0
