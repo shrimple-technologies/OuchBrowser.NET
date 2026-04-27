@@ -1,20 +1,13 @@
 %global debug_package %{nil}
-%global _debugsource_packages 0
-%global __debug_package 0
-%global __debug_install_post %{nil}
-%global _debugsource_template %{nil}
-%global __debug_package 0
 %global __os_install_post %{nil}
 %global __strip /bin/true
 %global __brp_strip /bin/true
 %global __brp_strip_lto /bin/true
 %global __brp_mangle_shebangs /bin/true
-%global commit %(git ls-remote https://codeberg.org/shrimple/OuchBrowser.NET.git HEAD | cut -c1-10)
-%global shortcommit %(echo %{commit} | cut -c1-7)
 
 Name: OuchBrowser
 Version: 0.1.0
-Release: 0.%(date +%%Y%%m%%d)git%{shortcommit}%{?dist}
+Release: 0.git%{scm_revision}%{?dist}
 Summary: Focus on your browsing
 License: GPL-3.0-or-later
 URL: https://codeberg.org/shrimple/OuchBrowser.NET
