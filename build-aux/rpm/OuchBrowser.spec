@@ -1,4 +1,9 @@
 %global debug_package %{nil}
+%global _debugsource_packages 0
+%global __debug_package 0
+%global __debug_install_post %{nil}
+%global _debugsource_template %{nil}
+%global __debug_package 0
 %global __os_install_post %{nil}
 %global __strip /bin/true
 %global __brp_strip /bin/true
