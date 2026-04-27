@@ -16,8 +16,8 @@ URL: https://codeberg.org/shrimple/OuchBrowser.NET
 Source0: %{URL}/archive/main.tar.gz
 
 BuildRequires: just
+BuildRequires: git
 BuildRequires: dotnet-sdk-10.0
-BuildRequires: dotnet-runtime-10.0
 BuildRequires: blueprint-compiler
 BuildRequires: gtk4-devel
 BuildRequires: libadwaita-devel
