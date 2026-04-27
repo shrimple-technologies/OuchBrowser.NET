@@ -4,10 +4,11 @@
 %global __brp_strip /bin/true
 %global __brp_strip_lto /bin/true
 %global __brp_mangle_shebangs /bin/true
+%define build_timestamp %{lua: print(os.date("%Y%m%d"))}
 
 Name: OuchBrowser
 Version: 0.1.0
-Release: 0.%{?dist}
+Release: 0.%{build_timestamp}%{?dist}
 Summary: Focus on your browsing
 License: GPL-3.0-or-later
 URL: https://codeberg.org/shrimple/OuchBrowser.NET
