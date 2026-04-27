@@ -37,13 +37,21 @@ palette, and mobile support.
 just build-blueprint
 just compile-resources
 git clone https://github.com/kagisearch/bangs OuchBrowser/Bangs --depth=1
-dotnet publish OuchBrowser -c Release
+%ifarch x86_64
+dotnet publish OuchBrowser -c Release -r linux-x64
+%elifarch arm64
+dotnet publish OuchBrowser -c Release -r linux-arm64
+%endif
 
 %install
 just PREFIX=%{buildroot}%{_prefix} build-translations
 just PREFIX=%{buildroot}%{_prefix} build-schemas
 
+%ifarch x86_64
 install -Dm755 OuchBrowser/bin/Release/net10.0/linux-x64/publish/OuchBrowser --target-directory %{buildroot}%{_bindir}
+%elifarch arm64
+install -Dm755 OuchBrowser/bin/Release/net10.0/linux-arm64/publish/OuchBrowser --target-directory %{buildroot}%{_bindir}
+%endif
 install -Dm644 OuchBrowser/Data/OuchBrowser.gschema.xml --target-directory %{buildroot}%{_datadir}/glib-2.0/schemas
 install -Dm644 OuchBrowser/Data/Icons/Hicolor/Symbolic/Apps/site.srht.shrimple.OuchBrowser-symbolic.svg --target-directory %{buildroot}%{_datadir}/icons/hicolor/symbolic/apps
 install -Dm644 OuchBrowser/Data/Icons/Hicolor/Scalable/Apps/site.srht.shrimple.OuchBrowser.svg --target-directory %{buildroot}%{_datadir}/icons/hicolor/scalable/apps
