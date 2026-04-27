@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
 "POT-Creation-Date: 2026-04-23 20:05-0400\n"
-"PO-Revision-Date: 2026-04-20 19:54+0000\n"
+"PO-Revision-Date: 2026-04-28 06:09+0000\n"
 "Last-Translator: Wiliam <wilian4512@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/ouch/"
 "net/pt_BR/>\n"
@@ -41,6 +41,8 @@ msgid ""
 "This value is the search engine that will be used when the user enters a "
 "search query into the command palette."
 msgstr ""
+"Esse valor define qual mecanismo de busca será utilizado quando o usuário "
+"fizer uma consulta no painel de comandos."
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:35
 #: OuchBrowser/Data/UI/Shortcuts.blp:83
@@ -52,14 +54,16 @@ msgid ""
 "This value is the zoom level of the browser. Please do not modify this value "
 "yourself as this can create unintended side effects."
 msgstr ""
+"Esse valor é o nível de zoom do navegador. Por favor, não modifique esse "
+"valor manualmente, pois isso pode gerar efeitos colaterais indesejados."
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:45
 msgid "Maximized?"
-msgstr ""
+msgstr "Maximizado?"
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:46
 msgid "This value is whether the window is maximized or not."
-msgstr ""
+msgstr "Esse valor indica se a janela está maximizada ou não."
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:57
 msgid "Rooms"
@@ -113,13 +117,11 @@ msgstr ""
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:99
 msgid "Initial Window Size"
-msgstr ""
+msgstr "Tamanho Inicial da Janela"
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:100
-#, fuzzy
-#| msgid "This value stores the tabs to restore."
 msgid "This value is the main window's size."
-msgstr "Este valor armazena as abas a serem restauradas."
+msgstr "Esse valor corresponde ao tamanho da janela principal."
 
 #: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:8
 #: OuchBrowser/Data/UI/About.blp:6 OuchBrowser/Data/UI/Window.blp:20
@@ -134,7 +136,7 @@ msgstr "Shrimple Technologies"
 
 #: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:15
 msgid "Focus on your browsing"
-msgstr "Foque em sua navegação"
+msgstr "Concentre-se na sua Navegação"
 
 #: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:47
 msgid ""
@@ -143,12 +145,19 @@ msgid ""
 "focusing on your browsing, Ouch Browser comes with !bangs support, a multi-"
 "purpose command palette, and mobile support."
 msgstr ""
+"O Ouch Browser é um navegador que utiliza o layout de abas verticais, "
+"permitindo uma melhor gestão de abas para usuários mais exigentes. Feito "
+"para você se concentrar na sua navegação, o Ouch Browser oferece suporte a "
+"!bangs, um painel de comandos multifuncional e compatibilidade com "
+"dispositivos móveis."
 
 #: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:55
 msgid ""
 "NOTE: This is the C# rewrite, which is constantly evolving, and may be less "
 "stable than the original codebase."
 msgstr ""
+"NOTA: Esta é a versão reescrita em C#, que está em constante evolução e pode "
+"ser menos estável do que o código base original."
 
 #. TRANSLATORS: This is not a string that is a part of the source code. This is your name (or username), followed by your email enclosed in angles (<example@domain.com>) or your website. This will be shown in Ouch Browser's credits.
 #: OuchBrowser/Data/UI/About.blp:11
@@ -273,11 +282,11 @@ msgstr "Selecionar uma extensão"
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:9
 msgid "Copy Current URL"
-msgstr ""
+msgstr "Copiar Endereço Atual"
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:14
 msgid "Open Keyboard Shortcuts"
-msgstr ""
+msgstr "Abrir Atalhos do Teclado"
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:19
 msgid "Open Preferences"
@@ -285,7 +294,7 @@ msgstr "Abrir Configurações"
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:24
 msgid "Toggle Tabs Sidebar"
-msgstr ""
+msgstr "Alternar Barra Lateral de Abas"
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:30
 msgid "Command Palette"
@@ -293,7 +302,7 @@ msgstr "Paleta de Comandos"
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:33
 msgid "Change Current Tab URL"
-msgstr ""
+msgstr "Mudar Andereço da Aba Atual"
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:38 OuchBrowser/Data/UI/Window.blp:136
 #: OuchBrowser/Data/UI/Window.blp:775 OuchBrowser/Data/UI/Window.blp:870
@@ -306,7 +315,7 @@ msgstr "Pesquisar Bangs"
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:49
 msgid "Navigation"
-msgstr ""
+msgstr "Navegação"
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:52 OuchBrowser/Data/UI/Window.blp:191
 msgid "Close Tab"
@@ -314,11 +323,11 @@ msgstr "Fechar Aba"
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:57
 msgid "Go Back a Page"
-msgstr ""
+msgstr "Voltar Página"
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:62
 msgid "Go Forward a Page"
-msgstr ""
+msgstr "Avançar Página"
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:67
 msgid "Hard Refresh Tab"
@@ -330,7 +339,7 @@ msgstr "Recarregar Aba"
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:77
 msgid "Switch to Tab"
-msgstr ""
+msgstr "Alternar para Aba"
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:86
 msgid "Zoom In"
@@ -387,15 +396,15 @@ msgstr "Mostrar Paleta de Comandos"
 
 #: OuchBrowser/Data/UI/Window.blp:643
 msgid "Copy Link"
-msgstr ""
+msgstr "Copiar Link"
 
 #: OuchBrowser/Data/UI/Window.blp:654
 msgid "Website Settings"
-msgstr ""
+msgstr "Configurações do Site"
 
 #: OuchBrowser/Data/UI/Window.blp:670
 msgid "No Website Settings Available"
-msgstr ""
+msgstr "Nenhuma Configuração de Site Disponível"
 
 #: OuchBrowser/Data/UI/Window.blp:689
 msgid "Archive"
@@ -443,7 +452,7 @@ msgstr "Parar de Carregar"
 
 #: OuchBrowser/Window.cs:604
 msgid "Link Copied"
-msgstr ""
+msgstr "Link Copiado"
 
 #, fuzzy
 #~| msgid "Search Engine"
