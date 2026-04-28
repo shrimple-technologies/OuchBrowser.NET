@@ -41,6 +41,7 @@ internal class RoomsOverview : Adw.Dialog
 		{
 			if (args.Pspec.GetName() == "parent")
 			{
+				tab_stack.SetVisibleChildName("placeholder");
 				nsv!.SetShowContent(true);
 
 				lb!.RemoveAll();
