@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-04-23 20:05-0400\n"
+"POT-Creation-Date: 2026-04-27 21:59-0400\n"
 "PO-Revision-Date: 2026-04-21 11:22+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/ouch/net/et/>\n"
@@ -27,13 +27,13 @@ msgstr "BANG-käsud"
 msgid "SUGGESTIONS"
 msgstr "SOOVITUSED"
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:25
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:23
 #: OuchBrowser/Data/UI/Preferences.blp:254
 #: OuchBrowser/Data/UI/Preferences.blp:276
 msgid "Search Engine"
 msgstr "Otsingumootor"
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:26
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:24
 msgid ""
 "This value is the search engine that will be used when the user enters a "
 "search query into the command palette."
@@ -41,12 +41,12 @@ msgstr ""
 "See väärtus on otsingumootor, mida kasutatakse, kui kasutaja sisestab "
 "otsingupäringu käsupaletti."
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:35
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:33
 #: OuchBrowser/Data/UI/Shortcuts.blp:83
 msgid "Zoom"
 msgstr "Suum"
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:36
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:34
 msgid ""
 "This value is the zoom level of the browser. Please do not modify this value "
 "yourself as this can create unintended side effects."
@@ -54,19 +54,20 @@ msgstr ""
 "See väärtus näitab brauseri suumitaset. Palun ära muuda seda väärtust ise, "
 "kuna see võib põhjustada soovimatuid kõrvalmõjusid."
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:45
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:43
 msgid "Maximized?"
 msgstr "Kas on täisvaates?"
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:46
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:44
 msgid "This value is whether the window is maximized or not."
 msgstr "See väärtus näitab, kas aken on täisvaates (maksimumvaates) või mitte."
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:57
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:55
+#: OuchBrowser/Data/UI/RoomsOverview.blp:6
 msgid "Rooms"
 msgstr "Toad"
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:58
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:56
 msgid ""
 "This value stores the rooms data. Each entry is a tuple: (room name, room "
 "icon, pinned urls)."
@@ -74,54 +75,54 @@ msgstr ""
 "Selles väärtuses salvestuvad tubade andmed. Iga kirje on järjendina: (toa "
 "nimi, toa ikoon, kinnitatud veebiaadressid)."
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:67
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:65
 msgid "Restored Tabs"
 msgstr "Taastatud vahekaardid"
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:68
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:66
 msgid "This value stores the tabs to restore."
 msgstr "Selles väärtuses salvestatakse taastatavad vahekaardid."
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:75
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:73
 msgid "Search Autocomplete enabled?"
 msgstr "Kas otsimise automaattäide on kasutusel?"
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:76
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:74
 msgid "This value is whether search autocomplete is enabled or not."
 msgstr ""
 "See väärtus määratleb, kas otsimise automaattäide on kasutusel või mitte."
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:83
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:81
 msgid "!bang Autocomplete enabled?"
 msgstr "Kas !bang-käskude automaattäide on kasutusel?"
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:84
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:82
 msgid "This value is whether !bang autocomplete is enabled or not."
 msgstr ""
 "See väärtus määratleb, kas !bang-käskude automaattäide on kasutusel või "
 "mitte."
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:91
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:89
 msgid "Developer Tools enabled?"
 msgstr "Kas arendustarvikud on kasutusel?"
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:92
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:90
 msgid "This value is whether developer tools is enabled or not."
 msgstr ""
 "See väärtus määratleb, kas veebiarenduseks mõeldud tarvikus on kasutusel või "
 "mitte."
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:99
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:97
 msgid "Initial Window Size"
 msgstr "Akna algne suurus"
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:100
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:98
 msgid "This value is the main window's size."
 msgstr "See väärtus näitab põhiakna suurust."
 
 #: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:8
 #: OuchBrowser/Data/UI/About.blp:6 OuchBrowser/Data/UI/Window.blp:20
-#: OuchBrowser/Data/UI/Window.blp:248 OuchBrowser/Window.cs:90
+#: OuchBrowser/Data/UI/Window.blp:250 OuchBrowser/Window.cs:91
 msgid "Ouch Browser"
 msgstr "Veebibrauser Ouch"
 
@@ -162,12 +163,12 @@ msgid "translator-credits"
 msgstr "Priit Jõerüüt"
 
 #: OuchBrowser/Data/UI/Preferences.blp:6 OuchBrowser/Data/UI/Preferences.blp:10
-#: OuchBrowser/Data/UI/Preferences.blp:117 OuchBrowser/Data/UI/Window.blp:490
+#: OuchBrowser/Data/UI/Preferences.blp:117 OuchBrowser/Data/UI/Window.blp:504
 msgid "Preferences"
 msgstr "Eelistused"
 
 #: OuchBrowser/Data/UI/Preferences.blp:97
-#: OuchBrowser/Data/UI/Preferences.blp:351
+#: OuchBrowser/Data/UI/Preferences.blp:350
 msgid "Extensions"
 msgstr "Lisamoodulid/laiendused"
 
@@ -243,37 +244,55 @@ msgstr "Teksti suurendamine"
 msgid "Zooms text and images instead of the view"
 msgstr "Vaate asemel suurenda terve vaate asemel teksti ja pilte"
 
-#: OuchBrowser/Data/UI/Preferences.blp:291
+#: OuchBrowser/Data/UI/Preferences.blp:290
 msgid "Custom Search Engines"
 msgstr "Sinu lisatud otsingumootorid"
 
-#: OuchBrowser/Data/UI/Preferences.blp:295
+#: OuchBrowser/Data/UI/Preferences.blp:294
 msgid "New Search Engine…"
 msgstr "Uus otsingumootor…"
 
-#: OuchBrowser/Data/UI/Preferences.blp:300
+#: OuchBrowser/Data/UI/Preferences.blp:299
 msgid "See !bangs preferences for more options"
 msgstr "Lisavalikud leiad !bangs käskude eelistustest"
 
-#: OuchBrowser/Data/UI/Preferences.blp:314
+#: OuchBrowser/Data/UI/Preferences.blp:313
 msgid "!bangs"
 msgstr "!bang-käsud"
 
-#: OuchBrowser/Data/UI/Preferences.blp:328
+#: OuchBrowser/Data/UI/Preferences.blp:327
 msgid "Custom Bangs"
 msgstr "Sinu lisatud bang-käsud"
 
-#: OuchBrowser/Data/UI/Preferences.blp:332
+#: OuchBrowser/Data/UI/Preferences.blp:331
 msgid "New Bang…"
 msgstr "Uus bang-otsing…"
 
-#: OuchBrowser/Data/UI/Preferences.blp:337 OuchBrowser/Data/UI/Window.blp:1049
+#: OuchBrowser/Data/UI/Preferences.blp:336 OuchBrowser/Data/UI/Window.blp:1063
 msgid "!bangs provided by Kagi"
 msgstr "!bang-käsud Kagi kogumikust"
 
-#: OuchBrowser/Data/UI/Preferences.blp:355
+#: OuchBrowser/Data/UI/Preferences.blp:354
 msgid "Select an Extension"
 msgstr "Vali lisamoodul/laiendus"
+
+#: OuchBrowser/Data/UI/RoomsOverview.blp:48
+msgid "Tabs"
+msgstr ""
+
+#: OuchBrowser/Data/UI/RoomsOverview.blp:67
+#: OuchBrowser/Data/UI/Shortcuts.blp:38 OuchBrowser/Data/UI/Window.blp:138
+#: OuchBrowser/Data/UI/Window.blp:789 OuchBrowser/Data/UI/Window.blp:884
+msgid "New Tab"
+msgstr "Uus vahekaart"
+
+#: OuchBrowser/Data/UI/RoomsOverview.blp:75
+msgid "Main"
+msgstr ""
+
+#: OuchBrowser/Data/UI/RoomsOverview.blp:88
+msgid "No Tabs Open"
+msgstr ""
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:9
 msgid "Copy Current URL"
@@ -299,11 +318,6 @@ msgstr "Käsupalett"
 msgid "Change Current Tab URL"
 msgstr "Muuda praeguse vahekaardi võrguaadressi"
 
-#: OuchBrowser/Data/UI/Shortcuts.blp:38 OuchBrowser/Data/UI/Window.blp:136
-#: OuchBrowser/Data/UI/Window.blp:775 OuchBrowser/Data/UI/Window.blp:870
-msgid "New Tab"
-msgstr "Uus vahekaart"
-
 #: OuchBrowser/Data/UI/Shortcuts.blp:43
 msgid "Search Bangs"
 msgstr "Bang-käsud otsimiseks"
@@ -312,7 +326,7 @@ msgstr "Bang-käsud otsimiseks"
 msgid "Navigation"
 msgstr "Liikumine rakenduses"
 
-#: OuchBrowser/Data/UI/Shortcuts.blp:52 OuchBrowser/Data/UI/Window.blp:191
+#: OuchBrowser/Data/UI/Shortcuts.blp:52 OuchBrowser/Data/UI/Window.blp:193
 msgid "Close Tab"
 msgstr "Sulge vahekaart"
 
@@ -352,88 +366,88 @@ msgstr "Lähtesta suum"
 msgid "Hide Sidebar"
 msgstr "Peida külgriba"
 
-#: OuchBrowser/Data/UI/Window.blp:267
+#: OuchBrowser/Data/UI/Window.blp:268
 msgid "Show Sidebar"
 msgstr "Näita külgriba"
 
-#: OuchBrowser/Data/UI/Window.blp:426
+#: OuchBrowser/Data/UI/Window.blp:429
 msgid "Menu"
 msgstr "Menüü"
 
-#: OuchBrowser/Data/UI/Window.blp:461
+#: OuchBrowser/Data/UI/Window.blp:465
 msgid "View All Tabs"
 msgstr "Vaata kõiki vahekaarte"
 
-#: OuchBrowser/Data/UI/Window.blp:525
+#: OuchBrowser/Data/UI/Window.blp:539
 msgid "Keyboard Shortcuts"
 msgstr "Klaviatuuri kiirklahvid"
 
-#: OuchBrowser/Data/UI/Window.blp:559
+#: OuchBrowser/Data/UI/Window.blp:573
 msgid "About Ouch Browser"
 msgstr "Rakenduse teave: veebibrauser Ouch"
 
-#: OuchBrowser/Data/UI/Window.blp:579
+#: OuchBrowser/Data/UI/Window.blp:593
 msgid "Back"
 msgstr "Tagasi"
 
-#: OuchBrowser/Data/UI/Window.blp:591
+#: OuchBrowser/Data/UI/Window.blp:605
 msgid "Forward"
 msgstr "Edasi"
 
-#: OuchBrowser/Data/UI/Window.blp:603 OuchBrowser/View.cs:91
+#: OuchBrowser/Data/UI/Window.blp:617 OuchBrowser/View.cs:91
 #: OuchBrowser/View.cs:164
 msgid "Refresh"
 msgstr "Laadi uuesti"
 
-#: OuchBrowser/Data/UI/Window.blp:623
+#: OuchBrowser/Data/UI/Window.blp:637
 msgid "Reveal Command Palette"
 msgstr "Näita käsupaletti"
 
-#: OuchBrowser/Data/UI/Window.blp:643
+#: OuchBrowser/Data/UI/Window.blp:657
 msgid "Copy Link"
 msgstr "Kopeeri link"
 
-#: OuchBrowser/Data/UI/Window.blp:654
+#: OuchBrowser/Data/UI/Window.blp:668
 msgid "Website Settings"
 msgstr "Veebisaidi seadistused"
 
-#: OuchBrowser/Data/UI/Window.blp:670
+#: OuchBrowser/Data/UI/Window.blp:684
 msgid "No Website Settings Available"
 msgstr "Veebisaidi seadistusi pole saadaval"
 
-#: OuchBrowser/Data/UI/Window.blp:689
+#: OuchBrowser/Data/UI/Window.blp:703
 msgid "Archive"
 msgstr "Arhiveeri"
 
-#: OuchBrowser/Data/UI/Window.blp:722
+#: OuchBrowser/Data/UI/Window.blp:736
 msgid "History"
 msgstr "Ajalugu"
 
-#: OuchBrowser/Data/UI/Window.blp:745
+#: OuchBrowser/Data/UI/Window.blp:759
 msgid "Downloads"
 msgstr "Allalaadimised"
 
-#: OuchBrowser/Data/UI/Window.blp:785
+#: OuchBrowser/Data/UI/Window.blp:799
 msgid "New…"
 msgstr "Uus…"
 
-#: OuchBrowser/Data/UI/Window.blp:818
+#: OuchBrowser/Data/UI/Window.blp:832
 msgid "New Room"
 msgstr "Uus tuba"
 
-#: OuchBrowser/Data/UI/Window.blp:841
+#: OuchBrowser/Data/UI/Window.blp:855
 msgid "New Folder"
 msgstr "Uus kaust"
 
-#: OuchBrowser/Data/UI/Window.blp:996
+#: OuchBrowser/Data/UI/Window.blp:1010
 msgid "Search or enter URL…"
 msgstr "Otsi või sisesta võrguaadress…"
 
-#: OuchBrowser/Data/UI/Window.blp:1105
+#: OuchBrowser/Data/UI/Window.blp:1119
 msgid "Go"
 msgstr "Mine"
 
-#: OuchBrowser/Data/UI/Window.blp:1120
+#: OuchBrowser/Data/UI/Window.blp:1134
 msgid "Close Palette"
 msgstr "Sulge värvipalett"
 
@@ -445,7 +459,7 @@ msgstr "Lõpeta laadimine"
 msgid "Stop Loading"
 msgstr "Lõpeta laadimine"
 
-#: OuchBrowser/Window.cs:604
+#: OuchBrowser/Window.cs:417
 msgid "Link Copied"
 msgstr "Link on kopeeritud"
 
