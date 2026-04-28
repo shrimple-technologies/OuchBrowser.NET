@@ -51,6 +51,23 @@ Adw.NavigationSplitView nsv {
 			[top]
 			Adw.HeaderBar {}
 
+			[bottom]
+			Button new_tab_button {
+				halign: center;
+				margin-top: 15;
+				margin-bottom: 15;
+
+				styles [
+					"pill",
+					"suggested-action",
+				]
+
+				Adw.ButtonContent {
+					icon-name: "tab-new-symbolic";
+					label: _("New Tab");
+				}
+			}
+
 			Adw.ViewStack view {
 				Adw.ViewStackPage {
 					name: "general";
@@ -63,26 +80,12 @@ Adw.NavigationSplitView nsv {
 							margin-end: 15;
 
 							Adw.ViewStack tab_stack {
-								Adw.ViewStackPage {
+								Adw.ViewStackPage placeholder_tab_stack {
 									name: "placeholder";
 
 									child: Adw.StatusPage {
 										icon-name: "web-symbolic";
 										title: _("No Tabs Open");
-
-										Button new_tab_button {
-											halign: center;
-
-											styles [
-												"pill",
-												"suggested-action",
-											]
-
-											Adw.ButtonContent {
-												icon-name: "tab-new-symbolic";
-												label: _("New Tab");
-											}
-										}
 									};
 								}
 

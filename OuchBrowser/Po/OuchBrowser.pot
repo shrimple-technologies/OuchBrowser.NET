@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-04-27 21:01-0400\n"
+"POT-Creation-Date: 2026-04-27 21:59-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -264,18 +264,18 @@ msgstr ""
 msgid "Tabs"
 msgstr ""
 
-#: OuchBrowser/Data/UI/RoomsOverview.blp:58
-msgid "Main"
-msgstr ""
-
-#: OuchBrowser/Data/UI/RoomsOverview.blp:71
-msgid "No Tabs Open"
-msgstr ""
-
-#: OuchBrowser/Data/UI/RoomsOverview.blp:83
+#: OuchBrowser/Data/UI/RoomsOverview.blp:67
 #: OuchBrowser/Data/UI/Shortcuts.blp:38 OuchBrowser/Data/UI/Window.blp:138
 #: OuchBrowser/Data/UI/Window.blp:789 OuchBrowser/Data/UI/Window.blp:884
 msgid "New Tab"
+msgstr ""
+
+#: OuchBrowser/Data/UI/RoomsOverview.blp:75
+msgid "Main"
+msgstr ""
+
+#: OuchBrowser/Data/UI/RoomsOverview.blp:88
+msgid "No Tabs Open"
 msgstr ""
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:9
