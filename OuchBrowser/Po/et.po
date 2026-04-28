@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
 "POT-Creation-Date: 2026-04-27 21:59-0400\n"
-"PO-Revision-Date: 2026-04-21 11:22+0000\n"
+"PO-Revision-Date: 2026-04-29 12:47+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/ouch/net/et/>\n"
 "Language: et\n"
@@ -278,7 +278,7 @@ msgstr "Vali lisamoodul/laiendus"
 
 #: OuchBrowser/Data/UI/RoomsOverview.blp:48
 msgid "Tabs"
-msgstr ""
+msgstr "Vahekaardid"
 
 #: OuchBrowser/Data/UI/RoomsOverview.blp:67
 #: OuchBrowser/Data/UI/Shortcuts.blp:38 OuchBrowser/Data/UI/Window.blp:138
@@ -288,11 +288,11 @@ msgstr "Uus vahekaart"
 
 #: OuchBrowser/Data/UI/RoomsOverview.blp:75
 msgid "Main"
-msgstr ""
+msgstr "Põhimenüü"
 
 #: OuchBrowser/Data/UI/RoomsOverview.blp:88
 msgid "No Tabs Open"
-msgstr ""
+msgstr "Ühtegi vahekaarti pole avatud"
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:9
 msgid "Copy Current URL"
