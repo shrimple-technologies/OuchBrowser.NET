@@ -401,7 +401,7 @@ Adw.TabOverview overview {
 
 							Adw.TabButton {
 								view: tabview;
-								action-name: "overview.open";
+								action-name: "win.rooms";
 								focus-on-click: false;
 								hexpand: true;
 							}
@@ -450,19 +450,30 @@ Adw.TabOverview overview {
 						Button {
 							hexpand: true;
 							focus-on-click: false;
-							action-name: "overview.open";
+							action-name: "win.rooms";
 
-							Box {
-								halign: start;
-								spacing: 10;
+							CenterBox {
+								start-widget: Box {
+									halign: start;
+									spacing: 10;
 
-								Image {
-									icon-name: "view-grid-symbolic";
-								}
+									Image {
+										icon-name: "view-grid-symbolic";
+									}
 
-								Label {
-									label: _("View All Tabs");
-								}
+									Label {
+										label: _("View All Tabs");
+									}
+								};
+
+								end-widget: Adw.ShortcutLabel {
+									accelerator: "<Ctrl><Shift>backslash";
+
+									styles [
+										"dimmed",
+										"compact",
+									]
+								};
 							}
 
 							styles [

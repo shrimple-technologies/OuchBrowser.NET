@@ -5,7 +5,7 @@ alias pot := generate-pot
 
 PREFIX := "/usr"
 ID := "site.srht.shrimple.OuchBrowser"
-BLUEPRINT_FILES := "OuchBrowser/Data/UI/Window.blp OuchBrowser/Data/UI/Preferences.blp OuchBrowser/Data/UI/About.blp OuchBrowser/Data/UI/Shortcuts.blp"
+BLUEPRINT_FILES := "OuchBrowser/Data/UI/Window.blp OuchBrowser/Data/UI/Preferences.blp OuchBrowser/Data/UI/About.blp OuchBrowser/Data/UI/Shortcuts.blp OuchBrowser/Data/UI/RoomsOverview.blp"
 
 run: build-blueprint compile-resources
 	dotnet run --project OuchBrowser

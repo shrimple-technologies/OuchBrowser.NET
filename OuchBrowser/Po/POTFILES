@@ -3,6 +3,7 @@ OuchBrowser/Data/OuchBrowser.gschema.xml
 OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml
 OuchBrowser/Data/UI/About.blp
 OuchBrowser/Data/UI/Preferences.blp
+OuchBrowser/Data/UI/RoomsOverview.blp
 OuchBrowser/Data/UI/Shortcuts.blp
 OuchBrowser/Data/UI/Window.blp
 OuchBrowser/Program.cs

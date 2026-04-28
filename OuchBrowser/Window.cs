@@ -52,6 +52,7 @@ internal partial class Window : Adw.ApplicationWindow
 	private Preferences? preferences;
 	private Adw.AboutDialog? about;
 	private ShortcutsDialog? shortcuts;
+	private RoomsOverview? rooms;
 	private Bangs? bangs;
 	private View? view;
 
@@ -115,6 +116,7 @@ internal partial class Window : Adw.ApplicationWindow
 		preferences = new Preferences(this);
 		about = About.New();
 		shortcuts = Shortcuts.New();
+		rooms = new RoomsOverview(this);
 		view = new View(tabview!, this);
 		bangs = new Bangs(settings.GetString("search-engine"));
 
@@ -245,6 +247,11 @@ internal partial class Window : Adw.ApplicationWindow
 		actions.AddAction("shortcuts", ["<Ctrl>question"], (action, parameter) =>
 		{
 			shortcuts!.Present(this);
+		});
+
+		actions.AddAction("rooms", ["<Ctrl><Shift>bar"], (action, parameter) =>
+		{
+			rooms!.Present(this);
 		});
 
 		actions.AddAction("refresh", ["<Ctrl>r"], (_, _) =>
