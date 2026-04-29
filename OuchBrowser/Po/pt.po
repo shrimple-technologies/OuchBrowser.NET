@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-04-27 21:59-0400\n"
+"POT-Creation-Date: 2026-04-28 20:40-0400\n"
 "PO-Revision-Date: 2025-08-13 22:02+0000\n"
 "Last-Translator: ssantos <ssantos@web.de>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/ouch/net/pt/"
@@ -314,6 +314,7 @@ msgid "Navigation"
 msgstr ""
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:52 OuchBrowser/Data/UI/Window.blp:193
+#: OuchBrowser/UI/RoomsOverview.cs:58
 #, fuzzy
 #| msgid "New tab"
 msgid "Close Tab"
