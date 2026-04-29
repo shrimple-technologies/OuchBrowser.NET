@@ -9,37 +9,9 @@ Adw.NavigationSplitView nsv {
 			[top]
 			Adw.HeaderBar {}
 
-			Box {
-				orientation: vertical;
-				margin-bottom: 10;
+			Adw.ViewSwitcherSidebar {
 				margin-end: 10;
-				spacing: 6;
-
-				ListView listview {
-					vexpand: true;
-					model: bind view.pages;
-
-					factory: BuilderListItemFactory {
-						template ListItem {
-							child: Box {
-								margin-start: 5;
-								spacing: 10;
-
-								Image {
-									icon-name: bind template.item as <Adw.ViewStackPage>.icon-name;
-								}
-
-								Label {
-									label: bind template.item as <Adw.ViewStackPage>.title;
-								}
-							};
-						}
-					};
-
-					styles [
-						"navigation-sidebar",
-					]
-				}
+				stack: bind view;
 			}
 		}
 	};
