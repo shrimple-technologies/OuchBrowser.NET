@@ -51,15 +51,28 @@ internal class RoomsOverview : Adw.Dialog
 					tab_stack.SetVisibleChildName("tabs");
 					TabPage tabpage = window.tabview!.GetNthPage(i)!;
 					Adw.ActionRow row = Adw.ActionRow.New();
-
+					Button btn = Button.NewFromIconName("cross-large-symbolic");
+					
+					btn.AddCssClass("flat");
+					btn.SetValign(Gtk.Align.Center);
+					btn.SetTooltipText(__("Close Tab"));
+					btn.OnClicked += (_, _) =>
+					{
+						Close();
+						window.tabview.SetSelectedPage(tabpage);
+						window.ActivateAction("tab-close", null);
+					};
+					
+					row.SetActivatable(true);
 					row.SetUseMarkup(false);
 					row.SetTitle(tabpage.GetTitle());
 					row.SetSubtitle(tabpage.GetKeyword()!);
 					row.AddPrefix(Gtk.Image.NewFromGicon(tabpage.GetIcon()!));
-					row.OnActivate += (_, _) =>
+					row.AddSuffix(btn);
+					row.OnActivated += (_, _) =>
 					{
-						window.tabview.SetSelectedPage(tabpage);
 						Close();
+						window.tabview.SetSelectedPage(tabpage);
 					};
 
 					lb.Append(row);
