@@ -51,34 +51,26 @@
 			!bangs support, a multi-purpose command palette, and mobile
 			support.
 		</p>
-		<p
-		>NOTE: This is the C# rewrite, which is constantly evolving, and may be less stable than the original codebase.</p>
+		<p>
+			NOTE: This is the C# rewrite, which is constantly evolving, and may be less stable than the original codebase.
+		</p>
 	</description>
 	<provides>
 		<mediatype>text/html</mediatype>
 	</provides>
 	<url type="homepage">https://shrimple.srht.site/blog/ouch/</url>
-	<url
-		type="bugtracker"
-	>https://codeberg.org/shrimple/OuchBrowser.NET/issues</url>
-	<url
-		type="vcs-browser"
-	>https://codeberg.org/shrimple/OuchBrowser.NET</url>
-	<url
-		type="translate"
-	>https://hosted.weblate.org/projects/ouch/net/</url>
+	<url type="bugtracker">https://codeberg.org/shrimple/OuchBrowser.NET/issues</url>
+	<url type="vcs-browser">https://codeberg.org/shrimple/OuchBrowser.NET</url>
+	<url type="translate">https://hosted.weblate.org/projects/ouch/net/</url>
 	<screenshots>
 		<screenshot type="default">
-			<image
-			>https://codeberg.org/shrimple/OuchBrowser.NET/raw/branch/main/OuchBrowser/Screenshots/Screenshot%20with%20Sidebar%20Open.png</image>
+			<image>https://codeberg.org/shrimple/OuchBrowser.NET/raw/branch/main/OuchBrowser/Data/Screenshots/Screenshot%20with%20Sidebar%20Open.png</image>
 		</screenshot>
 		<screenshot>
-			<image
-			>https://codeberg.org/shrimple/OuchBrowser.NET/raw/branch/main/OuchBrowser/Screenshots/Screenshot%20with%20Sidebar%20Closed.png</image>
+			<image>https://codeberg.org/shrimple/OuchBrowser.NET/raw/branch/main/OuchBrowser/Data/Screenshots/Screenshot%20with%20Sidebar%20Closed.png</image>
 		</screenshot>
 		<screenshot>
-			<image
-			>https://codeberg.org/shrimple/OuchBrowser.NET/raw/branch/main/OuchBrowser/Screenshots/Screenshot%20with%20Command%20Palette%20Open.png</image>
+			<image>https://codeberg.org/shrimple/OuchBrowser.NET/raw/branch/main/OuchBrowser/Data/Screenshots/Screenshot%20with%20Command%20Palette%20Open.png</image>
 		</screenshot>
 	</screenshots>
 </component>
