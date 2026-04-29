@@ -8,7 +8,7 @@
 
 Name: OuchBrowser
 Version: 0.1.0
-Release: 0.%{build_timestamp}%{?dist}
+Release: 0.%{build_timestamp}%{?buildtag}%{?dist}
 Summary: Focus on your browsing
 License: GPL-3.0-or-later
 URL: https://codeberg.org/shrimple/OuchBrowser.NET
