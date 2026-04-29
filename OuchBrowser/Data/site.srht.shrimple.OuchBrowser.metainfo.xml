@@ -2,9 +2,7 @@
 <component type="desktop-application">
 	<id>site.srht.shrimple.OuchBrowser</id>
 	<icon type="stock">site.srht.shrimple.OuchBrowser</icon>
-	<launchable
-		type="desktop-id"
-	>site.srht.shrimple.OuchBrowser.desktop</launchable>
+	<launchable type="desktop-id">site.srht.shrimple.OuchBrowser.desktop</launchable>
 	<name>Ouch Browser</name>
 	<developer id="site.srht.shrimple">
 		<name>Shrimple Technologies</name>
