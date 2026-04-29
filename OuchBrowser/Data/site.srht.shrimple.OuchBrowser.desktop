@@ -1,7 +1,13 @@
 [Desktop Entry]
 Type=Application
 Name=Ouch Browser
+Name[et]=Veebibrauser Ouch
+Name[nb_NO]=Ouch-nettleseren
 Comment=Focus on your browsing
+Comment[et]=Keskendu veebis surfamisele
+Comment[nb_NO]=Fokus på surfingen
+Comment[pt]=Foco na sua navegação
+Comment[pt_BR]=Concentre-se na sua Navegação
 Exec=OuchBrowser
 Icon=site.srht.shrimple.OuchBrowser
 Terminal=false
