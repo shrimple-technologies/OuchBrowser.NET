@@ -103,7 +103,7 @@ internal partial class Window : Adw.ApplicationWindow
 						"initial-size",
 						GLib.Variant.NewTuple([
 							GLib.Variant.NewInt32(DefaultWidth),
-								GLib.Variant.NewInt32(DefaultHeight)
+							GLib.Variant.NewInt32(DefaultHeight)
 						])
 					);
 					break;
