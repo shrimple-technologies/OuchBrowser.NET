@@ -16,12 +16,6 @@ frame {
 	min-height: 34px;
 }
 
-toggle-group > separator {
-	/* conventional methods for this like `display: none` don't work in GTK,
-	   therefore the opacity must be lowered */
-	opacity: 0;
-}
-
 .command-palette {
 	font-size: 20px;
 	min-height: 40px;

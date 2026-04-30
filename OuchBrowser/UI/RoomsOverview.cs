@@ -30,7 +30,7 @@ internal class RoomsOverview : Adw.Dialog
 
 		ViewStackPage page = view!.GetPage(view!.GetVisibleChild()!);
 		nsv!.GetContent()!.SetTitle(page!.GetTitle()!);
-		
+
 		new_tab_button.OnClicked += (_, _) =>
 		{
 			Close();
@@ -52,7 +52,7 @@ internal class RoomsOverview : Adw.Dialog
 					TabPage tabpage = window.tabview!.GetNthPage(i)!;
 					Adw.ActionRow row = Adw.ActionRow.New();
 					Button btn = Button.NewFromIconName("cross-large-symbolic");
-					
+
 					btn.AddCssClass("flat");
 					btn.SetValign(Gtk.Align.Center);
 					btn.SetTooltipText(__("Close Tab"));
@@ -62,7 +62,7 @@ internal class RoomsOverview : Adw.Dialog
 						window.tabview.SetSelectedPage(tabpage);
 						window.ActivateAction("tab-close", null);
 					};
-					
+
 					row.SetActivatable(true);
 					row.SetUseMarkup(false);
 					row.SetTitle(tabpage.GetTitle());

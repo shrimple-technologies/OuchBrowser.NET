@@ -150,63 +150,78 @@ Adw.TabOverview overview {
 										]
 									}
 
-									ScrolledWindow {
-										Box {
-											orientation: vertical;
-											margin-end: 10;
+									Adw.Carousel rooms {
+										allow-long-swipes: false;
+										allow-mouse-drag: false;
+									
+										ScrolledWindow {
+											hexpand: true;
+										
+											Box {
+												orientation: vertical;
+												margin-end: 10;
 
-											ListView tabs {
-												vexpand: true;
-												model: bind tabview.pages;
+												ListView tabs {
+													vexpand: true;
+													model: bind tabview.pages;
 
-												factory: BuilderListItemFactory {
-													template ListItem {
-														child: CenterBox {
-															start-widget: Box {
-																spacing: 10;
+													factory: BuilderListItemFactory {
+														template ListItem {
+															child: CenterBox {
+																start-widget: Box {
+																	spacing: 10;
 
-																Image tab_icon {
-																	gicon: bind template.item as <Adw.TabPage>.icon;
-																	visible: bind spinner.visible inverted;
-																}
+																	Image tab_icon {
+																		gicon: bind template.item as <Adw.TabPage>.icon;
+																		visible: bind spinner.visible inverted;
+																	}
 
-																Adw.Spinner spinner {
-																	width-request: 16;
-																	height-request: 16;
-																	visible: bind template.item as <Adw.TabPage>.loading;
-																}
+																	Adw.Spinner spinner {
+																		width-request: 16;
+																		height-request: 16;
+																		visible: bind template
+																			.item as <Adw.TabPage>
+																			.loading;
+																	}
 
-																Label {
-																	label: bind template.item as <Adw.TabPage>.title;
-																	ellipsize: end;
-																	halign: start;
-																	hexpand: true;
-																	tooltip-text: bind template.item as <Adw.TabPage>.title;
-																}
+																	Label {
+																		label: bind template
+																			.item as <Adw.TabPage>
+																			.title;
+																		ellipsize: end;
+																		halign: start;
+																		hexpand: true;
+																		tooltip-text: bind template
+																			.item as <Adw.TabPage>
+																			.title;
+																	}
+																};
+
+																end-widget: Button {
+																	icon-name: "window-close-symbolic";
+																	valign: center;
+																	margin-start: 2;
+																	visible: bind template
+																		.item as <Adw.TabPage>
+																		.selected;
+																	tooltip-text: _("Close Tab");
+																	action-name: "win.tab-close";
+																	focus-on-click: false;
+
+																	styles [
+																		"flat",
+																		"circular",
+																		"tab-close",
+																	]
+																};
 															};
+														}
+													};
 
-															end-widget: Button {
-																icon-name: "window-close-symbolic";
-																valign: center;
-																margin-start: 2;
-																visible: bind template.item as <Adw.TabPage>.selected;
-																tooltip-text: _("Close Tab");
-																action-name: "win.tab-close";
-																focus-on-click: false;
-
-																styles [
-																	"flat",
-																	"circular",
-																	"tab-close",
-																]
-															};
-														};
-													}
-												};
-
-												styles [
-													"navigation-sidebar",
-												]
+													styles [
+														"navigation-sidebar",
+													]
+												}
 											}
 										}
 									}
@@ -222,19 +237,10 @@ Adw.TabOverview overview {
 										id: "menu-archive";
 									};
 
-									/* center-widget: Adw.ToggleGroup {
-								active-name: "space-1";
+									center-widget: Adw.CarouselIndicatorDots {
+										carousel: rooms;
+									};
 
-								Adw.Toggle {
-									icon-name: "dot-symbolic";
-									name: "space-1";
-								}
-
-								Adw.Toggle {
-									icon-name: "dot-symbolic";
-									name: "space-2";
-								}
-							}; */
 									end-widget: Adw.LayoutSlot {
 										id: "menu-new";
 									};
