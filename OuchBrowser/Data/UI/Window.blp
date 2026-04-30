@@ -133,12 +133,16 @@ Adw.TabOverview overview {
 											Image {
 												icon-name: "list-add-symbolic";
 
+												accessibility {
+													labelled-by: _new_tab_label;
+												}
+
 												styles [
 													"dimmed",
 												]
 											}
 
-											Label {
+											Label _new_tab_label {
 												label: _("New Tab");
 
 												styles [
@@ -316,7 +320,7 @@ Adw.TabOverview overview {
 													margin-bottom: 5;
 													ellipsize: middle;
 													max-width-chars: 50;
-													
+
 													styles [
 														"caption",
 														"font-medium",
@@ -1056,6 +1060,10 @@ Adw.Dialog url_dialog {
 						child: Image url_favicon {
 							pixel-size: 20;
 							margin-start: 10;
+
+							accessibility {
+								label: _("Website");
+							}
 						};
 					}
 				}
