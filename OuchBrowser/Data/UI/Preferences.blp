@@ -13,34 +13,9 @@ Adw.NavigationSplitView nsv {
 					[top]
 					Adw.HeaderBar {}
 
-					ScrolledWindow {
-						ListView listview {
-							margin-bottom: 10;
-							margin-end: 10;
-							vexpand: true;
-							model: bind view.pages;
-
-							factory: BuilderListItemFactory {
-								template ListItem {
-									child: Box {
-										margin-start: 5;
-										spacing: 10;
-
-										Image {
-											icon-name: bind template.item as <Adw.ViewStackPage>.icon-name;
-										}
-
-										Label {
-											label: bind template.item as <Adw.ViewStackPage>.title;
-										}
-									};
-								}
-							};
-
-							styles [
-								"navigation-sidebar",
-							]
-						}
+					Adw.ViewSwitcherSidebar {
+						margin-end: 10;
+						stack: bind view;
 					}
 				}
 			}
