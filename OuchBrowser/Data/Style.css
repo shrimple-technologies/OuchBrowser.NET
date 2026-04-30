@@ -13,6 +13,7 @@ frame {
 	margin-left: 10px;
 	margin-right: 0;
 	padding-right: 4px;
+	min-height: 34px;
 }
 
 toggle-group > separator {
