@@ -22,6 +22,7 @@
 	</gresource>
 
 	<gresource prefix="/site/srht/shrimple/OuchBrowser/icons/scalable/actions/">
+		<file preprocess="xml-stripblanks" alias="accessibility-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/accessibility-symbolic.svg</file>
 		<file preprocess="xml-stripblanks" alias="archive-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/archive-symbolic.svg</file>
 		<file preprocess="xml-stripblanks" alias="box-dotted-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/box-dotted-symbolic.svg</file>
 		<file preprocess="xml-stripblanks" alias="chain-link-loose-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/chain-link-loose-symbolic.svg</file>
@@ -37,5 +38,6 @@
 		<file preprocess="xml-stripblanks" alias="shoe-box-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/shoe-box-symbolic.svg</file>
 		<file preprocess="xml-stripblanks" alias="sliders-horizontal-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/sliders-horizontal-symbolic.svg</file>
 		<file preprocess="xml-stripblanks" alias="web-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/web-symbolic.svg</file>
+		<file preprocess="xml-stripblanks" alias="zoom-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/zoom-symbolic.svg</file>
 	</gresource>
 </gresources>
