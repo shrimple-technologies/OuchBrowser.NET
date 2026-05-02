@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-04-30 16:30-0400\n"
+"POT-Creation-Date: 2026-05-02 00:10-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -264,18 +264,19 @@ msgstr ""
 msgid "Tabs"
 msgstr ""
 
-#: OuchBrowser/Data/UI/RoomsOverview.blp:39
+#: OuchBrowser/Data/UI/RoomsOverview.blp:33
+#: OuchBrowser/Data/UI/RoomsOverview.blp:51
 #: OuchBrowser/Data/UI/Shortcuts.blp:38 OuchBrowser/Data/UI/Window.blp:127
 #: OuchBrowser/Data/UI/Window.blp:146 OuchBrowser/Data/UI/Window.blp:841
 #: OuchBrowser/Data/UI/Window.blp:936
 msgid "New Tab"
 msgstr ""
 
-#: OuchBrowser/Data/UI/RoomsOverview.blp:47
+#: OuchBrowser/Data/UI/RoomsOverview.blp:59
 msgid "Main"
 msgstr ""
 
-#: OuchBrowser/Data/UI/RoomsOverview.blp:60
+#: OuchBrowser/Data/UI/RoomsOverview.blp:72
 msgid "No Tabs Open"
 msgstr ""
 
@@ -312,7 +313,7 @@ msgid "Navigation"
 msgstr ""
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:52 OuchBrowser/Data/UI/Window.blp:208
-#: OuchBrowser/UI/RoomsOverview.cs:58
+#: OuchBrowser/UI/RoomsOverview.cs:65
 msgid "Close Tab"
 msgstr ""
 
