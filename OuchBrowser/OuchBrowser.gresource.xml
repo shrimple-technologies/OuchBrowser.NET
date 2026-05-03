@@ -6,7 +6,6 @@
 	</gresource>
 
 	<gresource prefix="/site/srht/shrimple/OuchBrowser/ui">
-		<file preprocess="xml-stripblanks" alias="about.ui">Data/UI/About.ui</file>
 		<file preprocess="xml-stripblanks" alias="preferences.ui">Data/UI/Preferences.ui</file>
 		<file preprocess="xml-stripblanks" alias="rooms_overview.ui">Data/UI/RoomsOverview.ui</file>
 		<file preprocess="xml-stripblanks" alias="shortcuts.ui">Data/UI/Shortcuts.ui</file>
