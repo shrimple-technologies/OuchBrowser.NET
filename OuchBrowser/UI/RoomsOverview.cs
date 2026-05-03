@@ -12,6 +12,7 @@ internal class RoomsOverview : Adw.Dialog
 	[Connect] private readonly ViewStack? tab_stack;
 	[Connect] private readonly Button? new_tab_button;
 	[Connect] private readonly Button? new_tab_button_mobile;
+	[Connect] private readonly WindowTitle? wt;
 #pragma warning restore CS0649
 
 	public RoomsOverview(Window window) : base()
@@ -83,6 +84,15 @@ internal class RoomsOverview : Adw.Dialog
 					};
 
 					lb.Append(row);
+				}
+
+				if (window.tabview!.GetNPages() > 0)
+				{
+					wt!.SetSubtitle(N__("{0} tab", "{0} tabs", window.tabview!.GetNPages()));
+				}
+				else
+				{
+					wt!.SetSubtitle("");
 				}
 			}
 		};

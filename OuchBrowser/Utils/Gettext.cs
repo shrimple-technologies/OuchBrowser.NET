@@ -12,6 +12,6 @@ internal static class Gettext
 	public static string __(string msgid, params object[] args)
 		=> catalog.GetString(msgid, args);
 
-	public static string __n(string msgid, string plural, long n)
+	public static string N__(string msgid, string plural, long n)
 		=> catalog.GetPluralString(msgid, plural, n);
 }

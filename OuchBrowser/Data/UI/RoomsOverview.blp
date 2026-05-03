@@ -33,6 +33,10 @@ Adw.NavigationSplitView nsv {
 						label: _("New Tab");
 					}
 				}
+
+				title-widget: Adw.WindowTitle wt {
+					title: _("Main");
+				};
 			}
 
 			[bottom]
@@ -54,7 +58,7 @@ Adw.NavigationSplitView nsv {
 
 			Adw.ViewStack view {
 				Adw.ViewStackPage {
-					name: "general";
+					name: "main";
 					icon-name: "dot-symbolic";
 					title: _("Main");
 

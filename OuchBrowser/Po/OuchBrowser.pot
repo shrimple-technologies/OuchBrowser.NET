@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-05-03 05:01-0400\n"
+"POT-Creation-Date: 2026-05-03 11:27-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
 #: OuchBrowser/CommandPalette.cs:35
 #, csharp-format
@@ -259,18 +260,19 @@ msgid "Tabs"
 msgstr ""
 
 #: OuchBrowser/Data/UI/RoomsOverview.blp:33
-#: OuchBrowser/Data/UI/RoomsOverview.blp:51
+#: OuchBrowser/Data/UI/RoomsOverview.blp:55
 #: OuchBrowser/Data/UI/Shortcuts.blp:38 OuchBrowser/Data/UI/Window.blp:127
 #: OuchBrowser/Data/UI/Window.blp:146 OuchBrowser/Data/UI/Window.blp:841
 #: OuchBrowser/Data/UI/Window.blp:936
 msgid "New Tab"
 msgstr ""
 
-#: OuchBrowser/Data/UI/RoomsOverview.blp:59
+#: OuchBrowser/Data/UI/RoomsOverview.blp:38
+#: OuchBrowser/Data/UI/RoomsOverview.blp:63
 msgid "Main"
 msgstr ""
 
-#: OuchBrowser/Data/UI/RoomsOverview.blp:72
+#: OuchBrowser/Data/UI/RoomsOverview.blp:76
 msgid "No Tabs Open"
 msgstr ""
 
@@ -307,7 +309,7 @@ msgid "Navigation"
 msgstr ""
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:52 OuchBrowser/Data/UI/Window.blp:208
-#: OuchBrowser/UI/RoomsOverview.cs:65
+#: OuchBrowser/UI/RoomsOverview.cs:66
 msgid "Close Tab"
 msgstr ""
 
@@ -445,6 +447,13 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 
+#: OuchBrowser/UI/RoomsOverview.cs:91
+#, csharp-format
+msgid "{0} tab"
+msgid_plural "{0} tabs"
+msgstr[0] ""
+msgstr[1] ""
+
 #: OuchBrowser/View.cs:86 OuchBrowser/View.cs:127 OuchBrowser/View.cs:142
 msgid "Stop Loading"
 msgstr ""
@@ -466,6 +475,6 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: OuchBrowser/Window.cs:442
+#: OuchBrowser/Window.cs:446
 msgid "Link Copied"
 msgstr ""
