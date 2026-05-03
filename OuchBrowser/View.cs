@@ -8,6 +8,7 @@ internal class View
 {
 	public readonly TabView view;
 	private readonly Window win;
+	private string layout = "default";
 
 	public View(TabView tabview, Window window)
 	{
@@ -206,11 +207,12 @@ internal class View
 			{
 				if (window.IsFullscreen())
 				{
+					layout = window.mlv!.GetLayoutName()!;
 					window.mlv!.SetLayoutName("fullscreen");
 				}
 				else
 				{
-					window.mlv!.SetLayoutName("default");
+					window.mlv!.SetLayoutName(layout);
 				}
 			}
 		};
