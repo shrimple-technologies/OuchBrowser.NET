@@ -49,7 +49,7 @@ public enum BangCategory
 	News,
 	[EnumMember(Value = "Online Services")]
 	OnlineServices,
-	[EnumMember(Value = "Region Search")]
+	[EnumMember(Value = "Region search")]
 	RegionSearch,
 	Research,
 	Shopping,

@@ -21,10 +21,11 @@ internal class Bangs
 		};
 
 		EmbeddedResource.Load("Bangs.json", out string list);
-		// EmbeddedResource.Load("Bangs.Kagi.json", out string list_kagi);
-		// List<Bang> bangs_kagi = JsonSerializer.Deserialize<List<Bang>>(list_kagi, options)!;
+		EmbeddedResource.Load("Bangs.Kagi.json", out string list_kagi);
+		List<Bang> bangs_kagi = JsonSerializer.Deserialize<List<Bang>>(list_kagi, options)!;
 		bangs = JsonSerializer.Deserialize<List<Bang>>(list, options)!;
-		// bangs.AddRange(bangs_kagi);
+		bangs.AddRange(bangs_kagi);
+		bangs = bangs.Where(n => n.Category != "Region search").ToList();
 
 		default_search = fallback;
 	}
@@ -39,12 +40,16 @@ internal class Bangs
 			{
 				string template_url = bang.TemplateUrl;
 
-				if (bang.TemplateUrl.StartsWith('/'))
+				if (bang.TemplateUrl.StartsWith('/') && bang.Domain != "kagi.com")
 				{
 					var query_params = HttpUtility.ParseQueryString(template_url.Replace("/search", ""));
 					template_url = default_search + query_params["q"]!;
 				}
-				
+				else if (bang.TemplateUrl.StartsWith('/') && bang.Domain == "kagi.com")
+				{
+					template_url = "https://kagi.com" + template_url;
+				}
+
 				string query = string.Join(" ", text.Split(' ').Skip(1));
 				return template_url.Replace("{{{s}}}", Uri.EscapeDataString(query));
 			}
