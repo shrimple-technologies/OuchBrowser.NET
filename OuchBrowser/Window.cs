@@ -183,7 +183,7 @@ internal partial class Window : Adw.ApplicationWindow
 				{
 					if (args.Response == "close_all_tabs") Destroy();
 				};
-				
+
 				alert.Present(this);
 			}
 

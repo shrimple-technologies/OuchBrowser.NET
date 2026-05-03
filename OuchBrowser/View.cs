@@ -83,7 +83,7 @@ internal class View
 
 				if (webview.GetIsLoading())
 				{
-					win.refresh!.SetTooltipText(__("Stop loading"));
+					win.refresh!.SetTooltipText(__("Stop Loading"));
 					win.refresh!.SetIconName("cross-large-symbolic");
 				}
 				else
