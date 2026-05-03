@@ -3,6 +3,7 @@
 
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Web;
 using OuchBrowser.Types;
 
 namespace OuchBrowser.Utils;
@@ -20,10 +21,10 @@ internal class Bangs
 		};
 
 		EmbeddedResource.Load("Bangs.json", out string list);
-		EmbeddedResource.Load("Bangs.Kagi.json", out string list_kagi);
-		List<Bang> bangs_kagi = JsonSerializer.Deserialize<List<Bang>>(list_kagi, options)!;
+		// EmbeddedResource.Load("Bangs.Kagi.json", out string list_kagi);
+		// List<Bang> bangs_kagi = JsonSerializer.Deserialize<List<Bang>>(list_kagi, options)!;
 		bangs = JsonSerializer.Deserialize<List<Bang>>(list, options)!;
-		bangs.AddRange(bangs_kagi);
+		// bangs.AddRange(bangs_kagi);
 
 		default_search = fallback;
 	}
@@ -36,8 +37,16 @@ internal class Bangs
 		{
 			if (trigger == bang.Trigger || (bang.AdditionalTriggers != null && bang.AdditionalTriggers.Contains(trigger)))
 			{
+				string template_url = bang.TemplateUrl;
+
+				if (bang.TemplateUrl.StartsWith('/'))
+				{
+					var query_params = HttpUtility.ParseQueryString(template_url.Replace("/search", ""));
+					template_url = default_search + query_params["q"]!;
+				}
+				
 				string query = string.Join(" ", text.Split(' ').Skip(1));
-				return bang.TemplateUrl.Replace("{{{s}}}", Uri.EscapeDataString(query));
+				return template_url.Replace("{{{s}}}", Uri.EscapeDataString(query));
 			}
 		}
 
