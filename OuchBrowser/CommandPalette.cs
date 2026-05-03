@@ -308,7 +308,6 @@ internal partial class Window
 			}
 
 			url_dialog!.Close();
-			overview!.SetOpen(false);
 		};
 	}
 }

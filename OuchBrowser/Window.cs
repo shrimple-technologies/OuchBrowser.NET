@@ -16,7 +16,6 @@ internal partial class Window : Adw.ApplicationWindow
 	[Connect] public readonly Frame? frame;
 	[Connect] public readonly Label? hostname;
 	[Connect] public readonly OverlaySplitView? osv;
-	[Connect] public readonly TabOverview? overview;
 	[Connect] public readonly ToggleButton? sidebar_toggle;
 	[Connect] public readonly ToolbarView? sidebar_toolbar;
 	[Connect] public readonly ToastOverlay? toast_overlay;
@@ -65,7 +64,7 @@ internal partial class Window : Adw.ApplicationWindow
 		builder.AddFromResource("/site/srht/shrimple/OuchBrowser/ui/window.ui");
 		builder.Connect(this);
 
-		Content = builder.GetObject("overview") as Widget;
+		Content = builder.GetObject("toast_overlay") as Widget;
 		Application = app;
 
 		var hover_controller_topbar = EventControllerMotion.New();
@@ -148,12 +147,6 @@ internal partial class Window : Adw.ApplicationWindow
 		HandlePaletteUpdate();
 		HandlePaletteActivate();
 
-		overview!.OnCreateTab += (_, _) =>
-		{
-			ActivateAction("palette-new", null);
-			return tabview!.GetSelectedPage()!;
-		};
-
 		Present();
 
 		if (settings.GetStrv("restore-tabs").Length == 0)
@@ -201,8 +194,6 @@ internal partial class Window : Adw.ApplicationWindow
 
 		actions.AddAction("palette-new", ["<Ctrl>t"], (_, _) =>
 		{
-			overview!.SetOpen(false);
-
 			EntryBuffer buffer = EntryBuffer.New("", -1);
 			url_entry!.SetBuffer(buffer);
 			url_dialog!.Present(this);
