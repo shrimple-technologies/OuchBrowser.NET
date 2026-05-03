@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-05-03 05:01-0400\n"
+"POT-Creation-Date: 2026-05-03 11:27-0400\n"
 "PO-Revision-Date: 2026-04-29 12:47+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/ouch/net/et/>\n"
@@ -274,18 +274,19 @@ msgid "Tabs"
 msgstr "Vahekaardid"
 
 #: OuchBrowser/Data/UI/RoomsOverview.blp:33
-#: OuchBrowser/Data/UI/RoomsOverview.blp:51
+#: OuchBrowser/Data/UI/RoomsOverview.blp:55
 #: OuchBrowser/Data/UI/Shortcuts.blp:38 OuchBrowser/Data/UI/Window.blp:127
 #: OuchBrowser/Data/UI/Window.blp:146 OuchBrowser/Data/UI/Window.blp:841
 #: OuchBrowser/Data/UI/Window.blp:936
 msgid "New Tab"
 msgstr "Uus vahekaart"
 
-#: OuchBrowser/Data/UI/RoomsOverview.blp:59
+#: OuchBrowser/Data/UI/RoomsOverview.blp:38
+#: OuchBrowser/Data/UI/RoomsOverview.blp:63
 msgid "Main"
 msgstr "Põhimenüü"
 
-#: OuchBrowser/Data/UI/RoomsOverview.blp:72
+#: OuchBrowser/Data/UI/RoomsOverview.blp:76
 msgid "No Tabs Open"
 msgstr "Ühtegi vahekaarti pole avatud"
 
@@ -322,7 +323,7 @@ msgid "Navigation"
 msgstr "Liikumine rakenduses"
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:52 OuchBrowser/Data/UI/Window.blp:208
-#: OuchBrowser/UI/RoomsOverview.cs:65
+#: OuchBrowser/UI/RoomsOverview.cs:66
 msgid "Close Tab"
 msgstr "Sulge vahekaart"
 
@@ -465,6 +466,13 @@ msgstr "Sulge värvipalett"
 msgid "translator-credits"
 msgstr "Priit Jõerüüt"
 
+#: OuchBrowser/UI/RoomsOverview.cs:91
+#, csharp-format
+msgid "{0} tab"
+msgid_plural "{0} tabs"
+msgstr[0] ""
+msgstr[1] ""
+
 #: OuchBrowser/View.cs:86 OuchBrowser/View.cs:127 OuchBrowser/View.cs:142
 msgid "Stop Loading"
 msgstr "Lõpeta laadimine"
@@ -488,7 +496,7 @@ msgstr "Sulge vahekaart"
 msgid "Cancel"
 msgstr ""
 
-#: OuchBrowser/Window.cs:442
+#: OuchBrowser/Window.cs:446
 msgid "Link Copied"
 msgstr "Link on kopeeritud"
 
