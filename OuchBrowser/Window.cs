@@ -465,8 +465,8 @@ internal partial class Window : Adw.ApplicationWindow
 		);
 		Breakpoint breakpoint = Breakpoint.New(condition);
 
-		GObject.Value number = new GObject.Value();
-		GObject.Value str = new GObject.Value();
+		GObject.Value number = new();
+		GObject.Value str = new();
 		number.Init(GObject.Type.Int);
 		str.Init(GObject.Type.String);
 

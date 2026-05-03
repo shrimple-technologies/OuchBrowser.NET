@@ -245,8 +245,8 @@ internal class Preferences : Adw.Dialog
 		);
 		Breakpoint breakpoint = Breakpoint.New(condition);
 
-		GObject.Value boolean = new GObject.Value();
-		GObject.Value number = new GObject.Value();
+		GObject.Value boolean = new();
+		GObject.Value number = new();
 		boolean.Init(GObject.Type.Boolean);
 		number.Init(GObject.Type.Int);
 

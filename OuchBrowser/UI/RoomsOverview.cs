@@ -32,7 +32,7 @@ internal class RoomsOverview : Adw.Dialog
 		ViewStackPage page = view!.GetPage(view!.GetVisibleChild()!);
 		nsv!.GetContent()!.SetTitle(page!.GetTitle()!);
 
-		new_tab_button.OnClicked += (_, _) =>
+		new_tab_button!.OnClicked += (_, _) =>
 		{
 			Close();
 			window.ActivateAction("palette-new", null);
@@ -101,7 +101,7 @@ internal class RoomsOverview : Adw.Dialog
 		);
 		Breakpoint breakpoint = Breakpoint.New(condition);
 
-		GObject.Value boolean = new GObject.Value();
+		GObject.Value boolean = new();
 		boolean.Init(GObject.Type.Boolean);
 
 		boolean.SetBoolean(true);
