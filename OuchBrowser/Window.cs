@@ -187,7 +187,7 @@ internal partial class Window : Adw.ApplicationWindow
 				alert.Present(this);
 			}
 
-			return true;
+			return false;
 		};
 	}
 
