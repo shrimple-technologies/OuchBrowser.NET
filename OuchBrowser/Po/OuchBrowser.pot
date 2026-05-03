@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-05-03 03:40-0400\n"
+"POT-Creation-Date: 2026-05-03 04:54-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -113,13 +113,12 @@ msgid "This value is the main window's size."
 msgstr ""
 
 #: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:6
-#: OuchBrowser/Data/UI/About.blp:6 OuchBrowser/Data/UI/Window.blp:20
-#: OuchBrowser/Data/UI/Window.blp:256 OuchBrowser/Window.cs:91
+#: OuchBrowser/Data/UI/Window.blp:20 OuchBrowser/Data/UI/Window.blp:256
+#: OuchBrowser/Window.cs:91
 msgid "Ouch Browser"
 msgstr ""
 
 #: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:8
-#: OuchBrowser/Data/UI/About.blp:7
 msgid "Shrimple Technologies"
 msgstr ""
 
@@ -139,11 +138,6 @@ msgstr ""
 msgid ""
 "NOTE: This is the C# rewrite, which is constantly evolving, and may be less "
 "stable than the original codebase."
-msgstr ""
-
-#. TRANSLATORS: This is not a string that is a part of the source code. This is your name (or username), followed by your email enclosed in angles (<example@domain.com>) or your website. This will be shown in Ouch Browser's credits.
-#: OuchBrowser/Data/UI/About.blp:11
-msgid "translator-credits"
 msgstr ""
 
 #: OuchBrowser/Data/UI/Preferences.blp:6 OuchBrowser/Data/UI/Preferences.blp:10
@@ -444,6 +438,11 @@ msgstr ""
 
 #: OuchBrowser/Data/UI/Window.blp:1197
 msgid "Close Palette"
+msgstr ""
+
+#. TRANSLATORS: This is not a string that is a part of the source code. This is your name (or username), followed by your email enclosed in angles (<example@domain.com>) or your website. This will be shown in Ouch Browser's credits.
+#: OuchBrowser/UI/About.cs:10
+msgid "translator-credits"
 msgstr ""
 
 #: OuchBrowser/View.cs:86
