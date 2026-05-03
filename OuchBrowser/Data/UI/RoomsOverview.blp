@@ -20,27 +20,15 @@ Adw.NavigationSplitView nsv {
 		title: _("Tabs");
 
 		Adw.ToolbarView {
-			reveal-bottom-bars: bind nsv.collapsed;
-
 			[top]
 			Adw.HeaderBar {
-				[start]
-				Button new_tab_button {
-					visible: bind nsv.collapsed inverted;
-
-					Adw.ButtonContent {
-						icon-name: "tab-new-symbolic";
-						label: _("New Tab");
-					}
-				}
-
 				title-widget: Adw.WindowTitle wt {
 					title: _("Main");
 				};
 			}
 
 			[bottom]
-			Button new_tab_button_mobile {
+			Button new_tab_button {
 				halign: center;
 				margin-top: 15;
 				margin-bottom: 15;

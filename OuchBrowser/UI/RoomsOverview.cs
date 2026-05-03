@@ -11,7 +11,6 @@ internal class RoomsOverview : Adw.Dialog
 	[Connect] private readonly ListBox? lb;
 	[Connect] private readonly ViewStack? tab_stack;
 	[Connect] private readonly Button? new_tab_button;
-	[Connect] private readonly Button? new_tab_button_mobile;
 	[Connect] private readonly WindowTitle? wt;
 #pragma warning restore CS0649
 
@@ -33,13 +32,7 @@ internal class RoomsOverview : Adw.Dialog
 		ViewStackPage page = view!.GetPage(view!.GetVisibleChild()!);
 		nsv!.GetContent()!.SetTitle(page!.GetTitle()!);
 
-		new_tab_button!.OnClicked += (_, _) =>
-		{
-			Close();
-			window.ActivateAction("palette-new", null);
-		};
-
-		new_tab_button_mobile!.OnClicked += (_, _) =>
+		new_tab_button.OnClicked += (_, _) =>
 		{
 			Close();
 			window.ActivateAction("palette-new", null);
@@ -58,7 +51,7 @@ internal class RoomsOverview : Adw.Dialog
 				{
 					tab_stack.SetVisibleChildName("tabs");
 					TabPage tabpage = window.tabview!.GetNthPage(i)!;
-					Adw.ActionRow row = ActionRow.New();
+					ActionRow row = ActionRow.New();
 					Button btn = Button.NewFromIconName("cross-large-symbolic");
 
 					btn.AddCssClass("flat");
