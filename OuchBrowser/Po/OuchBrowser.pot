@@ -454,6 +454,23 @@ msgstr ""
 msgid "Stop Loading"
 msgstr ""
 
-#: OuchBrowser/Window.cs:417
+#: OuchBrowser/Window.cs:173
+msgid "Exit and Close All Tabs?"
+msgstr ""
+
+#: OuchBrowser/Window.cs:174
+#, csharp-format
+msgid "You are about to close {0} tabs. Are you sure you want to continue?"
+msgstr ""
+
+#: OuchBrowser/Window.cs:176
+msgid "Cancel"
+msgstr ""
+
+#: OuchBrowser/Window.cs:177
+msgid "Exit"
+msgstr ""
+
+#: OuchBrowser/Window.cs:442
 msgid "Link Copied"
 msgstr ""

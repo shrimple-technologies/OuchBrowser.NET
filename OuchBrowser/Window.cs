@@ -164,6 +164,31 @@ internal partial class Window : Adw.ApplicationWindow
 		{
 			foreach (string url in settings.GetStrv("restore-tabs")) view.AddTab(url, false);
 		}
+
+		OnCloseRequest += (_, _) =>
+		{
+			if (tabview!.GetNPages() >= 2)
+			{
+				Adw.AlertDialog alert = Adw.AlertDialog.New(
+					__("Exit and Close All Tabs?"),
+					__("You are about to close {0} tabs. Are you sure you want to continue?", tabview!.GetNPages())
+				);
+				alert.AddResponse("cancel", __("Cancel"));
+				alert.AddResponse("exit", __("Exit"));
+				alert.SetCloseResponse("cancel");
+				alert.SetDefaultResponse("cancel");
+				alert.SetResponseAppearance("exit", ResponseAppearance.Destructive);
+
+				alert.OnResponse += (_, args) =>
+				{
+					if (args.Response == "exit") Destroy();
+				};
+				
+				alert.Present(this);
+			}
+
+			return true;
+		};
 	}
 
 	private void SetupActions()
