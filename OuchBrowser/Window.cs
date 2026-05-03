@@ -173,15 +173,15 @@ internal partial class Window : Adw.ApplicationWindow
 					__("Exit and Close All Tabs?"),
 					__("You are about to close {0} tabs. Are you sure you want to continue?", tabview!.GetNPages())
 				);
+				alert.AddResponse("close_all_tabs", __("Close All Tabs"));
 				alert.AddResponse("cancel", __("Cancel"));
-				alert.AddResponse("exit", __("Exit"));
 				alert.SetCloseResponse("cancel");
 				alert.SetDefaultResponse("cancel");
-				alert.SetResponseAppearance("exit", ResponseAppearance.Destructive);
+				alert.SetResponseAppearance("close_all_tabs", ResponseAppearance.Destructive);
 
 				alert.OnResponse += (_, args) =>
 				{
-					if (args.Response == "exit") Destroy();
+					if (args.Response == "close_all_tabs") Destroy();
 				};
 				
 				alert.Present(this);

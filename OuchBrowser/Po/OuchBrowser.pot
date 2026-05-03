@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-05-02 00:10-0400\n"
+"POT-Creation-Date: 2026-05-03 03:40-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -464,11 +464,11 @@ msgid "You are about to close {0} tabs. Are you sure you want to continue?"
 msgstr ""
 
 #: OuchBrowser/Window.cs:176
-msgid "Cancel"
+msgid "Close All Tabs"
 msgstr ""
 
 #: OuchBrowser/Window.cs:177
-msgid "Exit"
+msgid "Cancel"
 msgstr ""
 
 #: OuchBrowser/Window.cs:442
