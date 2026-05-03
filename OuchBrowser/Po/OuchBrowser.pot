@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-05-03 11:27-0400\n"
+"POT-Creation-Date: 2026-05-03 17:04-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -259,20 +259,19 @@ msgstr ""
 msgid "Tabs"
 msgstr ""
 
-#: OuchBrowser/Data/UI/RoomsOverview.blp:33
-#: OuchBrowser/Data/UI/RoomsOverview.blp:55
+#: OuchBrowser/Data/UI/RoomsOverview.blp:26
+#: OuchBrowser/Data/UI/RoomsOverview.blp:52
+msgid "Main"
+msgstr ""
+
+#: OuchBrowser/Data/UI/RoomsOverview.blp:44
 #: OuchBrowser/Data/UI/Shortcuts.blp:38 OuchBrowser/Data/UI/Window.blp:127
 #: OuchBrowser/Data/UI/Window.blp:146 OuchBrowser/Data/UI/Window.blp:841
 #: OuchBrowser/Data/UI/Window.blp:936
 msgid "New Tab"
 msgstr ""
 
-#: OuchBrowser/Data/UI/RoomsOverview.blp:38
-#: OuchBrowser/Data/UI/RoomsOverview.blp:63
-msgid "Main"
-msgstr ""
-
-#: OuchBrowser/Data/UI/RoomsOverview.blp:76
+#: OuchBrowser/Data/UI/RoomsOverview.blp:66
 msgid "No Tabs Open"
 msgstr ""
 
@@ -309,7 +308,7 @@ msgid "Navigation"
 msgstr ""
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:52 OuchBrowser/Data/UI/Window.blp:208
-#: OuchBrowser/UI/RoomsOverview.cs:66
+#: OuchBrowser/UI/RoomsOverview.cs:59
 msgid "Close Tab"
 msgstr ""
 
@@ -377,8 +376,8 @@ msgstr ""
 msgid "Forward"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:654 OuchBrowser/View.cs:91
-#: OuchBrowser/View.cs:164
+#: OuchBrowser/Data/UI/Window.blp:654 OuchBrowser/View.cs:92
+#: OuchBrowser/View.cs:165
 msgid "Refresh"
 msgstr ""
 
@@ -447,14 +446,14 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 
-#: OuchBrowser/UI/RoomsOverview.cs:91
+#: OuchBrowser/UI/RoomsOverview.cs:84
 #, csharp-format
 msgid "{0} tab"
 msgid_plural "{0} tabs"
 msgstr[0] ""
 msgstr[1] ""
 
-#: OuchBrowser/View.cs:86 OuchBrowser/View.cs:127 OuchBrowser/View.cs:142
+#: OuchBrowser/View.cs:87 OuchBrowser/View.cs:128 OuchBrowser/View.cs:143
 msgid "Stop Loading"
 msgstr ""
 

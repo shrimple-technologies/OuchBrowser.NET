@@ -27,60 +27,63 @@ Adw.NavigationSplitView nsv {
 				};
 			}
 
-			[bottom]
-			Button new_tab_button {
-				halign: center;
-				margin-top: 15;
-				margin-bottom: 15;
+			Overlay {
+				[overlay]
+				Button new_tab_button {
+					halign: center;
+					valign: end;
+					margin-bottom: 18;
 
-				styles [
-					"pill",
-					"suggested-action",
-				]
+					styles [
+						"pill",
+						"suggested-action",
+					]
 
-				Adw.ButtonContent {
-					icon-name: "tab-new-symbolic";
-					label: _("New Tab");
+					Adw.ButtonContent {
+						icon-name: "tab-new-symbolic";
+						label: _("New Tab");
+					}
 				}
-			}
 
-			Adw.ViewStack view {
-				Adw.ViewStackPage {
-					name: "main";
-					icon-name: "dot-symbolic";
-					title: _("Main");
+				Adw.ViewStack view {
+					Adw.ViewStackPage {
+						name: "main";
+						icon-name: "dot-symbolic";
+						title: _("Main");
 
-					child: ScrolledWindow {
-						Adw.Clamp {
-							margin-start: 15;
-							margin-end: 15;
+						child: ScrolledWindow {
+							Adw.Clamp {
+								margin-start: 15;
+								margin-end: 15;
+								margin-bottom: 75;
 
-							Adw.ViewStack tab_stack {
-								Adw.ViewStackPage placeholder_tab_stack {
-									name: "placeholder";
+								Adw.ViewStack tab_stack {
+									Adw.ViewStackPage placeholder_tab_stack {
+										name: "placeholder";
 
-									child: Adw.StatusPage {
-										icon-name: "web-symbolic";
-										title: _("No Tabs Open");
-									};
-								}
+										child: Adw.StatusPage {
+											icon-name: "web-symbolic";
+											title: _("No Tabs Open");
+										};
+									}
 
-								Adw.ViewStackPage {
-									name: "tabs";
+									Adw.ViewStackPage {
+										name: "tabs";
 
-									child: ListBox lb {
-										margin-top: 15;
-										margin-bottom: 15;
-										selection-mode: none;
+										child: ListBox lb {
+											margin-top: 15;
+											margin-bottom: 15;
+											selection-mode: none;
 
-										styles [
-											"boxed-list-separate",
-										]
-									};
+											styles [
+												"boxed-list-separate",
+											]
+										};
+									}
 								}
 							}
-						}
-					};
+						};
+					}
 				}
 			}
 		}
