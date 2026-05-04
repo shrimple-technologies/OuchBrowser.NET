@@ -61,14 +61,17 @@
 	<url type="vcs-browser">https://codeberg.org/shrimple/OuchBrowser.NET</url>
 	<url type="translate">https://hosted.weblate.org/projects/ouch/net/</url>
 	<screenshots>
-		<screenshot type="default">
+		<screenshot type="default" environment="gnome">
 			<image>https://codeberg.org/shrimple/OuchBrowser.NET/raw/branch/main/OuchBrowser/Data/Screenshots/Screenshot%20with%20Sidebar%20Open.png</image>
+			<caption>Ouch Browser's Main Window</caption>
 		</screenshot>
-		<screenshot>
+		<screenshot environment="gnome">
 			<image>https://codeberg.org/shrimple/OuchBrowser.NET/raw/branch/main/OuchBrowser/Data/Screenshots/Screenshot%20with%20Sidebar%20Closed.png</image>
+			<caption>Ouch Browser with Tab Sidebar Closed</caption>
 		</screenshot>
-		<screenshot>
+		<screenshot environment="gnome">
 			<image>https://codeberg.org/shrimple/OuchBrowser.NET/raw/branch/main/OuchBrowser/Data/Screenshots/Screenshot%20with%20Command%20Palette%20Open.png</image>
+			<caption>Ouch Browser with Command Palette Opened</caption>
 		</screenshot>
 	</screenshots>
 </component>
