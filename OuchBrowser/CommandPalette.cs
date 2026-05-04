@@ -60,8 +60,8 @@ internal partial class Window
 							ScrolledWindow sw = ScrolledWindow.New();
 							sw.SetPropagateNaturalHeight(true);
 							sw.SetVexpand(true);
-							sw.SetMinContentHeight(399);
-							sw.SetMaxContentHeight(400);
+							sw.SetMinContentHeight(387);
+							sw.SetMaxContentHeight(387);
 							sw.AddCssClass("undershoot-top");
 							sw.AddCssClass("undershoot-bottom");
 							section_label.SetCssClasses(["caption-heading", "dimmed"]);
