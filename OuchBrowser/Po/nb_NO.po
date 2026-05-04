@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-05-03 11:27-0400\n"
+"POT-Creation-Date: 2026-05-03 18:43-0400\n"
 "PO-Revision-Date: 2024-09-07 11:08+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
@@ -113,8 +113,8 @@ msgid "This value is the main window's size."
 msgstr ""
 
 #: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:6
-#: OuchBrowser/Data/UI/Window.blp:20 OuchBrowser/Data/UI/Window.blp:256
-#: OuchBrowser/Window.cs:91
+#: OuchBrowser/Data/UI/Window.blp:16 OuchBrowser/Data/UI/Window.blp:248
+#: OuchBrowser/Window.cs:90
 msgid "Ouch Browser"
 msgstr "Ouch-nettleseren"
 
@@ -141,7 +141,7 @@ msgid ""
 msgstr ""
 
 #: OuchBrowser/Data/UI/Preferences.blp:6 OuchBrowser/Data/UI/Preferences.blp:10
-#: OuchBrowser/Data/UI/Preferences.blp:44 OuchBrowser/Data/UI/Window.blp:525
+#: OuchBrowser/Data/UI/Preferences.blp:44 OuchBrowser/Data/UI/Window.blp:517
 msgid "Preferences"
 msgstr ""
 
@@ -234,7 +234,7 @@ msgstr ""
 msgid "See !bangs preferences for more options"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:240 OuchBrowser/Data/UI/Window.blp:1048
+#: OuchBrowser/Data/UI/Preferences.blp:240 OuchBrowser/Data/UI/Window.blp:1039
 msgid "!bangs"
 msgstr ""
 
@@ -246,7 +246,7 @@ msgstr ""
 msgid "New Bang…"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:263 OuchBrowser/Data/UI/Window.blp:1127
+#: OuchBrowser/Data/UI/Preferences.blp:263 OuchBrowser/Data/UI/Window.blp:1118
 msgid "!bangs provided by Kagi"
 msgstr ""
 
@@ -258,22 +258,21 @@ msgstr ""
 msgid "Tabs"
 msgstr ""
 
-#: OuchBrowser/Data/UI/RoomsOverview.blp:33
-#: OuchBrowser/Data/UI/RoomsOverview.blp:55
-#: OuchBrowser/Data/UI/Shortcuts.blp:38 OuchBrowser/Data/UI/Window.blp:127
-#: OuchBrowser/Data/UI/Window.blp:146 OuchBrowser/Data/UI/Window.blp:841
-#: OuchBrowser/Data/UI/Window.blp:936
+#: OuchBrowser/Data/UI/RoomsOverview.blp:26
+#: OuchBrowser/Data/UI/RoomsOverview.blp:52
+msgid "Main"
+msgstr ""
+
+#: OuchBrowser/Data/UI/RoomsOverview.blp:44
+#: OuchBrowser/Data/UI/Shortcuts.blp:38 OuchBrowser/Data/UI/Window.blp:123
+#: OuchBrowser/Data/UI/Window.blp:142 OuchBrowser/Data/UI/Window.blp:833
+#: OuchBrowser/Data/UI/Window.blp:928
 #, fuzzy
 #| msgid "New tab"
 msgid "New Tab"
 msgstr "Ny fane"
 
-#: OuchBrowser/Data/UI/RoomsOverview.blp:38
-#: OuchBrowser/Data/UI/RoomsOverview.blp:63
-msgid "Main"
-msgstr ""
-
-#: OuchBrowser/Data/UI/RoomsOverview.blp:76
+#: OuchBrowser/Data/UI/RoomsOverview.blp:66
 msgid "No Tabs Open"
 msgstr ""
 
@@ -309,8 +308,8 @@ msgstr ""
 msgid "Navigation"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Shortcuts.blp:52 OuchBrowser/Data/UI/Window.blp:208
-#: OuchBrowser/UI/RoomsOverview.cs:66
+#: OuchBrowser/Data/UI/Shortcuts.blp:52 OuchBrowser/Data/UI/Window.blp:200
+#: OuchBrowser/UI/RoomsOverview.cs:59
 #, fuzzy
 #| msgid "New tab"
 msgid "Close Tab"
@@ -352,102 +351,102 @@ msgstr ""
 msgid "Reset Zoom"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:44
+#: OuchBrowser/Data/UI/Window.blp:40
 msgid "Hide Sidebar"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:274
+#: OuchBrowser/Data/UI/Window.blp:266
 msgid "Show Sidebar"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:434
+#: OuchBrowser/Data/UI/Window.blp:426
 msgid "Menu"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:478
+#: OuchBrowser/Data/UI/Window.blp:470
 #, fuzzy
 #| msgid "New tab"
 msgid "View All Tabs"
 msgstr "Ny fane"
 
-#: OuchBrowser/Data/UI/Window.blp:568
+#: OuchBrowser/Data/UI/Window.blp:560
 msgid "Keyboard Shortcuts"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:610
+#: OuchBrowser/Data/UI/Window.blp:602
 msgid "About Ouch Browser"
 msgstr "Om Ouch-nettleseren"
 
-#: OuchBrowser/Data/UI/Window.blp:630
+#: OuchBrowser/Data/UI/Window.blp:622
 msgid "Back"
 msgstr "Tilbake"
 
-#: OuchBrowser/Data/UI/Window.blp:642
+#: OuchBrowser/Data/UI/Window.blp:634
 msgid "Forward"
 msgstr "Forover"
 
-#: OuchBrowser/Data/UI/Window.blp:654 OuchBrowser/View.cs:91
-#: OuchBrowser/View.cs:164
+#: OuchBrowser/Data/UI/Window.blp:646 OuchBrowser/View.cs:92
+#: OuchBrowser/View.cs:165
 msgid "Refresh"
 msgstr "Gjenoppfrisk"
 
-#: OuchBrowser/Data/UI/Window.blp:674
+#: OuchBrowser/Data/UI/Window.blp:666
 msgid "Reveal Command Palette"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:693
+#: OuchBrowser/Data/UI/Window.blp:685
 msgid "Copy Link"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:704
+#: OuchBrowser/Data/UI/Window.blp:696
 msgid "Website Settings"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:720
+#: OuchBrowser/Data/UI/Window.blp:712
 msgid "No Website Settings Available"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:739
+#: OuchBrowser/Data/UI/Window.blp:731
 msgid "Archive"
 msgstr "Arkiv"
 
-#: OuchBrowser/Data/UI/Window.blp:780
+#: OuchBrowser/Data/UI/Window.blp:772
 msgid "History"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:811
+#: OuchBrowser/Data/UI/Window.blp:803
 msgid "Downloads"
 msgstr "Nedlastninger"
 
-#: OuchBrowser/Data/UI/Window.blp:851
+#: OuchBrowser/Data/UI/Window.blp:843
 msgid "New…"
 msgstr "Ny …"
 
-#: OuchBrowser/Data/UI/Window.blp:884
+#: OuchBrowser/Data/UI/Window.blp:876
 msgid "New Room"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:907
+#: OuchBrowser/Data/UI/Window.blp:899
 msgid "New Folder"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1030
+#: OuchBrowser/Data/UI/Window.blp:1021
 msgid "Search"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1065
+#: OuchBrowser/Data/UI/Window.blp:1056
 msgid "Website"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1074
+#: OuchBrowser/Data/UI/Window.blp:1065
 msgid "Search or enter URL…"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1182
+#: OuchBrowser/Data/UI/Window.blp:1173
 msgid "Go"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1197
+#: OuchBrowser/Data/UI/Window.blp:1188
 msgid "Close Palette"
 msgstr ""
 
@@ -456,39 +455,39 @@ msgstr ""
 msgid "translator-credits"
 msgstr "Allan Nordhøy <epost@anotheragency.no>"
 
-#: OuchBrowser/UI/RoomsOverview.cs:91
+#: OuchBrowser/UI/RoomsOverview.cs:84
 #, csharp-format
 msgid "{0} tab"
 msgid_plural "{0} tabs"
 msgstr[0] ""
 msgstr[1] ""
 
-#: OuchBrowser/View.cs:86 OuchBrowser/View.cs:127 OuchBrowser/View.cs:142
+#: OuchBrowser/View.cs:87 OuchBrowser/View.cs:128 OuchBrowser/View.cs:143
 #, fuzzy
 #| msgid "Stop loading"
 msgid "Stop Loading"
 msgstr "Stopp innlasting"
 
-#: OuchBrowser/Window.cs:173
+#: OuchBrowser/Window.cs:166
 msgid "Exit and Close All Tabs?"
 msgstr ""
 
-#: OuchBrowser/Window.cs:174
+#: OuchBrowser/Window.cs:167
 #, csharp-format
 msgid "You are about to close {0} tabs. Are you sure you want to continue?"
 msgstr ""
 
-#: OuchBrowser/Window.cs:176
+#: OuchBrowser/Window.cs:169
 #, fuzzy
 #| msgid "New tab"
 msgid "Close All Tabs"
 msgstr "Ny fane"
 
-#: OuchBrowser/Window.cs:177
+#: OuchBrowser/Window.cs:170
 msgid "Cancel"
 msgstr ""
 
-#: OuchBrowser/Window.cs:446
+#: OuchBrowser/Window.cs:437
 msgid "Link Copied"
 msgstr ""
 
