@@ -50,6 +50,7 @@ sudo dnf install OuchBrowser
 
 ```sh
 just build-flatpak
+flatpak install ./site.srht.shrimple.OuchBrowser.flatpak
 ```
 
 ## Running
@@ -63,3 +64,12 @@ just build-flatpak
 git clone --recurse-submodules https://codeberg.org/shrimple/OuchBrowser.NET
 just run
 ```
+
+## Contributing
+
+### Translations [![Translation status](https://hosted.weblate.org/widget/ouch/net/svg-badge.svg)](https://hosted.weblate.org/projects/ouch/net/)
+
+[![Translation status](https://hosted.weblate.org/widget/ouch/net/multi-auto.svg)](https://hosted.weblate.org/projects/ouch/net/)
+
+Translation of Ouch Browser takes place on [Hosted Weblate](https://hosted.weblate.org/projects/ouch/net/).
+Everyone is welcome to translate Ouch Browser.
