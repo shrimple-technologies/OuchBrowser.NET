@@ -19,8 +19,8 @@ BuildRequires: git
 BuildRequires: dotnet-sdk-10.0
 BuildRequires: blueprint-compiler
 BuildRequires: gtk4-devel
-BuildRequires: libadwaita-devel
-Requires: libadwaita
+BuildRequires: libadwaita-devel >= 1.9
+Requires: libadwaita >= 1.9
 Requires: gtk4
 Requires: webkitgtk6.0
 Requires: gsettings-desktop-schemas
