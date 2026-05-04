@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
 "POT-Creation-Date: 2026-05-03 11:27-0400\n"
-"PO-Revision-Date: 2026-04-29 12:47+0000\n"
+"PO-Revision-Date: 2026-05-04 10:52+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/ouch/net/et/>\n"
 "Language: et\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17.1-dev\n"
+"X-Generator: Weblate 5.17.1\n"
 
 #: OuchBrowser/CommandPalette.cs:35
 #, csharp-format
@@ -437,16 +437,12 @@ msgid "New Folder"
 msgstr "Uus kaust"
 
 #: OuchBrowser/Data/UI/Window.blp:1030
-#, fuzzy
-#| msgid "Search Bangs"
 msgid "Search"
-msgstr "Bang-käsud otsimiseks"
+msgstr "Otsi"
 
 #: OuchBrowser/Data/UI/Window.blp:1065
-#, fuzzy
-#| msgid "Website Settings"
 msgid "Website"
-msgstr "Veebisaidi seadistused"
+msgstr "Veebisait"
 
 #: OuchBrowser/Data/UI/Window.blp:1074
 msgid "Search or enter URL…"
@@ -470,8 +466,8 @@ msgstr "Priit Jõerüüt"
 #, csharp-format
 msgid "{0} tab"
 msgid_plural "{0} tabs"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "{0} vahekaart"
+msgstr[1] "{0} vahekaarti"
 
 #: OuchBrowser/View.cs:86 OuchBrowser/View.cs:127 OuchBrowser/View.cs:142
 msgid "Stop Loading"
@@ -479,22 +475,20 @@ msgstr "Lõpeta laadimine"
 
 #: OuchBrowser/Window.cs:173
 msgid "Exit and Close All Tabs?"
-msgstr ""
+msgstr "Kas väljud ja sulged kõik vahekaardid?"
 
 #: OuchBrowser/Window.cs:174
 #, csharp-format
 msgid "You are about to close {0} tabs. Are you sure you want to continue?"
-msgstr ""
+msgstr "Oled sulgemas {0} vahekaarti. Kas oled kindel, et soovid jätkata?"
 
 #: OuchBrowser/Window.cs:176
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Close All Tabs"
-msgstr "Sulge vahekaart"
+msgstr "Sulge kõik vahekaardid"
 
 #: OuchBrowser/Window.cs:177
 msgid "Cancel"
-msgstr ""
+msgstr "Katkesta"
 
 #: OuchBrowser/Window.cs:446
 msgid "Link Copied"
