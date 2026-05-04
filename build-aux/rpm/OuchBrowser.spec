@@ -24,6 +24,9 @@ Requires: libadwaita
 Requires: gtk4
 Requires: webkitgtk6.0
 Requires: gsettings-desktop-schemas
+Recommends: google-noto-sans-fonts
+Recommends: google-noto-serif-fonts
+Recommends: google-noto-mono-fonts
 
 %description
 Ouch Browser is a browser that utilizes the vertical tabs layout, which allows
