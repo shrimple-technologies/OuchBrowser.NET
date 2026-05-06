@@ -22,9 +22,6 @@ internal class View
 		Settings settings = Settings.New();
 
 		settings.SetDefaultFontFamily("serif");
-		settings.SetSansSerifFontFamily("Noto Sans");
-		settings.SetSerifFontFamily("Noto Serif");
-		settings.SetMonospaceFontFamily("Noto Mono");
 		settings.SetEnableDeveloperExtras(win.settings.GetBoolean("devtools-enabled"));
 
 		return settings;
