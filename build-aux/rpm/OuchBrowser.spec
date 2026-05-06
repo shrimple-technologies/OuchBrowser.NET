@@ -12,7 +12,6 @@ Release: 0.%{build_timestamp}%{?buildtag}%{?dist}
 Summary: Focus on your browsing
 License: GPL-3.0-or-later
 URL: https://codeberg.org/shrimple/OuchBrowser.NET
-Source0: %{URL}/archive/main.tar.gz
 
 BuildRequires: just
 BuildRequires: git
@@ -32,12 +31,11 @@ your browsing, Ouch Browser comes with !bangs support, a multi-purpose command
 palette, and mobile support.
 
 %prep
-%autosetup -n ouchbrowser.net
+%autosetup
 
 %build
 just build-blueprint
 just compile-resources
-git clone https://github.com/kagisearch/bangs OuchBrowser/Bangs --depth=1
 %ifarch x86_64
 dotnet publish OuchBrowser -c Release -r linux-x64
 %elifarch aarch64
@@ -47,7 +45,6 @@ dotnet publish OuchBrowser -c Release -r linux-arm64
 %install
 just PREFIX=%{buildroot}%{_prefix} build-translations
 just PREFIX=%{buildroot}%{_prefix} build-schemas
-
 %ifarch x86_64
 install -Dm755 OuchBrowser/bin/Release/net10.0/linux-x64/publish/OuchBrowser --target-directory %{buildroot}%{_bindir}
 %elifarch aarch64
