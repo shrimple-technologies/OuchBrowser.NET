@@ -238,16 +238,29 @@ internal class View
 		Settings settings = InitSettings();
 		WebView webview = WebView.New();
 		Dialog dialog = Dialog.New();
+		Gtk.Frame frame = Gtk.Frame.New(null);
+		ToolbarView toolbarview = ToolbarView.New();
+		HeaderBar headerbar = HeaderBar.New();
 
 		webview.SetSettings(settings);
 		webview.LoadUri(url);
 		webview.SetZoomLevel(win.settings.GetDouble("zoom"));
 
+		toolbarview.AddTopBar(headerbar);
+		toolbarview.SetContent(frame);
+
+		frame.SetMarginBottom(10);
+		frame.SetMarginStart(10);
+		frame.SetMarginEnd(10);
+		frame.SetVexpand(true);
+		frame.SetHexpand(true);
+		frame.SetChild(webview);
+
 		dialog.HeightRequest = 360;
 		dialog.WidthRequest = 360;
-		dialog.SetContentHeight(600);
+		dialog.SetContentHeight(650);
 		dialog.SetContentWidth(900);
-		dialog.SetChild(webview);
+		dialog.SetChild(toolbarview);
 		dialog.Present(win);
 
 		dialog.OnClosed += (_, _) =>
