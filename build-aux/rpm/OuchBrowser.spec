@@ -31,7 +31,7 @@ your browsing, Ouch Browser comes with !bangs support, a multi-purpose command
 palette, and mobile support.
 
 %prep
-%autosetup
+%autosetup -n ouchbrowser.net-main
 
 %build
 just build-blueprint
