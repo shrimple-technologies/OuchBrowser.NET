@@ -232,4 +232,29 @@ internal class View
 
 		return urls.ToArray();
 	}
+
+	public WebView AddEpheremalTab(string url)
+	{
+		Settings settings = InitSettings();
+		WebView webview = WebView.New();
+		Dialog dialog = Dialog.New();
+
+		webview.SetSettings(settings);
+		webview.LoadUri(url);
+		webview.SetZoomLevel(win.settings.GetDouble("zoom"));
+
+		dialog.HeightRequest = 360;
+		dialog.WidthRequest = 360;
+		dialog.SetContentHeight(600);
+		dialog.SetContentWidth(900);
+		dialog.SetChild(webview);
+		dialog.Present(win);
+
+		dialog.OnClosed += (_, _) =>
+		{
+			webview.TryClose();
+		};
+
+		return webview;
+	}
 }
