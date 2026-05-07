@@ -50,7 +50,7 @@
 			support.
 		</p>
 		<p>
-			NOTE: This is the C# rewrite, which is constantly evolving, and may be less stable than the original codebase.
+			NOTE: Ouch Browser is currently in alpha stage and is changing rapidly. While it is in a usable state, it does not have a large number of common web browser functions, and can have many bugs
 		</p>
 	</description>
 	<provides>
