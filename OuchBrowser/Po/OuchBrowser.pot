@@ -31,86 +31,97 @@ msgstr ""
 msgid "SUGGESTIONS"
 msgstr ""
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:23
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:29
 #: OuchBrowser/Data/UI/Preferences.blp:181
 #: OuchBrowser/Data/UI/Preferences.blp:203
 msgid "Search Engine"
 msgstr ""
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:24
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:30
 msgid ""
 "This value is the search engine that will be used when the user enters a "
 "search query into the command palette."
 msgstr ""
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:33
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:39
 #: OuchBrowser/Data/UI/Shortcuts.blp:83
 msgid "Zoom"
 msgstr ""
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:34
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:40
 msgid ""
 "This value is the zoom level of the browser. Please do not modify this value "
 "yourself as this can create unintended side effects."
 msgstr ""
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:43
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:49
 msgid "Maximized?"
 msgstr ""
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:44
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:50
 msgid "This value is whether the window is maximized or not."
 msgstr ""
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:55
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:61
 #: OuchBrowser/Data/UI/RoomsOverview.blp:6
 msgid "Rooms"
 msgstr ""
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:56
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:62
 msgid ""
 "This value stores the rooms data. Each entry is a tuple: (room name, room "
 "icon, pinned urls)."
 msgstr ""
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:65
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:71
 msgid "Restored Tabs"
 msgstr ""
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:66
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:72
 msgid "This value stores the tabs to restore."
 msgstr ""
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:73
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:79
 msgid "Search Autocomplete enabled?"
 msgstr ""
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:74
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:80
 msgid "This value is whether search autocomplete is enabled or not."
 msgstr ""
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:81
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:87
 msgid "!bang Autocomplete enabled?"
 msgstr ""
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:82
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:88
 msgid "This value is whether !bang autocomplete is enabled or not."
 msgstr ""
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:89
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:95
 msgid "Developer Tools enabled?"
 msgstr ""
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:90
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:96
 msgid "This value is whether developer tools is enabled or not."
 msgstr ""
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:97
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:103
 msgid "Initial Window Size"
 msgstr ""
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:98
 msgid "This value is the main window’s size."
+msgstr ""
+
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:111
+msgid "Ephemeral Tab Trigger"
+msgstr ""
+
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:112
+msgid ""
+"This value is the trigger for opening a ephemeral tab. For example, holding "
+"down the Shift key and clicking on a hyperlink will result in that website "
+"being loaded inside a ephemeral tab, which is separate from the main window."
 msgstr ""
 
 #: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:6
@@ -478,7 +489,7 @@ msgid_plural "{0} tabs"
 msgstr[0] ""
 msgstr[1] ""
 
-#: OuchBrowser/View.cs:84 OuchBrowser/View.cs:125 OuchBrowser/View.cs:140
+#: OuchBrowser/View.cs:85 OuchBrowser/View.cs:126 OuchBrowser/View.cs:141
 msgid "Stop Loading"
 msgstr ""
 

@@ -9,7 +9,7 @@ internal class View
 	public readonly TabView view;
 	private readonly Window win;
 	private string layout = "default";
-	private bool shift_held = false;
+	private bool ephemeral_tab_trigger_held = false;
 
 	public View(TabView tabview, Window window)
 	{
@@ -203,21 +203,21 @@ internal class View
 		eck.OnKeyPressed += (_, args) =>
 		{
 			Console.WriteLine($"KEY PRESSED: {args.Keyval}");
-			if (args.Keyval == 65505) shift_held = true;
+			if (args.Keyval == window.settings.GetEnum("ephemeral-trigger")) ephemeral_tab_trigger_held = true;
 			return true;
 		};
 		eck.OnKeyReleased += (_, args) =>
 		{
 			Console.WriteLine($"KEY RELEASED: {args.Keyval}");
-			if (args.Keyval == 65505) shift_held = false;
+			if (args.Keyval == window.settings.GetEnum("ephemeral-trigger")) ephemeral_tab_trigger_held = false;
 		};
 
 		window.AddController(eck);
 
 		webview.OnDecidePolicy += (_, args) =>
 		{
-			Console.WriteLine(shift_held);
-			if (shift_held)
+			Console.WriteLine(ephemeral_tab_trigger_held);
+			if (ephemeral_tab_trigger_held)
 			{
 				switch (args.DecisionType)
 				{
@@ -302,7 +302,7 @@ internal class View
 		{
 			Console.WriteLine("ephemeral tab closed");
 			webview.TryClose();
-			shift_held = false; // sometimes it forgets to fire Gtk.EventControllerKey.OnKeyReleased
+			ephemeral_tab_trigger_held = false; // sometimes it forgets to fire Gtk.EventControllerKey.OnKeyReleased
 		};
 
 		return webview;
