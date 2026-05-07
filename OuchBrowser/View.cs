@@ -9,6 +9,7 @@ internal class View
 	public readonly TabView view;
 	private readonly Window win;
 	private string layout = "default";
+	private bool shift_held = false;
 
 	public View(TabView tabview, Window window)
 	{
@@ -198,6 +199,40 @@ internal class View
 			}
 		};
 
+		Gtk.EventControllerKey eck = Gtk.EventControllerKey.New();
+		eck.OnKeyPressed += (_, args) =>
+		{
+			Console.WriteLine($"KEY PRESSED: {args.Keyval}");
+			if (args.Keyval == 65505) shift_held = true;
+			return true;
+		};
+		eck.OnKeyReleased += (_, args) =>
+		{
+			Console.WriteLine($"KEY RELEASED: {args.Keyval}");
+			if (args.Keyval == 65505) shift_held = false;
+		};
+
+		window.AddController(eck);
+
+		webview.OnDecidePolicy += (_, args) =>
+		{
+			Console.WriteLine(shift_held);
+			if (shift_held)
+			{
+				switch (args.DecisionType)
+				{
+					case PolicyDecisionType.NavigationAction:
+					case PolicyDecisionType.NewWindowAction:
+						// SORRY NOT SORRY FOR USING DEPRECATED APIS THAT ACTUALLY SERVED USE
+						NavigationPolicyDecision navigation_policy = (NavigationPolicyDecision)args.Decision;
+						AddEpheremalTab(navigation_policy.GetNavigationAction().GetRequest());
+						return true;
+				}
+			}
+
+			return false;
+		};
+
 		window.OnNotify += (_, args) =>
 		{
 			if (args.Pspec.GetName() == "fullscreened")
@@ -233,7 +268,7 @@ internal class View
 		return urls.ToArray();
 	}
 
-	public WebView AddEpheremalTab(string url)
+	public WebView AddEpheremalTab(URIRequest req)
 	{
 		Settings settings = InitSettings();
 		WebView webview = WebView.New();
@@ -243,7 +278,7 @@ internal class View
 		HeaderBar headerbar = HeaderBar.New();
 
 		webview.SetSettings(settings);
-		webview.LoadUri(url);
+		webview.LoadRequest(req);
 		webview.SetZoomLevel(win.settings.GetDouble("zoom"));
 
 		toolbarview.AddTopBar(headerbar);
@@ -265,7 +300,9 @@ internal class View
 
 		dialog.OnClosed += (_, _) =>
 		{
+			Console.WriteLine("ephemeral tab closed");
 			webview.TryClose();
+			shift_held = false; // sometimes it forgets to fire Gtk.EventControllerKey.OnKeyReleased
 		};
 
 		return webview;
