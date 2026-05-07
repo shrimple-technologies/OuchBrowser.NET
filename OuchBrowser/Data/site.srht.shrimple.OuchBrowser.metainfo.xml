@@ -50,7 +50,9 @@
 			support.
 		</p>
 		<p>
-			NOTE: Ouch Browser is currently in alpha stage and is changing rapidly. While it is in a usable state, it does not have a large number of common web browser functions, and can have many bugs
+			NOTE: Ouch Browser is currently in alpha stage and is changing
+			rapidly. While it is in a usable state, it does not have a large
+			number of common web browser functions, and can have many bugs.
 		</p>
 	</description>
 	<provides>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-05-03 18:43-0400\n"
+"POT-Creation-Date: 2026-05-07 09:28-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -137,8 +137,21 @@ msgstr ""
 
 #: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:52
 msgid ""
-"NOTE: This is the C# rewrite, which is constantly evolving, and may be less "
-"stable than the original codebase."
+"NOTE: Ouch Browser is currently in alpha stage and is changing rapidly. "
+"While it is in a usable state, it does not have a large number of common web "
+"browser functions, and can have many bugs."
+msgstr ""
+
+#: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:68
+msgid "Ouch Browser's Main Window"
+msgstr ""
+
+#: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:72
+msgid "Ouch Browser with Tab Sidebar Closed"
+msgstr ""
+
+#: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:76
+msgid "Ouch Browser with Command Palette Opened"
 msgstr ""
 
 #: OuchBrowser/Data/UI/Preferences.blp:6 OuchBrowser/Data/UI/Preferences.blp:10
@@ -376,8 +389,8 @@ msgstr ""
 msgid "Forward"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:646 OuchBrowser/View.cs:92
-#: OuchBrowser/View.cs:165
+#: OuchBrowser/Data/UI/Window.blp:646 OuchBrowser/View.cs:89
+#: OuchBrowser/View.cs:162
 msgid "Refresh"
 msgstr ""
 
@@ -453,7 +466,7 @@ msgid_plural "{0} tabs"
 msgstr[0] ""
 msgstr[1] ""
 
-#: OuchBrowser/View.cs:87 OuchBrowser/View.cs:128 OuchBrowser/View.cs:143
+#: OuchBrowser/View.cs:84 OuchBrowser/View.cs:125 OuchBrowser/View.cs:140
 msgid "Stop Loading"
 msgstr ""
 
