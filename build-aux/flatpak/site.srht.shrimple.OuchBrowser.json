@@ -65,16 +65,16 @@
 							"type": "archive",
 							"strip-components": 0,
 							"dest-filename": "just.tar.gz",
-							"url": "https://github.com/casey/just/releases/download/1.49.0/just-1.49.0-x86_64-unknown-linux-musl.tar.gz",
-							"sha256": "05eb2f068b641b06e5b318796c2e27d4dcca608e65b34329a08c1b9f582611bd",
+							"url": "https://github.com/casey/just/releases/download/1.50.0/just-1.50.0-x86_64-unknown-linux-musl.tar.gz",
+							"sha256": "27e011cd6328fadd632e59233d2cf5f18460b8a8c4269acd324c1a8669f34db0",
 							"only_arches": ["x86_64"]
 						},
 						{
 							"type": "archive",
 							"strip-components": 0,
 							"dest-filename": "just.tar.gz",
-							"url": "https://github.com/casey/just/releases/download/1.49.0/just-1.49.0-aarch64-unknown-linux-musl.tar.gz",
-							"sha256": "993b78f51004248114af22368f69715541542b3c9941c80e02f8ae10eb404ae0",
+							"url": "https://github.com/casey/just/releases/download/1.50.0/just-1.50.0-aarch64-unknown-linux-musl.tar.gz",
+							"sha256": "3beb4967ce05883cf09ac12d6d128166eb4c6d0b03eff74b61018a6880655d7d",
 							"only_arches": ["aarch64"]
 						}
 					]
