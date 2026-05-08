@@ -276,6 +276,7 @@ internal class View
 		Gtk.Button expand_button = Gtk.Button.NewFromIconName("view-fullscreen-symbolic");
 		Gtk.Button copy_link_button = Gtk.Button.NewFromIconName("chain-link-loose-symbolic");
 		ToastOverlay toast_overlay = ToastOverlay.New();
+		Gtk.Separator hb_separator = Gtk.Separator.New(Gtk.Orientation.Vertical);
 		bool transferring_to_main = false;
 
 		webview.SetSettings(settings);
@@ -326,7 +327,11 @@ internal class View
 			toast_overlay!.AddToast(toast);
 		};
 
+		hb_separator.SetMarginTop(5);
+		hb_separator.SetMarginBottom(5);
+
 		headerbar.PackEnd(expand_button);
+		headerbar.PackEnd(hb_separator);
 		headerbar.PackEnd(copy_link_button);
 
 		toolbarview.AddTopBar(headerbar);
