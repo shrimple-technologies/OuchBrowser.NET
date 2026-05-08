@@ -438,8 +438,6 @@ internal partial class Window : Adw.ApplicationWindow
 			toast.SetTimeout(1);
 			toast_overlay!.DismissAll();
 			toast_overlay!.AddToast(toast);
-
-			webview.GoForward();
 		});
 	}
 
