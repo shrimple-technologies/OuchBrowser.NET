@@ -290,6 +290,17 @@ internal class View
 			page.SetTitle(webview.GetTitle());
 			page.SetKeyword(webview.GetUri());
 
+			Uri uri = new Uri(webview.GetUri());
+			if (Url.IsIpAddress(uri.AbsoluteUri))
+			{
+				win.hostname!.SetLabel(uri.Host + ":" + uri.Port);
+			}
+			else
+			{
+				// TODO: this should also show the search query too maybe
+				win.hostname!.SetLabel(uri.Host);
+			}
+
 			dialog.Close();
 			Connect(webview, win, page);
 			view.SetSelectedPage(page);
