@@ -202,13 +202,11 @@ internal class View
 		Gtk.EventControllerKey eck = Gtk.EventControllerKey.New();
 		eck.OnKeyPressed += (_, args) =>
 		{
-			Console.WriteLine($"KEY PRESSED: {args.Keyval}");
 			if (args.Keyval == window.settings.GetEnum("ephemeral-trigger")) ephemeral_tab_trigger_held = true;
 			return true;
 		};
 		eck.OnKeyReleased += (_, args) =>
 		{
-			Console.WriteLine($"KEY RELEASED: {args.Keyval}");
 			if (args.Keyval == window.settings.GetEnum("ephemeral-trigger")) ephemeral_tab_trigger_held = false;
 		};
 
@@ -216,7 +214,6 @@ internal class View
 
 		webview.OnDecidePolicy += (_, args) =>
 		{
-			Console.WriteLine(ephemeral_tab_trigger_held);
 			if (ephemeral_tab_trigger_held)
 			{
 				switch (args.DecisionType)
@@ -300,7 +297,6 @@ internal class View
 
 		dialog.OnClosed += (_, _) =>
 		{
-			Console.WriteLine("ephemeral tab closed");
 			webview.TryClose();
 			ephemeral_tab_trigger_held = false; // sometimes it forgets to fire Gtk.EventControllerKey.OnKeyReleased
 		};
