@@ -493,6 +493,10 @@ msgstr[1] ""
 msgid "Stop Loading"
 msgstr ""
 
+#: OuchBrowser/View.cs:283
+msgid "Expand Tab"
+msgstr ""
+
 #: OuchBrowser/Window.cs:166
 msgid "Exit and Close All Tabs?"
 msgstr ""

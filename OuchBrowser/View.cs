@@ -273,10 +273,32 @@ internal class View
 		Gtk.Frame frame = Gtk.Frame.New(null);
 		ToolbarView toolbarview = ToolbarView.New();
 		HeaderBar headerbar = HeaderBar.New();
+		Gtk.Button expand_button = Gtk.Button.NewFromIconName("view-fullscreen-symbolic");
+		bool transferring_to_main = false;
 
 		webview.SetSettings(settings);
 		webview.LoadRequest(req);
 		webview.SetZoomLevel(win.settings.GetDouble("zoom"));
+
+		expand_button.SetTooltipText(__("Expand Tab"));
+		expand_button.OnClicked += async (_, _) =>
+		{
+			frame.SetChild(Bin.New()); // make webview parentless so that we can append it to the main tabview
+			transferring_to_main = true;
+			TabPage page = view.Append(webview);
+
+			page.SetTitle(webview.GetTitle());
+			page.SetKeyword(webview.GetUri());
+
+			dialog.Close();
+			Connect(webview, win, page);
+			view.SetSelectedPage(page);
+
+			page.SetIcon(Gio.ThemedIcon.New("box-dotted-symbolic")); // set this placeholder first
+			page.SetIcon(await Favicon.GetFavicon(webview.GetUri()));
+		};
+
+		headerbar.PackStart(expand_button);
 
 		toolbarview.AddTopBar(headerbar);
 		toolbarview.SetContent(frame);
@@ -294,10 +316,11 @@ internal class View
 		dialog.SetContentWidth(900);
 		dialog.SetChild(toolbarview);
 		dialog.Present(win);
+		webview.GrabFocus();
 
 		dialog.OnClosed += (_, _) =>
 		{
-			webview.TryClose();
+			if (!transferring_to_main) webview.TryClose();
 			ephemeral_tab_trigger_held = false; // sometimes it forgets to fire Gtk.EventControllerKey.OnKeyReleased
 		};
 
