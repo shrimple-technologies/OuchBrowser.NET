@@ -114,14 +114,14 @@ msgid "This value is the main window’s size."
 msgstr ""
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:111
-msgid "Ephemeral Tab Trigger"
+msgid "Peek Tab Trigger"
 msgstr ""
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:112
 msgid ""
-"This value is the trigger for opening a ephemeral tab. For example, holding "
-"down the Shift key and clicking on a hyperlink will result in that website "
-"being loaded inside a ephemeral tab, which is separate from the main window."
+"This value is the trigger for opening a peek tab. For example, holding down "
+"the Shift key and clicking on a hyperlink will result in that website being "
+"loaded inside a peek tab, which is separate from the main window."
 msgstr ""
 
 #: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:6
@@ -228,12 +228,12 @@ msgid "Enable !bang Autocomplete"
 msgstr ""
 
 #: OuchBrowser/Data/UI/Preferences.blp:108
-msgid "Glance Tabs"
+msgid "Peek Tabs"
 msgstr ""
 
 #: OuchBrowser/Data/UI/Preferences.blp:110
 msgid ""
-"Glance tabs are temporary tabs that can be triggered by holding down a "
+"Peek tabs are temporary tabs that can be triggered by holding down a "
 "specific key and clicking on a link. These can also be expanded into full "
 "view."
 msgstr ""
@@ -244,8 +244,8 @@ msgstr ""
 
 #: OuchBrowser/Data/UI/Preferences.blp:117
 msgid ""
-"This will be the key that can be used in addition to a click to open a "
-"glance tab."
+"This will be the key that can be used in addition to a click to open a peek "
+"tab."
 msgstr ""
 
 #: OuchBrowser/Data/UI/Preferences.blp:131

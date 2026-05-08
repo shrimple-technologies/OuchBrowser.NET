@@ -9,7 +9,7 @@ internal class View
 	public readonly TabView view;
 	private readonly Window win;
 	private string layout = "default";
-	private bool ephemeral_tab_trigger_held = false;
+	private bool peek_tab_trigger_held = false;
 
 	public View(TabView tabview, Window window)
 	{
@@ -202,19 +202,19 @@ internal class View
 		Gtk.EventControllerKey eck = Gtk.EventControllerKey.New();
 		eck.OnKeyPressed += (_, args) =>
 		{
-			if (args.Keyval == window.settings.GetEnum("ephemeral-trigger")) ephemeral_tab_trigger_held = true;
+			if (args.Keyval == window.settings.GetEnum("peek-trigger")) peek_tab_trigger_held = true;
 			return true;
 		};
 		eck.OnKeyReleased += (_, args) =>
 		{
-			if (args.Keyval == window.settings.GetEnum("ephemeral-trigger")) ephemeral_tab_trigger_held = false;
+			if (args.Keyval == window.settings.GetEnum("peek-trigger")) peek_tab_trigger_held = false;
 		};
 
 		window.AddController(eck);
 
 		webview.OnDecidePolicy += (_, args) =>
 		{
-			if (ephemeral_tab_trigger_held)
+			if (peek_tab_trigger_held)
 			{
 				switch (args.DecisionType)
 				{
@@ -222,7 +222,7 @@ internal class View
 					case PolicyDecisionType.NewWindowAction:
 						// SORRY NOT SORRY FOR USING DEPRECATED APIS THAT ACTUALLY SERVED USE
 						NavigationPolicyDecision navigation_policy = (NavigationPolicyDecision)args.Decision;
-						AddEpheremalTab(navigation_policy.GetNavigationAction().GetRequest());
+						AddPeekTab(navigation_policy.GetNavigationAction().GetRequest());
 						return true;
 				}
 			}
@@ -265,7 +265,7 @@ internal class View
 		return urls.ToArray();
 	}
 
-	public WebView AddEpheremalTab(URIRequest req)
+	public WebView AddPeekTab(URIRequest req)
 	{
 		Settings settings = InitSettings();
 		WebView webview = WebView.New();
@@ -352,7 +352,7 @@ internal class View
 		dialog.OnClosed += (_, _) =>
 		{
 			if (!transferring_to_main) webview.TryClose();
-			ephemeral_tab_trigger_held = false; // sometimes it forgets to fire Gtk.EventControllerKey.OnKeyReleased
+			peek_tab_trigger_held = false; // sometimes it forgets to fire Gtk.EventControllerKey.OnKeyReleased
 		};
 
 		return webview;

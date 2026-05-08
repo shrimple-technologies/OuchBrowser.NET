@@ -13,7 +13,7 @@ internal class Preferences : Adw.Dialog
 	[Connect] private readonly SwitchRow? setting_devtools;
 	[Connect] private readonly ComboRow? setting_search_engine;
 	[Connect] private readonly ComboRow? setting_zoom;
-	[Connect] private readonly ComboRow? setting_ephemeral_trigger;
+	[Connect] private readonly ComboRow? setting_peek_trigger;
 #pragma warning restore CS0649
 
 	public Preferences(Window window) : base()
@@ -116,10 +116,10 @@ internal class Preferences : Adw.Dialog
 						setting_zoom!.SetSelected(16);
 						break;
 				}
-				switch (window.settings.GetString("ephemeral-trigger"))
+				switch (window.settings.GetString("peek-trigger"))
 				{
 					case "65505":
-						setting_ephemeral_trigger!.SetSelected(0);
+						setting_peek_trigger!.SetSelected(0);
 						break;
 					case "65507":
 						setting_search_engine!.SetSelected(1);
@@ -234,20 +234,20 @@ internal class Preferences : Adw.Dialog
 			}
 		};
 
-		setting_ephemeral_trigger!.OnNotify += (_, args) =>
+		setting_peek_trigger!.OnNotify += (_, args) =>
 				{
 					if (args.Pspec.GetName() == "selected")
 					{
-						switch (setting_ephemeral_trigger!.GetSelected())
+						switch (setting_peek_trigger!.GetSelected())
 						{
 							case 0:
-								window.settings.SetEnum("ephemeral-trigger", 65505);
+								window.settings.SetEnum("peek-trigger", 65505);
 								break;
 							case 1:
-								window.settings.SetEnum("ephemeral-trigger", 65507);
+								window.settings.SetEnum("peek-trigger", 65507);
 								break;
 							case 2:
-								window.settings.SetEnum("ephemeral-trigger", 65513);
+								window.settings.SetEnum("peek-trigger", 65513);
 								break;
 						}
 					}
