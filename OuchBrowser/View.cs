@@ -274,6 +274,8 @@ internal class View
 		ToolbarView toolbarview = ToolbarView.New();
 		HeaderBar headerbar = HeaderBar.New();
 		Gtk.Button expand_button = Gtk.Button.NewFromIconName("view-fullscreen-symbolic");
+		Gtk.Button copy_link_button = Gtk.Button.NewFromIconName("chain-link-loose-symbolic");
+		ToastOverlay toast_overlay = ToastOverlay.New();
 		bool transferring_to_main = false;
 
 		webview.SetSettings(settings);
@@ -309,7 +311,23 @@ internal class View
 			page.SetIcon(await Favicon.GetFavicon(webview.GetUri()));
 		};
 
+		copy_link_button.SetTooltipText(__("Copy Link"));
+		copy_link_button.OnClicked += (_, _) =>
+		{
+			Toast toast = Toast.New(__("Link Copied"));
+
+			string uri = webview.GetUri();
+			Gdk.Display display = Gdk.Display.GetDefault()!;
+			Gdk.Clipboard clipboard = display!.GetClipboard();
+			clipboard.SetText(uri);
+
+			toast.SetTimeout(1);
+			toast_overlay!.DismissAll();
+			toast_overlay!.AddToast(toast);
+		};
+
 		headerbar.PackStart(expand_button);
+		headerbar.PackEnd(copy_link_button);
 
 		toolbarview.AddTopBar(headerbar);
 		toolbarview.SetContent(frame);
@@ -321,11 +339,13 @@ internal class View
 		frame.SetHexpand(true);
 		frame.SetChild(webview);
 
+		toast_overlay.SetChild(toolbarview);
+
 		dialog.HeightRequest = 360;
 		dialog.WidthRequest = 360;
 		dialog.SetContentHeight(650);
 		dialog.SetContentWidth(900);
-		dialog.SetChild(toolbarview);
+		dialog.SetChild(toast_overlay);
 		dialog.Present(win);
 		webview.GrabFocus();
 

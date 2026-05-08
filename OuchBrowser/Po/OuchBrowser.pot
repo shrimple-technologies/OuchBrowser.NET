@@ -32,8 +32,8 @@ msgid "SUGGESTIONS"
 msgstr ""
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:29
-#: OuchBrowser/Data/UI/Preferences.blp:202
-#: OuchBrowser/Data/UI/Preferences.blp:224
+#: OuchBrowser/Data/UI/Preferences.blp:204
+#: OuchBrowser/Data/UI/Preferences.blp:226
 msgid "Search Engine"
 msgstr ""
 
@@ -183,7 +183,7 @@ msgid "Preferences"
 msgstr ""
 
 #: OuchBrowser/Data/UI/Preferences.blp:24
-#: OuchBrowser/Data/UI/Preferences.blp:298
+#: OuchBrowser/Data/UI/Preferences.blp:300
 msgid "Extensions"
 msgstr ""
 
@@ -242,63 +242,53 @@ msgstr ""
 msgid "Key Trigger"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:116
-msgid "This will be the action that can be used to open a glance tab."
+#: OuchBrowser/Data/UI/Preferences.blp:117
+msgid ""
+"This will be the key that can be used in addition to a click to open a "
+"glance tab."
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:120
-msgid "Shift + Click"
-msgstr ""
-
-#: OuchBrowser/Data/UI/Preferences.blp:121
-msgid "Ctrl + Click"
-msgstr ""
-
-#: OuchBrowser/Data/UI/Preferences.blp:122
-msgid "Alt + Click"
-msgstr ""
-
-#: OuchBrowser/Data/UI/Preferences.blp:129
+#: OuchBrowser/Data/UI/Preferences.blp:131
 msgid "Developer"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:133
+#: OuchBrowser/Data/UI/Preferences.blp:135
 msgid "Enable Developer Tools"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:134
+#: OuchBrowser/Data/UI/Preferences.blp:136
 msgid "This will allow access to the Web Inspector"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:145
+#: OuchBrowser/Data/UI/Preferences.blp:147
 msgid "Accessibility"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:159
+#: OuchBrowser/Data/UI/Preferences.blp:161
 msgid "Content"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:163
+#: OuchBrowser/Data/UI/Preferences.blp:165
 msgid "Page Zoom"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:190
+#: OuchBrowser/Data/UI/Preferences.blp:192
 msgid "Zoom Text"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:191
+#: OuchBrowser/Data/UI/Preferences.blp:193
 msgid "Zooms text and images instead of the view"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:238
+#: OuchBrowser/Data/UI/Preferences.blp:240
 msgid "Custom Search Engines"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:242
+#: OuchBrowser/Data/UI/Preferences.blp:244
 msgid "New Search Engine…"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:247
+#: OuchBrowser/Data/UI/Preferences.blp:249
 msgid "See !bangs preferences for more options"
 msgstr ""
 
@@ -306,11 +296,11 @@ msgstr ""
 msgid "!bangs"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:275
+#: OuchBrowser/Data/UI/Preferences.blp:277
 msgid "Custom Bangs"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:279
+#: OuchBrowser/Data/UI/Preferences.blp:281
 msgid "New Bang…"
 msgstr ""
 
@@ -318,7 +308,7 @@ msgstr ""
 msgid "!bangs provided by Kagi"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:302
+#: OuchBrowser/Data/UI/Preferences.blp:304
 msgid "Select an Extension"
 msgstr ""
 
@@ -524,8 +514,12 @@ msgstr[1] ""
 msgid "Stop Loading"
 msgstr ""
 
-#: OuchBrowser/View.cs:283
+#: OuchBrowser/View.cs:285
 msgid "Expand Tab"
+msgstr ""
+
+#: OuchBrowser/View.cs:317 OuchBrowser/Window.cs:437
+msgid "Link Copied"
 msgstr ""
 
 #: OuchBrowser/Window.cs:166
@@ -543,8 +537,4 @@ msgstr ""
 
 #: OuchBrowser/Window.cs:170
 msgid "Cancel"
-msgstr ""
-
-#: OuchBrowser/Window.cs:437
-msgid "Link Copied"
 msgstr ""
