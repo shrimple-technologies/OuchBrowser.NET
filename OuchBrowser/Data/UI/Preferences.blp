@@ -81,6 +81,29 @@ Adw.NavigationSplitView nsv {
 								}
 
 								Adw.PreferencesGroup {
+									title: _("Glance Tabs");
+									description: _(
+										"Glance tabs are temporary tabs that can be triggered by holding down a specific key and clicking on a link. These can also be expanded into full view."
+									);
+
+									Adw.ComboRow setting_ephemeral_trigger {
+										icon-name: "window-new-symbolic";
+										title: _("Key Trigger");
+										subtitle: _(
+											"This will be the key that can be used in addition to a click to open a glance tab."
+										);
+
+										model: StringList {
+											strings [
+												"Shift",
+												"Ctrl",
+												"Alt",
+											]
+										};
+									}
+								}
+
+								Adw.PreferencesGroup {
 									title: _("Developer");
 
 									Adw.SwitchRow setting_devtools {

@@ -13,6 +13,7 @@ internal class Preferences : Adw.Dialog
 	[Connect] private readonly SwitchRow? setting_devtools;
 	[Connect] private readonly ComboRow? setting_search_engine;
 	[Connect] private readonly ComboRow? setting_zoom;
+	[Connect] private readonly ComboRow? setting_ephemeral_trigger;
 #pragma warning restore CS0649
 
 	public Preferences(Window window) : base()
@@ -113,6 +114,18 @@ internal class Preferences : Adw.Dialog
 						break;
 					case 5:
 						setting_zoom!.SetSelected(16);
+						break;
+				}
+				switch (window.settings.GetString("ephemeral-trigger"))
+				{
+					case "65505":
+						setting_ephemeral_trigger!.SetSelected(0);
+						break;
+					case "65507":
+						setting_search_engine!.SetSelected(1);
+						break;
+					case "65513":
+						setting_search_engine!.SetSelected(2);
 						break;
 				}
 			}
@@ -220,6 +233,25 @@ internal class Preferences : Adw.Dialog
 				}
 			}
 		};
+
+		setting_ephemeral_trigger!.OnNotify += (_, args) =>
+				{
+					if (args.Pspec.GetName() == "selected")
+					{
+						switch (setting_ephemeral_trigger!.GetSelected())
+						{
+							case 0:
+								window.settings.SetEnum("ephemeral-trigger", 65505);
+								break;
+							case 1:
+								window.settings.SetEnum("ephemeral-trigger", 65507);
+								break;
+							case 2:
+								window.settings.SetEnum("ephemeral-trigger", 65513);
+								break;
+						}
+					}
+				};
 	}
 
 	public void FocusPane(string section)
