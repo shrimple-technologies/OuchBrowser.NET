@@ -326,7 +326,7 @@ internal class View
 			toast_overlay!.AddToast(toast);
 		};
 
-		headerbar.PackStart(expand_button);
+		headerbar.PackEnd(expand_button);
 		headerbar.PackEnd(copy_link_button);
 
 		toolbarview.AddTopBar(headerbar);
