@@ -200,6 +200,7 @@ internal class View
 		};
 
 		Gtk.EventControllerKey eck = Gtk.EventControllerKey.New();
+		window.AddController(eck);
 		eck.OnKeyPressed += (_, args) =>
 		{
 			if (args.Keyval == window.settings.GetEnum("peek-trigger")) peek_tab_trigger_held = true;
@@ -209,8 +210,6 @@ internal class View
 		{
 			if (args.Keyval == window.settings.GetEnum("peek-trigger")) peek_tab_trigger_held = false;
 		};
-
-		window.AddController(eck);
 
 		webview.OnDecidePolicy += (_, args) =>
 		{
@@ -244,6 +243,24 @@ internal class View
 					window.mlv!.SetLayoutName(layout);
 				}
 			}
+		};
+
+		webview.OnContextMenu += (_, args) =>
+		{
+			if (args.HitTestResult.ContextIsLink())
+			{
+				ContextMenu menu = args.ContextMenu;
+				Gio.SimpleAction action = Gio.SimpleAction.New("peek", null);
+				action.OnActivate += (_, _) =>
+				{
+					AddPeekTab(URIRequest.New(args.HitTestResult.GetLinkUri()));
+				};
+
+				menu.Insert(ContextMenuItem.NewFromGaction(action, __("Open Link in Peek Tab"), null), 2);
+				menu.Insert(ContextMenuItem.NewSeparator(), 3);
+			}
+
+			return false;
 		};
 	}
 

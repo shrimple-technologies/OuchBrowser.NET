@@ -8,7 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
+<<<<<<< HEAD
 "POT-Creation-Date: 2026-05-09 00:24-0400\n"
+=======
+"POT-Creation-Date: 2026-05-08 19:09-0400\n"
+>>>>>>> d5d634f (implement context menu item for summoning a peek tab)
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -442,7 +446,7 @@ msgstr ""
 msgid "Reveal Command Palette"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:686
+#: OuchBrowser/Data/UI/Window.blp:685 OuchBrowser/View.cs:332
 msgid "Copy Link"
 msgstr ""
 
@@ -514,11 +518,15 @@ msgstr[1] ""
 msgid "Stop Loading"
 msgstr ""
 
-#: OuchBrowser/View.cs:285
+#: OuchBrowser/View.cs:259
+msgid "Open Link in Peek Tab"
+msgstr ""
+
+#: OuchBrowser/View.cs:303
 msgid "Expand Tab"
 msgstr ""
 
-#: OuchBrowser/View.cs:317 OuchBrowser/Window.cs:437
+#: OuchBrowser/View.cs:335 OuchBrowser/Window.cs:437
 msgid "Link Copied"
 msgstr ""
 
