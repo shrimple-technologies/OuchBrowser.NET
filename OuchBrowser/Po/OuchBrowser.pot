@@ -479,7 +479,7 @@ msgstr ""
 msgid "Reveal Command Palette"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:686 OuchBrowser/View.cs:340
+#: OuchBrowser/Data/UI/Window.blp:686 OuchBrowser/View.cs:339
 msgid "Copy Link"
 msgstr ""
 
@@ -551,15 +551,15 @@ msgstr[1] ""
 msgid "Stop Loading"
 msgstr ""
 
-#: OuchBrowser/View.cs:267
+#: OuchBrowser/View.cs:266
 msgid "Open Link in Peek Tab"
 msgstr ""
 
-#: OuchBrowser/View.cs:311
+#: OuchBrowser/View.cs:310
 msgid "Expand Tab"
 msgstr ""
 
-#: OuchBrowser/View.cs:343 OuchBrowser/Window.cs:437
+#: OuchBrowser/View.cs:342 OuchBrowser/Window.cs:437
 msgid "Link Copied"
 msgstr ""
 

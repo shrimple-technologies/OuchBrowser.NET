@@ -221,7 +221,7 @@ internal class View
 					NavigationPolicyDecision navigation_policy = (NavigationPolicyDecision)args.Decision;
 					URIRequest req = navigation_policy.GetNavigationAction().GetRequest();
 
-					if (navigation_policy.GetNavigationAction().GetNavigationType() == NavigationType.Other) return false;
+					if (navigation_policy.GetNavigationAction().GetNavigationType() != NavigationType.LinkClicked) return false;
 			
 					if (
 						peek_tab_trigger_held
