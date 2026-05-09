@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-05-08 21:47-0400\n"
+"POT-Creation-Date: 2026-05-09 00:24-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -152,6 +152,18 @@ msgstr ""
 
 #: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:76
 msgid "Ouch Browser with Command Palette Opened"
+msgstr ""
+
+#: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:80
+msgid "Ouch Browser’s Main Window in Dark Mode"
+msgstr ""
+
+#: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:84
+msgid "Ouch Browser with Tab Sidebar Closed in Dark Mode"
+msgstr ""
+
+#: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:88
+msgid "Ouch Browser with Command Palette Opened in Dark Mode"
 msgstr ""
 
 #: OuchBrowser/Data/UI/Preferences.blp:6 OuchBrowser/Data/UI/Preferences.blp:10
