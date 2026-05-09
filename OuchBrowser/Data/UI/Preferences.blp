@@ -109,9 +109,15 @@ Adw.NavigationSplitView nsv {
 											"These domains will always be opened inside a peek tab even if the peek trigger isn’t held"
 										);
 
-										Adw.ButtonRow {
-											start-icon-name: "list-add-symbolic";
-											title: _("New Domain…");
+										[suffix]
+										Button {
+											icon-name: "list-add-symbolic";
+											tooltip-text: _("New Domain…");
+											valign: center;
+
+											styles [
+												"flat",
+											]
 										}
 									}
 								}
