@@ -223,10 +223,7 @@ internal class View
 
 					if (navigation_policy.GetNavigationAction().GetNavigationType() != NavigationType.LinkClicked) return false;
 
-					if (
-						peek_tab_trigger_held
-						|| window.settings.GetStrv("peek-autoopen-domains").IndexOf(new Uri(req.GetUri()).Host) != -1
-					)
+					if (peek_tab_trigger_held)
 					{
 						AddPeekTab(req);
 						return true;

@@ -117,15 +117,5 @@
 				peek tab, which is separate from the main window.
 			</description>
 		</key>
-
-		<key type="as" name="peek-autoopen-domains">
-			<default>[]</default>
-			<summary>Auto-open Domains in Peek Tab</summary>
-			<description>
-				This value is the domains that would be automatically opened
-				inside a peek tab once clicked, even without the peek tab
-				trigger being held.
-			</description>
-		</key>
 	</schema>
 </schemalist>
