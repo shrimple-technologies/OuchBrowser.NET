@@ -88,7 +88,7 @@ Adw.NavigationSplitView nsv {
 
 									Adw.ComboRow setting_peek_trigger {
 										icon-name: "window-new-symbolic";
-										title: _("Key Trigger");
+										title: _("Peek Trigger");
 										subtitle: _(
 											"This will be the key that can be used in addition to a click to open a peek tab."
 										);
@@ -100,6 +100,19 @@ Adw.NavigationSplitView nsv {
 												"Alt",
 											]
 										};
+									}
+
+									Adw.ExpanderRow {
+										icon-name: "web-symbolic";
+										title: _("Automatically Open in Peek Tab");
+										subtitle: _(
+											"These domains will always be opened inside a peek tab even if the peek trigger isn’t held"
+										);
+
+										Adw.ButtonRow {
+											start-icon-name: "list-add-symbolic";
+											title: _("New Domain…");
+										}
 									}
 								}
 

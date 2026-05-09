@@ -213,17 +213,25 @@ internal class View
 
 		webview.OnDecidePolicy += (_, args) =>
 		{
-			if (peek_tab_trigger_held)
+			switch (args.DecisionType)
 			{
-				switch (args.DecisionType)
-				{
-					case PolicyDecisionType.NavigationAction:
-					case PolicyDecisionType.NewWindowAction:
-						// SORRY NOT SORRY FOR USING DEPRECATED APIS THAT ACTUALLY SERVED USE
-						NavigationPolicyDecision navigation_policy = (NavigationPolicyDecision)args.Decision;
-						AddPeekTab(navigation_policy.GetNavigationAction().GetRequest());
+				case PolicyDecisionType.NavigationAction:
+				case PolicyDecisionType.NewWindowAction:
+					// SORRY NOT SORRY FOR USING DEPRECATED APIS THAT ACTUALLY SERVED USE
+					NavigationPolicyDecision navigation_policy = (NavigationPolicyDecision)args.Decision;
+					URIRequest req = navigation_policy.GetNavigationAction().GetRequest();
+
+					if (navigation_policy.GetNavigationAction().GetNavigationType() == NavigationType.Other) return false;
+			
+					if (
+						peek_tab_trigger_held
+						|| window.settings.GetStrv("peek-autoopen-domains").IndexOf(new Uri(req.GetUri()).Host) != -1
+					)
+					{
+						AddPeekTab(req);
 						return true;
-				}
+					}
+					else return false;
 			}
 
 			return false;

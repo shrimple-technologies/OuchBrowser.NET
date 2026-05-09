@@ -8,11 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-<<<<<<< HEAD
 "POT-Creation-Date: 2026-05-09 00:24-0400\n"
-=======
-"POT-Creation-Date: 2026-05-08 19:09-0400\n"
->>>>>>> d5d634f (implement context menu item for summoning a peek tab)
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -36,8 +32,8 @@ msgid "SUGGESTIONS"
 msgstr ""
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:29
-#: OuchBrowser/Data/UI/Preferences.blp:204
-#: OuchBrowser/Data/UI/Preferences.blp:226
+#: OuchBrowser/Data/UI/Preferences.blp:217
+#: OuchBrowser/Data/UI/Preferences.blp:239
 msgid "Search Engine"
 msgstr ""
 
@@ -128,6 +124,16 @@ msgid ""
 "loaded inside a peek tab, which is separate from the main window."
 msgstr ""
 
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:123
+msgid "Auto-open Domains in Peek Tab"
+msgstr ""
+
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:124
+msgid ""
+"This value is the domains that would be automatically opened inside a peek "
+"tab once clicked, even without the peek tab trigger being held."
+msgstr ""
+
 #: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:6
 #: OuchBrowser/Data/UI/Window.blp:16 OuchBrowser/Data/UI/Window.blp:249
 #: OuchBrowser/Window.cs:90
@@ -187,7 +193,7 @@ msgid "Preferences"
 msgstr ""
 
 #: OuchBrowser/Data/UI/Preferences.blp:24
-#: OuchBrowser/Data/UI/Preferences.blp:300
+#: OuchBrowser/Data/UI/Preferences.blp:313
 msgid "Extensions"
 msgstr ""
 
@@ -243,7 +249,7 @@ msgid ""
 msgstr ""
 
 #: OuchBrowser/Data/UI/Preferences.blp:115
-msgid "Key Trigger"
+msgid "Peek Trigger"
 msgstr ""
 
 #: OuchBrowser/Data/UI/Preferences.blp:117
@@ -253,66 +259,88 @@ msgid ""
 msgstr ""
 
 #: OuchBrowser/Data/UI/Preferences.blp:131
+msgid "Automatically Open in Peek Tab"
+msgstr ""
+
+#: OuchBrowser/Data/UI/Preferences.blp:133
+msgid ""
+"These domains will always be opened inside a peek tab even if the peek "
+"trigger isn’t held"
+msgstr ""
+
+#: OuchBrowser/Data/UI/Preferences.blp:138
+msgid "New Domain…"
+msgstr ""
+
+#: OuchBrowser/Data/UI/Preferences.blp:144
 msgid "Developer"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:135
+#: OuchBrowser/Data/UI/Preferences.blp:148
 msgid "Enable Developer Tools"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:136
+#: OuchBrowser/Data/UI/Preferences.blp:149
 msgid "This will allow access to the Web Inspector"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:147
+#: OuchBrowser/Data/UI/Preferences.blp:160
 msgid "Accessibility"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:161
+#: OuchBrowser/Data/UI/Preferences.blp:174
 msgid "Content"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:165
+#: OuchBrowser/Data/UI/Preferences.blp:178
 msgid "Page Zoom"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:192
+#: OuchBrowser/Data/UI/Preferences.blp:205
 msgid "Zoom Text"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:193
+#: OuchBrowser/Data/UI/Preferences.blp:206
 msgid "Zooms text and images instead of the view"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:240
+#: OuchBrowser/Data/UI/Preferences.blp:253
 msgid "Custom Search Engines"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:244
+#: OuchBrowser/Data/UI/Preferences.blp:257
 msgid "New Search Engine…"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:249
+#: OuchBrowser/Data/UI/Preferences.blp:262
 msgid "See !bangs preferences for more options"
 msgstr ""
 
+<<<<<<< HEAD
 #: OuchBrowser/Data/UI/Preferences.blp:240 OuchBrowser/Data/UI/Window.blp:1040
+=======
+#: OuchBrowser/Data/UI/Preferences.blp:276 OuchBrowser/Data/UI/Window.blp:1040
+>>>>>>> 0ab6369 (implement the ability to always open peek tabs for specific domains)
 msgid "!bangs"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:277
+#: OuchBrowser/Data/UI/Preferences.blp:290
 msgid "Custom Bangs"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:281
+#: OuchBrowser/Data/UI/Preferences.blp:294
 msgid "New Bang…"
 msgstr ""
 
+<<<<<<< HEAD
 #: OuchBrowser/Data/UI/Preferences.blp:263 OuchBrowser/Data/UI/Window.blp:1119
+=======
+#: OuchBrowser/Data/UI/Preferences.blp:299 OuchBrowser/Data/UI/Window.blp:1119
+>>>>>>> 0ab6369 (implement the ability to always open peek tabs for specific domains)
 msgid "!bangs provided by Kagi"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:304
+#: OuchBrowser/Data/UI/Preferences.blp:317
 msgid "Select an Extension"
 msgstr ""
 
@@ -437,8 +465,13 @@ msgstr ""
 msgid "Forward"
 msgstr ""
 
+<<<<<<< HEAD
 #: OuchBrowser/Data/UI/Window.blp:647 OuchBrowser/View.cs:89
 #: OuchBrowser/View.cs:162
+=======
+#: OuchBrowser/Data/UI/Window.blp:647 OuchBrowser/View.cs:90
+#: OuchBrowser/View.cs:163
+>>>>>>> 0ab6369 (implement the ability to always open peek tabs for specific domains)
 msgid "Refresh"
 msgstr ""
 
@@ -446,7 +479,7 @@ msgstr ""
 msgid "Reveal Command Palette"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:685 OuchBrowser/View.cs:332
+#: OuchBrowser/Data/UI/Window.blp:686 OuchBrowser/View.cs:340
 msgid "Copy Link"
 msgstr ""
 
@@ -518,15 +551,15 @@ msgstr[1] ""
 msgid "Stop Loading"
 msgstr ""
 
-#: OuchBrowser/View.cs:259
+#: OuchBrowser/View.cs:267
 msgid "Open Link in Peek Tab"
 msgstr ""
 
-#: OuchBrowser/View.cs:303
+#: OuchBrowser/View.cs:311
 msgid "Expand Tab"
 msgstr ""
 
-#: OuchBrowser/View.cs:335 OuchBrowser/Window.cs:437
+#: OuchBrowser/View.cs:343 OuchBrowser/Window.cs:437
 msgid "Link Copied"
 msgstr ""
 
