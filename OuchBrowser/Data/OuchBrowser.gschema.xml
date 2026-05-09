@@ -96,7 +96,7 @@
 			<default>(890, 550)</default>
 			<summary>Initial Window Size</summary>
 			<description>
-				This value is the main window's size.
+				This value is the main window’s size.
 			</description>
 		</key>
 	</schema>
