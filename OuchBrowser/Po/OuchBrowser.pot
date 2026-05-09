@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-05-09 00:24-0400\n"
+"POT-Creation-Date: 2026-05-09 01:29-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -109,7 +109,7 @@ msgstr ""
 msgid "Initial Window Size"
 msgstr ""
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:98
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:104
 msgid "This value is the main window’s size."
 msgstr ""
 
@@ -316,11 +316,7 @@ msgstr ""
 msgid "See !bangs preferences for more options"
 msgstr ""
 
-<<<<<<< HEAD
-#: OuchBrowser/Data/UI/Preferences.blp:240 OuchBrowser/Data/UI/Window.blp:1040
-=======
 #: OuchBrowser/Data/UI/Preferences.blp:276 OuchBrowser/Data/UI/Window.blp:1040
->>>>>>> 0ab6369 (implement the ability to always open peek tabs for specific domains)
 msgid "!bangs"
 msgstr ""
 
@@ -332,11 +328,7 @@ msgstr ""
 msgid "New Bang…"
 msgstr ""
 
-<<<<<<< HEAD
-#: OuchBrowser/Data/UI/Preferences.blp:263 OuchBrowser/Data/UI/Window.blp:1119
-=======
 #: OuchBrowser/Data/UI/Preferences.blp:299 OuchBrowser/Data/UI/Window.blp:1119
->>>>>>> 0ab6369 (implement the ability to always open peek tabs for specific domains)
 msgid "!bangs provided by Kagi"
 msgstr ""
 
@@ -465,13 +457,8 @@ msgstr ""
 msgid "Forward"
 msgstr ""
 
-<<<<<<< HEAD
-#: OuchBrowser/Data/UI/Window.blp:647 OuchBrowser/View.cs:89
-#: OuchBrowser/View.cs:162
-=======
 #: OuchBrowser/Data/UI/Window.blp:647 OuchBrowser/View.cs:90
 #: OuchBrowser/View.cs:163
->>>>>>> 0ab6369 (implement the ability to always open peek tabs for specific domains)
 msgid "Refresh"
 msgstr ""
 
@@ -479,7 +466,7 @@ msgstr ""
 msgid "Reveal Command Palette"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:686 OuchBrowser/View.cs:339
+#: OuchBrowser/Data/UI/Window.blp:686 OuchBrowser/View.cs:340
 msgid "Copy Link"
 msgstr ""
 
@@ -551,15 +538,15 @@ msgstr[1] ""
 msgid "Stop Loading"
 msgstr ""
 
-#: OuchBrowser/View.cs:266
+#: OuchBrowser/View.cs:267
 msgid "Open Link in Peek Tab"
 msgstr ""
 
-#: OuchBrowser/View.cs:310
+#: OuchBrowser/View.cs:311
 msgid "Expand Tab"
 msgstr ""
 
-#: OuchBrowser/View.cs:342 OuchBrowser/Window.cs:437
+#: OuchBrowser/View.cs:343 OuchBrowser/Window.cs:437
 msgid "Link Copied"
 msgstr ""
 
