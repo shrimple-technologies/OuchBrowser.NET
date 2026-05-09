@@ -235,23 +235,23 @@ internal class Preferences : Adw.Dialog
 		};
 
 		setting_peek_trigger!.OnNotify += (_, args) =>
+		{
+			if (args.Pspec.GetName() == "selected")
+			{
+				switch (setting_peek_trigger!.GetSelected())
 				{
-					if (args.Pspec.GetName() == "selected")
-					{
-						switch (setting_peek_trigger!.GetSelected())
-						{
-							case 0:
-								window.settings.SetEnum("peek-trigger", 65505);
-								break;
-							case 1:
-								window.settings.SetEnum("peek-trigger", 65507);
-								break;
-							case 2:
-								window.settings.SetEnum("peek-trigger", 65513);
-								break;
-						}
-					}
-				};
+					case 0:
+						window.settings.SetEnum("peek-trigger", 65505);
+						break;
+					case 1:
+						window.settings.SetEnum("peek-trigger", 65507);
+						break;
+					case 2:
+						window.settings.SetEnum("peek-trigger", 65513);
+						break;
+				}
+			}
+		};
 	}
 
 	public void FocusPane(string section)
