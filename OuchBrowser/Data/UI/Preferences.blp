@@ -5,37 +5,13 @@ Adw.NavigationSplitView nsv {
 	sidebar: Adw.NavigationPage {
 		title: _("Preferences");
 
-		Adw.NavigationView nv {
-			Adw.NavigationPage {
-				title: _("Preferences");
+		Adw.ToolbarView {
+			[top]
+			Adw.HeaderBar {}
 
-				Adw.ToolbarView {
-					[top]
-					Adw.HeaderBar {}
-
-					Adw.ViewSwitcherSidebar {
-						margin-end: 10;
-						stack: bind view;
-					}
-				}
-			}
-
-			Adw.NavigationPage {
-				title: _("Extensions");
-				tag: "extensions";
-
-				Adw.ToolbarView {
-					[top]
-					Adw.HeaderBar {}
-
-					Adw.StatusPage {
-						icon-name: "puzzle-piece-symbolic";
-
-						styles [
-							"compact",
-						]
-					}
-				}
+			Adw.ViewSwitcherSidebar {
+				margin-end: 10;
+				stack: bind view;
 			}
 		}
 	};
@@ -268,17 +244,6 @@ Adw.NavigationSplitView nsv {
 								}
 							}
 						}
-					};
-				}
-
-				Adw.ViewStackPage {
-					name: "extensions";
-					icon-name: "puzzle-piece-symbolic";
-					title: _("Extensions");
-
-					child: Adw.StatusPage {
-						icon-name: "puzzle-piece-symbolic";
-						title: _("Select an Extension");
 					};
 				}
 			}

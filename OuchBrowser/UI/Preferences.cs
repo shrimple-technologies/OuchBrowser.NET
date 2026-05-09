@@ -7,7 +7,6 @@ internal class Preferences : Adw.Dialog
 {
 #pragma warning disable CS0649
 	[Connect] private readonly NavigationSplitView? nsv;
-	[Connect] private readonly NavigationView? nv;
 	[Connect] private readonly ViewStack? view;
 	[Connect] private readonly SwitchRow? setting_search_autocomplete;
 	[Connect] private readonly SwitchRow? setting_bang_autocomplete;
@@ -125,14 +124,7 @@ internal class Preferences : Adw.Dialog
 			{
 				ViewStackPage page = view!.GetPage(view!.GetVisibleChild()!);
 				nsv!.GetContent()!.SetTitle(__(page!.GetTitle()!));
-				if (view!.GetVisibleChildName() == "extensions")
-				{
-					nv!.PushByTag("extensions");
-				}
-				else
-				{
-					nsv!.SetShowContent(true);
-				}
+				nsv!.SetShowContent(true);
 			}
 		};
 
