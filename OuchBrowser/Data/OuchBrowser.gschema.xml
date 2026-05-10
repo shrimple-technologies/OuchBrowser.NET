@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <schemalist>
+	<enum id="site.srht.shrimple.OuchBrowser.PEEK_TRIGGER">
+		<value nick="shift" value="65505" />
+		<value nick="ctrl" value="65507" />
+		<value nick="alt" value="65513" />
+	</enum>
+		
 	<schema
 		id="site.srht.shrimple.OuchBrowser"
 		path="/site/srht/shrimple/OuchBrowser/"
@@ -97,6 +103,18 @@
 			<summary>Initial Window Size</summary>
 			<description>
 				This value is the main window’s size.
+			</description>
+		</key>
+
+		<key enum="site.srht.shrimple.OuchBrowser.PEEK_TRIGGER" name="peek-trigger">
+			<default>"shift"</default>
+			<summary>Peek Tab Trigger</summary>
+			<description>
+				This value is the trigger for opening a peek tab.
+
+				For example, holding down the Shift key and clicking on a
+				hyperlink will result in that website being loaded inside a
+				peek tab, which is separate from the main window.
 			</description>
 		</key>
 	</schema>

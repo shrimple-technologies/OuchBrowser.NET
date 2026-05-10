@@ -9,6 +9,7 @@ internal class View
 	public readonly TabView view;
 	private readonly Window win;
 	private string layout = "default";
+	private bool peek_tab_trigger_held = false;
 
 	public View(TabView tabview, Window window)
 	{
@@ -198,6 +199,41 @@ internal class View
 			}
 		};
 
+		Gtk.EventControllerKey eck = Gtk.EventControllerKey.New();
+		window.AddController(eck);
+		eck.OnKeyPressed += (_, args) =>
+		{
+			if (args.Keyval == window.settings.GetEnum("peek-trigger")) peek_tab_trigger_held = true;
+			return true;
+		};
+		eck.OnKeyReleased += (_, args) =>
+		{
+			if (args.Keyval == window.settings.GetEnum("peek-trigger")) peek_tab_trigger_held = false;
+		};
+
+		webview.OnDecidePolicy += (_, args) =>
+		{
+			switch (args.DecisionType)
+			{
+				case PolicyDecisionType.NavigationAction:
+				case PolicyDecisionType.NewWindowAction:
+					// SORRY NOT SORRY FOR USING DEPRECATED APIS THAT ACTUALLY SERVED USE
+					NavigationPolicyDecision navigation_policy = (NavigationPolicyDecision)args.Decision;
+					URIRequest req = navigation_policy.GetNavigationAction().GetRequest();
+
+					if (navigation_policy.GetNavigationAction().GetNavigationType() != NavigationType.LinkClicked) return false;
+
+					if (peek_tab_trigger_held)
+					{
+						AddPeekTab(req);
+						return true;
+					}
+					else return false;
+			}
+
+			return false;
+		};
+
 		window.OnNotify += (_, args) =>
 		{
 			if (args.Pspec.GetName() == "fullscreened")
@@ -212,6 +248,24 @@ internal class View
 					window.mlv!.SetLayoutName(layout);
 				}
 			}
+		};
+
+		webview.OnContextMenu += (_, args) =>
+		{
+			if (args.HitTestResult.ContextIsLink())
+			{
+				ContextMenu menu = args.ContextMenu;
+				Gio.SimpleAction action = Gio.SimpleAction.New("peek", null);
+				action.OnActivate += (_, _) =>
+				{
+					AddPeekTab(URIRequest.New(args.HitTestResult.GetLinkUri()));
+				};
+
+				menu.Insert(ContextMenuItem.NewFromGaction(action, __("Open Link in Peek Tab"), null), 2);
+				menu.Insert(ContextMenuItem.NewSeparator(), 3);
+			}
+
+			return false;
 		};
 	}
 
@@ -231,5 +285,103 @@ internal class View
 		}
 
 		return urls.ToArray();
+	}
+
+	public WebView AddPeekTab(URIRequest req)
+	{
+		Settings settings = InitSettings();
+		WebView webview = WebView.New();
+		Dialog dialog = Dialog.New();
+		Gtk.Frame frame = Gtk.Frame.New(null);
+		ToolbarView toolbarview = ToolbarView.New();
+		HeaderBar headerbar = HeaderBar.New();
+		Gtk.Button expand_button = Gtk.Button.NewFromIconName("view-fullscreen-symbolic");
+		Gtk.Button copy_link_button = Gtk.Button.NewFromIconName("chain-link-loose-symbolic");
+		ToastOverlay toast_overlay = ToastOverlay.New();
+		Gtk.Separator hb_separator = Gtk.Separator.New(Gtk.Orientation.Vertical);
+		bool transferring_to_main = false;
+
+		webview.SetSettings(settings);
+		webview.LoadRequest(req);
+		webview.SetZoomLevel(win.settings.GetDouble("zoom"));
+
+		expand_button.SetTooltipText(__("Expand Tab"));
+		expand_button.OnClicked += async (_, _) =>
+		{
+			frame.SetChild(Bin.New()); // make webview parentless so that we can append it to the main tabview
+			transferring_to_main = true;
+			TabPage page = view.Append(webview);
+
+			page.SetTitle(webview.GetTitle());
+			page.SetKeyword(webview.GetUri());
+
+			Uri uri = new Uri(webview.GetUri());
+			if (Url.IsIpAddress(uri.AbsoluteUri))
+			{
+				win.hostname!.SetLabel(uri.Host + ":" + uri.Port);
+			}
+			else
+			{
+				// TODO: this should also show the search query too maybe
+				win.hostname!.SetLabel(uri.Host);
+			}
+
+			dialog.Close();
+			Connect(webview, win, page);
+			view.SetSelectedPage(page);
+
+			page.SetIcon(Gio.ThemedIcon.New("box-dotted-symbolic")); // set this placeholder first
+			page.SetIcon(await Favicon.GetFavicon(webview.GetUri()));
+		};
+
+		copy_link_button.SetTooltipText(__("Copy Link"));
+		copy_link_button.OnClicked += (_, _) =>
+		{
+			Toast toast = Toast.New(__("Link Copied"));
+
+			string uri = webview.GetUri();
+			Gdk.Display display = Gdk.Display.GetDefault()!;
+			Gdk.Clipboard clipboard = display!.GetClipboard();
+			clipboard.SetText(uri);
+
+			toast.SetTimeout(1);
+			toast_overlay!.DismissAll();
+			toast_overlay!.AddToast(toast);
+		};
+
+		hb_separator.SetMarginTop(5);
+		hb_separator.SetMarginBottom(5);
+
+		headerbar.PackEnd(expand_button);
+		headerbar.PackEnd(hb_separator);
+		headerbar.PackEnd(copy_link_button);
+
+		toolbarview.AddTopBar(headerbar);
+		toolbarview.SetContent(frame);
+
+		frame.SetMarginBottom(10);
+		frame.SetMarginStart(10);
+		frame.SetMarginEnd(10);
+		frame.SetVexpand(true);
+		frame.SetHexpand(true);
+		frame.SetChild(webview);
+
+		toast_overlay.SetChild(toolbarview);
+
+		dialog.HeightRequest = 360;
+		dialog.WidthRequest = 360;
+		dialog.SetContentHeight(650);
+		dialog.SetContentWidth(900);
+		dialog.SetChild(toast_overlay);
+		dialog.Present(win);
+		webview.GrabFocus();
+
+		dialog.OnClosed += (_, _) =>
+		{
+			if (!transferring_to_main) webview.TryClose();
+			peek_tab_trigger_held = false; // sometimes it forgets to fire Gtk.EventControllerKey.OnKeyReleased
+		};
+
+		return webview;
 	}
 }
