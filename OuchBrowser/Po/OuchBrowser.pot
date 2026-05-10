@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-05-09 01:29-0400\n"
+"POT-Creation-Date: 2026-05-10 19:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,8 +32,8 @@ msgid "SUGGESTIONS"
 msgstr ""
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:29
-#: OuchBrowser/Data/UI/Preferences.blp:217
-#: OuchBrowser/Data/UI/Preferences.blp:239
+#: OuchBrowser/Data/UI/Preferences.blp:180
+#: OuchBrowser/Data/UI/Preferences.blp:202
 msgid "Search Engine"
 msgstr ""
 
@@ -124,16 +124,6 @@ msgid ""
 "loaded inside a peek tab, which is separate from the main window."
 msgstr ""
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:123
-msgid "Auto-open Domains in Peek Tab"
-msgstr ""
-
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:124
-msgid ""
-"This value is the domains that would be automatically opened inside a peek "
-"tab once clicked, even without the peek tab trigger being held."
-msgstr ""
-
 #: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:6
 #: OuchBrowser/Data/UI/Window.blp:16 OuchBrowser/Data/UI/Window.blp:249
 #: OuchBrowser/Window.cs:90
@@ -187,153 +177,130 @@ msgstr ""
 msgid "Ouch Browser with Command Palette Opened in Dark Mode"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:6 OuchBrowser/Data/UI/Preferences.blp:10
-#: OuchBrowser/Data/UI/Preferences.blp:44 OuchBrowser/Data/UI/Window.blp:518
+#: OuchBrowser/Data/UI/Preferences.blp:6 OuchBrowser/Data/UI/Preferences.blp:20
+#: OuchBrowser/Data/UI/Window.blp:518
 msgid "Preferences"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:24
-#: OuchBrowser/Data/UI/Preferences.blp:313
-msgid "Extensions"
-msgstr ""
-
-#: OuchBrowser/Data/UI/Preferences.blp:54 OuchBrowser/Data/UI/Shortcuts.blp:6
+#: OuchBrowser/Data/UI/Preferences.blp:30 OuchBrowser/Data/UI/Shortcuts.blp:6
 msgid "General"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:68
+#: OuchBrowser/Data/UI/Preferences.blp:44
 msgid "Content Blocking"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:69
+#: OuchBrowser/Data/UI/Preferences.blp:45
 msgid "Powered by uBlock Origin"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:73
+#: OuchBrowser/Data/UI/Preferences.blp:49
 msgid "Block Advertisments"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:79
+#: OuchBrowser/Data/UI/Preferences.blp:55
 msgid "Block Pop-up Windows"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:85
+#: OuchBrowser/Data/UI/Preferences.blp:61
 msgid "Session"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:89
+#: OuchBrowser/Data/UI/Preferences.blp:65
 msgid "Restore Tabs on Startup"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:94
+#: OuchBrowser/Data/UI/Preferences.blp:70
 msgid "Autocomplete"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:98
+#: OuchBrowser/Data/UI/Preferences.blp:74
 msgid "Enable Search Autocomplete"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:103
+#: OuchBrowser/Data/UI/Preferences.blp:79
 msgid "Enable !bang Autocomplete"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:108
+#: OuchBrowser/Data/UI/Preferences.blp:84
 msgid "Peek Tabs"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:110
+#: OuchBrowser/Data/UI/Preferences.blp:86
 msgid ""
 "Peek tabs are temporary tabs that can be triggered by holding down a "
 "specific key and clicking on a link. These can also be expanded into full "
 "view."
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:115
+#: OuchBrowser/Data/UI/Preferences.blp:91
 msgid "Peek Trigger"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:117
+#: OuchBrowser/Data/UI/Preferences.blp:93
 msgid ""
 "This will be the key that can be used in addition to a click to open a peek "
 "tab."
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:131
-msgid "Automatically Open in Peek Tab"
-msgstr ""
-
-#: OuchBrowser/Data/UI/Preferences.blp:133
-msgid ""
-"These domains will always be opened inside a peek tab even if the peek "
-"trigger isn’t held"
-msgstr ""
-
-#: OuchBrowser/Data/UI/Preferences.blp:138
-msgid "New Domain…"
-msgstr ""
-
-#: OuchBrowser/Data/UI/Preferences.blp:144
+#: OuchBrowser/Data/UI/Preferences.blp:107
 msgid "Developer"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:148
+#: OuchBrowser/Data/UI/Preferences.blp:111
 msgid "Enable Developer Tools"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:149
+#: OuchBrowser/Data/UI/Preferences.blp:112
 msgid "This will allow access to the Web Inspector"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:160
+#: OuchBrowser/Data/UI/Preferences.blp:123
 msgid "Accessibility"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:174
+#: OuchBrowser/Data/UI/Preferences.blp:137
 msgid "Content"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:178
+#: OuchBrowser/Data/UI/Preferences.blp:141
 msgid "Page Zoom"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:205
+#: OuchBrowser/Data/UI/Preferences.blp:168
 msgid "Zoom Text"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:206
+#: OuchBrowser/Data/UI/Preferences.blp:169
 msgid "Zooms text and images instead of the view"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:253
+#: OuchBrowser/Data/UI/Preferences.blp:216
 msgid "Custom Search Engines"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:257
+#: OuchBrowser/Data/UI/Preferences.blp:220
 msgid "New Search Engine…"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:262
+#: OuchBrowser/Data/UI/Preferences.blp:225
 msgid "See !bangs preferences for more options"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:276 OuchBrowser/Data/UI/Window.blp:1040
+#: OuchBrowser/Data/UI/Preferences.blp:239 OuchBrowser/Data/UI/Window.blp:1040
 msgid "!bangs"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:290
+#: OuchBrowser/Data/UI/Preferences.blp:253
 msgid "Custom Bangs"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:294
+#: OuchBrowser/Data/UI/Preferences.blp:257
 msgid "New Bang…"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:299 OuchBrowser/Data/UI/Window.blp:1119
+#: OuchBrowser/Data/UI/Preferences.blp:262 OuchBrowser/Data/UI/Window.blp:1119
 msgid "!bangs provided by Kagi"
-msgstr ""
-
-#: OuchBrowser/Data/UI/Preferences.blp:317
-msgid "Select an Extension"
 msgstr ""
 
 #: OuchBrowser/Data/UI/RoomsOverview.blp:20
@@ -466,7 +433,7 @@ msgstr ""
 msgid "Reveal Command Palette"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:686 OuchBrowser/View.cs:340
+#: OuchBrowser/Data/UI/Window.blp:686 OuchBrowser/View.cs:337
 msgid "Copy Link"
 msgstr ""
 
@@ -538,15 +505,15 @@ msgstr[1] ""
 msgid "Stop Loading"
 msgstr ""
 
-#: OuchBrowser/View.cs:267
+#: OuchBrowser/View.cs:264
 msgid "Open Link in Peek Tab"
 msgstr ""
 
-#: OuchBrowser/View.cs:311
+#: OuchBrowser/View.cs:308
 msgid "Expand Tab"
 msgstr ""
 
-#: OuchBrowser/View.cs:343 OuchBrowser/Window.cs:437
+#: OuchBrowser/View.cs:340 OuchBrowser/Window.cs:437
 msgid "Link Copied"
 msgstr ""
 
