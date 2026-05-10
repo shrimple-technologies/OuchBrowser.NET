@@ -371,7 +371,7 @@ internal class View
 		dialog.HeightRequest = 360;
 		dialog.WidthRequest = 360;
 		dialog.SetContentHeight(650);
-		dialog.SetContentWidth(850);
+		dialog.SetContentWidth(900);
 		dialog.SetChild(toast_overlay);
 		dialog.Present(win);
 		webview.GrabFocus();
