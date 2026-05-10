@@ -77,7 +77,7 @@
 		</key>
 
 		<key type="b" name="bang-autocomplete-enabled">
-			<default>true</default>
+			<default>false</default>
 			<summary>!bang Autocomplete enabled?</summary>
 			<description>
 				This value is whether !bang autocomplete is enabled or not.
