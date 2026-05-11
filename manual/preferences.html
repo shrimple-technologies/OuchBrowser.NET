@@ -3,8 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Page not found - Ouch Browser Documentation</title>
-        <base href="/">
+        <title>Preferences - Ouch Browser Documentation</title>
 
 
         <!-- Custom HTML head -->
@@ -13,33 +12,33 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="favicon-de23e50b.svg">
-        <link rel="shortcut icon" href="favicon-8114d1fc.png">
-        <link rel="stylesheet" href="css/variables-8adf115d.css">
-        <link rel="stylesheet" href="css/general-2459343d.css">
-        <link rel="stylesheet" href="css/chrome-ae938929.css">
-        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+        <link rel="icon" href="../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../css/general-2459343d.css">
+        <link rel="stylesheet" href="../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+        <link rel="stylesheet" href="../fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
-        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
-        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
 
         <!-- Provide site root and default themes to javascript -->
         <script>
-            const path_to_root = "";
+            const path_to_root = "../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-9652a12a.js";
+            window.path_to_searchindex_js = "../searchindex-9652a12a.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-459c563f.js"></script>
+        <script src="../toc-459c563f.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -106,7 +105,7 @@
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
-                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
             </noscript>
             <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -141,7 +140,7 @@
                     <h1 class="menu-title">Ouch Browser Documentation</h1>
 
                     <div class="right-buttons">
-                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
@@ -175,13 +174,118 @@
 
                 <div id="mdbook-content" class="content">
                     <main>
-                        <h1 id="document-not-found-404"><a class="header" href="#document-not-found-404">Document not found (404)</a></h1>
-<p>This URL is invalid, sorry. Please use the navigation bar or search to continue.</p>
+                        <h1 id="preferences"><a class="header" href="#preferences">Preferences</a></h1>
+<p><img src="../images/preferences.png" alt="Preferences dialog"></p>
+<p>The preferences dialog can be used to customize Ouch Browser to your liking.
+It can be summoned using <kbd>Ctrl</kbd> + <kbd>,</kbd>.</p>
+<hr>
+<h2 id="general"><a class="header" href="#general">General</a></h2>
+<p>General Ouch Browser preferences that are too loose to be categorized.</p>
+<h3 id="content-blocking"><a class="header" href="#content-blocking">Content Blocking</a></h3>
+<blockquote class="blockquote-tag blockquote-tag-important">
+<p class="blockquote-tag-title"><svg viewbox="0 0 16 16" width="18" height="18"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</p>
+<p>None of these preferences are currently implemented. This only reflects the
+intentions of how these will be implemented.</p>
+</blockquote>
+<blockquote class="blockquote-tag blockquote-tag-note">
+<p class="blockquote-tag-title"><svg viewbox="0 0 16 16" width="18" height="18"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p>
+<p>As Ouch Browser does not support WebExtensions yet, uBlock Origin is not
+<em>actually</em> used, but instead uBlock Origin filters.</p>
+</blockquote>
+<p>This configures how Ouch Browser blocks certain elements of a webpage, such as
+ads. <!-- Content blocked by parental controls will always be blocked,
+therefore cannot be modified in Ouch Browser. --></p>
+<h4 id="block-advertisments"><a class="header" href="#block-advertisments">Block Advertisments</a></h4>
+<blockquote>
+<p><strong>gsettings Key</strong>: <em>TBD</em></p>
+<p><strong>Type</strong>: Boolean</p>
+<p><strong>Default</strong>: <code>true</code></p>
+</blockquote>
+<p>This setting determines whether advertisments will be blocked via an uBlock
+Origin filter.</p>
+<h4 id="block-pop-up-windows"><a class="header" href="#block-pop-up-windows">Block Pop-up Windows</a></h4>
+<blockquote>
+<p><strong>gsettings Key</strong>: <em>TBD</em></p>
+<p><strong>Type</strong>: Boolean</p>
+<p><strong>Default</strong>: <code>true</code></p>
+</blockquote>
+<p>This setting determines whether pop-up windows will be blocked.</p>
+<h3 id="session"><a class="header" href="#session">Session</a></h3>
+<blockquote class="blockquote-tag blockquote-tag-important">
+<p class="blockquote-tag-title"><svg viewbox="0 0 16 16" width="18" height="18"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</p>
+<p>None of these preferences are currently implemented. This only reflects the
+intentions of how these will be implemented.</p>
+</blockquote>
+<p>This configures how Ouch Browser saves and/or restores the session state.</p>
+<h4 id="restore-tabs-on-startup"><a class="header" href="#restore-tabs-on-startup">Restore Tabs on Startup</a></h4>
+<blockquote>
+<p><strong>gsettings Key</strong>: <em>TBD</em></p>
+<p><strong>Type</strong>: Boolean</p>
+<p><strong>Default</strong>: <code>false</code></p>
+</blockquote>
+<blockquote class="blockquote-tag blockquote-tag-note">
+<p class="blockquote-tag-title"><svg viewbox="0 0 16 16" width="18" height="18"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p>
+<p>While there is no gsettings key to restore tabs of the current session,
+there is the gsettings key <code>restore-tabs</code> that opens a specific set of URLs
+upon startup</p>
+</blockquote>
+<p>This setting determines whether the tabs of the current session will be saved
+for recreation upon next startup.</p>
+<h3 id="autocomplete"><a class="header" href="#autocomplete">Autocomplete</a></h3>
+<p>This configures how autocompletion works inside the <a href="./command-palette.html">command palette</a>.</p>
+<h4 id="enable-search-autocomplete"><a class="header" href="#enable-search-autocomplete">Enable Search Autocomplete</a></h4>
+<blockquote>
+<p><strong>gsettings Key</strong>: <code>search-autocomplete-enabled</code></p>
+<p><strong>Type</strong>: Boolean</p>
+<p><strong>Default</strong>: <code>true</code></p>
+</blockquote>
+<p>This setting determines whether searching inside the command palette shows
+autocompletion results. This will send your search query to DuckDuckGo for
+completion.</p>
+<h4 id="enable-bang-autocomplete"><a class="header" href="#enable-bang-autocomplete">Enable !bang Autocomplete</a></h4>
+<blockquote>
+<p><strong>gsettings Key</strong>: <code>bang-autocomplete-enabled</code></p>
+<p><strong>Type</strong>: Boolean</p>
+<p><strong>Default</strong>: <code>false</code></p>
+</blockquote>
+<p>This setting determines whether entering a !bang inside the command palette
+shows autocompletion results. The autocompletion process happens locally,
+therefore utilizes more resources.</p>
+<h3 id="peek-tabs"><a class="header" href="#peek-tabs">Peek Tabs</a></h3>
+<p>This configures how <a href="./peek-tabs.html">peek tabs</a> work.</p>
+<h4 id="peek-trigger"><a class="header" href="#peek-trigger">Peek Trigger</a></h4>
+<blockquote>
+<p><strong>gsettings Key</strong>: <code>peek-trigger</code></p>
+<p><strong>Type</strong>: Enumeration</p>
+<p><strong>Enumeration ID</strong>: <code>site.srht.shrimple.OuchBrowser.PEEK_TRIGGER</code></p>
+<p><strong>Enumeration Nicknames</strong>: <code>"shift"</code>, <code>"ctrl"</code>, <code>"alt"</code></p>
+<p><strong>Default</strong>: <code>"shift"</code></p>
+</blockquote>
+<p>This setting determines what key will be used to trigger a new peek tab
+combined with clicking on a hyperlink.</p>
+<h3 id="developer"><a class="header" href="#developer">Developer</a></h3>
+<p>This configures developer extras. These mostly pertain to WebKit and not
+Ouch Browser in itself.</p>
+<h4 id="enable-developer-tools"><a class="header" href="#enable-developer-tools">Enable Developer Tools</a></h4>
+<blockquote>
+<p><strong>gsettings Key</strong>: <code>devtools-enabled</code></p>
+<p><strong>Type</strong>: Boolean</p>
+<p><strong>Default</strong>: <code>false</code></p>
+</blockquote>
+<p>This setting determines whether Web Inspector is enabled.</p>
+<h2 id="accessibility"><a class="header" href="#accessibility">Accessibility</a></h2>
+<p>Prefrences that pertain to ease of use in Ouch Browser. Accessibility is an
+long-term effort of Ouch Browser, so more preferences will appear here over
+time.</p>
+<h3 id="content"><a class="header" href="#content">Content</a></h3>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../manual/peek-tabs.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
 
 
                         <div style="clear: both"></div>
@@ -190,6 +294,9 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../manual/peek-tabs.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
 
             </nav>
 
@@ -208,13 +315,13 @@
         </script>
 
 
-        <script src="elasticlunr-ef4e11c1.min.js"></script>
-        <script src="mark-09e88c2c.min.js"></script>
-        <script src="searcher-c2a407aa.js"></script>
+        <script src="../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../mark-09e88c2c.min.js"></script>
+        <script src="../searcher-c2a407aa.js"></script>
 
-        <script src="clipboard-1626706a.min.js"></script>
-        <script src="highlight-abc7f01d.js"></script>
-        <script src="book-a0b12cfe.js"></script>
+        <script src="../clipboard-1626706a.min.js"></script>
+        <script src="../highlight-abc7f01d.js"></script>
+        <script src="../book-a0b12cfe.js"></script>
 
         <!-- Custom JS scripts -->
 

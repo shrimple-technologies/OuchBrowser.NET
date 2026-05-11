@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-b3c53d16.js";
+            window.path_to_searchindex_js = "searchindex-9652a12a.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-d1163489.js"></script>
+        <script src="toc-459c563f.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -175,26 +175,157 @@
 
                 <div id="mdbook-content" class="content">
                     <main>
-                        <h1 id="ouch-browser-documentation"><a class="header" href="#ouch-browser-documentation">Ouch Browser Documentation</a></h1>
+                        <img src="https://codeberg.org/shrimple/OuchBrowser.NET/raw/branch/main/OuchBrowser/Data/Icons/Hicolor/Scalable/Apps/site.srht.shrimple.OuchBrowser.Devel.svg" width="100" height="100" class="left" style="vertical-align: middle; margin-right: 20px;" />
+<h1 id="ouch-browser-documentation"><a class="header" href="#ouch-browser-documentation">Ouch Browser Documentation</a></h1>
 <p>Welcome to the Ouch Browser documentation.</p>
 <div style="break-before: page; page-break-before: always;"></div>
 <h1 id="command-palette"><a class="header" href="#command-palette">Command Palette</a></h1>
-<p><img src="images/CommandPalette.png" alt="Command Palette"></p>
-<p>The command palette is the main way of getting around Ouch Browser. Think of
-it as the search bar of a conventional web browser, but contains more features.
-Command palette includes support for !bangs and search autocompletion out of
-box, which can both be disabled inside <a href="manual/preferences.html">preferences</a>.</p>
+<p><img src="images/command-palette.png" alt="Command Palette"></p>
+<p>The command palette is the main way of getting around Ouch Browser, and the
+first element displayed on startup. Think of it as the search bar of a
+conventional web browser, but contains more features. Command palette includes
+support for !bangs and search autocompletion out of box, which can both be
+disabled inside <a href="#preferences">preferences</a>. The command palette can be
+summoned using <kbd>Ctrl</kbd> + <kbd>T</kbd> for a new tab, <kbd>Ctrl</kbd> +
+<kbd>L</kbd> or <kbd>Alt</kbd> + <kbd>D</kbd> to change the current tab’s URL
+(considered the <em>de-facto</em> main way to summon the palette).</p>
 <h2 id="bangs"><a class="header" href="#bangs">!bangs</a></h2>
-<p><img src="images/CommandPaletteBangs.png" alt="Command palette autocompleting !bangs"></p>
+<p><img src="images/command-palette-bangs.png" alt="Command palette autocompleting !bangs"></p>
 <p>!bangs help you search websites that are not conventional search engines.
-Autocompletion is possible via <a href="manual/preferences.html">preferences</a>, but may use an
-significant amount of resources due to the large amount of !bangs stored.</p>
+Autocompletion is possible via <a href="#enable-bang-autocomplete">preferences</a>,
+but may use an significant amount of resources due to the large amount of
+!bangs stored.</p>
 <h2 id="search"><a class="header" href="#search">Search</a></h2>
-<p><img src="images/CommandPaletteSearch.png" alt="Command palette autocompleting a search term"></p>
+<p><img src="images/command-palette-search.png" alt="Command palette autocompleting a search term"></p>
 <p>Search allows you to search the internet using the search engine selected in
-<a href="manual/preferences.html">preferences</a>. Due to technical limitations, the command
-palette only fetches autocomplete results from DuckDuckGo. Autocompletion can
-be disabled in preferences.</p>
+<a href="#enable-search-autocomplete">preferences</a>.
+Due to technical limitations, the command palette only fetches autocomplete
+results from DuckDuckGo. Autocompletion can be disabled in preferences.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="rooms-overview"><a class="header" href="#rooms-overview">Rooms Overview</a></h1>
+<p><img src="images/rooms-overview.png" alt="Rooms Overview"></p>
+<p>The rooms overview is a dialog that displays all rooms and tabs inside them.
+This is used as the main mode of tab navigation on mobile, but is also
+encouraged for desktop use as well. It can be summoned using <kbd>Ctrl</kbd> +
+<kbd>Shift</kbd> + <kbd>\</kbd>, or the “View All Tabs” button located
+inside the main menu on desktop, or the tabs button on mobile.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="peek-tabs"><a class="header" href="#peek-tabs">Peek Tabs</a></h1>
+<p><img src="images/peek-tab.png" alt="Peek tab"></p>
+<p>An peek tab is a temporary tab that is used for quick browsing, which is what
+peek tabs is mostly designed after. Due to being a “simple tab,” you cannot
+navigate backward or forward, refresh, or change the URL. If you would like to
+do this, you will need to expand the tab into the main view. This will not
+make you lose your scroll position or your progress.</p>
+<p>It can be summoned holding down the <a href="#peek-trigger">selected peek tab trigger</a>,
+and clicking on a hyperlink. An alternative way is to right-click on the
+hyperlink, and select “Open in Peek Tab,” which may be preferred for users
+of touchscreens.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="preferences"><a class="header" href="#preferences">Preferences</a></h1>
+<p><img src="images/preferences.png" alt="Preferences dialog"></p>
+<p>The preferences dialog can be used to customize Ouch Browser to your liking.
+It can be summoned using <kbd>Ctrl</kbd> + <kbd>,</kbd>.</p>
+<hr>
+<h2 id="general"><a class="header" href="#general">General</a></h2>
+<p>General Ouch Browser preferences that are too loose to be categorized.</p>
+<h3 id="content-blocking"><a class="header" href="#content-blocking">Content Blocking</a></h3>
+<blockquote class="blockquote-tag blockquote-tag-important">
+<p class="blockquote-tag-title"><svg viewbox="0 0 16 16" width="18" height="18"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</p>
+<p>None of these preferences are currently implemented. This only reflects the
+intentions of how these will be implemented.</p>
+</blockquote>
+<blockquote class="blockquote-tag blockquote-tag-note">
+<p class="blockquote-tag-title"><svg viewbox="0 0 16 16" width="18" height="18"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p>
+<p>As Ouch Browser does not support WebExtensions yet, uBlock Origin is not
+<em>actually</em> used, but instead uBlock Origin filters.</p>
+</blockquote>
+<p>This configures how Ouch Browser blocks certain elements of a webpage, such as
+ads. <!-- Content blocked by parental controls will always be blocked,
+therefore cannot be modified in Ouch Browser. --></p>
+<h4 id="block-advertisments"><a class="header" href="#block-advertisments">Block Advertisments</a></h4>
+<blockquote>
+<p><strong>gsettings Key</strong>: <em>TBD</em></p>
+<p><strong>Type</strong>: Boolean</p>
+<p><strong>Default</strong>: <code>true</code></p>
+</blockquote>
+<p>This setting determines whether advertisments will be blocked via an uBlock
+Origin filter.</p>
+<h4 id="block-pop-up-windows"><a class="header" href="#block-pop-up-windows">Block Pop-up Windows</a></h4>
+<blockquote>
+<p><strong>gsettings Key</strong>: <em>TBD</em></p>
+<p><strong>Type</strong>: Boolean</p>
+<p><strong>Default</strong>: <code>true</code></p>
+</blockquote>
+<p>This setting determines whether pop-up windows will be blocked.</p>
+<h3 id="session"><a class="header" href="#session">Session</a></h3>
+<blockquote class="blockquote-tag blockquote-tag-important">
+<p class="blockquote-tag-title"><svg viewbox="0 0 16 16" width="18" height="18"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</p>
+<p>None of these preferences are currently implemented. This only reflects the
+intentions of how these will be implemented.</p>
+</blockquote>
+<p>This configures how Ouch Browser saves and/or restores the session state.</p>
+<h4 id="restore-tabs-on-startup"><a class="header" href="#restore-tabs-on-startup">Restore Tabs on Startup</a></h4>
+<blockquote>
+<p><strong>gsettings Key</strong>: <em>TBD</em></p>
+<p><strong>Type</strong>: Boolean</p>
+<p><strong>Default</strong>: <code>false</code></p>
+</blockquote>
+<blockquote class="blockquote-tag blockquote-tag-note">
+<p class="blockquote-tag-title"><svg viewbox="0 0 16 16" width="18" height="18"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p>
+<p>While there is no gsettings key to restore tabs of the current session,
+there is the gsettings key <code>restore-tabs</code> that opens a specific set of URLs
+upon startup</p>
+</blockquote>
+<p>This setting determines whether the tabs of the current session will be saved
+for recreation upon next startup.</p>
+<h3 id="autocomplete"><a class="header" href="#autocomplete">Autocomplete</a></h3>
+<p>This configures how autocompletion works inside the <a href="#command-palette">command palette</a>.</p>
+<h4 id="enable-search-autocomplete"><a class="header" href="#enable-search-autocomplete">Enable Search Autocomplete</a></h4>
+<blockquote>
+<p><strong>gsettings Key</strong>: <code>search-autocomplete-enabled</code></p>
+<p><strong>Type</strong>: Boolean</p>
+<p><strong>Default</strong>: <code>true</code></p>
+</blockquote>
+<p>This setting determines whether searching inside the command palette shows
+autocompletion results. This will send your search query to DuckDuckGo for
+completion.</p>
+<h4 id="enable-bang-autocomplete"><a class="header" href="#enable-bang-autocomplete">Enable !bang Autocomplete</a></h4>
+<blockquote>
+<p><strong>gsettings Key</strong>: <code>bang-autocomplete-enabled</code></p>
+<p><strong>Type</strong>: Boolean</p>
+<p><strong>Default</strong>: <code>false</code></p>
+</blockquote>
+<p>This setting determines whether entering a !bang inside the command palette
+shows autocompletion results. The autocompletion process happens locally,
+therefore utilizes more resources.</p>
+<h3 id="peek-tabs-1"><a class="header" href="#peek-tabs-1">Peek Tabs</a></h3>
+<p>This configures how <a href="#peek-tabs">peek tabs</a> work.</p>
+<h4 id="peek-trigger"><a class="header" href="#peek-trigger">Peek Trigger</a></h4>
+<blockquote>
+<p><strong>gsettings Key</strong>: <code>peek-trigger</code></p>
+<p><strong>Type</strong>: Enumeration</p>
+<p><strong>Enumeration ID</strong>: <code>site.srht.shrimple.OuchBrowser.PEEK_TRIGGER</code></p>
+<p><strong>Enumeration Nicknames</strong>: <code>"shift"</code>, <code>"ctrl"</code>, <code>"alt"</code></p>
+<p><strong>Default</strong>: <code>"shift"</code></p>
+</blockquote>
+<p>This setting determines what key will be used to trigger a new peek tab
+combined with clicking on a hyperlink.</p>
+<h3 id="developer"><a class="header" href="#developer">Developer</a></h3>
+<p>This configures developer extras. These mostly pertain to WebKit and not
+Ouch Browser in itself.</p>
+<h4 id="enable-developer-tools"><a class="header" href="#enable-developer-tools">Enable Developer Tools</a></h4>
+<blockquote>
+<p><strong>gsettings Key</strong>: <code>devtools-enabled</code></p>
+<p><strong>Type</strong>: Boolean</p>
+<p><strong>Default</strong>: <code>false</code></p>
+</blockquote>
+<p>This setting determines whether Web Inspector is enabled.</p>
+<h2 id="accessibility"><a class="header" href="#accessibility">Accessibility</a></h2>
+<p>Prefrences that pertain to ease of use in Ouch Browser. Accessibility is an
+long-term effort of Ouch Browser, so more preferences will appear here over
+time.</p>
+<h3 id="content"><a class="header" href="#content">Content</a></h3>
 
                     </main>
 
