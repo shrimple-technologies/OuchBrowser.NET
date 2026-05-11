@@ -49,4 +49,4 @@ steps:
       - cp .domains $CI_REPO_NAME || true
       - cd $CI_REPO_NAME
       - git add .
-      - if ! git diff --cached --quiet; then git commit -m "Woodpecker CI ${CI_BUILD_CREATED}" && git push; fi
+      - if ! git diff --cached --quiet; then git commit -m "publish documentation" && git push; fi
