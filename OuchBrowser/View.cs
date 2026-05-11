@@ -18,24 +18,23 @@ internal class View
 		WebKit.Module.Initialize();
 	}
 
-	private Settings InitSettings()
+	private static WebKit.Settings InitSettings()
 	{
-		Settings settings = Settings.New();
+		WebKit.Settings web_settings = WebKit.Settings.New();
 
-		settings.SetDefaultFontFamily("serif");
-		settings.SetEnableDeveloperExtras(win.settings.GetBoolean("devtools-enabled"));
+		web_settings.SetDefaultFontFamily("serif");
+		web_settings.SetEnableDeveloperExtras(settings.GetBoolean("devtools-enabled"));
 
-		return settings;
+		return web_settings;
 	}
 
 	public WebView AddTab(string url, bool pinned)
 	{
-		Settings settings = InitSettings();
 		WebView webview = WebView.New();
 
-		webview.SetSettings(settings);
+		webview.SetSettings(InitSettings());
 		webview.LoadUri(url);
-		webview.SetZoomLevel(win.settings.GetDouble("zoom"));
+		webview.SetZoomLevel(settings.GetDouble("zoom"));
 		TabPage page;
 
 		if (pinned)
@@ -203,12 +202,12 @@ internal class View
 		window.AddController(eck);
 		eck.OnKeyPressed += (_, args) =>
 		{
-			if (args.Keyval == window.settings.GetEnum("peek-trigger")) peek_tab_trigger_held = true;
+			if (args.Keyval == settings.GetEnum("peek-trigger")) peek_tab_trigger_held = true;
 			return true;
 		};
 		eck.OnKeyReleased += (_, args) =>
 		{
-			if (args.Keyval == window.settings.GetEnum("peek-trigger")) peek_tab_trigger_held = false;
+			if (args.Keyval == settings.GetEnum("peek-trigger")) peek_tab_trigger_held = false;
 		};
 
 		webview.OnDecidePolicy += (_, args) =>
@@ -289,7 +288,6 @@ internal class View
 
 	public WebView AddPeekTab(URIRequest req)
 	{
-		Settings settings = InitSettings();
 		WebView webview = WebView.New();
 		Dialog dialog = Dialog.New();
 		Gtk.Frame frame = Gtk.Frame.New(null);
@@ -301,9 +299,9 @@ internal class View
 		Gtk.Separator hb_separator = Gtk.Separator.New(Gtk.Orientation.Vertical);
 		bool transferring_to_main = false;
 
-		webview.SetSettings(settings);
+		webview.SetSettings(InitSettings());
 		webview.LoadRequest(req);
-		webview.SetZoomLevel(win.settings.GetDouble("zoom"));
+		webview.SetZoomLevel(settings.GetDouble("zoom"));
 
 		expand_button.SetTooltipText(__("Expand Tab"));
 		expand_button.OnClicked += async (_, _) =>

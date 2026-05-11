@@ -47,7 +47,6 @@ internal partial class Window : Adw.ApplicationWindow
 	private DateTime lastInvokeTime = DateTime.MinValue;
 	private CancellationTokenSource? debounceCts;
 
-	public Gio.Settings settings;
 	private Preferences? preferences;
 	private Adw.AboutDialog? about;
 	private ShortcutsDialog? shortcuts;
@@ -57,8 +56,6 @@ internal partial class Window : Adw.ApplicationWindow
 
 	public Window(Adw.Application app) : base()
 	{
-		settings = Gio.Settings.New("site.srht.shrimple.OuchBrowser");
-
 		var builder = new Builder();
 		builder.SetTranslationDomain("OuchBrowser");
 		builder.AddFromResource("/site/srht/shrimple/OuchBrowser/ui/window.ui");

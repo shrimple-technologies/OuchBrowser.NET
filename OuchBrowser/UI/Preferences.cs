@@ -44,10 +44,10 @@ internal class Preferences : Adw.Dialog
 		{
 			if (args.Pspec.GetName() == "parent")
 			{
-				setting_search_autocomplete!.SetActive(window.settings.GetBoolean("search-autocomplete-enabled"));
-				setting_bang_autocomplete!.SetActive(window.settings.GetBoolean("bang-autocomplete-enabled"));
-				setting_devtools!.SetActive(window.settings.GetBoolean("devtools-enabled"));
-				switch (window.settings.GetString("search-engine"))
+				setting_search_autocomplete!.SetActive(settings.GetBoolean("search-autocomplete-enabled"));
+				setting_bang_autocomplete!.SetActive(settings.GetBoolean("bang-autocomplete-enabled"));
+				setting_devtools!.SetActive(settings.GetBoolean("devtools-enabled"));
+				switch (settings.GetString("search-engine"))
 				{
 					case "https://duckduckgo.com/?q=":
 						setting_search_engine!.SetSelected(0);
@@ -62,7 +62,7 @@ internal class Preferences : Adw.Dialog
 						setting_search_engine!.SetSelected(3);
 						break;
 				}
-				switch (window.settings.GetDouble("zoom"))
+				switch (settings.GetDouble("zoom"))
 				{
 					case 0.25:
 						setting_zoom!.SetSelected(0);
@@ -116,7 +116,7 @@ internal class Preferences : Adw.Dialog
 						setting_zoom!.SetSelected(16);
 						break;
 				}
-				switch (window.settings.GetString("peek-trigger"))
+				switch (settings.GetString("peek-trigger"))
 				{
 					case "65505":
 						setting_peek_trigger!.SetSelected(0);
@@ -143,19 +143,19 @@ internal class Preferences : Adw.Dialog
 
 		setting_search_autocomplete!.OnNotify += (_, args) =>
 		{
-			if (args.Pspec.GetName() == "active") window.settings.SetBoolean("search-autocomplete-enabled", setting_search_autocomplete.GetActive());
+			if (args.Pspec.GetName() == "active") settings.SetBoolean("search-autocomplete-enabled", setting_search_autocomplete.GetActive());
 		};
 
 		setting_bang_autocomplete!.OnNotify += (_, args) =>
 		{
-			if (args.Pspec.GetName() == "active") window.settings.SetBoolean("bang-autocomplete-enabled", setting_bang_autocomplete.GetActive());
+			if (args.Pspec.GetName() == "active") settings.SetBoolean("bang-autocomplete-enabled", setting_bang_autocomplete.GetActive());
 		};
 
 		setting_devtools!.OnNotify += (_, args) =>
 		{
 			if (args.Pspec.GetName() == "active")
 			{
-				window.settings.SetBoolean("devtools-enabled", setting_devtools.GetActive());
+				settings.SetBoolean("devtools-enabled", setting_devtools.GetActive());
 				int npages = window.tabview!.GetNPages()!;
 
 				for (int i = 1; i <= npages; i++)
@@ -175,16 +175,16 @@ internal class Preferences : Adw.Dialog
 				switch (setting_search_engine!.GetSelected())
 				{
 					case 0:
-						window.settings.SetString("search-engine", "https://duckduckgo.com/?q=");
+						settings.SetString("search-engine", "https://duckduckgo.com/?q=");
 						break;
 					case 1:
-						window.settings.SetString("search-engine", "https://ecosia.org/search?q=");
+						settings.SetString("search-engine", "https://ecosia.org/search?q=");
 						break;
 					case 2:
-						window.settings.SetString("search-engine", "https://google.com/search?q=");
+						settings.SetString("search-engine", "https://google.com/search?q=");
 						break;
 					case 3:
-						window.settings.SetString("search-engine", "https://kagi.com/search?q=");
+						settings.SetString("search-engine", "https://kagi.com/search?q=");
 						break;
 				}
 			}
@@ -194,33 +194,33 @@ internal class Preferences : Adw.Dialog
 		{
 			if (args.Pspec.GetName() == "selected")
 			{
-				double prev_default = window.settings.GetDouble("zoom");
+				double prev_default = settings.GetDouble("zoom");
 
 				switch (setting_zoom!.GetSelected())
 				{
 					case 0:
-						window.settings.SetDouble("zoom", 0.25);
+						settings.SetDouble("zoom", 0.25);
 						break;
 					case 1:
-						window.settings.SetDouble("zoom", 0.33);
+						settings.SetDouble("zoom", 0.33);
 						break;
 					case 2:
-						window.settings.SetDouble("zoom", 0.5);
+						settings.SetDouble("zoom", 0.5);
 						break;
 					case 3:
-						window.settings.SetDouble("zoom", 0.67);
+						settings.SetDouble("zoom", 0.67);
 						break;
 					case 4:
-						window.settings.SetDouble("zoom", 0.75);
+						settings.SetDouble("zoom", 0.75);
 						break;
 					case 5:
-						window.settings.SetDouble("zoom", 0.8);
+						settings.SetDouble("zoom", 0.8);
 						break;
 					case 6:
-						window.settings.SetDouble("zoom", 0.9);
+						settings.SetDouble("zoom", 0.9);
 						break;
 					case 7:
-						window.settings.SetDouble("zoom", 1);
+						settings.SetDouble("zoom", 1);
 						break;
 				}
 
@@ -229,7 +229,7 @@ internal class Preferences : Adw.Dialog
 				{
 					TabPage page = window.tabview!.GetNthPage(i - 1);
 					WebKit.WebView webview = (WebKit.WebView)page.GetChild();
-					if (prev_default == webview.GetZoomLevel()) webview.SetZoomLevel(window.settings.GetDouble("zoom"));
+					if (prev_default == webview.GetZoomLevel()) webview.SetZoomLevel(settings.GetDouble("zoom"));
 				}
 			}
 		};
@@ -241,13 +241,13 @@ internal class Preferences : Adw.Dialog
 				switch (setting_peek_trigger!.GetSelected())
 				{
 					case 0:
-						window.settings.SetEnum("peek-trigger", 65505);
+						settings.SetEnum("peek-trigger", 65505);
 						break;
 					case 1:
-						window.settings.SetEnum("peek-trigger", 65507);
+						settings.SetEnum("peek-trigger", 65507);
 						break;
 					case 2:
-						window.settings.SetEnum("peek-trigger", 65513);
+						settings.SetEnum("peek-trigger", 65513);
 						break;
 				}
 			}

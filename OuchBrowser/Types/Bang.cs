@@ -54,7 +54,7 @@ public enum BangCategory
 	Research,
 	Shopping,
 	Tech,
-	Translation
+	Translation,
 }
 
 public enum BangFormat
