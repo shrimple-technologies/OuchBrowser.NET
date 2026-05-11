@@ -58,7 +58,7 @@ internal partial class Window : Adw.ApplicationWindow
 	{
 		var builder = new Builder();
 		builder.SetTranslationDomain("OuchBrowser");
-		builder.AddFromResource("/site/srht/shrimple/OuchBrowser/ui/window.ui");
+		builder.AddFromResource("/page/codeberg/shrimple/OuchBrowser/ui/window.ui");
 		builder.Connect(this);
 
 		Content = builder.GetObject("toast_overlay") as Widget;

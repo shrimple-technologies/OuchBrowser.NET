@@ -20,7 +20,7 @@ internal class Preferences : Adw.Dialog
 	{
 		var builder = new Builder();
 		builder.SetTranslationDomain("OuchBrowser");
-		builder.AddFromResource("/site/srht/shrimple/OuchBrowser/ui/preferences.ui");
+		builder.AddFromResource("/page/codeberg/shrimple/OuchBrowser/ui/preferences.ui");
 		builder.Connect(this);
 
 		nsv!.SetShowContent(true);

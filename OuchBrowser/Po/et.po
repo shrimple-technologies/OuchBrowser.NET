@@ -122,32 +122,21 @@ msgstr "Akna algne suurus"
 msgid "This value is the main window’s size."
 msgstr "See väärtus näitab põhiakna suurust."
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:111
-msgid "Peek Tab Trigger"
-msgstr ""
-
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:112
-msgid ""
-"This value is the trigger for opening a peek tab. For example, holding down "
-"the Shift key and clicking on a hyperlink will result in that website being "
-"loaded inside a peek tab, which is separate from the main window."
-msgstr ""
-
-#: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:6
-#: OuchBrowser/Data/UI/Window.blp:16 OuchBrowser/Data/UI/Window.blp:249
+#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:6
+#: OuchBrowser/Data/UI/Window.blp:16 OuchBrowser/Data/UI/Window.blp:248
 #: OuchBrowser/Window.cs:90
 msgid "Ouch Browser"
 msgstr "Veebibrauser Ouch"
 
-#: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:8
+#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:8
 msgid "Shrimple Technologies"
 msgstr "Shrimple Technologies"
 
-#: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:13
+#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:13
 msgid "Focus on your browsing"
 msgstr "Keskendu veebis surfamisele"
 
-#: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:45
+#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:45
 msgid ""
 "Ouch Browser is a browser that utilizes the vertical tabs layout, which "
 "allows for better tab management for more heavy browser users. Made for "
@@ -160,7 +149,7 @@ msgstr ""
 "toetab !bangs-otsingukäske, mitmeotstarbelist käskude paletti ja "
 "nutiseadmeid."
 
-#: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:52
+#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:52
 msgid ""
 "NOTE: Ouch Browser is currently in alpha stage and is changing rapidly. "
 "While it is in a usable state, it does not have a large number of common web "

@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <gresources>
-	<gresource prefix="/site/srht/shrimple/OuchBrowser/">
+	<gresource prefix="/page/codeberg/shrimple/OuchBrowser/">
 		<file alias="style.css">Data/Style.css</file>
-		<file alias="site.srht.shrimple.OuchBrowser.metainfo.xml">Data/site.srht.shrimple.OuchBrowser.metainfo.xml</file>
+		<file alias="page.codeberg.shrimple.OuchBrowser.metainfo.xml">Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml</file>
 	</gresource>
 
-	<gresource prefix="/site/srht/shrimple/OuchBrowser/ui">
+	<gresource prefix="/page/codeberg/shrimple/OuchBrowser/ui">
 		<file preprocess="xml-stripblanks" alias="preferences.ui">Data/UI/Preferences.ui</file>
 		<file preprocess="xml-stripblanks" alias="rooms_overview.ui">Data/UI/RoomsOverview.ui</file>
 		<file preprocess="xml-stripblanks" alias="shortcuts.ui">Data/UI/Shortcuts.ui</file>
 		<file preprocess="xml-stripblanks" alias="window.ui">Data/UI/Window.ui</file>
 	</gresource>
 
-	<gresource prefix="/site/srht/shrimple/OuchBrowser/icons/scalable/apps">
-		<file preprocess="xml-stripblanks" alias="site.srht.shrimple.OuchBrowser.svg">Data/Icons/Hicolor/Scalable/Apps/site.srht.shrimple.OuchBrowser.svg</file>
+	<gresource prefix="/page/codeberg/shrimple/OuchBrowser/icons/scalable/apps">
+		<file preprocess="xml-stripblanks" alias="page.codeberg.shrimple.OuchBrowser.svg">Data/Icons/Hicolor/Scalable/Apps/page.codeberg.shrimple.OuchBrowser.svg</file>
 	</gresource>
 
-	<gresource prefix="/site/srht/shrimple/OuchBrowser/icons/symbolic/apps">
-		<file preprocess="xml-stripblanks" alias="site.srht.shrimple.OuchBrowser-symbolic.svg">Data/Icons/Hicolor/Symbolic/Apps/site.srht.shrimple.OuchBrowser-symbolic.svg</file>
+	<gresource prefix="/page/codeberg/shrimple/OuchBrowser/icons/symbolic/apps">
+		<file preprocess="xml-stripblanks" alias="page.codeberg.shrimple.OuchBrowser-symbolic.svg">Data/Icons/Hicolor/Symbolic/Apps/page.codeberg.shrimple.OuchBrowser-symbolic.svg</file>
 	</gresource>
 
-	<gresource prefix="/site/srht/shrimple/OuchBrowser/icons/scalable/actions/">
+	<gresource prefix="/page/codeberg/shrimple/OuchBrowser/icons/scalable/actions/">
 		<file preprocess="xml-stripblanks" alias="accessibility-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/accessibility-symbolic.svg</file>
 		<file preprocess="xml-stripblanks" alias="archive-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/archive-symbolic.svg</file>
 		<file preprocess="xml-stripblanks" alias="box-dotted-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/box-dotted-symbolic.svg</file>

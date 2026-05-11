@@ -6,7 +6,7 @@
 
 ---
 
-<img src="https://codeberg.org/shrimple/OuchBrowser.NET/raw/branch/main/OuchBrowser/Data/Icons/Hicolor/Scalable/Apps/site.srht.shrimple.OuchBrowser.svg" width="112" height="112" align="left" style="vertical-align: middle;" />
+<img src="https://codeberg.org/shrimple/OuchBrowser.NET/raw/branch/main/OuchBrowser/Data/Icons/Hicolor/Scalable/Apps/page.codeberg.shrimple.OuchBrowser.svg" width="112" height="112" align="left" style="vertical-align: middle;" />
 
 # Ouch Browser
 
@@ -50,7 +50,7 @@ sudo dnf install OuchBrowser
 
 ```sh
 just build-flatpak
-flatpak install ./site.srht.shrimple.OuchBrowser.flatpak
+flatpak install ./page.codeberg.shrimple.OuchBrowser.flatpak
 ```
 
 ## Running

@@ -123,21 +123,21 @@ msgid ""
 "loaded inside a peek tab, which is separate from the main window."
 msgstr ""
 
-#: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:6
-#: OuchBrowser/Data/UI/Window.blp:16 OuchBrowser/Data/UI/Window.blp:249
+#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:6
+#: OuchBrowser/Data/UI/Window.blp:16 OuchBrowser/Data/UI/Window.blp:248
 #: OuchBrowser/Window.cs:90
 msgid "Ouch Browser"
 msgstr "Ouch Browser"
 
-#: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:8
+#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:8
 msgid "Shrimple Technologies"
 msgstr "Shrimple Technologies"
 
-#: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:13
+#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:13
 msgid "Focus on your browsing"
 msgstr "Foco na sua navegação"
 
-#: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:45
+#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:45
 msgid ""
 "Ouch Browser is a browser that utilizes the vertical tabs layout, which "
 "allows for better tab management for more heavy browser users. Made for "
@@ -145,7 +145,7 @@ msgid ""
 "purpose command palette, and mobile support."
 msgstr ""
 
-#: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:52
+#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:52
 msgid ""
 "NOTE: Ouch Browser is currently in alpha stage and is changing rapidly. "
 "While it is in a usable state, it does not have a large number of common web "

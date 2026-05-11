@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <component type="desktop-application">
-	<id>site.srht.shrimple.OuchBrowser</id>
-	<icon type="stock">site.srht.shrimple.OuchBrowser</icon>
-	<launchable type="desktop-id">site.srht.shrimple.OuchBrowser.desktop</launchable>
+	<id>page.codeberg.shrimple.OuchBrowser</id>
+	<icon type="stock">page.codeberg.shrimple.OuchBrowser</icon>
+	<launchable type="desktop-id">page.codeberg.shrimple.OuchBrowser.desktop</launchable>
 	<name>Ouch Browser</name>
 	<developer id="site.srht.shrimple">
 		<name>Shrimple Technologies</name>

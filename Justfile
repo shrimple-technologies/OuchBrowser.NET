@@ -4,7 +4,7 @@ alias fmt := format
 alias pot := generate-pot
 
 PREFIX := "/usr"
-ID := "site.srht.shrimple.OuchBrowser"
+ID := "page.codeberg.shrimple.OuchBrowser"
 BLUEPRINT_FILES := "OuchBrowser/Data/UI/Window.blp OuchBrowser/Data/UI/Preferences.blp OuchBrowser/Data/UI/Shortcuts.blp OuchBrowser/Data/UI/RoomsOverview.blp"
 
 run: build-blueprint compile-resources

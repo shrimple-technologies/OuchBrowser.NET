@@ -18,7 +18,7 @@ internal class RoomsOverview : Adw.Dialog
 	{
 		var builder = new Builder();
 		builder.SetTranslationDomain("OuchBrowser");
-		builder.AddFromResource("/site/srht/shrimple/OuchBrowser/ui/rooms_overview.ui");
+		builder.AddFromResource("/page/codeberg/shrimple/OuchBrowser/ui/rooms_overview.ui");
 		builder.Connect(this);
 
 		Child = nsv!;

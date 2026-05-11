@@ -1,6 +1,6 @@
 {
 	"$schema": "https://github.com/flatpak/flatpak-builder/raw/refs/heads/main/data/flatpak-manifest.schema.json",
-	"id": "site.srht.shrimple.OuchBrowser",
+	"id": "page.codeberg.shrimple.OuchBrowser",
 	"runtime": "org.gnome.Platform",
 	"runtime-version": "50",
 	"sdk": "org.gnome.Sdk",
