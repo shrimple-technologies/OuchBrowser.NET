@@ -8,7 +8,7 @@ internal class Application : Adw.Application
 {
 	public Application()
 	{
-		ApplicationId = "site.srht.shrimple.OuchBrowser";
+		ApplicationId = "page.codeberg.shrimple.OuchBrowser";
 		Flags = ApplicationFlags.DefaultFlags;
 		ResourceBasePath = "/site/srht/shrimple/OuchBrowser";
 		OnActivate += (self, args) =>

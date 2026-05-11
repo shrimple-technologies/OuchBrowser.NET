@@ -53,20 +53,20 @@ install -Dm755 OuchBrowser/bin/Release/net10.0/linux-x64/publish/OuchBrowser --t
 install -Dm755 OuchBrowser/bin/Release/net10.0/linux-arm64/publish/OuchBrowser --target-directory %{buildroot}%{_bindir}
 %endif
 install -Dm644 OuchBrowser/Data/OuchBrowser.gschema.xml --target-directory %{buildroot}%{_datadir}/glib-2.0/schemas
-install -Dm644 OuchBrowser/Data/Icons/Hicolor/Symbolic/Apps/site.srht.shrimple.OuchBrowser-symbolic.svg --target-directory %{buildroot}%{_datadir}/icons/hicolor/symbolic/apps
-install -Dm644 OuchBrowser/Data/Icons/Hicolor/Scalable/Apps/site.srht.shrimple.OuchBrowser.svg --target-directory %{buildroot}%{_datadir}/icons/hicolor/scalable/apps
-install -Dm644 OuchBrowser/Data/site.srht.shrimple.OuchBrowser.desktop --target-directory %{buildroot}%{_datadir}/applications
-install -Dm644 OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml --target-directory %{buildroot}%{_datadir}/metainfo
+install -Dm644 OuchBrowser/Data/Icons/Hicolor/Symbolic/Apps/page.codeberg.shrimple.OuchBrowser-symbolic.svg --target-directory %{buildroot}%{_datadir}/icons/hicolor/symbolic/apps
+install -Dm644 OuchBrowser/Data/Icons/Hicolor/Scalable/Apps/page.codeberg.shrimple.OuchBrowser.svg --target-directory %{buildroot}%{_datadir}/icons/hicolor/scalable/apps
+install -Dm644 OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.desktop --target-directory %{buildroot}%{_datadir}/applications
+install -Dm644 OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml --target-directory %{buildroot}%{_datadir}/metainfo
 rm %{buildroot}%{_datadir}/glib-2.0/schemas/gschemas.compiled
 
 %files
 %license licenses/GPL-3.0-or-later.txt
 %{_bindir}/OuchBrowser
-%{_datadir}/applications/site.srht.shrimple.OuchBrowser.desktop
-%{_datadir}/icons/hicolor/scalable/apps/site.srht.shrimple.OuchBrowser.svg
-%{_datadir}/icons/hicolor/symbolic/apps/site.srht.shrimple.OuchBrowser-symbolic.svg
+%{_datadir}/applications/page.codeberg.shrimple.OuchBrowser.desktop
+%{_datadir}/icons/hicolor/scalable/apps/page.codeberg.shrimple.OuchBrowser.svg
+%{_datadir}/icons/hicolor/symbolic/apps/page.codeberg.shrimple.OuchBrowser-symbolic.svg
 %{_datadir}/glib-2.0/schemas/OuchBrowser.gschema.xml
-%{_datadir}/metainfo/site.srht.shrimple.OuchBrowser.metainfo.xml
+%{_datadir}/metainfo/page.codeberg.shrimple.OuchBrowser.metainfo.xml
 %{_datadir}/locale/et/LC_MESSAGES/OuchBrowser.mo
 %{_datadir}/locale/nb_NO/LC_MESSAGES/OuchBrowser.mo
 %{_datadir}/locale/pt/LC_MESSAGES/OuchBrowser.mo

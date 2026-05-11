@@ -120,21 +120,21 @@ msgstr "Akna algne suurus"
 msgid "This value is the main window's size."
 msgstr "See väärtus näitab põhiakna suurust."
 
-#: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:6
+#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:6
 #: OuchBrowser/Data/UI/Window.blp:16 OuchBrowser/Data/UI/Window.blp:248
 #: OuchBrowser/Window.cs:90
 msgid "Ouch Browser"
 msgstr "Veebibrauser Ouch"
 
-#: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:8
+#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:8
 msgid "Shrimple Technologies"
 msgstr "Shrimple Technologies"
 
-#: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:13
+#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:13
 msgid "Focus on your browsing"
 msgstr "Keskendu veebis surfamisele"
 
-#: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:45
+#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:45
 msgid ""
 "Ouch Browser is a browser that utilizes the vertical tabs layout, which "
 "allows for better tab management for more heavy browser users. Made for "
@@ -147,7 +147,7 @@ msgstr ""
 "toetab !bangs-otsingukäske, mitmeotstarbelist käskude paletti ja "
 "nutiseadmeid."
 
-#: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:52
+#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:52
 msgid ""
 "NOTE: This is the C# rewrite, which is constantly evolving, and may be less "
 "stable than the original codebase."
