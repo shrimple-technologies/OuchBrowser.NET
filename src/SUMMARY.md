@@ -5,6 +5,6 @@
 # Manual
 
 - [Command Palette](./manual/command-palette.md)
-- [Rooms Overview]()
-- [Peek Tabs]()
-- [Preferences]()
+- [Rooms Overview](./manual/rooms-overview.md)
+- [Peek Tabs](./manual/peek-tabs.md)
+- [Preferences](./manual/preferences.md)
