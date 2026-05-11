@@ -58,7 +58,7 @@
 	<provides>
 		<mediatype>text/html</mediatype>
 	</provides>
-	<url type="homepage">https://shrimple.srht.site/blog/ouch/</url>
+	<url type="homepage">https://shrimple.codeberg.page/ouchbrowser.net/</url>
 	<url type="bugtracker">https://codeberg.org/shrimple/OuchBrowser.NET/issues</url>
 	<url type="vcs-browser">https://codeberg.org/shrimple/OuchBrowser.NET</url>
 	<url type="translate">https://hosted.weblate.org/projects/ouch/net/</url>
