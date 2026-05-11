@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-05-10 19:17-0400\n"
+"POT-Creation-Date: 2026-05-11 18:43-0400\n"
 "PO-Revision-Date: 2026-05-11 23:00+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/ouch/net/et/>\n"
@@ -120,9 +120,22 @@ msgstr "Akna algne suurus"
 msgid "This value is the main window’s size."
 msgstr "See väärtus näitab põhiakna suurust."
 
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:111
+#, fuzzy
+#| msgid "Peek Tabs"
+msgid "Peek Tab Trigger"
+msgstr "Vahekaardid piilumiseks"
+
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:112
+msgid ""
+"This value is the trigger for opening a peek tab. For example, holding down "
+"the Shift key and clicking on a hyperlink will result in that website being "
+"loaded inside a peek tab, which is separate from the main window."
+msgstr ""
+
 #: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:6
-#: OuchBrowser/Data/UI/Window.blp:16 OuchBrowser/Data/UI/Window.blp:248
-#: OuchBrowser/Window.cs:90
+#: OuchBrowser/Data/UI/Window.blp:16 OuchBrowser/Data/UI/Window.blp:249
+#: OuchBrowser/Window.cs:87
 msgid "Ouch Browser"
 msgstr "Veebibrauser Ouch"
 
@@ -154,27 +167,27 @@ msgid ""
 "browser functions, and can have many bugs."
 msgstr ""
 
-#: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:68
+#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:68
 msgid "Ouch Browser’s Main Window"
 msgstr "Veebibrauser Ouch - põhivaade"
 
-#: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:72
+#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:72
 msgid "Ouch Browser with Tab Sidebar Closed"
 msgstr "Veebibrauser Ouch vahekaartide külgpaan suletuna"
 
-#: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:76
+#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:76
 msgid "Ouch Browser with Command Palette Opened"
 msgstr "Veebibrauser Ouch käsuvalik avatuna"
 
-#: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:80
+#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:80
 msgid "Ouch Browser’s Main Window in Dark Mode"
 msgstr "Veebibrauser Ouch - põhivaade tumedas kujunduses"
 
-#: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:84
+#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:84
 msgid "Ouch Browser with Tab Sidebar Closed in Dark Mode"
 msgstr "Veebibrauser Ouch tumead kujunduses vahekaartide külgpaan suletuna"
 
-#: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:88
+#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:88
 msgid "Ouch Browser with Command Palette Opened in Dark Mode"
 msgstr "Veebibrauser Ouch tumedas kujunduses käsuvalik avatuna"
 
@@ -425,8 +438,8 @@ msgstr "Tagasi"
 msgid "Forward"
 msgstr "Edasi"
 
-#: OuchBrowser/Data/UI/Window.blp:647 OuchBrowser/View.cs:90
-#: OuchBrowser/View.cs:163
+#: OuchBrowser/Data/UI/Window.blp:647 OuchBrowser/View.cs:89
+#: OuchBrowser/View.cs:162
 msgid "Refresh"
 msgstr "Laadi uuesti"
 
@@ -434,7 +447,7 @@ msgstr "Laadi uuesti"
 msgid "Reveal Command Palette"
 msgstr "Näita käsupaletti"
 
-#: OuchBrowser/Data/UI/Window.blp:686 OuchBrowser/View.cs:337
+#: OuchBrowser/Data/UI/Window.blp:686 OuchBrowser/View.cs:335
 msgid "Copy Link"
 msgstr "Kopeeri link"
 
@@ -503,36 +516,36 @@ msgid_plural "{0} tabs"
 msgstr[0] "{0} vahekaart"
 msgstr[1] "{0} vahekaarti"
 
-#: OuchBrowser/View.cs:85 OuchBrowser/View.cs:126 OuchBrowser/View.cs:141
+#: OuchBrowser/View.cs:84 OuchBrowser/View.cs:125 OuchBrowser/View.cs:140
 msgid "Stop Loading"
 msgstr "Lõpeta laadimine"
 
-#: OuchBrowser/View.cs:264
+#: OuchBrowser/View.cs:263
 msgid "Open Link in Peek Tab"
 msgstr ""
 
-#: OuchBrowser/View.cs:308
+#: OuchBrowser/View.cs:306
 msgid "Expand Tab"
 msgstr ""
 
-#: OuchBrowser/View.cs:340 OuchBrowser/Window.cs:437
+#: OuchBrowser/View.cs:338 OuchBrowser/Window.cs:434
 msgid "Link Copied"
 msgstr "Link on kopeeritud"
 
-#: OuchBrowser/Window.cs:166
+#: OuchBrowser/Window.cs:163
 msgid "Exit and Close All Tabs?"
 msgstr "Kas väljud ja sulged kõik vahekaardid?"
 
-#: OuchBrowser/Window.cs:167
+#: OuchBrowser/Window.cs:164
 #, csharp-format
 msgid "You are about to close {0} tabs. Are you sure you want to continue?"
 msgstr "Oled sulgemas {0} vahekaarti. Kas oled kindel, et soovid jätkata?"
 
-#: OuchBrowser/Window.cs:169
+#: OuchBrowser/Window.cs:166
 msgid "Close All Tabs"
 msgstr "Sulge kõik vahekaardid"
 
-#: OuchBrowser/Window.cs:170
+#: OuchBrowser/Window.cs:167
 msgid "Cancel"
 msgstr "Katkesta"
 
