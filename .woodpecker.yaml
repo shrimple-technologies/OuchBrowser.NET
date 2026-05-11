@@ -1,0 +1,52 @@
+# Takes a repository with mdbook source, generates the static site and
+# pushes the result to Codeberg pages
+#
+# Needs a codeberg access token (codeberg_token) as a secret in Woodpecker config
+# Also uses another secret (mail) with email address for git config
+#
+# .domains file in the repository is copied to the output branch so custom domains work
+#
+# The MDBOOK_OUTPUT variable must be set to the build output folder configured in Hugo
+#
+
+clone:
+  git:
+    image: woodpeckerci/plugin-git
+
+when:
+  branch: docs
+  event: [push, cron]
+
+steps:
+  build:
+    image: alpine:edge
+    commands:
+      #- echo https://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories
+      - apk add --no-cache mdbook
+      # If you want to install extensions like 'mdbook-admonish' for mdbook, look at the link below if the extension is already packaged for alpine linux and add the package name at the end of the line above.
+      #   https://pkgs.alpinelinux.org/packages?name=mdbook*&arch=x86_64
+      # You probably also have to enable the testing repository by uncommenting the first line in the commands.
+      #
+      # If the extension is not in the alpine repos add 'cargo' at the end of the 'apk add' and comment out the following lines:
+      #- cargo install mdbook-<extension_name> --locked
+      #- export PATH=$PATH:/root/.cargo/bin
+      - mdbook build # If times are not displayed correctly, you can fix that with 'TZ=“Europe/Berlin” mdbook build'.
+
+  publish:
+    image: alpine/git
+    environment:
+      MDBOOK_OUTPUT: book
+      # secrets must be set in Woodpecker configuration
+      MAIL:
+        from_secret: mail
+      CODEBERG_TOKEN:
+        from_secret: codeberg_token
+    commands:
+      - git config --global user.email $MAIL
+      - git config --global user.name "Woodpecker CI"
+      - git clone -b pages https://$CODEBERG_TOKEN@codeberg.org/$CI_REPO.git $CI_REPO_NAME
+      - cp -ar $MDBOOK_OUTPUT/. $CI_REPO_NAME/
+      - cp .domains $CI_REPO_NAME || true
+      - cd $CI_REPO_NAME
+      - git add .
+      - if ! git diff --cached --quiet; then git commit -m "Woodpecker CI ${CI_BUILD_CREATED}" && git push; fi
