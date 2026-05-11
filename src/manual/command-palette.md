@@ -12,8 +12,8 @@ box, which can both be disabled inside [preferences](preferences.md).
 ![Command palette autocompleting !bangs](../images/CommandPaletteBangs.png)
 
 !bangs help you search websites that are not conventional search engines.
-Autocompletion is possible, but may use an significant amount of resources
-due to the large amount of !bangs stored.
+Autocompletion is possible via [preferences](preferences.md), but may use an
+significant amount of resources due to the large amount of !bangs stored.
 
 ## Search
 
