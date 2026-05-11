@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
 "POT-Creation-Date: 2026-05-10 19:17-0400\n"
-"PO-Revision-Date: 2026-05-04 10:52+0000\n"
+"PO-Revision-Date: 2026-05-11 23:00+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/ouch/net/et/>\n"
 "Language: et\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.17.1\n"
+"X-Generator: Weblate 2026.5-dev\n"
 
 #: OuchBrowser/CommandPalette.cs:35
 #, csharp-format
@@ -117,8 +117,6 @@ msgid "Initial Window Size"
 msgstr "Akna algne suurus"
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:104
-#, fuzzy
-#| msgid "This value is the main window's size."
 msgid "This value is the main window’s size."
 msgstr "See väärtus näitab põhiakna suurust."
 
@@ -157,30 +155,28 @@ msgid ""
 msgstr ""
 
 #: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:68
-#, fuzzy
-#| msgid "Ouch Browser"
 msgid "Ouch Browser’s Main Window"
-msgstr "Veebibrauser Ouch"
+msgstr "Veebibrauser Ouch - põhivaade"
 
 #: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:72
 msgid "Ouch Browser with Tab Sidebar Closed"
-msgstr ""
+msgstr "Veebibrauser Ouch vahekaartide külgpaan suletuna"
 
 #: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:76
 msgid "Ouch Browser with Command Palette Opened"
-msgstr ""
+msgstr "Veebibrauser Ouch käsuvalik avatuna"
 
 #: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:80
 msgid "Ouch Browser’s Main Window in Dark Mode"
-msgstr ""
+msgstr "Veebibrauser Ouch - põhivaade tumedas kujunduses"
 
 #: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:84
 msgid "Ouch Browser with Tab Sidebar Closed in Dark Mode"
-msgstr ""
+msgstr "Veebibrauser Ouch tumead kujunduses vahekaartide külgpaan suletuna"
 
 #: OuchBrowser/Data/site.srht.shrimple.OuchBrowser.metainfo.xml:88
 msgid "Ouch Browser with Command Palette Opened in Dark Mode"
-msgstr ""
+msgstr "Veebibrauser Ouch tumedas kujunduses käsuvalik avatuna"
 
 #: OuchBrowser/Data/UI/Preferences.blp:6 OuchBrowser/Data/UI/Preferences.blp:20
 #: OuchBrowser/Data/UI/Window.blp:518
@@ -228,10 +224,8 @@ msgid "Enable !bang Autocomplete"
 msgstr "Kasuta !bang automaattäidet"
 
 #: OuchBrowser/Data/UI/Preferences.blp:84
-#, fuzzy
-#| msgid "Restored Tabs"
 msgid "Peek Tabs"
-msgstr "Taastatud vahekaardid"
+msgstr "Vahekaardid piilumiseks"
 
 #: OuchBrowser/Data/UI/Preferences.blp:86
 msgid ""
