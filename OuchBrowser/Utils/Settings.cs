@@ -7,7 +7,7 @@ global using settings = Settings;
 
 internal static class Settings
 {
-	private static readonly Gio.Settings settings = Gio.Settings.New("site.srht.shrimple.OuchBrowser");
+	private static readonly Gio.Settings settings = Gio.Settings.New("page.codeberg.shrimple.OuchBrowser");
 
 	public static string GetString(string key)
 		=> settings.GetString(key);
