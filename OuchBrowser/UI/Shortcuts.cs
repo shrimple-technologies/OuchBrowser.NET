@@ -11,7 +11,7 @@ internal class Shortcuts
 		var dialog = Adw.ShortcutsDialog.New();
 
 		var builder = new Builder();
-		builder.AddFromResource("/site/srht/shrimple/OuchBrowser/ui/shortcuts.ui");
+		builder.AddFromResource("/page/codeberg/shrimple/OuchBrowser/ui/shortcuts.ui");
 		builder.Connect(dialog);
 
 		return (Adw.ShortcutsDialog)builder!.GetObject("shortcuts")!;

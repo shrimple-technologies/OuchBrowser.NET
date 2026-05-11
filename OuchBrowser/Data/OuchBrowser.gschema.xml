@@ -8,7 +8,7 @@
 		
 	<schema
 		id="page.codeberg.shrimple.OuchBrowser"
-		path="/site/srht/shrimple/OuchBrowser/"
+		path="/page/codeberg/shrimple/OuchBrowser/"
 		gettext-domain="OuchBrowser"
 	>
 		<key type="s" name="search-engine">

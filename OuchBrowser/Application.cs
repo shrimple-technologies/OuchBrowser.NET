@@ -10,7 +10,7 @@ internal class Application : Adw.Application
 	{
 		ApplicationId = "page.codeberg.shrimple.OuchBrowser";
 		Flags = ApplicationFlags.DefaultFlags;
-		ResourceBasePath = "/site/srht/shrimple/OuchBrowser";
+		ResourceBasePath = "/page/codeberg/shrimple/OuchBrowser";
 		OnActivate += (self, args) =>
 		{
 			var window = new Window(this);
