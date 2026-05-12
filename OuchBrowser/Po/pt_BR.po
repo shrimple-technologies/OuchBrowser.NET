@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-05-11 18:43-0400\n"
+"POT-Creation-Date: 2026-05-11 22:16-0400\n"
 "PO-Revision-Date: 2026-05-11 12:33+0000\n"
 "Last-Translator: Gabriel <bloxgabriel18@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/ouch/"
@@ -154,7 +154,7 @@ msgstr "Shrimple Technologies"
 msgid "Focus on your browsing"
 msgstr "Concentre-se na sua Navegação"
 
-#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:45
+#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:46
 msgid ""
 "Ouch Browser is a browser that utilizes the vertical tabs layout, which "
 "allows for better tab management for more heavy browser users. Made for "
@@ -167,36 +167,36 @@ msgstr ""
 "bangs, um painel de comandos multifuncional e compatibilidade com "
 "dispositivos móveis."
 
-#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:52
+#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:53
 msgid ""
 "NOTE: Ouch Browser is currently in alpha stage and is changing rapidly. "
 "While it is in a usable state, it does not have a large number of common web "
 "browser functions, and can have many bugs."
 msgstr ""
 
-#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:68
+#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:69
 #, fuzzy
 #| msgid "Ouch Browser"
 msgid "Ouch Browser’s Main Window"
 msgstr "Ouch Browser"
 
-#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:72
+#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:73
 msgid "Ouch Browser with Tab Sidebar Closed"
 msgstr ""
 
-#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:76
+#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:77
 msgid "Ouch Browser with Command Palette Opened"
 msgstr ""
 
-#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:80
+#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:81
 msgid "Ouch Browser’s Main Window in Dark Mode"
 msgstr ""
 
-#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:84
+#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:85
 msgid "Ouch Browser with Tab Sidebar Closed in Dark Mode"
 msgstr ""
 
-#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:88
+#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:89
 msgid "Ouch Browser with Command Palette Opened in Dark Mode"
 msgstr ""
 
@@ -458,7 +458,7 @@ msgstr "Recarregar"
 msgid "Reveal Command Palette"
 msgstr "Mostrar Paleta de Comandos"
 
-#: OuchBrowser/Data/UI/Window.blp:686 OuchBrowser/View.cs:335
+#: OuchBrowser/Data/UI/Window.blp:686 OuchBrowser/View.cs:351
 msgid "Copy Link"
 msgstr "Copiar Link"
 
@@ -536,11 +536,15 @@ msgstr "Parar de Carregar"
 msgid "Open Link in Peek Tab"
 msgstr ""
 
-#: OuchBrowser/View.cs:306
+#: OuchBrowser/View.cs:277
+msgid "There was a problem loading this website"
+msgstr ""
+
+#: OuchBrowser/View.cs:322
 msgid "Expand Tab"
 msgstr ""
 
-#: OuchBrowser/View.cs:338 OuchBrowser/Window.cs:434
+#: OuchBrowser/View.cs:354 OuchBrowser/Window.cs:434
 msgid "Link Copied"
 msgstr "Link Copiado"
 
