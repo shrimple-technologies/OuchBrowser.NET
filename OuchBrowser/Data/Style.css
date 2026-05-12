@@ -16,7 +16,7 @@ frame {
 	min-height: 34px;
 }
 
-.command-palette {
+entry.command-palette {
 	font-size: 20px;
 	min-height: 40px;
 	background-color: transparent;
@@ -87,4 +87,15 @@ shortcut-label.compact > box > .keycap {
 
 .palette-button.card {
 	border-radius: 9px;
+}
+
+dialog.command-palette > widget > floating-sheet > dimming {
+	opacity: 0;
+}
+
+dialog.command-palette > widget > floating-sheet > sheet {
+	box-shadow:
+		0 12px 32px rgb(0 0 0 / 15%),
+		0 0 48px rgb(0 0 0 / 10%),
+		0 0 0 1px rgb(0 0 0 / 5%);
 }
