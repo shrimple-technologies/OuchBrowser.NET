@@ -108,7 +108,7 @@ This configures how [peek tabs](./peek-tabs.md) work.
 > 
 > **Type**: Enumeration
 > 
-> **Enumeration ID**: `site.srht.shrimple.OuchBrowser.PEEK_TRIGGER`
+> **Enumeration ID**: `page.codeberg.shrimple.OuchBrowser.PEEK_TRIGGER`
 > 
 > **Enumeration Nicknames**: `"shift"`, `"ctrl"`, `"alt"`
 > 
