@@ -13,6 +13,7 @@
 	<summary>Focus on your browsing</summary>
 	<replaces>
 		<id>site.srht.shrimple.ouch</id>
+		<id>site.srht.shrimple.OuchBrowser</id>
 	</replaces>
 	<translation type="gettext">OuchBrowser</translation>
 	<branding>
