@@ -282,6 +282,95 @@ internal class View
 			);
 			return true;
 		};
+
+		webview.OnScriptDialog += (_, args) =>
+		{
+			AlertDialog alert = AlertDialog.New(null, null);
+
+			switch (args.Dialog.GetDialogType())
+			{
+				case ScriptDialogType.Alert:
+					// TRANSLATORS: This is in the format of "example.com says"
+					alert.SetHeading(__("{0} says", new Uri(webview.GetUri()).Host));
+					alert.SetBody(args.Dialog.GetMessage());
+					alert.AddResponse("ok", __("OK"));
+					alert.SetCloseResponse("ok");
+					alert.SetDefaultResponse("ok");
+
+					alert.OnResponse += (_, argss) =>
+					{
+						if (argss.Response == "ok") args.Dialog.Close();
+					};
+
+					alert.Present(window);
+					break;
+				case ScriptDialogType.Confirm:
+					// TRANSLATORS: This is in the format of "example.com says"
+					alert.SetHeading(__("{0} says", new Uri(webview.GetUri()).Host));
+					alert.SetBody(args.Dialog.GetMessage());
+					alert.AddResponse("cancel", __("Cancel"));
+					alert.AddResponse("ok", __("OK"));
+					alert.SetCloseResponse("cancel");
+					alert.SetResponseAppearance("ok", ResponseAppearance.Suggested);
+					alert.SetDefaultResponse("ok");
+
+					alert.OnResponse += (_, argss) =>
+					{
+						switch (argss.Response)
+						{
+							case "cancel":
+								args.Dialog.ConfirmSetConfirmed(false);
+								args.Dialog.Close();
+								break;
+							case "ok":
+								args.Dialog.ConfirmSetConfirmed(true);
+								args.Dialog.Close();
+								break;
+						}
+					};
+
+					alert.Present(window);
+					break;
+				case ScriptDialogType.Prompt:
+					// TRANSLATORS: This is in the format of "example.com says"
+					Gtk.Entry entry = Gtk.Entry.New();
+					alert.SetHeading(__("{0} says", new Uri(webview.GetUri()).Host));
+					alert.SetBody(args.Dialog.GetMessage());
+					alert.AddResponse("cancel", __("Cancel"));
+					alert.AddResponse("ok", __("OK"));
+					alert.SetCloseResponse("cancel");
+					alert.SetResponseAppearance("ok", ResponseAppearance.Suggested);
+					alert.SetDefaultResponse("ok");
+					alert.SetExtraChild(entry);
+
+					entry.SetText(args.Dialog.PromptGetDefaultText());
+
+					entry.OnActivate += (_, _) => alert.ActivateDefault();
+
+					alert.OnResponse += (_, argss) =>
+					{
+						switch (argss.Response)
+						{
+							case "cancel":
+								args.Dialog.PromptSetText(null!);
+								args.Dialog.Close();
+								break;
+							case "ok":
+								args.Dialog.PromptSetText(entry.GetText());
+								args.Dialog.Close();
+								break;
+						}
+					};
+
+					alert.Present(window);
+					entry.GrabFocus();
+					break;
+				default:
+					return false;
+			}
+
+			return true;
+		};
 	}
 
 	public string[] GetAllTabUrls()

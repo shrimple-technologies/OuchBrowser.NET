@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-05-11 22:16-0400\n"
+"POT-Creation-Date: 2026-05-11 23:27-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -433,7 +433,7 @@ msgstr ""
 msgid "Reveal Command Palette"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:686 OuchBrowser/View.cs:351
+#: OuchBrowser/Data/UI/Window.blp:686 OuchBrowser/View.cs:440
 msgid "Copy Link"
 msgstr ""
 
@@ -513,11 +513,25 @@ msgstr ""
 msgid "There was a problem loading this website"
 msgstr ""
 
-#: OuchBrowser/View.cs:322
+#. TRANSLATORS: This is in the format of "example.com says"
+#: OuchBrowser/View.cs:294 OuchBrowser/View.cs:309 OuchBrowser/View.cs:337
+#, csharp-format
+msgid "{0} says"
+msgstr ""
+
+#: OuchBrowser/View.cs:296 OuchBrowser/View.cs:312 OuchBrowser/View.cs:340
+msgid "OK"
+msgstr ""
+
+#: OuchBrowser/View.cs:311 OuchBrowser/View.cs:339 OuchBrowser/Window.cs:167
+msgid "Cancel"
+msgstr ""
+
+#: OuchBrowser/View.cs:411
 msgid "Expand Tab"
 msgstr ""
 
-#: OuchBrowser/View.cs:354 OuchBrowser/Window.cs:434
+#: OuchBrowser/View.cs:443 OuchBrowser/Window.cs:434
 msgid "Link Copied"
 msgstr ""
 
@@ -532,8 +546,4 @@ msgstr ""
 
 #: OuchBrowser/Window.cs:166
 msgid "Close All Tabs"
-msgstr ""
-
-#: OuchBrowser/Window.cs:167
-msgid "Cancel"
 msgstr ""
