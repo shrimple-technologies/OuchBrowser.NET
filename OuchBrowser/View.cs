@@ -266,6 +266,22 @@ internal class View
 
 			return false;
 		};
+
+		webview.OnLoadFailed += (_, args) =>
+		{
+			EmbeddedResource.Load("ErrorPage.html", out string err_page);
+			webview.LoadAlternateHtml(
+				string.Format(
+					err_page,
+					args.FailingUri,
+					__("There was a problem loading this website"),
+					args.Error.Message
+				),
+				args.FailingUri,
+				null
+			);
+			return true;
+		};
 	}
 
 	public string[] GetAllTabUrls()

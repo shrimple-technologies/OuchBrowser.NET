@@ -3,6 +3,7 @@
 	<gresource prefix="/page/codeberg/shrimple/OuchBrowser/">
 		<file alias="style.css">Data/Style.css</file>
 		<file alias="page.codeberg.shrimple.OuchBrowser.metainfo.xml">Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml</file>
+		<file alias="error_page.html">Data/ErrorPage.html</file>
 	</gresource>
 
 	<gresource prefix="/page/codeberg/shrimple/OuchBrowser/ui">
