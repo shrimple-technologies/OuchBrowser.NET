@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
 "POT-Creation-Date: 2026-05-11 23:27-0400\n"
-"PO-Revision-Date: 2026-05-11 23:00+0000\n"
+"PO-Revision-Date: 2026-05-14 01:11+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/ouch/net/et/>\n"
 "Language: et\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.5-dev\n"
+"X-Generator: Weblate 2026.5.dev0\n"
 
 #: OuchBrowser/CommandPalette.cs:35
 #, csharp-format
@@ -530,11 +530,9 @@ msgstr ""
 
 #. TRANSLATORS: This is in the format of "example.com says"
 #: OuchBrowser/View.cs:294 OuchBrowser/View.cs:309 OuchBrowser/View.cs:337
-#, fuzzy, csharp-format
-#| msgid "{0} tab"
-#| msgid_plural "{0} tabs"
+#, csharp-format
 msgid "{0} says"
-msgstr "{0} vahekaart"
+msgstr "{0} ütleb"
 
 #: OuchBrowser/View.cs:296 OuchBrowser/View.cs:312 OuchBrowser/View.cs:340
 msgid "OK"
