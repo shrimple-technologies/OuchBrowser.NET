@@ -67,6 +67,15 @@ just run
 
 ## Contributing
 
+### Code
+
+Ouch Browser does not have a definitive contributing guidelines. However, AI
+code is **strictly not allowed** inside of Ouch Browser, or any of Shrimple
+Technologies' products. Any suspicion of your pull request being AI generated
+will result in your pull request being closed without warning, and further
+AI pull requests will result in being barred from contributing to any
+Shrimple Technologies product.
+
 ### Translations [![Translation status](https://hosted.weblate.org/widget/ouch/net/svg-badge.svg)](https://hosted.weblate.org/projects/ouch/net/)
 
 [![Translation status](https://hosted.weblate.org/widget/ouch/net/multi-auto.svg)](https://hosted.weblate.org/projects/ouch/net/)
