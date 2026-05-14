@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-05-11 22:16-0400\n"
-"PO-Revision-Date: 2026-05-11 23:00+0000\n"
+"POT-Creation-Date: 2026-05-11 23:27-0400\n"
+"PO-Revision-Date: 2026-05-14 01:11+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/ouch/net/et/>\n"
 "Language: et\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.5-dev\n"
+"X-Generator: Weblate 2026.5.dev0\n"
 
 #: OuchBrowser/CommandPalette.cs:35
 #, csharp-format
@@ -447,7 +447,7 @@ msgstr "Laadi uuesti"
 msgid "Reveal Command Palette"
 msgstr "Näita käsupaletti"
 
-#: OuchBrowser/Data/UI/Window.blp:686 OuchBrowser/View.cs:351
+#: OuchBrowser/Data/UI/Window.blp:686 OuchBrowser/View.cs:440
 msgid "Copy Link"
 msgstr "Kopeeri link"
 
@@ -528,11 +528,25 @@ msgstr ""
 msgid "There was a problem loading this website"
 msgstr ""
 
-#: OuchBrowser/View.cs:322
+#. TRANSLATORS: This is in the format of "example.com says"
+#: OuchBrowser/View.cs:294 OuchBrowser/View.cs:309 OuchBrowser/View.cs:337
+#, csharp-format
+msgid "{0} says"
+msgstr "{0} ütleb"
+
+#: OuchBrowser/View.cs:296 OuchBrowser/View.cs:312 OuchBrowser/View.cs:340
+msgid "OK"
+msgstr ""
+
+#: OuchBrowser/View.cs:311 OuchBrowser/View.cs:339 OuchBrowser/Window.cs:167
+msgid "Cancel"
+msgstr "Katkesta"
+
+#: OuchBrowser/View.cs:411
 msgid "Expand Tab"
 msgstr ""
 
-#: OuchBrowser/View.cs:354 OuchBrowser/Window.cs:434
+#: OuchBrowser/View.cs:443 OuchBrowser/Window.cs:434
 msgid "Link Copied"
 msgstr "Link on kopeeritud"
 
@@ -548,10 +562,6 @@ msgstr "Oled sulgemas {0} vahekaarti. Kas oled kindel, et soovid jätkata?"
 #: OuchBrowser/Window.cs:166
 msgid "Close All Tabs"
 msgstr "Sulge kõik vahekaardid"
-
-#: OuchBrowser/Window.cs:167
-msgid "Cancel"
-msgstr "Katkesta"
 
 #~ msgid ""
 #~ "NOTE: This is the C# rewrite, which is constantly evolving, and may be "

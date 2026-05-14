@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-05-11 22:16-0400\n"
+"POT-Creation-Date: 2026-05-11 23:27-0400\n"
 "PO-Revision-Date: 2026-05-11 12:33+0000\n"
 "Last-Translator: Gabriel <bloxgabriel18@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/ouch/"
@@ -458,7 +458,7 @@ msgstr "Recarregar"
 msgid "Reveal Command Palette"
 msgstr "Mostrar Paleta de Comandos"
 
-#: OuchBrowser/Data/UI/Window.blp:686 OuchBrowser/View.cs:351
+#: OuchBrowser/Data/UI/Window.blp:686 OuchBrowser/View.cs:440
 msgid "Copy Link"
 msgstr "Copiar Link"
 
@@ -540,11 +540,27 @@ msgstr ""
 msgid "There was a problem loading this website"
 msgstr ""
 
-#: OuchBrowser/View.cs:322
+#. TRANSLATORS: This is in the format of "example.com says"
+#: OuchBrowser/View.cs:294 OuchBrowser/View.cs:309 OuchBrowser/View.cs:337
+#, fuzzy, csharp-format
+#| msgid "{0} tab"
+#| msgid_plural "{0} tabs"
+msgid "{0} says"
+msgstr "{0} aba"
+
+#: OuchBrowser/View.cs:296 OuchBrowser/View.cs:312 OuchBrowser/View.cs:340
+msgid "OK"
+msgstr ""
+
+#: OuchBrowser/View.cs:311 OuchBrowser/View.cs:339 OuchBrowser/Window.cs:167
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: OuchBrowser/View.cs:411
 msgid "Expand Tab"
 msgstr ""
 
-#: OuchBrowser/View.cs:354 OuchBrowser/Window.cs:434
+#: OuchBrowser/View.cs:443 OuchBrowser/Window.cs:434
 msgid "Link Copied"
 msgstr "Link Copiado"
 
@@ -561,10 +577,6 @@ msgstr ""
 #: OuchBrowser/Window.cs:166
 msgid "Close All Tabs"
 msgstr "Fechar todas as guias"
-
-#: OuchBrowser/Window.cs:167
-msgid "Cancel"
-msgstr "Cancelar"
 
 #~ msgid ""
 #~ "NOTE: This is the C# rewrite, which is constantly evolving, and may be "

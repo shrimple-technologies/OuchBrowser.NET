@@ -56,7 +56,6 @@ internal partial class Window
 						{
 							url_autocomplete!.SetRevealChild(true);
 							Box box = Box.New(Orientation.Vertical, 10);
-							Label section_label = Label.New(__("BANGS"));
 							ScrolledWindow sw = ScrolledWindow.New();
 							sw.SetPropagateNaturalHeight(true);
 							sw.SetVexpand(true);
@@ -64,12 +63,8 @@ internal partial class Window
 							sw.SetMaxContentHeight(387);
 							sw.AddCssClass("undershoot-top");
 							sw.AddCssClass("undershoot-bottom");
-							section_label.SetCssClasses(["caption-heading", "dimmed"]);
-							section_label.SetHalign(Align.Start);
-							section_label.SetMarginStart(10);
 							box.SetMarginTop(10);
 							box.SetMarginBottom(10);
-							box.Append(section_label);
 							int i = 0;
 
 							Bang[] bang = bangs!.AutocompleteBang(text);
@@ -183,13 +178,8 @@ internal partial class Window
 							}
 
 							Box box = Box.New(Orientation.Vertical, 10);
-							Label section_label = Label.New(__("SUGGESTIONS"));
-							section_label.SetCssClasses(["caption-heading", "dimmed"]);
-							section_label.SetHalign(Align.Start);
-							section_label.SetMarginStart(10);
 							box.SetMarginTop(10);
 							box.SetMarginBottom(10);
-							box.Append(section_label);
 
 							foreach (Autocompletion phrase in ac)
 							{
