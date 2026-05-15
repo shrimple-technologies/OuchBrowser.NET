@@ -269,6 +269,7 @@ internal class View
 
 		webview.OnLoadFailed += (_, args) =>
 		{
+			if (args.Error.Code == (int)NetworkError.Cancelled) return false;
 			EmbeddedResource.Load("ErrorPage.html", out string err_page);
 			webview.LoadAlternateHtml(
 				string.Format(
