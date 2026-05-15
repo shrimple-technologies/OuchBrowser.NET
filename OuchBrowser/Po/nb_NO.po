@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-05-11 23:27-0400\n"
+"POT-Creation-Date: 2026-05-15 07:13-0400\n"
 "PO-Revision-Date: 2024-09-07 11:08+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
@@ -15,17 +15,9 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.8-dev\n"
 
-#: OuchBrowser/CommandPalette.cs:35
+#: OuchBrowser/CommandPalette.cs:36
 #, csharp-format
 msgid "Searching using {0}"
-msgstr ""
-
-#: OuchBrowser/CommandPalette.cs:59
-msgid "BANGS"
-msgstr ""
-
-#: OuchBrowser/CommandPalette.cs:186
-msgid "SUGGESTIONS"
 msgstr ""
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:29
@@ -290,7 +282,7 @@ msgstr ""
 msgid "See !bangs preferences for more options"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:239 OuchBrowser/Data/UI/Window.blp:1040
+#: OuchBrowser/Data/UI/Preferences.blp:239 OuchBrowser/Data/UI/Window.blp:1044
 msgid "!bangs"
 msgstr ""
 
@@ -302,7 +294,7 @@ msgstr ""
 msgid "New Bang…"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:262 OuchBrowser/Data/UI/Window.blp:1119
+#: OuchBrowser/Data/UI/Preferences.blp:262
 msgid "!bangs provided by Kagi"
 msgstr ""
 
@@ -482,23 +474,23 @@ msgstr ""
 msgid "New Folder"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1022
+#: OuchBrowser/Data/UI/Window.blp:1026
 msgid "Search"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1057
+#: OuchBrowser/Data/UI/Window.blp:1061
 msgid "Website"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1066
+#: OuchBrowser/Data/UI/Window.blp:1070
 msgid "Search or enter URL…"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1174
+#: OuchBrowser/Data/UI/Window.blp:1163
 msgid "Go"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1189
+#: OuchBrowser/Data/UI/Window.blp:1178
 msgid "Close Palette"
 msgstr ""
 
@@ -546,7 +538,7 @@ msgstr ""
 msgid "Expand Tab"
 msgstr ""
 
-#: OuchBrowser/View.cs:443 OuchBrowser/Window.cs:434
+#: OuchBrowser/View.cs:443 OuchBrowser/Window.cs:453
 msgid "Link Copied"
 msgstr ""
 

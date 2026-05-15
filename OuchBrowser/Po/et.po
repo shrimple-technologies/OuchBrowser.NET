@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-05-11 23:27-0400\n"
+"POT-Creation-Date: 2026-05-15 07:13-0400\n"
 "PO-Revision-Date: 2026-05-15 20:23+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/ouch/net/et/>\n"
@@ -14,18 +14,10 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2026.6.dev0\n"
 
-#: OuchBrowser/CommandPalette.cs:35
+#: OuchBrowser/CommandPalette.cs:36
 #, csharp-format
 msgid "Searching using {0}"
 msgstr "Otsing kasutades teenust {0}"
-
-#: OuchBrowser/CommandPalette.cs:59
-msgid "BANGS"
-msgstr "BANG-käsud"
-
-#: OuchBrowser/CommandPalette.cs:186
-msgid "SUGGESTIONS"
-msgstr "SOOVITUSED"
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:29
 #: OuchBrowser/Data/UI/Preferences.blp:180
@@ -309,7 +301,7 @@ msgstr "Uus otsingumootor…"
 msgid "See !bangs preferences for more options"
 msgstr "Lisavalikud leiad !bangs käskude eelistustest"
 
-#: OuchBrowser/Data/UI/Preferences.blp:239 OuchBrowser/Data/UI/Window.blp:1040
+#: OuchBrowser/Data/UI/Preferences.blp:239 OuchBrowser/Data/UI/Window.blp:1044
 msgid "!bangs"
 msgstr "!bang-käsud"
 
@@ -321,7 +313,7 @@ msgstr "Sinu lisatud bang-käsud"
 msgid "New Bang…"
 msgstr "Uus bang-otsing…"
 
-#: OuchBrowser/Data/UI/Preferences.blp:262 OuchBrowser/Data/UI/Window.blp:1119
+#: OuchBrowser/Data/UI/Preferences.blp:262
 msgid "!bangs provided by Kagi"
 msgstr "!bang-käsud Kagi kogumikust"
 
@@ -491,23 +483,23 @@ msgstr "Uus tuba"
 msgid "New Folder"
 msgstr "Uus kaust"
 
-#: OuchBrowser/Data/UI/Window.blp:1022
+#: OuchBrowser/Data/UI/Window.blp:1026
 msgid "Search"
 msgstr "Otsi"
 
-#: OuchBrowser/Data/UI/Window.blp:1057
+#: OuchBrowser/Data/UI/Window.blp:1061
 msgid "Website"
 msgstr "Veebisait"
 
-#: OuchBrowser/Data/UI/Window.blp:1066
+#: OuchBrowser/Data/UI/Window.blp:1070
 msgid "Search or enter URL…"
 msgstr "Otsi või sisesta võrguaadress…"
 
-#: OuchBrowser/Data/UI/Window.blp:1174
+#: OuchBrowser/Data/UI/Window.blp:1163
 msgid "Go"
 msgstr "Mine"
 
-#: OuchBrowser/Data/UI/Window.blp:1189
+#: OuchBrowser/Data/UI/Window.blp:1178
 msgid "Close Palette"
 msgstr "Sulge värvipalett"
 
@@ -554,7 +546,7 @@ msgstr "Katkesta"
 msgid "Expand Tab"
 msgstr "Laienda vahekaarti"
 
-#: OuchBrowser/View.cs:443 OuchBrowser/Window.cs:434
+#: OuchBrowser/View.cs:443 OuchBrowser/Window.cs:453
 msgid "Link Copied"
 msgstr "Link on kopeeritud"
 
@@ -570,6 +562,12 @@ msgstr "Oled sulgemas {0} vahekaarti. Kas oled kindel, et soovid jätkata?"
 #: OuchBrowser/Window.cs:166
 msgid "Close All Tabs"
 msgstr "Sulge kõik vahekaardid"
+
+#~ msgid "BANGS"
+#~ msgstr "BANG-käsud"
+
+#~ msgid "SUGGESTIONS"
+#~ msgstr "SOOVITUSED"
 
 #~ msgid ""
 #~ "NOTE: This is the C# rewrite, which is constantly evolving, and may be "
