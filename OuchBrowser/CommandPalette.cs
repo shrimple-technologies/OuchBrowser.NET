@@ -34,11 +34,11 @@ internal partial class Window
 						{
 							if (text.Split(' ')[1].Length == 0) url_stack!.SetVisibleChildName("spinner");
 							url_custom_disclosure!.SetLabel(__("Searching using {0}", current_bang.WebsiteName));
+							url_disclosure!.SetVisibleChildName("custom");
+							url_disclosure_revealer!.SetRevealChild(true);
 							Gio.Icon icon = await Favicon.GetFavicon(current_bang.Domain);
 							url_favicon!.SetFromGicon(icon);
 							url_stack!.SetVisibleChildName("website");
-							url_disclosure!.SetVisibleChildName("custom");
-							url_disclosure_revealer!.SetRevealChild(true);
 						}
 						else
 						{
