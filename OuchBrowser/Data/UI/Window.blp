@@ -973,170 +973,126 @@ Adw.Dialog url_dialog {
 		"command-palette",
 	]
 
-	Adw.Clamp {
+	Box {
+		orientation: vertical;
+
 		Box {
-			orientation: vertical;
+			orientation: horizontal;
+			margin-top: 10;
+			margin-bottom: 10;
+			margin-start: 10;
+			margin-end: 10;
+			spacing: 5;
 
-			Box {
-				orientation: horizontal;
-				margin-top: 10;
-				margin-bottom: 10;
-				margin-start: 10;
-				margin-end: 10;
-				spacing: 5;
+			Stack url_stack {
+				transition-type: crossfade;
 
-				Stack url_stack {
-					transition-type: crossfade;
+				StackPage {
+					name: "main";
 
-					StackPage {
-						name: "main";
-
-						child: Image {
-							icon-name: "page.codeberg.shrimple.OuchBrowser-symbolic";
-							pixel-size: 20;
-							margin-start: 10;
-
-							styles [
-								"dimmed",
-							]
-						};
-					}
-
-					StackPage {
-						name: "spinner";
-
-						child: Adw.Spinner {
-							margin-start: 10;
-
-							styles [
-								"dimmed",
-							]
-						};
-					}
-
-					StackPage {
-						name: "search";
-
-						child: Image {
-							icon-name: "search-symbolic";
-							pixel-size: 20;
-							margin-start: 10;
-
-							accessibility {
-								label: _("Search");
-							}
-
-							styles [
-								"dimmed",
-							]
-						};
-					}
-
-					StackPage {
-						name: "bang";
-
-						child: Image {
-							icon-name: "exclaimation-symbolic";
-							pixel-size: 20;
-							margin-start: 10;
-
-							accessibility {
-								label: _("!bangs");
-							}
-
-							styles [
-								"dimmed",
-							]
-						};
-					}
-
-					StackPage {
-						name: "website";
-
-						child: Image url_favicon {
-							pixel-size: 20;
-							margin-start: 10;
-
-							accessibility {
-								label: _("Website");
-							}
-						};
-					}
-				}
-
-				Entry url_entry {
-					input-purpose: url;
-					hexpand: true;
-					placeholder-text: _("Search or enter URL…");
-					receives-default: true;
-					width-request: 500;
-
-					styles [
-						"command-palette",
-					]
-				}
-
-				Button url_bar_button {
-					icon-name: "go-next-symbolic";
-					visible: false;
-
-					styles [
-						"suggested-action",
-					]
-				}
-			}
-
-			Separator {
-				orientation: horizontal;
-			}
-
-			Revealer url_autocomplete {}
-
-			Revealer url_disclosure_revealer {
-				Box {
-					orientation: vertical;
-
-					Separator {
-						orientation: horizontal;
-						visible: bind url_autocomplete.child-revealed;
-					}
-
-					Stack url_disclosure {
-						transition-type: crossfade;
+					child: Image {
+						icon-name: "page.codeberg.shrimple.OuchBrowser-symbolic";
+						pixel-size: 20;
 						margin-start: 10;
-						margin-end: 10;
-						margin-top: 10;
-						margin-bottom: 10;
 
-						StackPage {
-							name: "none";
+						styles [
+							"dimmed",
+						]
+					};
+				}
 
-							child: Adw.Bin {};
+				StackPage {
+					name: "spinner";
+
+					child: Adw.Spinner {
+						margin-start: 10;
+
+						styles [
+							"dimmed",
+						]
+					};
+				}
+
+				StackPage {
+					name: "search";
+
+					child: Image {
+						icon-name: "search-symbolic";
+						pixel-size: 20;
+						margin-start: 10;
+
+						accessibility {
+							label: _("Search");
 						}
 
-						StackPage {
-							name: "custom";
+						styles [
+							"dimmed",
+						]
+					};
+				}
 
-							child: Label url_custom_disclosure {
-								halign: center;
-								ellipsize: end;
+				StackPage {
+					name: "bang";
 
-								styles [
-									"caption-heading",
-									"dimmed",
-								]
-							};
+					child: Image {
+						icon-name: "exclaimation-symbolic";
+						pixel-size: 20;
+						margin-start: 10;
+
+						accessibility {
+							label: _("!bangs");
 						}
-					}
 
-					Separator {
-						orientation: horizontal;
-						visible: bind url_autocomplete.child-revealed inverted;
-					}
+						styles [
+							"dimmed",
+						]
+					};
+				}
+
+				StackPage {
+					name: "website";
+
+					child: Image url_favicon {
+						pixel-size: 20;
+						margin-start: 10;
+
+						accessibility {
+							label: _("Website");
+						}
+					};
 				}
 			}
 
-			Box url_hints {
+			Entry url_entry {
+				input-purpose: url;
+				hexpand: true;
+				placeholder-text: _("Search or enter URL…");
+				receives-default: true;
+				width-request: 500;
+
+				styles [
+					"command-palette",
+				]
+			}
+
+			Button url_bar_button {
+				icon-name: "go-next-symbolic";
+				visible: false;
+
+				styles [
+					"suggested-action",
+				]
+			}
+		}
+
+		Separator {
+			orientation: horizontal;
+		}
+
+		Revealer url_autocomplete {}
+
+		Revealer url_disclosure_revealer {
+			Box {
 				orientation: vertical;
 
 				Separator {
@@ -1144,50 +1100,92 @@ Adw.Dialog url_dialog {
 					visible: bind url_autocomplete.child-revealed;
 				}
 
-				CenterBox {
+				Stack url_disclosure {
+					transition-type: crossfade;
 					margin-start: 10;
 					margin-end: 10;
+					margin-top: 10;
+					margin-bottom: 10;
 
-					start-widget: Box {
-						orientation: horizontal;
-						margin-top: 10;
-						margin-bottom: 10;
-						spacing: 10;
+					StackPage {
+						name: "none";
 
-						Adw.ShortcutLabel {
-							accelerator: "Return";
-							opacity: 0.75;
-						}
+						child: Adw.Bin {};
+					}
 
-						Label {
-							label: _("Go");
+					StackPage {
+						name: "custom";
 
-							styles [
-								"dimmed",
-							]
-						}
-					};
-
-					end-widget: Box {
-						orientation: horizontal;
-						margin-top: 10;
-						margin-bottom: 10;
-						spacing: 10;
-
-						Label {
-							label: _("Close Palette");
+						child: Label url_custom_disclosure {
+							halign: center;
+							ellipsize: end;
 
 							styles [
+								"caption-heading",
 								"dimmed",
 							]
-						}
-
-						Adw.ShortcutLabel {
-							accelerator: "Escape";
-							opacity: 0.75;
-						}
-					};
+						};
+					}
 				}
+
+				Separator {
+					orientation: horizontal;
+					visible: bind url_autocomplete.child-revealed inverted;
+				}
+			}
+		}
+
+		Box url_hints {
+			orientation: vertical;
+
+			Separator {
+				orientation: horizontal;
+				visible: bind url_autocomplete.child-revealed;
+			}
+
+			CenterBox {
+				margin-start: 10;
+				margin-end: 10;
+
+				start-widget: Box {
+					orientation: horizontal;
+					margin-top: 10;
+					margin-bottom: 10;
+					spacing: 10;
+
+					Adw.ShortcutLabel {
+						accelerator: "Return";
+						opacity: 0.75;
+					}
+
+					Label {
+						label: _("Go");
+
+						styles [
+							"dimmed",
+						]
+					}
+				};
+
+				end-widget: Box {
+					orientation: horizontal;
+					margin-top: 10;
+					margin-bottom: 10;
+					spacing: 10;
+
+					Label {
+						label: _("Close Palette");
+
+						styles [
+							"dimmed",
+						]
+					}
+
+					Adw.ShortcutLabel {
+						accelerator: "Escape";
+						opacity: 0.75;
+					}
+				};
 			}
 		}
 	}
