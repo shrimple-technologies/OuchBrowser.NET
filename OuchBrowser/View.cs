@@ -31,6 +31,8 @@ internal class View
 	public WebView AddTab(string url, bool pinned)
 	{
 		WebView webview = WebView.New();
+		Gio.SimpleAction go_back_action = (Gio.SimpleAction)win.LookupAction("go-back")!;
+		Gio.SimpleAction go_forward_action = (Gio.SimpleAction)win.LookupAction("go-forward")!;
 
 		webview.SetSettings(InitSettings());
 		webview.LoadUri(url);
@@ -67,6 +69,9 @@ internal class View
 		{
 			if (args.Pspec.GetName() == "selected" && page.GetSelected() == true)
 			{
+				go_back_action.SetEnabled(webview.CanGoBack());
+				go_forward_action.SetEnabled(webview.CanGoForward());
+
 				string current_uri = webview.GetUri();
 				Uri uri = new Uri(current_uri);
 				if (uri.IsLoopback)
@@ -147,6 +152,12 @@ internal class View
 					page.SetIcon(await Favicon.GetFavicon(uri.Host));
 					break;
 				case LoadEvent.Committed:
+					Gio.SimpleAction go_back_action = (Gio.SimpleAction)window.LookupAction("go-back")!;
+					Gio.SimpleAction go_forward_action = (Gio.SimpleAction)window.LookupAction("go-forward")!;
+
+					go_back_action.SetEnabled(webview.CanGoBack());
+					go_forward_action.SetEnabled(webview.CanGoForward());
+
 					if (Url.IsIpAddress(uri.AbsoluteUri))
 					{
 						window.hostname!.SetLabel(uri.Host + ":" + uri.Port);
@@ -162,25 +173,6 @@ internal class View
 					window.refresh!.SetTooltipText(__("Refresh"));
 					window.refresh!.SetIconName("view-refresh-symbolic");
 					page.SetLoading(false);
-
-					if (webview.CanGoBack())
-					{
-						window.go_back!.SetSensitive(true);
-					}
-					else
-					{
-						window.go_back!.SetSensitive(false);
-					}
-
-					if (webview.CanGoForward())
-					{
-						window.go_forward!.SetSensitive(true);
-					}
-					else
-					{
-						window.go_forward!.SetSensitive(false);
-					}
-
 					break;
 			}
 		};
