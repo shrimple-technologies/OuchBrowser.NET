@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
 "POT-Creation-Date: 2026-05-11 23:27-0400\n"
-"PO-Revision-Date: 2026-05-14 01:11+0000\n"
+"PO-Revision-Date: 2026-05-15 20:23+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/ouch/net/et/>\n"
 "Language: et\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.5.dev0\n"
+"X-Generator: Weblate 2026.6.dev0\n"
 
 #: OuchBrowser/CommandPalette.cs:35
 #, csharp-format
@@ -121,10 +121,8 @@ msgid "This value is the main window’s size."
 msgstr "See väärtus näitab põhiakna suurust."
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:111
-#, fuzzy
-#| msgid "Peek Tabs"
 msgid "Peek Tab Trigger"
-msgstr "Vahekaardid piilumiseks"
+msgstr "Eelvaate vahekaartide päästik"
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:112
 msgid ""
@@ -132,6 +130,9 @@ msgid ""
 "the Shift key and clicking on a hyperlink will result in that website being "
 "loaded inside a peek tab, which is separate from the main window."
 msgstr ""
+"See väärtus käivitab eelvaateakna (piilutav vahekaart) avamise. Näiteks kui "
+"hoida all Shift-klahvi ja klõpsata hüperlingil, laaditakse veebileht "
+"eelvaateaknasse, mis on peaaknast eraldatud."
 
 #: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:6
 #: OuchBrowser/Data/UI/Window.blp:16 OuchBrowser/Data/UI/Window.blp:249
@@ -166,6 +167,9 @@ msgid ""
 "While it is in a usable state, it does not have a large number of common web "
 "browser functions, and can have many bugs."
 msgstr ""
+"MÄRKUS: Ouch Browser on praegu alfa arendusfaasis ja areneb kiiresti. Kuigi "
+"see on kasutatav, puuduvad sellel paljud tavapärased veebibrauseri "
+"funktsionaalsused ja selles võib esineda palju vigu."
 
 #: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:69
 msgid "Ouch Browser’s Main Window"
@@ -238,7 +242,7 @@ msgstr "Kasuta !bang automaattäidet"
 
 #: OuchBrowser/Data/UI/Preferences.blp:84
 msgid "Peek Tabs"
-msgstr "Vahekaardid piilumiseks"
+msgstr "Eelvaate vahekaardid"
 
 #: OuchBrowser/Data/UI/Preferences.blp:86
 msgid ""
@@ -246,16 +250,20 @@ msgid ""
 "specific key and clicking on a link. These can also be expanded into full "
 "view."
 msgstr ""
+"Eelvaate vahekaardid on ajutised vahekaardid, mida saab avada, hoides all "
+"teatud klahvi ja klõpsates lingil. Neid saab ka täisekraanile laiendada."
 
 #: OuchBrowser/Data/UI/Preferences.blp:91
 msgid "Peek Trigger"
-msgstr ""
+msgstr "Eelvaate päästik"
 
 #: OuchBrowser/Data/UI/Preferences.blp:93
 msgid ""
 "This will be the key that can be used in addition to a click to open a peek "
 "tab."
 msgstr ""
+"See on klahv, mida saab kasutada lisaks hiireklõpsule, et avada eelvaateaken "
+"(vahekaarti piilumiseks)."
 
 #: OuchBrowser/Data/UI/Preferences.blp:107
 msgid "Developer"
@@ -522,11 +530,11 @@ msgstr "Lõpeta laadimine"
 
 #: OuchBrowser/View.cs:263
 msgid "Open Link in Peek Tab"
-msgstr ""
+msgstr "Ava link eelvaatekaardil"
 
 #: OuchBrowser/View.cs:277
 msgid "There was a problem loading this website"
-msgstr ""
+msgstr "Selle veebisaidi laadimisel tekkis viga"
 
 #. TRANSLATORS: This is in the format of "example.com says"
 #: OuchBrowser/View.cs:294 OuchBrowser/View.cs:309 OuchBrowser/View.cs:337
@@ -536,7 +544,7 @@ msgstr "{0} ütleb"
 
 #: OuchBrowser/View.cs:296 OuchBrowser/View.cs:312 OuchBrowser/View.cs:340
 msgid "OK"
-msgstr ""
+msgstr "Sobib"
 
 #: OuchBrowser/View.cs:311 OuchBrowser/View.cs:339 OuchBrowser/Window.cs:167
 msgid "Cancel"
@@ -544,7 +552,7 @@ msgstr "Katkesta"
 
 #: OuchBrowser/View.cs:411
 msgid "Expand Tab"
-msgstr ""
+msgstr "Laienda vahekaarti"
 
 #: OuchBrowser/View.cs:443 OuchBrowser/Window.cs:434
 msgid "Link Copied"
