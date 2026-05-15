@@ -227,7 +227,11 @@ internal class View
 						AddPeekTab(req);
 						return true;
 					}
-					else return false;
+					else
+					{
+						AddTab(req.GetUri(), false);
+						return true;
+					}
 			}
 
 			return false;
