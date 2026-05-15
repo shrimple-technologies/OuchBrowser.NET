@@ -50,6 +50,9 @@ internal class View
 
 		view.SetSelectedPage(page);
 
+		go_back_action.SetEnabled(false);
+		go_forward_action.SetEnabled(false);
+
 		Uri uri = new Uri(url);
 		if (uri.IsLoopback)
 		{

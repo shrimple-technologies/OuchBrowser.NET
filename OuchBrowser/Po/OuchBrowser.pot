@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-05-15 07:13-0400\n"
+"POT-Creation-Date: 2026-05-15 16:38-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -279,7 +279,7 @@ msgstr ""
 msgid "See !bangs preferences for more options"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:239 OuchBrowser/Data/UI/Window.blp:1044
+#: OuchBrowser/Data/UI/Preferences.blp:239 OuchBrowser/Data/UI/Window.blp:1045
 msgid "!bangs"
 msgstr ""
 
@@ -416,8 +416,8 @@ msgstr ""
 msgid "Forward"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:647 OuchBrowser/View.cs:89
-#: OuchBrowser/View.cs:162
+#: OuchBrowser/Data/UI/Window.blp:647 OuchBrowser/View.cs:97
+#: OuchBrowser/View.cs:176
 msgid "Refresh"
 msgstr ""
 
@@ -425,7 +425,7 @@ msgstr ""
 msgid "Reveal Command Palette"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:686 OuchBrowser/View.cs:440
+#: OuchBrowser/Data/UI/Window.blp:686 OuchBrowser/View.cs:441
 msgid "Copy Link"
 msgstr ""
 
@@ -461,23 +461,23 @@ msgstr ""
 msgid "New Folder"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1026
+#: OuchBrowser/Data/UI/Window.blp:1027
 msgid "Search"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1061
+#: OuchBrowser/Data/UI/Window.blp:1062
 msgid "Website"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1070
+#: OuchBrowser/Data/UI/Window.blp:1071
 msgid "Search or enter URL…"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1163
+#: OuchBrowser/Data/UI/Window.blp:1162
 msgid "Go"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1178
+#: OuchBrowser/Data/UI/Window.blp:1177
 msgid "Close Palette"
 msgstr ""
 
@@ -493,7 +493,7 @@ msgid_plural "{0} tabs"
 msgstr[0] ""
 msgstr[1] ""
 
-#: OuchBrowser/View.cs:84 OuchBrowser/View.cs:125 OuchBrowser/View.cs:140
+#: OuchBrowser/View.cs:92 OuchBrowser/View.cs:133 OuchBrowser/View.cs:148
 msgid "Stop Loading"
 msgstr ""
 
@@ -501,29 +501,29 @@ msgstr ""
 msgid "Open Link in Peek Tab"
 msgstr ""
 
-#: OuchBrowser/View.cs:277
+#: OuchBrowser/View.cs:278
 msgid "There was a problem loading this website"
 msgstr ""
 
 #. TRANSLATORS: This is in the format of "example.com says"
-#: OuchBrowser/View.cs:294 OuchBrowser/View.cs:309 OuchBrowser/View.cs:337
+#: OuchBrowser/View.cs:295 OuchBrowser/View.cs:310 OuchBrowser/View.cs:338
 #, csharp-format
 msgid "{0} says"
 msgstr ""
 
-#: OuchBrowser/View.cs:296 OuchBrowser/View.cs:312 OuchBrowser/View.cs:340
+#: OuchBrowser/View.cs:297 OuchBrowser/View.cs:313 OuchBrowser/View.cs:341
 msgid "OK"
 msgstr ""
 
-#: OuchBrowser/View.cs:311 OuchBrowser/View.cs:339 OuchBrowser/Window.cs:167
+#: OuchBrowser/View.cs:312 OuchBrowser/View.cs:340 OuchBrowser/Window.cs:167
 msgid "Cancel"
 msgstr ""
 
-#: OuchBrowser/View.cs:411
+#: OuchBrowser/View.cs:412
 msgid "Expand Tab"
 msgstr ""
 
-#: OuchBrowser/View.cs:443 OuchBrowser/Window.cs:453
+#: OuchBrowser/View.cs:444 OuchBrowser/Window.cs:453
 msgid "Link Copied"
 msgstr ""
 
