@@ -126,12 +126,14 @@ internal partial class Window
 					url_autocomplete!.SetRevealChild(false);
 					url_stack!.SetVisibleChildName("website");
 					url_disclosure!.SetVisibleChildName("none");
+					url_disclosure_revealer!.SetRevealChild(false);
 					url_custom_disclosure!.SetLabel("");
 					url_favicon!.SetFromGicon(await Favicon.GetFavicon(text));
 				}
 				else
 				{
 					url_disclosure!.SetVisibleChildName("none");
+					url_disclosure_revealer!.SetRevealChild(false);
 					url_custom_disclosure!.SetLabel("");
 
 					if (settings.GetBoolean("search-autocomplete-enabled"))
