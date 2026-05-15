@@ -14,7 +14,7 @@ internal partial class Window
 		{
 			if (args.Pspec.GetName() == "text")
 			{
-				string text = url_entry!.GetBuffer().GetText();
+				string text = url_entry!.GetText();
 				if (text == "")
 				{
 					url_autocomplete!.SetRevealChild(false);
@@ -101,11 +101,9 @@ internal partial class Window
 								button.SetChild(button_box);
 								button.OnClicked += (_, _) =>
 								{
-									EntryBuffer buffer = EntryBuffer.New($"!{b.Trigger} ", -1);
-									int length = Convert.ToInt32(buffer.GetLength());
-									url_entry.SetBuffer(buffer);
+									url_entry.SetText($"!{b.Trigger} ");
 									url_entry.GrabFocusWithoutSelecting();
-									url_entry.SetPosition(length);
+									url_entry.SetPosition(-1);
 								};
 								box.Append(button);
 								i++;
@@ -151,7 +149,7 @@ internal partial class Window
 							if (lastInvokeTime != now) return;
 							if (text.Length <= 1) url_stack!.SetVisibleChildName("spinner");
 
-							string textNow = url_entry!.GetBuffer().GetText();
+							string textNow = url_entry!.GetText();
 
 							if (textNow == "")
 							{
@@ -195,8 +193,7 @@ internal partial class Window
 								button.SetChild(button_box);
 								button.OnClicked += (_, _) =>
 								{
-									EntryBuffer buffer = EntryBuffer.New(phrase.phrase, -1);
-									url_entry.SetBuffer(buffer);
+									url_entry.SetText(phrase.phrase);
 									url_bar_button!.Activate();
 								};
 								box.Append(button);
@@ -227,7 +224,7 @@ internal partial class Window
 	{
 		url_bar_button!.OnActivate += (_, _) =>
 		{
-			string query = url_entry!.GetBuffer().GetText();
+			string query = url_entry!.GetText();
 
 			if (query == "") return;
 
