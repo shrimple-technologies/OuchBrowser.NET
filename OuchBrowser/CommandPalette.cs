@@ -24,6 +24,7 @@ internal partial class Window
 				}
 				else if (text.StartsWith('!'))
 				{
+					url_disclosure_revealer!.SetRevealChild(false);
 
 					if (1 < text.Split(' ').Length)
 					{
@@ -49,8 +50,6 @@ internal partial class Window
 					else
 					{
 						url_stack!.SetVisibleChildName("bang");
-						url_disclosure!.SetVisibleChildName("bang");
-						url_disclosure_revealer!.SetRevealChild(true);
 
 						if (settings.GetBoolean("bang-autocomplete-enabled"))
 						{
