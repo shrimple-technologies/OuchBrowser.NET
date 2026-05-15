@@ -171,13 +171,32 @@ internal partial class Window : Adw.ApplicationWindow
 
 				alert.OnResponse += (_, args) =>
 				{
-					if (args.Response == "close_all_tabs") Destroy();
+					if (args.Response == "close_all_tabs")
+					{
+						for (int i = 0; i < tabview.GetNPages(); i++)
+						{
+							TabPage page = tabview!.GetNthPage(i)!;
+							WebView webview = (WebView)page.Child!;
+
+							webview.TryClose();
+							tabview!.ClosePage(page);
+						}
+						Destroy();
+					}
 				};
 
 				alert.Present(this);
 			}
 			else
 			{
+				for (int i = 0; i < tabview.GetNPages(); i++)
+				{
+					TabPage page = tabview!.GetNthPage(i)!;
+					WebView webview = (WebView)page.Child!;
+
+					webview.TryClose();
+					tabview!.ClosePage(page);
+				}
 				return false;
 			}
 
