@@ -968,6 +968,8 @@ Adw.ToastOverlay toast_overlay {
 Adw.Dialog url_dialog {
 	presentation-mode: auto;
 	follows-content-size: false;
+	width-request: 360;
+	content-width: 700;
 
 	styles [
 		"command-palette",
@@ -1068,8 +1070,6 @@ Adw.Dialog url_dialog {
 				hexpand: true;
 				placeholder-text: _("Search or enter URL…");
 				receives-default: true;
-				width-request: 500;
-
 				styles [
 					"command-palette",
 				]
