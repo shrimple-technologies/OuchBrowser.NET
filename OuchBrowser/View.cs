@@ -229,6 +229,7 @@ internal class View
 					}
 					else
 					{
+						if (args.DecisionType == PolicyDecisionType.NavigationAction) return false;
 						AddTab(req.GetUri(), false);
 						return true;
 					}
