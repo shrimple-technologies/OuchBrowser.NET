@@ -2,13 +2,13 @@ frame {
 	border-radius: 7px;
 }
 
-.navigation-sidebar {
+.tabs-sidebar.navigation-sidebar {
 	padding-top: 0;
 	margin-left: 0;
 	margin-right: 0;
 }
 
-.navigation-sidebar > row {
+.tabs-sidebar.navigation-sidebar > row {
 	margin-bottom: 6px;
 	margin-left: 10px;
 	margin-right: 0;
@@ -16,7 +16,7 @@ frame {
 	min-height: 34px;
 }
 
-.navigation-sidebar > row:dir(rtl) {
+.tabs-sidebar.navigation-sidebar > row:dir(rtl) {
 	margin-left: initial;
 	margin-right: 10px;
 	padding-left: 4px;
