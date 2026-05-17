@@ -16,9 +16,9 @@ internal class Actions
 		app = application;
 	}
 
-	public void AddAction(string name, string[] accels, GObject.SignalHandler<SimpleAction, SimpleAction.ActivateSignalArgs> action)
+	public void AddAction(string name, string[] accels, GLib.VariantType? type, GObject.SignalHandler<SimpleAction, SimpleAction.ActivateSignalArgs> action)
 	{
-		var simpleaction = SimpleAction.New(name, null);
+		var simpleaction = SimpleAction.New(name, type);
 		simpleaction.OnActivate += action;
 		win!.AddAction(simpleaction);
 		app!.SetAccelsForAction($"win.{name}", accels);

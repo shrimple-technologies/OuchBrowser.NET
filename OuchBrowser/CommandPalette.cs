@@ -130,6 +130,13 @@ internal partial class Window
 					url_custom_disclosure!.SetLabel("");
 					url_favicon!.SetFromGicon(await Favicon.GetFavicon(text));
 				}
+				else if (text.StartsWith('@'))
+				{
+					url_autocomplete!.SetRevealChild(false);
+					url_stack!.SetVisibleChildName("main");
+					url_disclosure!.SetVisibleChildName("none");
+					url_disclosure_revealer!.SetRevealChild(false);
+				}
 				else
 				{
 					url_disclosure!.SetVisibleChildName("none");
@@ -169,6 +176,12 @@ internal partial class Window
 							{
 								url_autocomplete!.SetRevealChild(false);
 								url_stack!.SetVisibleChildName("website");
+								return;
+							}
+							else if (textNow.StartsWith('@'))
+							{
+								url_autocomplete!.SetRevealChild(false);
+								url_stack!.SetVisibleChildName("actions");
 								return;
 							}
 
@@ -232,6 +245,58 @@ internal partial class Window
 			string query = url_entry!.GetText();
 
 			if (query == "") return;
+
+			if (query.StartsWith('@'))
+			{
+				url_dialog!.Close();
+
+				switch (query)
+				{
+					case string _ when query.StartsWith("@preferences"):
+					case string _ when query.StartsWith("@settings"):
+					case string _ when query.StartsWith("@prefs"):
+						if (query.Split(' ').Length > 1)
+						{
+							switch (query.Split(' ')[1])
+							{
+								case "general":
+								default:
+									ActivateAction("preferences-pane", GLib.Variant.NewString("general"));
+									break;
+								case "accessibility":
+								case "a11y":
+									ActivateAction("preferences-pane", GLib.Variant.NewString("accessibility"));
+									break;
+								case "search":
+								case "engine":
+									ActivateAction("preferences-pane", GLib.Variant.NewString("search-engine"));
+									break;
+								case "bangs":
+								case "bang":
+									ActivateAction("preferences-pane", GLib.Variant.NewString("bangs"));
+									break;
+							}
+						}
+						else ActivateAction("preferences", null);
+						break;
+					case "@copy":
+					case "@cp":
+					case "@url":
+						ActivateAction("copy-link", null);
+						break;
+					case string _ when query.StartsWith("@refresh"):
+					case string _ when query.StartsWith("@reload"):
+						if (query.Split(' ').Length > 1 && query.Split(' ')[1] == "hard") ActivateAction("hard-refresh", null);
+						else ActivateAction("refresh", null);
+						break;
+					case "@close":
+					case "@w":
+						ActivateAction("tab-close", null);
+						break;
+				}
+
+				return;
+			}
 
 			if (palette_state == "new_tab")
 			{

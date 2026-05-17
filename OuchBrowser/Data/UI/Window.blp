@@ -214,7 +214,7 @@ Adw.ToastOverlay toast_overlay {
 
 											styles [
 												"navigation-sidebar",
-												"tabs-sidebar"
+												"tabs-sidebar",
 											]
 										}
 									}
@@ -1062,6 +1062,24 @@ Adw.Dialog url_dialog {
 						accessibility {
 							label: _("Website");
 						}
+					};
+				}
+
+				StackPage {
+					name: "actions";
+
+					child: Image {
+						icon-name: "page.codeberg.shrimple.OuchBrowser-symbolic";
+						pixel-size: 20;
+						margin-start: 10;
+
+						accessibility {
+							label: _("Actions");
+						}
+
+						styles [
+							"dimmed",
+						]
 					};
 				}
 			}
