@@ -157,16 +157,19 @@ internal partial class Window
 							{
 								url_autocomplete!.SetRevealChild(false);
 								url_stack!.SetVisibleChildName("main");
+								return;
 							}
 							else if (textNow.StartsWith('!'))
 							{
 								url_autocomplete!.SetRevealChild(false);
 								url_stack!.SetVisibleChildName("bang");
+								return;
 							}
 							else if (Url.IsUrl(textNow))
 							{
 								url_autocomplete!.SetRevealChild(false);
 								url_stack!.SetVisibleChildName("website");
+								return;
 							}
 
 							Autocompletion[] ac = await Autocomplete.CompletionResults(textNow);
