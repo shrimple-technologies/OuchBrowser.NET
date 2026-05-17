@@ -269,23 +269,23 @@ internal partial class Window : Adw.ApplicationWindow
 			});
 		}
 
-		actions.AddAction("preferences", ["<Ctrl>comma"], (action, parameter) =>
+		actions.AddAction("preferences", ["<Ctrl>comma"], (_, _) =>
 		{
 			preferences!.FocusPane("general");
 			preferences.Present(this);
 		});
 
-		actions.AddAction("about", [], (action, parameter) =>
+		actions.AddAction("about", [], (_, _) =>
 		{
 			about!.Present(this);
 		});
 
-		actions.AddAction("shortcuts", ["<Ctrl>question"], (action, parameter) =>
+		actions.AddAction("shortcuts", ["<Ctrl>question"], (_, _) =>
 		{
 			shortcuts!.Present(this);
 		});
 
-		actions.AddAction("rooms", ["<Ctrl><Shift>bar"], (action, parameter) =>
+		actions.AddAction("rooms", ["<Ctrl><Shift>bar"], (_, _) =>
 		{
 			rooms!.Present(this);
 		});
