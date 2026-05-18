@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
 "POT-Creation-Date: 2026-05-15 07:13-0400\n"
-"PO-Revision-Date: 2026-05-11 12:33+0000\n"
-"Last-Translator: Gabriel <bloxgabriel18@gmail.com>\n"
+"PO-Revision-Date: 2026-05-18 05:33+0000\n"
+"Last-Translator: Wiliam <wilian4512@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/ouch/"
 "net/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2026.5-dev\n"
+"X-Generator: Weblate 2026.6.dev0\n"
 
 #: OuchBrowser/CommandPalette.cs:36
 #, csharp-format
@@ -114,16 +114,12 @@ msgid "Initial Window Size"
 msgstr "Tamanho Inicial da Janela"
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:104
-#, fuzzy
-#| msgid "This value is the main window's size."
 msgid "This value is the main window’s size."
-msgstr "Esse valor corresponde ao tamanho da janela principal."
+msgstr "Este valor define o tamanho da janela principal."
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:111
-#, fuzzy
-#| msgid "Restored Tabs"
 msgid "Peek Tab Trigger"
-msgstr "Abas Restauradas"
+msgstr "Atalho de Visualização Rápida"
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:112
 msgid ""
@@ -131,6 +127,9 @@ msgid ""
 "the Shift key and clicking on a hyperlink will result in that website being "
 "loaded inside a peek tab, which is separate from the main window."
 msgstr ""
+"Este valor define o atalho para abrir uma aba de visualização rápida. Por "
+"exemplo, segurar a tecla Shift e clicar em um link fará com que o site seja "
+"carregado em uma aba de visualização rápida, separada da janela principal."
 
 #: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:6
 #: OuchBrowser/Data/UI/Window.blp:16 OuchBrowser/Data/UI/Window.blp:249
@@ -144,7 +143,7 @@ msgstr "Shrimple Technologies"
 
 #: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:13
 msgid "Focus on your browsing"
-msgstr "Concentre-se na sua Navegação"
+msgstr "Navegue sem distrações"
 
 #: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:46
 msgid ""
@@ -165,32 +164,33 @@ msgid ""
 "While it is in a usable state, it does not have a large number of common web "
 "browser functions, and can have many bugs."
 msgstr ""
+"NOTA: O Ouch Browser está atualmente em fase alpha e mudando rapidamente. "
+"Embora já esteja em um estado utilizável, ele ainda não possui muitos dos "
+"recursos comuns de um navegador da web e pode apresentar vários bugs."
 
 #: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:69
-#, fuzzy
-#| msgid "Ouch Browser"
 msgid "Ouch Browser’s Main Window"
-msgstr "Ouch Browser"
+msgstr "Janela Principal do Ouch Browser"
 
 #: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:73
 msgid "Ouch Browser with Tab Sidebar Closed"
-msgstr ""
+msgstr "Ouch Browser com a Barra Lateral de Abas Fechada"
 
 #: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:77
 msgid "Ouch Browser with Command Palette Opened"
-msgstr ""
+msgstr "Ouch Browser com a Paleta de Comandos Aberta"
 
 #: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:81
 msgid "Ouch Browser’s Main Window in Dark Mode"
-msgstr ""
+msgstr "Janela Principal do Ouch Browser no Modo Escuro"
 
 #: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:85
 msgid "Ouch Browser with Tab Sidebar Closed in Dark Mode"
-msgstr ""
+msgstr "Ouch Browser com a Barra Lateral de Abas Fechada no Modo Escuro"
 
 #: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:89
 msgid "Ouch Browser with Command Palette Opened in Dark Mode"
-msgstr ""
+msgstr "Ouch Browser com a Paleta de Comandos Aberta no Modo Escuro"
 
 #: OuchBrowser/Data/UI/Preferences.blp:6 OuchBrowser/Data/UI/Preferences.blp:20
 #: OuchBrowser/Data/UI/Window.blp:518
@@ -238,10 +238,8 @@ msgid "Enable !bang Autocomplete"
 msgstr "Ativar preenchimento automático de !bangs"
 
 #: OuchBrowser/Data/UI/Preferences.blp:84
-#, fuzzy
-#| msgid "Restored Tabs"
 msgid "Peek Tabs"
-msgstr "Abas Restauradas"
+msgstr "Abas de Visualização Rápida"
 
 #: OuchBrowser/Data/UI/Preferences.blp:86
 msgid ""
@@ -249,16 +247,21 @@ msgid ""
 "specific key and clicking on a link. These can also be expanded into full "
 "view."
 msgstr ""
+"As abas de visualização rápida são abas temporárias que podem ser ativadas "
+"ao segurar uma tecla específica e clicar em um link. Elas também podem ser "
+"expandidas para a visualização completa."
 
 #: OuchBrowser/Data/UI/Preferences.blp:91
 msgid "Peek Trigger"
-msgstr ""
+msgstr "Ativador da Visualização Rápida"
 
 #: OuchBrowser/Data/UI/Preferences.blp:93
 msgid ""
 "This will be the key that can be used in addition to a click to open a peek "
 "tab."
 msgstr ""
+"Esta será a tecla usada em combinação com o clique para abrir uma aba de "
+"visualização rápida."
 
 #: OuchBrowser/Data/UI/Preferences.blp:107
 msgid "Developer"
@@ -526,23 +529,21 @@ msgstr "Parar de Carregar"
 
 #: OuchBrowser/View.cs:263
 msgid "Open Link in Peek Tab"
-msgstr ""
+msgstr "Abrir link em aba de visualização rápida"
 
 #: OuchBrowser/View.cs:277
 msgid "There was a problem loading this website"
-msgstr ""
+msgstr "Houve um problema ao carregar este site"
 
 #. TRANSLATORS: This is in the format of "example.com says"
 #: OuchBrowser/View.cs:294 OuchBrowser/View.cs:309 OuchBrowser/View.cs:337
-#, fuzzy, csharp-format
-#| msgid "{0} tab"
-#| msgid_plural "{0} tabs"
+#, csharp-format
 msgid "{0} says"
-msgstr "{0} aba"
+msgstr "{0} diz"
 
 #: OuchBrowser/View.cs:296 OuchBrowser/View.cs:312 OuchBrowser/View.cs:340
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: OuchBrowser/View.cs:311 OuchBrowser/View.cs:339 OuchBrowser/Window.cs:167
 msgid "Cancel"
@@ -550,7 +551,7 @@ msgstr "Cancelar"
 
 #: OuchBrowser/View.cs:411
 msgid "Expand Tab"
-msgstr ""
+msgstr "Expandir Aba"
 
 #: OuchBrowser/View.cs:443 OuchBrowser/Window.cs:453
 msgid "Link Copied"
@@ -558,7 +559,7 @@ msgstr "Link Copiado"
 
 #: OuchBrowser/Window.cs:163
 msgid "Exit and Close All Tabs?"
-msgstr "Sair e fechar todas as abas?"
+msgstr "Sair e Fechar Todas as Abas?"
 
 #: OuchBrowser/Window.cs:164
 #, csharp-format
