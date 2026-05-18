@@ -121,6 +121,7 @@ internal class View
 		webview.OnLoadChanged += async (_, load_event) =>
 		{
 			string current_uri = webview.GetUri();
+			Gio.SimpleAction sidebar_action = (Gio.SimpleAction)window.LookupAction("sidebar-toggle")!;
 			Uri uri;
 			try
 			{
@@ -134,7 +135,7 @@ internal class View
 				window.url_button!.SetSensitive(true);
 				window.copy_link!.SetSensitive(true);
 				window.website_settings!.SetSensitive(true);
-				window.sidebar_toggle!.SetSensitive(true);
+				sidebar_action.SetEnabled(true);
 				window.refresh!.SetIconName("cross-large-symbolic");
 				page.SetLoading(true);
 				return;
@@ -149,7 +150,7 @@ internal class View
 					window.url_button!.SetSensitive(true);
 					window.copy_link!.SetSensitive(true);
 					window.website_settings!.SetSensitive(true);
-					window.sidebar_toggle!.SetSensitive(true);
+					sidebar_action.SetEnabled(true);
 					window.refresh!.SetIconName("cross-large-symbolic");
 					page.SetLoading(true);
 					page.SetIcon(await Favicon.GetFavicon(uri.Host));

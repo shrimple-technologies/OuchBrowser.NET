@@ -118,12 +118,15 @@ internal partial class Window : Adw.ApplicationWindow
 
 		SetupActions();
 
+		Gio.SimpleAction sidebar_action = (Gio.SimpleAction)LookupAction("sidebar-toggle")!;
+
 		go_back!.SetSensitive(false);
 		go_forward!.SetSensitive(false);
 		refresh!.SetSensitive(false);
 		copy_link!.SetSensitive(false);
 		url_button!.SetSensitive(false);
 		website_settings!.SetSensitive(false);
+		sidebar_action.SetEnabled(false);
 
 		url_entry!.OnActivate += (_, _) => url_bar_button!.Activate();
 
@@ -389,6 +392,7 @@ internal partial class Window : Adw.ApplicationWindow
 			{
 				TabPage page = tabview!.GetSelectedPage()!;
 				WebView webview = (WebView)page.Child!;
+				Gio.SimpleAction sidebar_action = (Gio.SimpleAction)LookupAction("sidebar-toggle")!;
 
 				webview.TryClose();
 				tabview!.ClosePage(tabview!.GetSelectedPage()!);
@@ -400,7 +404,7 @@ internal partial class Window : Adw.ApplicationWindow
 					url_button!.SetSensitive(false);
 					copy_link!.SetSensitive(false);
 					website_settings!.SetSensitive(false);
-					sidebar_toggle!.SetSensitive(false);
+					sidebar_action.SetEnabled(false);
 					sidebar_toggle!.SetActive(true);
 					hostname!.SetLabel("");
 					osv!.SetShowSidebar(true);
