@@ -118,26 +118,15 @@ internal partial class Window : Adw.ApplicationWindow
 
 		SetupActions();
 
+		Gio.SimpleAction sidebar_action = (Gio.SimpleAction)LookupAction("sidebar-toggle")!;
+
 		go_back!.SetSensitive(false);
 		go_forward!.SetSensitive(false);
 		refresh!.SetSensitive(false);
 		copy_link!.SetSensitive(false);
 		url_button!.SetSensitive(false);
 		website_settings!.SetSensitive(false);
-
-		// TODO: maybe make this a little bit less "hacky?"
-		content_sidebar_toggle!.OnClicked += (_, _) =>
-		{
-			osv!.SetShowSidebar(true);
-			sidebar_toggle!.SetActive(true);
-			frame!.SetMarginStart(0);
-			url_preview!.SetMarginStart(30);
-		};
-		sidebar_toggle!.OnClicked += (_, _) =>
-		{
-			frame!.SetMarginStart(10);
-			url_preview!.SetMarginStart(30);
-		};
+		sidebar_action.SetEnabled(false);
 
 		url_entry!.OnActivate += (_, _) => url_bar_button!.Activate();
 
@@ -241,11 +230,16 @@ internal partial class Window : Adw.ApplicationWindow
 
 			if (osv!.GetShowSidebar())
 			{
-				sidebar_toggle!.Activate();
+				frame!.SetMarginStart(10);
+				url_preview!.SetMarginStart(20);
+				osv!.SetShowSidebar(false);
 			}
 			else
 			{
-				content_sidebar_toggle!.Activate();
+				sidebar_toggle!.SetActive(true);
+				frame!.SetMarginStart(0);
+				url_preview!.SetMarginStart(20);
+				osv!.SetShowSidebar(true);
 			}
 		});
 
@@ -404,6 +398,7 @@ internal partial class Window : Adw.ApplicationWindow
 			{
 				TabPage page = tabview!.GetSelectedPage()!;
 				WebView webview = (WebView)page.Child!;
+				Gio.SimpleAction sidebar_action = (Gio.SimpleAction)LookupAction("sidebar-toggle")!;
 
 				webview.TryClose();
 				tabview!.ClosePage(tabview!.GetSelectedPage()!);
@@ -415,7 +410,7 @@ internal partial class Window : Adw.ApplicationWindow
 					url_button!.SetSensitive(false);
 					copy_link!.SetSensitive(false);
 					website_settings!.SetSensitive(false);
-					sidebar_toggle!.SetSensitive(false);
+					sidebar_action.SetEnabled(false);
 					sidebar_toggle!.SetActive(true);
 					hostname!.SetLabel("");
 					osv!.SetShowSidebar(true);

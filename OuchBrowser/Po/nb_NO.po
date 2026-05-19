@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-05-15 07:13-0400\n"
+"POT-Creation-Date: 2026-05-17 01:14-0400\n"
 "PO-Revision-Date: 2024-09-07 11:08+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
@@ -21,8 +21,8 @@ msgid "Searching using {0}"
 msgstr ""
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:29
-#: OuchBrowser/Data/UI/Preferences.blp:180
-#: OuchBrowser/Data/UI/Preferences.blp:202
+#: OuchBrowser/Data/UI/Preferences.blp:179
+#: OuchBrowser/Data/UI/Preferences.blp:201
 msgid "Search Engine"
 msgstr ""
 
@@ -116,7 +116,7 @@ msgid ""
 msgstr ""
 
 #: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:6
-#: OuchBrowser/Data/UI/Window.blp:16 OuchBrowser/Data/UI/Window.blp:249
+#: OuchBrowser/Data/UI/Window.blp:16 OuchBrowser/Data/UI/Window.blp:250
 #: OuchBrowser/Window.cs:87
 msgid "Ouch Browser"
 msgstr "Ouch-nettleseren"
@@ -170,153 +170,153 @@ msgstr ""
 msgid "Ouch Browser with Command Palette Opened in Dark Mode"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:6 OuchBrowser/Data/UI/Preferences.blp:20
-#: OuchBrowser/Data/UI/Window.blp:518
+#: OuchBrowser/Data/UI/Preferences.blp:6 OuchBrowser/Data/UI/Preferences.blp:19
+#: OuchBrowser/Data/UI/Window.blp:519
 msgid "Preferences"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:30 OuchBrowser/Data/UI/Shortcuts.blp:6
+#: OuchBrowser/Data/UI/Preferences.blp:29 OuchBrowser/Data/UI/Shortcuts.blp:6
 msgid "General"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:44
+#: OuchBrowser/Data/UI/Preferences.blp:43
 msgid "Content Blocking"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:45
+#: OuchBrowser/Data/UI/Preferences.blp:44
 msgid "Powered by uBlock Origin"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:49
+#: OuchBrowser/Data/UI/Preferences.blp:48
 msgid "Block Advertisments"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:55
+#: OuchBrowser/Data/UI/Preferences.blp:54
 msgid "Block Pop-up Windows"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:61
+#: OuchBrowser/Data/UI/Preferences.blp:60
 msgid "Session"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:65
+#: OuchBrowser/Data/UI/Preferences.blp:64
 msgid "Restore Tabs on Startup"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:70
+#: OuchBrowser/Data/UI/Preferences.blp:69
 msgid "Autocomplete"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:74
+#: OuchBrowser/Data/UI/Preferences.blp:73
 msgid "Enable Search Autocomplete"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:79
+#: OuchBrowser/Data/UI/Preferences.blp:78
 msgid "Enable !bang Autocomplete"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:84
+#: OuchBrowser/Data/UI/Preferences.blp:83
 #, fuzzy
 #| msgid "Refresh"
 msgid "Peek Tabs"
 msgstr "Gjenoppfrisk"
 
-#: OuchBrowser/Data/UI/Preferences.blp:86
+#: OuchBrowser/Data/UI/Preferences.blp:85
 msgid ""
 "Peek tabs are temporary tabs that can be triggered by holding down a "
 "specific key and clicking on a link. These can also be expanded into full "
 "view."
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:91
+#: OuchBrowser/Data/UI/Preferences.blp:90
 msgid "Peek Trigger"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:93
+#: OuchBrowser/Data/UI/Preferences.blp:92
 msgid ""
 "This will be the key that can be used in addition to a click to open a peek "
 "tab."
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:107
+#: OuchBrowser/Data/UI/Preferences.blp:106
 msgid "Developer"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:111
+#: OuchBrowser/Data/UI/Preferences.blp:110
 msgid "Enable Developer Tools"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:112
+#: OuchBrowser/Data/UI/Preferences.blp:111
 msgid "This will allow access to the Web Inspector"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:123
+#: OuchBrowser/Data/UI/Preferences.blp:122
 msgid "Accessibility"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:137
+#: OuchBrowser/Data/UI/Preferences.blp:136
 msgid "Content"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:141
+#: OuchBrowser/Data/UI/Preferences.blp:140
 msgid "Page Zoom"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:168
+#: OuchBrowser/Data/UI/Preferences.blp:167
 msgid "Zoom Text"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:169
+#: OuchBrowser/Data/UI/Preferences.blp:168
 msgid "Zooms text and images instead of the view"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:216
+#: OuchBrowser/Data/UI/Preferences.blp:215
 msgid "Custom Search Engines"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:220
+#: OuchBrowser/Data/UI/Preferences.blp:219
 msgid "New Search Engine…"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:225
+#: OuchBrowser/Data/UI/Preferences.blp:224
 msgid "See !bangs preferences for more options"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:239 OuchBrowser/Data/UI/Window.blp:1044
+#: OuchBrowser/Data/UI/Preferences.blp:238 OuchBrowser/Data/UI/Window.blp:1046
 msgid "!bangs"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:253
+#: OuchBrowser/Data/UI/Preferences.blp:252
 msgid "Custom Bangs"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:257
+#: OuchBrowser/Data/UI/Preferences.blp:256
 msgid "New Bang…"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:262
+#: OuchBrowser/Data/UI/Preferences.blp:261
 msgid "!bangs provided by Kagi"
 msgstr ""
 
-#: OuchBrowser/Data/UI/RoomsOverview.blp:20
+#: OuchBrowser/Data/UI/RoomsOverview.blp:19
 msgid "Tabs"
 msgstr ""
 
-#: OuchBrowser/Data/UI/RoomsOverview.blp:26
-#: OuchBrowser/Data/UI/RoomsOverview.blp:52
+#: OuchBrowser/Data/UI/RoomsOverview.blp:25
+#: OuchBrowser/Data/UI/RoomsOverview.blp:51
 msgid "Main"
 msgstr ""
 
-#: OuchBrowser/Data/UI/RoomsOverview.blp:44
+#: OuchBrowser/Data/UI/RoomsOverview.blp:43
 #: OuchBrowser/Data/UI/Shortcuts.blp:38 OuchBrowser/Data/UI/Window.blp:123
-#: OuchBrowser/Data/UI/Window.blp:142 OuchBrowser/Data/UI/Window.blp:834
-#: OuchBrowser/Data/UI/Window.blp:929
+#: OuchBrowser/Data/UI/Window.blp:142 OuchBrowser/Data/UI/Window.blp:835
+#: OuchBrowser/Data/UI/Window.blp:930
 #, fuzzy
 #| msgid "New tab"
 msgid "New Tab"
 msgstr "Ny fane"
 
-#: OuchBrowser/Data/UI/RoomsOverview.blp:66
+#: OuchBrowser/Data/UI/RoomsOverview.blp:65
 msgid "No Tabs Open"
 msgstr ""
 
@@ -399,98 +399,98 @@ msgstr ""
 msgid "Hide Sidebar"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:267
+#: OuchBrowser/Data/UI/Window.blp:268
 msgid "Show Sidebar"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:427
+#: OuchBrowser/Data/UI/Window.blp:428
 msgid "Menu"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:471
+#: OuchBrowser/Data/UI/Window.blp:472
 #, fuzzy
 #| msgid "New tab"
 msgid "View All Tabs"
 msgstr "Ny fane"
 
-#: OuchBrowser/Data/UI/Window.blp:561
+#: OuchBrowser/Data/UI/Window.blp:562
 msgid "Keyboard Shortcuts"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:603
+#: OuchBrowser/Data/UI/Window.blp:604
 msgid "About Ouch Browser"
 msgstr "Om Ouch-nettleseren"
 
-#: OuchBrowser/Data/UI/Window.blp:623
+#: OuchBrowser/Data/UI/Window.blp:624
 msgid "Back"
 msgstr "Tilbake"
 
-#: OuchBrowser/Data/UI/Window.blp:635
+#: OuchBrowser/Data/UI/Window.blp:636
 msgid "Forward"
 msgstr "Forover"
 
-#: OuchBrowser/Data/UI/Window.blp:647 OuchBrowser/View.cs:89
-#: OuchBrowser/View.cs:162
+#: OuchBrowser/Data/UI/Window.blp:648 OuchBrowser/View.cs:97
+#: OuchBrowser/View.cs:176
 msgid "Refresh"
 msgstr "Gjenoppfrisk"
 
-#: OuchBrowser/Data/UI/Window.blp:667
+#: OuchBrowser/Data/UI/Window.blp:668
 msgid "Reveal Command Palette"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:686 OuchBrowser/View.cs:440
+#: OuchBrowser/Data/UI/Window.blp:687 OuchBrowser/View.cs:441
 msgid "Copy Link"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:697
+#: OuchBrowser/Data/UI/Window.blp:698
 msgid "Website Settings"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:713
+#: OuchBrowser/Data/UI/Window.blp:714
 msgid "No Website Settings Available"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:732
+#: OuchBrowser/Data/UI/Window.blp:733
 msgid "Archive"
 msgstr "Arkiv"
 
-#: OuchBrowser/Data/UI/Window.blp:773
+#: OuchBrowser/Data/UI/Window.blp:774
 msgid "History"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:804
+#: OuchBrowser/Data/UI/Window.blp:805
 msgid "Downloads"
 msgstr "Nedlastninger"
 
-#: OuchBrowser/Data/UI/Window.blp:844
+#: OuchBrowser/Data/UI/Window.blp:845
 msgid "New…"
 msgstr "Ny …"
 
-#: OuchBrowser/Data/UI/Window.blp:877
+#: OuchBrowser/Data/UI/Window.blp:878
 msgid "New Room"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:900
+#: OuchBrowser/Data/UI/Window.blp:901
 msgid "New Folder"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1026
+#: OuchBrowser/Data/UI/Window.blp:1028
 msgid "Search"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1061
+#: OuchBrowser/Data/UI/Window.blp:1063
 msgid "Website"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1070
+#: OuchBrowser/Data/UI/Window.blp:1072
 msgid "Search or enter URL…"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1163
+#: OuchBrowser/Data/UI/Window.blp:1164
 msgid "Go"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1178
+#: OuchBrowser/Data/UI/Window.blp:1179
 msgid "Close Palette"
 msgstr ""
 
@@ -506,7 +506,7 @@ msgid_plural "{0} tabs"
 msgstr[0] ""
 msgstr[1] ""
 
-#: OuchBrowser/View.cs:84 OuchBrowser/View.cs:125 OuchBrowser/View.cs:140
+#: OuchBrowser/View.cs:92 OuchBrowser/View.cs:133 OuchBrowser/View.cs:148
 #, fuzzy
 #| msgid "Stop loading"
 msgid "Stop Loading"
@@ -516,29 +516,29 @@ msgstr "Stopp innlasting"
 msgid "Open Link in Peek Tab"
 msgstr ""
 
-#: OuchBrowser/View.cs:277
+#: OuchBrowser/View.cs:278
 msgid "There was a problem loading this website"
 msgstr ""
 
 #. TRANSLATORS: This is in the format of "example.com says"
-#: OuchBrowser/View.cs:294 OuchBrowser/View.cs:309 OuchBrowser/View.cs:337
+#: OuchBrowser/View.cs:295 OuchBrowser/View.cs:310 OuchBrowser/View.cs:338
 #, csharp-format
 msgid "{0} says"
 msgstr ""
 
-#: OuchBrowser/View.cs:296 OuchBrowser/View.cs:312 OuchBrowser/View.cs:340
+#: OuchBrowser/View.cs:297 OuchBrowser/View.cs:313 OuchBrowser/View.cs:341
 msgid "OK"
 msgstr ""
 
-#: OuchBrowser/View.cs:311 OuchBrowser/View.cs:339 OuchBrowser/Window.cs:167
+#: OuchBrowser/View.cs:312 OuchBrowser/View.cs:340 OuchBrowser/Window.cs:167
 msgid "Cancel"
 msgstr ""
 
-#: OuchBrowser/View.cs:411
+#: OuchBrowser/View.cs:412
 msgid "Expand Tab"
 msgstr ""
 
-#: OuchBrowser/View.cs:443 OuchBrowser/Window.cs:453
+#: OuchBrowser/View.cs:444 OuchBrowser/Window.cs:453
 msgid "Link Copied"
 msgstr ""
 
