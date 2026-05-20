@@ -2,6 +2,8 @@ using Adw;
 using Gtk;
 using OuchBrowser.Types;
 using OuchBrowser.Utils;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using WebKit;
 
 namespace OuchBrowser;
@@ -10,6 +12,9 @@ internal partial class Window
 {
 	private void HandlePaletteUpdate()
 	{
+		EmbeddedResource.Load("ShortcutsList.json", out string list_shortcuts);
+		List<Types.Shortcut> shortcuts = JsonSerializer.Deserialize<List<Types.Shortcut>>(list_shortcuts, JsonSerializerOptions.Default)!;
+
 		url_entry!.OnNotify += async (_, args) =>
 		{
 			if (args.Pspec.GetName() == "text")
@@ -136,6 +141,69 @@ internal partial class Window
 					url_stack!.SetVisibleChildName("main");
 					url_disclosure!.SetVisibleChildName("none");
 					url_disclosure_revealer!.SetRevealChild(false);
+
+					url_autocomplete!.SetRevealChild(true);
+					Box box = Box.New(Orientation.Vertical, 10);
+					ScrolledWindow sw = ScrolledWindow.New();
+					sw.SetPropagateNaturalHeight(true);
+					sw.SetVexpand(true);
+					sw.SetMinContentHeight(387);
+					sw.SetMaxContentHeight(387);
+					sw.AddCssClass("undershoot-top");
+					sw.AddCssClass("undershoot-bottom");
+					box.SetMarginTop(10);
+					box.SetMarginBottom(10);
+					int i = 0;
+
+					string text_split = text.Substring(1);
+					List<Types.Shortcut> results = new();
+					foreach (Types.Shortcut shortcut in shortcuts)
+					{
+						if (shortcut.Command.StartsWith(text_split) || (shortcut.Aliases != null && shortcut.Aliases.Any(word => word.Contains(text_split))))
+						{
+							results.Add(shortcut);
+						}
+					}
+
+					if (results.Count == 0) url_autocomplete!.SetRevealChild(false);
+					foreach (Types.Shortcut b in results)
+					{
+						Button button = Button.New();
+						Box button_box = Box.New(Orientation.Horizontal, 15);
+						Label button_label = Label.New(b.Name);
+						Label button_trigger = Label.New(b.Description);
+						Image image = Image.NewFromIconName(b.IconName);
+						image.AddCssClass("dimmed");
+						button.SetMarginStart(10);
+						button.SetMarginEnd(10);
+						button.SetHexpand(true);
+						button.SetCssClasses(["flat"]);
+						button_label.SetCssClasses(["body"]);
+						button_label.SetEllipsize(Pango.EllipsizeMode.End);
+						button_trigger.SetCssClasses(["body", "dimmed"]);
+						button_box.Append(image);
+						button_box.Append(button_label);
+						button_box.Append(button_trigger);
+						button.SetChild(button_box);
+						button.OnClicked += (_, _) =>
+						{
+							url_entry.SetText($"@{b.Command} ");
+							url_entry.GrabFocusWithoutSelecting();
+							url_entry.SetPosition(-1);
+						};
+						box.Append(button);
+						i++;
+					}
+
+					if (i < 8)
+					{
+						url_autocomplete!.SetChild(box);
+					}
+					else
+					{
+						sw.SetChild(box);
+						url_autocomplete!.SetChild(sw);
+					}
 				}
 				else
 				{

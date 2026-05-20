@@ -1,0 +1,30 @@
+[
+	{
+		"Name": "Preferences",
+		"Command": "preferences",
+		"Description": "Opens Preferences",
+		"IconName": "preferences-symbolic",
+		"Aliases": ["settings", "prefs"]
+	},
+	{
+		"Name": "Copy Link",
+		"Command": "copy",
+		"Description": "Copies Link to Clipboard",
+		"IconName": "chain-link-loose-symbolic",
+		"Aliases": ["cp", "url"]
+	},
+	{
+		"Name": "Refresh",
+		"Command": "refresh",
+		"Description": "Refreshes the Current Page",
+		"IconName": "view-refresh-symbolic",
+		"Aliases": ["reload"]
+	},
+	{
+		"Name": "Close Tab",
+		"Command": "close",
+		"Description": "Closes the Current Tab",
+		"IconName": "cross-large-symbolic",
+		"Aliases": ["w"]
+	}
+]
