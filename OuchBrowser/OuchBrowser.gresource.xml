@@ -15,6 +15,7 @@
 
 	<gresource prefix="/page/codeberg/shrimple/OuchBrowser/icons/scalable/apps">
 		<file preprocess="xml-stripblanks" alias="page.codeberg.shrimple.OuchBrowser.svg">Data/Icons/Hicolor/Scalable/Apps/page.codeberg.shrimple.OuchBrowser.svg</file>
+		<file alias="nethersei.png">Data/Icons/Hicolor/438x490/nethersei.png</file>
 	</gresource>
 
 	<gresource prefix="/page/codeberg/shrimple/OuchBrowser/icons/symbolic/apps">
