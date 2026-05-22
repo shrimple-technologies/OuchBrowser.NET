@@ -64,7 +64,6 @@ internal partial class Window
 							sw.AddCssClass("undershoot-bottom");
 							box.SetMarginTop(10);
 							box.SetMarginBottom(10);
-							int i = 0;
 
 							Bang[] bang = bangs!.AutocompleteBang(text);
 							if (bang.Length == 0) url_autocomplete!.SetRevealChild(false);
@@ -106,10 +105,9 @@ internal partial class Window
 									url_entry.SetPosition(-1);
 								};
 								box.Append(button);
-								i++;
 							}
 
-							if (i < 8)
+							if (bang.Length < 8)
 							{
 								url_autocomplete!.SetChild(box);
 							}
