@@ -478,6 +478,7 @@ internal class View
 		dialog.SetContentHeight(650);
 		dialog.SetContentWidth(900);
 		dialog.SetChild(toast_overlay);
+		dialog.AddCssClass("peek");
 		dialog.Present(win);
 		webview.GrabFocus();
 

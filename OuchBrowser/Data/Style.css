@@ -96,11 +96,13 @@ shortcut-label.compact > box > .keycap {
 	border-radius: 9px;
 }
 
-dialog.command-palette > widget > floating-sheet > dimming {
+dialog.command-palette > widget > floating-sheet > dimming,
+dialog.peek > widget > floating-sheet > dimming {
 	opacity: 0;
 }
 
-dialog.command-palette > widget > floating-sheet > sheet {
+dialog.command-palette > widget > floating-sheet > sheet, 
+dialog.peek > widget > floating-sheet > sheet {
 	box-shadow:
 		0 12px 32px rgb(0 0 0 / 15%),
 		0 0 48px rgb(0 0 0 / 10%),
