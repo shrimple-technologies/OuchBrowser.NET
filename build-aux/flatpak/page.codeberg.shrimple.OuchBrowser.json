@@ -12,6 +12,7 @@
 		"--socket=fallback-x11",
 		"--device=all",
 		"--socket=cups",
+		"--socket=pulseaudio",
 		"--socket=wayland",
 		"--filesystem=home"
 	],

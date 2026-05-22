@@ -196,6 +196,7 @@ internal partial class Window : Adw.ApplicationWindow
 	private void SetupActions()
 	{
 		var actions = new Actions(this, (Adw.Application)Application!);
+		int about_counter = 0;
 
 		actions.AddAction("palette-new", ["<Ctrl>t"], null, (_, _) =>
 		{
@@ -277,6 +278,8 @@ internal partial class Window : Adw.ApplicationWindow
 
 		actions.AddAction("about", [], null, (_, parameter) =>
 		{
+			if (about_counter < 5) about_counter++;
+			else about!.SetApplicationIcon("nethersei");
 			about!.Present(this);
 		});
 
