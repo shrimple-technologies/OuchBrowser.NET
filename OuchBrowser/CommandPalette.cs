@@ -12,8 +12,19 @@ internal partial class Window
 {
 	private void HandlePaletteUpdate()
 	{
-		EmbeddedResource.Load("ShortcutsList.json", out string list_shortcuts);
-		List<Types.Shortcut> shortcuts = JsonSerializer.Deserialize<List<Types.Shortcut>>(list_shortcuts, JsonSerializerOptions.Default)!;
+		EmbeddedResource.Load("ShortcutsList.json", out string shortcuts_json);
+		List<Types.Shortcut> shortcuts_list = JsonSerializer.Deserialize<List<Types.Shortcut>>(shortcuts_json, JsonSerializerOptions.Default)!;
+		Dictionary<string, Types.Shortcut> shortcuts = new();
+
+		foreach (Types.Shortcut shortcut in shortcuts_list)
+		{
+			shortcuts.Add(shortcut.Command, shortcut);
+
+			if (shortcut.Aliases.Length != 0)
+			{
+				foreach (string command in shortcut.Aliases) shortcuts.Add(command, shortcut);
+			}
+		}
 
 		url_entry!.OnNotify += async (_, args) =>
 		{
@@ -153,26 +164,27 @@ internal partial class Window
 					sw.AddCssClass("undershoot-bottom");
 					box.SetMarginTop(10);
 					box.SetMarginBottom(10);
-					int i = 0;
 
 					string text_split = text.Substring(1);
-					List<Types.Shortcut> results = new();
-					foreach (Types.Shortcut shortcut in shortcuts)
-					{
-						if (shortcut.Command.StartsWith(text_split) || (shortcut.Aliases != null && shortcut.Aliases.Any(word => word.Contains(text_split))))
-						{
-							results.Add(shortcut);
-						}
-					}
+					List<Types.Shortcut> results = shortcuts
+						.Where(pair =>
+							pair.Key.StartsWith(
+								text_split,
+								StringComparison.OrdinalIgnoreCase
+							)
+						)
+						.Select(pair => pair.Value)
+						.DistinctBy(shortcut => shortcut.Command)
+						.ToList();
 
 					if (results.Count == 0) url_autocomplete!.SetRevealChild(false);
-					foreach (Types.Shortcut b in results)
+					foreach (Types.Shortcut s in results)
 					{
 						Button button = Button.New();
 						Box button_box = Box.New(Orientation.Horizontal, 15);
-						Label button_label = Label.New(b.Name);
-						Label button_trigger = Label.New(b.Description);
-						Image image = Image.NewFromIconName(b.IconName);
+						Label button_label = Label.New(s.Name);
+						Label button_trigger = Label.New(s.Description);
+						Image image = Image.NewFromIconName(s.IconName);
 						image.AddCssClass("dimmed");
 						button.SetMarginStart(10);
 						button.SetMarginEnd(10);
@@ -187,15 +199,14 @@ internal partial class Window
 						button.SetChild(button_box);
 						button.OnClicked += (_, _) =>
 						{
-							url_entry.SetText($"@{b.Command} ");
+							url_entry.SetText($"@{s.Command} ");
 							url_entry.GrabFocusWithoutSelecting();
 							url_entry.SetPosition(-1);
 						};
 						box.Append(button);
-						i++;
 					}
 
-					if (i < 8)
+					if (results.Count < 8)
 					{
 						url_autocomplete!.SetChild(box);
 					}
