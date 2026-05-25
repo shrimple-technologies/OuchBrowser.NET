@@ -174,6 +174,7 @@ internal partial class Window
 							if (ac.Length == 0)
 							{
 								url_autocomplete!.SetRevealChild(false);
+								url_stack!.SetVisibleChildName("search");
 								return;
 							}
 
