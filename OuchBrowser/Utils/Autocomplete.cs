@@ -11,7 +11,14 @@ internal class Autocomplete
 	public static async Task<Autocompletion[]> CompletionResults(string text)
 	{
 		using HttpClient http = new HttpClient();
-		HttpResponseMessage res = await http.GetAsync($"https://duckduckgo.com/ac/?q={Uri.EscapeDataString(text)}");
+		HttpResponseMessage res;
+		try {
+			res = await http.GetAsync($"https://duckduckgo.com/ac/?q={Uri.EscapeDataString(text)}");
+		}
+		catch (HttpRequestException)
+		{
+			return [];
+		}
 		Autocompletion[] ac = await res.Content.ReadFromJsonAsync<Autocompletion[]>() ?? [];
 		return ac!;
 	}
