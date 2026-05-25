@@ -146,7 +146,7 @@ internal partial class Window
 					url_custom_disclosure!.SetLabel("");
 					url_favicon!.SetFromGicon(await Favicon.GetFavicon(text));
 				}
-				else if (text.StartsWith('@'))
+				else if (text.StartsWith('>'))
 				{
 					url_autocomplete!.SetRevealChild(false);
 					url_stack!.SetVisibleChildName("main");
@@ -199,7 +199,7 @@ internal partial class Window
 						button.SetChild(button_box);
 						button.OnClicked += (_, _) =>
 						{
-							url_entry.SetText($"@{s.Command} ");
+							url_entry.SetText($">{s.Command} ");
 							url_entry.GrabFocusWithoutSelecting();
 							url_entry.SetPosition(-1);
 						};
@@ -257,7 +257,7 @@ internal partial class Window
 								url_stack!.SetVisibleChildName("website");
 								return;
 							}
-							else if (textNow.StartsWith('@'))
+							else if (textNow.StartsWith('>'))
 							{
 								url_autocomplete!.SetRevealChild(false);
 								url_stack!.SetVisibleChildName("actions");
@@ -325,15 +325,15 @@ internal partial class Window
 
 			if (query == "") return;
 
-			if (query.StartsWith('@'))
+			if (query.StartsWith('>'))
 			{
 				url_dialog!.Close();
 
 				switch (query)
 				{
-					case string _ when query.StartsWith("@preferences"):
-					case string _ when query.StartsWith("@settings"):
-					case string _ when query.StartsWith("@prefs"):
+					case string _ when query.StartsWith(">preferences"):
+					case string _ when query.StartsWith(">settings"):
+					case string _ when query.StartsWith(">prefs"):
 						if (query.Split(' ').Length > 1)
 						{
 							switch (query.Split(' ')[1])
@@ -358,24 +358,24 @@ internal partial class Window
 						}
 						else ActivateAction("preferences", null);
 						break;
-					case "@copy":
-					case "@cp":
-					case "@url":
+					case ">copy":
+					case ">cp":
+					case ">url":
 						ActivateAction("copy-link", null);
 						break;
-					case string _ when query.StartsWith("@refresh"):
-					case string _ when query.StartsWith("@reload"):
+					case string _ when query.StartsWith(">refresh"):
+					case string _ when query.StartsWith(">reload"):
 						if (query.Split(' ').Length > 1 && query.Split(' ')[1] == "hard") ActivateAction("hard-refresh", null);
 						else ActivateAction("refresh", null);
 						break;
-					case "@close":
-					case "@w":
+					case ">close":
+					case ">w":
 						ActivateAction("tab-close", null);
 						break;
-					case "@rooms":
-					case "@room":
-					case "@tabs":
-					case "@overview":
+					case ">rooms":
+					case ">room":
+					case ">tabs":
+					case ">overview":
 						ActivateAction("rooms", null);
 						break;
 				}
