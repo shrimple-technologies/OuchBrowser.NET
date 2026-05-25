@@ -4,7 +4,17 @@
 		"Command": "preferences",
 		"Description": "Opens Preferences",
 		"IconName": "preferences-symbolic",
-		"Aliases": ["settings", "prefs"]
+		"Aliases": ["settings", "prefs"],
+		"Subcommands": [
+			{
+				"Name": "General",
+				"Command": "general",
+				"Description": "Opens the General Panel",
+				"IconName": "preferences-symbolic",
+				"Aliases": [],
+				"Subcommands": []
+			}
+		]
 	},
 	{
 		"Name": "Copy Link",
@@ -26,5 +36,12 @@
 		"Description": "Closes the Current Tab",
 		"IconName": "cross-large-symbolic",
 		"Aliases": ["w"]
+	},
+	{
+		"Name": "Rooms Overview",
+		"Command": "rooms",
+		"Description": "Opens the Rooms Overview",
+		"IconName": "view-grid-symbolic",
+		"Aliases": ["room", "tabs", "overview"]
 	}
 ]
