@@ -69,7 +69,7 @@ internal class Bangs
 	{
 		string text_bang = text.Split(' ')[0];
 		string trigger = text_bang.StartsWith('!') ? text_bang.Substring(1) : text_bang;
-		
+
 		if (trigger == "") return []; // there are OVER 1000 BANGS, without this, the app will crash
 		return bangs
 			.Where(pair =>

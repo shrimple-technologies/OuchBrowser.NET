@@ -12,7 +12,8 @@ internal class Autocomplete
 	{
 		using HttpClient http = new HttpClient();
 		HttpResponseMessage res;
-		try {
+		try
+		{
 			res = await http.GetAsync($"https://duckduckgo.com/ac/?q={Uri.EscapeDataString(text)}");
 		}
 		catch (HttpRequestException)
