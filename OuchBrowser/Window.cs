@@ -107,7 +107,7 @@ internal partial class Window : Adw.ApplicationWindow
 		};
 	}
 
-	public void OnActivate(Object app, EventArgs args)
+	public void OnActivate(Object? app, EventArgs? args)
 	{
 		preferences = new Preferences(this);
 		about = About.New();
@@ -452,6 +452,12 @@ internal partial class Window : Adw.ApplicationWindow
 			toast.SetTimeout(1);
 			toast_overlay!.DismissAll();
 			toast_overlay!.AddToast(toast);
+		});
+
+		actions.AddAction("new-window", ["<Ctrl>n"], (_, _) =>
+		{
+			Window window = new((Adw.Application)Application!);
+			window.OnActivate(null, null);
 		});
 	}
 
