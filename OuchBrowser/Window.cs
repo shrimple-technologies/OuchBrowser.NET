@@ -200,8 +200,7 @@ internal partial class Window : Adw.ApplicationWindow
 
 		actions.AddAction("palette-new", ["<Ctrl>t"], (_, _) =>
 		{
-			EntryBuffer buffer = EntryBuffer.New("", -1);
-			url_entry!.SetBuffer(buffer);
+			url_entry!.DeleteText(0, -1);
 			url_dialog!.Present(this);
 			url_entry!.GrabFocus();
 			palette_state = "new_tab";
@@ -217,8 +216,7 @@ internal partial class Window : Adw.ApplicationWindow
 			{
 				TabPage page = tabview!.GetSelectedPage()!;
 				WebView webview = (WebView)page.Child!;
-				EntryBuffer buffer = EntryBuffer.New(webview.GetUri(), -1);
-				url_entry!.SetBuffer(buffer);
+				url_entry!.SetText(webview.GetUri());
 				url_dialog!.Present(this);
 				url_entry!.GrabFocus();
 				palette_state = "current_tab";
