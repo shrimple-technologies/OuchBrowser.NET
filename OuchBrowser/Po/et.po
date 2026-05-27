@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
 "POT-Creation-Date: 2026-05-25 14:30-0400\n"
-"PO-Revision-Date: 2026-05-15 20:23+0000\n"
+"PO-Revision-Date: 2026-05-28 04:49+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/ouch/net/et/>\n"
 "Language: et\n"
@@ -420,7 +420,7 @@ msgstr "Menüü"
 
 #: OuchBrowser/Data/UI/Window.blp:472
 msgid "New Window"
-msgstr ""
+msgstr "Uus aken"
 
 #: OuchBrowser/Data/UI/Window.blp:519
 msgid "View All Tabs"
