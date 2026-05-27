@@ -37,6 +37,7 @@
 		<file preprocess="xml-stripblanks" alias="preferences-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/preferences-symbolic.svg</file>
 		<file preprocess="xml-stripblanks" alias="puzzle-piece-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/puzzle-piece-symbolic.svg</file>
 		<file preprocess="xml-stripblanks" alias="shoe-box-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/shoe-box-symbolic.svg</file>
+		<file preprocess="xml-stripblanks" alias="small-rectangle-in-focus-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/small-rectangle-in-focus-symbolic.svg</file>
 		<file preprocess="xml-stripblanks" alias="sliders-horizontal-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/sliders-horizontal-symbolic.svg</file>
 		<file preprocess="xml-stripblanks" alias="web-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/web-symbolic.svg</file>
 		<file preprocess="xml-stripblanks" alias="zoom-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/zoom-symbolic.svg</file>
