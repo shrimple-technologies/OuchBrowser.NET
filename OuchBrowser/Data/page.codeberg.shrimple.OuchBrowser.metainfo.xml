@@ -76,17 +76,5 @@
 			<image>https://codeberg.org/shrimple/OuchBrowser.NET/raw/branch/main/OuchBrowser/Data/Screenshots/Screenshot%20with%20Command%20Palette%20Open.png</image>
 			<caption>Ouch Browser with Command Palette Opened</caption>
 		</screenshot>
-		<screenshot environment="gnome:dark">
-			<image>https://codeberg.org/shrimple/OuchBrowser.NET/raw/branch/main/OuchBrowser/Data/Screenshots/Screenshot%20with%20Sidebar%20Open%20in%20Dark%20Mode.png</image>
-			<caption>Ouch Browser’s Main Window in Dark Mode</caption>
-		</screenshot>
-		<screenshot environment="gnome:dark">
-			<image>https://codeberg.org/shrimple/OuchBrowser.NET/raw/branch/main/OuchBrowser/Data/Screenshots/Screenshot%20with%20Sidebar%20Closed%20in%20Dark%20Mode.png</image>
-			<caption>Ouch Browser with Tab Sidebar Closed in Dark Mode</caption>
-		</screenshot>
-		<screenshot environment="gnome:dark">
-			<image>https://codeberg.org/shrimple/OuchBrowser.NET/raw/branch/main/OuchBrowser/Data/Screenshots/Screenshot%20with%20Command%20Palette%20Open%20in%20Dark%20Mode.png</image>
-			<caption>Ouch Browser with Command Palette Opened in Dark Mode</caption>
-		</screenshot>
 	</screenshots>
 </component>
