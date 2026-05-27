@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-05-18 16:11-0400\n"
+"POT-Creation-Date: 2026-05-25 14:30-0400\n"
 "PO-Revision-Date: 2024-09-07 11:08+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
@@ -171,7 +171,7 @@ msgid "Ouch Browser with Command Palette Opened in Dark Mode"
 msgstr ""
 
 #: OuchBrowser/Data/UI/Preferences.blp:6 OuchBrowser/Data/UI/Preferences.blp:19
-#: OuchBrowser/Data/UI/Window.blp:519
+#: OuchBrowser/Data/UI/Window.blp:566
 msgid "Preferences"
 msgstr ""
 
@@ -282,7 +282,7 @@ msgstr ""
 msgid "See !bangs preferences for more options"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:240 OuchBrowser/Data/UI/Window.blp:1046
+#: OuchBrowser/Data/UI/Preferences.blp:240 OuchBrowser/Data/UI/Window.blp:1093
 msgid "!bangs"
 msgstr ""
 
@@ -309,8 +309,8 @@ msgstr ""
 
 #: OuchBrowser/Data/UI/RoomsOverview.blp:43
 #: OuchBrowser/Data/UI/Shortcuts.blp:38 OuchBrowser/Data/UI/Window.blp:122
-#: OuchBrowser/Data/UI/Window.blp:141 OuchBrowser/Data/UI/Window.blp:835
-#: OuchBrowser/Data/UI/Window.blp:930
+#: OuchBrowser/Data/UI/Window.blp:141 OuchBrowser/Data/UI/Window.blp:882
+#: OuchBrowser/Data/UI/Window.blp:977
 #, fuzzy
 #| msgid "New tab"
 msgid "New Tab"
@@ -408,89 +408,93 @@ msgid "Menu"
 msgstr ""
 
 #: OuchBrowser/Data/UI/Window.blp:472
+msgid "New Window"
+msgstr ""
+
+#: OuchBrowser/Data/UI/Window.blp:519
 #, fuzzy
 #| msgid "New tab"
 msgid "View All Tabs"
 msgstr "Ny fane"
 
-#: OuchBrowser/Data/UI/Window.blp:562
+#: OuchBrowser/Data/UI/Window.blp:609
 msgid "Keyboard Shortcuts"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:604
+#: OuchBrowser/Data/UI/Window.blp:651
 msgid "About Ouch Browser"
 msgstr "Om Ouch-nettleseren"
 
-#: OuchBrowser/Data/UI/Window.blp:624
+#: OuchBrowser/Data/UI/Window.blp:671
 msgid "Back"
 msgstr "Tilbake"
 
-#: OuchBrowser/Data/UI/Window.blp:636
+#: OuchBrowser/Data/UI/Window.blp:683
 msgid "Forward"
 msgstr "Forover"
 
-#: OuchBrowser/Data/UI/Window.blp:648 OuchBrowser/View.cs:97
+#: OuchBrowser/Data/UI/Window.blp:695 OuchBrowser/View.cs:97
 #: OuchBrowser/View.cs:177
 msgid "Refresh"
 msgstr "Gjenoppfrisk"
 
-#: OuchBrowser/Data/UI/Window.blp:668
+#: OuchBrowser/Data/UI/Window.blp:715
 msgid "Reveal Command Palette"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:687 OuchBrowser/View.cs:442
+#: OuchBrowser/Data/UI/Window.blp:734 OuchBrowser/View.cs:442
 msgid "Copy Link"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:698
+#: OuchBrowser/Data/UI/Window.blp:745
 msgid "Website Settings"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:714
+#: OuchBrowser/Data/UI/Window.blp:761
 msgid "No Website Settings Available"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:733
+#: OuchBrowser/Data/UI/Window.blp:780
 msgid "Archive"
 msgstr "Arkiv"
 
-#: OuchBrowser/Data/UI/Window.blp:774
+#: OuchBrowser/Data/UI/Window.blp:821
 msgid "History"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:805
+#: OuchBrowser/Data/UI/Window.blp:852
 msgid "Downloads"
 msgstr "Nedlastninger"
 
-#: OuchBrowser/Data/UI/Window.blp:845
+#: OuchBrowser/Data/UI/Window.blp:892
 msgid "New…"
 msgstr "Ny …"
 
-#: OuchBrowser/Data/UI/Window.blp:878
+#: OuchBrowser/Data/UI/Window.blp:925
 msgid "New Room"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:901
+#: OuchBrowser/Data/UI/Window.blp:948
 msgid "New Folder"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1028
+#: OuchBrowser/Data/UI/Window.blp:1075
 msgid "Search"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1063
+#: OuchBrowser/Data/UI/Window.blp:1110
 msgid "Website"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1072
+#: OuchBrowser/Data/UI/Window.blp:1119
 msgid "Search or enter URL…"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1164
+#: OuchBrowser/Data/UI/Window.blp:1211
 msgid "Go"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1179
+#: OuchBrowser/Data/UI/Window.blp:1226
 msgid "Close Palette"
 msgstr ""
 
@@ -538,7 +542,7 @@ msgstr ""
 msgid "Expand Tab"
 msgstr ""
 
-#: OuchBrowser/View.cs:445 OuchBrowser/Window.cs:448
+#: OuchBrowser/View.cs:445 OuchBrowser/Window.cs:451
 msgid "Link Copied"
 msgstr ""
 
