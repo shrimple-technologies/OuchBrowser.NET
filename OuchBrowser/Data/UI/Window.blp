@@ -449,6 +449,53 @@ Adw.ToastOverlay toast_overlay {
 					Button {
 						hexpand: true;
 						focus-on-click: false;
+						action-name: "win.new-window";
+
+						accessibility {
+							labelled-by: _new_window_label;
+						}
+
+						CenterBox {
+							start-widget: Box {
+								halign: start;
+								spacing: 10;
+
+								Image {
+									icon-name: "window-new-symbolic";
+
+									accessibility {
+										labelled-by: _new_window_label;
+									}
+								}
+
+								Label _new_window_label {
+									label: _("New Window");
+								}
+							};
+
+							end-widget: Adw.ShortcutLabel {
+								accelerator: "<Ctrl>n";
+
+								styles [
+									"dimmed",
+									"compact",
+								]
+							};
+						}
+
+						styles [
+							"body",
+							"flat",
+						]
+					}
+
+					Separator {
+						orientation: horizontal;
+					}
+
+					Button {
+						hexpand: true;
+						focus-on-click: false;
 						action-name: "win.rooms";
 
 						accessibility {
@@ -1098,6 +1145,11 @@ Adw.Dialog url_dialog {
 			Button url_bar_button {
 				icon-name: "go-next-symbolic";
 				visible: false;
+				valign: center;
+
+				accessibility {
+					label: _("Go");
+				}
 
 				styles [
 					"suggested-action",

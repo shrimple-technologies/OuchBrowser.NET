@@ -80,7 +80,6 @@ internal partial class Window
 							sw.AddCssClass("undershoot-bottom");
 							box.SetMarginTop(10);
 							box.SetMarginBottom(10);
-							int i = 0;
 
 							Bang[] bang = bangs!.AutocompleteBang(text);
 							if (bang.Length == 0) url_autocomplete!.SetRevealChild(false);
@@ -122,10 +121,9 @@ internal partial class Window
 									url_entry.SetPosition(-1);
 								};
 								box.Append(button);
-								i++;
 							}
 
-							if (i < 8)
+							if (bang.Length < 8)
 							{
 								url_autocomplete!.SetChild(box);
 							}
@@ -268,6 +266,7 @@ internal partial class Window
 							if (ac.Length == 0)
 							{
 								url_autocomplete!.SetRevealChild(false);
+								url_stack!.SetVisibleChildName("search");
 								return;
 							}
 
@@ -319,6 +318,7 @@ internal partial class Window
 
 	private void HandlePaletteActivate()
 	{
+		url_bar_button!.OnClicked += (_, _) => url_bar_button!.Activate();
 		url_bar_button!.OnActivate += (_, _) =>
 		{
 			string query = url_entry!.GetText();
@@ -409,7 +409,7 @@ internal partial class Window
 					}
 					else
 					{
-						view!.AddTab($"{settings.GetString("search-engine")}{Uri.EscapeDataString(query)}", false);
+						view!.AddTab(string.Format(settings.GetString("search-engine"), Uri.EscapeDataString(query)), false);
 					}
 				}
 			}
@@ -443,7 +443,7 @@ internal partial class Window
 					}
 					else
 					{
-						webview.LoadUri($"{settings.GetString("search-engine")}{Uri.EscapeDataString(query)}");
+						webview.LoadUri(string.Format(settings.GetString("search-engine"), Uri.EscapeDataString(query)));
 					}
 				}
 			}

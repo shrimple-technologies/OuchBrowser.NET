@@ -49,16 +49,16 @@ internal class Preferences : Adw.Dialog
 				setting_devtools!.SetActive(settings.GetBoolean("devtools-enabled"));
 				switch (settings.GetString("search-engine"))
 				{
-					case "https://duckduckgo.com/?q=":
+					case "https://duckduckgo.com/?q={0}":
 						setting_search_engine!.SetSelected(0);
 						break;
-					case "https://ecosia.org/search?q=":
+					case "https://ecosia.org/search?q={0}":
 						setting_search_engine!.SetSelected(1);
 						break;
-					case "https://google.com/search?q=":
+					case "https://google.com/search?q={0}":
 						setting_search_engine!.SetSelected(2);
 						break;
-					case "https://kagi.com/search?q=":
+					case "https://kagi.com/search?q={0}":
 						setting_search_engine!.SetSelected(3);
 						break;
 				}
@@ -175,16 +175,16 @@ internal class Preferences : Adw.Dialog
 				switch (setting_search_engine!.GetSelected())
 				{
 					case 0:
-						settings.SetString("search-engine", "https://duckduckgo.com/?q=");
+						settings.SetString("search-engine", "https://duckduckgo.com/?q={0}");
 						break;
 					case 1:
-						settings.SetString("search-engine", "https://ecosia.org/search?q=");
+						settings.SetString("search-engine", "https://ecosia.org/search?q={0}");
 						break;
 					case 2:
-						settings.SetString("search-engine", "https://google.com/search?q=");
+						settings.SetString("search-engine", "https://google.com/search?q={0}");
 						break;
 					case 3:
-						settings.SetString("search-engine", "https://kagi.com/search?q=");
+						settings.SetString("search-engine", "https://kagi.com/search?q={0}");
 						break;
 				}
 			}

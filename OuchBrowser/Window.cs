@@ -107,7 +107,7 @@ internal partial class Window : Adw.ApplicationWindow
 		};
 	}
 
-	public void OnActivate(Object app, EventArgs args)
+	public void OnActivate(Object? app, EventArgs? args)
 	{
 		preferences = new Preferences(this);
 		about = About.New();
@@ -200,8 +200,7 @@ internal partial class Window : Adw.ApplicationWindow
 
 		actions.AddAction("palette-new", ["<Ctrl>t"], null, (_, _) =>
 		{
-			EntryBuffer buffer = EntryBuffer.New("", -1);
-			url_entry!.SetBuffer(buffer);
+			url_entry!.DeleteText(0, -1);
 			url_dialog!.Present(this);
 			url_entry!.GrabFocus();
 			palette_state = "new_tab";
@@ -217,8 +216,7 @@ internal partial class Window : Adw.ApplicationWindow
 			{
 				TabPage page = tabview!.GetSelectedPage()!;
 				WebView webview = (WebView)page.Child!;
-				EntryBuffer buffer = EntryBuffer.New(webview.GetUri(), -1);
-				url_entry!.SetBuffer(buffer);
+				url_entry!.SetText(webview.GetUri());
 				url_dialog!.Present(this);
 				url_entry!.GrabFocus();
 				palette_state = "current_tab";
@@ -467,6 +465,12 @@ internal partial class Window : Adw.ApplicationWindow
 			url_dialog!.Present(this);
 			url_entry!.GrabFocusWithoutSelecting();
 		});
+		
+		actions.AddAction("new-window", ["<Ctrl>n"], null, (_, _) =>
+		{
+			Window window = new((Adw.Application)Application!);
+			window.OnActivate(null, null);
+		});
 	}
 
 	private void SetupHoverController(EventControllerMotion controller)
@@ -493,8 +497,10 @@ internal partial class Window : Adw.ApplicationWindow
 
 		GObject.Value number = new();
 		GObject.Value str = new();
+		GObject.Value boolean = new();
 		number.Init(GObject.Type.Int);
 		str.Init(GObject.Type.String);
+		boolean.Init(GObject.Type.Boolean);
 
 		str.SetString("mobile");
 		breakpoint.AddSetter(mlv!, "layout-name", str);
@@ -510,6 +516,9 @@ internal partial class Window : Adw.ApplicationWindow
 
 		number.SetInt(0);
 		breakpoint.AddSetter(hostname!, "halign", number); // halign = fill
+
+		boolean.SetBoolean(true);
+		breakpoint.AddSetter(url_bar_button!, "visible", boolean);
 
 		return breakpoint;
 	}
