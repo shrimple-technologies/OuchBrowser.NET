@@ -483,8 +483,10 @@ internal partial class Window : Adw.ApplicationWindow
 
 		GObject.Value number = new();
 		GObject.Value str = new();
+		GObject.Value boolean = new();
 		number.Init(GObject.Type.Int);
 		str.Init(GObject.Type.String);
+		boolean.Init(GObject.Type.Boolean);
 
 		str.SetString("mobile");
 		breakpoint.AddSetter(mlv!, "layout-name", str);
@@ -500,6 +502,9 @@ internal partial class Window : Adw.ApplicationWindow
 
 		number.SetInt(0);
 		breakpoint.AddSetter(hostname!, "halign", number); // halign = fill
+
+		boolean.SetBoolean(true);
+		breakpoint.AddSetter(url_bar_button!, "visible", boolean);
 
 		return breakpoint;
 	}

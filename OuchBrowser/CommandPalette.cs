@@ -226,7 +226,7 @@ internal partial class Window
 
 	private void HandlePaletteActivate()
 	{
-		url_bar_button!.OnActivate += (_, _) =>
+		url_bar_button!.OnClicked += (_, _) =>
 		{
 			string query = url_entry!.GetText();
 
