@@ -464,6 +464,7 @@ internal partial class Window : Adw.ApplicationWindow
 			url_entry!.SetBuffer(buffer);
 			url_dialog!.Present(this);
 			url_entry!.GrabFocusWithoutSelecting();
+			url_entry!.SetPosition(-1);
 		});
 		
 		actions.AddAction("new-window", ["<Ctrl>n"], null, (_, _) =>
