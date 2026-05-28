@@ -334,29 +334,7 @@ internal partial class Window
 					case string _ when query.StartsWith(">preferences"):
 					case string _ when query.StartsWith(">settings"):
 					case string _ when query.StartsWith(">prefs"):
-						if (query.Split(' ').Length > 1)
-						{
-							switch (query.Split(' ')[1])
-							{
-								case "general":
-								default:
-									ActivateAction("preferences-pane", GLib.Variant.NewString("general"));
-									break;
-								case "accessibility":
-								case "a11y":
-									ActivateAction("preferences-pane", GLib.Variant.NewString("accessibility"));
-									break;
-								case "search":
-								case "engine":
-									ActivateAction("preferences-pane", GLib.Variant.NewString("search-engine"));
-									break;
-								case "bangs":
-								case "bang":
-									ActivateAction("preferences-pane", GLib.Variant.NewString("bangs"));
-									break;
-							}
-						}
-						else ActivateAction("preferences", null);
+						ActivateAction("preferences", null);
 						break;
 					case ">copy":
 					case ">cp":
@@ -365,8 +343,7 @@ internal partial class Window
 						break;
 					case string _ when query.StartsWith(">refresh"):
 					case string _ when query.StartsWith(">reload"):
-						if (query.Split(' ').Length > 1 && query.Split(' ')[1] == "hard") ActivateAction("hard-refresh", null);
-						else ActivateAction("refresh", null);
+						ActivateAction("refresh", null);
 						break;
 					case ">close":
 					case ">w":
