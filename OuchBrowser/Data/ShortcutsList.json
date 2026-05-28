@@ -4,17 +4,7 @@
 		"Command": "preferences",
 		"Description": "Opens Preferences",
 		"IconName": "preferences-symbolic",
-		"Aliases": ["settings", "prefs"],
-		"Subcommands": [
-			{
-				"Name": "General",
-				"Command": "general",
-				"Description": "Opens the General Panel",
-				"IconName": "preferences-symbolic",
-				"Aliases": [],
-				"Subcommands": []
-			}
-		]
+		"Aliases": ["settings", "prefs"]
 	},
 	{
 		"Name": "Copy Link",
