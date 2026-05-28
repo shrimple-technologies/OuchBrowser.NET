@@ -460,7 +460,7 @@ internal partial class Window : Adw.ApplicationWindow
 			url_entry!.GrabFocusWithoutSelecting();
 			url_entry!.SetPosition(-1);
 		});
-		
+
 		actions.AddAction("new-window", ["<Ctrl>n"], (_, _) =>
 		{
 			Window window = new((Adw.Application)Application!);
