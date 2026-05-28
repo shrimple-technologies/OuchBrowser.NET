@@ -262,7 +262,7 @@ internal partial class Window : Adw.ApplicationWindow
 			});
 		}
 
-		actions.AddAction("preferences", ["<Ctrl>comma"], null, (_, parameter) =>
+		actions.AddAction("preferences", ["<Ctrl>comma"], null, (_, _) =>
 		{
 			preferences!.FocusPane("general");
 			preferences!.Present(this);
@@ -274,19 +274,19 @@ internal partial class Window : Adw.ApplicationWindow
 			preferences!.Present(this);
 		});
 
-		actions.AddAction("about", [], null, (_, parameter) =>
+		actions.AddAction("about", [], null, (_, _) =>
 		{
 			if (about_counter < 5) about_counter++;
 			else about!.SetApplicationIcon("nethersei");
 			about!.Present(this);
 		});
 
-		actions.AddAction("shortcuts", ["<Ctrl>question"], null, (_, parameter) =>
+		actions.AddAction("shortcuts", ["<Ctrl>question"], null, (_, _) =>
 		{
 			shortcuts!.Present(this);
 		});
 
-		actions.AddAction("rooms", ["<Ctrl><Shift>bar"], null, (_, parameter) =>
+		actions.AddAction("rooms", ["<Ctrl><Shift>bar"], null, (_, _) =>
 		{
 			rooms!.Present(this);
 		});
