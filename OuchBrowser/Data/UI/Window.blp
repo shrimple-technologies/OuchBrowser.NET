@@ -1141,6 +1141,7 @@ Adw.Dialog url_dialog {
 
 		Separator {
 			orientation: horizontal;
+			visible: bind url_autocomplete.child-revealed;
 		}
 
 		Revealer url_autocomplete {}
@@ -1151,7 +1152,7 @@ Adw.Dialog url_dialog {
 
 				Separator {
 					orientation: horizontal;
-					visible: bind url_autocomplete.child-revealed;
+					visible: bind url_autocomplete.child-revealed inverted;
 				}
 
 				Stack url_disclosure {
@@ -1181,65 +1182,6 @@ Adw.Dialog url_dialog {
 						};
 					}
 				}
-
-				Separator {
-					orientation: horizontal;
-					visible: bind url_autocomplete.child-revealed inverted;
-				}
-			}
-		}
-
-		Box url_hints {
-			orientation: vertical;
-
-			Separator {
-				orientation: horizontal;
-				visible: bind url_autocomplete.child-revealed;
-			}
-
-			CenterBox {
-				margin-start: 10;
-				margin-end: 10;
-
-				start-widget: Box {
-					orientation: horizontal;
-					margin-top: 10;
-					margin-bottom: 10;
-					spacing: 10;
-
-					Adw.ShortcutLabel {
-						accelerator: "Return";
-						opacity: 0.75;
-					}
-
-					Label {
-						label: _("Go");
-
-						styles [
-							"dimmed",
-						]
-					}
-				};
-
-				end-widget: Box {
-					orientation: horizontal;
-					margin-top: 10;
-					margin-bottom: 10;
-					spacing: 10;
-
-					Label {
-						label: _("Close Palette");
-
-						styles [
-							"dimmed",
-						]
-					}
-
-					Adw.ShortcutLabel {
-						accelerator: "Escape";
-						opacity: 0.75;
-					}
-				};
 			}
 		}
 	}
