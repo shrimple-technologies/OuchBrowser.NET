@@ -198,7 +198,7 @@ internal partial class Window : Adw.ApplicationWindow
 		var actions = new Actions(this, (Adw.Application)Application!);
 		int about_counter = 0;
 
-		actions.AddAction("palette-new", ["<Ctrl>t"], (_, _) =>
+		actions.AddAction("palette-new", ["<Ctrl>t"], null, (_, _) =>
 		{
 			url_entry!.DeleteText(0, -1);
 			url_dialog!.Present(this);
@@ -206,7 +206,7 @@ internal partial class Window : Adw.ApplicationWindow
 			palette_state = "new_tab";
 		});
 
-		actions.AddAction("palette", ["<Ctrl>l", "<Alt>d"], (_, _) =>
+		actions.AddAction("palette", ["<Ctrl>l", "<Alt>d"], null, (_, _) =>
 		{
 			if (tabview!.GetNPages() == 0)
 			{
@@ -223,7 +223,7 @@ internal partial class Window : Adw.ApplicationWindow
 			}
 		});
 
-		actions.AddAction("sidebar-toggle", ["<Ctrl><Shift>s"], (_, _) =>
+		actions.AddAction("sidebar-toggle", ["<Ctrl><Shift>s"], null, (_, _) =>
 		{
 			if (tabview!.GetNPages() == 0) return;
 
@@ -244,7 +244,7 @@ internal partial class Window : Adw.ApplicationWindow
 
 		foreach (int i in new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 })
 		{
-			actions.AddAction($"tab-{i}", [$"<Ctrl>{i}"], (_, _) =>
+			actions.AddAction($"tab-{i}", [$"<Ctrl>{i}"], null, (_, _) =>
 			{
 				if (tabview!.GetNPages() < i) return;
 				if (tabview!.GetNthPage(i - 1) == tabview!.GetSelectedPage()) return;
@@ -262,30 +262,36 @@ internal partial class Window : Adw.ApplicationWindow
 			});
 		}
 
-		actions.AddAction("preferences", ["<Ctrl>comma"], (_, _) =>
+		actions.AddAction("preferences", ["<Ctrl>comma"], null, (_, _) =>
 		{
 			preferences!.FocusPane("general");
-			preferences.Present(this);
+			preferences!.Present(this);
 		});
 
-		actions.AddAction("about", [], (_, _) =>
+		actions.AddAction("preferences-pane", [], GLib.VariantType.String, (_, parameter) =>
+		{
+			preferences!.FocusPane(parameter.Parameter!.GetString(out nuint _));
+			preferences!.Present(this);
+		});
+
+		actions.AddAction("about", [], null, (_, _) =>
 		{
 			if (about_counter < 5) about_counter++;
 			else about!.SetApplicationIcon("nethersei");
 			about!.Present(this);
 		});
 
-		actions.AddAction("shortcuts", ["<Ctrl>question"], (_, _) =>
+		actions.AddAction("shortcuts", ["<Ctrl>question"], null, (_, _) =>
 		{
 			shortcuts!.Present(this);
 		});
 
-		actions.AddAction("rooms", ["<Ctrl><Shift>bar"], (_, _) =>
+		actions.AddAction("rooms", ["<Ctrl><Shift>bar"], null, (_, _) =>
 		{
 			rooms!.Present(this);
 		});
 
-		actions.AddAction("refresh", ["<Ctrl>r"], (_, _) =>
+		actions.AddAction("refresh", ["<Ctrl>r"], null, (_, _) =>
 		{
 			TabPage page = tabview!.GetSelectedPage()!;
 			WebView webview = (WebView)page.Child!;
@@ -300,7 +306,7 @@ internal partial class Window : Adw.ApplicationWindow
 			}
 		});
 
-		actions.AddAction("hard-refresh", ["<Ctrl><Shift>r"], (_, _) =>
+		actions.AddAction("hard-refresh", ["<Ctrl><Shift>r"], null, (_, _) =>
 		{
 			TabPage page = tabview!.GetSelectedPage()!;
 			WebView webview = (WebView)page.Child!;
@@ -308,7 +314,7 @@ internal partial class Window : Adw.ApplicationWindow
 			webview.ReloadBypassCache();
 		});
 
-		actions.AddAction("zoom-in", ["<Ctrl>equal"], (_, _) =>
+		actions.AddAction("zoom-in", ["<Ctrl>equal"], null, (_, _) =>
 		{
 			TabPage page = tabview!.GetSelectedPage()!;
 			WebView webview = (WebView)page.Child!;
@@ -338,7 +344,7 @@ internal partial class Window : Adw.ApplicationWindow
 			}
 		});
 
-		actions.AddAction("zoom-out", ["<Ctrl>minus"], (_, _) =>
+		actions.AddAction("zoom-out", ["<Ctrl>minus"], null, (_, _) =>
 		{
 			TabPage page = tabview!.GetSelectedPage()!;
 			WebView webview = (WebView)page.Child!;
@@ -368,7 +374,7 @@ internal partial class Window : Adw.ApplicationWindow
 			}
 		});
 
-		actions.AddAction("zoom-reset", ["<Ctrl>0"], (_, _) =>
+		actions.AddAction("zoom-reset", ["<Ctrl>0"], null, (_, _) =>
 		{
 			TabPage page = tabview!.GetSelectedPage()!;
 			WebView webview = (WebView)page.Child!;
@@ -383,7 +389,7 @@ internal partial class Window : Adw.ApplicationWindow
 			toast_overlay!.AddToast(toast);
 		});
 
-		actions.AddAction("tab-close", ["<Ctrl>w"], (_, _) =>
+		actions.AddAction("tab-close", ["<Ctrl>w"], null, (_, _) =>
 		{
 			if (tabview!.GetNPages() == 0)
 			{
@@ -413,7 +419,7 @@ internal partial class Window : Adw.ApplicationWindow
 			}
 		});
 
-		actions.AddAction("go-back", ["<Ctrl>Left"], (_, _) =>
+		actions.AddAction("go-back", ["<Ctrl>Left"], null, (_, _) =>
 		{
 			if (tabview!.GetNPages() == 0) return;
 
@@ -423,7 +429,7 @@ internal partial class Window : Adw.ApplicationWindow
 			webview.GoBack();
 		});
 
-		actions.AddAction("go-forward", ["<Ctrl>Right"], (_, _) =>
+		actions.AddAction("go-forward", ["<Ctrl>Right"], null, (_, _) =>
 		{
 			if (tabview!.GetNPages() == 0) return;
 
@@ -433,7 +439,7 @@ internal partial class Window : Adw.ApplicationWindow
 			webview.GoForward();
 		});
 
-		actions.AddAction("copy-link", ["<Ctrl><Shift>c"], (_, _) =>
+		actions.AddAction("copy-link", ["<Ctrl><Shift>c"], null, (_, _) =>
 		{
 			if (tabview!.GetNPages() == 0) return;
 
@@ -452,7 +458,16 @@ internal partial class Window : Adw.ApplicationWindow
 			toast_overlay!.AddToast(toast);
 		});
 
-		actions.AddAction("new-window", ["<Ctrl>n"], (_, _) =>
+		actions.AddAction("shortcuts", ["<Ctrl><Shift>k"], null, (_, _) =>
+		{
+			EntryBuffer buffer = EntryBuffer.New(">", -1);
+			url_entry!.SetBuffer(buffer);
+			url_dialog!.Present(this);
+			url_entry!.GrabFocusWithoutSelecting();
+			url_entry!.SetPosition(-1);
+		});
+		
+		actions.AddAction("new-window", ["<Ctrl>n"], null, (_, _) =>
 		{
 			Window window = new((Adw.Application)Application!);
 			window.OnActivate(null, null);

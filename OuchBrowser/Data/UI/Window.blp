@@ -1111,6 +1111,24 @@ Adw.Dialog url_dialog {
 						}
 					};
 				}
+
+				StackPage {
+					name: "actions";
+
+					child: Image {
+						icon-name: "page.codeberg.shrimple.OuchBrowser-symbolic";
+						pixel-size: 20;
+						margin-start: 10;
+
+						accessibility {
+							label: _("Actions");
+						}
+
+						styles [
+							"dimmed",
+						]
+					};
+				}
 			}
 
 			Entry url_entry {
