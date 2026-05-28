@@ -258,7 +258,7 @@ internal partial class Window
 					}
 					else
 					{
-						view!.AddTab($"{settings.GetString("search-engine")}{Uri.EscapeDataString(query)}", false);
+						view!.AddTab(string.Format(settings.GetString("search-engine"), Uri.EscapeDataString(query)), false);
 					}
 				}
 			}
@@ -292,7 +292,7 @@ internal partial class Window
 					}
 					else
 					{
-						webview.LoadUri($"{settings.GetString("search-engine")}{Uri.EscapeDataString(query)}");
+						webview.LoadUri(string.Format(settings.GetString("search-engine"), Uri.EscapeDataString(query)));
 					}
 				}
 			}

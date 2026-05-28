@@ -13,19 +13,19 @@
 	>
 		<key type="s" name="search-engine">
 			<choices>
-				<choice value="https://duckduckgo.com/?q=" />
-				<choice value="https://ecosia.org/search?q=" />
-				<choice value="https://google.com/search?q=" />
-				<choice value="https://kagi.com/search?q=" />
+				<choice value="https://duckduckgo.com/?q={0}" />
+				<choice value="https://ecosia.org/search?q={0}" />
+				<choice value="https://google.com/search?q={0}" />
+				<choice value="https://kagi.com/search?q={0}" />
 			</choices>
 			<aliases>
-				<alias value="DuckDuckGo" target="https://duckduckgo.com/?q=" />
-				<alias value="Ecosia" target="https://ecosia.org/search?q=" />
-				<alias value="Google" target="https://google.com/search?q=" />
-				<alias value="Kagi" target="https://kagi.com/search?q=" />
+				<alias value="DuckDuckGo" target="https://duckduckgo.com/?q={0}" />
+				<alias value="Ecosia" target="https://ecosia.org/search?q={0}" />
+				<alias value="Google" target="https://google.com/search?q={0}" />
+				<alias value="Kagi" target="https://kagi.com/search?q={0}" />
 			</aliases>
 
-			<default>"https://duckduckgo.com/?q="</default>
+			<default>"https://duckduckgo.com/?q={0}"</default>
 			<summary>Search Engine</summary>
 			<description>
 				This value is the search engine that will be used when the user

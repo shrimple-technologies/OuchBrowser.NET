@@ -46,7 +46,7 @@ internal class Bangs
 		string trigger = text_bang.StartsWith('!') ? text_bang.Substring(1) : text_bang;
 
 		bangs.TryGetValue(trigger, out Bang? bang);
-		if (bang == null) return $"{default_search}{text}";
+		if (bang == null) return string.Format(default_search, Uri.EscapeDataString(text));
 
 		string template_url = bang.TemplateUrl;
 
