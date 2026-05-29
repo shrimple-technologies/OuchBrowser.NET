@@ -452,7 +452,7 @@ internal partial class Window : Adw.ApplicationWindow
 			toast_overlay!.AddToast(toast);
 		});
 
-		actions.AddAction("shortcuts", ["<Ctrl><Shift>k"], (_, _) =>
+		actions.AddAction("palette-shortcuts", ["<Ctrl><Shift>k"], (_, _) =>
 		{
 			EntryBuffer buffer = EntryBuffer.New(">", -1);
 			url_entry!.SetBuffer(buffer);
