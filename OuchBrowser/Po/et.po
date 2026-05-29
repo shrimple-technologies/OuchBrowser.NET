@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
 "POT-Creation-Date: 2026-05-28 10:19-0400\n"
-"PO-Revision-Date: 2026-05-28 04:49+0000\n"
+"PO-Revision-Date: 2026-05-30 03:00+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/ouch/net/et/>\n"
 "Language: et\n"
@@ -485,7 +485,7 @@ msgstr "Veebisait"
 
 #: OuchBrowser/Data/UI/Window.blp:1124
 msgid "Actions"
-msgstr ""
+msgstr "Tegevused"
 
 #: OuchBrowser/Data/UI/Window.blp:1137
 msgid "Search or enter URL…"
