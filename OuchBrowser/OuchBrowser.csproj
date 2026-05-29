@@ -33,6 +33,8 @@
 
 		<!-- Error page -->
 		<EmbeddedResource Include="Data\ErrorPage.html" LogicalName="ErrorPage.html" />
+		
+		<EmbeddedResource Include="Data\ShortcutsList.json" LogicalName="ShortcutsList.json" />
 	</ItemGroup>
 
 	<ItemGroup>

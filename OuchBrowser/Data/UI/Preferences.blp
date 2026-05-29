@@ -30,89 +30,79 @@ Adw.NavigationSplitView nsv {
 					icon-name: "preferences-symbolic";
 					title: _("General");
 
-					child: ScrolledWindow {
-						Adw.Clamp {
-							margin-start: 15;
-							margin-end: 15;
+					child: Adw.PreferencesPage {
+						name: "general";
 
-							Box {
-								orientation: vertical;
-								spacing: 24;
-								margin-top: 15;
-								margin-bottom: 15;
+						Adw.PreferencesGroup {
+							title: _("Content Blocking");
+							description: _("Powered by uBlock Origin");
 
-								Adw.PreferencesGroup {
-									title: _("Content Blocking");
-									description: _("Powered by uBlock Origin");
+							Adw.SwitchRow {
+								icon-name: "circle-crossed-symbolic";
+								title: _("Block Advertisments");
+								sensitive: false;
+							}
 
-									Adw.SwitchRow {
-										icon-name: "circle-crossed-symbolic";
-										title: _("Block Advertisments");
-										sensitive: false;
-									}
+							Adw.SwitchRow {
+								icon-name: "circle-crossed-symbolic";
+								title: _("Block Pop-up Windows");
+								sensitive: false;
+							}
+						}
 
-									Adw.SwitchRow {
-										icon-name: "circle-crossed-symbolic";
-										title: _("Block Pop-up Windows");
-										sensitive: false;
-									}
-								}
+						Adw.PreferencesGroup {
+							title: _("Session");
 
-								Adw.PreferencesGroup {
-									title: _("Session");
+							Adw.SwitchRow setting_restore_tabs {
+								icon-name: "view-grid-symbolic";
+								title: _("Restore Tabs on Startup");
+							}
+						}
 
-									Adw.SwitchRow setting_restore_tabs {
-										icon-name: "view-grid-symbolic";
-										title: _("Restore Tabs on Startup");
-									}
-								}
+						Adw.PreferencesGroup {
+							title: _("Autocomplete");
 
-								Adw.PreferencesGroup {
-									title: _("Autocomplete");
+							Adw.SwitchRow setting_search_autocomplete {
+								icon-name: "search-symbolic";
+								title: _("Enable Search Autocomplete");
+							}
 
-									Adw.SwitchRow setting_search_autocomplete {
-										icon-name: "search-symbolic";
-										title: _("Enable Search Autocomplete");
-									}
+							Adw.SwitchRow setting_bang_autocomplete {
+								icon-name: "exclaimation-symbolic";
+								title: _("Enable !bang Autocomplete");
+							}
+						}
 
-									Adw.SwitchRow setting_bang_autocomplete {
-										icon-name: "exclaimation-symbolic";
-										title: _("Enable !bang Autocomplete");
-									}
-								}
+						Adw.PreferencesGroup {
+							title: _("Peek Tabs");
+							description: _(
+								"Peek tabs are temporary tabs that can be triggered by holding down a specific key and clicking on a link. These can also be expanded into full view."
+							);
 
-								Adw.PreferencesGroup {
-									title: _("Peek Tabs");
-									description: _(
-										"Peek tabs are temporary tabs that can be triggered by holding down a specific key and clicking on a link. These can also be expanded into full view."
-									);
+							Adw.ComboRow setting_peek_trigger {
+								icon-name: "small-rectangle-in-focus-symbolic";
+								title: _("Peek Trigger");
+								subtitle: _(
+									"This will be the key that can be used in addition to a click to open a peek tab."
+								);
 
-									Adw.ComboRow setting_peek_trigger {
-										icon-name: "small-rectangle-in-focus-symbolic";
-										title: _("Peek Trigger");
-										subtitle: _(
-											"This will be the key that can be used in addition to a click to open a peek tab."
-										);
+								model: StringList {
+									strings [
+										"Shift",
+										"Ctrl",
+										"Alt",
+									]
+								};
+							}
+						}
 
-										model: StringList {
-											strings [
-												"Shift",
-												"Ctrl",
-												"Alt",
-											]
-										};
-									}
-								}
+						Adw.PreferencesGroup {
+							title: _("Developer");
 
-								Adw.PreferencesGroup {
-									title: _("Developer");
-
-									Adw.SwitchRow setting_devtools {
-										icon-name: "code-symbolic";
-										title: _("Enable Developer Tools");
-										subtitle: _("This will allow access to the Web Inspector");
-									}
-								}
+							Adw.SwitchRow setting_devtools {
+								icon-name: "code-symbolic";
+								title: _("Enable Developer Tools");
+								subtitle: _("This will allow access to the Web Inspector");
 							}
 						}
 					};
@@ -123,53 +113,43 @@ Adw.NavigationSplitView nsv {
 					icon-name: "accessibility-symbolic";
 					title: _("Accessibility");
 
-					child: ScrolledWindow {
-						Adw.Clamp {
-							margin-start: 15;
-							margin-end: 15;
+					child: Adw.PreferencesPage {
+						name: "accessibility";
 
-							Box {
-								orientation: vertical;
-								spacing: 24;
-								margin-top: 15;
-								margin-bottom: 15;
+						Adw.PreferencesGroup {
+							title: _("Content");
 
-								Adw.PreferencesGroup {
-									title: _("Content");
+							Adw.ComboRow setting_zoom {
+								icon-name: "zoom-symbolic";
+								title: _("Page Zoom");
 
-									Adw.ComboRow setting_zoom {
-										icon-name: "zoom-symbolic";
-										title: _("Page Zoom");
+								model: StringList {
+									strings [
+										"25%",
+										"33%",
+										"50%",
+										"67%",
+										"75%",
+										"80%",
+										"90%",
+										"100%",
+										"110%",
+										"125%",
+										"150%",
+										"175%",
+										"200%",
+										"250%",
+										"300%",
+										"400%",
+										"500%",
+									]
+								};
+							}
 
-										model: StringList {
-											strings [
-												"25%",
-												"33%",
-												"50%",
-												"67%",
-												"75%",
-												"80%",
-												"90%",
-												"100%",
-												"110%",
-												"125%",
-												"150%",
-												"175%",
-												"200%",
-												"250%",
-												"300%",
-												"400%",
-												"500%",
-											]
-										};
-									}
-
-									Adw.SwitchRow {
-										icon-name: "format-text-rich-symbolic";
-										title: _("Zoom Text");
-										subtitle: _("Zooms text and images instead of the view");
-									}
-								}
+							Adw.SwitchRow {
+								icon-name: "format-text-rich-symbolic";
+								title: _("Zoom Text");
+								subtitle: _("Zooms text and images instead of the view");
 							}
 						}
 					};
@@ -180,55 +160,33 @@ Adw.NavigationSplitView nsv {
 					icon-name: "search-symbolic";
 					title: _("Search Engine");
 
-					child: ScrolledWindow {
-						Adw.Clamp {
-							margin-start: 15;
-							margin-end: 15;
+					child: Adw.PreferencesPage {
+						name: "search-engine";
+						description: _("See !bangs preferences for more options");
+						description-centered: true;
 
-							Box {
-								orientation: vertical;
-								spacing: 24;
-								margin-top: 15;
-								margin-bottom: 15;
+						Adw.PreferencesGroup {
+							Adw.ComboRow setting_search_engine {
+								icon-name: "search-symbolic";
+								title: _("Search Engine");
 
-								ListBox {
-									selection-mode: none;
-
-									styles [
-										"boxed-list",
+								model: StringList {
+									strings [
+										"DuckDuckGo",
+										"Ecosia",
+										"Google",
+										"Kagi",
 									]
+								};
+							}
+						}
 
-									Adw.ComboRow setting_search_engine {
-										icon-name: "search-symbolic";
-										title: _("Search Engine");
+						Adw.PreferencesGroup {
+							title: _("Custom Search Engines");
 
-										model: StringList {
-											strings [
-												"DuckDuckGo",
-												"Ecosia",
-												"Google",
-												"Kagi",
-											]
-										};
-									}
-								}
-
-								Adw.PreferencesGroup {
-									title: _("Custom Search Engines");
-
-									Adw.ButtonRow {
-										start-icon-name: "list-add-symbolic";
-										title: _("New Search Engine…");
-									}
-								}
-
-								Label {
-									label: _("See !bangs preferences for more options");
-
-									styles [
-										"dimmed",
-									]
-								}
+							Adw.ButtonRow {
+								start-icon-name: "list-add-symbolic";
+								title: _("New Search Engine…");
 							}
 						}
 					};
@@ -239,33 +197,17 @@ Adw.NavigationSplitView nsv {
 					icon-name: "exclaimation-symbolic";
 					title: _("!bangs");
 
-					child: ScrolledWindow {
-						Adw.Clamp {
-							margin-start: 15;
-							margin-end: 15;
+					child: Adw.PreferencesPage {
+						name: "bangs";
+						description: _("!bangs provided by Kagi");
+						description-centered: true;
 
-							Box {
-								orientation: vertical;
-								spacing: 24;
-								margin-top: 15;
-								margin-bottom: 15;
+						Adw.PreferencesGroup {
+							title: _("Custom Bangs");
 
-								Adw.PreferencesGroup {
-									title: _("Custom Bangs");
-
-									Adw.ButtonRow {
-										start-icon-name: "list-add-symbolic";
-										title: _("New Bang…");
-									}
-								}
-
-								Label {
-									label: _("!bangs provided by Kagi");
-
-									styles [
-										"dimmed",
-									]
-								}
+							Adw.ButtonRow {
+								start-icon-name: "list-add-symbolic";
+								title: _("New Bang…");
 							}
 						}
 					};

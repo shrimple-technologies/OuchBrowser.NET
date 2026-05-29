@@ -265,7 +265,7 @@ internal partial class Window : Adw.ApplicationWindow
 		actions.AddAction("preferences", ["<Ctrl>comma"], (_, _) =>
 		{
 			preferences!.FocusPane("general");
-			preferences.Present(this);
+			preferences!.Present(this);
 		});
 
 		actions.AddAction("about", [], (_, _) =>
@@ -450,6 +450,15 @@ internal partial class Window : Adw.ApplicationWindow
 			toast.SetTimeout(1);
 			toast_overlay!.DismissAll();
 			toast_overlay!.AddToast(toast);
+		});
+
+		actions.AddAction("palette-shortcuts", ["<Ctrl><Shift>k"], (_, _) =>
+		{
+			EntryBuffer buffer = EntryBuffer.New(">", -1);
+			url_entry!.SetBuffer(buffer);
+			url_dialog!.Present(this);
+			url_entry!.GrabFocusWithoutSelecting();
+			url_entry!.SetPosition(-1);
 		});
 
 		actions.AddAction("new-window", ["<Ctrl>n"], (_, _) =>
