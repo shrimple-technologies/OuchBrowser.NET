@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-05-28 10:19-0400\n"
+"POT-Creation-Date: 2026-05-28 15:50-0400\n"
 "PO-Revision-Date: 2026-05-30 03:00+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/ouch/net/et/>\n"
@@ -484,8 +484,10 @@ msgid "Website"
 msgstr "Veebisait"
 
 #: OuchBrowser/Data/UI/Window.blp:1124
-msgid "Actions"
-msgstr "Tegevused"
+#, fuzzy
+#| msgid "Keyboard Shortcuts"
+msgid "Shortcuts"
+msgstr "Klaviatuuri kiirklahvid"
 
 #: OuchBrowser/Data/UI/Window.blp:1137
 msgid "Search or enter URL…"
@@ -558,6 +560,9 @@ msgstr "Oled sulgemas {0} vahekaarti. Kas oled kindel, et soovid jätkata?"
 #: OuchBrowser/Window.cs:155
 msgid "Close All Tabs"
 msgstr "Sulge kõik vahekaardid"
+
+#~ msgid "Actions"
+#~ msgstr "Tegevused"
 
 #~ msgid "Ouch Browser’s Main Window in Dark Mode"
 #~ msgstr "Veebibrauser Ouch - põhivaade tumedas kujunduses"

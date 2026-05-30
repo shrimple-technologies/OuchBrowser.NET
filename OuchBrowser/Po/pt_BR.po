@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-05-28 10:19-0400\n"
+"POT-Creation-Date: 2026-05-28 15:50-0400\n"
 "PO-Revision-Date: 2026-05-18 05:33+0000\n"
 "Last-Translator: Wiliam <wilian4512@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/ouch/"
@@ -490,8 +490,10 @@ msgid "Website"
 msgstr "Site"
 
 #: OuchBrowser/Data/UI/Window.blp:1124
-msgid "Actions"
-msgstr ""
+#, fuzzy
+#| msgid "Keyboard Shortcuts"
+msgid "Shortcuts"
+msgstr "Atalhos do Teclado"
 
 #: OuchBrowser/Data/UI/Window.blp:1137
 msgid "Search or enter URL…"
