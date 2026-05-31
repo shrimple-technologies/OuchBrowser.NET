@@ -50,10 +50,10 @@ internal class Bangs
 
 		string template_url = bang.TemplateUrl;
 
-		if (bang.TemplateUrl.StartsWith('/') && bang.Domain != "kagi.com")
+		if (bang.TemplateUrl.StartsWith('/') && bang.Domain != "kagi.com" || bang.TemplateUrl.Contains("site:"))
 		{
 			var query_params = HttpUtility.ParseQueryString(template_url.Replace("/search", ""));
-			template_url = default_search + query_params["q"]!;
+			template_url = string.Format(default_search, query_params["q"]!);
 		}
 		else if (bang.TemplateUrl.StartsWith('/') && bang.Domain == "kagi.com")
 		{
