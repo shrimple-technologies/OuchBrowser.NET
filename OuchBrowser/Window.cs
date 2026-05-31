@@ -114,7 +114,7 @@ internal partial class Window : Adw.ApplicationWindow
 		shortcuts = Shortcuts.New();
 		rooms = new RoomsOverview(this);
 		view = new View(tabview!, this);
-		bangs = new Bangs(settings.GetString("search-engine"));
+		bangs = new Bangs();
 
 		SetupActions();
 
