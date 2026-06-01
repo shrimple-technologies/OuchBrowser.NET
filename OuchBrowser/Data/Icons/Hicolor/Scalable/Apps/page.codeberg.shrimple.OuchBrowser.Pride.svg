@@ -531,7 +531,8 @@
        y1="70.035149"
        x2="47.593994"
        y2="138.60542"
-       gradientUnits="userSpaceOnUse" />
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(0.1270155)" />
     <linearGradient
        xlink:href="#linearGradient102"
        id="linearGradient103"
@@ -540,7 +541,7 @@
        x2="68.959061"
        y2="138.60974"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="translate(-0.154374,-3.7489e-4)" />
+       gradientTransform="translate(-0.154376,-3.7689e-4)" />
     <linearGradient
        xlink:href="#linearGradient107"
        id="linearGradient105"
@@ -548,7 +549,8 @@
        y1="70.03125"
        x2="90.019531"
        y2="138.60938"
-       gradientUnits="userSpaceOnUse" />
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(-2e-6)" />
     <linearGradient
        xlink:href="#linearGradient104"
        id="linearGradient106"
@@ -788,7 +790,7 @@
              id="path95"
              style="display:inline;fill:url(#linearGradient109)" />
           <path
-             d="M 13.308844,80.640625 60.664312,128 H 81.879156 L 34.519781,80.640625 Z"
+             d="M 13.435859,80.640625 60.791328,128 H 82.006171 L 34.646796,80.640625 Z"
              id="path1"
              style="fill:url(#linearGradient101)" />
           <path
@@ -796,7 +798,7 @@
              id="path1-3"
              style="fill:url(#linearGradient99);fill-opacity:1" />
           <path
-             d="M 55.730469,80.640625 103.09375,128 h 21.21484 L 76.945312,80.640625 Z m 0,0 L 103.09375,128 h 21.21484 L 76.945312,80.640625 Z"
+             d="M 55.730467,80.640623 103.09375,128 h 21.21484 L 76.94531,80.640623 Z m 0,0 L 103.09375,128 h 21.21484 L 76.94531,80.640623 Z"
              id="path1-7"
              style="fill:url(#linearGradient105)" />
           <path
@@ -804,7 +806,7 @@
              id="path1-7-2"
              style="fill:url(#linearGradient106)" />
           <path
-             d="M 34.515626,80.640625 81.878907,128 H 103.09376 L 55.730469,80.640625 Z m 0,0 L 81.878907,128 H 103.09376 L 55.730469,80.640625 Z"
+             d="M 34.515624,80.640623 81.878905,128 H 103.09376 L 55.730467,80.640623 Z m 0,0 L 81.878905,128 H 103.09376 L 55.730467,80.640623 Z"
              id="path1-7-6"
              style="fill:url(#linearGradient103)" />
         </g>
