@@ -269,6 +269,9 @@ internal partial class Window : Adw.ApplicationWindow
 
 		actions.AddAction("about", [], (_, _) =>
 		{
+			if (DateTime.Now.Month == 6) about!.SetApplicationIcon("page.codeberg.shrimple.OuchBrowser.Pride");
+			else about!.SetApplicationIcon("page.codeberg.shrimple.OuchBrowser");
+			
 			about!.Present(this);
 		});
 
