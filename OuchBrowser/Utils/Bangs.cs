@@ -11,9 +11,8 @@ namespace OuchBrowser.Utils;
 internal class Bangs
 {
 	private readonly Dictionary<string, Bang> bangs = new();
-	private readonly string default_search;
 
-	public Bangs(string fallback)
+	public Bangs()
 	{
 		var options = new JsonSerializerOptions
 		{
@@ -36,24 +35,23 @@ internal class Bangs
 				foreach (string trigger in bang.AdditionalTriggers) bangs.Add(trigger, bang);
 			}
 		}
-
-		default_search = fallback;
 	}
 
 	public string ExpandBang(string text)
 	{
 		string text_bang = text.Split(' ')[0];
 		string trigger = text_bang.StartsWith('!') ? text_bang.Substring(1) : text_bang;
+		string default_search = settings.GetString("search-engine");
 
 		bangs.TryGetValue(trigger, out Bang? bang);
 		if (bang == null) return string.Format(default_search, Uri.EscapeDataString(text));
 
 		string template_url = bang.TemplateUrl;
 
-		if (bang.TemplateUrl.StartsWith('/') && bang.Domain != "kagi.com")
+		if (bang.TemplateUrl.StartsWith('/') && bang.Domain != "kagi.com" || bang.TemplateUrl.Contains("site:"))
 		{
 			var query_params = HttpUtility.ParseQueryString(template_url.Replace("/search", ""));
-			template_url = default_search + query_params["q"]!;
+			template_url = string.Format(default_search, query_params["q"]!);
 		}
 		else if (bang.TemplateUrl.StartsWith('/') && bang.Domain == "kagi.com")
 		{

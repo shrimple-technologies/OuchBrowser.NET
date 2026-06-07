@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-05-28 10:19-0400\n"
-"PO-Revision-Date: 2026-05-18 05:33+0000\n"
+"POT-Creation-Date: 2026-05-28 15:50-0400\n"
+"PO-Revision-Date: 2026-06-01 19:01+0000\n"
 "Last-Translator: Wiliam <wilian4512@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/ouch/"
 "net/pt_BR/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2026.6.dev0\n"
+"X-Generator: Weblate 2026.6\n"
 
 #: OuchBrowser/CommandPalette.cs:52
 #, csharp-format
@@ -143,7 +143,7 @@ msgstr "Shrimple Technologies"
 
 #: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:13
 msgid "Focus on your browsing"
-msgstr "Navegue sem distrações"
+msgstr "Foque na sua navegação"
 
 #: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:46
 msgid ""
@@ -414,7 +414,7 @@ msgstr "Menu"
 
 #: OuchBrowser/Data/UI/Window.blp:472
 msgid "New Window"
-msgstr ""
+msgstr "Nova Janela"
 
 #: OuchBrowser/Data/UI/Window.blp:519
 msgid "View All Tabs"
@@ -490,8 +490,8 @@ msgid "Website"
 msgstr "Site"
 
 #: OuchBrowser/Data/UI/Window.blp:1124
-msgid "Actions"
-msgstr ""
+msgid "Shortcuts"
+msgstr "Atalhos"
 
 #: OuchBrowser/Data/UI/Window.blp:1137
 msgid "Search or enter URL…"

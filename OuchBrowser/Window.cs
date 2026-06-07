@@ -114,7 +114,7 @@ internal partial class Window : Adw.ApplicationWindow
 		shortcuts = Shortcuts.New();
 		rooms = new RoomsOverview(this);
 		view = new View(tabview!, this);
-		bangs = new Bangs(settings.GetString("search-engine"));
+		bangs = new Bangs();
 
 		SetupActions();
 
@@ -196,7 +196,6 @@ internal partial class Window : Adw.ApplicationWindow
 	private void SetupActions()
 	{
 		var actions = new Actions(this, (Adw.Application)Application!);
-		int about_counter = 0;
 
 		actions.AddAction("palette-new", ["<Ctrl>t"], (_, _) =>
 		{
@@ -270,8 +269,9 @@ internal partial class Window : Adw.ApplicationWindow
 
 		actions.AddAction("about", [], (_, _) =>
 		{
-			if (about_counter < 5) about_counter++;
-			else about!.SetApplicationIcon("nethersei");
+			if (DateTime.Now.Month == 6) about!.SetApplicationIcon("page.codeberg.shrimple.OuchBrowser.Pride");
+			else about!.SetApplicationIcon("page.codeberg.shrimple.OuchBrowser");
+			
 			about!.Present(this);
 		});
 
