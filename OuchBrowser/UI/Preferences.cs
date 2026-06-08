@@ -258,7 +258,7 @@ internal class Preferences : Adw.Dialog
 		setting_clear_bang_rankings!.OnActivated += (_, _) =>
 		{
 			settings.Reset("bang-rankings");
-			toast_overlay!.AddToast(Toast.New(__("Cleared All Rankings")));
+			toast_overlay!.AddToast(Toast.New(__("Cleared All Ranks")));
 		};
 	}
 
