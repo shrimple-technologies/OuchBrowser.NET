@@ -79,6 +79,8 @@ internal partial class Window
 							sw.AddCssClass("undershoot-top");
 							box.SetMarginTop(10);
 							box.SetMarginBottom(10);
+							box.SetMarginStart(10);
+							box.SetMarginEnd(10);
 
 							Bang[] bang = bangs!.AutocompleteBang(text);
 							if (bang.Length == 0) url_autocomplete!.SetRevealChild(false);
@@ -102,8 +104,6 @@ internal partial class Window
 								{
 									button_trigger = Label.New($"!{b.Trigger}");
 								}
-								button.SetMarginStart(10);
-								button.SetMarginEnd(10);
 								button.SetHexpand(true);
 								button.SetCssClasses(["flat"]);
 								button_label.SetCssClasses(["body"]);
@@ -161,6 +161,8 @@ internal partial class Window
 					sw.AddCssClass("undershoot-bottom");
 					box.SetMarginTop(10);
 					box.SetMarginBottom(10);
+					box.SetMarginStart(10);
+					box.SetMarginEnd(10);
 
 					string text_split = text.Substring(1);
 					List<Types.Shortcut> results = shortcuts
@@ -183,8 +185,6 @@ internal partial class Window
 						Label button_trigger = Label.New(s.Description);
 						Image image = Image.NewFromIconName(s.IconName);
 						image.AddCssClass("dimmed");
-						button.SetMarginStart(10);
-						button.SetMarginEnd(10);
 						button.SetHexpand(true);
 						button.SetCssClasses(["flat"]);
 						button_label.SetCssClasses(["body"]);
@@ -272,14 +272,14 @@ internal partial class Window
 							Box box = Box.New(Orientation.Vertical, 10);
 							box.SetMarginTop(10);
 							box.SetMarginBottom(10);
+							box.SetMarginStart(10);
+							box.SetMarginEnd(10);
 
 							foreach (Autocompletion phrase in ac)
 							{
 								Button button = Button.New();
 								Box button_box = Box.New(Orientation.Horizontal, 15);
 								Label button_label = Label.New(phrase.phrase);
-								button.SetMarginStart(10);
-								button.SetMarginEnd(10);
 								button.SetHexpand(true);
 								button.SetCssClasses(["flat"]);
 								button_label.SetCssClasses(["body"]);
