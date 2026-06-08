@@ -130,6 +130,8 @@ internal class Preferences : Adw.Dialog
 						setting_search_engine!.SetSelected(2);
 						break;
 				}
+				if ((int)settings.GetValue("bang-rankings").NChildren() == 0) setting_clear_bang_rankings!.SetSensitive(false);
+				else setting_clear_bang_rankings!.SetSensitive(true);
 			}
 		};
 
@@ -258,6 +260,7 @@ internal class Preferences : Adw.Dialog
 		setting_clear_bang_rankings!.OnActivated += (_, _) =>
 		{
 			settings.Reset("bang-rankings");
+			setting_clear_bang_rankings.SetSensitive(false);
 			toast_overlay!.AddToast(Toast.New(__("Cleared All Ranks")));
 		};
 	}
