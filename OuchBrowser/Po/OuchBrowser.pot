@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-06-08 17:39-0400\n"
+"POT-Creation-Date: 2026-06-08 17:46-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -291,13 +291,13 @@ msgstr ""
 msgid "New Bang…"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:218
+#: OuchBrowser/Data/UI/Preferences.blp:219
 msgid ""
 "Ouch Browser utilizes a simple ranking system to provide smarter !bang "
 "autocompletion results over time."
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:223
+#: OuchBrowser/Data/UI/Preferences.blp:225
 msgid "Clear All Ranks"
 msgstr ""
 

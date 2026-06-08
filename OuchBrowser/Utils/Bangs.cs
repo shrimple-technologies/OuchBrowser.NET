@@ -123,8 +123,12 @@ internal class Bangs
 
 			if (currentValue.GetChildValue(0).GetString(out _) == bang)
 			{
-				Variant rank = Variant.NewInt32(currentValue.GetChildValue(1).GetInt32() + 1);
-				builder.AddValue(Variant.NewDictEntry(currentValue.GetChildValue(0), rank));
+				builder.AddValue(
+					Variant.NewDictEntry(
+						currentValue.GetChildValue(0),
+						Variant.NewInt32(currentValue.GetChildValue(1).GetInt32() + 1)
+					)
+				);
 				found = true;
 			}
 			else builder.AddValue(Variant.NewDictEntry(currentValue.GetChildValue(0), currentValue.GetChildValue(1)));
