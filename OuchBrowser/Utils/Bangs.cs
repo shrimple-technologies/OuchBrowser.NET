@@ -19,54 +19,52 @@ internal class Bangs
 			Converters = { new JsonStringEnumConverter() }
 		};
 
-		EmbeddedResource.Load("Bangs.json", out string list);
-		EmbeddedResource.Load("Bangs.Kagi.json", out string list_kagi);
-		List<Bang> bangs_kagi = JsonSerializer.Deserialize<List<Bang>>(list_kagi, options)!;
-		List<Bang> bangs_list = JsonSerializer.Deserialize<List<Bang>>(list, options)!;
-		bangs_list.AddRange(bangs_kagi);
-		bangs_list = bangs_list.Where(n => n.Category != "Region search").ToList();
+		EmbeddedResource.Load("Bangs.json", out string bangsRaw);
+		EmbeddedResource.Load("Bangs.Kagi.json", out string bangsKagiRaw);
+		List<Bang> bangsKagi = JsonSerializer.Deserialize<List<Bang>>(bangsKagiRaw, options)!;
+		List<Bang> bangsList = JsonSerializer.Deserialize<List<Bang>>(bangsRaw, options)!;
+		bangsList.AddRange(bangsKagi);
+		bangsList = bangsList.Where(n => n.Category != "Region search").ToList();
 
-		foreach (Bang bang in bangs_list)
+		foreach (Bang bang in bangsList)
 		{
 			bangs.Add(bang.Trigger, bang);
 
 			if (bang.AdditionalTriggers != null)
-			{
-				foreach (string trigger in bang.AdditionalTriggers) bangs.Add(trigger, bang);
-			}
+			foreach (string trigger in bang.AdditionalTriggers) bangs.Add(trigger, bang);
 		}
 	}
 
 	public string ExpandBang(string text)
 	{
-		string text_bang = text.Split(' ')[0];
-		string trigger = text_bang.StartsWith('!') ? text_bang.Substring(1) : text_bang;
-		string default_search = settings.GetString("search-engine");
+		string bangString = text.Split(' ')[0];
+		string trigger = bangString.StartsWith('!') ? bangString.Substring(1) : bangString;
+		string defaultSearch = settings.GetString("search-engine");
 
 		bangs.TryGetValue(trigger, out Bang? bang);
-		if (bang == null) return string.Format(default_search, Uri.EscapeDataString(text));
+		if (bang == null) return string.Format(defaultSearch, Uri.EscapeDataString(text));
 
-		string template_url = bang.TemplateUrl;
+		string templateUrl = bang.TemplateUrl;
 
 		if (bang.TemplateUrl.StartsWith('/') && bang.Domain != "kagi.com" || bang.TemplateUrl.Contains("site:"))
 		{
-			var query_params = HttpUtility.ParseQueryString(template_url.Replace("/search", ""));
-			template_url = string.Format(default_search, query_params["q"]!);
+			var query_params = HttpUtility.ParseQueryString(templateUrl.Replace("/search", ""));
+			templateUrl = string.Format(defaultSearch, query_params["q"]!);
 		}
 		else if (bang.TemplateUrl.StartsWith('/') && bang.Domain == "kagi.com")
 		{
-			template_url = "https://kagi.com" + template_url;
+			templateUrl = "https://kagi.com" + templateUrl;
 		}
 
 		string query = string.Join(" ", text.Split(' ').Skip(1));
-		return template_url.Replace("{{{s}}}", Uri.EscapeDataString(query));
+		return templateUrl.Replace("{{{s}}}", Uri.EscapeDataString(query));
 
 	}
 
 	public Bang[] AutocompleteBang(string text)
 	{
-		string text_bang = text.Split(' ')[0];
-		string trigger = text_bang.StartsWith('!') ? text_bang.Substring(1) : text_bang;
+		string bangString = text.Split(' ')[0];
+		string trigger = bangString.StartsWith('!') ? bangString.Substring(1) : bangString;
 
 		if (trigger == "") return []; // there are OVER 1000 BANGS, without this, the app will crash
 		return bangs
@@ -83,8 +81,8 @@ internal class Bangs
 
 	public Bang? GetBang(string text)
 	{
-		string text_bang = text.Split(' ')[0];
-		string trigger = text_bang.StartsWith('!') ? text_bang.Substring(1) : text_bang;
+		string bangString = text.Split(' ')[0];
+		string trigger = bangString.StartsWith('!') ? bangString.Substring(1) : bangString;
 
 		bangs.TryGetValue(trigger, out Bang? bang);
 		return bang;
