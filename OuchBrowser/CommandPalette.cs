@@ -77,7 +77,6 @@ internal partial class Window
 							sw.SetMinContentHeight(387);
 							sw.SetMaxContentHeight(387);
 							sw.AddCssClass("undershoot-top");
-							sw.AddCssClass("undershoot-bottom");
 							box.SetMarginTop(10);
 							box.SetMarginBottom(10);
 

@@ -108,3 +108,8 @@ dialog.peek > widget > floating-sheet > sheet {
 		0 0 48px rgb(0 0 0 / 10%),
 		0 0 0 1px rgb(0 0 0 / 5%);
 }
+
+dialog.command-palette > widget > floating-sheet > sheet {
+	border-radius: 18px;
+}
+
