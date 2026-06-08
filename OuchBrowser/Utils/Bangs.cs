@@ -117,6 +117,9 @@ internal class Bangs
 		Variant currentValue;
 		bool found = false;
 
+		// since there isn't a clean way to modify the dictionary of ranks,
+		// we instead rebuild the dictionary and increment the rank by 1 to
+		// push the !bang higher in autocompletion
 		for (int i = 0; i < (int)ranks.NChildren(); i++)
 		{
 			currentValue = iter.NextValue()!;
