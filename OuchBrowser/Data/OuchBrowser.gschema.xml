@@ -117,5 +117,13 @@
 				peek tab, which is separate from the main window.
 			</description>
 		</key>
+
+		<key type="a{si}" name="bang-rankings">
+			<default>{}</default>
+			<summary>!bang Usage Rankings</summary>
+			<description>
+				This value is the rankings of !bangs over time from use.
+			</description>
+		</key>
 	</schema>
 </schemalist>

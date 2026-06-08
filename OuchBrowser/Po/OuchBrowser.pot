@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-05-28 15:50-0400\n"
+"POT-Creation-Date: 2026-06-08 09:58-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -114,6 +114,14 @@ msgid ""
 "This value is the trigger for opening a peek tab. For example, holding down "
 "the Shift key and clicking on a hyperlink will result in that website being "
 "loaded inside a peek tab, which is separate from the main window."
+msgstr ""
+
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:123
+msgid "!bang Usage Rankings"
+msgstr ""
+
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:124
+msgid "This value is the rankings of !bangs over time from use"
 msgstr ""
 
 #: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:6
@@ -469,12 +477,8 @@ msgstr ""
 msgid "Search or enter URL…"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1151 OuchBrowser/Data/UI/Window.blp:1234
+#: OuchBrowser/Data/UI/Window.blp:1151
 msgid "Go"
-msgstr ""
-
-#: OuchBrowser/Data/UI/Window.blp:1249
-msgid "Close Palette"
 msgstr ""
 
 #. TRANSLATORS: This is not a string that is a part of the source code. This is your name (or username), followed by your email enclosed in angles (<example@domain.com>) or your website. This will be shown in Ouch Browser's credits.
