@@ -6,6 +6,7 @@ namespace OuchBrowser.UI;
 internal class Preferences : Adw.Dialog
 {
 #pragma warning disable CS0649
+	[Connect] private readonly ToastOverlay? toast_overlay;
 	[Connect] private readonly NavigationSplitView? nsv;
 	[Connect] private readonly ViewStack? view;
 	[Connect] private readonly SwitchRow? setting_search_autocomplete;
@@ -14,6 +15,7 @@ internal class Preferences : Adw.Dialog
 	[Connect] private readonly ComboRow? setting_search_engine;
 	[Connect] private readonly ComboRow? setting_zoom;
 	[Connect] private readonly ComboRow? setting_peek_trigger;
+	[Connect] private readonly ButtonRow? setting_clear_bang_rankings;
 #pragma warning restore CS0649
 
 	public Preferences(Window window) : base()
@@ -25,7 +27,7 @@ internal class Preferences : Adw.Dialog
 
 		nsv!.SetShowContent(true);
 
-		Child = nsv!;
+		Child = toast_overlay!;
 		HeightRequest = 360;
 		WidthRequest = 360;
 		ContentHeight = 500;
@@ -251,6 +253,12 @@ internal class Preferences : Adw.Dialog
 						break;
 				}
 			}
+		};
+
+		setting_clear_bang_rankings!.OnActivated += (_, _) =>
+		{
+			settings.Reset("bang-rankings");
+			toast_overlay!.AddToast(Toast.New(__("Cleared All Rankings")));
 		};
 	}
 
