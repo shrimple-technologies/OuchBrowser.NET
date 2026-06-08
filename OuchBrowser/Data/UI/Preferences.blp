@@ -213,11 +213,14 @@ Adw.ToastOverlay toast_overlay {
 							}
 
 							Adw.PreferencesGroup {
-								title: _("Danger Zone");
+								Adw.ActionRow {
+									icon-name: "starred-symbolic";
+									subtitle: _("Ouch Browser utilizes a simple ranking system to provide smarter !bang autocompletion results over time.");
+								}
 
 								Adw.ButtonRow setting_clear_bang_rankings {
 									start-icon-name: "user-trash-symbolic";
-									title: _("Clear All Rankings");
+									title: _("Clear All Ranks");
 
 									styles [
 										"destructive-action",
