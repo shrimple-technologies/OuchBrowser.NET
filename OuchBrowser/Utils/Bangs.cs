@@ -93,7 +93,7 @@ internal class Bangs
 		return bang;
 	}
 
-	public static Dictionary<string, int> GetRankings()
+	private static Dictionary<string, int> GetRankings()
 	{
 		Dictionary<string, int> dict = new();
 		Variant ranks = settings.GetValue("bang-rankings");
@@ -107,5 +107,31 @@ internal class Bangs
 		}
 
 		return dict;
+	}
+
+	public static void IncrementRanking(string bang)
+	{
+		Variant ranks = settings.GetValue("bang-rankings");
+		VariantIter iter = ranks.IterNew();
+		VariantBuilder builder = VariantBuilder.New(VariantType.New("a{si}"));
+		Variant currentValue;
+		bool found = false;
+
+		for (int i = 0; i < (int)ranks.NChildren(); i++)
+		{
+			currentValue = iter.NextValue()!;
+
+			if (currentValue.GetChildValue(0).GetString(out _) == bang)
+			{
+				Variant rank = Variant.NewInt32(currentValue.GetChildValue(1).GetInt32() + 1);
+				builder.AddValue(Variant.NewDictEntry(currentValue.GetChildValue(0), rank));
+				found = true;
+			}
+			else builder.AddValue(Variant.NewDictEntry(currentValue.GetChildValue(0), currentValue.GetChildValue(1)));
+		}
+
+		if (found != true) builder.AddValue(Variant.NewDictEntry(Variant.NewString(bang), Variant.NewInt32(1)));
+
+		settings.SetValue("bang-rankings", builder.End());
 	}
 }
