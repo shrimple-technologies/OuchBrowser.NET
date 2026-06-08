@@ -9,6 +9,8 @@ internal static class Settings
 {
 	private static readonly Gio.Settings settings = Gio.Settings.New("page.codeberg.shrimple.OuchBrowser");
 
+	public static void Reset(string key) => settings.Reset(key);
+
 	public static string GetString(string key) => settings.GetString(key);
 	public static bool GetBoolean(string key) => settings.GetBoolean(key);
 	public static double GetDouble(string key) => settings.GetDouble(key);

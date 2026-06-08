@@ -382,6 +382,9 @@ internal partial class Window
 					if (query.StartsWith('!'))
 					{
 						view!.AddTab(bangs!.ExpandBang(query), false);
+
+						Bang? bang = bangs!.GetBang(query)!;
+						if (bang != null) Bangs.IncrementRanking(bang.Trigger);
 					}
 					else
 					{
@@ -416,6 +419,9 @@ internal partial class Window
 					if (query.StartsWith('!'))
 					{
 						webview.LoadUri(bangs!.ExpandBang(query));
+
+						Bang? bang = bangs!.GetBang(query)!;
+						if (bang != null) Bangs.IncrementRanking(bang.Trigger);
 					}
 					else
 					{
