@@ -4,7 +4,9 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Web;
+using GLib;
 using OuchBrowser.Types;
+using Uri = System.Uri;
 
 namespace OuchBrowser.Utils;
 
@@ -78,6 +80,7 @@ internal class Bangs
 			)
 			.Select(pair => pair.Value)
 			.DistinctBy(bang => bang.Trigger)
+			.OrderByDescending(bang => GetRankings().TryGetValue(bang.Trigger, out int rank) ? rank : 0)
 			.ToArray();
 	}
 
@@ -88,5 +91,21 @@ internal class Bangs
 
 		bangs.TryGetValue(trigger, out Bang? bang);
 		return bang;
+	}
+
+	public static Dictionary<string, int> GetRankings()
+	{
+		Dictionary<string, int> dict = new();
+		Variant ranks = settings.GetValue("bang-rankings");
+		VariantIter iter = ranks.IterNew();
+		Variant currentValue;
+
+		for (int i = 0; i < (int)ranks.NChildren(); i++)
+		{
+			currentValue = iter.NextValue()!;
+			dict.Add(currentValue.GetChildValue(0).GetString(out _), currentValue.GetChildValue(1).GetInt32());
+		}
+
+		return dict;
 	}
 }
