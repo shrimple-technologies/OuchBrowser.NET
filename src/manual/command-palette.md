@@ -20,6 +20,27 @@ Autocompletion is possible via [preferences](preferences.md#enable-bang-autocomp
 but may use an significant amount of resources due to the large amount of
 !bangs stored.
 
+### Ranking System
+
+A simple ranking system is utilized for !bangs, and does not include any sort
+of algorithm. There are three stages of !bang selection:
+
+1. The `!` character is inputted into the command palette. This will switch
+   from looking for search and website queries into looking for relevant !bangs
+   for the query.
+2. A complete !bang would be inputted along with a space. The backend will
+   search for the !bang, and preload the matching one to complement the palette
+   UI.
+3. The user hits <kbd>Enter</kbd> or presses the <kbd>&gt;</kbd> button on
+   mobile. The !bang is loaded once again, and creates a new tab with the query
+   to the !bang's search page
+
+Right before the third stage invokes, the backend will increment the ranking of
+the !bang by `1`. All !bangs by default are assumed to be ranked at `0`,
+therefore the selected !bang will be the first result. As the !bangs function
+is utilized over time, it becomes accurate, with the relevant !bang being *one
+of the first* autocomplete results.
+
 ## Search
 
 ![Command palette autocompleting a search term](../images/command-palette-search.png)

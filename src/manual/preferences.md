@@ -96,7 +96,9 @@ completion.
 
 This setting determines whether entering a !bang inside the command palette
 shows autocompletion results. The autocompletion process happens locally,
-therefore utilizes more resources.
+therefore utilizes more resources. Individual !bangs gain higher ranking inside
+autocompletion results over time with use. See the [command palette manual](./command-palette.md#ranking-system)
+for more details.
 
 ### Peek Tabs
 
