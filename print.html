@@ -16,8 +16,8 @@
         <link rel="icon" href="favicon-de23e50b.svg">
         <link rel="shortcut icon" href="favicon-8114d1fc.png">
         <link rel="stylesheet" href="css/variables-8adf115d.css">
-        <link rel="stylesheet" href="css/general-2459343d.css">
-        <link rel="stylesheet" href="css/chrome-ae938929.css">
+        <link rel="stylesheet" href="css/general-0392ca55.css">
+        <link rel="stylesheet" href="css/chrome-fc474251.css">
         <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-da7c9a74.js";
+            window.path_to_searchindex_js = "searchindex-45e180bf.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-459c563f.js"></script>
+        <script src="toc-271c01a2.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -195,6 +195,25 @@ summoned using <kbd>Ctrl</kbd> + <kbd>T</kbd> for a new tab, <kbd>Ctrl</kbd> +
 Autocompletion is possible via <a href="#enable-bang-autocomplete">preferences</a>,
 but may use an significant amount of resources due to the large amount of
 !bangs stored.</p>
+<h3 id="ranking-system"><a class="header" href="#ranking-system">Ranking System</a></h3>
+<p>A simple ranking system is utilized for !bangs, and does not include any sort
+of algorithm. There are three stages of !bang selection:</p>
+<ol>
+<li>The <code>!</code> character is inputted into the command palette. This will switch
+from looking for search and website queries into looking for relevant !bangs
+for the query.</li>
+<li>A complete !bang would be inputted along with a space. The backend will
+search for the !bang, and preload the matching one to complement the palette
+UI.</li>
+<li>The user hits <kbd>Enter</kbd> or presses the <kbd>&gt;</kbd> button on
+mobile. The !bang is loaded once again, and creates a new tab with the query
+to the !bang’s search page</li>
+</ol>
+<p>Right before the third stage invokes, the backend will increment the ranking of
+the !bang by <code>1</code>. All !bangs by default are assumed to be ranked at <code>0</code>,
+therefore the selected !bang will be the first result. As the !bangs function
+is utilized over time, it becomes accurate, with the relevant !bang being <em>one
+of the first</em> autocomplete results.</p>
 <h2 id="search"><a class="header" href="#search">Search</a></h2>
 <p><img src="images/command-palette-search.png" alt="Command palette autocompleting a search term"></p>
 <p>Search allows you to search the internet using the search engine selected in
@@ -298,7 +317,9 @@ completion.</p>
 </blockquote>
 <p>This setting determines whether entering a !bang inside the command palette
 shows autocompletion results. The autocompletion process happens locally,
-therefore utilizes more resources.</p>
+therefore utilizes more resources. Individual !bangs gain higher ranking inside
+autocompletion results over time with use. See the <a href="#ranking-system">command palette manual</a>
+for more details.</p>
 <h3 id="peek-tabs-1"><a class="header" href="#peek-tabs-1">Peek Tabs</a></h3>
 <p>This configures how <a href="#peek-tabs">peek tabs</a> work.</p>
 <h4 id="peek-trigger"><a class="header" href="#peek-trigger">Peek Trigger</a></h4>
@@ -359,11 +380,11 @@ time.</p>
 
         <script src="elasticlunr-ef4e11c1.min.js"></script>
         <script src="mark-09e88c2c.min.js"></script>
-        <script src="searcher-c2a407aa.js"></script>
+        <script src="searcher-09f2665d.js"></script>
 
         <script src="clipboard-1626706a.min.js"></script>
         <script src="highlight-abc7f01d.js"></script>
-        <script src="book-a0b12cfe.js"></script>
+        <script src="book-c22b7243.js"></script>
 
         <!-- Custom JS scripts -->
 
