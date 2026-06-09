@@ -33,7 +33,7 @@ internal class Bangs
 			bangs.Add(bang.Trigger, bang);
 
 			if (bang.AdditionalTriggers != null)
-			foreach (string trigger in bang.AdditionalTriggers) bangs.Add(trigger, bang);
+				foreach (string trigger in bang.AdditionalTriggers) bangs.Add(trigger, bang);
 		}
 	}
 
