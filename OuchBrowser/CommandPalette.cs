@@ -324,7 +324,7 @@ internal partial class Window
 								}
 								else
 								{
-									button_label.SetLabel(__("No response"));
+									button_label.SetLabel(__("No answer"));
 								}
 
 								url_autocomplete!.SetChild(box);
