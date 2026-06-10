@@ -49,3 +49,13 @@ Search allows you to search the internet using the search engine selected in
 [preferences](preferences.md#enable-search-autocomplete).
 Due to technical limitations, the command palette only fetches autocomplete
 results from DuckDuckGo. Autocompletion can be disabled in preferences.
+
+### Wolfram|Alpha
+
+![Command palette solving a mathematical query via Wolfram|Alpha](../images/command-palette-wolfram.png)
+
+Wolfram|Alpha can be used to complement search autocomplete by providing
+smarter results, such as providing calculations, distances, and definitions.
+You will need to provide your own Wolfram|Alpha App ID under the short answers
+API, as Ouch Browser does not come with it's own ID. The answers may be
+unintelligible, so you may need to expand the answer.
