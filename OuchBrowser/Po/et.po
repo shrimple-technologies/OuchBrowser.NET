@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
 "POT-Creation-Date: 2026-06-10 02:33-0400\n"
-"PO-Revision-Date: 2026-06-10 07:01+0000\n"
+"PO-Revision-Date: 2026-06-11 10:01+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/ouch/net/et/>\n"
 "Language: et\n"
@@ -20,14 +20,12 @@ msgid "Searching using {0}"
 msgstr "Otsing kasutades teenust {0}"
 
 #: OuchBrowser/CommandPalette.cs:299
-#, fuzzy
-#| msgid "New Search Engine…"
 msgid "Searching…"
-msgstr "Uus otsingumootor…"
+msgstr "Otsin…"
 
 #: OuchBrowser/CommandPalette.cs:327
 msgid "No response"
-msgstr ""
+msgstr "Vastust pole"
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:29
 #: OuchBrowser/Data/UI/Preferences.blp:176
