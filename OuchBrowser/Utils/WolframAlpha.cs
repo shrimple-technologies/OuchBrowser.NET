@@ -19,7 +19,10 @@ internal class WolframAlpha
 		}
 		
 		string output = await res.Content.ReadAsStringAsync()!;
-		if (output == "\"No short answer available\"") return null;
+		if (
+			output == "\"No short answer available\""
+			|| output == "\"Wolfram|Alpha did not understand your input\""
+		) return null;
 		else return output!;
 	}
 }
