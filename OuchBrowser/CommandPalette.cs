@@ -87,21 +87,7 @@ internal partial class Window
 								Button button = Button.New();
 								Box button_box = Box.New(Orientation.Horizontal, 15);
 								Label button_label = Label.New(b.WebsiteName);
-								Label button_trigger;
-								if (b.AdditionalTriggers != null)
-								{
-									List<string> triggers = new List<string>();
-									foreach (string trigger in b.AdditionalTriggers)
-									{
-										triggers.Add($"!{trigger}");
-									}
-
-									button_trigger = Label.New($"!{b.Trigger}, {string.Join(", ", triggers.ToArray())} ");
-								}
-								else
-								{
-									button_trigger = Label.New($"!{b.Trigger}");
-								}
+								Label button_trigger = Label.New($"!{b.Trigger}");
 								button.SetMarginStart(10);
 								button.SetMarginEnd(10);
 								button.SetHexpand(true);
