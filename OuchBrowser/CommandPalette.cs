@@ -297,6 +297,7 @@ internal partial class Window
 								Button button = Button.New();
 								Box button_box = Box.New(Orientation.Horizontal, 15);
 								Label button_label = Label.New(__("Searching…"));
+								Image icon = Image.NewFromIconName("wolframalpha-symbolic");
 								button.SetSensitive(false);
 								button.SetMarginStart(10);
 								button.SetMarginEnd(10);
@@ -306,7 +307,9 @@ internal partial class Window
 								button_label.SetLines(2);
 								button_label.SetEllipsize(Pango.EllipsizeMode.End);
 								button_label.SetCssClasses(["title-4"]);
-								button_box.Append(Image.NewFromIconName("wolframalpha-symbolic"));
+								icon.SetMarginTop(5);
+								icon.SetValign(Align.Start);
+								button_box.Append(icon);
 								button_box.Append(button_label);
 								button.OnClicked += (_, _) =>
 								{
