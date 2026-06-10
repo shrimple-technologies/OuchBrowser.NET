@@ -302,6 +302,8 @@ internal partial class Window
 								button.SetMarginEnd(10);
 								button.SetHexpand(true);
 								button.SetCssClasses(["flat"]);
+								button_label.SetWrap(true);
+								button_label.SetLines(2);
 								button_label.SetEllipsize(Pango.EllipsizeMode.End);
 								button_label.SetCssClasses(["title-4"]);
 								button_box.Append(Image.NewFromIconName("wolframalpha-symbolic"));
