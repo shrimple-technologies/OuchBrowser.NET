@@ -11,7 +11,7 @@ internal class WolframAlpha
 		HttpResponseMessage res;
 		try
 		{
-			res = await http.GetAsync($"https://api.wolframalpha.com/v1/result?appid={settings.GetString("wolframalpha-app-id")}&i={Uri.EscapeDataString(text)}");
+			res = await http.GetAsync($"https://api.wolframalpha.com/v1/result?appid={settings.GetString("wolframalpha-app-id")}&timeout=1&i={Uri.EscapeDataString(text)}");
 		}
 		catch (HttpRequestException)
 		{
