@@ -275,6 +275,31 @@ internal partial class Window
 							box.SetMarginStart(10);
 							box.SetMarginEnd(10);
 
+							if (settings.GetBoolean("wolframalpha-enabled"))
+							{
+								string? output = await WolframAlpha.Query(textNow);
+
+								if (output != null)
+								{
+									Button button = Button.New();
+									Box button_box = Box.New(Orientation.Horizontal, 15);
+									Label button_label = Label.New(output);
+									button.SetHexpand(true);
+									button.SetCssClasses(["flat"]);
+									button_label.SetCssClasses(["heading"]);
+									button_box.Append(Image.NewFromIconName("wolframalpha-symbolic"));
+									button_box.Append(button_label);
+									button.SetChild(button_box);
+									button.OnClicked += (_, _) =>
+									{
+										url_entry.SetText($"https://www.wolframalpha.com/input?i={Uri.EscapeDataString(textNow)}");
+										url_bar_button!.Activate();
+									};
+									box.Append(button);
+									box.Append(Separator.New(Orientation.Horizontal));
+								}
+							}
+
 							foreach (Autocompletion phrase in ac)
 							{
 								Button button = Button.New();

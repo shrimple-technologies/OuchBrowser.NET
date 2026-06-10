@@ -41,6 +41,7 @@
 		<file preprocess="xml-stripblanks" alias="small-rectangle-in-focus-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/small-rectangle-in-focus-symbolic.svg</file>
 		<file preprocess="xml-stripblanks" alias="sliders-horizontal-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/sliders-horizontal-symbolic.svg</file>
 		<file preprocess="xml-stripblanks" alias="web-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/web-symbolic.svg</file>
+		<file preprocess="xml-stripblanks" alias="wolframalpha-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/wolframalpha-symbolic.svg</file>
 		<file preprocess="xml-stripblanks" alias="zoom-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/zoom-symbolic.svg</file>
 	</gresource>
 </gresources>

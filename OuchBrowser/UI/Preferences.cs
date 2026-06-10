@@ -16,6 +16,8 @@ internal class Preferences : Adw.Dialog
 	[Connect] private readonly ComboRow? setting_zoom;
 	[Connect] private readonly ComboRow? setting_peek_trigger;
 	[Connect] private readonly ButtonRow? setting_clear_bang_rankings;
+	[Connect] private readonly ExpanderRow? setting_wolfram_answers;
+	[Connect] private readonly PasswordEntryRow? setting_wolfram_answers_key;
 #pragma warning restore CS0649
 
 	public Preferences(Window window) : base()
@@ -132,6 +134,8 @@ internal class Preferences : Adw.Dialog
 				}
 				if ((int)settings.GetValue("bang-rankings").NChildren() == 0) setting_clear_bang_rankings!.SetSensitive(false);
 				else setting_clear_bang_rankings!.SetSensitive(true);
+				setting_wolfram_answers!.SetEnableExpansion(settings.GetBoolean("wolframalpha-enabled"));
+				setting_wolfram_answers_key!.SetText(settings.GetString("wolframalpha-app-id"));
 			}
 		};
 
@@ -262,6 +266,16 @@ internal class Preferences : Adw.Dialog
 			settings.Reset("bang-rankings");
 			setting_clear_bang_rankings.SetSensitive(false);
 			toast_overlay!.AddToast(Toast.New(__("Cleared All Ranks")));
+		};
+
+		setting_wolfram_answers!.OnNotify += (_, args) =>
+		{
+			if (args.Pspec.GetName() == "enable-expansion") settings.SetBoolean("wolframalpha-enabled", setting_wolfram_answers.GetEnableExpansion());
+		};
+
+		setting_wolfram_answers_key!.OnApply += (_, _) =>
+		{
+			settings.SetString("wolframalpha-app-id", setting_wolfram_answers_key.GetText());
 		};
 	}
 

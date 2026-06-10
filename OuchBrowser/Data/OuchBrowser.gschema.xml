@@ -125,5 +125,23 @@
 				This value is the rankings of !bangs over time from use.
 			</description>
 		</key>
+
+		<key type="b" name="wolframalpha-enabled">
+			<default>false</default>
+			<summary>Wolfram|Alpha Smart Answers Enabled?</summary>
+			<description>
+				This value is whether smart answers from Wolfram|Alpha
+				is enabled or not.
+			</description>
+		</key>
+		
+		<key type="s" name="wolframalpha-app-id">
+			<default>""</default>
+			<summary>Wolfram|Alpha App ID</summary>
+			<description>
+				This value is the Wolfram|Alpha App ID used for smart answers.
+				The ID must use the simple API.
+			</description>
+		</key>
 	</schema>
 </schemalist>

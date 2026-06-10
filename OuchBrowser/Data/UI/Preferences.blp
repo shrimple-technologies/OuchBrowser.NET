@@ -72,6 +72,20 @@ Adw.ToastOverlay toast_overlay {
 									icon-name: "exclaimation-symbolic";
 									title: _("Enable !bang Autocomplete");
 								}
+
+								Adw.ExpanderRow setting_wolfram_answers {
+									icon-name: "wolframalpha-symbolic";
+									title: _("Enable Wolfram|Alpha Answers");
+									subtitle: _(
+										"Wolfram|Alpha allows for smarter search autocomplete responses inside of the command palette. Requires an Wolram|Alpha App ID and search autocomplete enabled."
+									);
+									show-enable-switch: true;
+
+									Adw.PasswordEntryRow setting_wolfram_answers_key {
+										title: _("App ID");
+										show-apply-button: true;
+									}
+								}
 							}
 
 							Adw.PreferencesGroup {
