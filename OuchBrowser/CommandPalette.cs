@@ -262,68 +262,87 @@ internal partial class Window
 							}
 
 							Autocompletion[] ac = await Autocomplete.CompletionResults(textNow);
+							Box box = Box.New(Orientation.Vertical, 10);
+							box.SetMarginTop(10);
+							box.SetMarginBottom(10);
 							if (ac.Length == 0)
 							{
 								url_autocomplete!.SetRevealChild(false);
 								url_stack!.SetVisibleChildName("search");
-								return;
 							}
-
-							Box box = Box.New(Orientation.Vertical, 10);
-							box.SetMarginTop(10);
-							box.SetMarginBottom(10);
-
-							if (settings.GetBoolean("wolframalpha-enabled"))
+							else
 							{
-								string? output = await WolframAlpha.Query(textNow);
-
-								if (output != null)
+								foreach (Autocompletion phrase in ac)
 								{
 									Button button = Button.New();
 									Box button_box = Box.New(Orientation.Horizontal, 15);
-									Label button_label = Label.New(output);
+									Label button_label = Label.New(phrase.phrase);
 									button.SetMarginStart(10);
 									button.SetMarginEnd(10);
 									button.SetHexpand(true);
 									button.SetCssClasses(["flat"]);
-									button_label.SetCssClasses(["heading"]);
-									button_box.Append(Image.NewFromIconName("wolframalpha-symbolic"));
+									button_label.SetCssClasses(["body"]);
+									button_label.SetEllipsize(Pango.EllipsizeMode.End);
+									button_box.Append(Image.NewFromIconName("search-symbolic"));
 									button_box.Append(button_label);
 									button.SetChild(button_box);
 									button.OnClicked += (_, _) =>
 									{
-										url_entry.SetText($"https://www.wolframalpha.com/input?i={Uri.EscapeDataString(textNow)}");
+										url_entry.SetText(phrase.phrase);
 										url_bar_button!.Activate();
 									};
 									box.Append(button);
-									box.Append(Separator.New(Orientation.Horizontal));
 								}
+
+								url_autocomplete!.SetChild(box);
+								url_autocomplete!.SetRevealChild(true);
+								url_stack!.SetVisibleChildName("search");
 							}
 
-							foreach (Autocompletion phrase in ac)
+							if (settings.GetBoolean("wolframalpha-enabled"))
 							{
+								url_autocomplete!.SetRevealChild(true);
+								if (ac.Length == 0)
+								{
+									box = Box.New(Orientation.Vertical, 10); // there can be left over autocompletions, so replace with a new box
+									box.SetMarginTop(10);
+									box.SetMarginBottom(10);
+								}
 								Button button = Button.New();
 								Box button_box = Box.New(Orientation.Horizontal, 15);
-								Label button_label = Label.New(phrase.phrase);
+								Label button_label = Label.New(__("Searching…"));
+								button.SetSensitive(false);
 								button.SetMarginStart(10);
 								button.SetMarginEnd(10);
 								button.SetHexpand(true);
 								button.SetCssClasses(["flat"]);
-								button_label.SetCssClasses(["body"]);
-								button_box.Append(Image.NewFromIconName("search-symbolic"));
+								button_label.SetEllipsize(Pango.EllipsizeMode.End);
+								button_label.SetCssClasses(["title-4"]);
+								button_box.Append(Image.NewFromIconName("wolframalpha-symbolic"));
 								button_box.Append(button_label);
-								button.SetChild(button_box);
 								button.OnClicked += (_, _) =>
 								{
-									url_entry.SetText(phrase.phrase);
+									url_entry.SetText($"https://www.wolframalpha.com/input?i={Uri.EscapeDataString(textNow)}");
 									url_bar_button!.Activate();
 								};
-								box.Append(button);
-							}
+								button.SetChild(button_box);
+								if (ac.Length != 0) box.Prepend(Separator.New(Orientation.Horizontal)); // do not prepend
+								box.Prepend(button);
 
-							url_autocomplete!.SetChild(box);
-							url_autocomplete!.SetRevealChild(true);
-							url_stack!.SetVisibleChildName("search");
+								string? output = await WolframAlpha.Query(textNow);
+
+								if (output != null)
+								{
+									button_label.SetLabel(output);
+									button.SetSensitive(true);
+								}
+								else
+								{
+									button_label.SetLabel(__("No response"));
+								}
+
+								url_autocomplete!.SetChild(box);
+							}
 						}
 						catch (TaskCanceledException) { }
 						finally
