@@ -81,6 +81,13 @@ Adw.ToastOverlay toast_overlay {
 									);
 									show-enable-switch: true;
 
+									Adw.ActionRow {
+										icon-name: "handshake-symbolic";
+										subtitle: _(
+											"Wolfram|Alpha can utilize certain details about your device, such as your IP address to determine your approximate geographic location to provide answers based on your region."
+										);
+									}
+
 									Adw.PasswordEntryRow setting_wolfram_answers_key {
 										title: _("App ID");
 										show-apply-button: true;
