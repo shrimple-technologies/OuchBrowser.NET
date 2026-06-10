@@ -92,6 +92,20 @@ Adw.ToastOverlay toast_overlay {
 										title: _("App ID");
 										show-apply-button: true;
 									}
+
+									Adw.ComboRow setting_wolfram_answers_unit {
+										icon-name: "distance-symbolic";
+										title: _("Units");
+										subtitle: _("The unit to be used when calculating length or distance.");
+
+										model: StringList {
+											strings [
+												_("Auto"),
+												_("Metric"),
+												_("Imperial"),
+											]
+										};
+									}
 								}
 							}
 

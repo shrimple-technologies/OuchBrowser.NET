@@ -5,6 +5,12 @@
 		<value nick="ctrl" value="65507" />
 		<value nick="alt" value="65513" />
 	</enum>
+
+	<enum id="page.codeberg.shrimple.OuchBrowser.WOLFRAMALPHA_UNIT">
+		<value nick="auto" value="0" />
+		<value nick="metric" value="1" />
+		<value nick="imperial" value="2" />
+	</enum>
 		
 	<schema
 		id="page.codeberg.shrimple.OuchBrowser"
@@ -141,6 +147,15 @@
 			<description>
 				This value is the Wolfram|Alpha App ID used for smart answers.
 				The ID must use the simple API.
+			</description>
+		</key>
+
+		<key enum="page.codeberg.shrimple.OuchBrowser.WOLFRAMALPHA_UNIT" name="wolframalpha-unit">
+			<default>"auto"</default>
+			<summary>Wolfram|Alpha App ID</summary>
+			<description>
+				This value is the length and distance system used for
+				Wolfram|Alpha answers.
 			</description>
 		</key>
 	</schema>

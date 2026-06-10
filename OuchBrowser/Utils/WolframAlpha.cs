@@ -11,13 +11,20 @@ internal class WolframAlpha
 		HttpResponseMessage res;
 		try
 		{
-			res = await http.GetAsync($"https://api.wolframalpha.com/v1/result?appid={settings.GetString("wolframalpha-app-id")}&timeout=1&i={Uri.EscapeDataString(text)}");
+			string unit = settings.GetEnum("wolframalpha-unit") switch
+			{
+				1 => "&units=metric",
+				2 => "&units=imperial",
+				_ => ""
+			};
+
+			res = await http.GetAsync($"https://api.wolframalpha.com/v1/result?appid={settings.GetString("wolframalpha-app-id")}&timeout=1&i={Uri.EscapeDataString(text)}{unit}");
 		}
 		catch (HttpRequestException)
 		{
 			return null;
 		}
-		
+
 		string output = await res.Content.ReadAsStringAsync()!;
 		if (
 			output == "\"No short answer available\""
