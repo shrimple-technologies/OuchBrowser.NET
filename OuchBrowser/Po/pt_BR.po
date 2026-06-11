@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-06-10 02:33-0400\n"
+"POT-Creation-Date: 2026-06-10 14:56-0400\n"
 "PO-Revision-Date: 2026-06-01 19:01+0000\n"
 "Last-Translator: Wiliam <wilian4512@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/ouch/"
@@ -30,16 +30,16 @@ msgid "Searching…"
 msgstr "Novo Mecanismo de Busca…"
 
 #: OuchBrowser/CommandPalette.cs:327
-msgid "No response"
+msgid "No answer"
 msgstr ""
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:29
-#: OuchBrowser/Data/UI/Preferences.blp:176
-#: OuchBrowser/Data/UI/Preferences.blp:186
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:35
+#: OuchBrowser/Data/UI/Preferences.blp:197
+#: OuchBrowser/Data/UI/Preferences.blp:207
 msgid "Search Engine"
 msgstr "Mecanismo de Busca"
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:30
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:36
 msgid ""
 "This value is the search engine that will be used when the user enters a "
 "search query into the command palette."
@@ -47,12 +47,12 @@ msgstr ""
 "Esse valor define qual mecanismo de busca será utilizado quando o usuário "
 "fizer uma consulta no painel de comandos."
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:39
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:45
 #: OuchBrowser/Data/UI/Shortcuts.blp:83
 msgid "Zoom"
 msgstr "Zoom"
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:40
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:46
 msgid ""
 "This value is the zoom level of the browser. Please do not modify this value "
 "yourself as this can create unintended side effects."
@@ -60,20 +60,20 @@ msgstr ""
 "Esse valor é o nível de zoom do navegador. Por favor, não modifique esse "
 "valor manualmente, pois isso pode gerar efeitos colaterais indesejados."
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:49
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:55
 msgid "Maximized?"
 msgstr "Maximizado?"
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:50
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:56
 msgid "This value is whether the window is maximized or not."
 msgstr "Esse valor indica se a janela está maximizada ou não."
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:61
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:67
 #: OuchBrowser/Data/UI/RoomsOverview.blp:6
 msgid "Rooms"
 msgstr "Salas"
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:62
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:68
 msgid ""
 "This value stores the rooms data. Each entry is a tuple: (room name, room "
 "icon, pinned urls)."
@@ -81,57 +81,57 @@ msgstr ""
 "Este valor armazena os dados das salas. Cada entrada é uma tupla: (nome da "
 "sala, ícone da sala, urls fixadas)."
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:71
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:77
 msgid "Restored Tabs"
 msgstr "Abas Restauradas"
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:72
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:78
 msgid "This value stores the tabs to restore."
 msgstr "Este valor armazena as abas a serem restauradas."
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:79
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:85
 msgid "Search Autocomplete enabled?"
 msgstr "Preenchimento automático da pesquisa habilitado?"
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:80
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:86
 msgid "This value is whether search autocomplete is enabled or not."
 msgstr ""
 "Este valor indica se o preenchimento automático da pesquisa está habilitado "
 "ou não."
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:87
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:93
 msgid "!bang Autocomplete enabled?"
 msgstr "Preenchimento automático do !bang habilitado?"
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:88
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:94
 msgid "This value is whether !bang autocomplete is enabled or not."
 msgstr ""
 "Este valor indica se o preenchimento automático do !bang está habilitado ou "
 "não."
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:95
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:101
 msgid "Developer Tools enabled?"
 msgstr "Ferramentas de desenvolvedor habilitadas?"
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:96
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:102
 msgid "This value is whether developer tools is enabled or not."
 msgstr ""
 "Este valor indica se as ferramentas de desenvolvedor estão habilitadas ou "
 "não."
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:103
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:109
 msgid "Initial Window Size"
 msgstr "Tamanho Inicial da Janela"
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:104
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:110
 msgid "This value is the main window’s size."
 msgstr "Este valor define o tamanho da janela principal."
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:111
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:117
 msgid "Peek Tab Trigger"
 msgstr "Atalho de Visualização Rápida"
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:112
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:118
 msgid ""
 "This value is the trigger for opening a peek tab. For example, holding down "
 "the Shift key and clicking on a hyperlink will result in that website being "
@@ -141,19 +141,19 @@ msgstr ""
 "exemplo, segurar a tecla Shift e clicar em um link fará com que o site seja "
 "carregado em uma aba de visualização rápida, separada da janela principal."
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:123
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:129
 msgid "!bang Usage Rankings"
 msgstr ""
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:124
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:130
 msgid "This value is the rankings of !bangs over time from use."
 msgstr ""
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:131
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:137
 msgid "Wolfram|Alpha Smart Answers Enabled?"
 msgstr ""
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:132
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:138
 #, fuzzy
 #| msgid "This value is whether search autocomplete is enabled or not."
 msgid ""
@@ -162,15 +162,25 @@ msgstr ""
 "Este valor indica se o preenchimento automático da pesquisa está habilitado "
 "ou não."
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:140
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:146
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:155
 msgid "Wolfram|Alpha App ID"
 msgstr ""
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:141
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:147
 msgid ""
 "This value is the Wolfram|Alpha App ID used for smart answers. The ID must "
 "use the simple API."
 msgstr ""
+
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:156
+#, fuzzy
+#| msgid "This value is whether search autocomplete is enabled or not."
+msgid ""
+"This value is the length and distance system used for Wolfram|Alpha answers."
+msgstr ""
+"Este valor indica se o preenchimento automático da pesquisa está habilitado "
+"ou não."
 
 #: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:6
 #: OuchBrowser/Data/UI/Window.blp:15 OuchBrowser/Data/UI/Window.blp:249
@@ -277,15 +287,42 @@ msgid ""
 "enabled."
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:85
-msgid "App ID"
+#: OuchBrowser/Data/UI/Preferences.blp:87
+msgid ""
+"Wolfram|Alpha can utilize certain details about your device, such as your IP "
+"address to determine your approximate geographic location to provide answers "
+"based on your region."
 msgstr ""
 
 #: OuchBrowser/Data/UI/Preferences.blp:92
+msgid "App ID"
+msgstr ""
+
+#: OuchBrowser/Data/UI/Preferences.blp:98
+msgid "Units"
+msgstr ""
+
+#: OuchBrowser/Data/UI/Preferences.blp:99
+msgid "The unit to be used when calculating length or distance."
+msgstr ""
+
+#: OuchBrowser/Data/UI/Preferences.blp:103
+msgid "Auto"
+msgstr ""
+
+#: OuchBrowser/Data/UI/Preferences.blp:104
+msgid "Metric"
+msgstr ""
+
+#: OuchBrowser/Data/UI/Preferences.blp:105
+msgid "Imperial"
+msgstr ""
+
+#: OuchBrowser/Data/UI/Preferences.blp:113
 msgid "Peek Tabs"
 msgstr "Abas de Visualização Rápida"
 
-#: OuchBrowser/Data/UI/Preferences.blp:94
+#: OuchBrowser/Data/UI/Preferences.blp:115
 msgid ""
 "Peek tabs are temporary tabs that can be triggered by holding down a "
 "specific key and clicking on a link. These can also be expanded into full "
@@ -295,11 +332,11 @@ msgstr ""
 "ao segurar uma tecla específica e clicar em um link. Elas também podem ser "
 "expandidas para a visualização completa."
 
-#: OuchBrowser/Data/UI/Preferences.blp:99
+#: OuchBrowser/Data/UI/Preferences.blp:120
 msgid "Peek Trigger"
 msgstr "Ativador da Visualização Rápida"
 
-#: OuchBrowser/Data/UI/Preferences.blp:101
+#: OuchBrowser/Data/UI/Preferences.blp:122
 msgid ""
 "This will be the key that can be used in addition to a click to open a peek "
 "tab."
@@ -307,74 +344,74 @@ msgstr ""
 "Esta será a tecla usada em combinação com o clique para abrir uma aba de "
 "visualização rápida."
 
-#: OuchBrowser/Data/UI/Preferences.blp:115
+#: OuchBrowser/Data/UI/Preferences.blp:136
 msgid "Developer"
 msgstr "Desenvolvedor"
 
-#: OuchBrowser/Data/UI/Preferences.blp:119
+#: OuchBrowser/Data/UI/Preferences.blp:140
 msgid "Enable Developer Tools"
 msgstr "Habilitar Ferramentas de Desenvolvedor"
 
-#: OuchBrowser/Data/UI/Preferences.blp:120
+#: OuchBrowser/Data/UI/Preferences.blp:141
 msgid "This will allow access to the Web Inspector"
 msgstr "Isso habilitará o acesso ao Inspetor da Web"
 
-#: OuchBrowser/Data/UI/Preferences.blp:129
+#: OuchBrowser/Data/UI/Preferences.blp:150
 msgid "Accessibility"
 msgstr "Acessibilidade"
 
-#: OuchBrowser/Data/UI/Preferences.blp:135
+#: OuchBrowser/Data/UI/Preferences.blp:156
 msgid "Content"
 msgstr "Conteúdo"
 
-#: OuchBrowser/Data/UI/Preferences.blp:139
+#: OuchBrowser/Data/UI/Preferences.blp:160
 msgid "Page Zoom"
 msgstr "Zoom da Página"
 
-#: OuchBrowser/Data/UI/Preferences.blp:166
+#: OuchBrowser/Data/UI/Preferences.blp:187
 msgid "Zoom Text"
 msgstr "Ampliar Texto"
 
-#: OuchBrowser/Data/UI/Preferences.blp:167
+#: OuchBrowser/Data/UI/Preferences.blp:188
 msgid "Zooms text and images instead of the view"
 msgstr "Amplia texto e imagens em vez da página inteira"
 
-#: OuchBrowser/Data/UI/Preferences.blp:180
+#: OuchBrowser/Data/UI/Preferences.blp:201
 msgid "See !bangs preferences for more options"
 msgstr "Veja as preferências de !bangs para mais opções"
 
-#: OuchBrowser/Data/UI/Preferences.blp:200
+#: OuchBrowser/Data/UI/Preferences.blp:221
 msgid "Custom Search Engines"
 msgstr "Mecanismos de busca personalizados"
 
-#: OuchBrowser/Data/UI/Preferences.blp:204
+#: OuchBrowser/Data/UI/Preferences.blp:225
 msgid "New Search Engine…"
 msgstr "Novo Mecanismo de Busca…"
 
-#: OuchBrowser/Data/UI/Preferences.blp:213 OuchBrowser/Data/UI/Window.blp:1094
+#: OuchBrowser/Data/UI/Preferences.blp:234 OuchBrowser/Data/UI/Window.blp:1094
 msgid "!bangs"
 msgstr "!bangs"
 
-#: OuchBrowser/Data/UI/Preferences.blp:217
+#: OuchBrowser/Data/UI/Preferences.blp:238
 msgid "!bangs provided by Kagi"
 msgstr "!bangs fornecidos pelo Kagi"
 
-#: OuchBrowser/Data/UI/Preferences.blp:221
+#: OuchBrowser/Data/UI/Preferences.blp:242
 msgid "Custom Bangs"
 msgstr "Bangs Customizados"
 
-#: OuchBrowser/Data/UI/Preferences.blp:225
+#: OuchBrowser/Data/UI/Preferences.blp:246
 msgid "New Bang…"
 msgstr "Novo Bang…"
 
-#: OuchBrowser/Data/UI/Preferences.blp:233
+#: OuchBrowser/Data/UI/Preferences.blp:254
 msgid ""
 "Ouch Browser utilizes a simple ranking system to provide smarter !bang "
 "autocompletion results over time. Requires !bangs autocompletion to be "
 "enabled."
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:239
+#: OuchBrowser/Data/UI/Preferences.blp:260
 #, fuzzy
 #| msgid "Close All Tabs"
 msgid "Clear All Ranks"
@@ -577,7 +614,7 @@ msgstr ""
 "Betty https://bsky.app/profile/did:plc:c5c6etwketgk3q3gkafrgekl, Wiliam: "
 "https://x.com/khotyz"
 
-#: OuchBrowser/UI/Preferences.cs:268
+#: OuchBrowser/UI/Preferences.cs:281
 #, fuzzy
 #| msgid "Close All Tabs"
 msgid "Cleared All Ranks"
