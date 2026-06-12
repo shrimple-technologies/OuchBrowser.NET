@@ -285,55 +285,6 @@ internal partial class Window
 								url_stack!.SetVisibleChildName("search");
 							}
 
-							if (settings.GetBoolean("wolframalpha-enabled"))
-							{
-								url_autocomplete!.SetRevealChild(true);
-								if (ac.Length == 0)
-								{
-									box = Box.New(Orientation.Vertical, 10); // there can be left over autocompletions, so replace with a new box
-									box.SetMarginTop(10);
-									box.SetMarginBottom(10);
-								}
-								Button button = Button.New();
-								Box button_box = Box.New(Orientation.Horizontal, 15);
-								Label button_label = Label.New(__("Searching…"));
-								Image icon = Image.NewFromIconName("wolframalpha-symbolic");
-								button.SetSensitive(false);
-								button.SetMarginStart(10);
-								button.SetMarginEnd(10);
-								button.SetHexpand(true);
-								button.SetCssClasses(["flat"]);
-								button_label.SetWrap(true);
-								button_label.SetLines(2);
-								button_label.SetEllipsize(Pango.EllipsizeMode.End);
-								button_label.SetCssClasses(["title-4"]);
-								icon.SetMarginTop(5);
-								icon.SetValign(Align.Start);
-								button_box.Append(icon);
-								button_box.Append(button_label);
-								button.OnClicked += (_, _) =>
-								{
-									url_entry.SetText($"https://www.wolframalpha.com/input?i={Uri.EscapeDataString(textNow)}");
-									url_bar_button!.Activate();
-								};
-								button.SetChild(button_box);
-								if (ac.Length != 0) box.Prepend(Separator.New(Orientation.Horizontal)); // do not prepend
-								box.Prepend(button);
-
-								string? output = await WolframAlpha.Query(textNow);
-
-								if (output != null)
-								{
-									button_label.SetLabel(output);
-									button.SetSensitive(true);
-								}
-								else
-								{
-									button_label.SetLabel(__("No answer"));
-								}
-
-								url_autocomplete!.SetChild(box);
-							}
 						}
 						catch (TaskCanceledException) { }
 						finally

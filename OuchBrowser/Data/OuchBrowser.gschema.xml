@@ -5,12 +5,6 @@
 		<value nick="ctrl" value="65507" />
 		<value nick="alt" value="65513" />
 	</enum>
-
-	<enum id="page.codeberg.shrimple.OuchBrowser.WOLFRAMALPHA_UNIT">
-		<value nick="auto" value="0" />
-		<value nick="metric" value="1" />
-		<value nick="imperial" value="2" />
-	</enum>
 		
 	<schema
 		id="page.codeberg.shrimple.OuchBrowser"
@@ -129,33 +123,6 @@
 			<summary>!bang Usage Rankings</summary>
 			<description>
 				This value is the rankings of !bangs over time from use.
-			</description>
-		</key>
-
-		<key type="b" name="wolframalpha-enabled">
-			<default>false</default>
-			<summary>Wolfram|Alpha Smart Answers Enabled?</summary>
-			<description>
-				This value is whether smart answers from Wolfram|Alpha
-				is enabled or not.
-			</description>
-		</key>
-		
-		<key type="s" name="wolframalpha-app-id">
-			<default>""</default>
-			<summary>Wolfram|Alpha App ID</summary>
-			<description>
-				This value is the Wolfram|Alpha App ID used for smart answers.
-				The ID must use the simple API.
-			</description>
-		</key>
-
-		<key enum="page.codeberg.shrimple.OuchBrowser.WOLFRAMALPHA_UNIT" name="wolframalpha-unit">
-			<default>"auto"</default>
-			<summary>Wolfram|Alpha App ID</summary>
-			<description>
-				This value is the length and distance system used for
-				Wolfram|Alpha answers.
 			</description>
 		</key>
 	</schema>

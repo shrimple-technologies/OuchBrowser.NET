@@ -72,41 +72,6 @@ Adw.ToastOverlay toast_overlay {
 									icon-name: "exclaimation-symbolic";
 									title: _("Enable !bang Autocomplete");
 								}
-
-								Adw.ExpanderRow setting_wolfram_answers {
-									icon-name: "wolframalpha-symbolic";
-									title: _("Enable Wolfram|Alpha Answers");
-									subtitle: _(
-										"Wolfram|Alpha allows for smarter search autocomplete responses inside of the command palette. Requires an Wolram|Alpha App ID and search autocomplete enabled."
-									);
-									show-enable-switch: true;
-
-									Adw.ActionRow {
-										icon-name: "handshake-symbolic";
-										subtitle: _(
-											"Wolfram|Alpha can utilize certain details about your device, such as your IP address to determine your approximate geographic location to provide answers based on your region."
-										);
-									}
-
-									Adw.PasswordEntryRow setting_wolfram_answers_key {
-										title: _("App ID");
-										show-apply-button: true;
-									}
-
-									Adw.ComboRow setting_wolfram_answers_unit {
-										icon-name: "distance-symbolic";
-										title: _("Units");
-										subtitle: _("The unit to be used when calculating length or distance.");
-
-										model: StringList {
-											strings [
-												_("Auto"),
-												_("Metric"),
-												_("Imperial"),
-											]
-										};
-									}
-								}
 							}
 
 							Adw.PreferencesGroup {

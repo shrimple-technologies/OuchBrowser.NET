@@ -16,9 +16,6 @@ internal class Preferences : Adw.Dialog
 	[Connect] private readonly ComboRow? setting_zoom;
 	[Connect] private readonly ComboRow? setting_peek_trigger;
 	[Connect] private readonly ButtonRow? setting_clear_bang_rankings;
-	[Connect] private readonly ExpanderRow? setting_wolfram_answers;
-	[Connect] private readonly PasswordEntryRow? setting_wolfram_answers_key;
-	[Connect] private readonly ComboRow? setting_wolfram_answers_unit;
 #pragma warning restore CS0649
 
 	public Preferences(Window window) : base()
@@ -135,20 +132,6 @@ internal class Preferences : Adw.Dialog
 				}
 				if ((int)settings.GetValue("bang-rankings").NChildren() == 0) setting_clear_bang_rankings!.SetSensitive(false);
 				else setting_clear_bang_rankings!.SetSensitive(true);
-				setting_wolfram_answers!.SetEnableExpansion(settings.GetBoolean("wolframalpha-enabled"));
-				setting_wolfram_answers_key!.SetText(settings.GetString("wolframalpha-app-id"));
-				switch (settings.GetString("wolframalpha-unit"))
-				{
-					case "0":
-						setting_wolfram_answers_unit!.SetSelected(0);
-						break;
-					case "1":
-						setting_wolfram_answers_unit!.SetSelected(1);
-						break;
-					case "2":
-						setting_wolfram_answers_unit!.SetSelected(2);
-						break;
-				}
 			}
 		};
 
@@ -279,35 +262,6 @@ internal class Preferences : Adw.Dialog
 			settings.Reset("bang-rankings");
 			setting_clear_bang_rankings.SetSensitive(false);
 			toast_overlay!.AddToast(Toast.New(__("Cleared All Ranks")));
-		};
-
-		setting_wolfram_answers!.OnNotify += (_, args) =>
-		{
-			if (args.Pspec.GetName() == "enable-expansion") settings.SetBoolean("wolframalpha-enabled", setting_wolfram_answers.GetEnableExpansion());
-		};
-
-		setting_wolfram_answers_key!.OnApply += (_, _) =>
-		{
-			settings.SetString("wolframalpha-app-id", setting_wolfram_answers_key.GetText());
-		};
-
-		setting_wolfram_answers_unit!.OnNotify += (_, args) =>
-		{
-			if (args.Pspec.GetName() == "selected")
-			{
-				switch (setting_wolfram_answers_unit!.GetSelected())
-				{
-					case 0:
-						settings.SetEnum("wolframalpha-unit", 0);
-						break;
-					case 1:
-						settings.SetEnum("wolframalpha-unit", 1);
-						break;
-					case 2:
-						settings.SetEnum("wolframalpha-unit", 2);
-						break;
-				}
-			}
 		};
 	}
 
