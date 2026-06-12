@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
 "POT-Creation-Date: 2026-06-10 14:56-0400\n"
-"PO-Revision-Date: 2026-06-11 10:01+0000\n"
+"PO-Revision-Date: 2026-06-13 05:01+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/ouch/net/et/>\n"
 "Language: et\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.6\n"
+"X-Generator: Weblate 2026.7.dev0\n"
 
 #: OuchBrowser/CommandPalette.cs:52
 #, csharp-format
@@ -25,7 +25,7 @@ msgstr "Otsin…"
 
 #: OuchBrowser/CommandPalette.cs:327
 msgid "No answer"
-msgstr ""
+msgstr "Vastust ei leidu"
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:35
 #: OuchBrowser/Data/UI/Preferences.blp:197
@@ -144,34 +144,33 @@ msgstr "See väärtus kirjeldab !bang-käskude kasutust läbi aegade."
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:137
 msgid "Wolfram|Alpha Smart Answers Enabled?"
-msgstr ""
+msgstr "Kas Wolfram|Alpha Nutivastused on lülitatud sisse?"
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:138
-#, fuzzy
-#| msgid "This value is whether search autocomplete is enabled or not."
 msgid ""
 "This value is whether smart answers from Wolfram|Alpha is enabled or not."
 msgstr ""
-"See väärtus määratleb, kas otsimise automaattäide on kasutusel või mitte."
+"See väärtus määratleb, kas Wolfram|Alpha nutivastused on kasutusel või mitte."
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:146
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:155
 msgid "Wolfram|Alpha App ID"
-msgstr ""
+msgstr "Wolfram|Alpha rakenduse tunnus"
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:147
 msgid ""
 "This value is the Wolfram|Alpha App ID used for smart answers. The ID must "
 "use the simple API."
 msgstr ""
+"See on Wolfram|Alpha rakenduse tunnus, mida kasutatakse nutivastuste jaoks. "
+"Rakendus peab kasutama lihtsat API-t."
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:156
-#, fuzzy
-#| msgid "This value is whether search autocomplete is enabled or not."
 msgid ""
 "This value is the length and distance system used for Wolfram|Alpha answers."
 msgstr ""
-"See väärtus määratleb, kas otsimise automaattäide on kasutusel või mitte."
+"See väärtus määratleb Wolfram|Alpha vastuste jaoks kasutatava pikkuse ja "
+"vahemaa süsteemi."
 
 #: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:6
 #: OuchBrowser/Data/UI/Window.blp:15 OuchBrowser/Data/UI/Window.blp:249
@@ -269,7 +268,7 @@ msgstr "Kasuta !bang automaattäidet"
 
 #: OuchBrowser/Data/UI/Preferences.blp:78
 msgid "Enable Wolfram|Alpha Answers"
-msgstr ""
+msgstr "Lülita Wolfram|Alpha vastsused sisse"
 
 #: OuchBrowser/Data/UI/Preferences.blp:80
 msgid ""
@@ -277,6 +276,8 @@ msgid ""
 "command palette. Requires an Wolram|Alpha App ID and search autocomplete "
 "enabled."
 msgstr ""
+"Wolfram|Alpha lubab käskudes kasutada nutikamat automaattäidet. Eeldab "
+"Wolfram|Alpha rakenduse tunnuse olemasolu ja automaattäite sisselülitamist."
 
 #: OuchBrowser/Data/UI/Preferences.blp:87
 msgid ""
@@ -284,30 +285,33 @@ msgid ""
 "address to determine your approximate geographic location to provide answers "
 "based on your region."
 msgstr ""
+"Wolfram|Alpha võib täpsemate ja piirkonnast sõltuvate vastuste andmiseks "
+"tuvastada sinu arvuti või seadme andmeid, sealhulgas näiteks IP-aadressi "
+"umbkaudse geograafilise asukoha leidmiseks."
 
 #: OuchBrowser/Data/UI/Preferences.blp:92
 msgid "App ID"
-msgstr ""
+msgstr "Rakenduse tunnus"
 
 #: OuchBrowser/Data/UI/Preferences.blp:98
 msgid "Units"
-msgstr ""
+msgstr "Ühikud"
 
 #: OuchBrowser/Data/UI/Preferences.blp:99
 msgid "The unit to be used when calculating length or distance."
-msgstr ""
+msgstr "Kasutusel mõõtühikusüsteem."
 
 #: OuchBrowser/Data/UI/Preferences.blp:103
 msgid "Auto"
-msgstr ""
+msgstr "Automaatne"
 
 #: OuchBrowser/Data/UI/Preferences.blp:104
 msgid "Metric"
-msgstr ""
+msgstr "Meetermõõdustik"
 
 #: OuchBrowser/Data/UI/Preferences.blp:105
 msgid "Imperial"
-msgstr ""
+msgstr "Inglise mõõdustik"
 
 #: OuchBrowser/Data/UI/Preferences.blp:113
 msgid "Peek Tabs"
@@ -395,17 +399,14 @@ msgid "New Bang…"
 msgstr "Uus bang-otsing…"
 
 #: OuchBrowser/Data/UI/Preferences.blp:254
-#, fuzzy
-#| msgid ""
-#| "Ouch Browser utilizes a simple ranking system to provide smarter !bang "
-#| "autocompletion results over time."
 msgid ""
 "Ouch Browser utilizes a simple ranking system to provide smarter !bang "
 "autocompletion results over time. Requires !bangs autocompletion to be "
 "enabled."
 msgstr ""
 "Ouch Browser kasutab lihtsat statistilist arvutust, mille alusel kuvada "
-"pikema aja jooksul !bang-käskude kasutust nutikamal viisil."
+"pikema aja jooksul !bang-käskude kasutust nutikamal viisil. Eeldab, et !bang-"
+"käskude automaattäide on lülitatud sisse."
 
 #: OuchBrowser/Data/UI/Preferences.blp:260
 msgid "Clear All Ranks"
@@ -608,10 +609,8 @@ msgid "translator-credits"
 msgstr "Priit Jõerüüt"
 
 #: OuchBrowser/UI/Preferences.cs:281
-#, fuzzy
-#| msgid "Clear All Ranks"
 msgid "Cleared All Ranks"
-msgstr "Kustuta kogu kasutuse statistika"
+msgstr "Kogu kasutuse statistika on kustutatud"
 
 #: OuchBrowser/UI/RoomsOverview.cs:84
 #, csharp-format
