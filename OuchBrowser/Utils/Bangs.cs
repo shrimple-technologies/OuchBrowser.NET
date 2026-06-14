@@ -25,7 +25,6 @@ internal class Bangs
 		EmbeddedResource.Load("Bangs.Kagi.json", out string bangsKagiRaw);
 		List<Bang> bangsKagi = JsonSerializer.Deserialize<List<Bang>>(bangsKagiRaw, options)!;
 		List<Bang> bangsList = JsonSerializer.Deserialize<List<Bang>>(bangsRaw, options)!;
-		Dictionary<string, CustomBang> customBangs = GetCustomBangs();
 		bangsList.AddRange(bangsKagi);
 		bangsList = bangsList.Where(n => n.Category != "Region search").ToList();
 
@@ -37,16 +36,12 @@ internal class Bangs
 				foreach (string trigger in bang.AdditionalTriggers) bangs.Add(trigger, bang);
 		}
 
-		foreach (KeyValuePair<string, CustomBang> bang in customBangs)
+		settings.OnChanged((_, args) =>
 		{
-			if (!bangs.ContainsKey(bang.Key)) bangs.Add(bang.Key, new Bang
-			{
-				WebsiteName = bang.Value.WebsiteName,
-				Trigger = bang.Key,
-				Domain = new Uri(bang.Value.TemplateUrl).Host,
-				TemplateUrl = bang.Value.TemplateUrl
-			});
-		}
+			if (args.Key == "custom-bangs") OnCustomBangsChanged();
+		});
+
+		OnCustomBangsChanged(); // call this once on startup to initially populate
 	}
 
 	public string ExpandBang(string text)
@@ -79,18 +74,6 @@ internal class Bangs
 	{
 		string bangString = text.Split(' ')[0];
 		string trigger = bangString.StartsWith('!') ? bangString.Substring(1) : bangString;
-		Dictionary<string, CustomBang> customBangs = GetCustomBangs();
-
-		foreach (KeyValuePair<string, CustomBang> bang in customBangs)
-		{
-			if (!bangs.ContainsKey(bang.Key)) bangs.Add(bang.Key, new Bang
-			{
-				WebsiteName = bang.Value.WebsiteName,
-				Trigger = bang.Key,
-				Domain = new Uri(bang.Value.TemplateUrl).Host,
-				TemplateUrl = bang.Value.TemplateUrl
-			});
-		}
 
 		if (trigger == "") return []; // there are OVER 1000 BANGS, without this, the app will crash
 		return bangs
@@ -182,5 +165,21 @@ internal class Bangs
 		}
 
 		return dict;
+	}
+
+	private void OnCustomBangsChanged()
+	{
+		Dictionary<string, CustomBang> customBangs = GetCustomBangs();
+
+		foreach (KeyValuePair<string, CustomBang> bang in customBangs)
+		{
+			if (!bangs.ContainsKey(bang.Key)) bangs.Add(bang.Key, new Bang
+			{
+				WebsiteName = bang.Value.WebsiteName,
+				Trigger = bang.Key,
+				Domain = new Uri(bang.Value.TemplateUrl).Host,
+				TemplateUrl = bang.Value.TemplateUrl
+			});
+		}
 	}
 }

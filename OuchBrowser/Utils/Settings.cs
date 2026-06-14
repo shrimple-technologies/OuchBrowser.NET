@@ -24,4 +24,6 @@ internal static class Settings
 	public static bool SetEnum(string key, int value) => settings.SetEnum(key, value);
 	public static bool SetStrv(string key, string[] value) => settings.SetStrv(key, value);
 	public static bool SetValue(string key, GLib.Variant value) => settings.SetValue(key, value);
+
+	public static void OnChanged(GObject.SignalHandler<Gio.Settings, Gio.Settings.ChangedSignalArgs> handler) => settings.OnChanged += handler;
 }
