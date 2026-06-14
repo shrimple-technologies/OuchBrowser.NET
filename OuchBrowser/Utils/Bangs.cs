@@ -25,6 +25,7 @@ internal class Bangs
 		EmbeddedResource.Load("Bangs.Kagi.json", out string bangsKagiRaw);
 		List<Bang> bangsKagi = JsonSerializer.Deserialize<List<Bang>>(bangsKagiRaw, options)!;
 		List<Bang> bangsList = JsonSerializer.Deserialize<List<Bang>>(bangsRaw, options)!;
+		Dictionary<string, CustomBang> customBangs = GetCustomBangs();
 		bangsList.AddRange(bangsKagi);
 		bangsList = bangsList.Where(n => n.Category != "Region search").ToList();
 
@@ -34,6 +35,17 @@ internal class Bangs
 
 			if (bang.AdditionalTriggers != null)
 				foreach (string trigger in bang.AdditionalTriggers) bangs.Add(trigger, bang);
+		}
+
+		foreach (KeyValuePair<string, CustomBang> bang in customBangs)
+		{
+			if (!bangs.ContainsKey(bang.Key)) bangs.Add(bang.Key, new Bang
+			{
+				WebsiteName = bang.Value.WebsiteName,
+				Trigger = bang.Key,
+				Domain = new Uri(bang.Value.TemplateUrl).Host,
+				TemplateUrl = bang.Value.TemplateUrl
+			});
 		}
 	}
 
@@ -78,7 +90,6 @@ internal class Bangs
 				Domain = new Uri(bang.Value.TemplateUrl).Host,
 				TemplateUrl = bang.Value.TemplateUrl
 			});
-
 		}
 
 		if (trigger == "") return []; // there are OVER 1000 BANGS, without this, the app will crash
@@ -163,7 +174,8 @@ internal class Bangs
 		for (int i = 0; i < (int)customBangs.NChildren(); i++)
 		{
 			currentValue = iter.NextValue()!;
-			dict.Add(currentValue.GetChildValue(0).GetString(out _), new CustomBang {
+			dict.Add(currentValue.GetChildValue(0).GetString(out _), new CustomBang
+			{
 				WebsiteName = currentValue.GetChildValue(1).GetChildValue(0).GetString(out _),
 				TemplateUrl = currentValue.GetChildValue(1).GetChildValue(1).GetString(out _),
 			});
