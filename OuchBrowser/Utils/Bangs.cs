@@ -67,6 +67,19 @@ internal class Bangs
 	{
 		string bangString = text.Split(' ')[0];
 		string trigger = bangString.StartsWith('!') ? bangString.Substring(1) : bangString;
+		Dictionary<string, CustomBang> customBangs = GetCustomBangs();
+
+		foreach (KeyValuePair<string, CustomBang> bang in customBangs)
+		{
+			if (!bangs.ContainsKey(bang.Key)) bangs.Add(bang.Key, new Bang
+			{
+				WebsiteName = bang.Value.WebsiteName,
+				Trigger = bang.Key,
+				Domain = new Uri(bang.Value.TemplateUrl).Host,
+				TemplateUrl = bang.Value.TemplateUrl
+			});
+
+		}
 
 		if (trigger == "") return []; // there are OVER 1000 BANGS, without this, the app will crash
 		return bangs
@@ -138,5 +151,24 @@ internal class Bangs
 		if (found != true) builder.AddValue(Variant.NewDictEntry(Variant.NewString(bang), Variant.NewInt32(1)));
 
 		settings.SetValue("bang-rankings", builder.End());
+	}
+
+	private static Dictionary<string, CustomBang> GetCustomBangs()
+	{
+		Dictionary<string, CustomBang> dict = new();
+		Variant customBangs = settings.GetValue("custom-bangs");
+		VariantIter iter = customBangs.IterNew();
+		Variant currentValue;
+
+		for (int i = 0; i < (int)customBangs.NChildren(); i++)
+		{
+			currentValue = iter.NextValue()!;
+			dict.Add(currentValue.GetChildValue(0).GetString(out _), new CustomBang {
+				WebsiteName = currentValue.GetChildValue(1).GetChildValue(0).GetString(out _),
+				TemplateUrl = currentValue.GetChildValue(1).GetChildValue(1).GetString(out _),
+			});
+		}
+
+		return dict;
 	}
 }

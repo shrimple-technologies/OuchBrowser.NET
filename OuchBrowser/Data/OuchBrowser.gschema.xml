@@ -125,5 +125,13 @@
 				This value is the rankings of !bangs over time from use.
 			</description>
 		</key>
+
+		<key type="a{s(ss)}" name="custom-bangs">
+			<default>{}</default>
+			<summary>Custom !bangs</summary>
+			<description>
+				This value is the stored custom !bangs.
+			</description>
+		</key>
 	</schema>
 </schemalist>

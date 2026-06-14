@@ -40,6 +40,12 @@ public class Bang
 	public bool SkipTests { get; set; } = false;
 }
 
+public class CustomBang
+{
+	public required string WebsiteName { get; set; }
+	public required string TemplateUrl { get; set; }
+}
+
 public enum BangCategory
 {
 	Entertainment,
