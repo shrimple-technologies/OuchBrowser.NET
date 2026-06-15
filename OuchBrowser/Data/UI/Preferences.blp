@@ -201,13 +201,19 @@ Adw.ToastOverlay toast_overlay {
 							description: _("!bangs provided by Kagi");
 							description-centered: true;
 
-							Adw.PreferencesGroup {
-								title: _("Custom Bangs");
+							Adw.PreferencesGroup setting_custom_bangs_list {
+								title: _("Custom !bangs");
 
-								Adw.ButtonRow {
-									start-icon-name: "list-add-symbolic";
-									title: _("New Bang…");
-								}
+								header-suffix: Button setting_custom_bangs_new {
+									styles [
+										"flat",
+									]
+
+									Adw.ButtonContent {
+										icon-name: "list-add-symbolic";
+										label: _("New !bang…");
+									}
+								};
 							}
 
 							Adw.PreferencesGroup {

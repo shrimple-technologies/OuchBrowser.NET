@@ -1,5 +1,7 @@
 using Adw;
 using Gtk;
+using OuchBrowser.Types;
+using OuchBrowser.Utils;
 
 namespace OuchBrowser.UI;
 
@@ -16,6 +18,8 @@ internal class Preferences : Adw.Dialog
 	[Connect] private readonly ComboRow? setting_zoom;
 	[Connect] private readonly ComboRow? setting_peek_trigger;
 	[Connect] private readonly ButtonRow? setting_clear_bang_rankings;
+	[Connect] private readonly Button? setting_custom_bangs_new;
+	[Connect] private readonly PreferencesGroup? setting_custom_bangs_list;
 #pragma warning restore CS0649
 
 	public Preferences(Window window) : base()
@@ -132,6 +136,54 @@ internal class Preferences : Adw.Dialog
 				}
 				if ((int)settings.GetValue("bang-rankings").NChildren() == 0) setting_clear_bang_rankings!.SetSensitive(false);
 				else setting_clear_bang_rankings!.SetSensitive(true);
+				foreach (KeyValuePair<string, CustomBang> bang in Bangs.GetCustomBangs())
+				{
+					ActionRow row = ActionRow.New();
+					row.SetTitle(bang.Value.WebsiteName);
+					row.SetSubtitle($"!{bang.Key}");
+					row.AddSuffix(Image.NewFromIconName("document-edit-symbolic"));
+					row.SetActivatable(true);
+					row.OnActivated += (_, _) =>
+					{
+						Adw.AlertDialog alert = Adw.AlertDialog.New(null, null);
+						alert.AddResponse("cancel", __("Cancel"));
+						alert.AddResponse("edit", __("Edit"));
+						alert.SetResponseAppearance("edit", ResponseAppearance.Suggested);
+						alert.SetDefaultResponse("edit");
+						alert.SetCloseResponse("cancel");
+
+						PreferencesGroup group = PreferencesGroup.New();
+						EntryRow bang_trigger = EntryRow.New();
+						EntryRow bang_name = EntryRow.New();
+						EntryRow bang_url = EntryRow.New();
+						ActionRow bang_instructions = ActionRow.New();
+
+						bang_trigger.SetText(bang.Key);
+						bang_name.SetText(bang.Value.WebsiteName);
+						bang_url.SetText(bang.Value.TemplateUrl);
+
+						bang_trigger.AddPrefix(Image.NewFromIconName("exclaimation-symbolic"));
+						bang_name.AddPrefix(Image.NewFromIconName("document-edit-symbolic"));
+						bang_url.AddPrefix(Image.NewFromIconName("web-symbolic"));
+						bang_instructions.AddPrefix(Image.NewFromIconName("dialog-information-symbolic"));
+						bang_trigger.SetTitle(__("Trigger"));
+						bang_name.SetTitle(__("Name"));
+						bang_url.SetTitle(__("URL"));
+						bang_url.SetInputPurpose(InputPurpose.Url);
+						bang_instructions.SetSubtitle("Enter the desired trigger, name, and URL for your custom !bang. Replace the query in the URL with <tt>{{{s}}}</tt>");
+						bang_instructions.SetUseMarkup(true);
+
+						group.Add(bang_trigger);
+						group.Add(bang_name);
+						group.Add(bang_url);
+						group.Add(bang_instructions);
+						alert.SetExtraChild(group);
+
+						alert.Present(window);
+						bang_trigger.GrabFocus();
+					};
+					setting_custom_bangs_list!.Add(row);
+				}
 			}
 		};
 
@@ -262,6 +314,42 @@ internal class Preferences : Adw.Dialog
 			settings.Reset("bang-rankings");
 			setting_clear_bang_rankings.SetSensitive(false);
 			toast_overlay!.AddToast(Toast.New(__("Cleared All Ranks")));
+		};
+
+		setting_custom_bangs_new!.OnClicked += (_, _) =>
+		{
+			Adw.AlertDialog alert = Adw.AlertDialog.New(null, null);
+			alert.AddResponse("cancel", __("Cancel"));
+			alert.AddResponse("create", __("Create"));
+			alert.SetResponseAppearance("create", ResponseAppearance.Suggested);
+			alert.SetDefaultResponse("create");
+			alert.SetCloseResponse("cancel");
+
+			PreferencesGroup group = PreferencesGroup.New();
+			EntryRow bang_trigger = EntryRow.New();
+			EntryRow bang_name = EntryRow.New();
+			EntryRow bang_url = EntryRow.New();
+			ActionRow bang_instructions = ActionRow.New();
+
+			bang_trigger.AddPrefix(Image.NewFromIconName("exclaimation-symbolic"));
+			bang_name.AddPrefix(Image.NewFromIconName("document-edit-symbolic"));
+			bang_url.AddPrefix(Image.NewFromIconName("web-symbolic"));
+			bang_instructions.AddPrefix(Image.NewFromIconName("dialog-information-symbolic"));
+			bang_trigger.SetTitle(__("Trigger"));
+			bang_name.SetTitle(__("Name"));
+			bang_url.SetTitle(__("URL"));
+			bang_url.SetInputPurpose(InputPurpose.Url);
+			bang_instructions.SetSubtitle("Enter the desired trigger, name, and URL for your custom !bang. Replace the query in the URL with <tt>{{{s}}}</tt>");
+			bang_instructions.SetUseMarkup(true);
+
+			group.Add(bang_trigger);
+			group.Add(bang_name);
+			group.Add(bang_url);
+			group.Add(bang_instructions);
+			alert.SetExtraChild(group);
+
+			alert.Present(window);
+			bang_trigger.GrabFocus();
 		};
 	}
 

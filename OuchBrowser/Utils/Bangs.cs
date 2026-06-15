@@ -147,7 +147,7 @@ internal class Bangs
 		settings.SetValue("bang-rankings", builder.End());
 	}
 
-	private static Dictionary<string, CustomBang> GetCustomBangs()
+	public static Dictionary<string, CustomBang> GetCustomBangs()
 	{
 		Dictionary<string, CustomBang> dict = new();
 		Variant customBangs = settings.GetValue("custom-bangs");
