@@ -2,6 +2,7 @@ using Adw;
 using Gtk;
 using OuchBrowser.UI;
 using OuchBrowser.Utils;
+using OuchBrowser.Types;
 using WebKit;
 using Object = GObject.Object;
 
@@ -37,6 +38,8 @@ internal partial class Window : Adw.ApplicationWindow
 	[Connect] public readonly Label? url_custom_disclosure;
 	[Connect] public readonly Button? url_bar_button;
 	[Connect] public readonly Image? url_favicon;
+	[Connect] public readonly Revealer? card_revealer;
+	[Connect] public readonly ListBox? card_listbox;
 	[Connect] public readonly Revealer? url_disclosure_revealer;
 	[Connect] public readonly Box? url_preview;
 	[Connect] public readonly Label? url_preview_label;
@@ -115,6 +118,7 @@ internal partial class Window : Adw.ApplicationWindow
 		rooms = new RoomsOverview(this);
 		view = new View(tabview!, this);
 		bangs = new Bangs();
+		var cards = new Cards(this);
 
 		SetupActions();
 
