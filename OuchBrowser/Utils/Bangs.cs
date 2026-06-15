@@ -78,7 +78,7 @@ internal class Bangs
 			)
 			.Select(pair => pair.Value)
 			.DistinctBy(bang => bang.Trigger)
-			.OrderByDescending(bang => GetRankings().TryGetValue(bang.Trigger, out int rank) ? rank : 0)
+			.OrderByDescending(bang => GetRankings().TryGetValue(bang.Trigger, out RankedBang? rank) ? rank.Rank : 0)
 			.ToArray();
 	}
 
@@ -91,9 +91,9 @@ internal class Bangs
 		return bang;
 	}
 
-	private static Dictionary<string, int> GetRankings()
+	private static Dictionary<string, RankedBang> GetRankings()
 	{
-		Dictionary<string, int> dict = new();
+		Dictionary<string, RankedBang> dict = new();
 		Variant ranks = settings.GetValue("bang-rankings");
 		VariantIter iter = ranks.IterNew();
 		Variant currentValue;
@@ -101,7 +101,11 @@ internal class Bangs
 		for (int i = 0; i < (int)ranks.NChildren(); i++)
 		{
 			currentValue = iter.NextValue()!;
-			dict.Add(currentValue.GetChildValue(0).GetString(out _), currentValue.GetChildValue(1).GetInt32());
+			dict.Add(currentValue.GetChildValue(0).GetString(out _), new RankedBang
+			{
+				Rank = currentValue.GetChildValue(1).GetChildValue(0).GetInt32(),
+				Timestamp = currentValue.GetChildValue(1).GetChildValue(1).GetInt64()
+			});
 		}
 
 		return dict;
@@ -111,7 +115,7 @@ internal class Bangs
 	{
 		Variant ranks = settings.GetValue("bang-rankings");
 		VariantIter iter = ranks.IterNew();
-		VariantBuilder builder = VariantBuilder.New(VariantType.New("a{si}"));
+		VariantBuilder builder = VariantBuilder.New(VariantType.New("a{s(ix)}"));
 		Variant currentValue;
 		bool found = false;
 
@@ -127,7 +131,10 @@ internal class Bangs
 				builder.AddValue(
 					Variant.NewDictEntry(
 						currentValue.GetChildValue(0),
-						Variant.NewInt32(currentValue.GetChildValue(1).GetInt32() + 1)
+						Variant.NewTuple([
+							Variant.NewInt32(currentValue.GetChildValue(1).GetChildValue(0).GetInt32() + 1),
+							Variant.NewInt64(DateTimeOffset.UtcNow.ToUnixTimeSeconds()),
+						])
 					)
 				);
 				found = true;
@@ -135,7 +142,10 @@ internal class Bangs
 			else builder.AddValue(Variant.NewDictEntry(currentValue.GetChildValue(0), currentValue.GetChildValue(1)));
 		}
 
-		if (found != true) builder.AddValue(Variant.NewDictEntry(Variant.NewString(bang), Variant.NewInt32(1)));
+		if (found != true) builder.AddValue(Variant.NewDictEntry(Variant.NewString(bang), Variant.NewTuple([
+			Variant.NewInt32(1),
+			Variant.NewInt64(DateTimeOffset.UtcNow.ToUnixTimeSeconds()),
+		])));
 
 		settings.SetValue("bang-rankings", builder.End());
 	}
