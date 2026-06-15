@@ -46,6 +46,12 @@ public class CustomBang
 	public required string TemplateUrl { get; set; }
 }
 
+public class RankedBang
+{
+	public required int Rank { get; set; }
+	public required long Timestamp { get; set; }
+}
+
 public enum BangCategory
 {
 	Entertainment,
