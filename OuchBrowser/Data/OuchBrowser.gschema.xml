@@ -118,7 +118,7 @@
 			</description>
 		</key>
 
-		<key type="a{si}" name="bang-rankings">
+		<key type="a{s(ix)}" name="bang-rankings">
 			<default>{}</default>
 			<summary>!bang Usage Rankings</summary>
 			<description>

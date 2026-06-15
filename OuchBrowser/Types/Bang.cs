@@ -40,6 +40,12 @@ public class Bang
 	public bool SkipTests { get; set; } = false;
 }
 
+public class RankedBang
+{
+	public required int Rank { get; set; }
+	public required long Timestamp { get; set; }
+}
+
 public enum BangCategory
 {
 	Entertainment,
