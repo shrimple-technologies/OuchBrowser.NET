@@ -6,6 +6,7 @@ namespace OuchBrowser.UI;
 internal class Preferences : Adw.Dialog
 {
 #pragma warning disable CS0649
+	private Builder builder;
 	[Connect] private readonly ToastOverlay? toast_overlay;
 	[Connect] private readonly NavigationSplitView? nsv;
 	[Connect] private readonly ViewStack? view;
@@ -20,7 +21,7 @@ internal class Preferences : Adw.Dialog
 
 	public Preferences(Window window) : base()
 	{
-		var builder = new Builder();
+		builder = new Builder();
 		builder.SetTranslationDomain("OuchBrowser");
 		builder.AddFromResource("/page/codeberg/shrimple/OuchBrowser/ui/preferences.ui");
 		builder.Connect(this);
@@ -287,6 +288,9 @@ internal class Preferences : Adw.Dialog
 
 		boolean.SetBoolean(true);
 		breakpoint.AddSetter(nsv!, "collapsed", boolean);
+
+		number.SetInt(1);
+		breakpoint.AddSetter((Widget)builder.GetObject("vss"), "mode", number); // set Adw.ViewSwitcherSidebar:mode to Adw.SidebarMode.page (internally, we do not support libadwaita 1.9)
 
 		return breakpoint;
 	}
