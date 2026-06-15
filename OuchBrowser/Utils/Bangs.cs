@@ -35,6 +35,8 @@ internal class Bangs
 			if (bang.AdditionalTriggers != null)
 				foreach (string trigger in bang.AdditionalTriggers) bangs.Add(trigger, bang);
 		}
+
+		ExpireBangs();
 	}
 
 	public string ExpandBang(string text)
@@ -146,6 +148,39 @@ internal class Bangs
 			Variant.NewInt32(1),
 			Variant.NewInt64(DateTimeOffset.UtcNow.ToUnixTimeSeconds()),
 		])));
+
+		settings.SetValue("bang-rankings", builder.End());
+	}
+
+	public static void ExpireBangs()
+	{
+		Variant ranks = settings.GetValue("bang-rankings");
+		VariantIter iter = ranks.IterNew();
+		VariantBuilder builder = VariantBuilder.New(VariantType.New("a{s(ix)}"));
+		Variant currentValue;
+
+		// since there isn't a clean way to modify the dictionary of ranks,
+		// we instead rebuild the dictionary and increment the rank by 1 to
+		// push the !bang higher in autocompletion
+		for (int i = 0; i < (int)ranks.NChildren(); i++)
+		{
+			currentValue = iter.NextValue()!;
+
+			if ((DateTimeOffset.UtcNow - DateTimeOffset.FromUnixTimeSeconds(currentValue.GetChildValue(1).GetChildValue(1).GetInt64())).TotalDays > 7)
+			{
+				if (currentValue.GetChildValue(1).GetChildValue(0).GetInt32() == 0) continue;
+				builder.AddValue(
+					Variant.NewDictEntry(
+						currentValue.GetChildValue(0),
+						Variant.NewTuple([
+							Variant.NewInt32(currentValue.GetChildValue(1).GetChildValue(0).GetInt32() - 1),
+							currentValue.GetChildValue(1).GetChildValue(1),
+						])
+					)
+				);
+			}
+			else builder.AddValue(Variant.NewDictEntry(currentValue.GetChildValue(0), currentValue.GetChildValue(1)));
+		}
 
 		settings.SetValue("bang-rankings", builder.End());
 	}
