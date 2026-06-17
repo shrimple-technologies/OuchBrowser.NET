@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
 "POT-Creation-Date: 2026-06-13 21:17-0400\n"
-"PO-Revision-Date: 2026-06-01 19:01+0000\n"
-"Last-Translator: Wiliam <wilian4512@gmail.com>\n"
+"PO-Revision-Date: 2026-06-17 13:01+0000\n"
+"Last-Translator: Gabriel <bloxgabriel18@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/ouch/"
 "net/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2026.6\n"
+"X-Generator: Weblate 2026.7.dev0\n"
 
 #: OuchBrowser/CommandPalette.cs:52
 #, csharp-format
@@ -133,11 +133,12 @@ msgstr ""
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:123
 msgid "!bang Usage Rankings"
-msgstr ""
+msgstr "Classificação de uso do !bang"
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:124
 msgid "This value is the rankings of !bangs over time from use."
 msgstr ""
+"Este valor representa a classificação dos !bangs ao longo do tempo de uso."
 
 #: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:6
 #: OuchBrowser/Data/UI/Window.blp:15 OuchBrowser/Data/UI/Window.blp:249
@@ -325,12 +326,13 @@ msgid ""
 "autocompletion results over time. Requires !bangs autocompletion to be "
 "enabled."
 msgstr ""
+"O navegador Ouch utiliza um sistema de classificação simples para fornecer "
+"resultados de autocompletar mais inteligentes para o comando !bang ao longo "
+"do tempo. Requer que o recurso de autocompletar para !bangs esteja ativado."
 
 #: OuchBrowser/Data/UI/Preferences.blp:223
-#, fuzzy
-#| msgid "Close All Tabs"
 msgid "Clear All Ranks"
-msgstr "Fechar todas as guias"
+msgstr "Limpar todas as classificações"
 
 #: OuchBrowser/Data/UI/RoomsOverview.blp:19
 msgid "Tabs"
@@ -530,10 +532,8 @@ msgstr ""
 "https://x.com/khotyz"
 
 #: OuchBrowser/UI/Preferences.cs:264
-#, fuzzy
-#| msgid "Close All Tabs"
 msgid "Cleared All Ranks"
-msgstr "Fechar todas as guias"
+msgstr "Aprovado em todas as fases"
 
 #: OuchBrowser/UI/RoomsOverview.cs:84
 #, csharp-format
