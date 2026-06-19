@@ -1,4 +1,3 @@
 <Solution>
-	<Project Path="OuchBrowser.WebExtensions/OuchBrowser.WebExtensions.csproj" />
 	<Project Path="OuchBrowser/OuchBrowser.csproj" />
 </Solution>
