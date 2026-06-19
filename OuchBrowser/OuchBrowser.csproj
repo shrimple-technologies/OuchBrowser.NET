@@ -37,10 +37,4 @@
 		<EmbeddedResource Include="Data\ShortcutsList.json" LogicalName="ShortcutsList.json" />
 	</ItemGroup>
 
-	<ItemGroup>
-		<ProjectReference
-			Include="..\OuchBrowser.WebExtensions\OuchBrowser.WebExtensions.csproj"
-		/>
-	</ItemGroup>
-
 </Project>
