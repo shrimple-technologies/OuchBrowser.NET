@@ -340,7 +340,8 @@ internal class Preferences : Adw.Dialog
 			bang_name.SetTitle(__("Name"));
 			bang_url.SetTitle(__("URL"));
 			bang_url.SetInputPurpose(InputPurpose.Url);
-			bang_instructions.SetSubtitle("Enter the desired trigger, name, and URL for your custom !bang. Replace the query in the URL with <tt>{{{s}}}</tt>");
+			// TRANSLATORS: Do not translate "<tt>{{{{{{s}}}}}}</tt>". This renders as {{{s}}} in the user interface.
+			bang_instructions.SetSubtitle(__("Enter the desired trigger, name, and URL for your custom !bang. Replace the query in the URL with <tt>{{{{{{s}}}}}}</tt>"));
 			bang_instructions.SetUseMarkup(true);
 
 			group.Add(bang_trigger);
