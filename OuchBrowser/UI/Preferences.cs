@@ -150,8 +150,10 @@ internal class Preferences : Adw.Dialog
 					{
 						Adw.AlertDialog alert = Adw.AlertDialog.New(null, null);
 						alert.AddResponse("cancel", __("Cancel"));
+						alert.AddResponse("delete", __("Delete !bang"));
 						alert.AddResponse("edit", __("Edit"));
 						alert.SetResponseAppearance("edit", ResponseAppearance.Suggested);
+						alert.SetResponseAppearance("delete", ResponseAppearance.Destructive);
 						alert.SetDefaultResponse("edit");
 						alert.SetCloseResponse("cancel");
 
