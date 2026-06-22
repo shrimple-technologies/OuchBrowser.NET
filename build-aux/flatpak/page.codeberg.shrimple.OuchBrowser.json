@@ -10,7 +10,6 @@
 		"--share=network",
 		"--share=ipc",
 		"--socket=fallback-x11",
-		"--device=all",
 		"--socket=cups",
 		"--socket=pulseaudio",
 		"--socket=wayland",

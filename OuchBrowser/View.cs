@@ -345,6 +345,8 @@ internal class View
 					alert.SetDefaultResponse("ok");
 					alert.SetExtraChild(entry);
 
+					entry.SetCssClasses(["card", "script-dialog-prompt"]);
+
 					entry.SetText(args.Dialog.PromptGetDefaultText());
 
 					entry.OnActivate += (_, _) => alert.ActivateDefault();
