@@ -113,3 +113,7 @@ dialog.command-palette > widget > floating-sheet > sheet {
 	border-radius: 18px;
 }
 
+.script-dialog-prompt {
+	padding: 5px 15px;
+	outline-color: transparent;
+}
