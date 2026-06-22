@@ -140,9 +140,11 @@ internal class Preferences : Adw.Dialog
 				foreach (KeyValuePair<string, CustomBang> bang in Bangs.GetCustomBangs())
 				{
 					ActionRow row = ActionRow.New();
+					Image image = Image.NewFromIconName("document-edit-symbolic");
+					image.SetMarginEnd(12);
 					row.SetTitle(bang.Value.WebsiteName);
 					row.SetSubtitle($"!{bang.Key}");
-					row.AddSuffix(Image.NewFromIconName("document-edit-symbolic"));
+					row.AddSuffix(image);
 					row.SetActivatable(true);
 					row.OnActivated += (_, _) =>
 					{
