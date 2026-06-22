@@ -30,7 +30,7 @@ internal partial class Window
 		{
 			if (args.Pspec.GetName() == "text")
 			{
-				string text = url_entry!.GetText();
+				string text = url_entry!.GetText().TrimStart();
 				if (text == "")
 				{
 					url_autocomplete!.SetRevealChild(false);
