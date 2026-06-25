@@ -519,6 +519,9 @@ internal partial class Window : Adw.ApplicationWindow
 		boolean.SetBoolean(true);
 		breakpoint.AddSetter(url_bar_button!, "visible", boolean);
 
+		boolean.SetBoolean(false);
+		breakpoint.AddSetter(url_stack!, "visible", boolean);
+
 		return breakpoint;
 	}
 }
