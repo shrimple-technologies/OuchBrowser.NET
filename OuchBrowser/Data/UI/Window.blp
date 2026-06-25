@@ -1167,18 +1167,18 @@ Adw.Dialog url_dialog {
 				]
 			}
 
-			Button url_bar_button {
-				icon-name: "go-next-symbolic";
-				visible: false;
-				valign: center;
+			Revealer url_bar_button_revealer {
+				transition-type: crossfade;
 
-				accessibility {
-					label: _("Go");
+				Button url_bar_button {
+					icon-name: "go-next-symbolic";
+					tooltip-text: _("Go");
+					valign: center;
+
+					styles [
+						"flat",
+					]
 				}
-
-				styles [
-					"flat",
-				]
 			}
 		}
 

@@ -37,10 +37,12 @@ internal partial class Window
 					url_stack!.SetVisibleChildName("main");
 					url_disclosure!.SetVisibleChildName("none");
 					url_disclosure_revealer!.SetRevealChild(false);
+					if (mlv!.GetLayoutName() == "mobile") url_bar_button_revealer!.SetRevealChild(false);
 				}
 				else if (text.StartsWith('!'))
 				{
 					url_disclosure_revealer!.SetRevealChild(false);
+					if (mlv!.GetLayoutName() == "mobile") url_bar_button_revealer!.SetRevealChild(true);
 
 					if (1 < text.Split(' ').Length)
 					{
@@ -126,6 +128,7 @@ internal partial class Window
 					url_stack!.SetVisibleChildName("website");
 					url_disclosure!.SetVisibleChildName("none");
 					url_disclosure_revealer!.SetRevealChild(false);
+					if (mlv!.GetLayoutName() == "mobile") url_bar_button_revealer!.SetRevealChild(true);
 					url_custom_disclosure!.SetLabel("");
 					url_favicon!.SetFromGicon(await Favicon.GetFavicon(text));
 				}
@@ -135,6 +138,7 @@ internal partial class Window
 					url_stack!.SetVisibleChildName("main");
 					url_disclosure!.SetVisibleChildName("none");
 					url_disclosure_revealer!.SetRevealChild(false);
+					if (mlv!.GetLayoutName() == "mobile") url_bar_button_revealer!.SetRevealChild(true);
 
 					url_autocomplete!.SetRevealChild(true);
 					Box box = Box.New(Orientation.Vertical, 10);
@@ -203,6 +207,7 @@ internal partial class Window
 				{
 					url_disclosure!.SetVisibleChildName("none");
 					url_disclosure_revealer!.SetRevealChild(false);
+					if (mlv!.GetLayoutName() == "mobile") url_bar_button_revealer!.SetRevealChild(true);
 					url_custom_disclosure!.SetLabel("");
 
 					if (settings.GetBoolean("search-autocomplete-enabled"))
