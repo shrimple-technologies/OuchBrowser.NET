@@ -1056,6 +1056,7 @@ Adw.Dialog url_dialog {
 
 			Stack url_stack {
 				transition-type: crossfade;
+				accessible-role: none;
 
 				StackPage {
 					name: "main";
@@ -1156,6 +1157,10 @@ Adw.Dialog url_dialog {
 				hexpand: true;
 				placeholder-text: _("Search or enter URL…");
 				receives-default: true;
+
+				accessibility {
+					autocomplete: list;
+				}
 
 				styles [
 					"command-palette",
