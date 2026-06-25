@@ -48,7 +48,7 @@ internal class Bangs
 
 	public string ExpandBang(string text)
 	{
-		string bangString = text.Split(' ')[0];
+		string bangString = text.Trim().Split(' ')[0];
 		string trigger = bangString.StartsWith('!') ? bangString.Substring(1) : bangString;
 		string defaultSearch = settings.GetString("search-engine");
 
@@ -56,6 +56,12 @@ internal class Bangs
 		if (bang == null) return string.Format(defaultSearch, Uri.EscapeDataString(text));
 
 		string templateUrl = bang.TemplateUrl;
+		string query = string.Join(" ", text.Trim().Split(' ').Skip(1));
+
+		if (bang.Format != null && bang.Format.Contains(BangFormat.open_base_path) || query.IsWhiteSpace())
+			return $"https://{new Uri(bang.TemplateUrl).Host}/";
+		if (bang.SnapDomain != null && bang.Format != null && bang.Format.Contains(BangFormat.open_snap_domain) || query.IsWhiteSpace())
+			return $"https://{bang.SnapDomain}/";
 
 		if (bang.TemplateUrl.StartsWith('/') && bang.Domain != "kagi.com" || bang.TemplateUrl.Contains("site:"))
 		{
@@ -67,9 +73,7 @@ internal class Bangs
 			templateUrl = "https://kagi.com" + templateUrl;
 		}
 
-		string query = string.Join(" ", text.Split(' ').Skip(1));
 		return templateUrl.Replace("{{{s}}}", Uri.EscapeDataString(query));
-
 	}
 
 	public Bang[] AutocompleteBang(string text)

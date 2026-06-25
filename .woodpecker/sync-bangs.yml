@@ -1,0 +1,24 @@
+clone:
+  git:
+    image: woodpeckerci/plugin-git
+    settings:
+      depth: 1
+      recursive: true
+      submodule-update-remote: true
+
+when:
+  branch: main
+  event: [cron, manual]
+
+steps:
+  publish:
+    image: alpine/git
+    environment:
+      MAIL:
+        from_secret: mail
+      CODEBERG_TOKEN:
+        from_secret: codeberg_token
+    commands:
+      - git config --global user.email $MAIL
+      - git config --global user.name "shrimple-bot"
+      - git commit -am "bump !bangs submodule to \`$(git --git-dir=OuchBrowser/Bangs/.git rev-parse --short HEAD)\`" && git push https://$CODEBERG_TOKEN@codeberg.org/$CI_REPO.git

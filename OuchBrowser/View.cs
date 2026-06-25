@@ -263,6 +263,28 @@ internal class View
 
 				menu.Insert(ContextMenuItem.NewFromGaction(action, __("Open Link in Peek Tab"), null), 2);
 				menu.Insert(ContextMenuItem.NewSeparator(), 3);
+
+				if (args.HitTestResult.ContextIsImage())
+				{
+					Gio.SimpleAction imageAction = Gio.SimpleAction.New("lens", null);
+					action.OnActivate += (_, _) =>
+					{
+						AddTab($"https://www.google.com/searchbyimage?image_url={Uri.EscapeDataString(args.HitTestResult.GetImageUri())}", false);
+					};
+
+					menu.Insert(ContextMenuItem.NewFromGaction(action, __("Open Image in Google Lens"), null), 8);
+				}
+			}
+			else if (args.HitTestResult.ContextIsImage())
+			{
+				ContextMenu menu = args.ContextMenu;
+				Gio.SimpleAction action = Gio.SimpleAction.New("lens", null);
+				action.OnActivate += (_, _) =>
+				{
+					AddTab($"https://www.google.com/searchbyimage?image_url={Uri.EscapeDataString(args.HitTestResult.GetImageUri())}", false);
+				};
+
+				menu.Insert(ContextMenuItem.NewFromGaction(action, __("Open Image in Google Lens"), null), 1);
 			}
 
 			return false;

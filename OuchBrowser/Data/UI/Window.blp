@@ -1056,6 +1056,7 @@ Adw.Dialog url_dialog {
 
 			Stack url_stack {
 				transition-type: crossfade;
+				accessible-role: none;
 
 				StackPage {
 					name: "main";
@@ -1157,23 +1158,27 @@ Adw.Dialog url_dialog {
 				placeholder-text: _("Search or enter URL…");
 				receives-default: true;
 
+				accessibility {
+					autocomplete: list;
+				}
+
 				styles [
 					"command-palette",
 				]
 			}
 
-			Button url_bar_button {
-				icon-name: "go-next-symbolic";
-				visible: false;
-				valign: center;
+			Revealer url_bar_button_revealer {
+				transition-type: crossfade;
 
-				accessibility {
-					label: _("Go");
+				Button url_bar_button {
+					icon-name: "go-next-symbolic";
+					tooltip-text: _("Go");
+					valign: center;
+
+					styles [
+						"flat",
+					]
 				}
-
-				styles [
-					"flat",
-				]
 			}
 		}
 

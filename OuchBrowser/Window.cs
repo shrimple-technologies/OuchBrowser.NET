@@ -44,6 +44,7 @@ internal partial class Window : Adw.ApplicationWindow
 	[Connect] public readonly Box? url_preview;
 	[Connect] public readonly Label? url_preview_label;
 	[Connect] public readonly MultiLayoutView? mlv;
+	[Connect] public readonly Revealer? url_bar_button_revealer;
 #pragma warning restore CS0649
 
 	private string palette_state = "new_tab";
@@ -516,8 +517,8 @@ internal partial class Window : Adw.ApplicationWindow
 		number.SetInt(0);
 		breakpoint.AddSetter(hostname!, "halign", number); // halign = fill
 
-		boolean.SetBoolean(true);
-		breakpoint.AddSetter(url_bar_button!, "visible", boolean);
+		boolean.SetBoolean(false);
+		breakpoint.AddSetter(url_stack!, "visible", boolean);
 
 		return breakpoint;
 	}
