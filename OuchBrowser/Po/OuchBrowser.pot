@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-06-22 16:28-0400\n"
+"POT-Creation-Date: 2026-06-26 18:49-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: OuchBrowser/CommandPalette.cs:52
+#: OuchBrowser/CommandPalette.cs:54
 #, csharp-format
 msgid "Searching using {0}"
 msgstr ""
@@ -126,7 +126,7 @@ msgstr ""
 
 #: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:6
 #: OuchBrowser/Data/UI/Window.blp:15 OuchBrowser/Data/UI/Window.blp:268
-#: OuchBrowser/Window.cs:90
+#: OuchBrowser/Window.cs:91
 msgid "Ouch Browser"
 msgstr ""
 
@@ -275,7 +275,7 @@ msgstr ""
 msgid "New Search Engine…"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:197 OuchBrowser/Data/UI/Window.blp:1113
+#: OuchBrowser/Data/UI/Preferences.blp:197 OuchBrowser/Data/UI/Window.blp:1114
 msgid "!bangs"
 msgstr ""
 
@@ -436,7 +436,7 @@ msgstr ""
 msgid "Reveal Command Palette"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:753 OuchBrowser/View.cs:466
+#: OuchBrowser/Data/UI/Window.blp:753 OuchBrowser/View.cs:444
 msgid "Copy Link"
 msgstr ""
 
@@ -472,23 +472,23 @@ msgstr ""
 msgid "New Folder"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1095
+#: OuchBrowser/Data/UI/Window.blp:1096
 msgid "Search"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1130
+#: OuchBrowser/Data/UI/Window.blp:1131
 msgid "Website"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1144
+#: OuchBrowser/Data/UI/Window.blp:1145
 msgid "Shortcuts"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1157
+#: OuchBrowser/Data/UI/Window.blp:1158
 msgid "Search or enter URL…"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1171
+#: OuchBrowser/Data/UI/Window.blp:1175
 msgid "Go"
 msgstr ""
 
@@ -516,45 +516,41 @@ msgstr ""
 msgid "Open Link in Peek Tab"
 msgstr ""
 
-#: OuchBrowser/View.cs:275 OuchBrowser/View.cs:287
-msgid "Open Image in Google Lens"
-msgstr ""
-
-#: OuchBrowser/View.cs:301
+#: OuchBrowser/View.cs:279
 msgid "There was a problem loading this website"
 msgstr ""
 
 #. TRANSLATORS: This is in the format of "example.com says"
-#: OuchBrowser/View.cs:318 OuchBrowser/View.cs:333 OuchBrowser/View.cs:361
+#: OuchBrowser/View.cs:296 OuchBrowser/View.cs:311 OuchBrowser/View.cs:339
 #, csharp-format
 msgid "{0} says"
 msgstr ""
 
-#: OuchBrowser/View.cs:320 OuchBrowser/View.cs:336 OuchBrowser/View.cs:364
+#: OuchBrowser/View.cs:298 OuchBrowser/View.cs:314 OuchBrowser/View.cs:342
 msgid "OK"
 msgstr ""
 
-#: OuchBrowser/View.cs:335 OuchBrowser/View.cs:363 OuchBrowser/Window.cs:159
+#: OuchBrowser/View.cs:313 OuchBrowser/View.cs:341 OuchBrowser/Window.cs:160
 msgid "Cancel"
 msgstr ""
 
-#: OuchBrowser/View.cs:437
+#: OuchBrowser/View.cs:415
 msgid "Expand Tab"
 msgstr ""
 
-#: OuchBrowser/View.cs:469 OuchBrowser/Window.cs:453
+#: OuchBrowser/View.cs:447 OuchBrowser/Window.cs:454
 msgid "Link Copied"
 msgstr ""
 
-#: OuchBrowser/Window.cs:156
+#: OuchBrowser/Window.cs:157
 msgid "Exit and Close All Tabs?"
 msgstr ""
 
-#: OuchBrowser/Window.cs:157
+#: OuchBrowser/Window.cs:158
 #, csharp-format
 msgid "You are about to close {0} tabs. Are you sure you want to continue?"
 msgstr ""
 
-#: OuchBrowser/Window.cs:160
+#: OuchBrowser/Window.cs:161
 msgid "Close Tabs"
 msgstr ""
