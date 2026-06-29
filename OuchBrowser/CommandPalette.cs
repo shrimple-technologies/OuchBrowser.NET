@@ -69,7 +69,7 @@ internal partial class Window
 					{
 						url_stack!.SetVisibleChildName("bang");
 
-						if (settings.GetBoolean("bang-autocomplete-enabled"))
+						if (settings.GetBoolean("bang-autocomplete-enabled") && text.Length >= 4)
 						{
 							url_autocomplete!.SetRevealChild(true);
 							Box box = Box.New(Orientation.Vertical, 10);
@@ -120,6 +120,7 @@ internal partial class Window
 								url_autocomplete!.SetChild(sw);
 							}
 						}
+						else url_autocomplete!.SetRevealChild(false);
 					}
 				}
 				else if (Url.IsUrl(text))
