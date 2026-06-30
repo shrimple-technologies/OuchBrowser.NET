@@ -1,5 +1,7 @@
 // Utils/Favicon.cs
-// Utilities for loading favicons via Twenty Icons.
+// Utilities for loading favicons via DuckDuckGo.
+// This is currently pending deprecation to switch to built-in ways to load the
+// favicon
 
 namespace OuchBrowser.Utils;
 
