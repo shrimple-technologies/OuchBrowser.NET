@@ -68,7 +68,9 @@ internal class Bangs
 			templateUrl = "https://kagi.com" + templateUrl;
 		}
 
-		return templateUrl.Replace("{{{s}}}", Uri.EscapeDataString(query));
+		if (bang.Format == null || bang.Format.Contains(BangFormat.url_encode_space_to_plus)) return templateUrl.Replace("{{{s}}}", Uri.EscapeDataString(query)).Replace("%20", "+");
+		else if (bang.Format == null || bang.Format.Contains(BangFormat.url_encode_placeholder)) return templateUrl.Replace("{{{s}}}", Uri.EscapeDataString(query));
+		else return templateUrl.Replace("{{{s}}}", query); 
 	}
 
 	public Bang[] AutocompleteBang(string text)
