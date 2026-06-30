@@ -19,7 +19,7 @@ internal class Favicon
 				hostname = new Uri($"https://{domain}");
 			}
 			using var http = new HttpClient();
-			using var remoteStream = await http.GetStreamAsync($"https://twenty-icons.com/{Uri.EscapeDataString(hostname.Host)}/32");
+			using var remoteStream = await http.GetStreamAsync($"https://icons.duckduckgo.com/ip3/{Uri.EscapeDataString(hostname.Host)}.ico");
 			using var memoryStream = new MemoryStream();
 
 			await remoteStream.CopyToAsync(memoryStream);
