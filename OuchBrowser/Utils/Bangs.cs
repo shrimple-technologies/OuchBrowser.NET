@@ -51,10 +51,12 @@ internal class Bangs
 		string templateUrl = bang.TemplateUrl;
 		string query = string.Join(" ", text.Trim().Split(' ').Skip(1));
 
-		if (bang.Format != null && bang.Format.Contains(BangFormat.open_base_path) || query.IsWhiteSpace())
-			return $"https://{new Uri(bang.TemplateUrl).Host}/";
-		if (bang.SnapDomain != null && bang.Format != null && bang.Format.Contains(BangFormat.open_snap_domain) || query.IsWhiteSpace())
-			return $"https://{bang.SnapDomain}/";
+		if (query.IsWhiteSpace()) // implements open_base_path and open_snap_domain format flags
+		{
+			if (bang.SnapDomain != null) // prioritize snap domain over domain as some !bangs work better with this
+				return $"https://{bang.SnapDomain}";
+			else return $"https://{bang.Domain}";
+		}
 
 		if (bang.TemplateUrl.StartsWith('/') && bang.Domain != "kagi.com" || bang.TemplateUrl.Contains("site:"))
 		{
