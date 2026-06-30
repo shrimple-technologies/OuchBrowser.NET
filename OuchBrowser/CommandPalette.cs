@@ -356,6 +356,7 @@ internal partial class Window
 			if (palette_state == "new_tab")
 			{
 				Console.WriteLine($"url: {query}");
+				Console.WriteLine($"bang url: {bangs!.ExpandBang(query)}");
 				Console.WriteLine($"isURL: {Url.IsUrl(query)}");
 				Console.WriteLine($"starts with https or http: {query.StartsWith("https://") || query.StartsWith("http://")}");
 				Console.WriteLine("");
@@ -392,6 +393,7 @@ internal partial class Window
 				WebView webview = (WebView)page.Child!;
 
 				Console.WriteLine($"url: {query}");
+				Console.WriteLine($"bang url: {bangs!.ExpandBang(query)}");
 				Console.WriteLine($"isURL: {Url.IsUrl(query)}");
 				Console.WriteLine($"starts with https or http: {query.StartsWith("https://") || query.StartsWith("http://")}");
 				Console.WriteLine($"is bang: {query.StartsWith('!')}");
