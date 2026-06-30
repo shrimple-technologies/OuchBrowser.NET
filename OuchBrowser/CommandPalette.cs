@@ -266,6 +266,8 @@ internal partial class Window
 							{
 								foreach (Autocompletion phrase in ac)
 								{
+									if (ac.IndexOf(phrase) > 8) break;
+
 									Button button = Button.New();
 									Box button_box = Box.New(Orientation.Horizontal, 15);
 									Label button_label = Label.New(phrase.phrase);
