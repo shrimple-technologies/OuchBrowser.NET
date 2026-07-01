@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-06-13 21:17-0400\n"
+"POT-Creation-Date: 2026-06-26 18:49-0400\n"
 "PO-Revision-Date: 2026-06-17 13:01+0000\n"
 "Last-Translator: Gabriel <bloxgabriel18@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/ouch/"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 2026.7.dev0\n"
 
-#: OuchBrowser/CommandPalette.cs:52
+#: OuchBrowser/CommandPalette.cs:54
 #, csharp-format
 msgid "Searching using {0}"
 msgstr "Procurar usando {0}"
@@ -141,8 +141,8 @@ msgstr ""
 "Este valor representa a classificação dos !bangs ao longo do tempo de uso."
 
 #: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:6
-#: OuchBrowser/Data/UI/Window.blp:15 OuchBrowser/Data/UI/Window.blp:249
-#: OuchBrowser/Window.cs:87
+#: OuchBrowser/Data/UI/Window.blp:15 OuchBrowser/Data/UI/Window.blp:268
+#: OuchBrowser/Window.cs:91
 msgid "Ouch Browser"
 msgstr "Ouch Browser"
 
@@ -190,7 +190,7 @@ msgid "Ouch Browser with Command Palette Opened"
 msgstr "Ouch Browser com a Paleta de Comandos Aberta"
 
 #: OuchBrowser/Data/UI/Preferences.blp:7 OuchBrowser/Data/UI/Preferences.blp:20
-#: OuchBrowser/Data/UI/Window.blp:566
+#: OuchBrowser/Data/UI/Window.blp:585
 msgid "Preferences"
 msgstr "Preferências"
 
@@ -304,7 +304,7 @@ msgstr "Mecanismos de busca personalizados"
 msgid "New Search Engine…"
 msgstr "Novo Mecanismo de Busca…"
 
-#: OuchBrowser/Data/UI/Preferences.blp:197 OuchBrowser/Data/UI/Window.blp:1094
+#: OuchBrowser/Data/UI/Preferences.blp:197 OuchBrowser/Data/UI/Window.blp:1114
 msgid "!bangs"
 msgstr "!bangs"
 
@@ -345,8 +345,8 @@ msgstr "Principal"
 
 #: OuchBrowser/Data/UI/RoomsOverview.blp:43
 #: OuchBrowser/Data/UI/Shortcuts.blp:38 OuchBrowser/Data/UI/Window.blp:122
-#: OuchBrowser/Data/UI/Window.blp:141 OuchBrowser/Data/UI/Window.blp:882
-#: OuchBrowser/Data/UI/Window.blp:977
+#: OuchBrowser/Data/UI/Window.blp:141 OuchBrowser/Data/UI/Window.blp:901
+#: OuchBrowser/Data/UI/Window.blp:996
 msgid "New Tab"
 msgstr "Nova Aba"
 
@@ -427,100 +427,100 @@ msgstr "Restaurar Zoom"
 msgid "Hide Sidebar"
 msgstr "Ocultar Barra Lateral"
 
-#: OuchBrowser/Data/UI/Window.blp:267
+#: OuchBrowser/Data/UI/Window.blp:286
 msgid "Show Sidebar"
 msgstr "Mostrar Barra Lateral"
 
-#: OuchBrowser/Data/UI/Window.blp:428
+#: OuchBrowser/Data/UI/Window.blp:447
 msgid "Menu"
 msgstr "Menu"
 
-#: OuchBrowser/Data/UI/Window.blp:472
+#: OuchBrowser/Data/UI/Window.blp:491
 msgid "New Window"
 msgstr "Nova Janela"
 
-#: OuchBrowser/Data/UI/Window.blp:519
+#: OuchBrowser/Data/UI/Window.blp:538
 msgid "View All Tabs"
 msgstr "Mostrar Todas as Abas"
 
-#: OuchBrowser/Data/UI/Window.blp:609
+#: OuchBrowser/Data/UI/Window.blp:628
 msgid "Keyboard Shortcuts"
 msgstr "Atalhos do Teclado"
 
-#: OuchBrowser/Data/UI/Window.blp:651
+#: OuchBrowser/Data/UI/Window.blp:670
 msgid "About Ouch Browser"
 msgstr "Sobre o Ouch Browser"
 
-#: OuchBrowser/Data/UI/Window.blp:671
+#: OuchBrowser/Data/UI/Window.blp:690
 msgid "Back"
 msgstr "Voltar"
 
-#: OuchBrowser/Data/UI/Window.blp:683
+#: OuchBrowser/Data/UI/Window.blp:702
 msgid "Forward"
 msgstr "Avançar"
 
-#: OuchBrowser/Data/UI/Window.blp:695 OuchBrowser/View.cs:97
+#: OuchBrowser/Data/UI/Window.blp:714 OuchBrowser/View.cs:97
 #: OuchBrowser/View.cs:177
 msgid "Refresh"
 msgstr "Recarregar"
 
-#: OuchBrowser/Data/UI/Window.blp:715
+#: OuchBrowser/Data/UI/Window.blp:734
 msgid "Reveal Command Palette"
 msgstr "Mostrar Paleta de Comandos"
 
-#: OuchBrowser/Data/UI/Window.blp:734 OuchBrowser/View.cs:442
+#: OuchBrowser/Data/UI/Window.blp:753 OuchBrowser/View.cs:444
 msgid "Copy Link"
 msgstr "Copiar Link"
 
-#: OuchBrowser/Data/UI/Window.blp:745
+#: OuchBrowser/Data/UI/Window.blp:764
 msgid "Website Settings"
 msgstr "Configurações do Site"
 
-#: OuchBrowser/Data/UI/Window.blp:761
+#: OuchBrowser/Data/UI/Window.blp:780
 msgid "No Website Settings Available"
 msgstr "Nenhuma Configuração de Site Disponível"
 
-#: OuchBrowser/Data/UI/Window.blp:780
+#: OuchBrowser/Data/UI/Window.blp:799
 msgid "Archive"
 msgstr "Arquivar"
 
-#: OuchBrowser/Data/UI/Window.blp:821
+#: OuchBrowser/Data/UI/Window.blp:840
 msgid "History"
 msgstr "Histórico"
 
-#: OuchBrowser/Data/UI/Window.blp:852
+#: OuchBrowser/Data/UI/Window.blp:871
 msgid "Downloads"
 msgstr "Downloads"
 
-#: OuchBrowser/Data/UI/Window.blp:892
+#: OuchBrowser/Data/UI/Window.blp:911
 msgid "New…"
 msgstr "Novo…"
 
-#: OuchBrowser/Data/UI/Window.blp:925
+#: OuchBrowser/Data/UI/Window.blp:944
 msgid "New Room"
 msgstr "Nova Sala"
 
-#: OuchBrowser/Data/UI/Window.blp:948
+#: OuchBrowser/Data/UI/Window.blp:967
 msgid "New Folder"
 msgstr "Nova Pasta"
 
-#: OuchBrowser/Data/UI/Window.blp:1076
+#: OuchBrowser/Data/UI/Window.blp:1096
 msgid "Search"
 msgstr "Procurar"
 
-#: OuchBrowser/Data/UI/Window.blp:1111
+#: OuchBrowser/Data/UI/Window.blp:1131
 msgid "Website"
 msgstr "Site"
 
-#: OuchBrowser/Data/UI/Window.blp:1125
+#: OuchBrowser/Data/UI/Window.blp:1145
 msgid "Shortcuts"
 msgstr "Atalhos"
 
-#: OuchBrowser/Data/UI/Window.blp:1138
+#: OuchBrowser/Data/UI/Window.blp:1158
 msgid "Search or enter URL…"
 msgstr "Pesquisar ou Inserir Endereço Web…"
 
-#: OuchBrowser/Data/UI/Window.blp:1152
+#: OuchBrowser/Data/UI/Window.blp:1175
 msgid "Go"
 msgstr "Ir"
 
@@ -531,7 +531,7 @@ msgstr ""
 "Betty https://bsky.app/profile/did:plc:c5c6etwketgk3q3gkafrgekl, Wiliam: "
 "https://x.com/khotyz"
 
-#: OuchBrowser/UI/Preferences.cs:264
+#: OuchBrowser/UI/Preferences.cs:265
 msgid "Cleared All Ranks"
 msgstr "Aprovado em todas as fases"
 
@@ -564,31 +564,36 @@ msgstr "{0} diz"
 msgid "OK"
 msgstr "OK"
 
-#: OuchBrowser/View.cs:313 OuchBrowser/View.cs:341 OuchBrowser/Window.cs:156
+#: OuchBrowser/View.cs:313 OuchBrowser/View.cs:341 OuchBrowser/Window.cs:160
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: OuchBrowser/View.cs:413
+#: OuchBrowser/View.cs:415
 msgid "Expand Tab"
 msgstr "Expandir Aba"
 
-#: OuchBrowser/View.cs:445 OuchBrowser/Window.cs:449
+#: OuchBrowser/View.cs:447 OuchBrowser/Window.cs:454
 msgid "Link Copied"
 msgstr "Link Copiado"
 
-#: OuchBrowser/Window.cs:152
+#: OuchBrowser/Window.cs:157
 msgid "Exit and Close All Tabs?"
 msgstr "Sair e Fechar Todas as Abas?"
 
-#: OuchBrowser/Window.cs:153
+#: OuchBrowser/Window.cs:158
 #, csharp-format
 msgid "You are about to close {0} tabs. Are you sure you want to continue?"
 msgstr ""
 "Você está prestes a fechar {0} abas. Tem certeza de que deseja continuar?"
 
-#: OuchBrowser/Window.cs:155
-msgid "Close All Tabs"
-msgstr "Fechar todas as guias"
+#: OuchBrowser/Window.cs:161
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Close Tabs"
+msgstr "Fechar Aba"
+
+#~ msgid "Close All Tabs"
+#~ msgstr "Fechar todas as guias"
 
 #, fuzzy
 #~| msgid "New Search Engine…"

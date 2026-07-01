@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-06-13 21:17-0400\n"
+"POT-Creation-Date: 2026-06-26 18:49-0400\n"
 "PO-Revision-Date: 2026-06-13 05:01+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/ouch/net/et/>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2026.7.dev0\n"
 
-#: OuchBrowser/CommandPalette.cs:52
+#: OuchBrowser/CommandPalette.cs:54
 #, csharp-format
 msgid "Searching using {0}"
 msgstr "Otsing kasutades teenust {0}"
@@ -135,8 +135,8 @@ msgid "This value is the rankings of !bangs over time from use."
 msgstr "See väärtus kirjeldab !bang-käskude kasutust läbi aegade."
 
 #: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:6
-#: OuchBrowser/Data/UI/Window.blp:15 OuchBrowser/Data/UI/Window.blp:249
-#: OuchBrowser/Window.cs:87
+#: OuchBrowser/Data/UI/Window.blp:15 OuchBrowser/Data/UI/Window.blp:268
+#: OuchBrowser/Window.cs:91
 msgid "Ouch Browser"
 msgstr "Veebibrauser Ouch"
 
@@ -184,7 +184,7 @@ msgid "Ouch Browser with Command Palette Opened"
 msgstr "Veebibrauser Ouch käsuvalik avatuna"
 
 #: OuchBrowser/Data/UI/Preferences.blp:7 OuchBrowser/Data/UI/Preferences.blp:20
-#: OuchBrowser/Data/UI/Window.blp:566
+#: OuchBrowser/Data/UI/Window.blp:585
 msgid "Preferences"
 msgstr "Eelistused"
 
@@ -297,7 +297,7 @@ msgstr "Sinu lisatud otsingumootorid"
 msgid "New Search Engine…"
 msgstr "Uus otsingumootor…"
 
-#: OuchBrowser/Data/UI/Preferences.blp:197 OuchBrowser/Data/UI/Window.blp:1094
+#: OuchBrowser/Data/UI/Preferences.blp:197 OuchBrowser/Data/UI/Window.blp:1114
 msgid "!bangs"
 msgstr "!bang-käsud"
 
@@ -338,8 +338,8 @@ msgstr "Põhimenüü"
 
 #: OuchBrowser/Data/UI/RoomsOverview.blp:43
 #: OuchBrowser/Data/UI/Shortcuts.blp:38 OuchBrowser/Data/UI/Window.blp:122
-#: OuchBrowser/Data/UI/Window.blp:141 OuchBrowser/Data/UI/Window.blp:882
-#: OuchBrowser/Data/UI/Window.blp:977
+#: OuchBrowser/Data/UI/Window.blp:141 OuchBrowser/Data/UI/Window.blp:901
+#: OuchBrowser/Data/UI/Window.blp:996
 msgid "New Tab"
 msgstr "Uus vahekaart"
 
@@ -420,100 +420,100 @@ msgstr "Lähtesta suum"
 msgid "Hide Sidebar"
 msgstr "Peida külgriba"
 
-#: OuchBrowser/Data/UI/Window.blp:267
+#: OuchBrowser/Data/UI/Window.blp:286
 msgid "Show Sidebar"
 msgstr "Näita külgriba"
 
-#: OuchBrowser/Data/UI/Window.blp:428
+#: OuchBrowser/Data/UI/Window.blp:447
 msgid "Menu"
 msgstr "Menüü"
 
-#: OuchBrowser/Data/UI/Window.blp:472
+#: OuchBrowser/Data/UI/Window.blp:491
 msgid "New Window"
 msgstr "Uus aken"
 
-#: OuchBrowser/Data/UI/Window.blp:519
+#: OuchBrowser/Data/UI/Window.blp:538
 msgid "View All Tabs"
 msgstr "Vaata kõiki vahekaarte"
 
-#: OuchBrowser/Data/UI/Window.blp:609
+#: OuchBrowser/Data/UI/Window.blp:628
 msgid "Keyboard Shortcuts"
 msgstr "Klaviatuuri kiirklahvid"
 
-#: OuchBrowser/Data/UI/Window.blp:651
+#: OuchBrowser/Data/UI/Window.blp:670
 msgid "About Ouch Browser"
 msgstr "Rakenduse teave: veebibrauser Ouch"
 
-#: OuchBrowser/Data/UI/Window.blp:671
+#: OuchBrowser/Data/UI/Window.blp:690
 msgid "Back"
 msgstr "Tagasi"
 
-#: OuchBrowser/Data/UI/Window.blp:683
+#: OuchBrowser/Data/UI/Window.blp:702
 msgid "Forward"
 msgstr "Edasi"
 
-#: OuchBrowser/Data/UI/Window.blp:695 OuchBrowser/View.cs:97
+#: OuchBrowser/Data/UI/Window.blp:714 OuchBrowser/View.cs:97
 #: OuchBrowser/View.cs:177
 msgid "Refresh"
 msgstr "Laadi uuesti"
 
-#: OuchBrowser/Data/UI/Window.blp:715
+#: OuchBrowser/Data/UI/Window.blp:734
 msgid "Reveal Command Palette"
 msgstr "Näita käsupaletti"
 
-#: OuchBrowser/Data/UI/Window.blp:734 OuchBrowser/View.cs:442
+#: OuchBrowser/Data/UI/Window.blp:753 OuchBrowser/View.cs:444
 msgid "Copy Link"
 msgstr "Kopeeri link"
 
-#: OuchBrowser/Data/UI/Window.blp:745
+#: OuchBrowser/Data/UI/Window.blp:764
 msgid "Website Settings"
 msgstr "Veebisaidi seadistused"
 
-#: OuchBrowser/Data/UI/Window.blp:761
+#: OuchBrowser/Data/UI/Window.blp:780
 msgid "No Website Settings Available"
 msgstr "Veebisaidi seadistusi pole saadaval"
 
-#: OuchBrowser/Data/UI/Window.blp:780
+#: OuchBrowser/Data/UI/Window.blp:799
 msgid "Archive"
 msgstr "Arhiveeri"
 
-#: OuchBrowser/Data/UI/Window.blp:821
+#: OuchBrowser/Data/UI/Window.blp:840
 msgid "History"
 msgstr "Ajalugu"
 
-#: OuchBrowser/Data/UI/Window.blp:852
+#: OuchBrowser/Data/UI/Window.blp:871
 msgid "Downloads"
 msgstr "Allalaadimised"
 
-#: OuchBrowser/Data/UI/Window.blp:892
+#: OuchBrowser/Data/UI/Window.blp:911
 msgid "New…"
 msgstr "Uus…"
 
-#: OuchBrowser/Data/UI/Window.blp:925
+#: OuchBrowser/Data/UI/Window.blp:944
 msgid "New Room"
 msgstr "Uus tuba"
 
-#: OuchBrowser/Data/UI/Window.blp:948
+#: OuchBrowser/Data/UI/Window.blp:967
 msgid "New Folder"
 msgstr "Uus kaust"
 
-#: OuchBrowser/Data/UI/Window.blp:1076
+#: OuchBrowser/Data/UI/Window.blp:1096
 msgid "Search"
 msgstr "Otsi"
 
-#: OuchBrowser/Data/UI/Window.blp:1111
+#: OuchBrowser/Data/UI/Window.blp:1131
 msgid "Website"
 msgstr "Veebisait"
 
-#: OuchBrowser/Data/UI/Window.blp:1125
+#: OuchBrowser/Data/UI/Window.blp:1145
 msgid "Shortcuts"
 msgstr "Kiirklahvid"
 
-#: OuchBrowser/Data/UI/Window.blp:1138
+#: OuchBrowser/Data/UI/Window.blp:1158
 msgid "Search or enter URL…"
 msgstr "Otsi või sisesta võrguaadress…"
 
-#: OuchBrowser/Data/UI/Window.blp:1152
+#: OuchBrowser/Data/UI/Window.blp:1175
 msgid "Go"
 msgstr "Mine"
 
@@ -523,7 +523,7 @@ msgstr "Mine"
 msgid "translator-credits"
 msgstr "Priit Jõerüüt"
 
-#: OuchBrowser/UI/Preferences.cs:264
+#: OuchBrowser/UI/Preferences.cs:265
 msgid "Cleared All Ranks"
 msgstr "Kogu kasutuse statistika on kustutatud"
 
@@ -556,30 +556,35 @@ msgstr "{0} ütleb"
 msgid "OK"
 msgstr "Sobib"
 
-#: OuchBrowser/View.cs:313 OuchBrowser/View.cs:341 OuchBrowser/Window.cs:156
+#: OuchBrowser/View.cs:313 OuchBrowser/View.cs:341 OuchBrowser/Window.cs:160
 msgid "Cancel"
 msgstr "Katkesta"
 
-#: OuchBrowser/View.cs:413
+#: OuchBrowser/View.cs:415
 msgid "Expand Tab"
 msgstr "Laienda vahekaarti"
 
-#: OuchBrowser/View.cs:445 OuchBrowser/Window.cs:449
+#: OuchBrowser/View.cs:447 OuchBrowser/Window.cs:454
 msgid "Link Copied"
 msgstr "Link on kopeeritud"
 
-#: OuchBrowser/Window.cs:152
+#: OuchBrowser/Window.cs:157
 msgid "Exit and Close All Tabs?"
 msgstr "Kas väljud ja sulged kõik vahekaardid?"
 
-#: OuchBrowser/Window.cs:153
+#: OuchBrowser/Window.cs:158
 #, csharp-format
 msgid "You are about to close {0} tabs. Are you sure you want to continue?"
 msgstr "Oled sulgemas {0} vahekaarti. Kas oled kindel, et soovid jätkata?"
 
-#: OuchBrowser/Window.cs:155
-msgid "Close All Tabs"
-msgstr "Sulge kõik vahekaardid"
+#: OuchBrowser/Window.cs:161
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Close Tabs"
+msgstr "Sulge vahekaart"
+
+#~ msgid "Close All Tabs"
+#~ msgstr "Sulge kõik vahekaardid"
 
 #~ msgid "Searching…"
 #~ msgstr "Otsin…"

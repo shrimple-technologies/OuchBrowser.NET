@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-06-13 21:17-0400\n"
+"POT-Creation-Date: 2026-06-26 18:49-0400\n"
 "PO-Revision-Date: 2024-09-07 11:08+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/"
@@ -15,7 +15,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.8-dev\n"
 
-#: OuchBrowser/CommandPalette.cs:52
+#: OuchBrowser/CommandPalette.cs:54
 #, csharp-format
 msgid "Searching using {0}"
 msgstr ""
@@ -124,8 +124,8 @@ msgid "This value is the rankings of !bangs over time from use."
 msgstr ""
 
 #: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:6
-#: OuchBrowser/Data/UI/Window.blp:15 OuchBrowser/Data/UI/Window.blp:249
-#: OuchBrowser/Window.cs:87
+#: OuchBrowser/Data/UI/Window.blp:15 OuchBrowser/Data/UI/Window.blp:268
+#: OuchBrowser/Window.cs:91
 msgid "Ouch Browser"
 msgstr "Ouch-nettleseren"
 
@@ -167,7 +167,7 @@ msgid "Ouch Browser with Command Palette Opened"
 msgstr ""
 
 #: OuchBrowser/Data/UI/Preferences.blp:7 OuchBrowser/Data/UI/Preferences.blp:20
-#: OuchBrowser/Data/UI/Window.blp:566
+#: OuchBrowser/Data/UI/Window.blp:585
 msgid "Preferences"
 msgstr ""
 
@@ -278,7 +278,7 @@ msgstr ""
 msgid "New Search Engine…"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:197 OuchBrowser/Data/UI/Window.blp:1094
+#: OuchBrowser/Data/UI/Preferences.blp:197 OuchBrowser/Data/UI/Window.blp:1114
 msgid "!bangs"
 msgstr ""
 
@@ -318,8 +318,8 @@ msgstr ""
 
 #: OuchBrowser/Data/UI/RoomsOverview.blp:43
 #: OuchBrowser/Data/UI/Shortcuts.blp:38 OuchBrowser/Data/UI/Window.blp:122
-#: OuchBrowser/Data/UI/Window.blp:141 OuchBrowser/Data/UI/Window.blp:882
-#: OuchBrowser/Data/UI/Window.blp:977
+#: OuchBrowser/Data/UI/Window.blp:141 OuchBrowser/Data/UI/Window.blp:901
+#: OuchBrowser/Data/UI/Window.blp:996
 #, fuzzy
 #| msgid "New tab"
 msgid "New Tab"
@@ -408,102 +408,102 @@ msgstr ""
 msgid "Hide Sidebar"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:267
+#: OuchBrowser/Data/UI/Window.blp:286
 msgid "Show Sidebar"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:428
+#: OuchBrowser/Data/UI/Window.blp:447
 msgid "Menu"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:472
+#: OuchBrowser/Data/UI/Window.blp:491
 msgid "New Window"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:519
+#: OuchBrowser/Data/UI/Window.blp:538
 #, fuzzy
 #| msgid "New tab"
 msgid "View All Tabs"
 msgstr "Ny fane"
 
-#: OuchBrowser/Data/UI/Window.blp:609
+#: OuchBrowser/Data/UI/Window.blp:628
 msgid "Keyboard Shortcuts"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:651
+#: OuchBrowser/Data/UI/Window.blp:670
 msgid "About Ouch Browser"
 msgstr "Om Ouch-nettleseren"
 
-#: OuchBrowser/Data/UI/Window.blp:671
+#: OuchBrowser/Data/UI/Window.blp:690
 msgid "Back"
 msgstr "Tilbake"
 
-#: OuchBrowser/Data/UI/Window.blp:683
+#: OuchBrowser/Data/UI/Window.blp:702
 msgid "Forward"
 msgstr "Forover"
 
-#: OuchBrowser/Data/UI/Window.blp:695 OuchBrowser/View.cs:97
+#: OuchBrowser/Data/UI/Window.blp:714 OuchBrowser/View.cs:97
 #: OuchBrowser/View.cs:177
 msgid "Refresh"
 msgstr "Gjenoppfrisk"
 
-#: OuchBrowser/Data/UI/Window.blp:715
+#: OuchBrowser/Data/UI/Window.blp:734
 msgid "Reveal Command Palette"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:734 OuchBrowser/View.cs:442
+#: OuchBrowser/Data/UI/Window.blp:753 OuchBrowser/View.cs:444
 msgid "Copy Link"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:745
+#: OuchBrowser/Data/UI/Window.blp:764
 msgid "Website Settings"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:761
+#: OuchBrowser/Data/UI/Window.blp:780
 msgid "No Website Settings Available"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:780
+#: OuchBrowser/Data/UI/Window.blp:799
 msgid "Archive"
 msgstr "Arkiv"
 
-#: OuchBrowser/Data/UI/Window.blp:821
+#: OuchBrowser/Data/UI/Window.blp:840
 msgid "History"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:852
+#: OuchBrowser/Data/UI/Window.blp:871
 msgid "Downloads"
 msgstr "Nedlastninger"
 
-#: OuchBrowser/Data/UI/Window.blp:892
+#: OuchBrowser/Data/UI/Window.blp:911
 msgid "New…"
 msgstr "Ny …"
 
-#: OuchBrowser/Data/UI/Window.blp:925
+#: OuchBrowser/Data/UI/Window.blp:944
 msgid "New Room"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:948
+#: OuchBrowser/Data/UI/Window.blp:967
 msgid "New Folder"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1076
+#: OuchBrowser/Data/UI/Window.blp:1096
 msgid "Search"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1111
+#: OuchBrowser/Data/UI/Window.blp:1131
 msgid "Website"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1125
+#: OuchBrowser/Data/UI/Window.blp:1145
 msgid "Shortcuts"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1138
+#: OuchBrowser/Data/UI/Window.blp:1158
 msgid "Search or enter URL…"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:1152
+#: OuchBrowser/Data/UI/Window.blp:1175
 msgid "Go"
 msgstr ""
 
@@ -512,7 +512,7 @@ msgstr ""
 msgid "translator-credits"
 msgstr "Allan Nordhøy <epost@anotheragency.no>"
 
-#: OuchBrowser/UI/Preferences.cs:264
+#: OuchBrowser/UI/Preferences.cs:265
 #, fuzzy
 #| msgid "New tab"
 msgid "Cleared All Ranks"
@@ -549,32 +549,37 @@ msgstr ""
 msgid "OK"
 msgstr ""
 
-#: OuchBrowser/View.cs:313 OuchBrowser/View.cs:341 OuchBrowser/Window.cs:156
+#: OuchBrowser/View.cs:313 OuchBrowser/View.cs:341 OuchBrowser/Window.cs:160
 msgid "Cancel"
 msgstr ""
 
-#: OuchBrowser/View.cs:413
+#: OuchBrowser/View.cs:415
 msgid "Expand Tab"
 msgstr ""
 
-#: OuchBrowser/View.cs:445 OuchBrowser/Window.cs:449
+#: OuchBrowser/View.cs:447 OuchBrowser/Window.cs:454
 msgid "Link Copied"
 msgstr ""
 
-#: OuchBrowser/Window.cs:152
+#: OuchBrowser/Window.cs:157
 msgid "Exit and Close All Tabs?"
 msgstr ""
 
-#: OuchBrowser/Window.cs:153
+#: OuchBrowser/Window.cs:158
 #, csharp-format
 msgid "You are about to close {0} tabs. Are you sure you want to continue?"
 msgstr ""
 
-#: OuchBrowser/Window.cs:155
+#: OuchBrowser/Window.cs:161
 #, fuzzy
 #| msgid "New tab"
-msgid "Close All Tabs"
+msgid "Close Tabs"
 msgstr "Ny fane"
+
+#, fuzzy
+#~| msgid "New tab"
+#~ msgid "Close All Tabs"
+#~ msgstr "Ny fane"
 
 #, fuzzy
 #~| msgid "Stop loading"
