@@ -21,6 +21,12 @@ internal class Autocomplete
 			return [];
 		}
 		Autocompletion[] ac = await res.Content.ReadFromJsonAsync<Autocompletion[]>() ?? [];
-		return ac!;
+
+		// on duckduckgo, if you type an exclaimation mark *anywhere* in the
+		// search query, it will trigger duckduckgo's !bangs, which is
+		// extremely redundant, as we have our own !bangs system. we cannot do
+		// anything about this, so we must filter out duckduckgo !bangs
+		// suggestions.
+		return ac.Where((res) => !res.phrase.StartsWith('!')).ToArray();
 	}
 }
