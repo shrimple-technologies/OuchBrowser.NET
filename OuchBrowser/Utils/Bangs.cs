@@ -53,9 +53,9 @@ internal class Bangs
 
 		if (query.IsWhiteSpace()) // implements open_base_path and open_snap_domain format flags
 		{
-			if (bang.SnapDomain != null) // prioritize snap domain over domain as some !bangs work better with this
+			if (bang.SnapDomain != null) // prioritize snap domain over domain from template url as some !bangs work better with this
 				return $"https://{bang.SnapDomain}";
-			else return $"https://{bang.Domain}";
+			else return $"https://{new Uri(bang.TemplateUrl).Host}";
 		}
 
 		if (bang.TemplateUrl.StartsWith('/') && bang.Domain != "kagi.com" || bang.TemplateUrl.Contains("site:"))
