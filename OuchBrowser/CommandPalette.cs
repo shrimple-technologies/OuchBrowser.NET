@@ -51,10 +51,12 @@ internal partial class Window
 						if (current_bang != null)
 						{
 							if (text.Split(' ')[1].Length == 0) url_stack!.SetVisibleChildName("spinner");
+							Gio.Icon icon;
 							url_custom_disclosure!.SetLabel(__("Searching using {0}", current_bang.WebsiteName));
 							url_disclosure!.SetVisibleChildName("custom");
 							url_disclosure_revealer!.SetRevealChild(true);
-							Gio.Icon icon = await Favicon.GetFavicon(current_bang.Domain);
+							if (current_bang.SnapDomain != null) icon = await Favicon.GetFavicon(current_bang.SnapDomain);
+							else icon = await Favicon.GetFavicon(current_bang.Domain);
 							url_favicon!.SetFromGicon(icon);
 							url_stack!.SetVisibleChildName("website");
 						}
