@@ -2,7 +2,6 @@ using Adw;
 using Gtk;
 using OuchBrowser.UI;
 using OuchBrowser.Utils;
-using OuchBrowser.Types;
 using WebKit;
 using Object = GObject.Object;
 

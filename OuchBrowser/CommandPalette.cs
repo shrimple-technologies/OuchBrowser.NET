@@ -1,9 +1,8 @@
+using System.Text.Json;
 using Adw;
 using Gtk;
 using OuchBrowser.Types;
 using OuchBrowser.Utils;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using WebKit;
 
 namespace OuchBrowser;
