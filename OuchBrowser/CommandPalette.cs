@@ -381,7 +381,7 @@ internal partial class Window
 					{
 						view!.AddTab(bangs!.ExpandBang(query), false);
 
-						Bang? bang = bangs!.GetBang(query)!;
+						Bang? bang = bangs!.GetBang(query.Substring(1))!;
 						if (bang != null) Bangs.IncrementRanking(bang.Trigger);
 					}
 					else

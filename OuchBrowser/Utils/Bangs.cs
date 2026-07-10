@@ -94,8 +94,7 @@ internal class Bangs
 
 	public Bang? GetBang(string text)
 	{
-		string bangString = text.Split(' ')[0];
-		string trigger = bangString.StartsWith('!') ? bangString.Substring(1) : bangString;
+		string trigger = text.Split(' ')[0];
 
 		bangs.TryGetValue(trigger, out Bang? bang);
 		return bang;
