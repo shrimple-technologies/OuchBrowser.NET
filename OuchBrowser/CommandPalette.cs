@@ -382,7 +382,7 @@ internal partial class Window
 						view!.AddTab(bangs!.ExpandBang(query), false);
 
 						Bang? bang = bangs!.GetBang(query.Substring(1))!;
-						if (bang != null) Bangs.IncrementRanking(bang.Trigger);
+						if (bang != null && settings.GetBoolean("bang-autocomplete-enabled")) Bangs.IncrementRanking(bang.Trigger);
 					}
 					else
 					{
@@ -420,7 +420,7 @@ internal partial class Window
 						webview.LoadUri(bangs!.ExpandBang(query));
 
 						Bang? bang = bangs!.GetBang(query)!;
-						if (bang != null) Bangs.IncrementRanking(bang.Trigger);
+						if (bang != null && settings.GetBoolean("bang-autocomplete-enabled")) Bangs.IncrementRanking(bang.Trigger);
 					}
 					else
 					{
