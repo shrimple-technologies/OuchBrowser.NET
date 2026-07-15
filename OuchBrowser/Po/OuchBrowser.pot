@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-07-15 04:32-0400\n"
+"POT-Creation-Date: 2026-07-15 04:43-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -500,6 +500,18 @@ msgstr ""
 #. for more details.
 #: OuchBrowser/UI/About.cs:15
 msgid "translator-credits"
+msgstr ""
+
+#: OuchBrowser/UI/About.cs:20
+msgid "Icon design by"
+msgstr ""
+
+#: OuchBrowser/UI/About.cs:21
+msgid "Shrimple Technologies members"
+msgstr ""
+
+#: OuchBrowser/UI/About.cs:25
+msgid "Inspired by"
 msgstr ""
 
 #: OuchBrowser/UI/Preferences.cs:265
