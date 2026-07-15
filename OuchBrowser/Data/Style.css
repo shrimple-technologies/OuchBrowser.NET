@@ -92,6 +92,11 @@ shortcut-label.compact > box > .keycap {
 	border-bottom-right-radius: 9px;
 }
 
+.joined > button:hover,
+.joined > menubutton > button:hover {
+      background-color: color-mix(in srgb, currentColor 4%, transparent);
+}
+
 .palette-button.card {
 	border-radius: 9px;
 }
