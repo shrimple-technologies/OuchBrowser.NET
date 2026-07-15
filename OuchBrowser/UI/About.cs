@@ -6,7 +6,12 @@ internal class About
 	{
 		var dialog = Adw.AboutDialog.NewFromAppdata("/page/codeberg/shrimple/OuchBrowser/page.codeberg.shrimple.OuchBrowser.metainfo.xml", null);
 
-		// TRANSLATORS: This is not a string that is a part of the source code. This is your name (or username), followed by your email enclosed in angles (<example@domain.com>) or your website. This will be shown in Ouch Browser's credits.
+		// TRANSLATORS: This is not a string that is a part of the source code.
+		// This is your name (or username), followed by your email enclosed in
+		// angles (<example@domain.com>) or your website. This will be shown in
+		// Ouch Browser's credits. See
+		// <https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/class.AboutDialog.html#credits-and-acknowledgements>
+		// for more details.
 		dialog.SetTranslatorCredits(__("translator-credits"));
 		dialog.SetDevelopers(["Maxine Naomi Lunaris"]);
 		dialog.SetDesigners(["Maxine Naomi Lunaris"]);
