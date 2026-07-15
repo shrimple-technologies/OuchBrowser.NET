@@ -60,8 +60,18 @@ flatpak install ./page.codeberg.shrimple.OuchBrowser.flatpak
 > You need the dotnet 10.0 SDK, GTK 4, libadwaita, WebKitGTK, and Just to run
 > Ouch Browser.
 
+> [!TIP]
+> 
+> On Fedora Linux, you may install the GNOME Software Development package
+> group to obtain the main packages you need.
+> 
+> ```sh
+> sudo dnf group install gnome-software-development
+> ```
+
 ```sh
 git clone --recurse-submodules https://codeberg.org/shrimple/OuchBrowser.NET
+sudo just build-schemas
 just run
 ```
 
