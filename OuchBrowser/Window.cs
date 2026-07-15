@@ -10,39 +10,38 @@ namespace OuchBrowser;
 internal partial class Window : Adw.ApplicationWindow
 {
 #pragma warning disable CS0649
-	[Connect] public readonly Adw.HeaderBar? content_headerbar;
-	[Connect] public readonly ToolbarView? content_toolbar;
+	[Connect] public readonly Adw.HeaderBar? contentHeaderBar;
+	[Connect] public readonly ToolbarView? contentToolbarView;
 	[Connect] public readonly Button? content_sidebar_toggle;
 	[Connect] public readonly Frame? frame;
 	[Connect] public readonly Label? hostname;
-	[Connect] public readonly OverlaySplitView? osv;
+	[Connect] public readonly OverlaySplitView? overlaySplitView;
 	[Connect] public readonly ToggleButton? sidebar_toggle;
-	[Connect] public readonly ToolbarView? sidebar_toolbar;
-	[Connect] public readonly ToastOverlay? toast_overlay;
-	[Connect] public readonly Bin? topbar_hover;
+	[Connect] public readonly ToastOverlay? toastOverlay;
+	[Connect] public readonly Bin? topBarHoverTarget;
 	[Connect] public readonly Adw.Dialog? commandPaletteDialog;
 	[Connect] public readonly Entry? commandPaletteEntry;
 	[Connect] public readonly Button? url_button;
-	[Connect] public readonly TabView? tabview;
-	[Connect] public readonly Button? go_back;
-	[Connect] public readonly Button? go_forward;
+	[Connect] public readonly TabView? tabView;
+	[Connect] public readonly Button? goBackButton;
+	[Connect] public readonly Button? goForwardButton;
 	[Connect] public readonly Button? refresh;
-	[Connect] public readonly WindowControls? left_controls;
-	[Connect] public readonly WindowControls? right_controls;
-	[Connect] public readonly Button? copy_link;
-	[Connect] public readonly MenuButton? website_settings;
+	[Connect] public readonly WindowControls? startWindowControls;
+	[Connect] public readonly WindowControls? endWindowControls;
+	[Connect] public readonly Button? copyLinkButton;
+	[Connect] public readonly MenuButton? websiteSettingsButton;
 	[Connect] public readonly Revealer? commandPaletteAutocompleteRevealer;
 	[Connect] public readonly Stack? url_stack;
 	[Connect] public readonly Stack? commandPaletteDisclosureStack;
 	[Connect] public readonly Label? commandPaletteCustomDisclosure;
 	[Connect] public readonly Button? commandPaletteButton;
 	[Connect] public readonly Image? commandPaletteWebsiteFavicon;
-	[Connect] public readonly Revealer? card_revealer;
-	[Connect] public readonly ListBox? card_listbox;
+	[Connect] public readonly Revealer? cardBoxRevealer;
+	[Connect] public readonly ListBox? cardBox;
 	[Connect] public readonly Revealer? commandPaletteDisclosureRevealer;
-	[Connect] public readonly Box? url_preview;
-	[Connect] public readonly Label? url_preview_label;
-	[Connect] public readonly MultiLayoutView? mlv;
+	[Connect] public readonly Box? urlDisplayOsd;
+	[Connect] public readonly Label? urlDisplayLabel;
+	[Connect] public readonly MultiLayoutView? multiLayoutView;
 	[Connect] public readonly Revealer? commandPaletteButtonRevealer;
 #pragma warning restore CS0649
 
@@ -64,22 +63,22 @@ internal partial class Window : Adw.ApplicationWindow
 		builder.AddFromResource("/page/codeberg/shrimple/OuchBrowser/ui/window.ui");
 		builder.Connect(this);
 
-		Content = builder.GetObject("toast_overlay") as Widget;
+		Content = builder.GetObject("toastOverlay") as Widget;
 		Application = app;
 
 		var hover_controller_topbar = EventControllerMotion.New();
 		var hover_controller_headerbar = EventControllerMotion.New();
-		topbar_hover!.AddController(hover_controller_topbar);
-		content_headerbar!.AddController(hover_controller_headerbar);
+		topBarHoverTarget!.AddController(hover_controller_topbar);
+		contentHeaderBar!.AddController(hover_controller_headerbar);
 		SetupHoverController(hover_controller_topbar);
 		SetupHoverController(hover_controller_headerbar);
 
 		AddBreakpoint(SetupBreakpoint());
 
-		left_controls!.SetVisible(!left_controls!.GetEmpty());
-		left_controls!.OnNotify += (_, args) =>
+		startWindowControls!.SetVisible(!startWindowControls!.GetEmpty());
+		startWindowControls!.OnNotify += (_, args) =>
 		{
-			if (args.Pspec.GetName() == "empty") left_controls!.SetVisible(!left_controls!.GetEmpty());
+			if (args.Pspec.GetName() == "empty") startWindowControls!.SetVisible(!startWindowControls!.GetEmpty());
 		};
 
 		Maximized = settings.GetBoolean("maximized");
@@ -116,7 +115,7 @@ internal partial class Window : Adw.ApplicationWindow
 		about = About.New();
 		shortcuts = Shortcuts.New();
 		rooms = new RoomsOverview(this);
-		view = new View(tabview!, this);
+		view = new View(tabView!, this);
 		bangs = new Bangs();
 		var cards = new Cards(this);
 
@@ -124,12 +123,12 @@ internal partial class Window : Adw.ApplicationWindow
 
 		Gio.SimpleAction sidebar_action = (Gio.SimpleAction)LookupAction("sidebar-toggle")!;
 
-		go_back!.SetSensitive(false);
-		go_forward!.SetSensitive(false);
+		goBackButton!.SetSensitive(false);
+		goForwardButton!.SetSensitive(false);
 		refresh!.SetSensitive(false);
-		copy_link!.SetSensitive(false);
+		copyLinkButton!.SetSensitive(false);
 		url_button!.SetSensitive(false);
-		website_settings!.SetSensitive(false);
+		websiteSettingsButton!.SetSensitive(false);
 		sidebar_action.SetEnabled(false);
 
 		commandPaletteEntry!.OnActivate += (_, _) => commandPaletteButton!.Activate();
@@ -150,11 +149,11 @@ internal partial class Window : Adw.ApplicationWindow
 
 		OnCloseRequest += (_, _) =>
 		{
-			if (tabview!.GetNPages() >= 2)
+			if (tabView!.GetNPages() >= 2)
 			{
 				Adw.AlertDialog alert = Adw.AlertDialog.New(
 					__("Exit and Close All Tabs?"),
-					__("You are about to close {0} tabs. Are you sure you want to continue?", tabview!.GetNPages())
+					__("You are about to close {0} tabs. Are you sure you want to continue?", tabView!.GetNPages())
 				);
 				alert.AddResponse("cancel", __("Cancel"));
 				alert.AddResponse("close", __("Close Tabs"));
@@ -166,13 +165,13 @@ internal partial class Window : Adw.ApplicationWindow
 				{
 					if (args.Response == "close")
 					{
-						for (int i = 0; i < tabview.GetNPages(); i++)
+						for (int i = 0; i < tabView.GetNPages(); i++)
 						{
-							TabPage page = tabview!.GetNthPage(i)!;
+							TabPage page = tabView!.GetNthPage(i)!;
 							WebView webview = (WebView)page.Child!;
 
 							webview.TryClose();
-							tabview!.ClosePage(page);
+							tabView!.ClosePage(page);
 						}
 						Destroy();
 					}
@@ -182,13 +181,13 @@ internal partial class Window : Adw.ApplicationWindow
 			}
 			else
 			{
-				for (int i = 0; i < tabview.GetNPages(); i++)
+				for (int i = 0; i < tabView.GetNPages(); i++)
 				{
-					TabPage page = tabview!.GetNthPage(i)!;
+					TabPage page = tabView!.GetNthPage(i)!;
 					WebView webview = (WebView)page.Child!;
 
 					webview.TryClose();
-					tabview!.ClosePage(page);
+					tabView!.ClosePage(page);
 				}
 				return false;
 			}
@@ -211,13 +210,13 @@ internal partial class Window : Adw.ApplicationWindow
 
 		actions.AddAction("palette", ["<Ctrl>l", "<Alt>d"], (_, _) =>
 		{
-			if (tabview!.GetNPages() == 0)
+			if (tabView!.GetNPages() == 0)
 			{
 				ActivateAction("palette-new", null);
 			}
 			else
 			{
-				TabPage page = tabview!.GetSelectedPage()!;
+				TabPage page = tabView!.GetSelectedPage()!;
 				WebView webview = (WebView)page.Child!;
 				commandPaletteEntry!.SetText(webview.GetUri());
 				commandPaletteDialog!.Present(this);
@@ -228,20 +227,20 @@ internal partial class Window : Adw.ApplicationWindow
 
 		actions.AddAction("sidebar-toggle", ["<Ctrl><Shift>s"], (_, _) =>
 		{
-			if (tabview!.GetNPages() == 0) return;
+			if (tabView!.GetNPages() == 0) return;
 
-			if (osv!.GetShowSidebar())
+			if (overlaySplitView!.GetShowSidebar())
 			{
 				frame!.SetMarginStart(10);
-				url_preview!.SetMarginStart(20);
-				osv!.SetShowSidebar(false);
+				urlDisplayOsd!.SetMarginStart(20);
+				overlaySplitView!.SetShowSidebar(false);
 			}
 			else
 			{
 				sidebar_toggle!.SetActive(true);
 				frame!.SetMarginStart(0);
-				url_preview!.SetMarginStart(20);
-				osv!.SetShowSidebar(true);
+				urlDisplayOsd!.SetMarginStart(20);
+				overlaySplitView!.SetShowSidebar(true);
 			}
 		});
 
@@ -249,18 +248,18 @@ internal partial class Window : Adw.ApplicationWindow
 		{
 			actions.AddAction($"tab-{i}", [$"<Ctrl>{i}"], (_, _) =>
 			{
-				if (tabview!.GetNPages() < i) return;
-				if (tabview!.GetNthPage(i - 1) == tabview!.GetSelectedPage()) return;
+				if (tabView!.GetNPages() < i) return;
+				if (tabView!.GetNthPage(i - 1) == tabView!.GetSelectedPage()) return;
 
-				TabPage page = tabview!.GetNthPage(i - 1);
-				tabview!.SetSelectedPage(page);
+				TabPage page = tabView!.GetNthPage(i - 1);
+				tabView!.SetSelectedPage(page);
 
-				if (!osv!.GetShowSidebar())
+				if (!overlaySplitView!.GetShowSidebar())
 				{
 					Toast toast = Toast.New(page.GetTitle());
 					toast.SetTimeout(1);
-					toast_overlay!.DismissAll();
-					toast_overlay!.AddToast(toast);
+					toastOverlay!.DismissAll();
+					toastOverlay!.AddToast(toast);
 				}
 			});
 		}
@@ -291,7 +290,7 @@ internal partial class Window : Adw.ApplicationWindow
 
 		actions.AddAction("refresh", ["<Ctrl>r"], (_, _) =>
 		{
-			TabPage page = tabview!.GetSelectedPage()!;
+			TabPage page = tabView!.GetSelectedPage()!;
 			WebView webview = (WebView)page.Child!;
 
 			if (refresh!.GetIconName() == "cross-large-symbolic")
@@ -306,7 +305,7 @@ internal partial class Window : Adw.ApplicationWindow
 
 		actions.AddAction("hard-refresh", ["<Ctrl><Shift>r"], (_, _) =>
 		{
-			TabPage page = tabview!.GetSelectedPage()!;
+			TabPage page = tabView!.GetSelectedPage()!;
 			WebView webview = (WebView)page.Child!;
 
 			webview.ReloadBypassCache();
@@ -314,7 +313,7 @@ internal partial class Window : Adw.ApplicationWindow
 
 		actions.AddAction("zoom-in", ["<Ctrl>equal"], (_, _) =>
 		{
-			TabPage page = tabview!.GetSelectedPage()!;
+			TabPage page = tabView!.GetSelectedPage()!;
 			WebView webview = (WebView)page.Child!;
 			Toast toast = Toast.New("");
 
@@ -329,8 +328,8 @@ internal partial class Window : Adw.ApplicationWindow
 						webview.SetZoomLevel(levels[i + 1]);
 						toast.SetTitle($"{Math.Round(levels[i + 1] * 100)}%");
 						toast.SetTimeout(1);
-						toast_overlay!.DismissAll();
-						toast_overlay!.AddToast(toast);
+						toastOverlay!.DismissAll();
+						toastOverlay!.AddToast(toast);
 						break;
 					}
 				}
@@ -344,7 +343,7 @@ internal partial class Window : Adw.ApplicationWindow
 
 		actions.AddAction("zoom-out", ["<Ctrl>minus"], (_, _) =>
 		{
-			TabPage page = tabview!.GetSelectedPage()!;
+			TabPage page = tabView!.GetSelectedPage()!;
 			WebView webview = (WebView)page.Child!;
 			Toast toast = Toast.New("");
 
@@ -359,8 +358,8 @@ internal partial class Window : Adw.ApplicationWindow
 						webview.SetZoomLevel(levels[i - 1]);
 						toast.SetTitle($"{Math.Round(levels[i - 1] * 100)}%");
 						toast.SetTimeout(1);
-						toast_overlay!.DismissAll();
-						toast_overlay!.AddToast(toast);
+						toastOverlay!.DismissAll();
+						toastOverlay!.AddToast(toast);
 						break;
 					}
 				}
@@ -374,7 +373,7 @@ internal partial class Window : Adw.ApplicationWindow
 
 		actions.AddAction("zoom-reset", ["<Ctrl>0"], (_, _) =>
 		{
-			TabPage page = tabview!.GetSelectedPage()!;
+			TabPage page = tabView!.GetSelectedPage()!;
 			WebView webview = (WebView)page.Child!;
 			Toast toast = Toast.New("");
 
@@ -383,45 +382,45 @@ internal partial class Window : Adw.ApplicationWindow
 			webview.SetZoomLevel(settings.GetDouble("zoom"));
 			toast.SetTitle($"{settings.GetDouble("zoom") * 100}%");
 			toast.SetTimeout(1);
-			toast_overlay!.DismissAll();
-			toast_overlay!.AddToast(toast);
+			toastOverlay!.DismissAll();
+			toastOverlay!.AddToast(toast);
 		});
 
 		actions.AddAction("tab-close", ["<Ctrl>w"], (_, _) =>
 		{
-			if (tabview!.GetNPages() == 0)
+			if (tabView!.GetNPages() == 0)
 			{
 				Close();
 			}
 			else
 			{
-				TabPage page = tabview!.GetSelectedPage()!;
+				TabPage page = tabView!.GetSelectedPage()!;
 				WebView webview = (WebView)page.Child!;
 				Gio.SimpleAction sidebar_action = (Gio.SimpleAction)LookupAction("sidebar-toggle")!;
 
 				webview.TryClose();
-				tabview!.ClosePage(tabview!.GetSelectedPage()!);
-				if (tabview!.GetNPages() == 0)
+				tabView!.ClosePage(tabView!.GetSelectedPage()!);
+				if (tabView!.GetNPages() == 0)
 				{
 					refresh!.SetSensitive(false);
-					go_back!.SetSensitive(false);
-					go_forward!.SetSensitive(false);
+					goBackButton!.SetSensitive(false);
+					goForwardButton!.SetSensitive(false);
 					url_button!.SetSensitive(false);
-					copy_link!.SetSensitive(false);
-					website_settings!.SetSensitive(false);
+					copyLinkButton!.SetSensitive(false);
+					websiteSettingsButton!.SetSensitive(false);
 					sidebar_action.SetEnabled(false);
 					sidebar_toggle!.SetActive(true);
 					hostname!.SetLabel("");
-					osv!.SetShowSidebar(true);
+					overlaySplitView!.SetShowSidebar(true);
 				}
 			}
 		});
 
 		actions.AddAction("go-back", ["<Ctrl>Left"], (_, _) =>
 		{
-			if (tabview!.GetNPages() == 0) return;
+			if (tabView!.GetNPages() == 0) return;
 
-			TabPage page = tabview!.GetSelectedPage()!;
+			TabPage page = tabView!.GetSelectedPage()!;
 			WebView webview = (WebView)page.Child!;
 
 			webview.GoBack();
@@ -429,9 +428,9 @@ internal partial class Window : Adw.ApplicationWindow
 
 		actions.AddAction("go-forward", ["<Ctrl>Right"], (_, _) =>
 		{
-			if (tabview!.GetNPages() == 0) return;
+			if (tabView!.GetNPages() == 0) return;
 
-			TabPage page = tabview!.GetSelectedPage()!;
+			TabPage page = tabView!.GetSelectedPage()!;
 			WebView webview = (WebView)page.Child!;
 
 			webview.GoForward();
@@ -439,9 +438,9 @@ internal partial class Window : Adw.ApplicationWindow
 
 		actions.AddAction("copy-link", ["<Ctrl><Shift>c"], (_, _) =>
 		{
-			if (tabview!.GetNPages() == 0) return;
+			if (tabView!.GetNPages() == 0) return;
 
-			TabPage page = tabview!.GetSelectedPage()!;
+			TabPage page = tabView!.GetSelectedPage()!;
 			WebView webview = (WebView)page.Child!;
 			Toast toast = Toast.New("");
 
@@ -452,8 +451,8 @@ internal partial class Window : Adw.ApplicationWindow
 
 			toast.SetTitle(__("Link Copied"));
 			toast.SetTimeout(1);
-			toast_overlay!.DismissAll();
-			toast_overlay!.AddToast(toast);
+			toastOverlay!.DismissAll();
+			toastOverlay!.AddToast(toast);
 		});
 
 		actions.AddAction("palette-shortcuts", ["<Ctrl><Shift>k"], (_, _) =>
@@ -476,11 +475,11 @@ internal partial class Window : Adw.ApplicationWindow
 	{
 		controller.OnEnter += (_, _) =>
 		{
-			content_toolbar!.SetRevealTopBars(!(right_controls!.GetEmpty() && osv!.GetShowSidebar() == true));
+			contentToolbarView!.SetRevealTopBars(!(endWindowControls!.GetEmpty() && overlaySplitView!.GetShowSidebar() == true));
 		};
 		controller.OnLeave += (_, _) =>
 		{
-			content_toolbar!.SetRevealTopBars(false);
+			contentToolbarView!.SetRevealTopBars(false);
 		};
 	}
 
@@ -502,7 +501,7 @@ internal partial class Window : Adw.ApplicationWindow
 		boolean.Init(GObject.Type.Boolean);
 
 		str.SetString("mobile");
-		breakpoint.AddSetter(mlv!, "layout-name", str);
+		breakpoint.AddSetter(multiLayoutView!, "layout-name", str);
 
 		number.SetInt(10);
 		breakpoint.AddSetter(frame!, "margin-start", number);

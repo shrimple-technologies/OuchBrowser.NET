@@ -11,9 +11,9 @@ internal class View
 	private string layout = "default";
 	private bool peek_tab_trigger_held = false;
 
-	public View(TabView tabview, Window window)
+	public View(TabView tabView, Window window)
 	{
-		view = tabview;
+		view = tabView;
 		win = window;
 		WebKit.Module.Initialize();
 	}
@@ -133,8 +133,8 @@ internal class View
 				window.refresh!.SetSensitive(true);
 				window.refresh!.SetTooltipText(__("Stop Loading"));
 				window.url_button!.SetSensitive(true);
-				window.copy_link!.SetSensitive(true);
-				window.website_settings!.SetSensitive(true);
+				window.copyLinkButton!.SetSensitive(true);
+				window.websiteSettingsButton!.SetSensitive(true);
 				sidebar_action.SetEnabled(true);
 				window.refresh!.SetIconName("cross-large-symbolic");
 				page.SetLoading(true);
@@ -148,8 +148,8 @@ internal class View
 					window.refresh!.SetSensitive(true);
 					window.refresh!.SetTooltipText(__("Stop Loading"));
 					window.url_button!.SetSensitive(true);
-					window.copy_link!.SetSensitive(true);
-					window.website_settings!.SetSensitive(true);
+					window.copyLinkButton!.SetSensitive(true);
+					window.websiteSettingsButton!.SetSensitive(true);
 					sidebar_action.SetEnabled(true);
 					window.refresh!.SetIconName("cross-large-symbolic");
 					page.SetLoading(true);
@@ -185,12 +185,12 @@ internal class View
 		{
 			if (res.HitTestResult.ContextIsLink())
 			{
-				window.url_preview!.SetVisible(true);
-				window.url_preview_label!.SetLabel(res.HitTestResult.GetLinkUri());
+				window.urlDisplayOsd!.SetVisible(true);
+				window.urlDisplayLabel!.SetLabel(res.HitTestResult.GetLinkUri());
 			}
 			else
 			{
-				window.url_preview!.SetVisible(false);
+				window.urlDisplayOsd!.SetVisible(false);
 			}
 		};
 
@@ -240,12 +240,12 @@ internal class View
 			{
 				if (window.IsFullscreen())
 				{
-					layout = window.mlv!.GetLayoutName()!;
-					window.mlv!.SetLayoutName("fullscreen");
+					layout = window.multiLayoutView!.GetLayoutName()!;
+					window.multiLayoutView!.SetLayoutName("fullscreen");
 				}
 				else
 				{
-					window.mlv!.SetLayoutName(layout);
+					window.multiLayoutView!.SetLayoutName(layout);
 				}
 			}
 		};
@@ -404,7 +404,7 @@ internal class View
 		HeaderBar headerbar = HeaderBar.New();
 		Gtk.Button expand_button = Gtk.Button.NewFromIconName("view-fullscreen-symbolic");
 		Gtk.Button copy_link_button = Gtk.Button.NewFromIconName("chain-link-loose-symbolic");
-		ToastOverlay toast_overlay = ToastOverlay.New();
+		ToastOverlay toastOverlay = ToastOverlay.New();
 		Gtk.Separator hb_separator = Gtk.Separator.New(Gtk.Orientation.Vertical);
 		bool transferring_to_main = false;
 
@@ -415,7 +415,7 @@ internal class View
 		expand_button.SetTooltipText(__("Expand Tab"));
 		expand_button.OnClicked += async (_, _) =>
 		{
-			frame.SetChild(Bin.New()); // make webview parentless so that we can append it to the main tabview
+			frame.SetChild(Bin.New()); // make webview parentless so that we can append it to the main tabView
 			transferring_to_main = true;
 			TabPage page = view.Append(webview);
 
@@ -452,8 +452,8 @@ internal class View
 			clipboard.SetText(uri);
 
 			toast.SetTimeout(1);
-			toast_overlay!.DismissAll();
-			toast_overlay!.AddToast(toast);
+			toastOverlay!.DismissAll();
+			toastOverlay!.AddToast(toast);
 		};
 
 		hb_separator.SetMarginTop(5);
@@ -473,13 +473,13 @@ internal class View
 		frame.SetHexpand(true);
 		frame.SetChild(webview);
 
-		toast_overlay.SetChild(toolbarview);
+		toastOverlay.SetChild(toolbarview);
 
 		dialog.HeightRequest = 360;
 		dialog.WidthRequest = 360;
 		dialog.SetContentHeight(650);
 		dialog.SetContentWidth(1000);
-		dialog.SetChild(toast_overlay);
+		dialog.SetChild(toastOverlay);
 		dialog.AddCssClass("peek");
 		dialog.Present(win);
 		webview.GrabFocus();

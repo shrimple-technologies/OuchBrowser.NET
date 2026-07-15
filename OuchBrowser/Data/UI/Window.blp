@@ -1,20 +1,20 @@
 using Gtk 4.0;
 using Adw 1;
 
-Adw.ToastOverlay toast_overlay {
-	Adw.MultiLayoutView mlv {
+Adw.ToastOverlay toastOverlay {
+	Adw.MultiLayoutView multiLayoutView {
 		Adw.Layout {
 			name: "default";
 
 			content: Adw.ToolbarView {
-				Adw.OverlaySplitView osv {
+				Adw.OverlaySplitView overlaySplitView {
 					min-sidebar-width: 225;
 					max-sidebar-width: 250;
 
 					sidebar: Adw.NavigationPage sidebar {
 						title: _("Ouch Browser");
 
-						Adw.ToolbarView sidebar_toolbar {
+						Adw.ToolbarView {
 							[top]
 							CenterBox {
 								margin-top: 6;
@@ -25,7 +25,7 @@ Adw.ToastOverlay toast_overlay {
 									orientation: horizontal;
 									spacing: 6;
 
-									WindowControls left_controls {
+									WindowControls startWindowControls {
 										side: start;
 									}
 
@@ -163,7 +163,7 @@ Adw.ToastOverlay toast_overlay {
 										ListView tabs {
 											margin-end: 10;
 											vexpand: true;
-											model: bind tabview.pages;
+											model: bind tabView.pages;
 
 											factory: BuilderListItemFactory {
 												template ListItem {
@@ -171,7 +171,7 @@ Adw.ToastOverlay toast_overlay {
 														start-widget: Box {
 															spacing: 10;
 
-															Image tab_icon {
+															Image tabIcon {
 																gicon: bind template.item as <Adw.TabPage>.icon;
 																visible: bind spinner.visible inverted;
 															}
@@ -221,10 +221,10 @@ Adw.ToastOverlay toast_overlay {
 							}
 
 							[bottom]
-							Revealer card_revealer {
+							Revealer cardBoxRevealer {
 								transition-type: slide_up;
 
-								ListBox card_listbox {
+								ListBox cardBox {
 									selection-mode: none;
 									margin-top: 10;
 									margin-bottom: 5;
@@ -267,13 +267,13 @@ Adw.ToastOverlay toast_overlay {
 					content: Adw.NavigationPage {
 						title: _("Ouch Browser");
 
-						Adw.ToolbarView content_toolbar {
+						Adw.ToolbarView contentToolbarView {
 							reveal-top-bars: false;
 							top-bar-style: raised;
 							extend-content-to-top-edge: true;
 
 							[top]
-							Adw.HeaderBar content_headerbar {
+							Adw.HeaderBar contentHeaderBar {
 								show-title: false;
 
 								styles [
@@ -284,7 +284,7 @@ Adw.ToastOverlay toast_overlay {
 								Button content_sidebar_toggle {
 									icon-name: "sidebar-show-symbolic";
 									tooltip-text: _("Show Sidebar");
-									visible: bind osv.show-sidebar inverted;
+									visible: bind overlaySplitView.show-sidebar inverted;
 									focus-on-click: false;
 									action-name: "win.sidebar-toggle";
 
@@ -294,7 +294,7 @@ Adw.ToastOverlay toast_overlay {
 								}
 
 								[end]
-								WindowControls right_controls {
+								WindowControls endWindowControls {
 									side: end;
 									visible: false;
 								}
@@ -307,12 +307,12 @@ Adw.ToastOverlay toast_overlay {
 									hexpand: true;
 									valign: start;
 
-									Adw.Bin topbar_hover {}
+									Adw.Bin topBarHoverTarget {}
 								}
 
 								Overlay {
 									[overlay]
-									Box url_preview {
+									Box urlDisplayOsd {
 										halign: start;
 										valign: end;
 										margin-start: 10;
@@ -325,7 +325,7 @@ Adw.ToastOverlay toast_overlay {
 												"url-preview",
 											]
 
-											Label url_preview_label {
+											Label urlDisplayLabel {
 												halign: start;
 												margin-start: 10;
 												margin-end: 10;
@@ -418,7 +418,7 @@ Adw.ToastOverlay toast_overlay {
 						}
 
 						Adw.TabButton {
-							view: tabview;
+							view: tabView;
 							action-name: "win.rooms";
 							focus-on-click: false;
 							hexpand: true;
@@ -685,7 +685,7 @@ Adw.ToastOverlay toast_overlay {
 		}
 
 		[go-back]
-		Button go_back {
+		Button goBackButton {
 			icon-name: "go-previous-symbolic";
 			tooltip-text: _("Back");
 			action-name: "win.go-back";
@@ -697,7 +697,7 @@ Adw.ToastOverlay toast_overlay {
 		}
 
 		[go-forward]
-		Button go_forward {
+		Button goForwardButton {
 			icon-name: "go-next-symbolic";
 			tooltip-text: _("Forward");
 			action-name: "win.go-forward";
@@ -748,7 +748,7 @@ Adw.ToastOverlay toast_overlay {
 				}
 			}
 
-			Button copy_link {
+			Button copyLinkButton {
 				icon-name: "chain-link-loose-symbolic";
 				tooltip-text: _("Copy Link");
 				action-name: "win.copy-link";
@@ -759,7 +759,7 @@ Adw.ToastOverlay toast_overlay {
 				]
 			}
 
-			MenuButton website_settings {
+			MenuButton websiteSettingsButton {
 				icon-name: "sliders-horizontal-symbolic";
 				tooltip-text: _("Website Settings");
 				focus-on-click: false;
@@ -1022,7 +1022,7 @@ Adw.ToastOverlay toast_overlay {
 		}
 
 		[webview]
-		Adw.TabView tabview {
+		Adw.TabView tabView {
 			receives-default: true;
 
 			styles [

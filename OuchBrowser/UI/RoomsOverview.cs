@@ -47,10 +47,10 @@ internal class RoomsOverview : Adw.Dialog
 
 				lb!.RemoveAll();
 
-				for (int i = 0; i < window.tabview!.GetNPages(); i++)
+				for (int i = 0; i < window.tabView!.GetNPages(); i++)
 				{
 					tab_stack.SetVisibleChildName("tabs");
-					TabPage tabpage = window.tabview!.GetNthPage(i)!;
+					TabPage tabpage = window.tabView!.GetNthPage(i)!;
 					ActionRow row = ActionRow.New();
 					Button btn = Button.NewFromIconName("cross-large-symbolic");
 
@@ -60,7 +60,7 @@ internal class RoomsOverview : Adw.Dialog
 					btn.OnClicked += (_, _) =>
 					{
 						Close();
-						window.tabview.SetSelectedPage(tabpage);
+						window.tabView.SetSelectedPage(tabpage);
 						window.ActivateAction("tab-close", null);
 					};
 
@@ -73,15 +73,15 @@ internal class RoomsOverview : Adw.Dialog
 					row.OnActivated += (_, _) =>
 					{
 						Close();
-						window.tabview.SetSelectedPage(tabpage);
+						window.tabView.SetSelectedPage(tabpage);
 					};
 
 					lb.Append(row);
 				}
 
-				if (window.tabview!.GetNPages() > 0)
+				if (window.tabView!.GetNPages() > 0)
 				{
-					wt!.SetSubtitle(N__("{0} tab", "{0} tabs", window.tabview!.GetNPages()));
+					wt!.SetSubtitle(N__("{0} tab", "{0} tabs", window.tabView!.GetNPages()));
 				}
 				else
 				{

@@ -36,12 +36,12 @@ internal partial class Window
 					url_stack!.SetVisibleChildName("main");
 					commandPaletteDisclosureStack!.SetVisibleChildName("none");
 					commandPaletteDisclosureRevealer!.SetRevealChild(false);
-					if (mlv!.GetLayoutName() == "mobile") commandPaletteButtonRevealer!.SetRevealChild(false);
+					if (multiLayoutView!.GetLayoutName() == "mobile") commandPaletteButtonRevealer!.SetRevealChild(false);
 				}
 				else if (text.StartsWith('!'))
 				{
 					commandPaletteDisclosureRevealer!.SetRevealChild(false);
-					if (mlv!.GetLayoutName() == "mobile") commandPaletteButtonRevealer!.SetRevealChild(true);
+					if (multiLayoutView!.GetLayoutName() == "mobile") commandPaletteButtonRevealer!.SetRevealChild(true);
 
 					if (1 < text.Split(' ').Length)
 					{
@@ -130,7 +130,7 @@ internal partial class Window
 					url_stack!.SetVisibleChildName("website");
 					commandPaletteDisclosureStack!.SetVisibleChildName("none");
 					commandPaletteDisclosureRevealer!.SetRevealChild(false);
-					if (mlv!.GetLayoutName() == "mobile") commandPaletteButtonRevealer!.SetRevealChild(true);
+					if (multiLayoutView!.GetLayoutName() == "mobile") commandPaletteButtonRevealer!.SetRevealChild(true);
 					commandPaletteCustomDisclosure!.SetLabel("");
 					commandPaletteWebsiteFavicon!.SetFromGicon(await Favicon.GetFavicon(text));
 				}
@@ -140,7 +140,7 @@ internal partial class Window
 					url_stack!.SetVisibleChildName("main");
 					commandPaletteDisclosureStack!.SetVisibleChildName("none");
 					commandPaletteDisclosureRevealer!.SetRevealChild(false);
-					if (mlv!.GetLayoutName() == "mobile") commandPaletteButtonRevealer!.SetRevealChild(true);
+					if (multiLayoutView!.GetLayoutName() == "mobile") commandPaletteButtonRevealer!.SetRevealChild(true);
 
 					commandPaletteAutocompleteRevealer!.SetRevealChild(true);
 					Box box = Box.New(Orientation.Vertical, 10);
@@ -209,7 +209,7 @@ internal partial class Window
 				{
 					commandPaletteDisclosureStack!.SetVisibleChildName("none");
 					commandPaletteDisclosureRevealer!.SetRevealChild(false);
-					if (mlv!.GetLayoutName() == "mobile") commandPaletteButtonRevealer!.SetRevealChild(true);
+					if (multiLayoutView!.GetLayoutName() == "mobile") commandPaletteButtonRevealer!.SetRevealChild(true);
 					commandPaletteCustomDisclosure!.SetLabel("");
 
 					if (settings.GetBoolean("search-autocomplete-enabled"))
@@ -392,7 +392,7 @@ internal partial class Window
 			}
 			else
 			{
-				TabPage page = tabview!.GetSelectedPage()!;
+				TabPage page = tabView!.GetSelectedPage()!;
 				WebView webview = (WebView)page.Child!;
 
 				Console.WriteLine($"url: {query}");

@@ -31,25 +31,25 @@ internal class Cards
 			btn.SetTitle(button.Title);
 			btn.OnActivated += button.OnActivated;
 			btn.OnActivated += (_, _) => HideCard();
-			window.card_listbox!.Append(btn);
+			window.cardBox!.Append(btn);
 		}
 
 		ButtonRow close_btn = ButtonRow.New();
 		close_btn.SetStartIconName("cross-large-symbolic");
 		close_btn.SetTitle(__("Close"));
 		close_btn.OnActivated += (_, _) => HideCard();
-		window.card_listbox!.Prepend(row);
-		window.card_listbox!.Append(close_btn);
+		window.cardBox!.Prepend(row);
+		window.cardBox!.Append(close_btn);
 
-		window.card_revealer!.SetRevealChild(true);
+		window.cardBoxRevealer!.SetRevealChild(true);
 	}
 
 	public void HideCard()
 	{
-		window.card_revealer!.SetRevealChild(false);
-		window.card_revealer!.OnNotify += (_, args) =>
+		window.cardBoxRevealer!.SetRevealChild(false);
+		window.cardBoxRevealer!.OnNotify += (_, args) =>
 		{
-			if (args.Pspec.GetName() == "child-revealed" && !window.card_revealer!.GetChildRevealed()) window.card_listbox!.RemoveAll();
+			if (args.Pspec.GetName() == "child-revealed" && !window.cardBoxRevealer!.GetChildRevealed()) window.cardBox!.RemoveAll();
 		};
 	}
 }

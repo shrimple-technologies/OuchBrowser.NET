@@ -7,7 +7,7 @@ internal class Preferences : Adw.Dialog
 {
 #pragma warning disable CS0649
 	private readonly Builder? builder;
-	[Connect] private readonly ToastOverlay? toast_overlay;
+	[Connect] private readonly ToastOverlay? toastOverlay;
 	[Connect] private readonly NavigationSplitView? nsv;
 	[Connect] private readonly ViewStack? view;
 	[Connect] private readonly SwitchRow? setting_search_autocomplete;
@@ -28,7 +28,7 @@ internal class Preferences : Adw.Dialog
 
 		nsv!.SetShowContent(true);
 
-		Child = toast_overlay!;
+		Child = toastOverlay!;
 		HeightRequest = 360;
 		WidthRequest = 360;
 		ContentHeight = 500;
@@ -161,11 +161,11 @@ internal class Preferences : Adw.Dialog
 			if (args.Pspec.GetName() == "active")
 			{
 				settings.SetBoolean("devtools-enabled", setting_devtools.GetActive());
-				int npages = window.tabview!.GetNPages()!;
+				int npages = window.tabView!.GetNPages()!;
 
 				for (int i = 1; i <= npages; i++)
 				{
-					TabPage page = window.tabview!.GetNthPage(i - 1);
+					TabPage page = window.tabView!.GetNthPage(i - 1);
 					WebKit.WebView webview = (WebKit.WebView)page.GetChild();
 					WebKit.Settings settings = webview.GetSettings();
 					settings.SetEnableDeveloperExtras(setting_devtools.GetActive());
@@ -229,10 +229,10 @@ internal class Preferences : Adw.Dialog
 						break;
 				}
 
-				int npages = window.tabview!.GetNPages()!;
+				int npages = window.tabView!.GetNPages()!;
 				for (int i = 1; i <= npages; i++)
 				{
-					TabPage page = window.tabview!.GetNthPage(i - 1);
+					TabPage page = window.tabView!.GetNthPage(i - 1);
 					WebKit.WebView webview = (WebKit.WebView)page.GetChild();
 					if (prev_default == webview.GetZoomLevel()) webview.SetZoomLevel(settings.GetDouble("zoom"));
 				}
@@ -262,7 +262,7 @@ internal class Preferences : Adw.Dialog
 		{
 			settings.Reset("bang-rankings");
 			setting_clear_bang_rankings.SetSensitive(false);
-			toast_overlay!.AddToast(Toast.New(__("Cleared All Ranks")));
+			toastOverlay!.AddToast(Toast.New(__("Cleared All Ranks")));
 		};
 	}
 
