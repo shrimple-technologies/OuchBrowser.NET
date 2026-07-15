@@ -46,7 +46,7 @@ internal partial class Window
 					if (1 < text.Split(' ').Length)
 					{
 						url_autocomplete!.SetRevealChild(false);
-						Bang? current_bang = bangs!.GetBang(text)!;
+						Bang? current_bang = bangs!.GetBang(text.Substring(1))!;
 						if (current_bang != null)
 						{
 							if (text.Split(' ')[1].Length == 0) url_stack!.SetVisibleChildName("spinner");
