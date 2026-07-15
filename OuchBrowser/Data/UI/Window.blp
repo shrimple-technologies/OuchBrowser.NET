@@ -1032,7 +1032,7 @@ Adw.ToastOverlay toast_overlay {
 	}
 }
 
-Adw.Dialog url_dialog {
+Adw.Dialog commandPaletteDialog {
 	presentation-mode: auto;
 	follows-content-size: false;
 	width-request: 360;
@@ -1123,7 +1123,7 @@ Adw.Dialog url_dialog {
 				StackPage {
 					name: "website";
 
-					child: Image url_favicon {
+					child: Image commandPaletteWebsiteFavicon {
 						pixel-size: 20;
 						margin-start: 10;
 
@@ -1152,7 +1152,7 @@ Adw.Dialog url_dialog {
 				}
 			}
 
-			Entry url_entry {
+			Entry commandPaletteEntry {
 				input-purpose: url;
 				hexpand: true;
 				placeholder-text: _("Search or enter URL…");
@@ -1167,10 +1167,10 @@ Adw.Dialog url_dialog {
 				]
 			}
 
-			Revealer url_bar_button_revealer {
+			Revealer commandPaletteButtonRevealer {
 				transition-type: crossfade;
 
-				Button url_bar_button {
+				Button commandPaletteButton {
 					icon-name: "go-next-symbolic";
 					tooltip-text: _("Go");
 					valign: center;
@@ -1184,21 +1184,21 @@ Adw.Dialog url_dialog {
 
 		Separator {
 			orientation: horizontal;
-			visible: bind url_autocomplete.child-revealed;
+			visible: bind commandPaletteAutocompleteRevealer.child-revealed;
 		}
 
-		Revealer url_autocomplete {}
+		Revealer commandPaletteAutocompleteRevealer {}
 
-		Revealer url_disclosure_revealer {
+		Revealer commandPaletteDisclosureRevealer {
 			Box {
 				orientation: vertical;
 
 				Separator {
 					orientation: horizontal;
-					visible: bind url_autocomplete.child-revealed inverted;
+					visible: bind commandPaletteAutocompleteRevealer.child-revealed inverted;
 				}
 
-				Stack url_disclosure {
+				Stack commandPaletteDisclosureStack {
 					transition-type: crossfade;
 					margin-start: 10;
 					margin-end: 10;
@@ -1214,7 +1214,7 @@ Adw.Dialog url_dialog {
 					StackPage {
 						name: "custom";
 
-						child: Label url_custom_disclosure {
+						child: Label commandPaletteCustomDisclosure {
 							halign: center;
 							ellipsize: end;
 

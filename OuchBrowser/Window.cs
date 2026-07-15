@@ -20,8 +20,8 @@ internal partial class Window : Adw.ApplicationWindow
 	[Connect] public readonly ToolbarView? sidebar_toolbar;
 	[Connect] public readonly ToastOverlay? toast_overlay;
 	[Connect] public readonly Bin? topbar_hover;
-	[Connect] public readonly Adw.Dialog? url_dialog;
-	[Connect] public readonly Entry? url_entry;
+	[Connect] public readonly Adw.Dialog? commandPaletteDialog;
+	[Connect] public readonly Entry? commandPaletteEntry;
 	[Connect] public readonly Button? url_button;
 	[Connect] public readonly TabView? tabview;
 	[Connect] public readonly Button? go_back;
@@ -31,19 +31,19 @@ internal partial class Window : Adw.ApplicationWindow
 	[Connect] public readonly WindowControls? right_controls;
 	[Connect] public readonly Button? copy_link;
 	[Connect] public readonly MenuButton? website_settings;
-	[Connect] public readonly Revealer? url_autocomplete;
+	[Connect] public readonly Revealer? commandPaletteAutocompleteRevealer;
 	[Connect] public readonly Stack? url_stack;
-	[Connect] public readonly Stack? url_disclosure;
-	[Connect] public readonly Label? url_custom_disclosure;
-	[Connect] public readonly Button? url_bar_button;
-	[Connect] public readonly Image? url_favicon;
+	[Connect] public readonly Stack? commandPaletteDisclosureStack;
+	[Connect] public readonly Label? commandPaletteCustomDisclosure;
+	[Connect] public readonly Button? commandPaletteButton;
+	[Connect] public readonly Image? commandPaletteWebsiteFavicon;
 	[Connect] public readonly Revealer? card_revealer;
 	[Connect] public readonly ListBox? card_listbox;
-	[Connect] public readonly Revealer? url_disclosure_revealer;
+	[Connect] public readonly Revealer? commandPaletteDisclosureRevealer;
 	[Connect] public readonly Box? url_preview;
 	[Connect] public readonly Label? url_preview_label;
 	[Connect] public readonly MultiLayoutView? mlv;
-	[Connect] public readonly Revealer? url_bar_button_revealer;
+	[Connect] public readonly Revealer? commandPaletteButtonRevealer;
 #pragma warning restore CS0649
 
 	private string palette_state = "new_tab";
@@ -132,7 +132,7 @@ internal partial class Window : Adw.ApplicationWindow
 		website_settings!.SetSensitive(false);
 		sidebar_action.SetEnabled(false);
 
-		url_entry!.OnActivate += (_, _) => url_bar_button!.Activate();
+		commandPaletteEntry!.OnActivate += (_, _) => commandPaletteButton!.Activate();
 
 		HandlePaletteUpdate();
 		HandlePaletteActivate();
@@ -141,7 +141,7 @@ internal partial class Window : Adw.ApplicationWindow
 
 		if (settings.GetStrv("restore-tabs").Length == 0)
 		{
-			url_dialog!.Present(this);
+			commandPaletteDialog!.Present(this);
 		}
 		else
 		{
@@ -203,9 +203,9 @@ internal partial class Window : Adw.ApplicationWindow
 
 		actions.AddAction("palette-new", ["<Ctrl>t"], (_, _) =>
 		{
-			url_entry!.DeleteText(0, -1);
-			url_dialog!.Present(this);
-			url_entry!.GrabFocus();
+			commandPaletteEntry!.DeleteText(0, -1);
+			commandPaletteDialog!.Present(this);
+			commandPaletteEntry!.GrabFocus();
 			palette_state = "new_tab";
 		});
 
@@ -219,9 +219,9 @@ internal partial class Window : Adw.ApplicationWindow
 			{
 				TabPage page = tabview!.GetSelectedPage()!;
 				WebView webview = (WebView)page.Child!;
-				url_entry!.SetText(webview.GetUri());
-				url_dialog!.Present(this);
-				url_entry!.GrabFocus();
+				commandPaletteEntry!.SetText(webview.GetUri());
+				commandPaletteDialog!.Present(this);
+				commandPaletteEntry!.GrabFocus();
 				palette_state = "current_tab";
 			}
 		});
@@ -459,10 +459,10 @@ internal partial class Window : Adw.ApplicationWindow
 		actions.AddAction("palette-shortcuts", ["<Ctrl><Shift>k"], (_, _) =>
 		{
 			EntryBuffer buffer = EntryBuffer.New(">", -1);
-			url_entry!.SetBuffer(buffer);
-			url_dialog!.Present(this);
-			url_entry!.GrabFocusWithoutSelecting();
-			url_entry!.SetPosition(-1);
+			commandPaletteEntry!.SetBuffer(buffer);
+			commandPaletteDialog!.Present(this);
+			commandPaletteEntry!.GrabFocusWithoutSelecting();
+			commandPaletteEntry!.SetPosition(-1);
 		});
 
 		actions.AddAction("new-window", ["<Ctrl>n"], (_, _) =>
@@ -511,7 +511,7 @@ internal partial class Window : Adw.ApplicationWindow
 		breakpoint.AddSetter(frame!, "margin-bottom", number);
 
 		number.SetInt(-1);
-		breakpoint.AddSetter(url_entry!, "width-request", number);
+		breakpoint.AddSetter(commandPaletteEntry!, "width-request", number);
 
 		number.SetInt(0);
 		breakpoint.AddSetter(hostname!, "halign", number); // halign = fill
