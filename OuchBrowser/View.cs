@@ -415,7 +415,7 @@ internal class View
 		expand_button.SetTooltipText(__("Expand Tab"));
 		expand_button.OnClicked += async (_, _) =>
 		{
-			frame.SetChild(Bin.New()); // make webview parentless so that we can append it to the main tabView
+			frame.SetChild(Bin.New()); // make webview parentless so that we can append it to the main tab view
 			transferring_to_main = true;
 			TabPage page = view.Append(webview);
 
