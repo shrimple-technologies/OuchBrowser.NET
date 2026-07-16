@@ -413,14 +413,14 @@ internal class View
 		webview.SetZoomLevel(settings.GetDouble("zoom"));
 
 		close_button.SetTooltipText(__("Close Tab"));
-		close_button.SetCssClasses(["image-button", "circular", "raised", "card"]);
+		close_button.SetCssClasses(["image-button", "circular", "raised", "card", "view"]);
 		close_button.OnClicked += (_, _) =>
 		{
 			dialog.Close();
 		};
 		
 		expand_button.SetTooltipText(__("Expand Tab"));
-		expand_button.SetCssClasses(["image-button", "circular", "raised", "card"]);
+		expand_button.SetCssClasses(["image-button", "circular", "raised", "card", "view"]);
 		expand_button.OnClicked += async (_, _) =>
 		{
 			frame.SetChild(Bin.New()); // make webview parentless so that we can append it to the main tab view
@@ -450,7 +450,7 @@ internal class View
 		};
 
 		copy_link_button.SetTooltipText(__("Copy Link"));
-		copy_link_button.SetCssClasses(["image-button", "circular", "raised", "card"]);
+		copy_link_button.SetCssClasses(["image-button", "circular", "raised", "card", "view"]);
 		copy_link_button.OnClicked += (_, _) =>
 		{
 			Toast toast = Toast.New(__("Link Copied"));

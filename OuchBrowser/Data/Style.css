@@ -128,3 +128,7 @@ dialog.command-palette > widget > floating-sheet > sheet {
 	padding: 5px 15px;
 	outline-color: transparent;
 }
+
+button.view {
+	background-color: var(--view-bg-color);
+}
