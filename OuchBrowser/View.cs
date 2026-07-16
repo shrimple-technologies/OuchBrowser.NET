@@ -489,6 +489,7 @@ internal class View
 		dialog.SetContentWidth(1000);
 		dialog.SetChild(toastOverlay);
 		dialog.AddCssClass("peek");
+		dialog.SetPresentationMode(DialogPresentationMode.Floating);
 		dialog.Present(win);
 		webview.GrabFocus();
 
@@ -497,6 +498,28 @@ internal class View
 			if (!transferring_to_main) webview.TryClose();
 			peek_tab_trigger_held = false; // sometimes it forgets to fire Gtk.EventControllerKey.OnKeyReleased
 		};
+
+		// equivalent to condition ("max-width: 600sp") in blueprint
+		BreakpointCondition breakpointCondition = BreakpointCondition.NewLength(
+			BreakpointConditionLengthType.MaxWidth,
+			600,
+			LengthUnit.Sp
+		);
+		Breakpoint breakpoint = Breakpoint.New(breakpointCondition);
+
+		GObject.Value number = new();
+		number.Init(GObject.Type.Int);
+
+		number.SetInt(1); // vertical
+		breakpoint.AddSetter(box!, "orientation", number);
+		
+		number.SetInt(0); // horizontal
+		breakpoint.AddSetter(actionsBox!, "orientation", number);
+		
+		number.SetInt(0);
+		breakpoint.AddSetter(actionsBox!, "margin-top", number);
+
+		dialog.AddBreakpoint(breakpoint);
 
 		return webview;
 	}
