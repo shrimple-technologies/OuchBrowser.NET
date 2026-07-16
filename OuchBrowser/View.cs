@@ -400,19 +400,27 @@ internal class View
 		WebView webview = WebView.New();
 		Dialog dialog = Dialog.New();
 		Gtk.Frame frame = Gtk.Frame.New(null);
-		ToolbarView toolbarview = ToolbarView.New();
-		HeaderBar headerbar = HeaderBar.New();
+		Gtk.Box box = Gtk.Box.New(Gtk.Orientation.Horizontal, 15);
+		Gtk.Box actionsBox = Gtk.Box.New(Gtk.Orientation.Vertical, 15);
 		Gtk.Button expand_button = Gtk.Button.NewFromIconName("view-fullscreen-symbolic");
 		Gtk.Button copy_link_button = Gtk.Button.NewFromIconName("chain-link-loose-symbolic");
+		Gtk.Button close_button = Gtk.Button.NewFromIconName("cross-large-symbolic");
 		ToastOverlay toastOverlay = ToastOverlay.New();
-		Gtk.Separator hb_separator = Gtk.Separator.New(Gtk.Orientation.Vertical);
 		bool transferring_to_main = false;
 
 		webview.SetSettings(InitSettings());
 		webview.LoadRequest(req);
 		webview.SetZoomLevel(settings.GetDouble("zoom"));
 
+		close_button.SetTooltipText(__("Close Tab"));
+		close_button.SetCssClasses(["image-button", "circular", "raised", "card"]);
+		close_button.OnClicked += (_, _) =>
+		{
+			dialog.Close();
+		};
+		
 		expand_button.SetTooltipText(__("Expand Tab"));
+		expand_button.SetCssClasses(["image-button", "circular", "raised", "card"]);
 		expand_button.OnClicked += async (_, _) =>
 		{
 			frame.SetChild(Bin.New()); // make webview parentless so that we can append it to the main tab view
@@ -442,6 +450,7 @@ internal class View
 		};
 
 		copy_link_button.SetTooltipText(__("Copy Link"));
+		copy_link_button.SetCssClasses(["image-button", "circular", "raised", "card"]);
 		copy_link_button.OnClicked += (_, _) =>
 		{
 			Toast toast = Toast.New(__("Link Copied"));
@@ -456,24 +465,23 @@ internal class View
 			toastOverlay!.AddToast(toast);
 		};
 
-		hb_separator.SetMarginTop(5);
-		hb_separator.SetMarginBottom(5);
-
-		headerbar.PackEnd(expand_button);
-		headerbar.PackEnd(hb_separator);
-		headerbar.PackEnd(copy_link_button);
-
-		toolbarview.AddTopBar(headerbar);
-		toolbarview.SetContent(frame);
-
-		frame.SetMarginBottom(10);
-		frame.SetMarginStart(10);
-		frame.SetMarginEnd(10);
 		frame.SetVexpand(true);
 		frame.SetHexpand(true);
+		frame.AddCssClass("card");
 		frame.SetChild(webview);
 
-		toastOverlay.SetChild(toolbarview);
+		actionsBox.Append(close_button);
+		actionsBox.Append(expand_button);
+		actionsBox.Append(copy_link_button);
+		actionsBox.SetMarginTop(25);
+		box.Append(frame);
+		box.Append(actionsBox);
+		box.SetMarginTop(10);
+		box.SetMarginBottom(10);
+		box.SetMarginStart(10);
+		box.SetMarginEnd(10);
+
+		toastOverlay.SetChild(box);
 
 		dialog.HeightRequest = 360;
 		dialog.WidthRequest = 360;
