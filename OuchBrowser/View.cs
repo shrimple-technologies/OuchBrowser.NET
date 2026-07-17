@@ -402,29 +402,29 @@ internal class View
 		Gtk.Frame frame = Gtk.Frame.New(null);
 		Gtk.Box box = Gtk.Box.New(Gtk.Orientation.Horizontal, 15);
 		Gtk.Box actionsBox = Gtk.Box.New(Gtk.Orientation.Vertical, 15);
-		Gtk.Button expand_button = Gtk.Button.NewFromIconName("view-fullscreen-symbolic");
-		Gtk.Button copy_link_button = Gtk.Button.NewFromIconName("chain-link-loose-symbolic");
-		Gtk.Button close_button = Gtk.Button.NewFromIconName("cross-large-symbolic");
+		Gtk.Button expandButton = Gtk.Button.NewFromIconName("view-fullscreen-symbolic");
+		Gtk.Button copyLinkButton = Gtk.Button.NewFromIconName("chain-link-loose-symbolic");
+		Gtk.Button closeButton = Gtk.Button.NewFromIconName("cross-large-symbolic");
 		ToastOverlay toastOverlay = ToastOverlay.New();
-		bool transferring_to_main = false;
+		bool transferringToMain = false;
 
 		webview.SetSettings(InitSettings());
 		webview.LoadRequest(req);
 		webview.SetZoomLevel(settings.GetDouble("zoom"));
 
-		close_button.SetTooltipText(__("Close Tab"));
-		close_button.SetCssClasses(["image-button", "circular", "raised", "card", "view"]);
-		close_button.OnClicked += (_, _) =>
+		closeButton.SetTooltipText(__("Close Tab"));
+		closeButton.SetCssClasses(["image-button", "circular", "raised", "card", "view"]);
+		closeButton.OnClicked += (_, _) =>
 		{
 			dialog.Close();
 		};
 		
-		expand_button.SetTooltipText(__("Expand Tab"));
-		expand_button.SetCssClasses(["image-button", "circular", "raised", "card", "view"]);
-		expand_button.OnClicked += async (_, _) =>
+		expandButton.SetTooltipText(__("Expand Tab"));
+		expandButton.SetCssClasses(["image-button", "circular", "raised", "card", "view"]);
+		expandButton.OnClicked += async (_, _) =>
 		{
 			toastOverlay.SetChild(Bin.New()); // make webview parentless so that we can append it to the main tab view
-			transferring_to_main = true;
+			transferringToMain = true;
 			TabPage page = view.Append(webview);
 
 			page.SetTitle(webview.GetTitle());
@@ -449,9 +449,9 @@ internal class View
 			page.SetIcon(await Favicon.GetFavicon(webview.GetUri()));
 		};
 
-		copy_link_button.SetTooltipText(__("Copy Link"));
-		copy_link_button.SetCssClasses(["image-button", "circular", "raised", "card", "view"]);
-		copy_link_button.OnClicked += (_, _) =>
+		copyLinkButton.SetTooltipText(__("Copy Link"));
+		copyLinkButton.SetCssClasses(["image-button", "circular", "raised", "card", "view"]);
+		copyLinkButton.OnClicked += (_, _) =>
 		{
 			Toast toast = Toast.New(__("Link Copied"));
 
@@ -469,10 +469,11 @@ internal class View
 		frame.SetHexpand(true);
 		frame.SetCssClasses(["card", "view"]);
 		frame.SetChild(toastOverlay);
+		toastOverlay.SetChild(webview);
 
-		actionsBox.Append(close_button);
-		actionsBox.Append(expand_button);
-		actionsBox.Append(copy_link_button);
+		actionsBox.Append(closeButton);
+		actionsBox.Append(expandButton);
+		actionsBox.Append(copyLinkButton);
 		actionsBox.SetMarginTop(25);
 		box.Append(frame);
 		box.Append(actionsBox);
@@ -480,8 +481,6 @@ internal class View
 		box.SetMarginBottom(10);
 		box.SetMarginStart(10);
 		box.SetMarginEnd(10);
-
-		toastOverlay.SetChild(webview);
 
 		dialog.HeightRequest = 360;
 		dialog.WidthRequest = 360;
@@ -495,7 +494,7 @@ internal class View
 
 		dialog.OnClosed += (_, _) =>
 		{
-			if (!transferring_to_main) webview.TryClose();
+			if (!transferringToMain) webview.TryClose();
 			peek_tab_trigger_held = false; // sometimes it forgets to fire Gtk.EventControllerKey.OnKeyReleased
 		};
 
