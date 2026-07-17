@@ -106,6 +106,10 @@ dialog.peek > widget > floating-sheet > dimming {
 	opacity: 0;
 }
 
+dialog.peek > widget > floating-sheet > sheet > widget > toastoverlay > box > frame {
+	border-radius: 12px;
+}
+
 dialog.command-palette > widget > floating-sheet > sheet {
 	box-shadow:
 		0 12px 32px rgb(0 0 0 / 15%),
