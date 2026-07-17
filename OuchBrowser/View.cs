@@ -519,6 +519,9 @@ internal class View
 		number.SetInt(0);
 		breakpoint.AddSetter(actionsBox!, "margin-top", number);
 
+		number.SetInt(3); // center
+		breakpoint.AddSetter(actionsBox!, "halign", number);
+
 		dialog.AddBreakpoint(breakpoint);
 
 		return webview;
