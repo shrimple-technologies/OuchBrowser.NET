@@ -101,9 +101,12 @@ shortcut-label.compact > box > .keycap {
 	border-radius: 9px;
 }
 
-dialog.command-palette > widget > floating-sheet > dimming,
-dialog.peek > widget > floating-sheet > dimming {
+dialog.command-palette > widget > floating-sheet > dimming {
 	opacity: 0;
+}
+
+dialog.peek > widget > floating-sheet > dimming {
+	background-color: color-mix(in oklab, var(--view-bg-color) 50%, transparent);
 }
 
 dialog.peek > widget > floating-sheet > sheet > widget > toastoverlay > box > frame {
