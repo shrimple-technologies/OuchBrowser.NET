@@ -400,23 +400,31 @@ internal class View
 		WebView webview = WebView.New();
 		Dialog dialog = Dialog.New();
 		Gtk.Frame frame = Gtk.Frame.New(null);
-		ToolbarView toolbarview = ToolbarView.New();
-		HeaderBar headerbar = HeaderBar.New();
-		Gtk.Button expand_button = Gtk.Button.NewFromIconName("view-fullscreen-symbolic");
-		Gtk.Button copy_link_button = Gtk.Button.NewFromIconName("chain-link-loose-symbolic");
+		Gtk.Box box = Gtk.Box.New(Gtk.Orientation.Horizontal, 15);
+		Gtk.Box actionsBox = Gtk.Box.New(Gtk.Orientation.Vertical, 15);
+		Gtk.Button expandButton = Gtk.Button.NewFromIconName("view-fullscreen-symbolic");
+		Gtk.Button copyLinkButton = Gtk.Button.NewFromIconName("chain-link-loose-symbolic");
+		Gtk.Button closeButton = Gtk.Button.NewFromIconName("cross-large-symbolic");
 		ToastOverlay toastOverlay = ToastOverlay.New();
-		Gtk.Separator hb_separator = Gtk.Separator.New(Gtk.Orientation.Vertical);
-		bool transferring_to_main = false;
+		bool transferringToMain = false;
 
 		webview.SetSettings(InitSettings());
 		webview.LoadRequest(req);
 		webview.SetZoomLevel(settings.GetDouble("zoom"));
 
-		expand_button.SetTooltipText(__("Expand Tab"));
-		expand_button.OnClicked += async (_, _) =>
+		closeButton.SetTooltipText(__("Close Tab"));
+		closeButton.SetCssClasses(["image-button", "circular", "raised", "card", "view"]);
+		closeButton.OnClicked += (_, _) =>
 		{
-			frame.SetChild(Bin.New()); // make webview parentless so that we can append it to the main tab view
-			transferring_to_main = true;
+			dialog.Close();
+		};
+		
+		expandButton.SetTooltipText(__("Expand Tab"));
+		expandButton.SetCssClasses(["image-button", "circular", "raised", "card", "view"]);
+		expandButton.OnClicked += async (_, _) =>
+		{
+			toastOverlay.SetChild(Bin.New()); // make webview parentless so that we can append it to the main tab view
+			transferringToMain = true;
 			TabPage page = view.Append(webview);
 
 			page.SetTitle(webview.GetTitle());
@@ -441,8 +449,9 @@ internal class View
 			page.SetIcon(await Favicon.GetFavicon(webview.GetUri()));
 		};
 
-		copy_link_button.SetTooltipText(__("Copy Link"));
-		copy_link_button.OnClicked += (_, _) =>
+		copyLinkButton.SetTooltipText(__("Copy Link"));
+		copyLinkButton.SetCssClasses(["image-button", "circular", "raised", "card", "view"]);
+		copyLinkButton.OnClicked += (_, _) =>
 		{
 			Toast toast = Toast.New(__("Link Copied"));
 
@@ -456,39 +465,63 @@ internal class View
 			toastOverlay!.AddToast(toast);
 		};
 
-		hb_separator.SetMarginTop(5);
-		hb_separator.SetMarginBottom(5);
-
-		headerbar.PackEnd(expand_button);
-		headerbar.PackEnd(hb_separator);
-		headerbar.PackEnd(copy_link_button);
-
-		toolbarview.AddTopBar(headerbar);
-		toolbarview.SetContent(frame);
-
-		frame.SetMarginBottom(10);
-		frame.SetMarginStart(10);
-		frame.SetMarginEnd(10);
 		frame.SetVexpand(true);
 		frame.SetHexpand(true);
-		frame.SetChild(webview);
+		frame.SetCssClasses(["card", "view"]);
+		frame.SetChild(toastOverlay);
+		toastOverlay.SetChild(webview);
 
-		toastOverlay.SetChild(toolbarview);
+		actionsBox.Append(closeButton);
+		actionsBox.Append(expandButton);
+		actionsBox.Append(copyLinkButton);
+		actionsBox.SetMarginTop(25);
+		box.Append(frame);
+		box.Append(actionsBox);
+		box.SetMarginTop(10);
+		box.SetMarginBottom(10);
+		box.SetMarginStart(10);
+		box.SetMarginEnd(10);
 
 		dialog.HeightRequest = 360;
 		dialog.WidthRequest = 360;
-		dialog.SetContentHeight(650);
+		dialog.SetContentHeight(1000);
 		dialog.SetContentWidth(1000);
-		dialog.SetChild(toastOverlay);
+		dialog.SetChild(box);
 		dialog.AddCssClass("peek");
+		dialog.SetPresentationMode(DialogPresentationMode.Floating);
 		dialog.Present(win);
 		webview.GrabFocus();
 
 		dialog.OnClosed += (_, _) =>
 		{
-			if (!transferring_to_main) webview.TryClose();
+			if (!transferringToMain) webview.TryClose();
 			peek_tab_trigger_held = false; // sometimes it forgets to fire Gtk.EventControllerKey.OnKeyReleased
 		};
+
+		// equivalent to condition ("max-width: 600sp") in blueprint
+		BreakpointCondition breakpointCondition = BreakpointCondition.NewLength(
+			BreakpointConditionLengthType.MaxWidth,
+			600,
+			LengthUnit.Sp
+		);
+		Breakpoint breakpoint = Breakpoint.New(breakpointCondition);
+
+		GObject.Value number = new();
+		number.Init(GObject.Type.Int);
+
+		number.SetInt(1); // vertical
+		breakpoint.AddSetter(box!, "orientation", number);
+		
+		number.SetInt(0); // horizontal
+		breakpoint.AddSetter(actionsBox!, "orientation", number);
+		
+		number.SetInt(0);
+		breakpoint.AddSetter(actionsBox!, "margin-top", number);
+
+		number.SetInt(3); // center
+		breakpoint.AddSetter(actionsBox!, "halign", number);
+
+		dialog.AddBreakpoint(breakpoint);
 
 		return webview;
 	}

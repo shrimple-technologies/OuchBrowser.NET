@@ -101,17 +101,30 @@ shortcut-label.compact > box > .keycap {
 	border-radius: 9px;
 }
 
-dialog.command-palette > widget > floating-sheet > dimming,
-dialog.peek > widget > floating-sheet > dimming {
+dialog.command-palette > widget > floating-sheet > dimming {
 	opacity: 0;
 }
 
-dialog.command-palette > widget > floating-sheet > sheet, 
-dialog.peek > widget > floating-sheet > sheet {
+dialog.peek > widget > floating-sheet > dimming {
+	background-color: color-mix(in oklab, var(--view-bg-color) 50%, transparent);
+}
+
+dialog.peek > widget > floating-sheet > sheet > widget > toastoverlay > box > frame {
+	border-radius: 12px;
+}
+
+dialog.command-palette > widget > floating-sheet > sheet {
 	box-shadow:
 		0 12px 32px rgb(0 0 0 / 15%),
 		0 0 48px rgb(0 0 0 / 10%),
 		0 0 0 1px rgb(0 0 0 / 5%);
+}
+
+
+dialog.peek > widget > floating-sheet > sheet {
+	background-color: transparent;
+	box-shadow: none;
+	outline-color: transparent;
 }
 
 dialog.command-palette > widget > floating-sheet > sheet {
@@ -121,4 +134,8 @@ dialog.command-palette > widget > floating-sheet > sheet {
 .script-dialog-prompt {
 	padding: 5px 15px;
 	outline-color: transparent;
+}
+
+button.view {
+	background-color: var(--thumbnail-bg-color);
 }
