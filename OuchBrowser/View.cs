@@ -423,7 +423,7 @@ internal class View
 		expand_button.SetCssClasses(["image-button", "circular", "raised", "card", "view"]);
 		expand_button.OnClicked += async (_, _) =>
 		{
-			frame.SetChild(Bin.New()); // make webview parentless so that we can append it to the main tab view
+			toastOverlay.SetChild(Bin.New()); // make webview parentless so that we can append it to the main tab view
 			transferring_to_main = true;
 			TabPage page = view.Append(webview);
 
@@ -468,7 +468,7 @@ internal class View
 		frame.SetVexpand(true);
 		frame.SetHexpand(true);
 		frame.SetCssClasses(["card", "view"]);
-		frame.SetChild(webview);
+		frame.SetChild(toastOverlay);
 
 		actionsBox.Append(close_button);
 		actionsBox.Append(expand_button);
@@ -481,13 +481,13 @@ internal class View
 		box.SetMarginStart(10);
 		box.SetMarginEnd(10);
 
-		toastOverlay.SetChild(box);
+		toastOverlay.SetChild(webview);
 
 		dialog.HeightRequest = 360;
 		dialog.WidthRequest = 360;
 		dialog.SetContentHeight(1000);
 		dialog.SetContentWidth(1000);
-		dialog.SetChild(toastOverlay);
+		dialog.SetChild(box);
 		dialog.AddCssClass("peek");
 		dialog.SetPresentationMode(DialogPresentationMode.Floating);
 		dialog.Present(win);
