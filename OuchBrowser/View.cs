@@ -467,7 +467,7 @@ internal class View
 
 		frame.SetVexpand(true);
 		frame.SetHexpand(true);
-		frame.AddCssClass("card");
+		frame.SetCssClasses(["card", "view"]);
 		frame.SetChild(webview);
 
 		actionsBox.Append(close_button);
