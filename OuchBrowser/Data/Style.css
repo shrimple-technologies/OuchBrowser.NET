@@ -134,5 +134,5 @@ dialog.command-palette > widget > floating-sheet > sheet {
 }
 
 button.view {
-	background-color: var(--view-bg-color);
+	background-color: var(--thumbnail-bg-color);
 }
