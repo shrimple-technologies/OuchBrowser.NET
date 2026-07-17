@@ -485,7 +485,7 @@ internal class View
 
 		dialog.HeightRequest = 360;
 		dialog.WidthRequest = 360;
-		dialog.SetContentHeight(650);
+		dialog.SetContentHeight(1000);
 		dialog.SetContentWidth(1000);
 		dialog.SetChild(toastOverlay);
 		dialog.AddCssClass("peek");
