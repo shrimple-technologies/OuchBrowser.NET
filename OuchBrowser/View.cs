@@ -490,12 +490,14 @@ internal class View
 		dialog.AddCssClass("peek");
 		dialog.SetPresentationMode(DialogPresentationMode.Floating);
 		dialog.Present(win);
+		win.frame!.AddCssClass("inactive");
 		webview.GrabFocus();
 
 		dialog.OnClosed += (_, _) =>
 		{
 			if (!transferringToMain) webview.TryClose();
 			peek_tab_trigger_held = false; // sometimes it forgets to fire Gtk.EventControllerKey.OnKeyReleased
+			win.frame!.RemoveCssClass("inactive");
 		};
 
 		// equivalent to condition ("max-width: 600sp") in blueprint

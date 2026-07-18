@@ -1,5 +1,6 @@
 frame {
 	border-radius: 7px;
+	transition: all 200ms ease-out;
 }
 
 .tabs-sidebar.navigation-sidebar {
@@ -106,7 +107,7 @@ dialog.command-palette > widget > floating-sheet > dimming {
 }
 
 dialog.peek > widget > floating-sheet > dimming {
-	background-color: color-mix(in oklab, var(--view-bg-color) 50%, transparent);
+	background-color: color-mix(in oklab, var(--window-bg-color) 50%, transparent);
 }
 
 dialog.peek > widget > floating-sheet > sheet > widget > box > frame {
@@ -138,4 +139,9 @@ dialog.command-palette > widget > floating-sheet > sheet {
 
 button.view {
 	background-color: var(--thumbnail-bg-color);
+}
+
+frame.inactive {
+	transform: scale(0.95);
+	border-radius: 12px;
 }
