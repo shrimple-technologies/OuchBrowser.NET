@@ -477,10 +477,10 @@ internal class View
 		actionsBox.SetMarginTop(25);
 		box.Append(frame);
 		box.Append(actionsBox);
-		box.SetMarginTop(10);
-		box.SetMarginBottom(10);
-		box.SetMarginStart(10);
-		box.SetMarginEnd(10);
+		box.SetMarginTop(5);
+		box.SetMarginBottom(5);
+		box.SetMarginStart(5);
+		box.SetMarginEnd(5);
 
 		dialog.HeightRequest = 360;
 		dialog.WidthRequest = 360;
