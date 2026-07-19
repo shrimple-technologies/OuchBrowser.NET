@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-06-26 18:49-0400\n"
+"POT-Creation-Date: 2026-07-17 02:31-0400\n"
 "PO-Revision-Date: 2026-07-02 02:01+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/ouch/net/et/>\n"
@@ -136,7 +136,7 @@ msgstr "See väärtus kirjeldab !bang-käskude kasutust läbi aegade."
 
 #: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:6
 #: OuchBrowser/Data/UI/Window.blp:15 OuchBrowser/Data/UI/Window.blp:268
-#: OuchBrowser/Window.cs:91
+#: OuchBrowser/Window.cs:89
 msgid "Ouch Browser"
 msgstr "Veebibrauser Ouch"
 
@@ -380,7 +380,7 @@ msgid "Navigation"
 msgstr "Liikumine rakenduses"
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:52 OuchBrowser/Data/UI/Window.blp:200
-#: OuchBrowser/UI/RoomsOverview.cs:59
+#: OuchBrowser/UI/RoomsOverview.cs:59 OuchBrowser/View.cs:415
 msgid "Close Tab"
 msgstr "Sulge vahekaart"
 
@@ -461,7 +461,7 @@ msgstr "Laadi uuesti"
 msgid "Reveal Command Palette"
 msgstr "Näita käsupaletti"
 
-#: OuchBrowser/Data/UI/Window.blp:753 OuchBrowser/View.cs:444
+#: OuchBrowser/Data/UI/Window.blp:753 OuchBrowser/View.cs:452
 msgid "Copy Link"
 msgstr "Kopeeri link"
 
@@ -518,10 +518,29 @@ msgid "Go"
 msgstr "Mine"
 
 # TRANSLATORS: This is not a string that is a part of the source code. This is your name (or username), followed by your email enclosed in angles (<example@domain.com>) or your website. This will be shown in Ouch Browser's credits.
-#. TRANSLATORS: This is not a string that is a part of the source code. This is your name (or username), followed by your email enclosed in angles (<example@domain.com>) or your website. This will be shown in Ouch Browser's credits.
-#: OuchBrowser/UI/About.cs:10
+#. TRANSLATORS: This is not a string that is a part of the source code.
+#. This is your name (or username), followed by your email enclosed in
+#. angles (<example@domain.com>) or your website. This will be shown in
+#. Ouch Browser's credits. See
+#. <https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/class.AboutDialog.html#credits-and-acknowledgements>
+#. for more details.
+#: OuchBrowser/UI/About.cs:15
 msgid "translator-credits"
 msgstr "Priit Jõerüüt"
+
+#: OuchBrowser/UI/About.cs:20
+msgid "Icon design by"
+msgstr ""
+
+#: OuchBrowser/UI/About.cs:21
+#, fuzzy
+#| msgid "Shrimple Technologies"
+msgid "Shrimple Technologies members"
+msgstr "Shrimple Technologies"
+
+#: OuchBrowser/UI/About.cs:25
+msgid "Inspired by"
+msgstr ""
 
 #: OuchBrowser/UI/Preferences.cs:265
 msgid "Cleared All Ranks"
@@ -556,28 +575,28 @@ msgstr "{0} ütleb"
 msgid "OK"
 msgstr "Sobib"
 
-#: OuchBrowser/View.cs:313 OuchBrowser/View.cs:341 OuchBrowser/Window.cs:160
+#: OuchBrowser/View.cs:313 OuchBrowser/View.cs:341 OuchBrowser/Window.cs:158
 msgid "Cancel"
 msgstr "Katkesta"
 
-#: OuchBrowser/View.cs:415
+#: OuchBrowser/View.cs:422
 msgid "Expand Tab"
 msgstr "Laienda vahekaarti"
 
-#: OuchBrowser/View.cs:447 OuchBrowser/Window.cs:454
+#: OuchBrowser/View.cs:456 OuchBrowser/Window.cs:452
 msgid "Link Copied"
 msgstr "Link on kopeeritud"
 
-#: OuchBrowser/Window.cs:157
+#: OuchBrowser/Window.cs:155
 msgid "Exit and Close All Tabs?"
 msgstr "Kas väljud ja sulged kõik vahekaardid?"
 
-#: OuchBrowser/Window.cs:158
+#: OuchBrowser/Window.cs:156
 #, csharp-format
 msgid "You are about to close {0} tabs. Are you sure you want to continue?"
 msgstr "Oled sulgemas {0} vahekaarti. Kas oled kindel, et soovid jätkata?"
 
-#: OuchBrowser/Window.cs:161
+#: OuchBrowser/Window.cs:159
 msgid "Close Tabs"
 msgstr "Sulge vahekaardid"
 
