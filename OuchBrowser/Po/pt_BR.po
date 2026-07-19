@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
 "POT-Creation-Date: 2026-07-17 02:31-0400\n"
-"PO-Revision-Date: 2026-07-05 14:01+0000\n"
+"PO-Revision-Date: 2026-07-20 12:01+0000\n"
 "Last-Translator: Gabriel <bloxgabriel18@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/ouch/"
 "net/pt_BR/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2026.7.1.dev0\n"
+"X-Generator: Weblate 2026.8.dev0\n"
 
 #: OuchBrowser/CommandPalette.cs:54
 #, csharp-format
@@ -538,17 +538,15 @@ msgstr ""
 
 #: OuchBrowser/UI/About.cs:20
 msgid "Icon design by"
-msgstr ""
+msgstr "Design de ícone por"
 
 #: OuchBrowser/UI/About.cs:21
-#, fuzzy
-#| msgid "Shrimple Technologies"
 msgid "Shrimple Technologies members"
-msgstr "Shrimple Technologies"
+msgstr "Membros da Shrimple Technologies"
 
 #: OuchBrowser/UI/About.cs:25
 msgid "Inspired by"
-msgstr ""
+msgstr "Inspirado em"
 
 #: OuchBrowser/UI/Preferences.cs:265
 msgid "Cleared All Ranks"
