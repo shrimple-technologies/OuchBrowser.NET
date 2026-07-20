@@ -95,7 +95,7 @@ shortcut-label.compact > box > .keycap {
 
 .joined > button:hover,
 .joined > menubutton > button:hover {
-      background-color: color-mix(in srgb, currentColor 4%, transparent);
+	background-color: color-mix(in srgb, currentColor 4%, transparent);
 }
 
 .palette-button.card {
@@ -107,7 +107,11 @@ dialog.command-palette > widget > floating-sheet > dimming {
 }
 
 dialog.peek > widget > floating-sheet > dimming {
-	background-color: color-mix(in oklab, var(--window-bg-color) 50%, transparent);
+	background-color: color-mix(
+		in oklab,
+		var(--window-bg-color) 50%,
+		transparent
+	);
 }
 
 dialog.peek > widget > floating-sheet > sheet > widget > box > frame {
@@ -120,7 +124,6 @@ dialog.command-palette > widget > floating-sheet > sheet {
 		0 0 48px rgb(0 0 0 / 10%),
 		0 0 0 1px rgb(0 0 0 / 5%);
 }
-
 
 dialog.peek > widget > floating-sheet > sheet {
 	background-color: transparent;
