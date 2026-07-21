@@ -153,7 +153,7 @@ internal partial class Window : Adw.ApplicationWindow
 			return true;
 		};
 		
-		preferences = new Preferences(this);
+		preferences = Preferences.NewWithWindow(this);
 		shortcuts = Shortcuts.New();
 		rooms = new RoomsOverview(this);
 		view = new View(tabView!, this);

@@ -16,7 +16,7 @@ internal partial class Application
 		{
 			var window = Window.NewWithProperties([]);
 			window.SetApplication(this);
-			window.OnActivate(self, args);
+			// TODO: put all visual initialization here?
 		};
 
 		using var stream = Assembly.GetExecutingAssembly()
