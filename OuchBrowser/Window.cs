@@ -7,42 +7,44 @@ using Object = GObject.Object;
 
 namespace OuchBrowser;
 
+[GObject.Subclass<Adw.ApplicationWindow>]
+[Template<GResource>("/page/codeberg/shrimple/OuchBrowser/ui/window.ui")]
 internal partial class Window : Adw.ApplicationWindow
 {
 #pragma warning disable CS0649
-	[Connect] public readonly Adw.HeaderBar? contentHeaderBar;
-	[Connect] public readonly ToolbarView? contentToolbarView;
-	[Connect] public readonly Button? content_sidebar_toggle;
-	[Connect] public readonly Frame? frame;
-	[Connect] public readonly Label? hostname;
-	[Connect] public readonly OverlaySplitView? overlaySplitView;
-	[Connect] public readonly ToggleButton? sidebar_toggle;
-	[Connect] public readonly ToastOverlay? toastOverlay;
-	[Connect] public readonly Bin? topBarHoverTarget;
-	[Connect] public readonly Adw.Dialog? commandPaletteDialog;
-	[Connect] public readonly Entry? commandPaletteEntry;
-	[Connect] public readonly Button? url_button;
-	[Connect] public readonly TabView? tabView;
-	[Connect] public readonly Button? goBackButton;
-	[Connect] public readonly Button? goForwardButton;
-	[Connect] public readonly Button? refresh;
-	[Connect] public readonly WindowControls? startWindowControls;
-	[Connect] public readonly WindowControls? endWindowControls;
-	[Connect] public readonly Button? copyLinkButton;
-	[Connect] public readonly MenuButton? websiteSettingsButton;
-	[Connect] public readonly Revealer? commandPaletteAutocompleteRevealer;
-	[Connect] public readonly Stack? url_stack;
-	[Connect] public readonly Stack? commandPaletteDisclosureStack;
-	[Connect] public readonly Label? commandPaletteCustomDisclosure;
-	[Connect] public readonly Button? commandPaletteButton;
-	[Connect] public readonly Image? commandPaletteWebsiteFavicon;
-	[Connect] public readonly Revealer? cardBoxRevealer;
-	[Connect] public readonly ListBox? cardBox;
-	[Connect] public readonly Revealer? commandPaletteDisclosureRevealer;
-	[Connect] public readonly Box? urlDisplayOsd;
-	[Connect] public readonly Label? urlDisplayLabel;
-	[Connect] public readonly MultiLayoutView? multiLayoutView;
-	[Connect] public readonly Revealer? commandPaletteButtonRevealer;
+	[Connect] public Adw.HeaderBar? contentHeaderBar;
+	[Connect] public ToolbarView? contentToolbarView;
+	[Connect] public Button? content_sidebar_toggle;
+	[Connect] public Frame? frame;
+	[Connect] public Label? hostname;
+	[Connect] public OverlaySplitView? overlaySplitView;
+	[Connect] public ToggleButton? sidebar_toggle;
+	[Connect] public ToastOverlay? toastOverlay;
+	[Connect] public Bin? topBarHoverTarget;
+	[Connect] public Adw.Dialog? commandPaletteDialog;
+	[Connect] public Entry? commandPaletteEntry;
+	[Connect] public Button? url_button;
+	[Connect] public TabView? tabView;
+	[Connect] public Button? goBackButton;
+	[Connect] public Button? goForwardButton;
+	[Connect] public Button? refresh;
+	[Connect] public WindowControls? startWindowControls;
+	[Connect] public WindowControls? endWindowControls;
+	[Connect] public Button? copyLinkButton;
+	[Connect] public MenuButton? websiteSettingsButton;
+	[Connect] public Revealer? commandPaletteAutocompleteRevealer;
+	[Connect] public Stack? url_stack;
+	[Connect] public Stack? commandPaletteDisclosureStack;
+	[Connect] public Label? commandPaletteCustomDisclosure;
+	[Connect] public Button? commandPaletteButton;
+	[Connect] public Image? commandPaletteWebsiteFavicon;
+	[Connect] public Revealer? cardBoxRevealer;
+	[Connect] public ListBox? cardBox;
+	[Connect] public Revealer? commandPaletteDisclosureRevealer;
+	[Connect] public Box? urlDisplayOsd;
+	[Connect] public Label? urlDisplayLabel;
+	[Connect] public MultiLayoutView? multiLayoutView;
+	[Connect] public Revealer? commandPaletteButtonRevealer;
 #pragma warning restore CS0649
 
 	private string palette_state = "new_tab";
@@ -50,21 +52,16 @@ internal partial class Window : Adw.ApplicationWindow
 	private CancellationTokenSource? debounceCts;
 
 	private Preferences? preferences;
-	private Adw.AboutDialog? about;
 	private ShortcutsDialog? shortcuts;
 	private RoomsOverview? rooms;
 	private Bangs? bangs;
 	private View? view;
 
-	public Window(Adw.Application app) : base()
+	partial void Initialize()
 	{
-		var builder = new Builder();
-		builder.SetTranslationDomain("OuchBrowser");
-		builder.AddFromResource("/page/codeberg/shrimple/OuchBrowser/ui/window.ui");
-		builder.Connect(this);
+		// builder.SetTranslationDomain("OuchBrowser");
 
-		Content = builder.GetObject("toastOverlay") as Widget;
-		Application = app;
+		Content = toastOverlay;
 
 		var hover_controller_topbar = EventControllerMotion.New();
 		var hover_controller_headerbar = EventControllerMotion.New();
@@ -107,45 +104,6 @@ internal partial class Window : Adw.ApplicationWindow
 					break;
 			}
 		};
-	}
-
-	public void OnActivate(Object? app, EventArgs? args)
-	{
-		preferences = new Preferences(this);
-		about = About.New();
-		shortcuts = Shortcuts.New();
-		rooms = new RoomsOverview(this);
-		view = new View(tabView!, this);
-		bangs = new Bangs();
-		var cards = new Cards(this);
-
-		SetupActions();
-
-		Gio.SimpleAction sidebar_action = (Gio.SimpleAction)LookupAction("sidebar-toggle")!;
-
-		goBackButton!.SetSensitive(false);
-		goForwardButton!.SetSensitive(false);
-		refresh!.SetSensitive(false);
-		copyLinkButton!.SetSensitive(false);
-		url_button!.SetSensitive(false);
-		websiteSettingsButton!.SetSensitive(false);
-		sidebar_action.SetEnabled(false);
-
-		commandPaletteEntry!.OnActivate += (_, _) => commandPaletteButton!.Activate();
-
-		HandlePaletteUpdate();
-		HandlePaletteActivate();
-
-		Present();
-
-		if (settings.GetStrv("restore-tabs").Length == 0)
-		{
-			commandPaletteDialog!.Present(this);
-		}
-		else
-		{
-			foreach (string url in settings.GetStrv("restore-tabs")) view.AddTab(url, false);
-		}
 
 		OnCloseRequest += (_, _) =>
 		{
@@ -194,6 +152,42 @@ internal partial class Window : Adw.ApplicationWindow
 
 			return true;
 		};
+		
+		preferences = new Preferences(this);
+		shortcuts = Shortcuts.New();
+		rooms = new RoomsOverview(this);
+		view = new View(tabView!, this);
+		bangs = new Bangs();
+		var cards = new Cards(this);
+
+		SetupActions();
+
+		Gio.SimpleAction sidebar_action = (Gio.SimpleAction)LookupAction("sidebar-toggle")!;
+
+		goBackButton!.SetSensitive(false);
+		goForwardButton!.SetSensitive(false);
+		refresh!.SetSensitive(false);
+		copyLinkButton!.SetSensitive(false);
+		url_button!.SetSensitive(false);
+		websiteSettingsButton!.SetSensitive(false);
+		sidebar_action.SetEnabled(false);
+
+		commandPaletteEntry!.OnActivate += (_, _) => commandPaletteButton!.Activate();
+
+		HandlePaletteUpdate();
+		HandlePaletteActivate();
+
+		Present();
+
+		if (settings.GetStrv("restore-tabs").Length == 0)
+		{
+			commandPaletteDialog!.Present(this);
+		}
+		else
+		{
+			foreach (string url in settings.GetStrv("restore-tabs")) view.AddTab(url, false);
+		}
+
 	}
 
 	private void SetupActions()
@@ -272,6 +266,29 @@ internal partial class Window : Adw.ApplicationWindow
 
 		actions.AddAction("about", [], (_, _) =>
 		{
+			var about = Adw.AboutDialog.NewFromAppdata("/page/codeberg/shrimple/OuchBrowser/page.codeberg.shrimple.OuchBrowser.metainfo.xml", null);
+	
+			// TRANSLATORS: This is not a string that is a part of the source code.
+			// This is your name (or username), followed by your email enclosed in
+			// angles (<example@domain.com>) or your website. This will be shown in
+			// Ouch Browser's credits. See
+			// <https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/class.AboutDialog.html#credits-and-acknowledgements>
+			// for more details.
+			about.SetTranslatorCredits(__("translator-credits"));
+			about.SetDevelopers(["Maxine Naomi Lunaris https://woof.monster/"]);
+			about.SetDesigners(["Maxine Naomi Lunaris https://woof.monster/"]);
+			about.SetDocumenters(["Maxine Naomi Lunaris https://woof.monster/"]);
+			about.SetArtists(["Maxine Naomi Lunaris https://woof.monster/"]);
+			about.AddCreditSection(__("Icon design by"), ["Jakub Steiner https://jimmac.eu/"]);
+			about.AddAcknowledgementSection(__("Shrimple Technologies members"), [
+				"Maxine Naomi Lunaris https://woof.monster/",
+				"Jase Maxine Lunaris",
+			]);
+			about.AddAcknowledgementSection(__("Inspired by"), [
+				"Arc Browser https://arc.net/",
+				"Zen Browser https://zen-browser.app/",
+			]);
+			
 			if (DateTime.Now.Month == 6) about!.SetApplicationIcon("page.codeberg.shrimple.OuchBrowser.Pride");
 			else about!.SetApplicationIcon("page.codeberg.shrimple.OuchBrowser");
 
@@ -466,8 +483,7 @@ internal partial class Window : Adw.ApplicationWindow
 
 		actions.AddAction("new-window", ["<Ctrl>n"], (_, _) =>
 		{
-			Window window = new((Adw.Application)Application!);
-			window.OnActivate(null, null);
+			NewWithProperties([]);
 		});
 	}
 

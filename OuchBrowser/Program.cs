@@ -4,7 +4,9 @@ internal class Program
 {
 	private static int Main(string[] args)
 	{
-		var app = new Application();
+		GirCore.Integration.Initialize();
+		
+		var app = Application.NewWithProperties([]);
 		return app.RunWithSynchronizationContext(args);
 	}
 }

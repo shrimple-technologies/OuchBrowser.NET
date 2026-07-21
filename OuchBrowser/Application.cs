@@ -4,16 +4,18 @@ using GLib;
 
 namespace OuchBrowser;
 
-internal class Application : Adw.Application
+[GObject.Subclass<Adw.Application>]
+internal partial class Application
 {
-	public Application()
+	partial void Initialize()
 	{
 		ApplicationId = "page.codeberg.shrimple.OuchBrowser";
 		Flags = ApplicationFlags.DefaultFlags;
 		ResourceBasePath = "/page/codeberg/shrimple/OuchBrowser";
 		OnActivate += (self, args) =>
 		{
-			var window = new Window(this);
+			var window = Window.NewWithProperties([]);
+			window.SetApplication(this);
 			window.OnActivate(self, args);
 		};
 
