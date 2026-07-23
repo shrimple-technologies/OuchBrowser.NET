@@ -9,16 +9,6 @@ internal partial class Application
 {
 	partial void Initialize()
 	{
-		ApplicationId = "page.codeberg.shrimple.OuchBrowser";
-		Flags = ApplicationFlags.DefaultFlags;
-		ResourceBasePath = "/page/codeberg/shrimple/OuchBrowser";
-		OnActivate += (self, args) =>
-		{
-			var window = Window.NewWithProperties([]);
-			window.SetApplication(this);
-			// TODO: put all visual initialization here?
-		};
-
 		using var stream = Assembly.GetExecutingAssembly()
 			.GetManifestResourceStream("OuchBrowser.app.gresource");
 
@@ -28,5 +18,16 @@ internal partial class Application
 		using var bytes = Bytes.New(buffer);
 		using var resource = Resource.NewFromData(bytes);
 		resource.Register();
+		
+		var window = Window.NewWithProperties([]);
+			
+		ApplicationId = "page.codeberg.shrimple.OuchBrowser";
+		Flags = ApplicationFlags.DefaultFlags;
+		OnActivate += (self, args) =>
+		{
+			window.SetApplication(this);
+			window.Start();
+			// TODO: put all visual initialization here?
+		};
 	}
 }

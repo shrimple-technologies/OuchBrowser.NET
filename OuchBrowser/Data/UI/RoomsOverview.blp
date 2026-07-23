@@ -1,90 +1,107 @@
 using Gtk 4.0;
 using Adw 1;
+translation-domain "OuchBrowser";
 
-Adw.NavigationSplitView nsv {
-	sidebar: Adw.NavigationPage {
-		title: _("Rooms");
+template $RoomsOverview: Adw.Dialog {
+	height-request: 360;
+	width-request: 360;
+	content-height: 500;
+	content-width: 800;
 
-		Adw.ToolbarView {
-			[top]
-			Adw.HeaderBar {}
+	Adw.Breakpoint {
+		condition ("max-width: 600sp")
 
-			Adw.ViewSwitcherSidebar {
-				stack: bind view;
-			}
+		setters {
+			nsv.collapsed: true;
+			vss.mode: page;
 		}
-	};
+	}
 
-	content: Adw.NavigationPage {
-		title: _("Tabs");
+	Adw.NavigationSplitView nsv {
+		sidebar: Adw.NavigationPage {
+			title: _("Rooms");
 
-		Adw.ToolbarView {
-			[top]
-			Adw.HeaderBar {
-				title-widget: Adw.WindowTitle wt {
-					title: _("Main");
-				};
+			Adw.ToolbarView {
+				[top]
+				Adw.HeaderBar {}
+
+				Adw.ViewSwitcherSidebar vss {
+					stack: bind view;
+				}
 			}
+		};
 
-			Overlay {
-				[overlay]
-				Button new_tab_button {
-					halign: center;
-					valign: end;
-					margin-bottom: 18;
+		content: Adw.NavigationPage {
+			title: _("Tabs");
 
-					styles [
-						"pill",
-						"suggested-action",
-					]
-
-					Adw.ButtonContent {
-						icon-name: "tab-new-symbolic";
-						label: _("New Tab");
-					}
+			Adw.ToolbarView {
+				[top]
+				Adw.HeaderBar {
+					title-widget: Adw.WindowTitle wt {
+						title: _("Main");
+					};
 				}
 
-				Adw.ViewStack view {
-					Adw.ViewStackPage {
-						name: "main";
-						icon-name: "dot-symbolic";
-						title: _("Main");
+				Overlay {
+					[overlay]
+					Button new_tab_button {
+						halign: center;
+						valign: end;
+						margin-bottom: 18;
 
-						child: ScrolledWindow {
-							Adw.Clamp {
-								margin-start: 15;
-								margin-end: 15;
-								margin-bottom: 75;
+						styles [
+							"pill",
+							"suggested-action",
+						]
 
-								Adw.ViewStack tab_stack {
-									Adw.ViewStackPage placeholder_tab_stack {
-										name: "placeholder";
+						Adw.ButtonContent {
+							icon-name: "tab-new-symbolic";
+							label: _("New Tab");
+						}
+					}
 
-										child: Adw.StatusPage {
-											icon-name: "web-symbolic";
-											title: _("No Tabs Open");
-										};
-									}
+					Adw.ViewStack view {
+						Adw.ViewStackPage {
+							name: "main";
+							icon-name: "dot-symbolic";
+							title: _("Main");
 
-									Adw.ViewStackPage {
-										name: "tabs";
+							child: ScrolledWindow {
+								Adw.Clamp {
+									margin-start: 15;
+									margin-end: 15;
+									margin-bottom: 75;
 
-										child: ListBox lb {
-											margin-top: 15;
-											margin-bottom: 15;
-											selection-mode: none;
+									Adw.ViewStack tab_stack {
+										Adw.ViewStackPage placeholder_tab_stack {
+											name: "placeholder";
 
-											styles [
-												"boxed-list-separate",
-											]
-										};
+											child: Adw.StatusPage {
+												icon-name: "web-symbolic";
+												title: _("No Tabs Open");
+											};
+										}
+
+										Adw.ViewStackPage {
+											name: "tabs";
+
+											child: ListBox lb {
+												margin-top: 15;
+												margin-bottom: 15;
+												selection-mode: none;
+
+												styles [
+													"boxed-list-separate",
+												]
+											};
+										}
 									}
 								}
-							}
-						};
+							};
+						}
 					}
 				}
 			}
-		}
-	};
+		};
+	}
 }

@@ -3,32 +3,30 @@ using Gtk;
 
 namespace OuchBrowser.UI;
 
-internal class RoomsOverview : Adw.Dialog
+[GObject.Subclass<Adw.Dialog>("RoomsOverview")]
+[Template<GResource>("/page/codeberg/shrimple/OuchBrowser/ui/rooms-overview.ui")]
+internal partial class RoomsOverview
 {
 #pragma warning disable CS0649
-	[Connect] private readonly NavigationSplitView? nsv;
-	[Connect] private readonly ViewStack? view;
-	[Connect] private readonly ListBox? lb;
-	[Connect] private readonly ViewStack? tab_stack;
-	[Connect] private readonly Button? new_tab_button;
-	[Connect] private readonly WindowTitle? wt;
+	[Connect] private NavigationSplitView? nsv;
+	[Connect] private ViewStack? view;
+	[Connect] private ListBox? lb;
+	[Connect] private ViewStack? tab_stack;
+	[Connect] private Button? new_tab_button;
+	[Connect] private WindowTitle? wt;
 #pragma warning restore CS0649
+	private Window? window;
 
-	public RoomsOverview(Window window) : base()
+	public static RoomsOverview NewWithWindow(Window window)
 	{
-		var builder = new Builder();
-		builder.SetTranslationDomain("OuchBrowser");
-		builder.AddFromResource("/page/codeberg/shrimple/OuchBrowser/ui/rooms_overview.ui");
-		builder.Connect(this);
+		var obj = NewWithProperties([]);
+		obj.window = window;
 
-		Child = nsv!;
-		HeightRequest = 360;
-		WidthRequest = 360;
-		ContentHeight = 500;
-		ContentWidth = 800;
+		return obj;
+	}
 
-		AddBreakpoint(SetupBreakpoint());
-
+	partial void Initialize()
+	{
 		ViewStackPage page = view!.GetPage(view!.GetVisibleChild()!);
 		nsv!.GetContent()!.SetTitle(page!.GetTitle()!);
 
@@ -89,24 +87,5 @@ internal class RoomsOverview : Adw.Dialog
 				}
 			}
 		};
-	}
-
-	private Breakpoint SetupBreakpoint()
-	{
-		// equivalent to condition ("max-width: 600sp") in blueprint
-		BreakpointCondition condition = BreakpointCondition.NewLength(
-			BreakpointConditionLengthType.MaxWidth,
-			600,
-			LengthUnit.Sp
-		);
-		Breakpoint breakpoint = Breakpoint.New(condition);
-
-		GObject.Value boolean = new();
-		boolean.Init(GObject.Type.Boolean);
-
-		boolean.SetBoolean(true);
-		breakpoint.AddSetter(nsv!, "collapsed", boolean);
-
-		return breakpoint;
 	}
 }

@@ -3,7 +3,7 @@ using Gtk;
 
 namespace OuchBrowser.UI;
 
-[GObject.Subclass<Adw.Dialog>]
+[GObject.Subclass<Adw.Dialog>("Preferences")]
 [Template<GResource>("/page/codeberg/shrimple/OuchBrowser/ui/preferences.ui")]
 internal partial class Preferences
 {
@@ -22,12 +22,12 @@ internal partial class Preferences
 	private Window? window;
 
 	public static Preferences NewWithWindow(Window window)
-    {
-        var obj = NewWithProperties([]);
-        obj.window = window;
-	
-        return obj;
-    }
+	{
+		var obj = NewWithProperties([]);
+		obj.window = window;
+
+		return obj;
+	}
 
 	partial void Initialize()
 	{

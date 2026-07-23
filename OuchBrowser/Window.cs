@@ -7,7 +7,7 @@ using Object = GObject.Object;
 
 namespace OuchBrowser;
 
-[GObject.Subclass<Adw.ApplicationWindow>]
+[GObject.Subclass<Adw.ApplicationWindow>("Window")]
 [Template<GResource>("/page/codeberg/shrimple/OuchBrowser/ui/window.ui")]
 internal partial class Window : Adw.ApplicationWindow
 {
@@ -47,15 +47,13 @@ internal partial class Window : Adw.ApplicationWindow
 	[Connect] public Revealer? commandPaletteButtonRevealer;
 #pragma warning restore CS0649
 
-	private string palette_state = "new_tab";
-	private DateTime lastInvokeTime = DateTime.MinValue;
-	private CancellationTokenSource? debounceCts;
-
+	public string palette_state = "new_tab";
 	private Preferences? preferences;
 	private ShortcutsDialog? shortcuts;
 	private RoomsOverview? rooms;
-	private Bangs? bangs;
-	private View? view;
+	public Bangs? bangs;
+	public View? view;
+	private CommandPalette? palette;
 
 	partial void Initialize()
 	{
@@ -152,12 +150,16 @@ internal partial class Window : Adw.ApplicationWindow
 
 			return true;
 		};
-		
+	}
+
+	public void Start()
+	{
 		preferences = Preferences.NewWithWindow(this);
-		shortcuts = Shortcuts.New();
-		rooms = new RoomsOverview(this);
+		// shortcuts = Shortcuts.New();
+		rooms = RoomsOverview.NewWithWindow(this);
 		view = new View(tabView!, this);
 		bangs = new Bangs();
+		palette = CommandPalette.NewWithWindow(this);
 		var cards = new Cards(this);
 
 		SetupActions();
@@ -172,22 +174,16 @@ internal partial class Window : Adw.ApplicationWindow
 		websiteSettingsButton!.SetSensitive(false);
 		sidebar_action.SetEnabled(false);
 
-		commandPaletteEntry!.OnActivate += (_, _) => commandPaletteButton!.Activate();
-
-		HandlePaletteUpdate();
-		HandlePaletteActivate();
-
 		Present();
 
 		if (settings.GetStrv("restore-tabs").Length == 0)
 		{
-			commandPaletteDialog!.Present(this);
+			palette!.Present(this);
 		}
 		else
 		{
 			foreach (string url in settings.GetStrv("restore-tabs")) view.AddTab(url, false);
 		}
-
 	}
 
 	private void SetupActions()
@@ -267,7 +263,7 @@ internal partial class Window : Adw.ApplicationWindow
 		actions.AddAction("about", [], (_, _) =>
 		{
 			var about = Adw.AboutDialog.NewFromAppdata("/page/codeberg/shrimple/OuchBrowser/page.codeberg.shrimple.OuchBrowser.metainfo.xml", null);
-	
+
 			// TRANSLATORS: This is not a string that is a part of the source code.
 			// This is your name (or username), followed by your email enclosed in
 			// angles (<example@domain.com>) or your website. This will be shown in
@@ -288,7 +284,7 @@ internal partial class Window : Adw.ApplicationWindow
 				"Arc Browser https://arc.net/",
 				"Zen Browser https://zen-browser.app/",
 			]);
-			
+
 			if (DateTime.Now.Month == 6) about!.SetApplicationIcon("page.codeberg.shrimple.OuchBrowser.Pride");
 			else about!.SetApplicationIcon("page.codeberg.shrimple.OuchBrowser");
 

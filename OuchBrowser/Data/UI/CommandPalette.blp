@@ -1,0 +1,201 @@
+using Gtk 4.0;
+using Adw 1;
+translation-domain "OuchBrowser";
+
+template $CommandPalette : Adw.Dialog {
+	presentation-mode: auto;
+	follows-content-size: false;
+	width-request: 360;
+	content-width: 700;
+
+	styles [
+		"command-palette",
+		"view",
+	]
+
+	Box {
+		orientation: vertical;
+
+		Box {
+			orientation: horizontal;
+			margin-top: 13;
+			margin-bottom: 13;
+			margin-start: 13;
+			margin-end: 13;
+			spacing: 5;
+
+			Stack url_stack {
+				transition-type: crossfade;
+				accessible-role: none;
+
+				StackPage {
+					name: "main";
+
+					child: Image {
+						icon-name: "page.codeberg.shrimple.OuchBrowser-symbolic";
+						pixel-size: 20;
+						margin-start: 10;
+
+						styles [
+							"dimmed",
+						]
+					};
+				}
+
+				StackPage {
+					name: "spinner";
+
+					child: Adw.Spinner {
+						margin-start: 10;
+
+						styles [
+							"dimmed",
+						]
+					};
+				}
+
+				StackPage {
+					name: "search";
+
+					child: Image {
+						icon-name: "search-symbolic";
+						pixel-size: 20;
+						margin-start: 10;
+
+						accessibility {
+							label: _("Search");
+						}
+
+						styles [
+							"dimmed",
+						]
+					};
+				}
+
+				StackPage {
+					name: "bang";
+
+					child: Image {
+						icon-name: "exclaimation-symbolic";
+						pixel-size: 20;
+						margin-start: 10;
+
+						accessibility {
+							label: _("!bangs");
+						}
+
+						styles [
+							"dimmed",
+						]
+					};
+				}
+
+				StackPage {
+					name: "website";
+
+					child: Image commandPaletteWebsiteFavicon {
+						pixel-size: 20;
+						margin-start: 10;
+
+						accessibility {
+							label: _("Website");
+						}
+					};
+				}
+
+				StackPage {
+					name: "actions";
+
+					child: Image {
+						icon-name: "page.codeberg.shrimple.OuchBrowser-symbolic";
+						pixel-size: 20;
+						margin-start: 10;
+
+						accessibility {
+							label: _("Shortcuts");
+						}
+
+						styles [
+							"dimmed",
+						]
+					};
+				}
+			}
+
+			Entry commandPaletteEntry {
+				input-purpose: url;
+				hexpand: true;
+				placeholder-text: _("Search or enter URL…");
+				receives-default: true;
+
+				accessibility {
+					autocomplete: list;
+				}
+
+				styles [
+					"command-palette",
+				]
+			}
+
+			Revealer commandPaletteButtonRevealer {
+				transition-type: crossfade;
+
+				Button commandPaletteButton {
+					icon-name: "go-next-symbolic";
+					tooltip-text: _("Go");
+					valign: center;
+
+					styles [
+						"flat",
+					]
+				}
+			}
+		}
+
+		Separator {
+			orientation: horizontal;
+			visible: bind commandPaletteAutocompleteRevealer.child-revealed;
+		}
+
+		Revealer commandPaletteAutocompleteRevealer {}
+
+		Revealer commandPaletteDisclosureRevealer {
+			Box {
+				orientation: vertical;
+
+				Separator {
+					orientation: horizontal;
+					visible: bind commandPaletteAutocompleteRevealer.child-revealed inverted;
+				}
+
+				Stack commandPaletteDisclosureStack {
+					transition-type: crossfade;
+					margin-start: 10;
+					margin-end: 10;
+					margin-top: 10;
+					margin-bottom: 10;
+
+					StackPage {
+						name: "none";
+
+						child: Adw.Bin {};
+					}
+
+					StackPage {
+						name: "custom";
+
+						child: Label commandPaletteCustomDisclosure {
+							halign: center;
+							ellipsize: end;
+
+							styles [
+								"caption-heading",
+								"dimmed",
+							]
+						};
+					}
+				}
+			}
+		}
+	}
+}
