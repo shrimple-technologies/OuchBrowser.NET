@@ -452,7 +452,9 @@ internal partial class Window : Adw.ApplicationWindow
 
 		actions.AddAction("new-window", ["<Ctrl>n"], (_, _) =>
 		{
-			NewWithProperties([]);
+			var window = NewWithProperties([]);
+			window.SetApplication((Adw.Application)Application!);
+			window.Start();
 		});
 	}
 
