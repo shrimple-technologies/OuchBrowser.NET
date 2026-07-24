@@ -3,7 +3,7 @@ using Gtk;
 
 namespace OuchBrowser;
 
-[GObject.Subclass<Adw.Dialog>("RoomsOverview")]
+[GObject.Subclass<Adw.Dialog>("OuchRoomsOverview")]
 [Template<GResource>("/page/codeberg/shrimple/OuchBrowser/ui/rooms-overview.ui")]
 internal partial class RoomsOverview
 {
