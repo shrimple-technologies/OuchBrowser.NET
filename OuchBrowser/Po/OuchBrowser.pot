@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-07-23 20:18-0400\n"
+"POT-Creation-Date: 2026-07-23 20:47-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: OuchBrowser/CommandPalette.cs:88
+#: OuchBrowser/CommandPalette.cs:89
 #, csharp-format
 msgid "Searching using {0}"
 msgstr ""
@@ -126,7 +126,7 @@ msgstr ""
 
 #: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:6
 #: OuchBrowser/Data/UI/Window.blp:7 OuchBrowser/Data/UI/Window.blp:31
-#: OuchBrowser/Data/UI/Window.blp:288 OuchBrowser/Window.cs:67
+#: OuchBrowser/Data/UI/Window.blp:288
 msgid "Ouch Browser"
 msgstr ""
 
@@ -165,28 +165,28 @@ msgstr ""
 msgid "Ouch Browser with Command Palette Opened"
 msgstr ""
 
-#: OuchBrowser/Data/UI/CommandPalette.blp:73
+#: OuchBrowser/Data/UI/CommandPalette.blp:66
 msgid "Search"
 msgstr ""
 
-#: OuchBrowser/Data/UI/CommandPalette.blp:91
+#: OuchBrowser/Data/UI/CommandPalette.blp:84
 #: OuchBrowser/Data/UI/Preferences.blp:213
 msgid "!bangs"
 msgstr ""
 
-#: OuchBrowser/Data/UI/CommandPalette.blp:108
+#: OuchBrowser/Data/UI/CommandPalette.blp:101
 msgid "Website"
 msgstr ""
 
-#: OuchBrowser/Data/UI/CommandPalette.blp:122
+#: OuchBrowser/Data/UI/CommandPalette.blp:115
 msgid "Shortcuts"
 msgstr ""
 
-#: OuchBrowser/Data/UI/CommandPalette.blp:135
+#: OuchBrowser/Data/UI/CommandPalette.blp:128
 msgid "Search or enter URL…"
 msgstr ""
 
-#: OuchBrowser/Data/UI/CommandPalette.blp:152
+#: OuchBrowser/Data/UI/CommandPalette.blp:145
 msgid "Go"
 msgstr ""
 
@@ -376,7 +376,7 @@ msgid "Navigation"
 msgstr ""
 
 #: OuchBrowser/Data/UI/Shortcuts.blp:52 OuchBrowser/Data/UI/Window.blp:220
-#: OuchBrowser/UI/RoomsOverview.cs:57 OuchBrowser/View.cs:415
+#: OuchBrowser/RoomsOverview.cs:58 OuchBrowser/View.cs:415
 msgid "Close Tab"
 msgstr ""
 
@@ -493,11 +493,11 @@ msgstr ""
 msgid "New Folder"
 msgstr ""
 
-#: OuchBrowser/UI/Preferences.cs:262
+#: OuchBrowser/Preferences.cs:263
 msgid "Cleared All Ranks"
 msgstr ""
 
-#: OuchBrowser/UI/RoomsOverview.cs:82
+#: OuchBrowser/RoomsOverview.cs:83
 #, csharp-format
 msgid "{0} tab"
 msgid_plural "{0} tabs"
@@ -526,7 +526,7 @@ msgstr ""
 msgid "OK"
 msgstr ""
 
-#: OuchBrowser/View.cs:313 OuchBrowser/View.cs:341 OuchBrowser/Window.cs:97
+#: OuchBrowser/View.cs:313 OuchBrowser/View.cs:341 OuchBrowser/Window.cs:92
 msgid "Cancel"
 msgstr ""
 
@@ -534,20 +534,20 @@ msgstr ""
 msgid "Expand Tab"
 msgstr ""
 
-#: OuchBrowser/View.cs:456 OuchBrowser/Window.cs:444
+#: OuchBrowser/View.cs:456 OuchBrowser/Window.cs:439
 msgid "Link Copied"
 msgstr ""
 
-#: OuchBrowser/Window.cs:94
+#: OuchBrowser/Window.cs:89
 msgid "Exit and Close All Tabs?"
 msgstr ""
 
-#: OuchBrowser/Window.cs:95
+#: OuchBrowser/Window.cs:90
 #, csharp-format
 msgid "You are about to close {0} tabs. Are you sure you want to continue?"
 msgstr ""
 
-#: OuchBrowser/Window.cs:98
+#: OuchBrowser/Window.cs:93
 msgid "Close Tabs"
 msgstr ""
 
@@ -557,18 +557,18 @@ msgstr ""
 #. Ouch Browser's credits. See
 #. <https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/class.AboutDialog.html#credits-and-acknowledgements>
 #. for more details.
-#: OuchBrowser/Window.cs:252
+#: OuchBrowser/Window.cs:246
 msgid "translator-credits"
 msgstr ""
 
-#: OuchBrowser/Window.cs:257
+#: OuchBrowser/Window.cs:251
 msgid "Icon design by"
 msgstr ""
 
-#: OuchBrowser/Window.cs:258
+#: OuchBrowser/Window.cs:252
 msgid "Shrimple Technologies members"
 msgstr ""
 
-#: OuchBrowser/Window.cs:262
+#: OuchBrowser/Window.cs:256
 msgid "Inspired by"
 msgstr ""

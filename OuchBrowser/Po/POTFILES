@@ -6,7 +6,7 @@ OuchBrowser/Data/UI/Preferences.blp
 OuchBrowser/Data/UI/RoomsOverview.blp
 OuchBrowser/Data/UI/Shortcuts.blp
 OuchBrowser/Data/UI/Window.blp
-OuchBrowser/UI/Preferences.cs
-OuchBrowser/UI/RoomsOverview.cs
+OuchBrowser/Preferences.cs
+OuchBrowser/RoomsOverview.cs
 OuchBrowser/View.cs
 OuchBrowser/Window.cs
