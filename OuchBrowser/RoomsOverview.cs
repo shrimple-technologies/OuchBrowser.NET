@@ -1,7 +1,7 @@
 using Adw;
 using Gtk;
 
-namespace OuchBrowser.UI;
+namespace OuchBrowser;
 
 [GObject.Subclass<Adw.Dialog>("RoomsOverview")]
 [Template<GResource>("/page/codeberg/shrimple/OuchBrowser/ui/rooms-overview.ui")]
@@ -33,7 +33,7 @@ internal partial class RoomsOverview
 		new_tab_button!.OnClicked += (_, _) =>
 		{
 			Close();
-			window.ActivateAction("palette-new", null);
+			window!.ActivateAction("palette-new", null);
 		};
 
 		OnNotify += (_, args) =>
@@ -45,7 +45,7 @@ internal partial class RoomsOverview
 
 				lb!.RemoveAll();
 
-				for (int i = 0; i < window.tabView!.GetNPages(); i++)
+				for (int i = 0; i < window!.tabView!.GetNPages(); i++)
 				{
 					tab_stack.SetVisibleChildName("tabs");
 					TabPage tabpage = window.tabView!.GetNthPage(i)!;

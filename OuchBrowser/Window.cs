@@ -1,6 +1,5 @@
 using Adw;
 using Gtk;
-using OuchBrowser.UI;
 using OuchBrowser.Utils;
 using WebKit;
 using Object = GObject.Object;
@@ -39,7 +38,6 @@ internal partial class Window : Adw.ApplicationWindow
 
 	public string palette_state = "new_tab";
 	private Preferences? preferences;
-	private ShortcutsDialog? shortcuts;
 	private RoomsOverview? rooms;
 	public View? view;
 	private CommandPalette? palette;
@@ -138,7 +136,6 @@ internal partial class Window : Adw.ApplicationWindow
 	public void Start()
 	{
 		preferences = Preferences.NewWithWindow(this);
-		// shortcuts = Shortcuts.New();
 		rooms = RoomsOverview.NewWithWindow(this);
 		view = new View(tabView!, this);
 		palette = CommandPalette.NewWithWindow(this);
@@ -171,8 +168,8 @@ internal partial class Window : Adw.ApplicationWindow
 
 		actions.AddAction("palette-new", ["<Ctrl>t"], (_, _) =>
 		{
-			palette.commandPaletteEntry!.DeleteText(0, -1);
-			palette!.Present(this);
+			palette!.commandPaletteEntry!.DeleteText(0, -1);
+			palette.Present(this);
 			palette.commandPaletteEntry!.GrabFocus();
 			palette_state = "new_tab";
 		});
@@ -187,8 +184,8 @@ internal partial class Window : Adw.ApplicationWindow
 			{
 				TabPage page = tabView!.GetSelectedPage()!;
 				WebView webview = (WebView)page.Child!;
-				palette.commandPaletteEntry!.SetText(webview.GetUri());
-				palette!.Present(this);
+				palette!.commandPaletteEntry!.SetText(webview.GetUri());
+				palette.Present(this);
 				palette.commandPaletteEntry!.GrabFocus();
 				palette_state = "current_tab";
 			}
@@ -272,7 +269,8 @@ internal partial class Window : Adw.ApplicationWindow
 
 		actions.AddAction("shortcuts", ["<Ctrl>question"], (_, _) =>
 		{
-			shortcuts!.Present(this);
+			// shortcuts!.Present(this);
+			return;
 		});
 
 		actions.AddAction("rooms", ["<Ctrl><Shift>bar"], (_, _) =>
@@ -450,8 +448,8 @@ internal partial class Window : Adw.ApplicationWindow
 		actions.AddAction("palette-shortcuts", ["<Ctrl><Shift>k"], (_, _) =>
 		{
 			EntryBuffer buffer = EntryBuffer.New(">", -1);
-			palette.commandPaletteEntry!.SetBuffer(buffer);
-			palette!.Present(this);
+			palette!.commandPaletteEntry!.SetBuffer(buffer);
+			palette.Present(this);
 			palette.commandPaletteEntry!.GrabFocusWithoutSelecting();
 			palette.commandPaletteEntry!.SetPosition(-1);
 		});

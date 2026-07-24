@@ -70,12 +70,12 @@ internal partial class CommandPalette
 					url_stack!.SetVisibleChildName("main");
 					commandPaletteDisclosureStack!.SetVisibleChildName("none");
 					commandPaletteDisclosureRevealer!.SetRevealChild(false);
-					if (window.multiLayoutView!.GetLayoutName() == "mobile") commandPaletteButtonRevealer!.SetRevealChild(false);
+					if (window!.multiLayoutView!.GetLayoutName() == "mobile") commandPaletteButtonRevealer!.SetRevealChild(false);
 				}
 				else if (text.StartsWith('!'))
 				{
 					commandPaletteDisclosureRevealer!.SetRevealChild(false);
-					if (window.multiLayoutView!.GetLayoutName() == "mobile") commandPaletteButtonRevealer!.SetRevealChild(true);
+					if (window!.multiLayoutView!.GetLayoutName() == "mobile") commandPaletteButtonRevealer!.SetRevealChild(true);
 
 					if (1 < text.Split(' ').Length)
 					{
@@ -164,7 +164,7 @@ internal partial class CommandPalette
 					url_stack!.SetVisibleChildName("website");
 					commandPaletteDisclosureStack!.SetVisibleChildName("none");
 					commandPaletteDisclosureRevealer!.SetRevealChild(false);
-					if (window.multiLayoutView!.GetLayoutName() == "mobile") commandPaletteButtonRevealer!.SetRevealChild(true);
+					if (window!.multiLayoutView!.GetLayoutName() == "mobile") commandPaletteButtonRevealer!.SetRevealChild(true);
 					commandPaletteCustomDisclosure!.SetLabel("");
 					commandPaletteWebsiteFavicon!.SetFromGicon(await Favicon.GetFavicon(text));
 				}
@@ -174,7 +174,7 @@ internal partial class CommandPalette
 					url_stack!.SetVisibleChildName("main");
 					commandPaletteDisclosureStack!.SetVisibleChildName("none");
 					commandPaletteDisclosureRevealer!.SetRevealChild(false);
-					if (window.multiLayoutView!.GetLayoutName() == "mobile") commandPaletteButtonRevealer!.SetRevealChild(true);
+					if (window!.multiLayoutView!.GetLayoutName() == "mobile") commandPaletteButtonRevealer!.SetRevealChild(true);
 
 					commandPaletteAutocompleteRevealer!.SetRevealChild(true);
 					Box box = Box.New(Orientation.Vertical, 10);
@@ -243,7 +243,7 @@ internal partial class CommandPalette
 				{
 					commandPaletteDisclosureStack!.SetVisibleChildName("none");
 					commandPaletteDisclosureRevealer!.SetRevealChild(false);
-					if (window.multiLayoutView!.GetLayoutName() == "mobile") commandPaletteButtonRevealer!.SetRevealChild(true);
+					if (window!.multiLayoutView!.GetLayoutName() == "mobile") commandPaletteButtonRevealer!.SetRevealChild(true);
 					commandPaletteCustomDisclosure!.SetLabel("");
 
 					if (settings.GetBoolean("search-autocomplete-enabled"))
@@ -390,7 +390,7 @@ internal partial class CommandPalette
 				return;
 			}
 
-			if (window.palette_state == "new_tab")
+			if (window!.palette_state == "new_tab")
 			{
 				Console.WriteLine($"url: {query}");
 				Console.WriteLine($"bang url: {bangs!.ExpandBang(query)}");

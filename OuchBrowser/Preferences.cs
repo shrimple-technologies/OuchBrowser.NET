@@ -1,7 +1,7 @@
 using Adw;
 using Gtk;
 
-namespace OuchBrowser.UI;
+namespace OuchBrowser;
 
 [GObject.Subclass<Adw.Dialog>("OuchPreferencesDialog")]
 [Template<GResource>("/page/codeberg/shrimple/OuchBrowser/ui/preferences.ui")]
@@ -158,7 +158,7 @@ internal partial class Preferences
 			if (args.Pspec.GetName() == "active")
 			{
 				settings.SetBoolean("devtools-enabled", setting_devtools.GetActive());
-				int npages = window.tabView!.GetNPages()!;
+				int npages = window!.tabView!.GetNPages()!;
 
 				for (int i = 1; i <= npages; i++)
 				{
@@ -226,7 +226,7 @@ internal partial class Preferences
 						break;
 				}
 
-				int npages = window.tabView!.GetNPages()!;
+				int npages = window!.tabView!.GetNPages()!;
 				for (int i = 1; i <= npages; i++)
 				{
 					TabPage page = window.tabView!.GetNthPage(i - 1);
