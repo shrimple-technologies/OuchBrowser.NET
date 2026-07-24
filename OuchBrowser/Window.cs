@@ -60,9 +60,6 @@ internal partial class Window : Adw.ApplicationWindow
 		Maximized = settings.GetBoolean("maximized");
 		DefaultWidth = settings.GetValue("initial-size").GetChildValue(0).GetInt32();
 		DefaultHeight = settings.GetValue("initial-size").GetChildValue(1).GetInt32();
-		WidthRequest = 360;
-		HeightRequest = 360;
-		Title = __("Ouch Browser");
 
 		OnNotify += (_, args) =>
 		{
