@@ -10,7 +10,6 @@
 		<file preprocess="xml-stripblanks" alias="command-palette.ui">Data/UI/CommandPalette.ui</file>
 		<file preprocess="xml-stripblanks" alias="preferences.ui">Data/UI/Preferences.ui</file>
 		<file preprocess="xml-stripblanks" alias="rooms-overview.ui">Data/UI/RoomsOverview.ui</file>
-		<file preprocess="xml-stripblanks" alias="shortcuts.ui">Data/UI/Shortcuts.ui</file>
 		<file preprocess="xml-stripblanks" alias="window.ui">Data/UI/Window.ui</file>
 	</gresource>
 

@@ -7,7 +7,7 @@ using Object = GObject.Object;
 
 namespace OuchBrowser;
 
-[GObject.Subclass<Adw.ApplicationWindow>("Window")]
+[GObject.Subclass<Adw.ApplicationWindow>("OuchWindow")]
 [Template<GResource>("/page/codeberg/shrimple/OuchBrowser/ui/window.ui")]
 internal partial class Window : Adw.ApplicationWindow
 {
@@ -21,8 +21,6 @@ internal partial class Window : Adw.ApplicationWindow
 	[Connect] public ToggleButton? sidebar_toggle;
 	[Connect] public ToastOverlay? toastOverlay;
 	[Connect] public Bin? topBarHoverTarget;
-	[Connect] public Adw.Dialog? commandPaletteDialog;
-	[Connect] public Entry? commandPaletteEntry;
 	[Connect] public Button? url_button;
 	[Connect] public TabView? tabView;
 	[Connect] public Button? goBackButton;
@@ -32,43 +30,28 @@ internal partial class Window : Adw.ApplicationWindow
 	[Connect] public WindowControls? endWindowControls;
 	[Connect] public Button? copyLinkButton;
 	[Connect] public MenuButton? websiteSettingsButton;
-	[Connect] public Revealer? commandPaletteAutocompleteRevealer;
-	[Connect] public Stack? url_stack;
-	[Connect] public Stack? commandPaletteDisclosureStack;
-	[Connect] public Label? commandPaletteCustomDisclosure;
-	[Connect] public Button? commandPaletteButton;
-	[Connect] public Image? commandPaletteWebsiteFavicon;
 	[Connect] public Revealer? cardBoxRevealer;
 	[Connect] public ListBox? cardBox;
-	[Connect] public Revealer? commandPaletteDisclosureRevealer;
 	[Connect] public Box? urlDisplayOsd;
 	[Connect] public Label? urlDisplayLabel;
 	[Connect] public MultiLayoutView? multiLayoutView;
-	[Connect] public Revealer? commandPaletteButtonRevealer;
 #pragma warning restore CS0649
 
 	public string palette_state = "new_tab";
 	private Preferences? preferences;
 	private ShortcutsDialog? shortcuts;
 	private RoomsOverview? rooms;
-	public Bangs? bangs;
 	public View? view;
 	private CommandPalette? palette;
 
 	partial void Initialize()
 	{
-		// builder.SetTranslationDomain("OuchBrowser");
-
-		Content = toastOverlay;
-
 		var hover_controller_topbar = EventControllerMotion.New();
 		var hover_controller_headerbar = EventControllerMotion.New();
 		topBarHoverTarget!.AddController(hover_controller_topbar);
 		contentHeaderBar!.AddController(hover_controller_headerbar);
 		SetupHoverController(hover_controller_topbar);
 		SetupHoverController(hover_controller_headerbar);
-
-		AddBreakpoint(SetupBreakpoint());
 
 		startWindowControls!.SetVisible(!startWindowControls!.GetEmpty());
 		startWindowControls!.OnNotify += (_, args) =>
@@ -158,7 +141,6 @@ internal partial class Window : Adw.ApplicationWindow
 		// shortcuts = Shortcuts.New();
 		rooms = RoomsOverview.NewWithWindow(this);
 		view = new View(tabView!, this);
-		bangs = new Bangs();
 		palette = CommandPalette.NewWithWindow(this);
 		var cards = new Cards(this);
 
@@ -176,10 +158,7 @@ internal partial class Window : Adw.ApplicationWindow
 
 		Present();
 
-		if (settings.GetStrv("restore-tabs").Length == 0)
-		{
-			palette!.Present(this);
-		}
+		if (settings.GetStrv("restore-tabs").Length == 0) palette!.Present(this);
 		else
 		{
 			foreach (string url in settings.GetStrv("restore-tabs")) view.AddTab(url, false);
@@ -192,9 +171,9 @@ internal partial class Window : Adw.ApplicationWindow
 
 		actions.AddAction("palette-new", ["<Ctrl>t"], (_, _) =>
 		{
-			commandPaletteEntry!.DeleteText(0, -1);
-			commandPaletteDialog!.Present(this);
-			commandPaletteEntry!.GrabFocus();
+			palette.commandPaletteEntry!.DeleteText(0, -1);
+			palette!.Present(this);
+			palette.commandPaletteEntry!.GrabFocus();
 			palette_state = "new_tab";
 		});
 
@@ -208,9 +187,9 @@ internal partial class Window : Adw.ApplicationWindow
 			{
 				TabPage page = tabView!.GetSelectedPage()!;
 				WebView webview = (WebView)page.Child!;
-				commandPaletteEntry!.SetText(webview.GetUri());
-				commandPaletteDialog!.Present(this);
-				commandPaletteEntry!.GrabFocus();
+				palette.commandPaletteEntry!.SetText(webview.GetUri());
+				palette!.Present(this);
+				palette.commandPaletteEntry!.GrabFocus();
 				palette_state = "current_tab";
 			}
 		});
@@ -471,10 +450,10 @@ internal partial class Window : Adw.ApplicationWindow
 		actions.AddAction("palette-shortcuts", ["<Ctrl><Shift>k"], (_, _) =>
 		{
 			EntryBuffer buffer = EntryBuffer.New(">", -1);
-			commandPaletteEntry!.SetBuffer(buffer);
-			commandPaletteDialog!.Present(this);
-			commandPaletteEntry!.GrabFocusWithoutSelecting();
-			commandPaletteEntry!.SetPosition(-1);
+			palette.commandPaletteEntry!.SetBuffer(buffer);
+			palette!.Present(this);
+			palette.commandPaletteEntry!.GrabFocusWithoutSelecting();
+			palette.commandPaletteEntry!.SetPosition(-1);
 		});
 
 		actions.AddAction("new-window", ["<Ctrl>n"], (_, _) =>
@@ -493,43 +472,5 @@ internal partial class Window : Adw.ApplicationWindow
 		{
 			contentToolbarView!.SetRevealTopBars(false);
 		};
-	}
-
-	private Breakpoint SetupBreakpoint()
-	{
-		// equivalent to condition ("max-width: 600sp") in blueprint
-		BreakpointCondition condition = BreakpointCondition.NewLength(
-			BreakpointConditionLengthType.MaxWidth,
-			600,
-			LengthUnit.Sp
-		);
-		Breakpoint breakpoint = Breakpoint.New(condition);
-
-		GObject.Value number = new();
-		GObject.Value str = new();
-		GObject.Value boolean = new();
-		number.Init(GObject.Type.Int);
-		str.Init(GObject.Type.String);
-		boolean.Init(GObject.Type.Boolean);
-
-		str.SetString("mobile");
-		breakpoint.AddSetter(multiLayoutView!, "layout-name", str);
-
-		number.SetInt(10);
-		breakpoint.AddSetter(frame!, "margin-start", number);
-
-		number.SetInt(0);
-		breakpoint.AddSetter(frame!, "margin-bottom", number);
-
-		number.SetInt(-1);
-		breakpoint.AddSetter(commandPaletteEntry!, "width-request", number);
-
-		number.SetInt(0);
-		breakpoint.AddSetter(hostname!, "halign", number); // halign = fill
-
-		boolean.SetBoolean(false);
-		breakpoint.AddSetter(url_stack!, "visible", boolean);
-
-		return breakpoint;
 	}
 }

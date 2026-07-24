@@ -18,16 +18,15 @@ internal partial class Application
 		using var bytes = Bytes.New(buffer);
 		using var resource = Resource.NewFromData(bytes);
 		resource.Register();
-		
+
 		var window = Window.NewWithProperties([]);
-			
+
 		ApplicationId = "page.codeberg.shrimple.OuchBrowser";
 		Flags = ApplicationFlags.DefaultFlags;
 		OnActivate += (self, args) =>
 		{
 			window.SetApplication(this);
 			window.Start();
-			// TODO: put all visual initialization here?
 		};
 	}
 }

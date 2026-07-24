@@ -7,7 +7,7 @@ using WebKit;
 
 namespace OuchBrowser;
 
-[GObject.Subclass<Adw.Dialog>("CommandPalette")]
+[GObject.Subclass<Adw.Dialog>("OuchCommandPalette")]
 [Template<GResource>("/page/codeberg/shrimple/OuchBrowser/ui/command-palette.ui")]
 internal partial class CommandPalette
 {
@@ -27,20 +27,20 @@ internal partial class CommandPalette
 	private CancellationTokenSource? debounceCts;
 	private readonly Bangs? bangs = new();
 
-	public static CommandPalette NewWithWindow(Window window)
-	{
-		var obj = NewWithProperties([]);
-		obj.window = window;
-
-		return obj;
-	}
-
 	partial void Initialize()
 	{
 		commandPaletteEntry!.OnActivate += (_, _) => commandPaletteButton!.Activate();
 
 		HandlePaletteUpdate();
 		HandlePaletteActivate();
+	}
+
+	public static CommandPalette NewWithWindow(Window window)
+	{
+		var obj = NewWithProperties([]);
+		obj.window = window;
+
+		return obj;
 	}
 
 	public void HandlePaletteUpdate()
@@ -61,7 +61,6 @@ internal partial class CommandPalette
 
 		commandPaletteEntry!.OnNotify += async (_, args) =>
 		{
-			Console.WriteLine("sjjkskjsjkd");
 			if (args.Pspec.GetName() == "text")
 			{
 				string text = commandPaletteEntry!.GetText().TrimStart();

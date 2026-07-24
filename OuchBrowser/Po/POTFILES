@@ -1,11 +1,11 @@
 OuchBrowser/CommandPalette.cs
 OuchBrowser/Data/OuchBrowser.gschema.xml
 OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml
+OuchBrowser/Data/UI/CommandPalette.blp
 OuchBrowser/Data/UI/Preferences.blp
 OuchBrowser/Data/UI/RoomsOverview.blp
 OuchBrowser/Data/UI/Shortcuts.blp
 OuchBrowser/Data/UI/Window.blp
-OuchBrowser/UI/About.cs
 OuchBrowser/UI/Preferences.cs
 OuchBrowser/UI/RoomsOverview.cs
 OuchBrowser/View.cs

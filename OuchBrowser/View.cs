@@ -418,7 +418,7 @@ internal class View
 		{
 			dialog.Close();
 		};
-		
+
 		expandButton.SetTooltipText(__("Expand Tab"));
 		expandButton.SetCssClasses(["image-button", "circular", "raised", "card", "view"]);
 		expandButton.OnClicked += async (_, _) =>
@@ -513,10 +513,10 @@ internal class View
 
 		number.SetInt(1); // vertical
 		breakpoint.AddSetter(box!, "orientation", number);
-		
+
 		number.SetInt(0); // horizontal
 		breakpoint.AddSetter(actionsBox!, "orientation", number);
-		
+
 		number.SetInt(0);
 		breakpoint.AddSetter(actionsBox!, "margin-top", number);
 

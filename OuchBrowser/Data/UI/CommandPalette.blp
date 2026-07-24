@@ -2,7 +2,7 @@ using Gtk 4.0;
 using Adw 1;
 translation-domain "OuchBrowser";
 
-template $CommandPalette : Adw.Dialog {
+template $OuchCommandPalette: Adw.Dialog {
 	presentation-mode: auto;
 	follows-content-size: false;
 	width-request: 360;
@@ -13,6 +13,13 @@ template $CommandPalette : Adw.Dialog {
 		"view",
 	]
 
+	// Adw.Breakpoint {
+	// 	condition ("max-width: 600sp")
+	// 	setters {
+	// 		commandPaletteEntry.width-request: -1;
+	// 		url_stack.visible: false;
+	// 	}
+	// }
 	Box {
 		orientation: vertical;
 
