@@ -263,12 +263,6 @@ internal partial class Window : Adw.ApplicationWindow
 			about!.Present(this);
 		});
 
-		actions.AddAction("shortcuts", ["<Ctrl>question"], (_, _) =>
-		{
-			// shortcuts!.Present(this);
-			return;
-		});
-
 		actions.AddAction("rooms", ["<Ctrl><Shift>bar"], (_, _) =>
 		{
 			rooms!.Present(this);

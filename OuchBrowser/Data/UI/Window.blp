@@ -625,49 +625,6 @@ template $OuchWindow: Adw.ApplicationWindow {
 						Button {
 							hexpand: true;
 							focus-on-click: false;
-							action-name: "win.shortcuts";
-
-							accessibility {
-								labelled-by: _keyboard_shortcuts_label;
-							}
-
-							CenterBox {
-								start-widget: Box {
-									halign: start;
-									spacing: 10;
-
-									Image {
-										icon-name: "keyboard-symbolic";
-
-										accessibility {
-											labelled-by: _keyboard_shortcuts_label;
-										}
-									}
-
-									Label _keyboard_shortcuts_label {
-										label: _("Keyboard Shortcuts");
-									}
-								};
-
-								end-widget: Adw.ShortcutLabel {
-									accelerator: "<Ctrl>question";
-
-									styles [
-										"dimmed",
-										"compact",
-									]
-								};
-							}
-
-							styles [
-								"body",
-								"flat",
-							]
-						}
-
-						Button {
-							hexpand: true;
-							focus-on-click: false;
 							action-name: "win.about";
 
 							accessibility {
