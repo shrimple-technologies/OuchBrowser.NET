@@ -8,7 +8,7 @@ namespace OuchBrowser;
 
 [GObject.Subclass<Adw.ApplicationWindow>("OuchWindow")]
 [Template<GResource>("/page/codeberg/shrimple/OuchBrowser/ui/window.ui")]
-internal partial class Window : Adw.ApplicationWindow
+internal partial class Window
 {
 #pragma warning disable CS0649
 	[Connect] public Adw.HeaderBar? contentHeaderBar;
