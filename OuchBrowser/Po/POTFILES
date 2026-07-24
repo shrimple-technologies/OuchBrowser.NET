@@ -4,7 +4,6 @@ OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml
 OuchBrowser/Data/UI/CommandPalette.blp
 OuchBrowser/Data/UI/Preferences.blp
 OuchBrowser/Data/UI/RoomsOverview.blp
-OuchBrowser/Data/UI/Shortcuts.blp
 OuchBrowser/Data/UI/Window.blp
 OuchBrowser/Preferences.cs
 OuchBrowser/RoomsOverview.cs
