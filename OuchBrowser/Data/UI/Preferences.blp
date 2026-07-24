@@ -1,236 +1,253 @@
 using Gtk 4.0;
 using Adw 1;
+translation-domain "OuchBrowser";
 
-Adw.ToastOverlay toastOverlay {
-	Adw.NavigationSplitView nsv {
-		sidebar: Adw.NavigationPage {
-			title: _("Preferences");
+template $OuchPreferencesDialog: Adw.Dialog {
+	height-request: 360;
+	width-request: 360;
+	content-height: 500;
+	content-width: 800;
 
-			Adw.ToolbarView {
-				[top]
-				Adw.HeaderBar {}
+	Adw.Breakpoint {
+		condition ("max-width: 600sp")
 
-				Adw.ViewSwitcherSidebar vss {
-					stack: bind view;
+		setters {
+			nsv.collapsed: true;
+			vss.mode: page;
+		}
+	}
+
+	Adw.ToastOverlay toastOverlay {
+		Adw.NavigationSplitView nsv {
+			sidebar: Adw.NavigationPage {
+				title: _("Preferences");
+
+				Adw.ToolbarView {
+					[top]
+					Adw.HeaderBar {}
+
+					Adw.ViewSwitcherSidebar vss {
+						stack: bind view;
+					}
 				}
-			}
-		};
+			};
 
-		content: Adw.NavigationPage {
-			title: _("Preferences");
+			content: Adw.NavigationPage {
+				title: _("Preferences");
 
-			Adw.ToolbarView {
-				[top]
-				Adw.HeaderBar {}
+				Adw.ToolbarView {
+					[top]
+					Adw.HeaderBar {}
 
-				Adw.ViewStack view {
-					Adw.ViewStackPage {
-						name: "general";
-						icon-name: "preferences-symbolic";
-						title: _("General");
-
-						child: Adw.PreferencesPage {
+					Adw.ViewStack view {
+						Adw.ViewStackPage {
 							name: "general";
+							icon-name: "preferences-symbolic";
+							title: _("General");
 
-							Adw.PreferencesGroup {
-								title: _("Content Blocking");
-								description: _("Powered by uBlock Origin");
+							child: Adw.PreferencesPage {
+								name: "general";
 
-								Adw.SwitchRow {
-									icon-name: "circle-crossed-symbolic";
-									title: _("Block Advertisments");
-									sensitive: false;
+								Adw.PreferencesGroup {
+									title: _("Content Blocking");
+									description: _("Powered by uBlock Origin");
+
+									Adw.SwitchRow {
+										icon-name: "circle-crossed-symbolic";
+										title: _("Block Advertisments");
+										sensitive: false;
+									}
+
+									Adw.SwitchRow {
+										icon-name: "circle-crossed-symbolic";
+										title: _("Block Pop-up Windows");
+										sensitive: false;
+									}
 								}
 
-								Adw.SwitchRow {
-									icon-name: "circle-crossed-symbolic";
-									title: _("Block Pop-up Windows");
-									sensitive: false;
-								}
-							}
+								Adw.PreferencesGroup {
+									title: _("Session");
 
-							Adw.PreferencesGroup {
-								title: _("Session");
-
-								Adw.SwitchRow setting_restore_tabs {
-									icon-name: "view-grid-symbolic";
-									title: _("Restore Tabs on Startup");
-								}
-							}
-
-							Adw.PreferencesGroup {
-								title: _("Autocomplete");
-
-								Adw.SwitchRow setting_search_autocomplete {
-									icon-name: "search-symbolic";
-									title: _("Enable Search Autocomplete");
+									Adw.SwitchRow setting_restore_tabs {
+										icon-name: "view-grid-symbolic";
+										title: _("Restore Tabs on Startup");
+									}
 								}
 
-								Adw.SwitchRow setting_bang_autocomplete {
-									icon-name: "exclaimation-symbolic";
-									title: _("Enable !bang Autocomplete");
+								Adw.PreferencesGroup {
+									title: _("Autocomplete");
+
+									Adw.SwitchRow setting_search_autocomplete {
+										icon-name: "search-symbolic";
+										title: _("Enable Search Autocomplete");
+									}
+
+									Adw.SwitchRow setting_bang_autocomplete {
+										icon-name: "exclaimation-symbolic";
+										title: _("Enable !bang Autocomplete");
+									}
 								}
-							}
 
-							Adw.PreferencesGroup {
-								title: _("Peek Tabs");
-								description: _(
-									"Peek tabs are temporary tabs that can be triggered by holding down a specific key and clicking on a link. These can also be expanded into full view."
-								);
-
-								Adw.ComboRow setting_peek_trigger {
-									icon-name: "small-rectangle-in-focus-symbolic";
-									title: _("Peek Trigger");
-									subtitle: _(
-										"This will be the key that can be used in addition to a click to open a peek tab."
+								Adw.PreferencesGroup {
+									title: _("Peek Tabs");
+									description: _(
+										"Peek tabs are temporary tabs that can be triggered by holding down a specific key and clicking on a link. These can also be expanded into full view."
 									);
 
-									model: StringList {
-										strings [
-											"Shift",
-											"Ctrl",
-											"Alt",
-										]
-									};
+									Adw.ComboRow setting_peek_trigger {
+										icon-name: "small-rectangle-in-focus-symbolic";
+										title: _("Peek Trigger");
+										subtitle: _(
+											"This will be the key that can be used in addition to a click to open a peek tab."
+										);
+
+										model: StringList {
+											strings [
+												"Shift",
+												"Ctrl",
+												"Alt",
+											]
+										};
+									}
 								}
-							}
 
-							Adw.PreferencesGroup {
-								title: _("Developer");
+								Adw.PreferencesGroup {
+									title: _("Developer");
 
-								Adw.SwitchRow setting_devtools {
-									icon-name: "code-symbolic";
-									title: _("Enable Developer Tools");
-									subtitle: _("This will allow access to the Web Inspector");
+									Adw.SwitchRow setting_devtools {
+										icon-name: "code-symbolic";
+										title: _("Enable Developer Tools");
+										subtitle: _("This will allow access to the Web Inspector");
+									}
 								}
-							}
-						};
-					}
+							};
+						}
 
-					Adw.ViewStackPage {
-						name: "accessibility";
-						icon-name: "accessibility-symbolic";
-						title: _("Accessibility");
-
-						child: Adw.PreferencesPage {
+						Adw.ViewStackPage {
 							name: "accessibility";
+							icon-name: "accessibility-symbolic";
+							title: _("Accessibility");
 
-							Adw.PreferencesGroup {
-								title: _("Content");
+							child: Adw.PreferencesPage {
+								name: "accessibility";
 
-								Adw.ComboRow setting_zoom {
-									icon-name: "zoom-symbolic";
-									title: _("Page Zoom");
+								Adw.PreferencesGroup {
+									title: _("Content");
 
-									model: StringList {
-										strings [
-											"25%",
-											"33%",
-											"50%",
-											"67%",
-											"75%",
-											"80%",
-											"90%",
-											"100%",
-											"110%",
-											"125%",
-											"150%",
-											"175%",
-											"200%",
-											"250%",
-											"300%",
-											"400%",
-											"500%",
-										]
-									};
+									Adw.ComboRow setting_zoom {
+										icon-name: "zoom-symbolic";
+										title: _("Page Zoom");
+
+										model: StringList {
+											strings [
+												"25%",
+												"33%",
+												"50%",
+												"67%",
+												"75%",
+												"80%",
+												"90%",
+												"100%",
+												"110%",
+												"125%",
+												"150%",
+												"175%",
+												"200%",
+												"250%",
+												"300%",
+												"400%",
+												"500%",
+											]
+										};
+									}
+
+									Adw.SwitchRow {
+										icon-name: "format-text-rich-symbolic";
+										title: _("Zoom Text");
+										subtitle: _("Zooms text and images instead of the view");
+									}
 								}
+							};
+						}
 
-								Adw.SwitchRow {
-									icon-name: "format-text-rich-symbolic";
-									title: _("Zoom Text");
-									subtitle: _("Zooms text and images instead of the view");
-								}
-							}
-						};
-					}
-
-					Adw.ViewStackPage {
-						name: "search-engine";
-						icon-name: "search-symbolic";
-						title: _("Search Engine");
-
-						child: Adw.PreferencesPage {
+						Adw.ViewStackPage {
 							name: "search-engine";
-							description: _("See !bangs preferences for more options");
-							description-centered: true;
+							icon-name: "search-symbolic";
+							title: _("Search Engine");
 
-							Adw.PreferencesGroup {
-								Adw.ComboRow setting_search_engine {
-									icon-name: "search-symbolic";
-									title: _("Search Engine");
+							child: Adw.PreferencesPage {
+								name: "search-engine";
+								description: _("See !bangs preferences for more options");
+								description-centered: true;
 
-									model: StringList {
-										strings [
-											"DuckDuckGo",
-											"Ecosia",
-											"Google",
-											"Kagi",
-										]
-									};
+								Adw.PreferencesGroup {
+									Adw.ComboRow setting_search_engine {
+										icon-name: "search-symbolic";
+										title: _("Search Engine");
+
+										model: StringList {
+											strings [
+												"DuckDuckGo",
+												"Ecosia",
+												"Google",
+												"Kagi",
+											]
+										};
+									}
 								}
-							}
 
-							Adw.PreferencesGroup {
-								title: _("Custom Search Engines");
+								Adw.PreferencesGroup {
+									title: _("Custom Search Engines");
 
-								Adw.ButtonRow {
-									start-icon-name: "list-add-symbolic";
-									title: _("New Search Engine…");
+									Adw.ButtonRow {
+										start-icon-name: "list-add-symbolic";
+										title: _("New Search Engine…");
+									}
 								}
-							}
-						};
-					}
+							};
+						}
 
-					Adw.ViewStackPage {
-						name: "bangs";
-						icon-name: "exclaimation-symbolic";
-						title: _("!bangs");
-
-						child: Adw.PreferencesPage {
+						Adw.ViewStackPage {
 							name: "bangs";
-							description: _("!bangs provided by Kagi");
-							description-centered: true;
+							icon-name: "exclaimation-symbolic";
+							title: _("!bangs");
 
-							Adw.PreferencesGroup {
-								title: _("Custom Bangs");
+							child: Adw.PreferencesPage {
+								name: "bangs";
+								description: _("!bangs provided by Kagi");
+								description-centered: true;
 
-								Adw.ButtonRow {
-									start-icon-name: "list-add-symbolic";
-									title: _("New Bang…");
-								}
-							}
+								Adw.PreferencesGroup {
+									title: _("Custom Bangs");
 
-							Adw.PreferencesGroup {
-								Adw.ActionRow {
-									icon-name: "list-high-priority-symbolic";
-									subtitle: _(
-										"Ouch Browser utilizes a simple ranking system to provide smarter !bang autocompletion results over time. Requires !bangs autocompletion to be enabled."
-									);
+									Adw.ButtonRow {
+										start-icon-name: "list-add-symbolic";
+										title: _("New Bang…");
+									}
 								}
 
-								Adw.ButtonRow setting_clear_bang_rankings {
-									start-icon-name: "user-trash-symbolic";
-									title: _("Clear All Ranks");
+								Adw.PreferencesGroup {
+									Adw.ActionRow {
+										icon-name: "list-high-priority-symbolic";
+										subtitle: _(
+											"Ouch Browser utilizes a simple ranking system to provide smarter !bang autocompletion results over time. Requires !bangs autocompletion to be enabled."
+										);
+									}
 
-									styles [
-										"destructive-action",
-									]
+									Adw.ButtonRow setting_clear_bang_rankings {
+										start-icon-name: "user-trash-symbolic";
+										title: _("Clear All Ranks");
+
+										styles [
+											"destructive-action",
+										]
+									}
 								}
-							}
-						};
+							};
+						}
 					}
 				}
-			}
-		};
+			};
+		}
 	}
 }

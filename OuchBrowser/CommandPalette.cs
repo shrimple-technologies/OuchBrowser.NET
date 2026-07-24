@@ -7,9 +7,43 @@ using WebKit;
 
 namespace OuchBrowser;
 
-internal partial class Window
+[GObject.Subclass<Adw.Dialog>("OuchCommandPalette")]
+[Template<GResource>("/page/codeberg/shrimple/OuchBrowser/ui/command-palette.ui")]
+internal partial class CommandPalette
 {
-	private void HandlePaletteUpdate()
+#pragma warning disable CS0649
+	[Connect] public Entry? commandPaletteEntry;
+	[Connect] public Revealer? commandPaletteAutocompleteRevealer;
+	[Connect] public Stack? url_stack;
+	[Connect] public Stack? commandPaletteDisclosureStack;
+	[Connect] public Label? commandPaletteCustomDisclosure;
+	[Connect] public Button? commandPaletteButton;
+	[Connect] public Image? commandPaletteWebsiteFavicon;
+	[Connect] public Revealer? commandPaletteDisclosureRevealer;
+	[Connect] public Revealer? commandPaletteButtonRevealer;
+#pragma warning restore CS0649
+	private Window? window;
+	private DateTime lastInvokeTime = DateTime.MinValue;
+	private CancellationTokenSource? debounceCts;
+	private readonly Bangs? bangs = new();
+
+	partial void Initialize()
+	{
+		commandPaletteEntry!.OnActivate += (_, _) => commandPaletteButton!.Activate();
+
+		HandlePaletteUpdate();
+		HandlePaletteActivate();
+	}
+
+	public static CommandPalette NewWithWindow(Window window)
+	{
+		var obj = NewWithProperties([]);
+		obj.window = window;
+
+		return obj;
+	}
+
+	public void HandlePaletteUpdate()
 	{
 		EmbeddedResource.Load("ShortcutsList.json", out string shortcuts_json);
 		List<Types.Shortcut> shortcuts_list = JsonSerializer.Deserialize<List<Types.Shortcut>>(shortcuts_json, JsonSerializerOptions.Default)!;
@@ -36,12 +70,12 @@ internal partial class Window
 					url_stack!.SetVisibleChildName("main");
 					commandPaletteDisclosureStack!.SetVisibleChildName("none");
 					commandPaletteDisclosureRevealer!.SetRevealChild(false);
-					if (multiLayoutView!.GetLayoutName() == "mobile") commandPaletteButtonRevealer!.SetRevealChild(false);
+					if (window!.multiLayoutView!.GetLayoutName() == "mobile") commandPaletteButtonRevealer!.SetRevealChild(false);
 				}
 				else if (text.StartsWith('!'))
 				{
 					commandPaletteDisclosureRevealer!.SetRevealChild(false);
-					if (multiLayoutView!.GetLayoutName() == "mobile") commandPaletteButtonRevealer!.SetRevealChild(true);
+					if (window!.multiLayoutView!.GetLayoutName() == "mobile") commandPaletteButtonRevealer!.SetRevealChild(true);
 
 					if (1 < text.Split(' ').Length)
 					{
@@ -130,7 +164,7 @@ internal partial class Window
 					url_stack!.SetVisibleChildName("website");
 					commandPaletteDisclosureStack!.SetVisibleChildName("none");
 					commandPaletteDisclosureRevealer!.SetRevealChild(false);
-					if (multiLayoutView!.GetLayoutName() == "mobile") commandPaletteButtonRevealer!.SetRevealChild(true);
+					if (window!.multiLayoutView!.GetLayoutName() == "mobile") commandPaletteButtonRevealer!.SetRevealChild(true);
 					commandPaletteCustomDisclosure!.SetLabel("");
 					commandPaletteWebsiteFavicon!.SetFromGicon(await Favicon.GetFavicon(text));
 				}
@@ -140,7 +174,7 @@ internal partial class Window
 					url_stack!.SetVisibleChildName("main");
 					commandPaletteDisclosureStack!.SetVisibleChildName("none");
 					commandPaletteDisclosureRevealer!.SetRevealChild(false);
-					if (multiLayoutView!.GetLayoutName() == "mobile") commandPaletteButtonRevealer!.SetRevealChild(true);
+					if (window!.multiLayoutView!.GetLayoutName() == "mobile") commandPaletteButtonRevealer!.SetRevealChild(true);
 
 					commandPaletteAutocompleteRevealer!.SetRevealChild(true);
 					Box box = Box.New(Orientation.Vertical, 10);
@@ -209,7 +243,7 @@ internal partial class Window
 				{
 					commandPaletteDisclosureStack!.SetVisibleChildName("none");
 					commandPaletteDisclosureRevealer!.SetRevealChild(false);
-					if (multiLayoutView!.GetLayoutName() == "mobile") commandPaletteButtonRevealer!.SetRevealChild(true);
+					if (window!.multiLayoutView!.GetLayoutName() == "mobile") commandPaletteButtonRevealer!.SetRevealChild(true);
 					commandPaletteCustomDisclosure!.SetLabel("");
 
 					if (settings.GetBoolean("search-autocomplete-enabled"))
@@ -312,7 +346,7 @@ internal partial class Window
 		};
 	}
 
-	private void HandlePaletteActivate()
+	public void HandlePaletteActivate()
 	{
 		commandPaletteButton!.OnClicked += (_, _) => commandPaletteButton!.Activate();
 		commandPaletteButton!.OnActivate += (_, _) =>
@@ -323,7 +357,7 @@ internal partial class Window
 
 			if (query.StartsWith('>'))
 			{
-				commandPaletteDialog!.Close();
+				Close();
 
 				switch (query)
 				{
@@ -356,7 +390,7 @@ internal partial class Window
 				return;
 			}
 
-			if (palette_state == "new_tab")
+			if (window!.palette_state == "new_tab")
 			{
 				Console.WriteLine($"url: {query}");
 				Console.WriteLine($"bang url: {bangs!.ExpandBang(query)}");
@@ -368,31 +402,31 @@ internal partial class Window
 				{
 					if (query.StartsWith("https://") || query.StartsWith("http://"))
 					{
-						view!.AddTab(query, false);
+						window.view!.AddTab(query, false);
 					}
 					else
 					{
-						view!.AddTab($"https://{query}", false);
+						window.view!.AddTab($"https://{query}", false);
 					}
 				}
 				else
 				{
 					if (query.StartsWith('!'))
 					{
-						view!.AddTab(bangs!.ExpandBang(query), false);
+						window.view!.AddTab(bangs!.ExpandBang(query), false);
 
 						Bang? bang = bangs!.GetBang(query.Substring(1))!;
 						if (bang != null && settings.GetBoolean("bang-autocomplete-enabled")) Bangs.IncrementRanking(bang.Trigger);
 					}
 					else
 					{
-						view!.AddTab(string.Format(settings.GetString("search-engine"), Uri.EscapeDataString(query)), false);
+						window.view!.AddTab(string.Format(settings.GetString("search-engine"), Uri.EscapeDataString(query)), false);
 					}
 				}
 			}
 			else
 			{
-				TabPage page = tabView!.GetSelectedPage()!;
+				TabPage page = window.tabView!.GetSelectedPage()!;
 				WebView webview = (WebView)page.Child!;
 
 				Console.WriteLine($"url: {query}");
@@ -429,7 +463,7 @@ internal partial class Window
 				}
 			}
 
-			commandPaletteDialog!.Close();
+			Close();
 		};
 	}
 }

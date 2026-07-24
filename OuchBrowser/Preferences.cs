@@ -1,40 +1,37 @@
 using Adw;
 using Gtk;
 
-namespace OuchBrowser.UI;
+namespace OuchBrowser;
 
-internal class Preferences : Adw.Dialog
+[GObject.Subclass<Adw.Dialog>("OuchPreferencesDialog")]
+[Template<GResource>("/page/codeberg/shrimple/OuchBrowser/ui/preferences.ui")]
+internal partial class Preferences
 {
 #pragma warning disable CS0649
-	private readonly Builder? builder;
-	[Connect] private readonly ToastOverlay? toastOverlay;
-	[Connect] private readonly NavigationSplitView? nsv;
-	[Connect] private readonly ViewStack? view;
-	[Connect] private readonly SwitchRow? setting_search_autocomplete;
-	[Connect] private readonly SwitchRow? setting_bang_autocomplete;
-	[Connect] private readonly SwitchRow? setting_devtools;
-	[Connect] private readonly ComboRow? setting_search_engine;
-	[Connect] private readonly ComboRow? setting_zoom;
-	[Connect] private readonly ComboRow? setting_peek_trigger;
-	[Connect] private readonly ButtonRow? setting_clear_bang_rankings;
+	[Connect] private ToastOverlay? toastOverlay;
+	[Connect] private NavigationSplitView? nsv;
+	[Connect] private ViewStack? view;
+	[Connect] private SwitchRow? setting_search_autocomplete;
+	[Connect] private SwitchRow? setting_bang_autocomplete;
+	[Connect] private SwitchRow? setting_devtools;
+	[Connect] private ComboRow? setting_search_engine;
+	[Connect] private ComboRow? setting_zoom;
+	[Connect] private ComboRow? setting_peek_trigger;
+	[Connect] private ButtonRow? setting_clear_bang_rankings;
 #pragma warning restore CS0649
+	private Window? window;
 
-	public Preferences(Window window) : base()
+	public static Preferences NewWithWindow(Window window)
 	{
-		builder = new Builder();
-		builder.SetTranslationDomain("OuchBrowser");
-		builder.AddFromResource("/page/codeberg/shrimple/OuchBrowser/ui/preferences.ui");
-		builder.Connect(this);
+		var obj = NewWithProperties([]);
+		obj.window = window;
 
+		return obj;
+	}
+
+	partial void Initialize()
+	{
 		nsv!.SetShowContent(true);
-
-		Child = toastOverlay!;
-		HeightRequest = 360;
-		WidthRequest = 360;
-		ContentHeight = 500;
-		ContentWidth = 800;
-
-		AddBreakpoint(SetupBreakpoint());
 
 		ViewStackPage page = view!.GetPage(view!.GetVisibleChild()!);
 		nsv!.GetContent()!.SetTitle(page!.GetTitle()!);
@@ -161,7 +158,7 @@ internal class Preferences : Adw.Dialog
 			if (args.Pspec.GetName() == "active")
 			{
 				settings.SetBoolean("devtools-enabled", setting_devtools.GetActive());
-				int npages = window.tabView!.GetNPages()!;
+				int npages = window!.tabView!.GetNPages()!;
 
 				for (int i = 1; i <= npages; i++)
 				{
@@ -229,7 +226,7 @@ internal class Preferences : Adw.Dialog
 						break;
 				}
 
-				int npages = window.tabView!.GetNPages()!;
+				int npages = window!.tabView!.GetNPages()!;
 				for (int i = 1; i <= npages; i++)
 				{
 					TabPage page = window.tabView!.GetNthPage(i - 1);
@@ -269,29 +266,5 @@ internal class Preferences : Adw.Dialog
 	public void FocusPane(string section)
 	{
 		view!.SetVisibleChildName(section);
-	}
-
-	private Breakpoint SetupBreakpoint()
-	{
-		// equivalent to condition ("max-width: 600sp") in blueprint
-		BreakpointCondition condition = BreakpointCondition.NewLength(
-			BreakpointConditionLengthType.MaxWidth,
-			600,
-			LengthUnit.Sp
-		);
-		Breakpoint breakpoint = Breakpoint.New(condition);
-
-		GObject.Value boolean = new();
-		GObject.Value number = new();
-		boolean.Init(GObject.Type.Boolean);
-		number.Init(GObject.Type.Int);
-
-		boolean.SetBoolean(true);
-		breakpoint.AddSetter(nsv!, "collapsed", boolean);
-
-		number.SetInt(1);
-		breakpoint.AddSetter((Widget)builder!.GetObject("vss")!, "mode", number); // set Adw.ViewSwitcherSidebar:mode to Adw.SidebarMode.page (internally, we do not support libadwaita 1.9)
-
-		return breakpoint;
 	}
 }
