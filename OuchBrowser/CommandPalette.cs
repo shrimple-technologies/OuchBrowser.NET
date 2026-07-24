@@ -22,7 +22,6 @@ internal partial class CommandPalette
 	[Connect] public Revealer? commandPaletteDisclosureRevealer;
 	[Connect] public Revealer? commandPaletteButtonRevealer;
 #pragma warning restore CS0649
-
 	private Window? window;
 	private DateTime lastInvokeTime = DateTime.MinValue;
 	private CancellationTokenSource? debounceCts;

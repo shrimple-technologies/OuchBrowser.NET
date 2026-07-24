@@ -15,7 +15,6 @@ internal partial class RoomsOverview
 	[Connect] private Button? new_tab_button;
 	[Connect] private WindowTitle? wt;
 #pragma warning restore CS0649
-
 	private Window? window;
 
 	public static RoomsOverview NewWithWindow(Window window)

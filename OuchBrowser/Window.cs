@@ -35,7 +35,6 @@ internal partial class Window : Adw.ApplicationWindow
 	[Connect] public Label? urlDisplayLabel;
 	[Connect] public MultiLayoutView? multiLayoutView;
 #pragma warning restore CS0649
-
 	public string palette_state = "new_tab";
 	private Preferences? preferences;
 	private RoomsOverview? rooms;

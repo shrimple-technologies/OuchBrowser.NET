@@ -19,7 +19,6 @@ internal partial class Preferences
 	[Connect] private ComboRow? setting_peek_trigger;
 	[Connect] private ButtonRow? setting_clear_bang_rankings;
 #pragma warning restore CS0649
-
 	private Window? window;
 
 	public static Preferences NewWithWindow(Window window)
