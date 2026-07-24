@@ -4,7 +4,7 @@ using GLib;
 
 namespace OuchBrowser;
 
-[GObject.Subclass<Adw.Application>]
+[GObject.Subclass<Adw.Application>("OuchApplication")]
 internal partial class Application
 {
 	partial void Initialize()
