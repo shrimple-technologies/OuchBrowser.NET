@@ -22,7 +22,7 @@ internal partial class Application
 		var window = Window.NewWithProperties([]);
 
 		ApplicationId = "page.codeberg.shrimple.OuchBrowser";
-		Flags = ApplicationFlags.DefaultFlags;
+		Flags = ApplicationFlags.HandlesOpen;
 		OnActivate += (self, args) =>
 		{
 			window.SetApplication(this);
