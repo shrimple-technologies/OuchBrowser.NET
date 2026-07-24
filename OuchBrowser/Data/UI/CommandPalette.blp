@@ -12,7 +12,7 @@ template $OuchCommandPalette: Adw.Dialog {
 		"command-palette",
 		"view",
 	]
-	
+
 	Box {
 		orientation: vertical;
 
@@ -26,7 +26,7 @@ template $OuchCommandPalette: Adw.Dialog {
 
 			Stack url_stack {
 				transition-type: crossfade;
-				accessible-role: none;
+				accessible-role: presentation;
 
 				StackPage {
 					name: "main";
@@ -35,6 +35,7 @@ template $OuchCommandPalette: Adw.Dialog {
 						icon-name: "page.codeberg.shrimple.OuchBrowser-symbolic";
 						pixel-size: 20;
 						margin-start: 10;
+						accessible-role: presentation;
 
 						styles [
 							"dimmed",
@@ -61,10 +62,7 @@ template $OuchCommandPalette: Adw.Dialog {
 						icon-name: "search-symbolic";
 						pixel-size: 20;
 						margin-start: 10;
-
-						accessibility {
-							label: _("Search");
-						}
+						accessible-role: presentation;
 
 						styles [
 							"dimmed",
@@ -79,10 +77,7 @@ template $OuchCommandPalette: Adw.Dialog {
 						icon-name: "exclaimation-symbolic";
 						pixel-size: 20;
 						margin-start: 10;
-
-						accessibility {
-							label: _("!bangs");
-						}
+						accessible-role: presentation;
 
 						styles [
 							"dimmed",
@@ -96,10 +91,7 @@ template $OuchCommandPalette: Adw.Dialog {
 					child: Image commandPaletteWebsiteFavicon {
 						pixel-size: 20;
 						margin-start: 10;
-
-						accessibility {
-							label: _("Website");
-						}
+						accessible-role: presentation;
 					};
 				}
 
@@ -110,10 +102,7 @@ template $OuchCommandPalette: Adw.Dialog {
 						icon-name: "page.codeberg.shrimple.OuchBrowser-symbolic";
 						pixel-size: 20;
 						margin-start: 10;
-
-						accessibility {
-							label: _("Shortcuts");
-						}
+						accessible-role: presentation;
 
 						styles [
 							"dimmed",
