@@ -37,7 +37,7 @@ public class Bang
 	public List<BangFormat>? Format { get; set; }
 
 	[JsonPropertyName("skip_tests")]
-	public bool SkipTests { get; set; } = false;
+	public bool? SkipTests { get; set; } = false;
 }
 
 public class RankedBang
