@@ -30,21 +30,8 @@ internal partial class CommandPalette
 	partial void Initialize()
 	{
 		commandPaletteEntry!.OnActivate += (_, _) => commandPaletteButton!.Activate();
+		commandPaletteButton!.OnClicked += (_, _) => commandPaletteButton!.Activate();
 
-		HandlePaletteUpdate();
-		HandlePaletteActivate();
-	}
-
-	public static CommandPalette NewWithWindow(Window window)
-	{
-		var obj = NewWithProperties([]);
-		obj.window = window;
-
-		return obj;
-	}
-
-	public void HandlePaletteUpdate()
-	{
 		EmbeddedResource.Load("ShortcutsList.json", out string shortcuts_json);
 		List<Types.Shortcut> shortcuts_list = JsonSerializer.Deserialize<List<Types.Shortcut>>(shortcuts_json, JsonSerializerOptions.Default)!;
 		Dictionary<string, Types.Shortcut> shortcuts = new();
@@ -344,11 +331,7 @@ internal partial class CommandPalette
 				}
 			}
 		};
-	}
 
-	public void HandlePaletteActivate()
-	{
-		commandPaletteButton!.OnClicked += (_, _) => commandPaletteButton!.Activate();
 		commandPaletteButton!.OnActivate += (_, _) =>
 		{
 			string query = commandPaletteEntry!.GetText();
@@ -465,5 +448,13 @@ internal partial class CommandPalette
 
 			Close();
 		};
+	}
+
+	public static CommandPalette NewWithWindow(Window window)
+	{
+		var obj = NewWithProperties([]);
+		obj.window = window;
+
+		return obj;
 	}
 }
