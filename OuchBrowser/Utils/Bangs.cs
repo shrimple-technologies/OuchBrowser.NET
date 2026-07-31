@@ -3,6 +3,7 @@
 
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Text.RegularExpressions;
 using System.Web;
 using GLib;
 using OuchBrowser.Types;
@@ -68,8 +69,23 @@ internal class Bangs
 			templateUrl = "https://kagi.com" + templateUrl;
 		}
 
-		if (bang.Format == null || bang.Format.Contains(BangFormat.url_encode_space_to_plus)) return templateUrl.Replace("{{{s}}}", Uri.EscapeDataString(query)).Replace("%20", "+");
-		else if (bang.Format != null && bang.Format.Contains(BangFormat.url_encode_placeholder)) return templateUrl.Replace("{{{s}}}", Uri.EscapeDataString(query));
+		if (bang.RegexPattern != null)
+		{
+			Match match = System.Text.RegularExpressions.Regex.Match(query, bang.RegexPattern);
+			int i = 1;
+
+			foreach (Group group in match.Groups.Cast<Group>().Skip(1))
+			{
+				templateUrl = templateUrl.Replace($"${i}", group.Value);
+				i++;
+			}
+
+			return templateUrl;
+		}
+		else if (bang.Format == null || bang.Format.Contains(BangFormat.url_encode_space_to_plus))
+			return templateUrl.Replace("{{{s}}}", Uri.EscapeDataString(query)).Replace("%20", "+");
+		else if (bang.Format != null && bang.Format.Contains(BangFormat.url_encode_placeholder))
+			return templateUrl.Replace("{{{s}}}", Uri.EscapeDataString(query));
 		else return templateUrl.Replace("{{{s}}}", query);
 	}
 
