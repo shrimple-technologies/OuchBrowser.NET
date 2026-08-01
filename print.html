@@ -36,7 +36,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-33242612.js";
+            window.path_to_searchindex_js = "searchindex-799d18fb.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-271c01a2.js"></script>
@@ -191,29 +191,7 @@ summoned using <kbd>Ctrl</kbd> + <kbd>T</kbd> for a new tab, <kbd>Ctrl</kbd> +
 (considered the <em>de-facto</em> main way to summon the palette).</p>
 <h2 id="bangs"><a class="header" href="#bangs">!bangs</a></h2>
 <p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/command-palette-bangs.png" alt="Command palette autocompleting !bangs"><span class="img-wrapper"><img src="images/command-palette-bangs.png" alt="Command palette autocompleting !bangs"></span></label></p>
-<p>!bangs help you search websites that are not conventional search engines.
-Autocompletion is possible via <a href="#enable-bang-autocomplete">preferences</a>,
-but may use an significant amount of resources due to the large amount of
-!bangs stored.</p>
-<h3 id="ranking-system"><a class="header" href="#ranking-system">Ranking System</a></h3>
-<p>A simple ranking system is utilized for !bangs, and does not include any sort
-of algorithm. There are three stages of !bang selection:</p>
-<ol>
-<li>The <code>!</code> character is inputted into the command palette. This will switch
-from looking for search and website queries into looking for relevant !bangs
-for the query.</li>
-<li>A complete !bang would be inputted along with a space. The backend will
-search for the !bang, and preload the matching one to complement the palette
-UI.</li>
-<li>The user hits <kbd>Enter</kbd> or presses the <kbd>&gt;</kbd> button on
-mobile. The !bang is loaded once again, and creates a new tab with the query
-to the !bang’s search page</li>
-</ol>
-<p>Right before the third stage invokes, the backend will increment the ranking of
-the !bang by <code>1</code>. All !bangs by default are assumed to be ranked at <code>0</code>,
-therefore the selected !bang will be the first result. As the !bangs function
-is utilized over time, it becomes accurate, with the relevant !bang being <em>one
-of the first</em> autocomplete results.</p>
+<p>!bangs help you search websites that are not conventional search engines.</p>
 <h2 id="search"><a class="header" href="#search">Search</a></h2>
 <p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="images/command-palette-search.png" alt="Command palette autocompleting a search term"><span class="img-wrapper"><img src="images/command-palette-search.png" alt="Command palette autocompleting a search term"></span></label></p>
 <p>Search allows you to search the internet using the search engine selected in
@@ -309,17 +287,6 @@ for recreation upon next startup.</p>
 <p>This setting determines whether searching inside the command palette shows
 autocompletion results. This will send your search query to DuckDuckGo for
 completion.</p>
-<h4 id="enable-bang-autocomplete"><a class="header" href="#enable-bang-autocomplete">Enable !bang Autocomplete</a></h4>
-<blockquote>
-<p><strong>gsettings Key</strong>: <code>bang-autocomplete-enabled</code></p>
-<p><strong>Type</strong>: Boolean</p>
-<p><strong>Default</strong>: <code>false</code></p>
-</blockquote>
-<p>This setting determines whether entering a !bang inside the command palette
-shows autocompletion results. The autocompletion process happens locally,
-therefore utilizes more resources. Individual !bangs gain higher ranking inside
-autocompletion results over time with use. See the <a href="#ranking-system">command palette manual</a>
-for more details.</p>
 <h3 id="peek-tabs-1"><a class="header" href="#peek-tabs-1">Peek Tabs</a></h3>
 <p>This configures how <a href="#peek-tabs">peek tabs</a> work.</p>
 <h4 id="peek-trigger"><a class="header" href="#peek-trigger">Peek Trigger</a></h4>
