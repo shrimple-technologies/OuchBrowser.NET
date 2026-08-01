@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-07-31 13:37-0400\n"
+"POT-Creation-Date: 2026-07-31 22:56-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,8 +24,8 @@ msgid "Searching using {0}"
 msgstr ""
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:29
-#: OuchBrowser/Data/UI/Preferences.blp:176
-#: OuchBrowser/Data/UI/Preferences.blp:186
+#: OuchBrowser/Data/UI/Preferences.blp:171
+#: OuchBrowser/Data/UI/Preferences.blp:181
 msgid "Search Engine"
 msgstr ""
 
@@ -81,46 +81,30 @@ msgid "This value is whether search autocomplete is enabled or not."
 msgstr ""
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:87
-msgid "!bang Autocomplete enabled?"
-msgstr ""
-
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:88
-msgid "This value is whether !bang autocomplete is enabled or not."
-msgstr ""
-
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:95
 msgid "Developer Tools enabled?"
 msgstr ""
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:96
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:88
 msgid "This value is whether developer tools is enabled or not."
 msgstr ""
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:103
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:95
 msgid "Initial Window Size"
 msgstr ""
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:104
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:96
 msgid "This value is the main window’s size."
 msgstr ""
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:111
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:103
 msgid "Peek Tab Trigger"
 msgstr ""
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:112
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:104
 msgid ""
 "This value is the trigger for opening a peek tab. For example, holding down "
 "the Shift key and clicking on a hyperlink will result in that website being "
 "loaded inside a peek tab, which is separate from the main window."
-msgstr ""
-
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:123
-msgid "!bang Usage Rankings"
-msgstr ""
-
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:124
-msgid "This value is the rankings of !bangs over time from use."
 msgstr ""
 
 #: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:6
@@ -214,99 +198,84 @@ msgid "Enable Search Autocomplete"
 msgstr ""
 
 #: OuchBrowser/Data/UI/Preferences.blp:87
-msgid "Enable !bang Autocomplete"
-msgstr ""
-
-#: OuchBrowser/Data/UI/Preferences.blp:92
 msgid "Peek Tabs"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:94
+#: OuchBrowser/Data/UI/Preferences.blp:89
 msgid ""
 "Peek tabs are temporary tabs that can be triggered by holding down a "
 "specific key and clicking on a link. These can also be expanded into full "
 "view."
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:99
+#: OuchBrowser/Data/UI/Preferences.blp:94
 msgid "Peek Trigger"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:101
+#: OuchBrowser/Data/UI/Preferences.blp:96
 msgid ""
 "This will be the key that can be used in addition to a click to open a peek "
 "tab."
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:115
+#: OuchBrowser/Data/UI/Preferences.blp:110
 msgid "Developer"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:119
+#: OuchBrowser/Data/UI/Preferences.blp:114
 msgid "Enable Developer Tools"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:120
+#: OuchBrowser/Data/UI/Preferences.blp:115
 msgid "This will allow access to the Web Inspector"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:129
+#: OuchBrowser/Data/UI/Preferences.blp:124
 msgid "Accessibility"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:135
+#: OuchBrowser/Data/UI/Preferences.blp:130
 msgid "Content"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:139
+#: OuchBrowser/Data/UI/Preferences.blp:134
 msgid "Page Zoom"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:166
+#: OuchBrowser/Data/UI/Preferences.blp:161
 msgid "Zoom Text"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:167
+#: OuchBrowser/Data/UI/Preferences.blp:162
 msgid "Zooms text and images instead of the view"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:180
+#: OuchBrowser/Data/UI/Preferences.blp:175
 msgid "See !bangs preferences for more options"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:200
+#: OuchBrowser/Data/UI/Preferences.blp:195
 msgid "Custom Search Engines"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:204
+#: OuchBrowser/Data/UI/Preferences.blp:199
 msgid "New Search Engine…"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:213
+#: OuchBrowser/Data/UI/Preferences.blp:208
 msgid "!bangs"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:217
+#: OuchBrowser/Data/UI/Preferences.blp:212
 msgid "!bangs provided by Kagi"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:221
+#: OuchBrowser/Data/UI/Preferences.blp:216
 msgid "Custom Bangs"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Preferences.blp:225
+#: OuchBrowser/Data/UI/Preferences.blp:220
 msgid "New Bang…"
-msgstr ""
-
-#: OuchBrowser/Data/UI/Preferences.blp:233
-msgid ""
-"Ouch Browser utilizes a simple ranking system to provide smarter !bang "
-"autocompletion results over time. Requires !bangs autocompletion to be "
-"enabled."
-msgstr ""
-
-#: OuchBrowser/Data/UI/Preferences.blp:239
-msgid "Clear All Ranks"
 msgstr ""
 
 #: OuchBrowser/Data/UI/RoomsOverview.blp:35
@@ -409,10 +378,6 @@ msgstr ""
 
 #: OuchBrowser/Data/UI/Window.blp:944
 msgid "New Folder"
-msgstr ""
-
-#: OuchBrowser/Preferences.cs:262
-msgid "Cleared All Ranks"
 msgstr ""
 
 #: OuchBrowser/RoomsOverview.cs:82
