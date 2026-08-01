@@ -17,6 +17,7 @@ Focus on your browsing
 - **!bangs** — Easily search other websites
 - **Command Palette** — A multi-purpose search bar that allows you to search,
   find !bangs, and more
+- **Peek Tabs** — A minimal temporary tab for quick browsing
 - **Vertical Tabs** — Helps browser power users manage their tabs well
 
 ## Screenshots
