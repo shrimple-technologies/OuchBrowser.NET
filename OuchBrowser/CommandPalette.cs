@@ -62,11 +62,11 @@ internal partial class CommandPalette
 				else if (text.StartsWith('!'))
 				{
 					commandPaletteDisclosureRevealer!.SetRevealChild(false);
+					commandPaletteAutocompleteRevealer!.SetRevealChild(false);
 					if (window!.multiLayoutView!.GetLayoutName() == "mobile") commandPaletteButtonRevealer!.SetRevealChild(true);
 
 					if (1 < text.Split(' ').Length)
 					{
-						commandPaletteAutocompleteRevealer!.SetRevealChild(false);
 						Bang? current_bang = bangs!.GetBang(text.Substring(1))!;
 						if (current_bang != null)
 						{
@@ -88,62 +88,7 @@ internal partial class CommandPalette
 						}
 					}
 					else
-					{
 						url_stack!.SetVisibleChildName("bang");
-
-						if (settings.GetBoolean("bang-autocomplete-enabled") && text.Length >= 4)
-						{
-							commandPaletteAutocompleteRevealer!.SetRevealChild(true);
-							Box box = Box.New(Orientation.Vertical, 10);
-							ScrolledWindow sw = ScrolledWindow.New();
-							sw.SetPropagateNaturalHeight(true);
-							sw.SetVexpand(true);
-							sw.SetMinContentHeight(387);
-							sw.SetMaxContentHeight(387);
-							sw.AddCssClass("undershoot-top");
-							box.SetMarginTop(10);
-							box.SetMarginBottom(10);
-
-							Bang[] bang = bangs!.AutocompleteBang(text);
-							if (bang.Length == 0) commandPaletteAutocompleteRevealer!.SetRevealChild(false);
-							foreach (Bang b in bang)
-							{
-								Button button = Button.New();
-								Box button_box = Box.New(Orientation.Horizontal, 15);
-								Label button_label = Label.New(b.WebsiteName);
-								Label button_trigger = Label.New($"!{b.Trigger}");
-								button.SetMarginStart(10);
-								button.SetMarginEnd(10);
-								button.SetHexpand(true);
-								button.SetCssClasses(["flat"]);
-								button_label.SetCssClasses(["body"]);
-								button_label.SetEllipsize(Pango.EllipsizeMode.End);
-								button_trigger.SetCssClasses(["body", "dimmed"]);
-								button_box.Append(Image.NewFromIconName("box-dotted-symbolic"));
-								button_box.Append(button_label);
-								button_box.Append(button_trigger);
-								button.SetChild(button_box);
-								button.OnClicked += (_, _) =>
-								{
-									commandPaletteEntry.SetText($"!{b.Trigger} ");
-									commandPaletteEntry.GrabFocusWithoutSelecting();
-									commandPaletteEntry.SetPosition(-1);
-								};
-								box.Append(button);
-							}
-
-							if (bang.Length < 8)
-							{
-								commandPaletteAutocompleteRevealer!.SetChild(box);
-							}
-							else
-							{
-								sw.SetChild(box);
-								commandPaletteAutocompleteRevealer!.SetChild(sw);
-							}
-						}
-						else commandPaletteAutocompleteRevealer!.SetRevealChild(false);
-					}
 				}
 				else if (Url.IsUrl(text))
 				{
@@ -399,7 +344,6 @@ internal partial class CommandPalette
 						window.view!.AddTab(bangs!.ExpandBang(query), false);
 
 						Bang? bang = bangs!.GetBang(query.Substring(1))!;
-						if (bang != null && settings.GetBoolean("bang-autocomplete-enabled")) Bangs.IncrementRanking(bang.Trigger);
 					}
 					else
 					{
@@ -437,7 +381,6 @@ internal partial class CommandPalette
 						webview.LoadUri(bangs!.ExpandBang(query));
 
 						Bang? bang = bangs!.GetBang(query)!;
-						if (bang != null && settings.GetBoolean("bang-autocomplete-enabled")) Bangs.IncrementRanking(bang.Trigger);
 					}
 					else
 					{

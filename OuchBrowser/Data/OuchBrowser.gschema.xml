@@ -82,14 +82,6 @@
 			</description>
 		</key>
 
-		<key type="b" name="bang-autocomplete-enabled">
-			<default>false</default>
-			<summary>!bang Autocomplete enabled?</summary>
-			<description>
-				This value is whether !bang autocomplete is enabled or not.
-			</description>
-		</key>
-
 		<key type="b" name="devtools-enabled">
 			<default>false</default>
 			<summary>Developer Tools enabled?</summary>
@@ -115,14 +107,6 @@
 				For example, holding down the Shift key and clicking on a
 				hyperlink will result in that website being loaded inside a
 				peek tab, which is separate from the main window.
-			</description>
-		</key>
-
-		<key type="a{s(ix)}" name="bang-rankings">
-			<default>{}</default>
-			<summary>!bang Usage Rankings</summary>
-			<description>
-				This value is the rankings of !bangs over time from use.
 			</description>
 		</key>
 	</schema>

@@ -12,12 +12,10 @@ internal partial class Preferences
 	[Connect] private NavigationSplitView? nsv;
 	[Connect] private ViewStack? view;
 	[Connect] private SwitchRow? setting_search_autocomplete;
-	[Connect] private SwitchRow? setting_bang_autocomplete;
 	[Connect] private SwitchRow? setting_devtools;
 	[Connect] private ComboRow? setting_search_engine;
 	[Connect] private ComboRow? setting_zoom;
 	[Connect] private ComboRow? setting_peek_trigger;
-	[Connect] private ButtonRow? setting_clear_bang_rankings;
 #pragma warning restore CS0649
 	private Window? window;
 
@@ -45,7 +43,6 @@ internal partial class Preferences
 			if (args.Pspec.GetName() == "parent")
 			{
 				setting_search_autocomplete!.SetActive(settings.GetBoolean("search-autocomplete-enabled"));
-				setting_bang_autocomplete!.SetActive(settings.GetBoolean("bang-autocomplete-enabled"));
 				setting_devtools!.SetActive(settings.GetBoolean("devtools-enabled"));
 				switch (settings.GetString("search-engine"))
 				{
@@ -128,8 +125,6 @@ internal partial class Preferences
 						setting_search_engine!.SetSelected(2);
 						break;
 				}
-				if ((int)settings.GetValue("bang-rankings").NChildren() == 0) setting_clear_bang_rankings!.SetSensitive(false);
-				else setting_clear_bang_rankings!.SetSensitive(true);
 			}
 		};
 
@@ -146,11 +141,6 @@ internal partial class Preferences
 		setting_search_autocomplete!.OnNotify += (_, args) =>
 		{
 			if (args.Pspec.GetName() == "active") settings.SetBoolean("search-autocomplete-enabled", setting_search_autocomplete.GetActive());
-		};
-
-		setting_bang_autocomplete!.OnNotify += (_, args) =>
-		{
-			if (args.Pspec.GetName() == "active") settings.SetBoolean("bang-autocomplete-enabled", setting_bang_autocomplete.GetActive());
 		};
 
 		setting_devtools!.OnNotify += (_, args) =>
@@ -253,13 +243,6 @@ internal partial class Preferences
 						break;
 				}
 			}
-		};
-
-		setting_clear_bang_rankings!.OnActivated += (_, _) =>
-		{
-			settings.Reset("bang-rankings");
-			setting_clear_bang_rankings.SetSensitive(false);
-			toastOverlay!.AddToast(Toast.New(__("Cleared All Ranks")));
 		};
 	}
 

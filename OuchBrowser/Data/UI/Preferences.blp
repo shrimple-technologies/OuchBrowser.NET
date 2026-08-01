@@ -81,11 +81,6 @@ template $OuchPreferencesDialog: Adw.Dialog {
 										icon-name: "search-symbolic";
 										title: _("Enable Search Autocomplete");
 									}
-
-									Adw.SwitchRow setting_bang_autocomplete {
-										icon-name: "exclaimation-symbolic";
-										title: _("Enable !bang Autocomplete");
-									}
 								}
 
 								Adw.PreferencesGroup {
@@ -223,24 +218,6 @@ template $OuchPreferencesDialog: Adw.Dialog {
 									Adw.ButtonRow {
 										start-icon-name: "list-add-symbolic";
 										title: _("New Bang…");
-									}
-								}
-
-								Adw.PreferencesGroup {
-									Adw.ActionRow {
-										icon-name: "list-high-priority-symbolic";
-										subtitle: _(
-											"Ouch Browser utilizes a simple ranking system to provide smarter !bang autocompletion results over time. Requires !bangs autocompletion to be enabled."
-										);
-									}
-
-									Adw.ButtonRow setting_clear_bang_rankings {
-										start-icon-name: "user-trash-symbolic";
-										title: _("Clear All Ranks");
-
-										styles [
-											"destructive-action",
-										]
 									}
 								}
 							};
