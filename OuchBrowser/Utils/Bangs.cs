@@ -1,6 +1,7 @@
 // Utils/Bangs.cs
 // Utilities for handling !bangs via Kagi.
 
+using System.Net;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
@@ -80,8 +81,8 @@ internal class Bangs
 
 			return templateUrl;
 		}
-		else if (bang.Format == null || bang.Format.Contains(BangFormat.url_encode_space_to_plus))
-			return templateUrl.Replace("{{{s}}}", Uri.EscapeDataString(query)).Replace("%20", "+");
+		else if (bang.Format == null || bang.Format.Contains(BangFormat.url_encode_space_to_plus)) // preferred over `url_encode_placeholder` by default as they both url encode
+			return templateUrl.Replace("{{{s}}}", WebUtility.UrlEncode(query));
 		else if (bang.Format != null && bang.Format.Contains(BangFormat.url_encode_placeholder))
 			return templateUrl.Replace("{{{s}}}", Uri.EscapeDataString(query));
 		else return templateUrl.Replace("{{{s}}}", query);
