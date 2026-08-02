@@ -116,6 +116,7 @@ dialog.peek > widget > floating-sheet > dimming {
 
 dialog.peek > widget > floating-sheet > sheet > widget > box > frame {
 	border-radius: 12px;
+	border: none;
 }
 
 dialog.command-palette > widget > floating-sheet > sheet {
