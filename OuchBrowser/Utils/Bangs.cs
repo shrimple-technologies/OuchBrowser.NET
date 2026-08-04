@@ -68,7 +68,7 @@ internal class Bangs
 
 		if (bang.RegexPattern != null)
 		{
-			Match match = System.Text.RegularExpressions.Regex.Match(query, bang.RegexPattern);
+			Match match = Regex.Match(query, bang.RegexPattern);
 			int i = 1;
 
 			foreach (Group group in match.Groups.Cast<Group>().Skip(1))
