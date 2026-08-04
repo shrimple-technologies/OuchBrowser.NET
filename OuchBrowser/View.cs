@@ -15,6 +15,7 @@ internal class View
 	{
 		view = tabView;
 		win = window;
+
 		WebKit.Module.Initialize();
 	}
 
@@ -33,6 +34,17 @@ internal class View
 		WebView webview = WebView.New();
 		Gio.SimpleAction go_back_action = (Gio.SimpleAction)win.LookupAction("go-back")!;
 		Gio.SimpleAction go_forward_action = (Gio.SimpleAction)win.LookupAction("go-forward")!;
+		Gtk.EventControllerScroll eventControllerScroll = Gtk.EventControllerScroll.New(Gtk.EventControllerScrollFlags.Vertical);
+
+		eventControllerScroll.OnScroll += (_, args) =>
+		{
+			if (args.Dy < 0)
+				win.mobileBar!.AddCssClass("revealed");
+			else if (args.Dy > 0)
+				win.mobileBar!.RemoveCssClass("revealed");
+			
+			return false;
+		};
 
 		webview.SetSettings(InitSettings());
 		webview.LoadUri(url);
@@ -101,6 +113,8 @@ internal class View
 				Connect(webview, win, page);
 			}
 		};
+
+		webview.AddController(eventControllerScroll);
 
 		return webview;
 	}

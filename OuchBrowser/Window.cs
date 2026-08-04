@@ -34,6 +34,7 @@ internal partial class Window
 	[Connect] public Box? urlDisplayOsd;
 	[Connect] public Label? urlDisplayLabel;
 	[Connect] public MultiLayoutView? multiLayoutView;
+	[Connect] public Box? mobileBar;
 #pragma warning restore CS0649
 	public string palette_state = "new_tab";
 	private Preferences? preferences;
