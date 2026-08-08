@@ -1,3 +1,20 @@
+@media (prefers-contrast: more) {
+	.mobile-bar:hover,
+	.mobile-bar.revealed {
+		background: var(--window-bg-color);
+		backdrop-filter: initial;
+		box-shadow:
+			0 0 0 1px
+				color-mix(
+					in srgb,
+					currentColor var(--border-opacity),
+					transparent
+				),
+			0 1px 3px 1px RGB(0 0 6 / 7%),
+			0 2px 6px 2px RGB(0 0 6 / 3%);
+	}
+}
+
 frame {
 	border-radius: 7px;
 	transition: all 200ms ease-out;
@@ -151,20 +168,23 @@ frame.inactive {
 }
 
 .mobile-bar {
-	border-radius: 18px 18px 0 0;
+	border-radius: 18px;
 	padding: 10px;
-	transform: translateY(35px);
+	transform: translateY(55px);
 	transition: all 200ms ease-out;
 	background: none;
 	box-shadow: none;
 }
 
-.mobile-bar:hover, .mobile-bar.revealed {
+.mobile-bar:hover,
+.mobile-bar.revealed {
 	transform: initial;
-	box-shadow: 0 0 0 1px RGB(0 0 6 / 3%),
-                0 1px 3px 1px RGB(0 0 6 / 7%),
-                0 2px 6px 2px RGB(0 0 6 / 3%);
-	background: var(--window-bg-color);
+	box-shadow:
+		0 0 0 1px RGB(0 0 6 / 3%),
+		0 1px 3px 1px RGB(0 0 6 / 7%),
+		0 2px 6px 2px RGB(0 0 6 / 3%);
+	background: color-mix(in oklab, var(--window-bg-color) 75%, transparent);
+	backdrop-filter: blur(10px);
 }
 
 .mobile-bar > .toolbar {
@@ -172,6 +192,7 @@ frame.inactive {
 	opacity: 0;
 }
 
-.mobile-bar.revealed > .toolbar, .mobile-bar:hover > .toolbar  {
+.mobile-bar.revealed > .toolbar,
+.mobile-bar:hover > .toolbar {
 	opacity: 100%;
 }
