@@ -450,6 +450,48 @@ internal partial class Window
 			window.SetApplication((Adw.Application)Application!);
 			window.Start();
 		});
+
+		actions.AddAction("web-inspector", ["<Ctrl><Shift>I"], (_, _) =>
+		{
+			if (tabView!.GetNPages() == 0) return;
+
+			TabPage page = tabView!.GetSelectedPage()!;
+			WebView webview = (WebView)page.Child!;
+
+			if (settings.GetBoolean("devtools-enabled"))
+			{
+				WebInspector inspector = webview.GetInspector();
+				inspector.Show();
+			}
+			else
+			{
+				Adw.AlertDialog alert = Adw.AlertDialog.New(
+					__("Launch Web Inspector?"),
+					__(
+						"You have attempted to launch the web inspector, but you do not have it enabled. The web inspector allows access to the element inspector, JavaScript console, and network inspector. Are you sure you want to continue?"
+					)
+				);
+				alert.AddResponse("cancel", __("Cancel"));
+				alert.AddResponse("preferences", __("Enable in Preferences"));
+				alert.SetCloseResponse("cancel");
+				alert.SetDefaultResponse("cancel");
+				alert.SetResponseAppearance("preferences", ResponseAppearance.Suggested);
+
+				alert.OnResponse += (_, args) =>
+				{
+					if (args.Response == "preferences")
+					{
+						alert.Close();
+						preferences!.Present(this);
+					}
+				};
+
+				alert.Present(this);
+			}
+		});
+
+		actions.AddAction("gtk-inspector", ["<Ctrl><Shift>D"], (_, _) =>
+			SetInteractiveDebugging(true));
 	}
 
 	private void SetupHoverController(EventControllerMotion controller)
