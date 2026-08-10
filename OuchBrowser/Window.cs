@@ -469,7 +469,7 @@ internal partial class Window
 				Adw.AlertDialog alert = Adw.AlertDialog.New(
 					__("Launch Web Inspector?"),
 					__(
-						"You have attempted to launch the web inspector, but you do not have it enabled. The web inspector allows access to the element inspector, JavaScript console, and network inspector. Are you sure you want to continue?"
+						"You have attempted to launch the web inspector, but you do not have it enabled.\n\nThe web inspector allows access to the element inspector, JavaScript console, and network inspector, which is used for web development purposes.\n\nAre you sure you want to continue?"
 					)
 				);
 				alert.AddResponse("cancel", __("Cancel"));

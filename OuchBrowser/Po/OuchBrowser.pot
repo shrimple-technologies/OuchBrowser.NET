@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-08-09 02:26-0400\n"
+"POT-Creation-Date: 2026-08-10 17:46-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -109,7 +109,7 @@ msgstr ""
 
 #: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:6
 #: OuchBrowser/Data/UI/Window.blp:7 OuchBrowser/Data/UI/Window.blp:31
-#: OuchBrowser/Data/UI/Window.blp:288
+#: OuchBrowser/Data/UI/Window.blp:290
 msgid "Ouch Browser"
 msgstr ""
 
@@ -157,7 +157,7 @@ msgid "Go"
 msgstr ""
 
 #: OuchBrowser/Data/UI/Preferences.blp:23
-#: OuchBrowser/Data/UI/Preferences.blp:36 OuchBrowser/Data/UI/Window.blp:605
+#: OuchBrowser/Data/UI/Preferences.blp:36 OuchBrowser/Data/UI/Window.blp:603
 msgid "Preferences"
 msgstr ""
 
@@ -288,9 +288,9 @@ msgid "Main"
 msgstr ""
 
 #: OuchBrowser/Data/UI/RoomsOverview.blp:53
-#: OuchBrowser/Data/UI/RoomsOverview.blp:63 OuchBrowser/Data/UI/Window.blp:138
-#: OuchBrowser/Data/UI/Window.blp:157 OuchBrowser/Data/UI/Window.blp:878
-#: OuchBrowser/Data/UI/Window.blp:973
+#: OuchBrowser/Data/UI/RoomsOverview.blp:63 OuchBrowser/Data/UI/Window.blp:140
+#: OuchBrowser/Data/UI/Window.blp:159 OuchBrowser/Data/UI/Window.blp:874
+#: OuchBrowser/Data/UI/Window.blp:969
 msgid "New Tab"
 msgstr ""
 
@@ -302,81 +302,81 @@ msgstr ""
 msgid "Hide Sidebar"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:220 OuchBrowser/RoomsOverview.cs:57
-#: OuchBrowser/View.cs:415
+#: OuchBrowser/Data/UI/Window.blp:222 OuchBrowser/RoomsOverview.cs:57
+#: OuchBrowser/View.cs:429
 msgid "Close Tab"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:306
+#: OuchBrowser/Data/UI/Window.blp:308
 msgid "Show Sidebar"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:467
+#: OuchBrowser/Data/UI/Window.blp:465
 msgid "Menu"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:511
+#: OuchBrowser/Data/UI/Window.blp:509
 msgid "New Window"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:558
+#: OuchBrowser/Data/UI/Window.blp:556
 msgid "View All Tabs"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:647
+#: OuchBrowser/Data/UI/Window.blp:645
 msgid "About Ouch Browser"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:667
+#: OuchBrowser/Data/UI/Window.blp:665
 msgid "Back"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:679
+#: OuchBrowser/Data/UI/Window.blp:677
 msgid "Forward"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:691 OuchBrowser/View.cs:97
-#: OuchBrowser/View.cs:177
+#: OuchBrowser/Data/UI/Window.blp:689 OuchBrowser/View.cs:109
+#: OuchBrowser/View.cs:191
 msgid "Refresh"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:711
+#: OuchBrowser/Data/UI/Window.blp:707
 msgid "Reveal Command Palette"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:730 OuchBrowser/View.cs:452
+#: OuchBrowser/Data/UI/Window.blp:726 OuchBrowser/View.cs:466
 msgid "Copy Link"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:741
+#: OuchBrowser/Data/UI/Window.blp:737
 msgid "Website Settings"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:757
+#: OuchBrowser/Data/UI/Window.blp:753
 msgid "No Website Settings Available"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:776
+#: OuchBrowser/Data/UI/Window.blp:772
 msgid "Archive"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:817
+#: OuchBrowser/Data/UI/Window.blp:813
 msgid "History"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:848
+#: OuchBrowser/Data/UI/Window.blp:844
 msgid "Downloads"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:888
+#: OuchBrowser/Data/UI/Window.blp:884
 msgid "New…"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:921
+#: OuchBrowser/Data/UI/Window.blp:917
 msgid "New Room"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:944
+#: OuchBrowser/Data/UI/Window.blp:940
 msgid "New Folder"
 msgstr ""
 
@@ -391,51 +391,51 @@ msgstr[1] ""
 msgid "Close"
 msgstr ""
 
-#: OuchBrowser/View.cs:92 OuchBrowser/View.cs:134 OuchBrowser/View.cs:149
+#: OuchBrowser/View.cs:104 OuchBrowser/View.cs:148 OuchBrowser/View.cs:163
 msgid "Stop Loading"
 msgstr ""
 
-#: OuchBrowser/View.cs:264
+#: OuchBrowser/View.cs:278
 msgid "Open Link in Peek Tab"
 msgstr ""
 
-#: OuchBrowser/View.cs:279
+#: OuchBrowser/View.cs:293
 msgid "There was a problem loading this website"
 msgstr ""
 
 #. TRANSLATORS: This is in the format of "example.com says"
-#: OuchBrowser/View.cs:296 OuchBrowser/View.cs:311 OuchBrowser/View.cs:339
+#: OuchBrowser/View.cs:310 OuchBrowser/View.cs:325 OuchBrowser/View.cs:353
 #, csharp-format
 msgid "{0} says"
 msgstr ""
 
-#: OuchBrowser/View.cs:298 OuchBrowser/View.cs:314 OuchBrowser/View.cs:342
+#: OuchBrowser/View.cs:312 OuchBrowser/View.cs:328 OuchBrowser/View.cs:356
 msgid "OK"
 msgstr ""
 
-#: OuchBrowser/View.cs:313 OuchBrowser/View.cs:341 OuchBrowser/Window.cs:91
-#: OuchBrowser/Window.cs:474
+#: OuchBrowser/View.cs:327 OuchBrowser/View.cs:355 OuchBrowser/Window.cs:92
+#: OuchBrowser/Window.cs:475
 msgid "Cancel"
 msgstr ""
 
-#: OuchBrowser/View.cs:422
+#: OuchBrowser/View.cs:436
 msgid "Expand Tab"
 msgstr ""
 
-#: OuchBrowser/View.cs:456 OuchBrowser/Window.cs:432
+#: OuchBrowser/View.cs:470 OuchBrowser/Window.cs:433
 msgid "Link Copied"
 msgstr ""
 
-#: OuchBrowser/Window.cs:88
+#: OuchBrowser/Window.cs:89
 msgid "Exit and Close All Tabs?"
 msgstr ""
 
-#: OuchBrowser/Window.cs:89
+#: OuchBrowser/Window.cs:90
 #, csharp-format
 msgid "You are about to close {0} tabs. Are you sure you want to continue?"
 msgstr ""
 
-#: OuchBrowser/Window.cs:92
+#: OuchBrowser/Window.cs:93
 msgid "Close Tabs"
 msgstr ""
 
@@ -445,33 +445,37 @@ msgstr ""
 #. Ouch Browser's credits. See
 #. <https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/class.AboutDialog.html#credits-and-acknowledgements>
 #. for more details.
-#: OuchBrowser/Window.cs:245
+#: OuchBrowser/Window.cs:246
 msgid "translator-credits"
 msgstr ""
 
-#: OuchBrowser/Window.cs:250
+#: OuchBrowser/Window.cs:251
 msgid "Icon design by"
 msgstr ""
 
-#: OuchBrowser/Window.cs:251
+#: OuchBrowser/Window.cs:252
 msgid "Shrimple Technologies members"
 msgstr ""
 
-#: OuchBrowser/Window.cs:255
+#: OuchBrowser/Window.cs:256
 msgid "Inspired by"
 msgstr ""
 
-#: OuchBrowser/Window.cs:469
+#: OuchBrowser/Window.cs:470
 msgid "Launch Web Inspector?"
 msgstr ""
 
-#: OuchBrowser/Window.cs:471
+#: OuchBrowser/Window.cs:472
 msgid ""
 "You have attempted to launch the web inspector, but you do not have it "
-"enabled. The web inspector allows access to the element inspector, "
-"JavaScript console, and network inspector. Are you sure you want to continue?"
+"enabled.\n"
+"\n"
+"The web inspector allows access to the element inspector, JavaScript "
+"console, and network inspector, which is used for web development purposes.\n"
+"\n"
+"Are you sure you want to continue?"
 msgstr ""
 
-#: OuchBrowser/Window.cs:475
+#: OuchBrowser/Window.cs:476
 msgid "Enable in Preferences"
 msgstr ""
