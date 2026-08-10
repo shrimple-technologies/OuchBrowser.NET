@@ -31,7 +31,7 @@ internal partial class Window
 	[Connect] public MenuButton? websiteSettingsButton;
 	[Connect] public Revealer? cardBoxRevealer;
 	[Connect] public ListBox? cardBox;
-	[Connect] public Box? urlDisplayOsd;
+	[Connect] public Bin? urlDisplayOsd;
 	[Connect] public Label? urlDisplayLabel;
 	[Connect] public MultiLayoutView? multiLayoutView;
 	[Connect] public Box? mobileBar;

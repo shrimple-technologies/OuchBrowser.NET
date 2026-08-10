@@ -334,49 +334,43 @@ template $OuchWindow: Adw.ApplicationWindow {
 
 									Overlay {
 										[overlay]
-										Box urlDisplayOsd {
+										Adw.Bin urlDisplayOsd {
 											halign: start;
 											valign: end;
 											margin-start: 10;
 											margin-bottom: 20;
 											visible: false;
 
-											Adw.Bin {
+											styles [
+												"osd",
+												"url-preview",
+											]
+
+											Label urlDisplayLabel {
+												halign: start;
+												margin-start: 10;
+												margin-end: 10;
+												margin-top: 5;
+												margin-bottom: 5;
+												ellipsize: middle;
+												max-width-chars: 50;
+
 												styles [
-													"osd",
-													"url-preview",
+													"caption",
+													"font-medium",
 												]
-
-												Label urlDisplayLabel {
-													halign: start;
-													margin-start: 10;
-													margin-end: 10;
-													margin-top: 5;
-													margin-bottom: 5;
-													ellipsize: middle;
-													max-width-chars: 50;
-
-													styles [
-														"caption",
-														"font-medium",
-													]
-												}
 											}
 										}
 
-										Box {
-											orientation: vertical;
+										Frame frame {
+											margin-end: 10;
+											margin-top: 10;
+											margin-bottom: 10;
+											hexpand: true;
+											vexpand: true;
 
-											Frame frame {
-												margin-end: 10;
-												margin-top: 10;
-												margin-bottom: 10;
-												hexpand: true;
-												vexpand: true;
-
-												Adw.LayoutSlot {
-													id: "webview";
-												}
+											Adw.LayoutSlot {
+												id: "webview";
 											}
 										}
 									}
@@ -405,7 +399,9 @@ template $OuchWindow: Adw.ApplicationWindow {
 							spacing: 10;
 							valign: end;
 
-							styles ["mobile-bar"]
+							styles [
+								"mobile-bar",
+							]
 
 							Adw.LayoutSlot {
 								id: "palette";
