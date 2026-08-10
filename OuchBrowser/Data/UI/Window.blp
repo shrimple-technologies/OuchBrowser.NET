@@ -95,6 +95,8 @@ template $OuchWindow: Adw.ApplicationWindow {
 
 									Adw.LayoutSlot {
 										id: "palette";
+										margin-start: 10;
+										margin-end: 10;
 									}
 
 									Separator {
@@ -389,65 +391,65 @@ template $OuchWindow: Adw.ApplicationWindow {
 				name: "mobile";
 
 				content: Adw.ToolbarView {
-					Frame {
-						margin-start: 10;
-						margin-end: 10;
-						margin-top: 10;
+					Overlay {
 						hexpand: true;
 						vexpand: true;
 
+						[overlay]
+						Box mobileBar {
+							orientation: vertical;
+							margin-top: 20;
+							margin-bottom: 20;
+							margin-start: 20;
+							margin-end: 20;
+							spacing: 10;
+							valign: end;
+
+							styles ["mobile-bar"]
+
+							Adw.LayoutSlot {
+								id: "palette";
+							}
+
+							Box {
+								orientation: horizontal;
+								spacing: 5;
+
+								styles [
+									"toolbar",
+								]
+
+								Adw.LayoutSlot {
+									id: "go-back";
+									hexpand: true;
+								}
+
+								Adw.LayoutSlot {
+									id: "go-forward";
+									hexpand: true;
+								}
+
+								Adw.LayoutSlot {
+									id: "refresh";
+									hexpand: true;
+								}
+
+								Adw.TabButton {
+									view: tabView;
+									action-name: "win.rooms";
+									focus-on-click: false;
+									hexpand: true;
+								}
+
+								Adw.LayoutSlot {
+									id: "menu-main";
+									hexpand: true;
+								}
+							}
+						}
+
 						Adw.LayoutSlot {
 							id: "webview";
-						}
-					}
-
-					[bottom]
-					Box {
-						orientation: vertical;
-						margin-top: 10;
-						margin-bottom: 10;
-						spacing: 10;
-
-						Adw.LayoutSlot {
-							id: "palette";
-						}
-
-						Box {
-							orientation: horizontal;
-							margin-start: 10;
-							margin-end: 10;
-							spacing: 5;
-
-							styles [
-								"toolbar",
-							]
-
-							Adw.LayoutSlot {
-								id: "go-back";
-								hexpand: true;
-							}
-
-							Adw.LayoutSlot {
-								id: "go-forward";
-								hexpand: true;
-							}
-
-							Adw.LayoutSlot {
-								id: "refresh";
-								hexpand: true;
-							}
-
-							Adw.TabButton {
-								view: tabView;
-								action-name: "win.rooms";
-								focus-on-click: false;
-								hexpand: true;
-							}
-
-							Adw.LayoutSlot {
-								id: "menu-main";
-								hexpand: true;
-							}
 						}
 					}
 				};
@@ -700,8 +702,6 @@ template $OuchWindow: Adw.ApplicationWindow {
 			[palette]
 			Box {
 				orientation: horizontal;
-				margin-start: 10;
-				margin-end: 10;
 
 				Button url_button {
 					hexpand: true;
