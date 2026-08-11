@@ -100,14 +100,14 @@ shortcut-label.compact > box > .keycap {
 
 .joined > button:first-child,
 .joined > menubutton:first-child > button {
-	border-top-left-radius: 9px;
-	border-bottom-left-radius: 9px;
+	border-top-left-radius: 12px;
+	border-bottom-left-radius: 12px;
 }
 
 .joined > button:last-child,
 .joined > menubutton:last-child > button {
-	border-top-right-radius: 9px;
-	border-bottom-right-radius: 9px;
+	border-top-right-radius: 12px;
+	border-bottom-right-radius: 12px;
 }
 
 .joined > button:hover,
@@ -116,7 +116,7 @@ shortcut-label.compact > box > .keycap {
 }
 
 .palette-button.card {
-	border-radius: 9px;
+	border-radius: 12px;
 }
 
 dialog.command-palette > widget > floating-sheet > dimming {
@@ -168,7 +168,7 @@ frame.inactive {
 }
 
 .mobile-bar {
-	border-radius: 18px;
+	border-radius: 20px;
 	padding: 10px;
 	transform: translateY(118px);
 	transition: all 250ms ease-out;
