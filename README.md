@@ -93,3 +93,8 @@ Shrimple Technologies product.
 
 Translation of Ouch Browser takes place on [Hosted Weblate](https://hosted.weblate.org/projects/ouch/net/).
 Everyone is welcome to translate Ouch Browser.
+
+---
+
+![Designed by a human, not by AI](https://files.catbox.moe/4eizwv.png)
+![Developed by humans, not by AI](https://files.catbox.moe/il2778.png)
