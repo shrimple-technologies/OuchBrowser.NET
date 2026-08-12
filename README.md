@@ -96,5 +96,5 @@ Everyone is welcome to translate Ouch Browser.
 
 ---
 
-![Designed by a human, not by AI](https://files.catbox.moe/4eizwv.png)
-![Developed by humans, not by AI](https://files.catbox.moe/il2778.png)
+![Designed by a human, not by AI](https://files.catbox.moe/4vgus3.svg)
+![Developed by humans, not by AI](https://files.catbox.moe/971juz.svg)
