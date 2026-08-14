@@ -19,6 +19,7 @@ BuildRequires: git
 BuildRequires: dotnet-sdk-10.0
 BuildRequires: blueprint-compiler
 BuildRequires: gtk4-devel
+BuildRequires: gettext
 BuildRequires: libadwaita-devel >= 1.9
 Requires: libadwaita >= 1.9
 Requires: gtk4
