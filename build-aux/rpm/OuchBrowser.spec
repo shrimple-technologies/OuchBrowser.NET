@@ -4,7 +4,7 @@
 %global __brp_strip /bin/true
 %global __brp_strip_lto /bin/true
 %global __brp_mangle_shebangs /bin/true
-%define build_timestamp %{lua: print(os.date("%Y%m%d"))}
+# %define build_timestamp %{lua: print(os.date("%Y%m%d"))}
 
 Name: OuchBrowser
 Version: 0.1.0
@@ -69,10 +69,7 @@ rm %{buildroot}%{_datadir}/glib-2.0/schemas/gschemas.compiled
 %{_datadir}/icons/hicolor/symbolic/apps/page.codeberg.shrimple.OuchBrowser-symbolic.svg
 %{_datadir}/glib-2.0/schemas/OuchBrowser.gschema.xml
 %{_datadir}/metainfo/page.codeberg.shrimple.OuchBrowser.metainfo.xml
-%{_datadir}/locale/et/LC_MESSAGES/OuchBrowser.mo
-%{_datadir}/locale/nb_NO/LC_MESSAGES/OuchBrowser.mo
-%{_datadir}/locale/pt/LC_MESSAGES/OuchBrowser.mo
-%{_datadir}/locale/pt_BR/LC_MESSAGES/OuchBrowser.mo
+%{_datadir}/locale/*/LC_MESSAGES/OuchBrowser.mo
 
 %changelog
 %autochangelog
