@@ -62,6 +62,7 @@ rm %{buildroot}%{_datadir}/glib-2.0/schemas/gschemas.compiled
 
 %files
 %license licenses/GPL-3.0-or-later.txt
+%doc README.md BANGS.md
 %{_bindir}/OuchBrowser
 %{_datadir}/applications/page.codeberg.shrimple.OuchBrowser.desktop
 %{_datadir}/icons/hicolor/scalable/apps/page.codeberg.shrimple.OuchBrowser.svg
