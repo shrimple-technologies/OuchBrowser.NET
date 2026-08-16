@@ -4,6 +4,8 @@ Ouch Browser's !bangs are from Kagi, and as Ouch Browser implements !bangs
 differently, there are some minor differences in how it handles and expands
 !bangs.
 
+!bangs are updated via a CI workflow that runs every Saturday.
+
 ## !bang Expansion
 
 - [x] Support for `{{{s}}}` placeholder
