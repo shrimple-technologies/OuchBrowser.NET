@@ -26,7 +26,11 @@ internal class Bangs
 		List<Bang> bangsKagi = JsonSerializer.Deserialize<List<Bang>>(bangsKagiRaw, options)!;
 		List<Bang> bangsList = JsonSerializer.Deserialize<List<Bang>>(bangsRaw, options)!;
 		bangsList.AddRange(bangsKagi);
-		bangsList = bangsList.Where(n => n.Category != "Region search").ToList();
+		bangsList = bangsList.Where(
+			n =>
+				n.Category != "Region search"
+				|| n.WebsiteName.StartsWith("News in ") && n.Domain == "kagi.com"
+		).ToList();
 
 		foreach (Bang bang in bangsList)
 		{
