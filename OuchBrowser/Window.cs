@@ -44,6 +44,12 @@ internal partial class Window
 
 	partial void Initialize()
 	{
+		preferences = Preferences.NewWithWindow(this);
+		rooms = RoomsOverview.NewWithWindow(this);
+		view = new View(tabView!, this);
+		palette = CommandPalette.NewWithWindow(this);
+		var cards = new Cards(this);
+		
 		var hover_controller_topbar = EventControllerMotion.New();
 		var hover_controller_headerbar = EventControllerMotion.New();
 		topBarHoverTarget!.AddController(hover_controller_topbar);
@@ -132,12 +138,6 @@ internal partial class Window
 
 	public void Start()
 	{
-		preferences = Preferences.NewWithWindow(this);
-		rooms = RoomsOverview.NewWithWindow(this);
-		view = new View(tabView!, this);
-		palette = CommandPalette.NewWithWindow(this);
-		var cards = new Cards(this);
-
 		SetupActions();
 
 		Gio.SimpleAction sidebar_action = (Gio.SimpleAction)LookupAction("sidebar-toggle")!;
@@ -155,7 +155,7 @@ internal partial class Window
 		if (settings.GetStrv("restore-tabs").Length == 0) palette!.Present(this);
 		else
 		{
-			foreach (string url in settings.GetStrv("restore-tabs")) view.AddTab(url, false);
+			foreach (string url in settings.GetStrv("restore-tabs")) view!.AddTab(url, false);
 		}
 	}
 
