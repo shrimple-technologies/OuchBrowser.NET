@@ -484,6 +484,7 @@ internal partial class Window
 					{
 						alert.Close();
 						preferences!.Present(this);
+						preferences!.setting_devtools!.GrabFocus();
 					}
 				};
 

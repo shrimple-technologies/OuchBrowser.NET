@@ -12,7 +12,7 @@ internal partial class Preferences
 	[Connect] private NavigationSplitView? nsv;
 	[Connect] private ViewStack? view;
 	[Connect] private SwitchRow? setting_search_autocomplete;
-	[Connect] private SwitchRow? setting_devtools;
+	[Connect] public SwitchRow? setting_devtools;
 	[Connect] private ComboRow? setting_search_engine;
 	[Connect] private ComboRow? setting_zoom;
 	[Connect] private ComboRow? setting_peek_trigger;
