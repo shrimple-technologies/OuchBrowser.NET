@@ -4,7 +4,7 @@
 %global __brp_strip /bin/true
 %global __brp_strip_lto /bin/true
 %global __brp_mangle_shebangs /bin/true
-# %define build_timestamp %{lua: print(os.date("%Y%m%d"))}
+%define build_timestamp %{lua: print(os.date("%Y%m%d"))}
 
 Name: OuchBrowser
 Version: 0.1.0
