@@ -58,7 +58,9 @@
 				{
 					"name": "just",
 					"buildsystem": "simple",
-					"build-commands": ["install -Dm755 just --target-directory /app/bin"],
+					"build-commands": [
+						"install -Dm755 just --target-directory /app/bin"
+					],
 					"sources": [
 						{
 							"type": "archive",
@@ -72,6 +74,33 @@
 							"strip-components": 0,
 							"url": "https://github.com/casey/just/releases/download/1.50.0/just-1.50.0-aarch64-unknown-linux-musl.tar.gz",
 							"sha256": "3beb4967ce05883cf09ac12d6d128166eb4c6d0b03eff74b61018a6880655d7d",
+							"only-arches": ["aarch64"]
+						}
+					]
+				},
+				{
+					"name": "dart-sass",
+					"buildsystem": "simple",
+					"build-commands": [
+						"sed -i 's/$path\\/src\\/dart/\\/app\\/bin\\/dart/g' sass",
+						"sed -i 's/$path\\/src\\/sass.snapshot/\\/app\\/bin\\/sass.snapshot/g' sass",
+						"install -Dm755 sass --target-directory /app/bin",
+						"install -Dm755 src/dart --target-directory /app/bin",
+						"install -Dm755 src/sass.snapshot --target-directory /app/bin"
+					],
+					"sources": [
+						{
+							"type": "archive",
+							"strip-components": 1,
+							"url": "https://github.com/sass/dart-sass/releases/download/1.102.0/dart-sass-1.102.0-linux-x64.tar.gz",
+							"sha256": "2a2ce6036f94534b39356252b1a3d4aa7879ab139c73bf62f7c9b5beafcfc367",
+							"only-arches": ["x86_64"]
+						},
+						{
+							"type": "archive",
+							"strip-components": 1,
+							"url": "https://github.com/sass/dart-sass/releases/download/1.102.0/dart-sass-1.102.0-linux-arm64.tar.gz",
+							"sha256": "82a5b53decbd2ed1d9ef3452e039e3f57ca936f80e96407dd1add1653c282763",
 							"only-arches": ["aarch64"]
 						}
 					]

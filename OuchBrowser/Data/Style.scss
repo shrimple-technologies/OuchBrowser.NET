@@ -1,0 +1,203 @@
+frame {
+	border-radius: 7px;
+	transition: all 200ms ease-out;
+
+	.inactive {
+		border-radius: 12px;
+		transform: scale(0.95);
+	}
+}
+
+.tabs-sidebar.navigation-sidebar {
+	padding-top: 0;
+	margin-left: 0;
+	margin-right: 0;
+
+	row {
+		margin-bottom: 6px;
+		margin-left: 10px;
+		margin-right: 0;
+		padding-right: 4px;
+		min-height: 34px;
+	}
+
+	row:dir(rtl) {
+		margin-left: initial;
+		margin-right: 10px;
+		padding-left: 4px;
+		padding-right: 8px;
+	}
+}
+
+.joined {
+	button,
+	menubutton > button {
+		border-radius: 0;
+	}
+
+	button:first-child,
+	menubutton:first-child > button {
+		border-top-left-radius: 12px;
+		border-bottom-left-radius: 12px;
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+
+	button:last-child,
+	menubutton:last-child > button {
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+		border-top-right-radius: 12px;
+		border-bottom-right-radius: 12px;
+	}
+
+	button:hover,
+	menubutton > button:hover {
+		background-color: color-mix(in srgb, currentColor 4%, transparent);
+	}
+}
+
+dialog.command-palette > widget > floating-sheet {
+	dimming {
+		opacity: 0;
+	}
+
+	sheet {
+		border-radius: 18px;
+		box-shadow:
+			0 12px 32px rgb(0 0 0 / 15%),
+			0 0 48px rgb(0 0 0 / 10%),
+			0 0 0 1px rgb(0 0 0 / 5%);
+	}
+}
+
+dialog.peek > widget > floating-sheet {
+	sheet {
+		background-color: transparent;
+		box-shadow: none;
+		outline-color: transparent;
+	}
+
+	dimming {
+		background-color: color-mix(
+			in oklab,
+			var(--window-bg-color) 50%,
+			transparent
+		);
+	}
+
+	sheet > widget > box > frame {
+		border-radius: 12px;
+		border: none;
+	}
+}
+
+.mobile-bar {
+	border-radius: 20px;
+	padding: 10px;
+	transform: translateY(118px);
+	transition: all 250ms ease-out;
+	background: none;
+	box-shadow: none;
+
+	.toolbar,
+	widget > .palette-button {
+		transition: all 250ms ease-out;
+		opacity: 0;
+	}
+}
+
+.mobile-bar:hover,
+.mobile-bar.revealed {
+	transform: initial;
+	box-shadow:
+		0 0 0 1px RGB(0 0 6 / 3%),
+		0 1px 3px 1px RGB(0 0 6 / 7%),
+		0 2px 6px 2px RGB(0 0 6 / 3%);
+	background: color-mix(in oklab, var(--window-bg-color) 75%, transparent);
+	backdrop-filter: blur(10px);
+
+	.toolbar,
+	widget > .palette-button {
+		opacity: 100%;
+	}
+
+	@media (prefers-contrast: more) {
+		background: var(--window-bg-color);
+		backdrop-filter: initial;
+		box-shadow:
+			0 0 0 1px
+				color-mix(
+					in srgb,
+					currentColor var(--border-opacity),
+					transparent
+				),
+			0 1px 3px 1px RGB(0 0 6 / 7%),
+			0 2px 6px 2px RGB(0 0 6 / 3%);
+	}
+}
+
+entry.command-palette {
+	font-size: 20px;
+	min-height: 40px;
+	background-color: transparent;
+	outline-color: transparent;
+	font-weight: 500;
+}
+
+.font-medium {
+	font-weight: 500;
+}
+
+.new-tab {
+	padding-left: 8px;
+}
+
+.tab-close {
+	min-height: 24px;
+	min-width: 24px;
+	padding: 0;
+}
+
+.top-bar.raised {
+	background: var(--window-bg-color);
+}
+
+.website-settings > contents {
+	border-radius: 20px;
+}
+
+.popover-menu > button {
+	transition: none;
+}
+
+.infobar > row {
+	padding: 0;
+}
+
+.toolbar {
+	padding: 0;
+}
+
+.url-preview {
+	border-radius: 10px;
+}
+
+shortcut-label.compact > box > .keycap {
+	padding: 0;
+	padding-left: 6px;
+	padding-right: 6px;
+}
+
+.palette-button.card {
+	border-radius: 12px;
+}
+
+.script-dialog-prompt {
+	padding: 5px 15px;
+	outline-color: transparent;
+}
+
+button.view {
+	background-color: var(--thumbnail-bg-color);
+}

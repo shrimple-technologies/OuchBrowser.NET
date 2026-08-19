@@ -31,6 +31,7 @@ build-blueprint:
 # compiles gresources for icons and other miscellaneous assets
 [group("build")]
 compile-resources:
+	sass --no-source-map OuchBrowser/Data/Style.scss OuchBrowser/Data/Style.css
 	glib-compile-resources \
 		--sourcedir OuchBrowser \
 		--target=OuchBrowser/OuchBrowser.app.gresource \

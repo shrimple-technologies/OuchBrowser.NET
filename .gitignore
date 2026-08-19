@@ -491,3 +491,6 @@ OuchBrowser.app.gresource
 .build/
 .flatpak-builder/
 *.flatpak
+
+# Generated CSS files
+*.css
