@@ -21,7 +21,7 @@ BuildRequires: blueprint-compiler
 BuildRequires: gtk4-devel
 BuildRequires: gettext
 BuildRequires: libadwaita-devel >= 1.9
-BuildRequires: dart-scss
+BuildRequires: dart-sass
 Requires: libadwaita >= 1.9
 Requires: gtk4
 Requires: webkitgtk6.0
