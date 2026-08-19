@@ -143,6 +143,11 @@ entry.command-palette {
 	background-color: transparent;
 	outline-color: transparent;
 	font-weight: 500;
+	caret-color: transparent;
+}
+
+entry.command-palette.reset-caret {
+	caret-color: initial;
 }
 
 .font-medium {
