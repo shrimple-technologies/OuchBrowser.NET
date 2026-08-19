@@ -68,6 +68,17 @@ dialog.command-palette > widget > floating-sheet {
 			0 12px 32px rgb(0 0 0 / 15%),
 			0 0 48px rgb(0 0 0 / 10%),
 			0 0 0 1px rgb(0 0 0 / 5%);
+		background: color-mix(in oklab, var(--view-bg-color) 75%, transparent);
+		backdrop-filter: blur(10px);
+
+		@media (prefers-contrast: more) {
+			background: var(--view-bg-color);
+			backdrop-filter: initial;
+			box-shadow:
+				0 0 14px 5px RGB(0 0 0 / 15%),
+				0 0 5px 2px RGB(0 0 0 / 10%),
+				0 0 0 1px RGB(0 0 0 / 80%);
+		}
 	}
 }
 
