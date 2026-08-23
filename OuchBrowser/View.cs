@@ -507,6 +507,15 @@ internal class View
 		win.frame!.AddCssClass("inactive");
 		webview.GrabFocus();
 
+		// AdwDialog -> AdwBreakpointBin -> AdwFloatingSheet -> GtkWindowHandle
+		Gtk.WindowHandle dimming = (Gtk.WindowHandle)dialog.GetFirstChild()!.GetFirstChild()!.GetFirstChild()!;
+		Gtk.GestureClick dimmingGestureClick = Gtk.GestureClick.New();
+		dimmingGestureClick.OnPressed += (_, _) =>
+		{
+			dialog.Close();
+		};
+		dimming.AddController(dimmingGestureClick);
+		
 		dialog.OnClosed += (_, _) =>
 		{
 			if (!transferringToMain) webview.TryClose();
