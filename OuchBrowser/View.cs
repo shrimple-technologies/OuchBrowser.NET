@@ -25,6 +25,7 @@ internal class View
 
 		web_settings.SetDefaultFontFamily("serif");
 		web_settings.SetEnableDeveloperExtras(settings.GetBoolean("devtools-enabled"));
+		web_settings.SetUserAgentWithApplicationDetails("OuchBrowser.NET", null);
 
 		return web_settings;
 	}
