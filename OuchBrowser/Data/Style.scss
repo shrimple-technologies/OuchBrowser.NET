@@ -1,11 +1,12 @@
 frame {
 	border-radius: 7px;
 	transition: all 200ms ease-out;
+}
 
-	.inactive {
-		border-radius: 12px;
-		transform: scale(0.95);
-	}
+frame.inactive {
+	border-radius: 12px;
+	transform: scale(0.95);
+	opacity: 0.5;
 }
 
 .tabs-sidebar.navigation-sidebar {
@@ -90,11 +91,7 @@ dialog.peek > widget > floating-sheet {
 	}
 
 	dimming {
-		background-color: color-mix(
-			in oklab,
-			var(--window-bg-color) 50%,
-			transparent
-		);
+		opacity: 0;
 	}
 
 	sheet > widget > box > frame {
