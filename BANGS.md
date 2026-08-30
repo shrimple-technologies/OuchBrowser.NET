@@ -8,7 +8,8 @@ To reduce redundancy, most of Kagi's internal !bangs (Regional search, News in
 [country], and Search with [lens] lens) are removed or renamed during
 processing, which occurs on launch.
 
-!bangs are updated via a CI workflow that runs every Saturday.
+!bangs are updated via a CI workflow that runs every Saturday at around 8 P.M.
+(Eastern Daylight Time).
 
 ## !bang Expansion
 
