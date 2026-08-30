@@ -4,9 +4,9 @@ Ouch Browser's !bangs are from Kagi, and as Ouch Browser implements !bangs
 differently, there are some minor differences in how it handles and expands
 !bangs.
 
-To reduce redundancy, most of Kagi's internal !bangs (Regional search, News in
-[country], and Search with [lens] lens) are removed or renamed during
-processing, which occurs on launch.
+To reduce redundancy and decouple from Kagi Search, most of Kagi's internal
+!bangs (Regional search, News in [country], and Search with [lens] lens) are
+removed or renamed during processing, which occurs on launch.
 
 !bangs are updated via a CI workflow that runs every Saturday at around 8 P.M.
 (Eastern Daylight Time).
