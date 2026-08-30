@@ -30,6 +30,7 @@ internal class Bangs
 			n =>
 				n.Category != "Region search"
 				|| n.WebsiteName.StartsWith("News in ") && n.Domain == "kagi.com"
+				|| Regex.IsMatch("Search with (.*?) lens", n.WebsiteName) && n.Domain == "kagi.com"
 		).ToList();
 
 		foreach (Bang bang in bangsList)
