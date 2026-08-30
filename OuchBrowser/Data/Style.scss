@@ -10,7 +10,8 @@ frame.inactive {
 }
 
 .tabs-sidebar.navigation-sidebar {
-	padding-top: 0;
+	padding-top: 6px;
+	padding-right: 10px;
 	margin-left: 0;
 	margin-right: 0;
 
@@ -20,6 +21,7 @@ frame.inactive {
 		margin-right: 0;
 		padding-right: 4px;
 		min-height: 34px;
+		border-radius: 12px;
 	}
 
 	row:dir(rtl) {
@@ -27,6 +29,26 @@ frame.inactive {
 		margin-right: 10px;
 		padding-left: 4px;
 		padding-right: 8px;
+	}
+
+	row:selected {
+		box-shadow:
+			0 0 0 1px RGB(0 0 6 / 3%),
+			0 1px 3px 1px RGB(0 0 6 / 7%),
+			0 2px 6px 2px RGB(0 0 6 / 3%);
+		background-color: var(--view-bg-color);
+
+		@media (prefers-contrast: more) {
+			box-shadow:
+				0 0 0 1px
+					color-mix(
+						in srgb,
+						currentColor var(--border-opacity),
+						transparent
+					),
+				0 1px 3px 1px RGB(0 0 6 / 7%),
+				0 2px 6px 2px RGB(0 0 6 / 3%);
+		}
 	}
 }
 
@@ -164,11 +186,14 @@ entry.command-palette.reset-caret {
 
 .new-tab {
 	padding-left: 8px;
+	border-radius: 12px;
 }
 
 .tab-close {
 	min-height: 24px;
 	min-width: 24px;
+	border-radius: 8px;
+	margin-right: 1px;
 	padding: 0;
 }
 
