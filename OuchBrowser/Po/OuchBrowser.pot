@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-08-10 17:46-0400\n"
+"POT-Creation-Date: 2026-08-30 15:11-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: OuchBrowser/CommandPalette.cs:75
+#: OuchBrowser/CommandPalette.cs:87
 #, csharp-format
 msgid "Searching using {0}"
 msgstr ""
@@ -109,7 +109,7 @@ msgstr ""
 
 #: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:6
 #: OuchBrowser/Data/UI/Window.blp:7 OuchBrowser/Data/UI/Window.blp:31
-#: OuchBrowser/Data/UI/Window.blp:290
+#: OuchBrowser/Data/UI/Window.blp:287
 msgid "Ouch Browser"
 msgstr ""
 
@@ -152,12 +152,12 @@ msgstr ""
 msgid "Search or enter URL…"
 msgstr ""
 
-#: OuchBrowser/Data/UI/CommandPalette.blp:134
+#: OuchBrowser/Data/UI/CommandPalette.blp:135
 msgid "Go"
 msgstr ""
 
 #: OuchBrowser/Data/UI/Preferences.blp:23
-#: OuchBrowser/Data/UI/Preferences.blp:36 OuchBrowser/Data/UI/Window.blp:603
+#: OuchBrowser/Data/UI/Preferences.blp:36 OuchBrowser/Data/UI/Window.blp:600
 msgid "Preferences"
 msgstr ""
 
@@ -190,7 +190,7 @@ msgid "Restore Tabs on Startup"
 msgstr ""
 
 #: OuchBrowser/Data/UI/Preferences.blp:78
-msgid "Autocomplete"
+msgid "Command Palette"
 msgstr ""
 
 #: OuchBrowser/Data/UI/Preferences.blp:82
@@ -288,9 +288,9 @@ msgid "Main"
 msgstr ""
 
 #: OuchBrowser/Data/UI/RoomsOverview.blp:53
-#: OuchBrowser/Data/UI/RoomsOverview.blp:63 OuchBrowser/Data/UI/Window.blp:140
-#: OuchBrowser/Data/UI/Window.blp:159 OuchBrowser/Data/UI/Window.blp:874
-#: OuchBrowser/Data/UI/Window.blp:969
+#: OuchBrowser/Data/UI/RoomsOverview.blp:63 OuchBrowser/Data/UI/Window.blp:139
+#: OuchBrowser/Data/UI/Window.blp:158 OuchBrowser/Data/UI/Window.blp:871
+#: OuchBrowser/Data/UI/Window.blp:966
 msgid "New Tab"
 msgstr ""
 
@@ -302,81 +302,81 @@ msgstr ""
 msgid "Hide Sidebar"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:222 OuchBrowser/RoomsOverview.cs:57
-#: OuchBrowser/View.cs:429
+#: OuchBrowser/Data/UI/Window.blp:220 OuchBrowser/RoomsOverview.cs:57
+#: OuchBrowser/View.cs:430
 msgid "Close Tab"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:308
+#: OuchBrowser/Data/UI/Window.blp:305
 msgid "Show Sidebar"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:465
+#: OuchBrowser/Data/UI/Window.blp:462
 msgid "Menu"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:509
+#: OuchBrowser/Data/UI/Window.blp:506
 msgid "New Window"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:556
+#: OuchBrowser/Data/UI/Window.blp:553
 msgid "View All Tabs"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:645
+#: OuchBrowser/Data/UI/Window.blp:642
 msgid "About Ouch Browser"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:665
+#: OuchBrowser/Data/UI/Window.blp:662
 msgid "Back"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:677
+#: OuchBrowser/Data/UI/Window.blp:674
 msgid "Forward"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:689 OuchBrowser/View.cs:109
-#: OuchBrowser/View.cs:191
+#: OuchBrowser/Data/UI/Window.blp:686 OuchBrowser/View.cs:110
+#: OuchBrowser/View.cs:192
 msgid "Refresh"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:707
+#: OuchBrowser/Data/UI/Window.blp:704
 msgid "Reveal Command Palette"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:726 OuchBrowser/View.cs:466
+#: OuchBrowser/Data/UI/Window.blp:723 OuchBrowser/View.cs:467
 msgid "Copy Link"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:737
+#: OuchBrowser/Data/UI/Window.blp:734
 msgid "Website Settings"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:753
+#: OuchBrowser/Data/UI/Window.blp:750
 msgid "No Website Settings Available"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:772
+#: OuchBrowser/Data/UI/Window.blp:769
 msgid "Archive"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:813
+#: OuchBrowser/Data/UI/Window.blp:810
 msgid "History"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:844
+#: OuchBrowser/Data/UI/Window.blp:841
 msgid "Downloads"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:884
+#: OuchBrowser/Data/UI/Window.blp:881
 msgid "New…"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:917
+#: OuchBrowser/Data/UI/Window.blp:914
 msgid "New Room"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:940
+#: OuchBrowser/Data/UI/Window.blp:937
 msgid "New Folder"
 msgstr ""
 
@@ -391,51 +391,51 @@ msgstr[1] ""
 msgid "Close"
 msgstr ""
 
-#: OuchBrowser/View.cs:104 OuchBrowser/View.cs:148 OuchBrowser/View.cs:163
+#: OuchBrowser/View.cs:105 OuchBrowser/View.cs:149 OuchBrowser/View.cs:164
 msgid "Stop Loading"
 msgstr ""
 
-#: OuchBrowser/View.cs:278
+#: OuchBrowser/View.cs:279
 msgid "Open Link in Peek Tab"
 msgstr ""
 
-#: OuchBrowser/View.cs:293
+#: OuchBrowser/View.cs:294
 msgid "There was a problem loading this website"
 msgstr ""
 
 #. TRANSLATORS: This is in the format of "example.com says"
-#: OuchBrowser/View.cs:310 OuchBrowser/View.cs:325 OuchBrowser/View.cs:353
+#: OuchBrowser/View.cs:311 OuchBrowser/View.cs:326 OuchBrowser/View.cs:354
 #, csharp-format
 msgid "{0} says"
 msgstr ""
 
-#: OuchBrowser/View.cs:312 OuchBrowser/View.cs:328 OuchBrowser/View.cs:356
+#: OuchBrowser/View.cs:313 OuchBrowser/View.cs:329 OuchBrowser/View.cs:357
 msgid "OK"
 msgstr ""
 
-#: OuchBrowser/View.cs:327 OuchBrowser/View.cs:355 OuchBrowser/Window.cs:92
+#: OuchBrowser/View.cs:328 OuchBrowser/View.cs:356 OuchBrowser/Window.cs:98
 #: OuchBrowser/Window.cs:475
 msgid "Cancel"
 msgstr ""
 
-#: OuchBrowser/View.cs:436
+#: OuchBrowser/View.cs:437
 msgid "Expand Tab"
 msgstr ""
 
-#: OuchBrowser/View.cs:470 OuchBrowser/Window.cs:433
+#: OuchBrowser/View.cs:471 OuchBrowser/Window.cs:433
 msgid "Link Copied"
 msgstr ""
 
-#: OuchBrowser/Window.cs:89
+#: OuchBrowser/Window.cs:95
 msgid "Exit and Close All Tabs?"
 msgstr ""
 
-#: OuchBrowser/Window.cs:90
+#: OuchBrowser/Window.cs:96
 #, csharp-format
 msgid "You are about to close {0} tabs. Are you sure you want to continue?"
 msgstr ""
 
-#: OuchBrowser/Window.cs:93
+#: OuchBrowser/Window.cs:99
 msgid "Close Tabs"
 msgstr ""
 
