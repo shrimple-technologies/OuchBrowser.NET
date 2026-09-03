@@ -16,38 +16,43 @@ frame.inactive {
 	margin-right: 0;
 
 	row {
+		transition: transform 200ms ease-out;
 		margin-bottom: 6px;
 		margin-left: 10px;
 		margin-right: 0;
 		padding-right: 4px;
 		min-height: 34px;
 		border-radius: 12px;
-	}
 
-	row:dir(rtl) {
-		margin-left: initial;
-		margin-right: 10px;
-		padding-left: 4px;
-		padding-right: 8px;
-	}
+		&:dir(rtl) {
+			margin-left: initial;
+			margin-right: 10px;
+			padding-left: 4px;
+			padding-right: 8px;
+		}
 
-	row:selected {
-		box-shadow:
-			0 0 0 1px RGB(0 0 6 / 3%),
-			0 1px 3px 1px RGB(0 0 6 / 7%),
-			0 2px 6px 2px RGB(0 0 6 / 3%);
-		background-color: var(--card-bg-color);
-
-		@media (prefers-contrast: more) {
+		&:selected {
 			box-shadow:
-				0 0 0 1px
-					color-mix(
-						in srgb,
-						currentColor var(--border-opacity),
-						transparent
-					),
+				0 0 0 1px RGB(0 0 6 / 3%),
 				0 1px 3px 1px RGB(0 0 6 / 7%),
 				0 2px 6px 2px RGB(0 0 6 / 3%);
+			background-color: var(--card-bg-color);
+
+			@media (prefers-contrast: more) {
+				box-shadow:
+					0 0 0 1px
+						color-mix(
+							in srgb,
+							currentColor var(--border-opacity),
+							transparent
+						),
+					0 1px 3px 1px RGB(0 0 6 / 7%),
+					0 2px 6px 2px RGB(0 0 6 / 3%);
+			}
+		}
+
+		&:active {
+			transform: scale(0.99);
 		}
 	}
 }
@@ -135,35 +140,39 @@ dialog.peek > widget > floating-sheet {
 		transition: all 250ms ease-out;
 		opacity: 0;
 	}
-}
 
-.mobile-bar:hover,
-.mobile-bar.revealed {
-	transform: initial;
-	box-shadow:
-		0 0 0 1px RGB(0 0 6 / 3%),
-		0 1px 3px 1px RGB(0 0 6 / 7%),
-		0 2px 6px 2px RGB(0 0 6 / 3%);
-	background: color-mix(in oklab, var(--window-bg-color) 75%, transparent);
-	backdrop-filter: blur(10px);
-
-	.toolbar,
-	widget > .palette-button {
-		opacity: 100%;
-	}
-
-	@media (prefers-contrast: more) {
-		background: var(--window-bg-color);
-		backdrop-filter: initial;
+	&:hover,
+	.revealed {
+		transform: initial;
 		box-shadow:
-			0 0 0 1px
-				color-mix(
-					in srgb,
-					currentColor var(--border-opacity),
-					transparent
-				),
+			0 0 0 1px RGB(0 0 6 / 3%),
 			0 1px 3px 1px RGB(0 0 6 / 7%),
 			0 2px 6px 2px RGB(0 0 6 / 3%);
+		background: color-mix(
+			in oklab,
+			var(--window-bg-color) 75%,
+			transparent
+		);
+		backdrop-filter: blur(10px);
+
+		.toolbar,
+		widget > .palette-button {
+			opacity: 100%;
+		}
+
+		@media (prefers-contrast: more) {
+			background: var(--window-bg-color);
+			backdrop-filter: initial;
+			box-shadow:
+				0 0 0 1px
+					color-mix(
+						in srgb,
+						currentColor var(--border-opacity),
+						transparent
+					),
+				0 1px 3px 1px RGB(0 0 6 / 7%),
+				0 2px 6px 2px RGB(0 0 6 / 3%);
+		}
 	}
 }
 
@@ -185,8 +194,13 @@ entry.command-palette.reset-caret {
 }
 
 .new-tab {
+	transition: transform 200ms ease-out;
 	padding-left: 8px;
 	border-radius: 12px;
+
+	&:active {
+		transform: scale(0.99);
+	}
 }
 
 .tab-close {
