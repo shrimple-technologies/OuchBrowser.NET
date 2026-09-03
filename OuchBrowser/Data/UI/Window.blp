@@ -183,8 +183,7 @@ template $OuchWindow: Adw.ApplicationWindow {
 
 												factory: BuilderListItemFactory {
 													template ListItem {
-														child: CenterBox {
-															start-widget: Box {
+														child: Box {
 																spacing: 10;
 
 																Image tabIcon {
@@ -210,10 +209,9 @@ template $OuchWindow: Adw.ApplicationWindow {
 																		.item as <Adw.TabPage>
 																		.title;
 																}
-															};
 
-															end-widget: Button {
-																icon-name: "window-close-symbolic";
+																Button {
+																icon-name: "close-symbolic";
 																valign: center;
 																margin-start: 2;
 																visible: bind template.item as <Adw.TabPage>.selected;
@@ -225,7 +223,7 @@ template $OuchWindow: Adw.ApplicationWindow {
 																	"flat",
 																	"tab-close",
 																]
-															};
+															}
 														};
 													}
 												};
