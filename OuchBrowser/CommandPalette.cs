@@ -51,18 +51,6 @@ internal partial class CommandPalette
 			if (args.Pspec.GetName() == "text")
 			{
 				string text = commandPaletteEntry!.GetText().TrimStart();
-
-				if (text.Length >= 1)
-				{
-					commandPaletteEntry.AddCssClass("reset-caret");
-					commandPaletteEntry.Xalign = 0;
-				}
-				else
-				{
-					commandPaletteEntry.RemoveCssClass("reset-caret");
-					commandPaletteEntry.Xalign = (float)0.5;
-				}
-				
 				if (text == "")
 				{
 					commandPaletteAutocompleteRevealer!.SetRevealChild(false);
