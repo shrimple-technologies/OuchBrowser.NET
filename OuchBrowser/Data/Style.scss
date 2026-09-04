@@ -54,6 +54,10 @@ frame.inactive {
 		&:active {
 			transform: scale(0.99);
 		}
+
+		&:hover > box > .tab-close {
+			opacity: 1;
+		}
 	}
 }
 
@@ -204,6 +208,7 @@ entry.command-palette {
 	border-radius: 8px;
 	margin-right: 1px;
 	padding: 0;
+	opacity: 0;
 }
 
 .top-bar.raised {
