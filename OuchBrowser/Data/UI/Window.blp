@@ -184,33 +184,29 @@ template $OuchWindow: Adw.ApplicationWindow {
 												factory: BuilderListItemFactory {
 													template ListItem {
 														child: Box {
-																spacing: 10;
+															spacing: 10;
 
-																Image tabIcon {
-																	gicon: bind template.item as <Adw.TabPage>.icon;
-																	visible: bind spinner.visible inverted;
-																}
+															Image tabIcon {
+																gicon: bind template.item as <Adw.TabPage>.icon;
+																visible: bind spinner.visible inverted;
+															}
 
-																Adw.Spinner spinner {
-																	width-request: 16;
-																	height-request: 16;
-																	visible: bind template
-																		.item as <Adw.TabPage>
-																		.loading;
-																}
+															Adw.Spinner spinner {
+																width-request: 16;
+																height-request: 16;
+																visible: bind template.item as <Adw.TabPage>.loading;
+															}
 
-																Label {
-																	label: bind template.item as <Adw.TabPage>.title;
-																	ellipsize: end;
-																	halign: start;
-																	valign: center;
-																	hexpand: true;
-																	tooltip-text: bind template
-																		.item as <Adw.TabPage>
-																		.title;
-																}
+															Label {
+																label: bind template.item as <Adw.TabPage>.title;
+																ellipsize: end;
+																halign: start;
+																valign: center;
+																hexpand: true;
+																tooltip-text: bind template.item as <Adw.TabPage>.title;
+															}
 
-																Button {
+															Button {
 																icon-name: "close-symbolic";
 																valign: center;
 																margin-start: 2;
