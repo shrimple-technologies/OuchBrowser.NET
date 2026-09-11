@@ -58,7 +58,7 @@ internal class View
 		}
 		else
 		{
-			page = view.Append(webview);
+			page = view.Prepend(webview);
 		}
 
 		view.SetSelectedPage(page);
