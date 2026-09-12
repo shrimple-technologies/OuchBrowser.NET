@@ -10,7 +10,8 @@ removed or renamed during processing, which occurs on launch. Non-internal
 !bangs are unmodified during processing.
 
 An !bang may be utilized with the "!" prefix inside of the command palette.
-Ouch Browser does not support any other
+Ouch Browser does not support any other ways to summon a !bang due to the logic
+of the command palette.
 
 !bangs are updated via a CI workflow that runs every Saturday at around 8 P.M.
 (Eastern Daylight Time).
