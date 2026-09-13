@@ -184,9 +184,10 @@ template $OuchWindow: Adw.ApplicationWindow {
 												factory: BuilderListItemFactory {
 													template ListItem {
 														child: Box {
+															tooltip-text: bind template.item as <Adw.TabPage>.title;
 															spacing: 10;
 
-															Image tabIcon {
+															Image {
 																gicon: bind template.item as <Adw.TabPage>.icon;
 																visible: bind spinner.visible inverted;
 															}
@@ -203,13 +204,11 @@ template $OuchWindow: Adw.ApplicationWindow {
 																halign: start;
 																valign: center;
 																hexpand: true;
-																tooltip-text: bind template.item as <Adw.TabPage>.title;
 															}
 
 															Button {
 																icon-name: "close-symbolic";
 																valign: center;
-																margin-start: 2;
 																visible: bind template.item as <Adw.TabPage>.selected;
 																tooltip-text: _("Close Tab");
 																action-name: "win.tab-close";
@@ -456,194 +455,7 @@ template $OuchWindow: Adw.ApplicationWindow {
 				tooltip-text: _("Menu");
 				focus-on-click: false;
 				primary: true;
-
-				popover: Popover {
-					styles [
-						"background",
-						"menu",
-					]
-
-					Box {
-						orientation: vertical;
-						margin-top: 6;
-						margin-bottom: 6;
-						margin-start: 6;
-						margin-end: 6;
-
-						styles [
-							"popover-menu",
-						]
-
-						Button {
-							hexpand: true;
-							focus-on-click: false;
-							action-name: "win.new-window";
-
-							accessibility {
-								labelled-by: _new_window_label;
-							}
-
-							CenterBox {
-								start-widget: Box {
-									halign: start;
-									spacing: 10;
-
-									Image {
-										icon-name: "window-new-symbolic";
-
-										accessibility {
-											labelled-by: _new_window_label;
-										}
-									}
-
-									Label _new_window_label {
-										label: _("New Window");
-									}
-								};
-
-								end-widget: Adw.ShortcutLabel {
-									accelerator: "<Ctrl>n";
-
-									styles [
-										"dimmed",
-										"compact",
-									]
-								};
-							}
-
-							styles [
-								"body",
-								"flat",
-							]
-						}
-
-						Separator {
-							orientation: horizontal;
-						}
-
-						Button {
-							hexpand: true;
-							focus-on-click: false;
-							action-name: "win.rooms";
-
-							accessibility {
-								labelled-by: _view_all_tabs_label;
-							}
-
-							CenterBox {
-								start-widget: Box {
-									halign: start;
-									spacing: 10;
-
-									Image {
-										icon-name: "view-grid-symbolic";
-
-										accessibility {
-											labelled-by: _view_all_tabs_label;
-										}
-									}
-
-									Label _view_all_tabs_label {
-										label: _("View All Tabs");
-									}
-								};
-
-								end-widget: Adw.ShortcutLabel {
-									accelerator: "<Ctrl><Shift>backslash";
-
-									styles [
-										"dimmed",
-										"compact",
-									]
-								};
-							}
-
-							styles [
-								"body",
-								"flat",
-							]
-						}
-
-						Separator {
-							orientation: horizontal;
-						}
-
-						Button {
-							hexpand: true;
-							focus-on-click: false;
-							action-name: "win.preferences";
-
-							accessibility {
-								labelled-by: _preferences_label;
-							}
-
-							CenterBox {
-								start-widget: Box {
-									halign: start;
-									spacing: 10;
-
-									Image {
-										icon-name: "preferences-symbolic";
-
-										accessibility {
-											labelled-by: _preferences_label;
-										}
-									}
-
-									Label _preferences_label {
-										label: _("Preferences");
-									}
-								};
-
-								end-widget: Adw.ShortcutLabel {
-									accelerator: "<Ctrl>comma";
-
-									styles [
-										"dimmed",
-										"compact",
-									]
-								};
-							}
-
-							styles [
-								"body",
-								"flat",
-							]
-						}
-
-						Button {
-							hexpand: true;
-							focus-on-click: false;
-							action-name: "win.about";
-
-							accessibility {
-								labelled-by: _about_label;
-							}
-
-							Box {
-								halign: start;
-								spacing: 10;
-
-								Image {
-									icon-name: "page.codeberg.shrimple.OuchBrowser-symbolic";
-
-									accessibility {
-										labelled-by: _about_label;
-									}
-								}
-
-								Label _about_label {
-									label: _("About Ouch Browser");
-								}
-							}
-
-							styles [
-								"body",
-								"flat",
-							]
-						}
-					}
-				};
+				menu-model: mainMenu;
 
 				styles [
 					"flat",
@@ -762,87 +574,7 @@ template $OuchWindow: Adw.ApplicationWindow {
 				icon-name: "shoe-box-symbolic";
 				tooltip-text: _("Archive");
 				focus-on-click: false;
-
-				popover: Popover {
-					styles [
-						"background",
-						"menu",
-					]
-
-					Box {
-						orientation: vertical;
-						margin-top: 6;
-						margin-bottom: 6;
-						margin-start: 6;
-						margin-end: 6;
-
-						styles [
-							"popover-menu",
-						]
-
-						Button {
-							hexpand: true;
-							focus-on-click: false;
-
-							accessibility {
-								labelled-by: _history_label;
-							}
-
-							Box {
-								halign: start;
-								spacing: 10;
-
-								Image {
-									icon-name: "history-symbolic";
-
-									accessibility {
-										labelled-by: _history_label;
-									}
-								}
-
-								Label _history_label {
-									label: _("History");
-								}
-							}
-
-							styles [
-								"body",
-								"flat",
-							]
-						}
-
-						Button {
-							hexpand: true;
-							focus-on-click: false;
-
-							accessibility {
-								labelled-by: _downloads_label;
-							}
-
-							Box {
-								halign: start;
-								spacing: 10;
-
-								Image {
-									icon-name: "folder-download-symbolic";
-
-									accessibility {
-										labelled-by: _downloads_label;
-									}
-								}
-
-								Label _downloads_label {
-									label: _("Downloads");
-								}
-							}
-
-							styles [
-								"body",
-								"flat",
-							]
-						}
-					}
-				};
+				menu-model: archiveMenu;
 
 				styles [
 					"flat",
@@ -874,110 +606,7 @@ template $OuchWindow: Adw.ApplicationWindow {
 				MenuButton {
 					tooltip-text: _("New…");
 					focus-on-click: false;
-
-					popover: Popover {
-						styles [
-							"background",
-							"menu",
-						]
-
-						Box {
-							orientation: vertical;
-							margin-top: 6;
-							margin-bottom: 6;
-							margin-start: 6;
-							margin-end: 6;
-
-							styles [
-								"popover-menu",
-							]
-
-							Button {
-								hexpand: true;
-								focus-on-click: false;
-
-								Box {
-									halign: start;
-									spacing: 10;
-
-									Image {
-										icon-name: "multitasking-symbolic";
-									}
-
-									Label {
-										label: _("New Room");
-									}
-								}
-
-								styles [
-									"body",
-									"flat",
-								]
-							}
-
-							Button {
-								hexpand: true;
-								focus-on-click: false;
-
-								Box {
-									halign: start;
-									spacing: 10;
-
-									Image {
-										icon-name: "folder-symbolic";
-									}
-
-									Label {
-										label: _("New Folder");
-									}
-								}
-
-								styles [
-									"body",
-									"flat",
-								]
-							}
-
-							Separator {
-								orientation: horizontal;
-							}
-
-							Button {
-								hexpand: true;
-								focus-on-click: false;
-								action-name: "win.palette-new";
-
-								CenterBox {
-									start-widget: Box {
-										halign: start;
-										spacing: 10;
-
-										Image {
-											icon-name: "tab-new-symbolic";
-										}
-
-										Label {
-											label: _("New Tab");
-										}
-									};
-
-									end-widget: Adw.ShortcutLabel {
-										accelerator: "<Ctrl>T";
-
-										styles [
-											"dimmed",
-											"compact",
-										]
-									};
-								}
-
-								styles [
-									"body",
-									"flat",
-								]
-							}
-						}
-					};
+					menu-model: newMenu;
 
 					Image {
 						icon-name: "pan-down-symbolic";
@@ -995,4 +624,29 @@ template $OuchWindow: Adw.ApplicationWindow {
 			}
 		}
 	}
+}
+
+menu mainMenu {
+	section {
+		item (_("New Window"), "win.new-window", "window-new-symbolic")
+	}
+
+	section {
+		item (_("View All Tabs"), "win.rooms", "view-grid-symbolic")
+	}
+
+	section {
+		item (_("Preferences"), "win.preferences", "preferences-symbolic")
+		item (_("About Ouch Browser"), "win.about", "page.codeberg.shrimple.OuchBrowser-symbolic")
+	}
+}
+
+menu archiveMenu {
+	item (_("History"))
+	item (_("Downloads"))
+}
+
+menu newMenu {
+  item (_("New Room"))
+  item (_("New Folder"))
 }
