@@ -43,7 +43,7 @@ internal class View
 				win.mobileBar!.AddCssClass("revealed");
 			else if (args.Dy > 10)
 				win.mobileBar!.RemoveCssClass("revealed");
-			
+
 			return false;
 		};
 
@@ -516,7 +516,7 @@ internal class View
 			dialog.Close();
 		};
 		dimming.AddController(dimmingGestureClick);
-		
+
 		dialog.OnClosed += (_, _) =>
 		{
 			if (!transferringToMain) webview.TryClose();

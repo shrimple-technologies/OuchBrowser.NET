@@ -49,7 +49,7 @@ internal partial class Window
 		view = new View(tabView!, this);
 		palette = CommandPalette.NewWithWindow(this);
 		var cards = new Cards(this);
-		
+
 		var hover_controller_topbar = EventControllerMotion.New();
 		var hover_controller_headerbar = EventControllerMotion.New();
 		topBarHoverTarget!.AddController(hover_controller_topbar);
@@ -367,7 +367,7 @@ internal partial class Window
 			toastOverlay!.AddToast(toast);
 		});
 
-		actions.AddAction("tab-close", ["<Ctrl>w"], (_, _) =>
+		actions.AddAction("tab-close", ["<Ctrl>w"], (_, args) =>
 		{
 			if (tabView!.GetNPages() == 0)
 			{
