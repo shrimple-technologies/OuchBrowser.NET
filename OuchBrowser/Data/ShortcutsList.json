@@ -26,12 +26,5 @@
 		"Description": "Closes the Current Tab",
 		"IconName": "cross-large-symbolic",
 		"Aliases": ["w"]
-	},
-	{
-		"Name": "Rooms Overview",
-		"Command": "rooms",
-		"Description": "Opens the Rooms Overview",
-		"IconName": "view-grid-symbolic",
-		"Aliases": ["room", "tabs", "overview"]
 	}
 ]

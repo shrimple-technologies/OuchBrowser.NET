@@ -3,10 +3,8 @@ OuchBrowser/Data/OuchBrowser.gschema.xml
 OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml
 OuchBrowser/Data/UI/CommandPalette.blp
 OuchBrowser/Data/UI/Preferences.blp
-OuchBrowser/Data/UI/RoomsOverview.blp
 OuchBrowser/Data/UI/Window.blp
 OuchBrowser/Preferences.cs
-OuchBrowser/RoomsOverview.cs
 OuchBrowser/Utils/Cards.cs
 OuchBrowser/View.cs
 OuchBrowser/Window.cs

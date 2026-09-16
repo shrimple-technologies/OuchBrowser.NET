@@ -307,12 +307,6 @@ internal partial class CommandPalette
 					case ">w":
 						ActivateAction("tab-close", null);
 						break;
-					case ">rooms":
-					case ">room":
-					case ">tabs":
-					case ">overview":
-						ActivateAction("rooms", null);
-						break;
 				}
 
 				return;
