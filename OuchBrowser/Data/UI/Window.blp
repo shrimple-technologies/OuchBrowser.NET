@@ -21,6 +21,7 @@ template $OuchWindow: Adw.ApplicationWindow {
 		Adw.TabOverview overview {
 			view: tabView;
 			enable-new-tab: true;
+			secondary-menu: overviewMenu;
 
 			Adw.MultiLayoutView multiLayoutView {
 				Adw.Layout {
@@ -644,6 +645,10 @@ menu mainMenu {
 menu archiveMenu {
 	item (_("History"))
 	item (_("Downloads"))
+}
+
+menu overviewMenu {
+	item (_("New Window"), "win.new-window", "window-new-symbolic")
 }
 
 menu newMenu {
