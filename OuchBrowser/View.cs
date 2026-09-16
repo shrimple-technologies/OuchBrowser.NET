@@ -116,6 +116,7 @@ internal class View
 		};
 
 		webview.AddController(eventControllerScroll);
+		win.mobileBar!.AddCssClass("revealed");
 
 		return webview;
 	}
