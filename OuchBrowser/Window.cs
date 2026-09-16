@@ -35,6 +35,7 @@ internal partial class Window
 	[Connect] public Label? urlDisplayLabel;
 	[Connect] public MultiLayoutView? multiLayoutView;
 	[Connect] public Box? mobileBar;
+	[Connect] public TabOverview? overview;
 #pragma warning restore CS0649
 	public string palette_state = "new_tab";
 	private Preferences? preferences;
@@ -85,6 +86,11 @@ internal partial class Window
 					);
 					break;
 			}
+		};
+		overview!.OnCreateTab += (_, _) =>
+		{
+			ActivateAction("palette-new", null);
+			return tabView!.GetSelectedPage()!;
 		};
 
 		OnCloseRequest += (_, _) =>
@@ -165,6 +171,7 @@ internal partial class Window
 
 		actions.AddAction("palette-new", ["<Ctrl>t"], (_, _) =>
 		{
+			overview!.SetOpen(false);
 			palette!.commandPaletteEntry!.DeleteText(0, -1);
 			palette.Present(this);
 			palette.commandPaletteEntry!.GrabFocus();
