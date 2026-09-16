@@ -39,14 +39,12 @@ internal partial class Window
 #pragma warning restore CS0649
 	public string palette_state = "new_tab";
 	private Preferences? preferences;
-	private RoomsOverview? rooms;
 	public View? view;
 	private CommandPalette? palette;
 
 	partial void Initialize()
 	{
 		preferences = Preferences.NewWithWindow(this);
-		rooms = RoomsOverview.NewWithWindow(this);
 		view = new View(tabView!, this);
 		palette = CommandPalette.NewWithWindow(this);
 		var cards = new Cards(this);
@@ -269,11 +267,6 @@ internal partial class Window
 			else about!.SetApplicationIcon("page.codeberg.shrimple.OuchBrowser");
 
 			about!.Present(this);
-		});
-
-		actions.AddAction("rooms", ["<Ctrl><Shift>bar"], (_, _) =>
-		{
-			rooms!.Present(this);
 		});
 
 		actions.AddAction("refresh", ["<Ctrl>r"], (_, _) =>

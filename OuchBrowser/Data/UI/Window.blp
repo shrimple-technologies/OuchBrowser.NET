@@ -111,19 +111,6 @@ template $OuchWindow: Adw.ApplicationWindow {
 											]
 										}
 
-										Label {
-											label: "Main";
-											halign: start;
-											margin-start: 14;
-											margin-end: 10;
-											visible: false;
-
-											styles [
-												"caption-heading",
-												"dimmed",
-											]
-										}
-
 										Separator {
 											orientation: horizontal;
 											margin-top: 10;
@@ -275,10 +262,6 @@ template $OuchWindow: Adw.ApplicationWindow {
 
 										start-widget: Adw.LayoutSlot {
 											id: "menu-archive";
-										};
-
-										center-widget: Adw.CarouselIndicatorDots {
-											carousel: rooms;
 										};
 
 										end-widget: Adw.LayoutSlot {
@@ -664,6 +647,9 @@ menu archiveMenu {
 }
 
 menu newMenu {
-	item (_("New Room"))
 	item (_("New Folder"))
+
+	section {
+		item (_("New Tab"), "win.palette-new")
+	}
 }
