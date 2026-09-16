@@ -194,7 +194,7 @@ internal partial class Window
 
 			if (overlaySplitView!.GetShowSidebar())
 			{
-				frame!.SetMarginStart(10);
+				frame!.SetMarginStart(6);
 				urlDisplayOsd!.SetMarginStart(20);
 				overlaySplitView!.SetShowSidebar(false);
 			}
@@ -202,7 +202,7 @@ internal partial class Window
 			{
 				sidebar_toggle!.SetActive(true);
 				frame!.SetMarginStart(0);
-				urlDisplayOsd!.SetMarginStart(20);
+				urlDisplayOsd!.SetMarginStart(15);
 				overlaySplitView!.SetShowSidebar(true);
 			}
 		});
