@@ -2,7 +2,7 @@
 	"$schema": "https://github.com/flatpak/flatpak-builder/raw/refs/heads/main/data/flatpak-manifest.schema.json",
 	"id": "page.codeberg.shrimple.OuchBrowser",
 	"runtime": "org.gnome.Platform",
-	"runtime-version": "50",
+	"runtime-version": "51",
 	"sdk": "org.gnome.Sdk",
 	"sdk-extensions": ["org.freedesktop.Sdk.Extension.dotnet10"],
 	"command": "OuchBrowser",
