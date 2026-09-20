@@ -13,8 +13,8 @@ run: build-blueprint compile-resources
 build: build-blueprint compile-resources
 	dotnet build OuchBrowser
 	
-publish: build-blueprint compile-resources
-	dotnet publish OuchBrowser -c Release
+publish *args: build-blueprint compile-resources
+	dotnet publish OuchBrowser -c Release {{args}}
 
 format:
 	blueprint-compiler format -f -t -s 4 {{ BLUEPRINT_FILES }}
