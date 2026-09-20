@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-07-24 03:12-0400\n"
+"POT-Creation-Date: 2026-09-16 19:42-0400\n"
 "PO-Revision-Date: 2026-07-20 12:01+0000\n"
 "Last-Translator: Gabriel <bloxgabriel18@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/ouch/"
@@ -18,14 +18,14 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 2026.8.dev0\n"
 
-#: OuchBrowser/CommandPalette.cs:88
+#: OuchBrowser/CommandPalette.cs:75
 #, csharp-format
 msgid "Searching using {0}"
 msgstr "Procurar usando {0}"
 
 #: OuchBrowser/Data/OuchBrowser.gschema.xml:29
-#: OuchBrowser/Data/UI/Preferences.blp:176
-#: OuchBrowser/Data/UI/Preferences.blp:186
+#: OuchBrowser/Data/UI/Preferences.blp:171
+#: OuchBrowser/Data/UI/Preferences.blp:181
 msgid "Search Engine"
 msgstr "Mecanismo de Busca"
 
@@ -57,70 +57,47 @@ msgstr "Maximizado?"
 msgid "This value is whether the window is maximized or not."
 msgstr "Esse valor indica se a janela está maximizada ou não."
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:61
-#: OuchBrowser/Data/UI/RoomsOverview.blp:22
-msgid "Rooms"
-msgstr "Salas"
-
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:62
-msgid ""
-"This value stores the rooms data. Each entry is a tuple: (room name, room "
-"icon, pinned urls)."
-msgstr ""
-"Este valor armazena os dados das salas. Cada entrada é uma tupla: (nome da "
-"sala, ícone da sala, urls fixadas)."
-
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:71
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:57
 msgid "Restored Tabs"
 msgstr "Abas Restauradas"
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:72
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:58
 msgid "This value stores the tabs to restore."
 msgstr "Este valor armazena as abas a serem restauradas."
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:79
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:65
 msgid "Search Autocomplete enabled?"
 msgstr "Preenchimento automático da pesquisa habilitado?"
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:80
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:66
 msgid "This value is whether search autocomplete is enabled or not."
 msgstr ""
 "Este valor indica se o preenchimento automático da pesquisa está habilitado "
 "ou não."
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:87
-msgid "!bang Autocomplete enabled?"
-msgstr "Preenchimento automático do !bang habilitado?"
-
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:88
-msgid "This value is whether !bang autocomplete is enabled or not."
-msgstr ""
-"Este valor indica se o preenchimento automático do !bang está habilitado ou "
-"não."
-
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:95
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:73
 msgid "Developer Tools enabled?"
 msgstr "Ferramentas de desenvolvedor habilitadas?"
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:96
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:74
 msgid "This value is whether developer tools is enabled or not."
 msgstr ""
 "Este valor indica se as ferramentas de desenvolvedor estão habilitadas ou "
 "não."
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:103
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:81
 msgid "Initial Window Size"
 msgstr "Tamanho Inicial da Janela"
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:104
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:82
 msgid "This value is the main window’s size."
 msgstr "Este valor define o tamanho da janela principal."
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:111
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:89
 msgid "Peek Tab Trigger"
 msgstr "Atalho de Visualização Rápida"
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:112
+#: OuchBrowser/Data/OuchBrowser.gschema.xml:90
 msgid ""
 "This value is the trigger for opening a peek tab. For example, holding down "
 "the Shift key and clicking on a hyperlink will result in that website being "
@@ -130,18 +107,9 @@ msgstr ""
 "exemplo, segurar a tecla Shift e clicar em um link fará com que o site seja "
 "carregado em uma aba de visualização rápida, separada da janela principal."
 
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:123
-msgid "!bang Usage Rankings"
-msgstr "Classificação de uso do !bang"
-
-#: OuchBrowser/Data/OuchBrowser.gschema.xml:124
-msgid "This value is the rankings of !bangs over time from use."
-msgstr ""
-"Este valor representa a classificação dos !bangs ao longo do tempo de uso."
-
 #: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:6
-#: OuchBrowser/Data/UI/Window.blp:7 OuchBrowser/Data/UI/Window.blp:31
-#: OuchBrowser/Data/UI/Window.blp:288
+#: OuchBrowser/Data/UI/Window.blp:7 OuchBrowser/Data/UI/Window.blp:36
+#: OuchBrowser/Data/UI/Window.blp:280
 msgid "Ouch Browser"
 msgstr "Ouch Browser"
 
@@ -197,7 +165,7 @@ msgid "Go"
 msgstr "Ir"
 
 #: OuchBrowser/Data/UI/Preferences.blp:23
-#: OuchBrowser/Data/UI/Preferences.blp:36 OuchBrowser/Data/UI/Window.blp:605
+#: OuchBrowser/Data/UI/Preferences.blp:36 OuchBrowser/Data/UI/Window.blp:640
 msgid "Preferences"
 msgstr "Preferências"
 
@@ -230,22 +198,18 @@ msgid "Restore Tabs on Startup"
 msgstr "Restaurar Abas ao Iniciar"
 
 #: OuchBrowser/Data/UI/Preferences.blp:78
-msgid "Autocomplete"
-msgstr "Preenchimento Automático"
+msgid "Command Palette"
+msgstr "Paleta de Comandos"
 
 #: OuchBrowser/Data/UI/Preferences.blp:82
 msgid "Enable Search Autocomplete"
 msgstr "Ativar preenchimento automático da pesquisa"
 
 #: OuchBrowser/Data/UI/Preferences.blp:87
-msgid "Enable !bang Autocomplete"
-msgstr "Ativar preenchimento automático de !bangs"
-
-#: OuchBrowser/Data/UI/Preferences.blp:92
 msgid "Peek Tabs"
 msgstr "Abas de Visualização Rápida"
 
-#: OuchBrowser/Data/UI/Preferences.blp:94
+#: OuchBrowser/Data/UI/Preferences.blp:89
 msgid ""
 "Peek tabs are temporary tabs that can be triggered by holding down a "
 "specific key and clicking on a link. These can also be expanded into full "
@@ -255,11 +219,11 @@ msgstr ""
 "ao segurar uma tecla específica e clicar em um link. Elas também podem ser "
 "expandidas para a visualização completa."
 
-#: OuchBrowser/Data/UI/Preferences.blp:99
+#: OuchBrowser/Data/UI/Preferences.blp:94
 msgid "Peek Trigger"
 msgstr "Ativador da Visualização Rápida"
 
-#: OuchBrowser/Data/UI/Preferences.blp:101
+#: OuchBrowser/Data/UI/Preferences.blp:96
 msgid ""
 "This will be the key that can be used in addition to a click to open a peek "
 "tab."
@@ -267,238 +231,200 @@ msgstr ""
 "Esta será a tecla usada em combinação com o clique para abrir uma aba de "
 "visualização rápida."
 
-#: OuchBrowser/Data/UI/Preferences.blp:115
+#: OuchBrowser/Data/UI/Preferences.blp:110
 msgid "Developer"
 msgstr "Desenvolvedor"
 
-#: OuchBrowser/Data/UI/Preferences.blp:119
+#: OuchBrowser/Data/UI/Preferences.blp:114
 msgid "Enable Developer Tools"
 msgstr "Habilitar Ferramentas de Desenvolvedor"
 
-#: OuchBrowser/Data/UI/Preferences.blp:120
+#: OuchBrowser/Data/UI/Preferences.blp:115
 msgid "This will allow access to the Web Inspector"
 msgstr "Isso habilitará o acesso ao Inspetor da Web"
 
-#: OuchBrowser/Data/UI/Preferences.blp:129
+#: OuchBrowser/Data/UI/Preferences.blp:124
 msgid "Accessibility"
 msgstr "Acessibilidade"
 
-#: OuchBrowser/Data/UI/Preferences.blp:135
+#: OuchBrowser/Data/UI/Preferences.blp:130
 msgid "Content"
 msgstr "Conteúdo"
 
-#: OuchBrowser/Data/UI/Preferences.blp:139
+#: OuchBrowser/Data/UI/Preferences.blp:134
 msgid "Page Zoom"
 msgstr "Zoom da Página"
 
-#: OuchBrowser/Data/UI/Preferences.blp:166
+#: OuchBrowser/Data/UI/Preferences.blp:161
 msgid "Zoom Text"
 msgstr "Ampliar Texto"
 
-#: OuchBrowser/Data/UI/Preferences.blp:167
+#: OuchBrowser/Data/UI/Preferences.blp:162
 msgid "Zooms text and images instead of the view"
 msgstr "Amplia texto e imagens em vez da página inteira"
 
-#: OuchBrowser/Data/UI/Preferences.blp:180
+#: OuchBrowser/Data/UI/Preferences.blp:175
 msgid "See !bangs preferences for more options"
 msgstr "Veja as preferências de !bangs para mais opções"
 
-#: OuchBrowser/Data/UI/Preferences.blp:200
+#: OuchBrowser/Data/UI/Preferences.blp:195
 msgid "Custom Search Engines"
 msgstr "Mecanismos de busca personalizados"
 
-#: OuchBrowser/Data/UI/Preferences.blp:204
+#: OuchBrowser/Data/UI/Preferences.blp:199
 msgid "New Search Engine…"
 msgstr "Novo Mecanismo de Busca…"
 
-#: OuchBrowser/Data/UI/Preferences.blp:213
+#: OuchBrowser/Data/UI/Preferences.blp:208
 msgid "!bangs"
 msgstr "!bangs"
 
-#: OuchBrowser/Data/UI/Preferences.blp:217
+#: OuchBrowser/Data/UI/Preferences.blp:212
 msgid "!bangs provided by Kagi"
 msgstr "!bangs fornecidos pelo Kagi"
 
-#: OuchBrowser/Data/UI/Preferences.blp:221
+#: OuchBrowser/Data/UI/Preferences.blp:216
 msgid "Custom Bangs"
 msgstr "Bangs Customizados"
 
-#: OuchBrowser/Data/UI/Preferences.blp:225
+#: OuchBrowser/Data/UI/Preferences.blp:220
 msgid "New Bang…"
 msgstr "Novo Bang…"
 
-#: OuchBrowser/Data/UI/Preferences.blp:233
-msgid ""
-"Ouch Browser utilizes a simple ranking system to provide smarter !bang "
-"autocompletion results over time. Requires !bangs autocompletion to be "
-"enabled."
-msgstr ""
-"O navegador Ouch utiliza um sistema de classificação simples para fornecer "
-"resultados de autocompletar mais inteligentes para o comando !bang ao longo "
-"do tempo. Requer que o recurso de autocompletar para !bangs esteja ativado."
-
-#: OuchBrowser/Data/UI/Preferences.blp:239
-msgid "Clear All Ranks"
-msgstr "Limpar todas as classificações"
-
-#: OuchBrowser/Data/UI/RoomsOverview.blp:35
-msgid "Tabs"
-msgstr "Guias"
-
-#: OuchBrowser/Data/UI/RoomsOverview.blp:41
-#: OuchBrowser/Data/UI/RoomsOverview.blp:71
-msgid "Main"
-msgstr "Principal"
-
-#: OuchBrowser/Data/UI/RoomsOverview.blp:53
-#: OuchBrowser/Data/UI/RoomsOverview.blp:63 OuchBrowser/Data/UI/Window.blp:138
-#: OuchBrowser/Data/UI/Window.blp:157 OuchBrowser/Data/UI/Window.blp:878
-#: OuchBrowser/Data/UI/Window.blp:973
-msgid "New Tab"
-msgstr "Nova Aba"
-
-#: OuchBrowser/Data/UI/RoomsOverview.blp:85
-msgid "No Tabs Open"
-msgstr "Nenhuma guia aberta"
-
-#: OuchBrowser/Data/UI/Window.blp:55
+#: OuchBrowser/Data/UI/Window.blp:60
 msgid "Hide Sidebar"
 msgstr "Ocultar Barra Lateral"
 
-#: OuchBrowser/Data/UI/Window.blp:220 OuchBrowser/RoomsOverview.cs:57
-#: OuchBrowser/View.cs:415
+#: OuchBrowser/Data/UI/Window.blp:141 OuchBrowser/Data/UI/Window.blp:160
+#: OuchBrowser/Data/UI/Window.blp:597 OuchBrowser/Data/UI/Window.blp:658
+msgid "New Tab"
+msgstr "Nova Aba"
+
+#: OuchBrowser/Data/UI/Window.blp:216 OuchBrowser/View.cs:431
 msgid "Close Tab"
 msgstr "Fechar Aba"
 
-#: OuchBrowser/Data/UI/Window.blp:306
+#: OuchBrowser/Data/UI/Window.blp:298
 msgid "Show Sidebar"
 msgstr "Mostrar Barra Lateral"
 
-#: OuchBrowser/Data/UI/Window.blp:467
+#: OuchBrowser/Data/UI/Window.blp:455
 msgid "Menu"
 msgstr "Menu"
 
-#: OuchBrowser/Data/UI/Window.blp:511
-msgid "New Window"
-msgstr "Nova Janela"
-
-#: OuchBrowser/Data/UI/Window.blp:558
-msgid "View All Tabs"
-msgstr "Mostrar Todas as Abas"
-
-#: OuchBrowser/Data/UI/Window.blp:647
-msgid "About Ouch Browser"
-msgstr "Sobre o Ouch Browser"
-
-#: OuchBrowser/Data/UI/Window.blp:667
+#: OuchBrowser/Data/UI/Window.blp:468
 msgid "Back"
 msgstr "Voltar"
 
-#: OuchBrowser/Data/UI/Window.blp:679
+#: OuchBrowser/Data/UI/Window.blp:480
 msgid "Forward"
 msgstr "Avançar"
 
-#: OuchBrowser/Data/UI/Window.blp:691 OuchBrowser/View.cs:97
-#: OuchBrowser/View.cs:177
+#: OuchBrowser/Data/UI/Window.blp:492 OuchBrowser/View.cs:110
+#: OuchBrowser/View.cs:193
 msgid "Refresh"
 msgstr "Recarregar"
 
-#: OuchBrowser/Data/UI/Window.blp:711
+#: OuchBrowser/Data/UI/Window.blp:510
 msgid "Reveal Command Palette"
 msgstr "Mostrar Paleta de Comandos"
 
-#: OuchBrowser/Data/UI/Window.blp:730 OuchBrowser/View.cs:452
+#: OuchBrowser/Data/UI/Window.blp:529 OuchBrowser/View.cs:468
 msgid "Copy Link"
 msgstr "Copiar Link"
 
-#: OuchBrowser/Data/UI/Window.blp:741
+#: OuchBrowser/Data/UI/Window.blp:540
 msgid "Website Settings"
 msgstr "Configurações do Site"
 
-#: OuchBrowser/Data/UI/Window.blp:757
+#: OuchBrowser/Data/UI/Window.blp:556
 msgid "No Website Settings Available"
 msgstr "Nenhuma Configuração de Site Disponível"
 
-#: OuchBrowser/Data/UI/Window.blp:776
+#: OuchBrowser/Data/UI/Window.blp:575
 msgid "Archive"
 msgstr "Arquivar"
 
-#: OuchBrowser/Data/UI/Window.blp:817
-msgid "History"
-msgstr "Histórico"
-
-#: OuchBrowser/Data/UI/Window.blp:848
-msgid "Downloads"
-msgstr "Downloads"
-
-#: OuchBrowser/Data/UI/Window.blp:888
+#: OuchBrowser/Data/UI/Window.blp:607
 msgid "New…"
 msgstr "Novo…"
 
-#: OuchBrowser/Data/UI/Window.blp:921
-msgid "New Room"
-msgstr "Nova Sala"
+#: OuchBrowser/Data/UI/Window.blp:632 OuchBrowser/Data/UI/Window.blp:651
+msgid "New Window"
+msgstr "Nova Janela"
 
-#: OuchBrowser/Data/UI/Window.blp:944
+#: OuchBrowser/Data/UI/Window.blp:636
+msgid "View All Tabs"
+msgstr "Mostrar Todas as Abas"
+
+#: OuchBrowser/Data/UI/Window.blp:641
+msgid "About Ouch Browser"
+msgstr "Sobre o Ouch Browser"
+
+#: OuchBrowser/Data/UI/Window.blp:646
+msgid "History"
+msgstr "Histórico"
+
+#: OuchBrowser/Data/UI/Window.blp:647
+msgid "Downloads"
+msgstr "Downloads"
+
+#: OuchBrowser/Data/UI/Window.blp:655
 msgid "New Folder"
 msgstr "Nova Pasta"
 
-#: OuchBrowser/Preferences.cs:262
-msgid "Cleared All Ranks"
-msgstr "Aprovado em todas as fases"
+#: OuchBrowser/Utils/Cards.cs:39
+#, fuzzy
+#| msgid "Close Tab"
+msgid "Close"
+msgstr "Fechar Aba"
 
-#: OuchBrowser/RoomsOverview.cs:82
-#, csharp-format
-msgid "{0} tab"
-msgid_plural "{0} tabs"
-msgstr[0] "{0} aba"
-msgstr[1] "{0} abas"
-
-#: OuchBrowser/View.cs:92 OuchBrowser/View.cs:134 OuchBrowser/View.cs:149
+#: OuchBrowser/View.cs:105 OuchBrowser/View.cs:150 OuchBrowser/View.cs:165
 msgid "Stop Loading"
 msgstr "Parar de Carregar"
 
-#: OuchBrowser/View.cs:264
+#: OuchBrowser/View.cs:280
 msgid "Open Link in Peek Tab"
 msgstr "Abrir link em aba de visualização rápida"
 
-#: OuchBrowser/View.cs:279
+#: OuchBrowser/View.cs:295
 msgid "There was a problem loading this website"
 msgstr "Houve um problema ao carregar este site"
 
 #. TRANSLATORS: This is in the format of "example.com says"
-#: OuchBrowser/View.cs:296 OuchBrowser/View.cs:311 OuchBrowser/View.cs:339
+#: OuchBrowser/View.cs:312 OuchBrowser/View.cs:327 OuchBrowser/View.cs:355
 #, csharp-format
 msgid "{0} says"
 msgstr "{0} diz"
 
-#: OuchBrowser/View.cs:298 OuchBrowser/View.cs:314 OuchBrowser/View.cs:342
+#: OuchBrowser/View.cs:314 OuchBrowser/View.cs:330 OuchBrowser/View.cs:358
 msgid "OK"
 msgstr "OK"
 
-#: OuchBrowser/View.cs:313 OuchBrowser/View.cs:341 OuchBrowser/Window.cs:91
+#: OuchBrowser/View.cs:329 OuchBrowser/View.cs:357 OuchBrowser/Window.cs:102
+#: OuchBrowser/Window.cs:475
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: OuchBrowser/View.cs:422
+#: OuchBrowser/View.cs:438
 msgid "Expand Tab"
 msgstr "Expandir Aba"
 
-#: OuchBrowser/View.cs:456 OuchBrowser/Window.cs:432
+#: OuchBrowser/View.cs:472 OuchBrowser/Window.cs:433
 msgid "Link Copied"
 msgstr "Link Copiado"
 
-#: OuchBrowser/Window.cs:88
+#: OuchBrowser/Window.cs:99
 msgid "Exit and Close All Tabs?"
 msgstr "Sair e Fechar Todas as Abas?"
 
-#: OuchBrowser/Window.cs:89
+#: OuchBrowser/Window.cs:100
 #, csharp-format
 msgid "You are about to close {0} tabs. Are you sure you want to continue?"
 msgstr ""
 "Você está prestes a fechar {0} abas. Tem certeza de que deseja continuar?"
 
-#: OuchBrowser/Window.cs:92
+#: OuchBrowser/Window.cs:103
 msgid "Close Tabs"
 msgstr "Fechar Abas"
 
@@ -508,23 +434,109 @@ msgstr "Fechar Abas"
 #. Ouch Browser's credits. See
 #. <https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/class.AboutDialog.html#credits-and-acknowledgements>
 #. for more details.
-#: OuchBrowser/Window.cs:245
+#: OuchBrowser/Window.cs:251
 msgid "translator-credits"
 msgstr ""
 "Betty https://bsky.app/profile/did:plc:c5c6etwketgk3q3gkafrgekl, Wiliam: "
 "https://x.com/khotyz"
 
-#: OuchBrowser/Window.cs:250
+#: OuchBrowser/Window.cs:256
 msgid "Icon design by"
 msgstr "Design de ícone por"
 
-#: OuchBrowser/Window.cs:251
+#: OuchBrowser/Window.cs:257
 msgid "Shrimple Technologies members"
 msgstr "Membros da Shrimple Technologies"
 
-#: OuchBrowser/Window.cs:255
+#: OuchBrowser/Window.cs:261
 msgid "Inspired by"
 msgstr "Inspirado em"
+
+#: OuchBrowser/Window.cs:470
+msgid "Launch Web Inspector?"
+msgstr ""
+
+#: OuchBrowser/Window.cs:472
+msgid ""
+"You have attempted to launch the web inspector, but you do not have it "
+"enabled.\n"
+"\n"
+"The web inspector allows access to the element inspector, JavaScript "
+"console, and network inspector, which is used for web development purposes.\n"
+"\n"
+"Are you sure you want to continue?"
+msgstr ""
+
+#: OuchBrowser/Window.cs:476
+#, fuzzy
+#| msgid "Open Preferences"
+msgid "Enable in Preferences"
+msgstr "Abrir Configurações"
+
+#~ msgid "Rooms"
+#~ msgstr "Salas"
+
+#~ msgid ""
+#~ "This value stores the rooms data. Each entry is a tuple: (room name, room "
+#~ "icon, pinned urls)."
+#~ msgstr ""
+#~ "Este valor armazena os dados das salas. Cada entrada é uma tupla: (nome "
+#~ "da sala, ícone da sala, urls fixadas)."
+
+#~ msgid "!bang Autocomplete enabled?"
+#~ msgstr "Preenchimento automático do !bang habilitado?"
+
+#~ msgid "This value is whether !bang autocomplete is enabled or not."
+#~ msgstr ""
+#~ "Este valor indica se o preenchimento automático do !bang está habilitado "
+#~ "ou não."
+
+#~ msgid "!bang Usage Rankings"
+#~ msgstr "Classificação de uso do !bang"
+
+#~ msgid "This value is the rankings of !bangs over time from use."
+#~ msgstr ""
+#~ "Este valor representa a classificação dos !bangs ao longo do tempo de uso."
+
+#~ msgid "Autocomplete"
+#~ msgstr "Preenchimento Automático"
+
+#~ msgid "Enable !bang Autocomplete"
+#~ msgstr "Ativar preenchimento automático de !bangs"
+
+#~ msgid ""
+#~ "Ouch Browser utilizes a simple ranking system to provide smarter !bang "
+#~ "autocompletion results over time. Requires !bangs autocompletion to be "
+#~ "enabled."
+#~ msgstr ""
+#~ "O navegador Ouch utiliza um sistema de classificação simples para "
+#~ "fornecer resultados de autocompletar mais inteligentes para o comando !"
+#~ "bang ao longo do tempo. Requer que o recurso de autocompletar para !bangs "
+#~ "esteja ativado."
+
+#~ msgid "Clear All Ranks"
+#~ msgstr "Limpar todas as classificações"
+
+#~ msgid "Tabs"
+#~ msgstr "Guias"
+
+#~ msgid "Main"
+#~ msgstr "Principal"
+
+#~ msgid "No Tabs Open"
+#~ msgstr "Nenhuma guia aberta"
+
+#~ msgid "New Room"
+#~ msgstr "Nova Sala"
+
+#~ msgid "Cleared All Ranks"
+#~ msgstr "Aprovado em todas as fases"
+
+#, csharp-format
+#~ msgid "{0} tab"
+#~ msgid_plural "{0} tabs"
+#~ msgstr[0] "{0} aba"
+#~ msgstr[1] "{0} abas"
 
 #~ msgid "Copy Current URL"
 #~ msgstr "Copiar Endereço Atual"
@@ -532,14 +544,8 @@ msgstr "Inspirado em"
 #~ msgid "Open Keyboard Shortcuts"
 #~ msgstr "Abrir Atalhos do Teclado"
 
-#~ msgid "Open Preferences"
-#~ msgstr "Abrir Configurações"
-
 #~ msgid "Toggle Tabs Sidebar"
 #~ msgstr "Alternar Barra Lateral de Abas"
-
-#~ msgid "Command Palette"
-#~ msgstr "Paleta de Comandos"
 
 #~ msgid "Change Current Tab URL"
 #~ msgstr "Mudar Andereço da Aba Atual"
