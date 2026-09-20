@@ -30,19 +30,11 @@
 		<file preprocess="xml-stripblanks" alias="code-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/code-symbolic.svg</file>
 		<file preprocess="xml-stripblanks" alias="cross-large-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/cross-large-symbolic.svg</file>
 		<file preprocess="xml-stripblanks" alias="close-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/close-symbolic.svg</file>
-		<file preprocess="xml-stripblanks" alias="dot-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/dot-symbolic.svg</file>
-		<file preprocess="xml-stripblanks" alias="distance-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/distance-symbolic.svg</file>
 		<file preprocess="xml-stripblanks" alias="exclaimation-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/exclaimation-symbolic.svg</file>
-		<file preprocess="xml-stripblanks" alias="handshake-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/handshake-symbolic.svg</file>
-		<file preprocess="xml-stripblanks" alias="history-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/history-symbolic.svg</file>
-		<file preprocess="xml-stripblanks" alias="list-high-priority-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/list-high-priority-symbolic.svg</file>
-		<file preprocess="xml-stripblanks" alias="multitasking-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/multitasking-symbolic.svg</file>
 		<file preprocess="xml-stripblanks" alias="preferences-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/preferences-symbolic.svg</file>
-		<file preprocess="xml-stripblanks" alias="puzzle-piece-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/puzzle-piece-symbolic.svg</file>
 		<file preprocess="xml-stripblanks" alias="shoe-box-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/shoe-box-symbolic.svg</file>
 		<file preprocess="xml-stripblanks" alias="small-rectangle-in-focus-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/small-rectangle-in-focus-symbolic.svg</file>
 		<file preprocess="xml-stripblanks" alias="sliders-horizontal-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/sliders-horizontal-symbolic.svg</file>
-		<file preprocess="xml-stripblanks" alias="web-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/web-symbolic.svg</file>
 		<file preprocess="xml-stripblanks" alias="zoom-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/zoom-symbolic.svg</file>
 	</gresource>
 </gresources>
