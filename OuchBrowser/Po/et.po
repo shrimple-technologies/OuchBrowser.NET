@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
 "POT-Creation-Date: 2026-09-16 19:42-0400\n"
-"PO-Revision-Date: 2026-07-20 12:01+0000\n"
+"PO-Revision-Date: 2026-09-21 04:51+0000\n"
 "Last-Translator: Priit Jõerüüt <jrthwlate@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Estonian <https://hosted.weblate.org/projects/ouch/net/et/>\n"
 "Language: et\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2026.8.dev0\n"
+"X-Generator: Weblate 2026.10.dev0\n"
 
 #: OuchBrowser/CommandPalette.cs:75
 #, csharp-format
@@ -368,10 +368,8 @@ msgid "New Folder"
 msgstr "Uus kaust"
 
 #: OuchBrowser/Utils/Cards.cs:39
-#, fuzzy
-#| msgid "Close Tab"
 msgid "Close"
-msgstr "Sulge vahekaart"
+msgstr "Sulge"
 
 #: OuchBrowser/View.cs:105 OuchBrowser/View.cs:150 OuchBrowser/View.cs:165
 msgid "Stop Loading"
@@ -446,7 +444,7 @@ msgstr "Meid inspireeris"
 
 #: OuchBrowser/Window.cs:470
 msgid "Launch Web Inspector?"
-msgstr ""
+msgstr "Kas käivitad veebiinspektori vaate?"
 
 #: OuchBrowser/Window.cs:472
 msgid ""
@@ -458,12 +456,17 @@ msgid ""
 "\n"
 "Are you sure you want to continue?"
 msgstr ""
+"Sa proovisid käivitada veebiinspektori vaadet, kui selline võimalus poel "
+"sisse lülitatud.\n"
+"\n"
+"Veebiinspektoris leidub HTML-elementide uurimisvõimalus, JavaScripti konsool "
+"ja võrguliikluse analüsaator ning neid kõiki kasutatakse veebiarendusel.\n"
+"\n"
+"Kas oled kindel, et soovid jätkata?"
 
 #: OuchBrowser/Window.cs:476
-#, fuzzy
-#| msgid "Open Preferences"
 msgid "Enable in Preferences"
-msgstr "Ava eelistused"
+msgstr "Luba eelistustes"
 
 #~ msgid "Rooms"
 #~ msgstr "Toad"
