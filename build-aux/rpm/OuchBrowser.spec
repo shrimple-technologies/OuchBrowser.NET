@@ -21,7 +21,7 @@ BuildRequires: blueprint-compiler
 BuildRequires: gtk4-devel
 BuildRequires: gettext
 BuildRequires: libadwaita-devel >= 1.9
-BuildRequires: npm
+BuildRequires: dart-sass
 Requires: libadwaita >= 1.9
 Requires: gtk4
 Requires: webkitgtk6.0
@@ -37,14 +37,13 @@ palette, and mobile support.
 %autosetup -n ouchbrowser.net
 
 %build
-npm install -g sass
 just build-blueprint
 just compile-resources
 git clone https://github.com/kagisearch/bangs OuchBrowser/Bangs --depth=1
 %ifarch x86_64
-dotnet publish OuchBrowser -c Release -r linux-x64
+just publish -r linux-x64
 %elifarch aarch64
-dotnet publish OuchBrowser -c Release -r linux-arm64
+just publish -r linux-arm64
 %endif
 
 %install
