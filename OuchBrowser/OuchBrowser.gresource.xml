@@ -23,7 +23,6 @@
 
 	<gresource prefix="/page/codeberg/shrimple/OuchBrowser/icons/scalable/actions/">
 		<file preprocess="xml-stripblanks" alias="accessibility-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/accessibility-symbolic.svg</file>
-		<file preprocess="xml-stripblanks" alias="archive-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/archive-symbolic.svg</file>
 		<file preprocess="xml-stripblanks" alias="box-dotted-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/box-dotted-symbolic.svg</file>
 		<file preprocess="xml-stripblanks" alias="chain-link-loose-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/chain-link-loose-symbolic.svg</file>
 		<file preprocess="xml-stripblanks" alias="circle-crossed-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/circle-crossed-symbolic.svg</file>
