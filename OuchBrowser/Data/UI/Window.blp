@@ -121,108 +121,104 @@ template $OuchWindow: Adw.ApplicationWindow {
 											visible: false;
 										}
 
+										Button {
+											margin-start: 10;
+											margin-end: 10;
+											action-name: "win.palette-new";
+											focus-on-click: false;
+
+											accessibility {
+												label: _("New Tab");
+											}
+
+											Box {
+												spacing: 10;
+
+												Image {
+													icon-name: "list-add-symbolic";
+
+													accessibility {
+														labelled-by: _new_tab_label;
+													}
+
+													styles [
+														"dimmed",
+													]
+												}
+
+												Label _new_tab_label {
+													label: _("New Tab");
+
+													styles [
+														"dimmed",
+														"font-medium",
+													]
+												}
+											}
+
+											styles [
+												"flat",
+												"new-tab",
+											]
+										}
+
 										ScrolledWindow {
 											hexpand: true;
 
-											Box {
-												orientation: vertical;
+											styles [
+												"tabs",
+											]
 
-												Button {
-													margin-start: 10;
-													margin-end: 10;
-													action-name: "win.palette-new";
-													focus-on-click: false;
+											ListView tabs {
+												vexpand: true;
+												model: bind tabView.pages;
 
-													accessibility {
-														label: _("New Tab");
-													}
+												factory: BuilderListItemFactory {
+													template ListItem {
+														child: Box {
+															tooltip-text: bind template.item as <Adw.TabPage>.title;
+															spacing: 10;
 
-													Box {
-														spacing: 10;
-
-														Image {
-															icon-name: "list-add-symbolic";
-
-															accessibility {
-																labelled-by: _new_tab_label;
+															Image {
+																gicon: bind template.item as <Adw.TabPage>.icon;
+																visible: bind spinner.visible inverted;
 															}
 
-															styles [
-																"dimmed",
-															]
-														}
+															Adw.Spinner spinner {
+																width-request: 16;
+																height-request: 16;
+																visible: bind template.item as <Adw.TabPage>.loading;
+															}
 
-														Label _new_tab_label {
-															label: _("New Tab");
+															Label {
+																label: bind template.item as <Adw.TabPage>.title;
+																ellipsize: end;
+																halign: start;
+																valign: center;
+																hexpand: true;
+															}
 
-															styles [
-																"dimmed",
-																"font-medium",
-															]
-														}
+															Button {
+																icon-name: "close-symbolic";
+																valign: center;
+																visible: bind template.item as <Adw.TabPage>.selected;
+																tooltip-text: _("Close Tab");
+																action-name: "win.tab-close";
+																focus-on-click: false;
+
+																styles [
+																	"flat",
+																	"tab-close",
+																]
+															}
+														};
 													}
+												};
 
-													styles [
-														"flat",
-														"new-tab",
-													]
-												}
-
-												ListView tabs {
-													vexpand: true;
-													model: bind tabView.pages;
-
-													factory: BuilderListItemFactory {
-														template ListItem {
-															child: Box {
-																tooltip-text: bind template.item as <Adw.TabPage>.title;
-																spacing: 10;
-
-																Image {
-																	gicon: bind template.item as <Adw.TabPage>.icon;
-																	visible: bind spinner.visible inverted;
-																}
-
-																Adw.Spinner spinner {
-																	width-request: 16;
-																	height-request: 16;
-																	visible: bind template
-																		.item as <Adw.TabPage>
-																		.loading;
-																}
-
-																Label {
-																	label: bind template.item as <Adw.TabPage>.title;
-																	ellipsize: end;
-																	halign: start;
-																	valign: center;
-																	hexpand: true;
-																}
-
-																Button {
-																	icon-name: "close-symbolic";
-																	valign: center;
-																	visible: bind template
-																		.item as <Adw.TabPage>
-																		.selected;
-																	tooltip-text: _("Close Tab");
-																	action-name: "win.tab-close";
-																	focus-on-click: false;
-
-																	styles [
-																		"flat",
-																		"tab-close",
-																	]
-																}
-															};
-														}
-													};
-
-													styles [
-														"navigation-sidebar",
-														"tabs-sidebar",
-													]
-												}
+												styles [
+													"navigation-sidebar",
+													"tabs-sidebar",
+												]
 											}
 										}
 									}

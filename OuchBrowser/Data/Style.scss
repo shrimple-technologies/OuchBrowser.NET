@@ -266,3 +266,27 @@ entry.command-palette {
 button.view {
 	background-color: var(--thumbnail-bg-color);
 }
+
+scrolledwindow.tabs > undershoot {
+	&.top {
+		background: linear-gradient(
+			to bottom,
+			var(--window-bg-color),
+			transparent
+		);
+		box-shadow: initial;
+		border: initial;
+		min-height: 25px;
+	}
+
+	&.bottom {
+		background: linear-gradient(
+			to top,
+			var(--window-bg-color),
+			transparent
+		);
+		box-shadow: initial;
+		border: initial;
+		min-height: 25px;
+	}
+}
