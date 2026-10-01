@@ -1,11 +1,30 @@
 frame {
-	border-radius: 9px;
+	border-radius: 5px 9px 9px 5px;
 	transition: all 200ms ease-out;
 
 	&.inactive {
 		border-radius: 12px;
 		transform: scale(0.95);
 		opacity: 0.5;
+	}
+
+	&.expanded {
+		border-radius: 9px;
+	}
+}
+
+window {
+	&.tiled-top,
+	&.tiled-bottom,
+	&.tiled-left,
+	&.tiled-right {
+		frame {
+			border-radius: 5px;
+
+			&.expanded {
+				border-radius: 5px;
+			}
+		}
 	}
 }
 
@@ -126,7 +145,7 @@ dialog.peek > widget > floating-sheet {
 	}
 
 	sheet > widget > box > frame {
-		border-radius: 12px;
+		border-radius: 9px;
 		border: none;
 	}
 }

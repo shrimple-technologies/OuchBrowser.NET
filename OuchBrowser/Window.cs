@@ -199,12 +199,14 @@ internal partial class Window
 
 			if (overlaySplitView!.GetShowSidebar())
 			{
+				frame!.AddCssClass("expanded");
 				frame!.SetMarginStart(6);
 				urlDisplayOsd!.SetMarginStart(20);
 				overlaySplitView!.SetShowSidebar(false);
 			}
 			else
 			{
+				frame!.RemoveCssClass("expanded");
 				sidebar_toggle!.SetActive(true);
 				frame!.SetMarginStart(0);
 				urlDisplayOsd!.SetMarginStart(15);
