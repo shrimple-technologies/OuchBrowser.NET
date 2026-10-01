@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
-"POT-Creation-Date: 2026-09-16 19:42-0400\n"
+"POT-Creation-Date: 2026-09-30 21:35-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -97,7 +97,7 @@ msgstr ""
 
 #: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:6
 #: OuchBrowser/Data/UI/Window.blp:7 OuchBrowser/Data/UI/Window.blp:36
-#: OuchBrowser/Data/UI/Window.blp:280
+#: OuchBrowser/Data/UI/Window.blp:267
 msgid "Ouch Browser"
 msgstr ""
 
@@ -145,7 +145,7 @@ msgid "Go"
 msgstr ""
 
 #: OuchBrowser/Data/UI/Preferences.blp:23
-#: OuchBrowser/Data/UI/Preferences.blp:36 OuchBrowser/Data/UI/Window.blp:640
+#: OuchBrowser/Data/UI/Preferences.blp:36 OuchBrowser/Data/UI/Window.blp:627
 msgid "Preferences"
 msgstr ""
 
@@ -270,81 +270,81 @@ msgstr ""
 msgid "Hide Sidebar"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:141 OuchBrowser/Data/UI/Window.blp:160
-#: OuchBrowser/Data/UI/Window.blp:597 OuchBrowser/Data/UI/Window.blp:658
+#: OuchBrowser/Data/UI/Window.blp:131 OuchBrowser/Data/UI/Window.blp:150
+#: OuchBrowser/Data/UI/Window.blp:584 OuchBrowser/Data/UI/Window.blp:645
 msgid "New Tab"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:216 OuchBrowser/View.cs:431
+#: OuchBrowser/Data/UI/Window.blp:205 OuchBrowser/View.cs:431
 msgid "Close Tab"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:298
+#: OuchBrowser/Data/UI/Window.blp:285
 msgid "Show Sidebar"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:455
+#: OuchBrowser/Data/UI/Window.blp:442
 msgid "Menu"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:468
+#: OuchBrowser/Data/UI/Window.blp:455
 msgid "Back"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:480
+#: OuchBrowser/Data/UI/Window.blp:467
 msgid "Forward"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:492 OuchBrowser/View.cs:110
+#: OuchBrowser/Data/UI/Window.blp:479 OuchBrowser/View.cs:110
 #: OuchBrowser/View.cs:193
 msgid "Refresh"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:510
+#: OuchBrowser/Data/UI/Window.blp:497
 msgid "Reveal Command Palette"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:529 OuchBrowser/View.cs:468
+#: OuchBrowser/Data/UI/Window.blp:516 OuchBrowser/View.cs:468
 msgid "Copy Link"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:540
+#: OuchBrowser/Data/UI/Window.blp:527
 msgid "Website Settings"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:556
+#: OuchBrowser/Data/UI/Window.blp:543
 msgid "No Website Settings Available"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:575
+#: OuchBrowser/Data/UI/Window.blp:562
 msgid "Archive"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:607
+#: OuchBrowser/Data/UI/Window.blp:594
 msgid "New…"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:632 OuchBrowser/Data/UI/Window.blp:651
+#: OuchBrowser/Data/UI/Window.blp:619 OuchBrowser/Data/UI/Window.blp:638
 msgid "New Window"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:636
+#: OuchBrowser/Data/UI/Window.blp:623
 msgid "View All Tabs"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:641
+#: OuchBrowser/Data/UI/Window.blp:628
 msgid "About Ouch Browser"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:646
+#: OuchBrowser/Data/UI/Window.blp:633
 msgid "History"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:647
+#: OuchBrowser/Data/UI/Window.blp:634
 msgid "Downloads"
 msgstr ""
 
-#: OuchBrowser/Data/UI/Window.blp:655
+#: OuchBrowser/Data/UI/Window.blp:642
 msgid "New Folder"
 msgstr ""
 
@@ -375,7 +375,7 @@ msgid "OK"
 msgstr ""
 
 #: OuchBrowser/View.cs:329 OuchBrowser/View.cs:357 OuchBrowser/Window.cs:102
-#: OuchBrowser/Window.cs:475
+#: OuchBrowser/Window.cs:477
 msgid "Cancel"
 msgstr ""
 
@@ -383,7 +383,7 @@ msgstr ""
 msgid "Expand Tab"
 msgstr ""
 
-#: OuchBrowser/View.cs:472 OuchBrowser/Window.cs:433
+#: OuchBrowser/View.cs:472 OuchBrowser/Window.cs:435
 msgid "Link Copied"
 msgstr ""
 
@@ -406,37 +406,38 @@ msgstr ""
 #. Ouch Browser's credits. See
 #. <https://gnome.pages.gitlab.gnome.org/libadwaita/doc/1-latest/class.AboutDialog.html#credits-and-acknowledgements>
 #. for more details.
-#: OuchBrowser/Window.cs:251
+#: OuchBrowser/Window.cs:253
 msgid "translator-credits"
 msgstr ""
 
-#: OuchBrowser/Window.cs:256
+#: OuchBrowser/Window.cs:258
 msgid "Icon design by"
 msgstr ""
 
-#: OuchBrowser/Window.cs:257
+#: OuchBrowser/Window.cs:259
 msgid "Shrimple Technologies members"
 msgstr ""
 
-#: OuchBrowser/Window.cs:261
+#: OuchBrowser/Window.cs:263
 msgid "Inspired by"
 msgstr ""
 
-#: OuchBrowser/Window.cs:470
+#: OuchBrowser/Window.cs:472
 msgid "Launch Web Inspector?"
 msgstr ""
 
-#: OuchBrowser/Window.cs:472
+#: OuchBrowser/Window.cs:474
 msgid ""
 "You have attempted to launch the web inspector, but you do not have it "
 "enabled.\n"
 "\n"
 "The web inspector allows access to the element inspector, JavaScript "
-"console, and network inspector, which is used for web development purposes.\n"
+"console, and network inspector, which are used for web development "
+"purposes.\n"
 "\n"
 "Are you sure you want to continue?"
 msgstr ""
 
-#: OuchBrowser/Window.cs:476
+#: OuchBrowser/Window.cs:478
 msgid "Enable in Preferences"
 msgstr ""
