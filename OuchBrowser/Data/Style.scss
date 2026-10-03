@@ -82,34 +82,6 @@ window {
 	}
 }
 
-.joined {
-	button,
-	menubutton > button {
-		border-radius: 0;
-	}
-
-	button:first-child,
-	menubutton:first-child > button {
-		border-top-left-radius: 12px;
-		border-bottom-left-radius: 12px;
-		border-top-right-radius: 0;
-		border-bottom-right-radius: 0;
-	}
-
-	button:last-child,
-	menubutton:last-child > button {
-		border-top-left-radius: 0;
-		border-bottom-left-radius: 0;
-		border-top-right-radius: 12px;
-		border-bottom-right-radius: 12px;
-	}
-
-	button:hover,
-	menubutton > button:hover {
-		background-color: color-mix(in srgb, currentColor 4%, transparent);
-	}
-}
-
 dialog.command-palette > widget > floating-sheet {
 	dimming {
 		opacity: 0;
