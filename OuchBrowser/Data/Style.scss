@@ -244,7 +244,7 @@ button.view {
 scrolledwindow.tabs > undershoot {
 	&.top {
 		background: linear-gradient(
-			to bottom,
+			in oklab to bottom,
 			var(--window-bg-color),
 			transparent
 		);
@@ -255,7 +255,7 @@ scrolledwindow.tabs > undershoot {
 
 	&.bottom {
 		background: linear-gradient(
-			to top,
+			in oklab to top,
 			var(--window-bg-color),
 			transparent
 		);
