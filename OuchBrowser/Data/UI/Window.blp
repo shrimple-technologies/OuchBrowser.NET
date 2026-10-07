@@ -27,334 +27,389 @@ template $OuchWindow: Adw.ApplicationWindow {
 				Adw.Layout {
 					name: "default";
 
-					content: Adw.ToolbarView {
-						Adw.OverlaySplitView overlaySplitView {
-							min-sidebar-width: 225;
-							max-sidebar-width: 250;
+					content: Adw.OverlaySplitView overlaySplitView {
+						min-sidebar-width: 225;
+						max-sidebar-width: 250;
 
-							sidebar: Adw.NavigationPage sidebar {
-								title: _("Ouch Browser");
+						sidebar: Adw.NavigationPage sidebar {
+							title: _("Ouch Browser");
 
-								Adw.ToolbarView {
-									[top]
-									CenterBox {
-										margin-top: 6;
-										margin-start: 6;
-										margin-bottom: 6;
+							Adw.NavigationView {
+								Adw.NavigationPage {
+									title: _("Ouch Browser");
 
-										start-widget: Box {
-											orientation: horizontal;
-											spacing: 6;
+									Adw.ToolbarView {
+										[top]
+										CenterBox {
+											margin-top: 6;
+											margin-start: 6;
+											margin-bottom: 6;
 
-											WindowControls startWindowControls {
-												side: start;
+											start-widget: Box {
+												orientation: horizontal;
+												spacing: 6;
+
+												WindowControls startWindowControls {
+													side: start;
+												}
+
+												Adw.LayoutSlot {
+													id: "menu-main";
+												}
+
+												ToggleButton sidebar_toggle {
+													active: true;
+													icon-name: "sidebar-show-symbolic";
+													tooltip-text: _("Hide Sidebar");
+													margin-end: 6;
+													focus-on-click: false;
+													action-name: "win.sidebar-toggle";
+
+													styles [
+														"flat",
+													]
+												}
+											};
+
+											end-widget: Box {
+												orientation: horizontal;
+												spacing: 5;
+												margin-end: 10;
+
+												Adw.LayoutSlot {
+													id: "go-back";
+												}
+
+												Adw.LayoutSlot {
+													id: "go-forward";
+												}
+
+												Adw.LayoutSlot {
+													id: "refresh";
+												}
+											};
+										}
+
+										Box {
+											orientation: vertical;
+
+											Separator {
+												orientation: vertical;
+
+												styles [
+													"spacer",
+												]
 											}
 
 											Adw.LayoutSlot {
-												id: "menu-main";
+												id: "palette";
+												margin-start: 10;
+												margin-end: 10;
 											}
 
-											ToggleButton sidebar_toggle {
-												active: true;
-												icon-name: "sidebar-show-symbolic";
-												tooltip-text: _("Hide Sidebar");
-												margin-end: 6;
+											Separator {
+												orientation: vertical;
+
+												styles [
+													"spacer",
+												]
+											}
+
+											Separator {
+												orientation: horizontal;
+												margin-top: 10;
+												margin-bottom: 10;
+												margin-start: 14;
+												margin-end: 10;
+												visible: false;
+											}
+
+											Button {
+												margin-start: 10;
+												margin-end: 10;
+												action-name: "win.palette-new";
 												focus-on-click: false;
-												action-name: "win.sidebar-toggle";
+
+												accessibility {
+													label: _("New Tab");
+												}
+
+												Box {
+													spacing: 10;
+
+													Image {
+														icon-name: "list-add-symbolic";
+
+														accessibility {
+															labelled-by: _new_tab_label;
+														}
+
+														styles [
+															"dimmed",
+														]
+													}
+
+													Label _new_tab_label {
+														label: _("New Tab");
+
+														styles [
+															"dimmed",
+															"font-medium",
+														]
+													}
+												}
 
 												styles [
 													"flat",
+													"new-tab",
 												]
 											}
-										};
 
-										end-widget: Box {
-											orientation: horizontal;
-											spacing: 5;
-											margin-end: 10;
-
-											Adw.LayoutSlot {
-												id: "go-back";
-											}
-
-											Adw.LayoutSlot {
-												id: "go-forward";
-											}
-
-											Adw.LayoutSlot {
-												id: "refresh";
-											}
-										};
-									}
-
-									Box {
-										orientation: vertical;
-
-										Separator {
-											orientation: vertical;
-
-											styles [
-												"spacer",
-											]
-										}
-
-										Adw.LayoutSlot {
-											id: "palette";
-											margin-start: 10;
-											margin-end: 10;
-										}
-
-										Separator {
-											orientation: vertical;
-
-											styles [
-												"spacer",
-											]
-										}
-
-										Separator {
-											orientation: horizontal;
-											margin-top: 10;
-											margin-bottom: 10;
-											margin-start: 14;
-											margin-end: 10;
-											visible: false;
-										}
-
-										Button {
-											margin-start: 10;
-											margin-end: 10;
-											action-name: "win.palette-new";
-											focus-on-click: false;
-
-											accessibility {
-												label: _("New Tab");
-											}
-
-											Box {
-												spacing: 10;
-
-												Image {
-													icon-name: "list-add-symbolic";
-
-													accessibility {
-														labelled-by: _new_tab_label;
-													}
-
-													styles [
-														"dimmed",
-													]
-												}
-
-												Label _new_tab_label {
-													label: _("New Tab");
-
-													styles [
-														"dimmed",
-														"font-medium",
-													]
-												}
-											}
-
-											styles [
-												"flat",
-												"new-tab",
-											]
-										}
-
-										ScrolledWindow {
-											hexpand: true;
-
-											styles [
-												"tabs",
-											]
-
-											ListView tabs {
-												vexpand: true;
-												model: bind tabView.pages;
-
-												factory: BuilderListItemFactory {
-													template ListItem {
-														child: Box {
-															tooltip-text: bind template.item as <Adw.TabPage>.title;
-															spacing: 10;
-
-															Image {
-																gicon: bind template.item as <Adw.TabPage>.icon;
-																visible: bind spinner.visible inverted;
-															}
-
-															Adw.Spinner spinner {
-																width-request: 16;
-																height-request: 16;
-																visible: bind template.item as <Adw.TabPage>.loading;
-															}
-
-															Label {
-																label: bind template.item as <Adw.TabPage>.title;
-																ellipsize: end;
-																halign: start;
-																valign: center;
-																hexpand: true;
-															}
-
-															Button {
-																icon-name: "close-symbolic";
-																valign: center;
-																visible: bind template.item as <Adw.TabPage>.selected;
-																tooltip-text: _("Close Tab");
-																action-name: "win.tab-close";
-																focus-on-click: false;
-
-																styles [
-																	"flat",
-																	"tab-close",
-																]
-															}
-														};
-													}
-												};
+											ScrolledWindow {
+												hexpand: true;
 
 												styles [
-													"navigation-sidebar",
-													"tabs-sidebar",
+													"tabs",
+												]
+
+												ListView tabs {
+													vexpand: true;
+													model: bind tabView.pages;
+
+													factory: BuilderListItemFactory {
+														template ListItem {
+															child: Box {
+																tooltip-text: bind template.item as <Adw.TabPage>.title;
+																spacing: 10;
+
+																Image {
+																	gicon: bind template.item as <Adw.TabPage>.icon;
+																	visible: bind spinner.visible inverted;
+																}
+
+																Adw.Spinner spinner {
+																	width-request: 16;
+																	height-request: 16;
+																	visible: bind template
+																		.item as <Adw.TabPage>
+																		.loading;
+																}
+
+																Label {
+																	label: bind template.item as <Adw.TabPage>.title;
+																	ellipsize: end;
+																	halign: start;
+																	valign: center;
+																	hexpand: true;
+																}
+
+																Button {
+																	icon-name: "close-symbolic";
+																	valign: center;
+																	visible: bind template
+																		.item as <Adw.TabPage>
+																		.selected;
+																	tooltip-text: _("Close Tab");
+																	action-name: "win.tab-close";
+																	focus-on-click: false;
+
+																	styles [
+																		"flat",
+																		"tab-close",
+																	]
+																}
+															};
+														}
+													};
+
+													styles [
+														"navigation-sidebar",
+														"tabs-sidebar",
+													]
+												}
+											}
+										}
+
+										[bottom]
+										Revealer cardBoxRevealer {
+											transition-type: slide_up;
+
+											ListBox cardBox {
+												selection-mode: none;
+												margin-top: 10;
+												margin-bottom: 5;
+												margin-start: 10;
+												margin-end: 10;
+
+												styles [
+													"boxed-list",
+													"infobar",
+													"font-medium",
 												]
 											}
 										}
-									}
 
-									[bottom]
-									Revealer cardBoxRevealer {
-										transition-type: slide_up;
+										[bottom]
+										CenterBox {
+											margin-bottom: 3;
+											margin-start: 6;
+											margin-top: 6;
 
-										ListBox cardBox {
-											selection-mode: none;
-											margin-top: 10;
-											margin-bottom: 5;
-											margin-start: 10;
-											margin-end: 10;
+											start-widget: Adw.LayoutSlot {
+												id: "menu-archive";
+											};
 
-											styles [
-												"boxed-list",
-												"infobar",
-												"font-medium",
-											]
+											end-widget: Adw.LayoutSlot {
+												id: "menu-new";
+											};
 										}
-									}
-
-									[bottom]
-									CenterBox {
-										margin-bottom: 3;
-										margin-start: 6;
-										margin-top: 6;
-
-										start-widget: Adw.LayoutSlot {
-											id: "menu-archive";
-										};
-
-										end-widget: Adw.LayoutSlot {
-											id: "menu-new";
-										};
 									}
 								}
 
-								styles [
-									"background",
-								]
-							};
+								Adw.NavigationPage {
+									tag: "archive";
+									title: _("Archive");
 
-							content: Adw.NavigationPage {
-								title: _("Ouch Browser");
+									Adw.ToolbarView {
+										[top]
+										Adw.HeaderBar {
+											title-widget: Adw.InlineViewSwitcher {
+												stack: archive-stack;
+												display-mode: icons;
+											};
+										}
 
-								Adw.ToolbarView contentToolbarView {
-									reveal-top-bars: false;
-									top-bar-style: raised;
-									extend-content-to-top-edge: true;
+										Adw.ViewStack archive-stack {
+											Adw.ViewStackPage {
+												name: "downloads";
+												icon-name: "folder-download-symbolic";
+												title: _("Downloads");
 
-									[top]
-									Adw.HeaderBar contentHeaderBar {
-										show-title: false;
+												child: Adw.StatusPage {
+													icon-name: "folder-download-symbolic";
+													title: _("Nothing yet…");
+
+													styles [
+														"compact",
+													]
+												};
+											}
+
+											Adw.ViewStackPage {
+												name: "history";
+												icon-name: "shoe-box-symbolic";
+												title: _("History");
+
+												child: Adw.StatusPage {
+													icon-name: "shoe-box-symbolic";
+													title: _("Nothing yet…");
+
+													styles [
+														"compact",
+													]
+												};
+											}
+										}
+									}
+								}
+							}
+
+							styles [
+								"background",
+							]
+						};
+
+						content: Adw.NavigationPage {
+							title: _("Ouch Browser");
+
+							Adw.ToolbarView contentToolbarView {
+								reveal-top-bars: false;
+								top-bar-style: raised;
+								extend-content-to-top-edge: true;
+
+								[top]
+								Adw.HeaderBar contentHeaderBar {
+									show-title: false;
+
+									styles [
+										"content-top-bar",
+									]
+
+									[start]
+									Button content_sidebar_toggle {
+										icon-name: "sidebar-show-symbolic";
+										tooltip-text: _("Show Sidebar");
+										visible: bind overlaySplitView.show-sidebar inverted;
+										focus-on-click: false;
+										action-name: "win.sidebar-toggle";
 
 										styles [
-											"content-top-bar",
+											"flat",
 										]
+									}
 
-										[start]
-										Button content_sidebar_toggle {
-											icon-name: "sidebar-show-symbolic";
-											tooltip-text: _("Show Sidebar");
-											visible: bind overlaySplitView.show-sidebar inverted;
-											focus-on-click: false;
-											action-name: "win.sidebar-toggle";
+									[end]
+									WindowControls endWindowControls {
+										side: end;
+										visible: false;
+									}
+								}
 
-											styles [
-												"flat",
-											]
-										}
+								Overlay {
+									[overlay]
+									WindowHandle {
+										height-request: 20;
+										hexpand: true;
+										valign: start;
 
-										[end]
-										WindowControls endWindowControls {
-											side: end;
-											visible: false;
-										}
+										Adw.Bin topBarHoverTarget {}
 									}
 
 									Overlay {
 										[overlay]
-										WindowHandle {
-											height-request: 20;
-											hexpand: true;
-											valign: start;
+										Adw.Bin urlDisplayOsd {
+											halign: start;
+											valign: end;
+											margin-start: 15;
+											margin-bottom: 20;
+											visible: false;
 
-											Adw.Bin topBarHoverTarget {}
-										}
+											styles [
+												"osd",
+												"url-preview",
+											]
 
-										Overlay {
-											[overlay]
-											Adw.Bin urlDisplayOsd {
+											Label urlDisplayLabel {
 												halign: start;
-												valign: end;
-												margin-start: 15;
-												margin-bottom: 20;
-												visible: false;
+												margin-start: 10;
+												margin-end: 10;
+												margin-top: 5;
+												margin-bottom: 5;
+												ellipsize: middle;
+												max-width-chars: 50;
 
 												styles [
-													"osd",
-													"url-preview",
+													"caption",
+													"font-medium",
 												]
-
-												Label urlDisplayLabel {
-													halign: start;
-													margin-start: 10;
-													margin-end: 10;
-													margin-top: 5;
-													margin-bottom: 5;
-													ellipsize: middle;
-													max-width-chars: 50;
-
-													styles [
-														"caption",
-														"font-medium",
-													]
-												}
 											}
+										}
 
-											Frame frame {
-												margin-end: 6;
-												margin-top: 6;
-												margin-bottom: 6;
-												hexpand: true;
-												vexpand: true;
+										Frame frame {
+											margin-end: 6;
+											margin-top: 6;
+											margin-bottom: 6;
+											hexpand: true;
+											vexpand: true;
 
-												Adw.LayoutSlot {
-													id: "webview";
-												}
+											Adw.LayoutSlot {
+												id: "webview";
 											}
 										}
 									}
 								}
-							};
-						}
+							}
+						};
 					};
 				}
 
@@ -557,11 +612,12 @@ template $OuchWindow: Adw.ApplicationWindow {
 				}
 
 				[menu-archive]
-				MenuButton {
+				Button {
 					icon-name: "shoe-box-symbolic";
 					tooltip-text: _("Archive");
 					focus-on-click: false;
-					menu-model: archiveMenu;
+					action-name: "navigation.push";
+					action-target: "'archive'";
 
 					styles [
 						"flat",
