@@ -26,7 +26,7 @@ Focus on your browsing
 
 ## Packages
 
-These are official packages built and maintained by the Shrimple Technologies
+These are official packages built and maintained by the Lunaris Technologies
 team. Any packages not listed here are unofficial, and you must proceed with
 caution with those packages.
 
@@ -81,11 +81,11 @@ just run
 ### Code
 
 Ouch Browser does not have a definitive contributing guidelines. However, AI
-code is **strictly not allowed** inside of Ouch Browser, or any of Shrimple
+code is **strictly not allowed** inside of Ouch Browser, or any of Lunaris
 Technologies' products. Any suspicion of your pull request being AI generated
 will result in your pull request being closed without warning, and further
 AI pull requests will result in being barred from contributing to any
-Shrimple Technologies product.
+Lunaris Technologies product.
 
 ### Translations [![Translation status](https://hosted.weblate.org/widget/ouch/net/svg-badge.svg)](https://hosted.weblate.org/projects/ouch/net/)
 

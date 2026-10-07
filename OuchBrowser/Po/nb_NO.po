@@ -102,8 +102,8 @@ msgid "Ouch Browser"
 msgstr "Ouch-nettleseren"
 
 #: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:8
-msgid "Shrimple Technologies"
-msgstr "Shrimple Technologies"
+msgid "Lunaris Technologies"
+msgstr "Lunaris Technologies"
 
 #: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:13
 msgid "Focus on your browsing"
@@ -432,9 +432,9 @@ msgstr ""
 
 #: OuchBrowser/Window.cs:257
 #, fuzzy
-#| msgid "Shrimple Technologies"
-msgid "Shrimple Technologies members"
-msgstr "Shrimple Technologies"
+#| msgid "Lunaris Technologies"
+msgid "Lunaris Technologies members"
+msgstr "Lunaris Technologies"
 
 #: OuchBrowser/Window.cs:261
 msgid "Inspired by"

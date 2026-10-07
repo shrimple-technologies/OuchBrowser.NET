@@ -411,7 +411,7 @@ msgid "Icon design by"
 msgstr ""
 
 #: OuchBrowser/Window.cs:259
-msgid "Shrimple Technologies members"
+msgid "Lunaris Technologies members"
 msgstr ""
 
 #: OuchBrowser/Window.cs:263
