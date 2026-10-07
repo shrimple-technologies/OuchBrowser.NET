@@ -256,7 +256,7 @@ internal partial class Window
 			about.SetDocumenters(["Maxine Naomi Lunaris https://woof.monster/"]);
 			about.SetArtists(["Maxine Naomi Lunaris https://woof.monster/"]);
 			about.AddCreditSection(__("Icon design by"), ["Jakub Steiner https://jimmac.eu/"]);
-			about.AddAcknowledgementSection(__("Shrimple Technologies members"), [
+			about.AddAcknowledgementSection(__("Lunaris Technologies members"), [
 				"Maxine Naomi Lunaris https://woof.monster/",
 				"Jase Maxine Lunaris",
 			]);

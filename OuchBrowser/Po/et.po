@@ -109,8 +109,8 @@ msgid "Ouch Browser"
 msgstr "Veebibrauser Ouch"
 
 #: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:8
-msgid "Shrimple Technologies"
-msgstr "Shrimple Technologies"
+msgid "Lunaris Technologies"
+msgstr "Lunaris Technologies"
 
 #: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:13
 msgid "Focus on your browsing"
@@ -435,8 +435,8 @@ msgid "Icon design by"
 msgstr "Ikooni kujundas"
 
 #: OuchBrowser/Window.cs:257
-msgid "Shrimple Technologies members"
-msgstr "Shrimple Technologies'i liikmed"
+msgid "Lunaris Technologies members"
+msgstr "Lunaris Technologies'i liikmed"
 
 #: OuchBrowser/Window.cs:261
 msgid "Inspired by"
