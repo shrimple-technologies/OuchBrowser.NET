@@ -102,21 +102,21 @@ msgstr ""
 "hoida all Shift-klahvi ja klõpsata hüperlingil, laaditakse veebileht "
 "eelvaateaknasse, mis on peaaknast eraldatud."
 
-#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:6
+#: OuchBrowser/Data/one.lunaris.OuchBrowser.metainfo.xml:6
 #: OuchBrowser/Data/UI/Window.blp:7 OuchBrowser/Data/UI/Window.blp:36
 #: OuchBrowser/Data/UI/Window.blp:280
 msgid "Ouch Browser"
 msgstr "Veebibrauser Ouch"
 
-#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:8
+#: OuchBrowser/Data/one.lunaris.OuchBrowser.metainfo.xml:8
 msgid "Lunaris Technologies"
 msgstr "Lunaris Technologies"
 
-#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:13
+#: OuchBrowser/Data/one.lunaris.OuchBrowser.metainfo.xml:13
 msgid "Focus on your browsing"
 msgstr "Keskendu veebis surfamisele"
 
-#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:46
+#: OuchBrowser/Data/one.lunaris.OuchBrowser.metainfo.xml:46
 msgid ""
 "Ouch Browser is a browser that utilizes the vertical tabs layout, which "
 "allows for better tab management for more heavy browser users. Made for "
@@ -129,7 +129,7 @@ msgstr ""
 "toetab !bangs-otsingukäske, mitmeotstarbelist käskude paletti ja "
 "nutiseadmeid."
 
-#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:53
+#: OuchBrowser/Data/one.lunaris.OuchBrowser.metainfo.xml:53
 msgid ""
 "NOTE: Ouch Browser is currently in alpha stage and is changing rapidly. "
 "While it is in a usable state, it does not have a large number of common web "
@@ -139,15 +139,15 @@ msgstr ""
 "see on kasutatav, puuduvad sellel paljud tavapärased veebibrauseri "
 "funktsionaalsused ja selles võib esineda palju vigu."
 
-#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:69
+#: OuchBrowser/Data/one.lunaris.OuchBrowser.metainfo.xml:69
 msgid "Ouch Browser’s Main Window"
 msgstr "Veebibrauser Ouch - põhivaade"
 
-#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:73
+#: OuchBrowser/Data/one.lunaris.OuchBrowser.metainfo.xml:73
 msgid "Ouch Browser with Tab Sidebar Closed"
 msgstr "Veebibrauser Ouch vahekaartide külgpaan suletuna"
 
-#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:77
+#: OuchBrowser/Data/one.lunaris.OuchBrowser.metainfo.xml:77
 msgid "Ouch Browser with Command Palette Opened"
 msgstr "Veebibrauser Ouch käsuvalik avatuna"
 

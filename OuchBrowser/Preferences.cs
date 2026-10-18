@@ -4,7 +4,7 @@ using Gtk;
 namespace OuchBrowser;
 
 [GObject.Subclass<Adw.Dialog>("OuchPreferencesDialog")]
-[Template<GResource>("/page/codeberg/shrimple/OuchBrowser/ui/preferences.ui")]
+[Template<GResource>("/one/lunaris/OuchBrowser/ui/preferences.ui")]
 internal partial class Preferences
 {
 #pragma warning disable CS0649

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <component type="desktop-application">
-	<id>page.codeberg.shrimple.OuchBrowser</id>
-	<icon type="stock">page.codeberg.shrimple.OuchBrowser</icon>
-	<launchable type="desktop-id">page.codeberg.shrimple.OuchBrowser.desktop</launchable>
+	<id>one.lunaris.OuchBrowser</id>
+	<icon type="stock">one.lunaris.OuchBrowser</icon>
+	<launchable type="desktop-id">one.lunaris.OuchBrowser.desktop</launchable>
 	<name>Ouch Browser</name>
 	<developer id="site.srht.shrimple">
 		<name>Lunaris Technologies</name>

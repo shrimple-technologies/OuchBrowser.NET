@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <gresources>
-	<gresource prefix="/page/codeberg/shrimple/OuchBrowser/">
+	<gresource prefix="/one/lunaris/OuchBrowser/">
 		<file alias="style.css">Data/Style.css</file>
-		<file alias="page.codeberg.shrimple.OuchBrowser.metainfo.xml">Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml</file>
+		<file alias="one.lunaris.OuchBrowser.metainfo.xml">Data/one.lunaris.OuchBrowser.metainfo.xml</file>
 		<file alias="error_page.html">Data/ErrorPage.html</file>
 	</gresource>
 
-	<gresource prefix="/page/codeberg/shrimple/OuchBrowser/ui">
+	<gresource prefix="/one/lunaris/OuchBrowser/ui">
 		<file preprocess="xml-stripblanks" alias="command-palette.ui">Data/UI/CommandPalette.ui</file>
 		<file preprocess="xml-stripblanks" alias="preferences.ui">Data/UI/Preferences.ui</file>
 		<file preprocess="xml-stripblanks" alias="window.ui">Data/UI/Window.ui</file>
 	</gresource>
 
-	<gresource prefix="/page/codeberg/shrimple/OuchBrowser/icons/scalable/apps">
-		<file preprocess="xml-stripblanks" alias="page.codeberg.shrimple.OuchBrowser.svg">Data/Icons/Hicolor/Scalable/Apps/page.codeberg.shrimple.OuchBrowser.svg</file>
-		<file preprocess="xml-stripblanks" alias="page.codeberg.shrimple.OuchBrowser.Pride.svg">Data/Icons/Hicolor/Scalable/Apps/page.codeberg.shrimple.OuchBrowser.Pride.svg</file>
+	<gresource prefix="/one/lunaris/OuchBrowser/icons/scalable/apps">
+		<file preprocess="xml-stripblanks" alias="one.lunaris.OuchBrowser.svg">Data/Icons/Hicolor/Scalable/Apps/one.lunaris.OuchBrowser.svg</file>
+		<file preprocess="xml-stripblanks" alias="one.lunaris.OuchBrowser.Pride.svg">Data/Icons/Hicolor/Scalable/Apps/one.lunaris.OuchBrowser.Pride.svg</file>
 	</gresource>
 
-	<gresource prefix="/page/codeberg/shrimple/OuchBrowser/icons/symbolic/apps">
-		<file preprocess="xml-stripblanks" alias="page.codeberg.shrimple.OuchBrowser-symbolic.svg">Data/Icons/Hicolor/Symbolic/Apps/page.codeberg.shrimple.OuchBrowser-symbolic.svg</file>
+	<gresource prefix="/one/lunaris/OuchBrowser/icons/symbolic/apps">
+		<file preprocess="xml-stripblanks" alias="one.lunaris.OuchBrowser-symbolic.svg">Data/Icons/Hicolor/Symbolic/Apps/one.lunaris.OuchBrowser-symbolic.svg</file>
 	</gresource>
 
-	<gresource prefix="/page/codeberg/shrimple/OuchBrowser/icons/scalable/actions/">
+	<gresource prefix="/one/lunaris/OuchBrowser/icons/scalable/actions/">
 		<file preprocess="xml-stripblanks" alias="accessibility-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/accessibility-symbolic.svg</file>
 		<file preprocess="xml-stripblanks" alias="box-dotted-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/box-dotted-symbolic.svg</file>
 		<file preprocess="xml-stripblanks" alias="chain-link-loose-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/chain-link-loose-symbolic.svg</file>

@@ -21,7 +21,7 @@ internal partial class Application
 
 		var window = Window.NewWithProperties([]);
 
-		ApplicationId = "page.codeberg.shrimple.OuchBrowser";
+		ApplicationId = "one.lunaris.OuchBrowser";
 		Flags = ApplicationFlags.DefaultFlags;
 		OnActivate += (self, args) =>
 		{

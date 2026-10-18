@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <schemalist>
-	<enum id="page.codeberg.shrimple.OuchBrowser.PEEK_TRIGGER">
+	<enum id="one.lunaris.OuchBrowser.PEEK_TRIGGER">
 		<value nick="shift" value="65505" />
 		<value nick="ctrl" value="65507" />
 		<value nick="alt" value="65513" />
 	</enum>
 		
 	<schema
-		id="page.codeberg.shrimple.OuchBrowser"
-		path="/page/codeberg/shrimple/OuchBrowser/"
+		id="one.lunaris.OuchBrowser"
+		path="/one/lunaris/OuchBrowser/"
 		gettext-domain="OuchBrowser"
 	>
 		<key type="s" name="search-engine">
@@ -84,7 +84,7 @@
 			</description>
 		</key>
 
-		<key enum="page.codeberg.shrimple.OuchBrowser.PEEK_TRIGGER" name="peek-trigger">
+		<key enum="one.lunaris.OuchBrowser.PEEK_TRIGGER" name="peek-trigger">
 			<default>"shift"</default>
 			<summary>Peek Tab Trigger</summary>
 			<description>

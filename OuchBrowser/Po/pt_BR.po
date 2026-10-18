@@ -107,21 +107,21 @@ msgstr ""
 "exemplo, segurar a tecla Shift e clicar em um link fará com que o site seja "
 "carregado em uma aba de visualização rápida, separada da janela principal."
 
-#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:6
+#: OuchBrowser/Data/one.lunaris.OuchBrowser.metainfo.xml:6
 #: OuchBrowser/Data/UI/Window.blp:7 OuchBrowser/Data/UI/Window.blp:36
 #: OuchBrowser/Data/UI/Window.blp:280
 msgid "Ouch Browser"
 msgstr "Ouch Browser"
 
-#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:8
+#: OuchBrowser/Data/one.lunaris.OuchBrowser.metainfo.xml:8
 msgid "Lunaris Technologies"
 msgstr "Lunaris Technologies"
 
-#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:13
+#: OuchBrowser/Data/one.lunaris.OuchBrowser.metainfo.xml:13
 msgid "Focus on your browsing"
 msgstr "Foque na sua navegação"
 
-#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:46
+#: OuchBrowser/Data/one.lunaris.OuchBrowser.metainfo.xml:46
 msgid ""
 "Ouch Browser is a browser that utilizes the vertical tabs layout, which "
 "allows for better tab management for more heavy browser users. Made for "
@@ -134,7 +134,7 @@ msgstr ""
 "bangs, um painel de comandos multifuncional e compatibilidade com "
 "dispositivos móveis."
 
-#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:53
+#: OuchBrowser/Data/one.lunaris.OuchBrowser.metainfo.xml:53
 msgid ""
 "NOTE: Ouch Browser is currently in alpha stage and is changing rapidly. "
 "While it is in a usable state, it does not have a large number of common web "
@@ -144,15 +144,15 @@ msgstr ""
 "Embora já esteja em um estado utilizável, ele ainda não possui muitos dos "
 "recursos comuns de um navegador da web e pode apresentar vários bugs."
 
-#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:69
+#: OuchBrowser/Data/one.lunaris.OuchBrowser.metainfo.xml:69
 msgid "Ouch Browser’s Main Window"
 msgstr "Janela Principal do Ouch Browser"
 
-#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:73
+#: OuchBrowser/Data/one.lunaris.OuchBrowser.metainfo.xml:73
 msgid "Ouch Browser with Tab Sidebar Closed"
 msgstr "Ouch Browser com a Barra Lateral de Abas Fechada"
 
-#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:77
+#: OuchBrowser/Data/one.lunaris.OuchBrowser.metainfo.xml:77
 msgid "Ouch Browser with Command Palette Opened"
 msgstr "Ouch Browser com a Paleta de Comandos Aberta"
 

@@ -55,21 +55,21 @@ install -Dm755 OuchBrowser/bin/Release/net10.0/linux-x64/publish/OuchBrowser --t
 install -Dm755 OuchBrowser/bin/Release/net10.0/linux-arm64/publish/OuchBrowser --target-directory %{buildroot}%{_bindir}
 %endif
 install -Dm644 OuchBrowser/Data/OuchBrowser.gschema.xml --target-directory %{buildroot}%{_datadir}/glib-2.0/schemas
-install -Dm644 OuchBrowser/Data/Icons/Hicolor/Symbolic/Apps/page.codeberg.shrimple.OuchBrowser-symbolic.svg --target-directory %{buildroot}%{_datadir}/icons/hicolor/symbolic/apps
-install -Dm644 OuchBrowser/Data/Icons/Hicolor/Scalable/Apps/page.codeberg.shrimple.OuchBrowser.svg --target-directory %{buildroot}%{_datadir}/icons/hicolor/scalable/apps
-install -Dm644 OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.desktop --target-directory %{buildroot}%{_datadir}/applications
-install -Dm644 OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml --target-directory %{buildroot}%{_datadir}/metainfo
+install -Dm644 OuchBrowser/Data/Icons/Hicolor/Symbolic/Apps/one.lunaris.OuchBrowser-symbolic.svg --target-directory %{buildroot}%{_datadir}/icons/hicolor/symbolic/apps
+install -Dm644 OuchBrowser/Data/Icons/Hicolor/Scalable/Apps/one.lunaris.OuchBrowser.svg --target-directory %{buildroot}%{_datadir}/icons/hicolor/scalable/apps
+install -Dm644 OuchBrowser/Data/one.lunaris.OuchBrowser.desktop --target-directory %{buildroot}%{_datadir}/applications
+install -Dm644 OuchBrowser/Data/one.lunaris.OuchBrowser.metainfo.xml --target-directory %{buildroot}%{_datadir}/metainfo
 rm %{buildroot}%{_datadir}/glib-2.0/schemas/gschemas.compiled
 
 %files
 %license licenses/GPL-3.0-or-later.txt
 %doc README.md BANGS.md
 %{_bindir}/OuchBrowser
-%{_datadir}/applications/page.codeberg.shrimple.OuchBrowser.desktop
-%{_datadir}/icons/hicolor/scalable/apps/page.codeberg.shrimple.OuchBrowser.svg
-%{_datadir}/icons/hicolor/symbolic/apps/page.codeberg.shrimple.OuchBrowser-symbolic.svg
+%{_datadir}/applications/one.lunaris.OuchBrowser.desktop
+%{_datadir}/icons/hicolor/scalable/apps/one.lunaris.OuchBrowser.svg
+%{_datadir}/icons/hicolor/symbolic/apps/one.lunaris.OuchBrowser-symbolic.svg
 %{_datadir}/glib-2.0/schemas/OuchBrowser.gschema.xml
-%{_datadir}/metainfo/page.codeberg.shrimple.OuchBrowser.metainfo.xml
+%{_datadir}/metainfo/one.lunaris.OuchBrowser.metainfo.xml
 %{_datadir}/locale/*/LC_MESSAGES/OuchBrowser.mo
 
 %changelog

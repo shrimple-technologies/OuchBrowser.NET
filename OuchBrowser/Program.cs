@@ -8,7 +8,7 @@ internal class Program
 		GirCore.Integration.Initialize();
 
 		var resourceBasePath = new GObject.Value(GObject.Type.String);
-		resourceBasePath.SetString("/page/codeberg/shrimple/OuchBrowser");
+		resourceBasePath.SetString("/one/lunaris/OuchBrowser");
 
 		var app = Application.NewWithProperties([
 			new GObject.ConstructArgument("resource-base-path", resourceBasePath)

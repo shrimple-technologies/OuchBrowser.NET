@@ -8,7 +8,7 @@ using WebKit;
 namespace OuchBrowser;
 
 [GObject.Subclass<Adw.Dialog>("OuchCommandPalette")]
-[Template<GResource>("/page/codeberg/shrimple/OuchBrowser/ui/command-palette.ui")]
+[Template<GResource>("/one/lunaris/OuchBrowser/ui/command-palette.ui")]
 internal partial class CommandPalette
 {
 #pragma warning disable CS0649

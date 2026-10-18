@@ -95,21 +95,21 @@ msgid ""
 "loaded inside a peek tab, which is separate from the main window."
 msgstr ""
 
-#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:6
+#: OuchBrowser/Data/one.lunaris.OuchBrowser.metainfo.xml:6
 #: OuchBrowser/Data/UI/Window.blp:7 OuchBrowser/Data/UI/Window.blp:36
 #: OuchBrowser/Data/UI/Window.blp:280
 msgid "Ouch Browser"
 msgstr "Ouch-nettleseren"
 
-#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:8
+#: OuchBrowser/Data/one.lunaris.OuchBrowser.metainfo.xml:8
 msgid "Lunaris Technologies"
 msgstr "Lunaris Technologies"
 
-#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:13
+#: OuchBrowser/Data/one.lunaris.OuchBrowser.metainfo.xml:13
 msgid "Focus on your browsing"
 msgstr "Fokus på surfingen"
 
-#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:46
+#: OuchBrowser/Data/one.lunaris.OuchBrowser.metainfo.xml:46
 msgid ""
 "Ouch Browser is a browser that utilizes the vertical tabs layout, which "
 "allows for better tab management for more heavy browser users. Made for "
@@ -117,24 +117,24 @@ msgid ""
 "purpose command palette, and mobile support."
 msgstr ""
 
-#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:53
+#: OuchBrowser/Data/one.lunaris.OuchBrowser.metainfo.xml:53
 msgid ""
 "NOTE: Ouch Browser is currently in alpha stage and is changing rapidly. "
 "While it is in a usable state, it does not have a large number of common web "
 "browser functions, and can have many bugs."
 msgstr ""
 
-#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:69
+#: OuchBrowser/Data/one.lunaris.OuchBrowser.metainfo.xml:69
 #, fuzzy
 #| msgid "Ouch Browser"
 msgid "Ouch Browser’s Main Window"
 msgstr "Ouch-nettleseren"
 
-#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:73
+#: OuchBrowser/Data/one.lunaris.OuchBrowser.metainfo.xml:73
 msgid "Ouch Browser with Tab Sidebar Closed"
 msgstr ""
 
-#: OuchBrowser/Data/page.codeberg.shrimple.OuchBrowser.metainfo.xml:77
+#: OuchBrowser/Data/one.lunaris.OuchBrowser.metainfo.xml:77
 msgid "Ouch Browser with Command Palette Opened"
 msgstr ""
 

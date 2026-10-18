@@ -7,7 +7,7 @@ using Object = GObject.Object;
 namespace OuchBrowser;
 
 [GObject.Subclass<Adw.ApplicationWindow>("OuchWindow")]
-[Template<GResource>("/page/codeberg/shrimple/OuchBrowser/ui/window.ui")]
+[Template<GResource>("/one/lunaris/OuchBrowser/ui/window.ui")]
 internal partial class Window
 {
 #pragma warning disable CS0649
@@ -242,7 +242,7 @@ internal partial class Window
 
 		actions.AddAction("about", [], (_, _) =>
 		{
-			var about = Adw.AboutDialog.NewFromAppdata("/page/codeberg/shrimple/OuchBrowser/page.codeberg.shrimple.OuchBrowser.metainfo.xml", null);
+			var about = Adw.AboutDialog.NewFromAppdata("/one/lunaris/OuchBrowser/one.lunaris.OuchBrowser.metainfo.xml", null);
 
 			// TRANSLATORS: This is not a string that is a part of the source code.
 			// This is your name (or username), followed by your email enclosed in
@@ -265,8 +265,8 @@ internal partial class Window
 				"Zen Browser https://zen-browser.app/",
 			]);
 
-			if (DateTime.Now.Month == 6) about!.SetApplicationIcon("page.codeberg.shrimple.OuchBrowser.Pride");
-			else about!.SetApplicationIcon("page.codeberg.shrimple.OuchBrowser");
+			if (DateTime.Now.Month == 6) about!.SetApplicationIcon("one.lunaris.OuchBrowser.Pride");
+			else about!.SetApplicationIcon("one.lunaris.OuchBrowser");
 
 			about!.Present(this);
 		});
