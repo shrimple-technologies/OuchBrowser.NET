@@ -16,6 +16,10 @@ summoned using <kbd>Ctrl</kbd> + <kbd>T</kbd> for a new tab, <kbd>Ctrl</kbd> +
 ![Command palette autocompleting !bangs](../images/command-palette-bangs.png)
 
 !bangs help you search websites that are not conventional search engines.
+!bangs are provided as-is via Kagi, with the exception of a handful of
+Kagi-specific !bangs, and are stored internally and updated with each update.
+More parity comparisons and tradeoffs can be found in
+[BANGS.md](https://codeberg.org/shrimple/OuchBrowser.NET/src/commit/9cdcff3a7f0515ddf1ba4518f5c886aa729c1824/BANGS.md)
 
 ## Search
 
