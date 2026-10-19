@@ -43,3 +43,10 @@ of the command palette.
 ## Custom !bangs
 
 There is currently no option in Ouch Browser to create custom !bangs.
+
+## !bang Syntaxes
+
+- [x] `!g query`
+- [ ] `g! query`
+- [ ] `query !g`
+- [ ] `query g!`
