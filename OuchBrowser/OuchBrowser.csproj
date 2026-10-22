@@ -15,7 +15,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="GetText.NET" Version="10.0.1" />
 		<PackageReference Include="GirCore.Adw-1" Version="0.8.1" />
 		<PackageReference Include="GirCore.Gtk-4.0" Version="0.8.1" />
 		<PackageReference Include="GirCore.WebKit-6.0" Version="0.8.1" />
@@ -23,10 +22,7 @@
 
 	<ItemGroup>
 		<!-- GResource -->
-		<EmbeddedResource
-			Include="OuchBrowser.app.gresource"
-			LogicalName="OuchBrowser.app.gresource"
-		/>
+		<EmbeddedResource Include="OuchBrowser.app.gresource" LogicalName="OuchBrowser.app.gresource" />
 
 		<!-- Bangs (via Kagi) -->
 		<EmbeddedResource Include="Bangs\data\bangs.json" LogicalName="Bangs.json" />
@@ -36,6 +32,10 @@
 		<EmbeddedResource Include="Data\ErrorPage.html" LogicalName="ErrorPage.html" />
 		
 		<EmbeddedResource Include="Data\ShortcutsList.json" LogicalName="ShortcutsList.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Lunaris.Gettext\Lunaris.Gettext.csproj" />
 	</ItemGroup>
 
 </Project>

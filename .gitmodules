@@ -1,3 +1,6 @@
 [submodule "OuchBrowser/Bangs"]
 	path = OuchBrowser/Bangs
 	url = https://github.com/kagisearch/bangs
+[submodule "Lunaris.Gettext"]
+	path = Lunaris.Gettext
+	url = https://codeberg.org/shrimple/Lunaris.Gettext
