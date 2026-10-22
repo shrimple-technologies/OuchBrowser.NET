@@ -35,7 +35,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Lunaris.Gettext\Lunaris.Gettext.csproj" />
+	  <ProjectReference Include="..\Lunaris.Gettext\Lunaris.Gettext\Lunaris.Gettext.csproj" />
 	</ItemGroup>
 
 </Project>
