@@ -40,6 +40,7 @@ palette, and mobile support.
 just build-blueprint
 just compile-resources
 git clone https://github.com/kagisearch/bangs OuchBrowser/Bangs --depth=1
+git clone https://codeberg.org/shrimple/Lunaris.Gettext Lunaris.Gettext --depth=1
 %ifarch x86_64
 just publish -r linux-x64
 %elifarch aarch64
