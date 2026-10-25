@@ -18,6 +18,7 @@
 		<PackageReference Include="GirCore.Adw-1" Version="0.8.1" />
 		<PackageReference Include="GirCore.Gtk-4.0" Version="0.8.1" />
 		<PackageReference Include="GirCore.WebKit-6.0" Version="0.8.1" />
+		<PackageReference Include="Lunaris.Gettext" Version="1.1.0" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -32,10 +33,6 @@
 		<EmbeddedResource Include="Data\ErrorPage.html" LogicalName="ErrorPage.html" />
 		
 		<EmbeddedResource Include="Data\ShortcutsList.json" LogicalName="ShortcutsList.json" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\Lunaris.Gettext\Lunaris.Gettext\Lunaris.Gettext.csproj" />
 	</ItemGroup>
 
 </Project>
