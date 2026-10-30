@@ -2,13 +2,14 @@
 # grayairr <grayair@proton.me>, 2024.
 # Wiliam <wilian4512@gmail.com>, 2026.
 # Gabriel <bloxgabriel18@gmail.com>, 2026.
+# Gabriel <gabriel26@users.noreply.hosted.weblate.org>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: devel\n"
 "Report-Msgid-Bugs-To: https://codeberg.org/shrimple/OuchBrowser.NET/issues\n"
 "POT-Creation-Date: 2026-10-01 01:57+0000\n"
-"PO-Revision-Date: 2026-09-28 06:51+0000\n"
-"Last-Translator: Gabriel <bloxgabriel18@gmail.com>\n"
+"PO-Revision-Date: 2026-10-30 21:11+0000\n"
+"Last-Translator: Gabriel <gabriel26@users.noreply.hosted.weblate.org>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/ouch/"
 "net/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -16,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2026.10.dev0\n"
+"X-Generator: Weblate 2026.11.dev0\n"
 
 #: OuchBrowser/CommandPalette.cs:75
 #, csharp-format
@@ -451,16 +452,6 @@ msgid "Launch Web Inspector?"
 msgstr "Abrir o Inspetor da Web?"
 
 #: OuchBrowser/Window.cs:474
-#, fuzzy
-#| msgid ""
-#| "You have attempted to launch the web inspector, but you do not have it "
-#| "enabled.\n"
-#| "\n"
-#| "The web inspector allows access to the element inspector, JavaScript "
-#| "console, and network inspector, which is used for web development "
-#| "purposes.\n"
-#| "\n"
-#| "Are you sure you want to continue?"
 msgid ""
 "You have attempted to launch the web inspector, but you do not have it "
 "enabled.\n"
@@ -471,11 +462,10 @@ msgid ""
 "\n"
 "Are you sure you want to continue?"
 msgstr ""
-"Você tentou iniciar o inspetor da web, mas ele não está habilitado.\n"
+"Você tentou abrir o inspetor web, mas ele não está ativado.\n"
 "\n"
-"O inspetor da web permite acessar o inspetor de elementos, o console "
-"JavaScript e o inspetor de rede, ferramentas utilizadas para o "
-"desenvolvimento web.\n"
+"O inspetor web permite acessar o inspetor de elementos, o console JavaScript "
+"e o inspetor de rede, ferramentas utilizadas para o desenvolvimento web.\n"
 "\n"
 "Tem certeza de que deseja continuar?"
 
