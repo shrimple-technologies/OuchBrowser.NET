@@ -9,6 +9,10 @@ internal partial class Application
 {
 	partial void Initialize()
 	{
+		BindTextDomain("OuchBrowser", "/usr/share/locale");
+		SetTextDomain("OuchBrowser");
+		BindTextDomainCodeset("OuchBrowser", "UTF-8");
+
 		using var stream = Assembly.GetExecutingAssembly()
 			.GetManifestResourceStream("OuchBrowser.app.gresource");
 
