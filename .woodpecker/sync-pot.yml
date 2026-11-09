@@ -22,5 +22,5 @@ steps:
       - apk add --no-cache git gettext just
       - just pot
       - git config --global user.email $MAIL
-      - git config --global user.name "shrimple-bot"
+      - git config --global user.name "lunaris-bot"
       - git commit -am "update gettext translation template" && git push https://$CODEBERG_TOKEN@codeberg.org/$CI_REPO.git || true
