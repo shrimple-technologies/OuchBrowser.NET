@@ -35,4 +35,10 @@
 		<EmbeddedResource Include="Data\ShortcutsList.json" LogicalName="ShortcutsList.json" />
 	</ItemGroup>
 
+	<Target Name="CompileGResource" BeforeTargets="CoreCompile">
+		<Exec Command="blueprint-compiler batch-compile Data/UI Data/UI Data/UI/*.blp" WorkingDirectory="$(ProjectDir)" />
+		<Exec Command="sass --no-source-map Data/Style.scss Data/Style.css" WorkingDirectory="$(ProjectDir)" />
+		<Exec Command="glib-compile-resources --sourcedir . --target=OuchBrowser.app.gresource OuchBrowser.gresource.xml" WorkingDirectory="$(ProjectDir)" />
+	</Target>
+
 </Project>

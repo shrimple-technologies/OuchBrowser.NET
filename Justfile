@@ -5,37 +5,10 @@ alias pot := generate-pot
 
 PREFIX := "/usr"
 ID := "one.lunaris.OuchBrowser"
-BLUEPRINT_FILES := "OuchBrowser/Data/UI/Window.blp OuchBrowser/Data/UI/Preferences.blp OuchBrowser/Data/UI/CommandPalette.blp"
-
-run: build-blueprint compile-resources
-	dotnet run --project OuchBrowser
-	
-build: build-blueprint compile-resources
-	dotnet build OuchBrowser
-	
-publish *args: build-blueprint compile-resources
-	dotnet publish OuchBrowser -c Release {{args}}
 
 format:
-	blueprint-compiler format -f -t -s 4 {{ BLUEPRINT_FILES }}
+	blueprint-compiler format -f -t -s 4 OuchBrowser/Data/UI/*.blp
 	dotnet format
-
-# compiles all blueprint files
-[group("build")]
-build-blueprint:
-	blueprint-compiler batch-compile \
-		OuchBrowser/Data/UI \
-		OuchBrowser/Data/UI \
-		{{ BLUEPRINT_FILES }}
-
-# compiles gresources for icons and other miscellaneous assets
-[group("build")]
-compile-resources:
-	sass --no-source-map OuchBrowser/Data/Style.scss OuchBrowser/Data/Style.css
-	glib-compile-resources \
-		--sourcedir OuchBrowser \
-		--target=OuchBrowser/OuchBrowser.app.gresource \
-		OuchBrowser/OuchBrowser.gresource.xml
 
 # builds an release flatpak file for distribution
 [group("build")]
