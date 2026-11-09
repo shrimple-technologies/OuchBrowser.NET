@@ -72,8 +72,9 @@ flatpak install ./one.lunaris.OuchBrowser.flatpak
 
 ```sh
 git clone --recurse-submodules https://codeberg.org/shrimple/OuchBrowser.NET
+sudo just build-translations
 sudo just build-schemas
-just run
+dotnet run --project OuchBrowser
 ```
 
 ## Contributing
