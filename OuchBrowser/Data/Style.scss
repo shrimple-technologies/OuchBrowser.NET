@@ -151,6 +151,7 @@ dialog.peek > widget > floating-sheet {
 			transparent
 		);
 		backdrop-filter: blur(10px);
+		border: 1px solid var(--border-color);
 
 		.toolbar,
 		widget > .palette-button {
@@ -158,6 +159,7 @@ dialog.peek > widget > floating-sheet {
 		}
 
 		@media (prefers-contrast: more) {
+			border: initial;
 			background: var(--window-bg-color);
 			backdrop-filter: initial;
 			box-shadow:
