@@ -32,6 +32,11 @@ window {
 	}
 }
 
+window.devel headerbar > windowcontrols {
+	background-image: cross-fade(5% -gtk-recolor(url("assets/devel-stripes.svg")), image(transparent));
+	background-repeat: repeat-x;
+}
+
 .tabs-sidebar.navigation-sidebar {
 	padding-top: 6px;
 	padding-right: 10px;

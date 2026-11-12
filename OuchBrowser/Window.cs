@@ -154,6 +154,10 @@ internal partial class Window
 		websiteSettingsButton!.SetSensitive(false);
 		sidebar_action.SetEnabled(false);
 
+		#if DEBUG
+		AddCssClass("devel");
+		#endif
+
 		Present();
 
 		if (settings.GetStrv("restore-tabs").Length == 0) palette!.Present(this);

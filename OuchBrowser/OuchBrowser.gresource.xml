@@ -36,4 +36,8 @@
 		<file preprocess="xml-stripblanks" alias="sliders-horizontal-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/sliders-horizontal-symbolic.svg</file>
 		<file preprocess="xml-stripblanks" alias="zoom-symbolic.svg">Data/Icons/Hicolor/Scalable/Actions/zoom-symbolic.svg</file>
 	</gresource>
+
+	<gresource prefix="/one/lunaris/OuchBrowser/assets">
+		<file preprocess="xml-stripblanks" alias="devel-stripes.svg">Data/Assets/devel-stripes.svg</file>
+	</gresource>
 </gresources>
