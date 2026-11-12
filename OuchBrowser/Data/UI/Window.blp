@@ -378,43 +378,52 @@ template $OuchWindow: Adw.ApplicationWindow {
 									"mobile-bar",
 								]
 
-								Adw.LayoutSlot {
-									id: "palette";
-								}
-
 								Box {
-									orientation: horizontal;
-									spacing: 5;
-
-									styles [
-										"toolbar",
-									]
-
-									Adw.LayoutSlot {
-										id: "go-back";
-										hexpand: true;
-									}
+									orientation: vertical;
+									margin-top: 10;
+									margin-bottom: 10;
+									margin-start: 10;
+									margin-end: 10;
+									spacing: 10;
 
 									Adw.LayoutSlot {
-										id: "go-forward";
-										hexpand: true;
+										id: "palette";
 									}
 
-									Adw.LayoutSlot {
-										id: "refresh";
-										hexpand: true;
-									}
+									Box {
+										orientation: horizontal;
+										spacing: 5;
 
-									Adw.TabButton {
-										view: tabView;
-										action-name: "overview.open";
-										focus-on-click: false;
-										hexpand: true;
-									}
+										styles [
+											"toolbar",
+										]
 
-									Adw.LayoutSlot {
-										id: "menu-main";
-										hexpand: true;
+										Adw.LayoutSlot {
+											id: "go-back";
+											hexpand: true;
+										}
+
+										Adw.LayoutSlot {
+											id: "go-forward";
+											hexpand: true;
+										}
+
+										Adw.LayoutSlot {
+											id: "refresh";
+											hexpand: true;
+										}
+
+										Adw.TabButton {
+											view: tabView;
+											action-name: "overview.open";
+											focus-on-click: false;
+											hexpand: true;
+										}
+
+										Adw.LayoutSlot {
+											id: "menu-main";
+											hexpand: true;
+										}
 									}
 								}
 							}

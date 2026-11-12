@@ -32,9 +32,18 @@ window {
 	}
 }
 
-window.devel headerbar > windowcontrols {
+window.devel {
 	background-image: cross-fade(5% -gtk-recolor(url("assets/devel-stripes.svg")), image(transparent));
 	background-repeat: repeat-x;
+
+	headerbar > windowhandle {
+		@extend window, .devel;
+	}
+
+	.mobile-bar.revealed {
+		@extend window, .devel;
+		background-position: top center;
+	}
 }
 
 .tabs-sidebar.navigation-sidebar {
@@ -131,15 +140,14 @@ dialog.peek > widget > floating-sheet {
 
 .mobile-bar {
 	border-radius: 20px;
-	padding: 10px;
 	transform: translateY(120px);
 	transition: all 250ms ease-out;
 	background: none;
 	box-shadow: none;
 	backdrop-filter: blur(0);
 
-	.toolbar,
-	widget > .palette-button {
+	box > .toolbar,
+	box > widget > .palette-button {
 		transition: all 250ms ease-out;
 		opacity: 0;
 	}
@@ -159,8 +167,8 @@ dialog.peek > widget > floating-sheet {
 		backdrop-filter: blur(10px);
 		border: 1px solid var(--border-color);
 
-		.toolbar,
-		widget > .palette-button {
+		box > .toolbar,
+		box > widget > .palette-button {
 			opacity: 100%;
 		}
 

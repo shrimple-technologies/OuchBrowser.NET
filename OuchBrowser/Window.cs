@@ -154,9 +154,9 @@ internal partial class Window
 		websiteSettingsButton!.SetSensitive(false);
 		sidebar_action.SetEnabled(false);
 
-		#if DEBUG
+#if DEBUG
 		AddCssClass("devel");
-		#endif
+#endif
 
 		Present();
 
