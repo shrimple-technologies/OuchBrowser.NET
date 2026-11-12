@@ -107,11 +107,9 @@
 				}
 			],
 			"build-commands": [
-				"just build-blueprint",
-				"just compile-resources",
 				"just PREFIX=${FLATPAK_DEST} build-translations",
 				"just PREFIX=${FLATPAK_DEST} build-schemas",
-				"just publish -o ${FLATPAK_DEST}/bin --source ./nuget-sources --source /usr/lib/sdk/dotnet10/nuget/packages",
+				"dotnet publish -o ${FLATPAK_DEST}/bin --source ./nuget-sources --source /usr/lib/sdk/dotnet10/nuget/packages",
 
 				"install -Dm644 OuchBrowser/Data/Icons/Hicolor/Symbolic/Apps/${FLATPAK_ID}-symbolic.svg --target-directory ${FLATPAK_DEST}/share/icons/hicolor/symbolic/apps",
 				"install -Dm644 OuchBrowser/Data/Icons/Hicolor/Scalable/Apps/${FLATPAK_ID}.svg --target-directory ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps",
