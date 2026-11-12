@@ -127,10 +127,11 @@ dialog.peek > widget > floating-sheet {
 .mobile-bar {
 	border-radius: 20px;
 	padding: 10px;
-	transform: translateY(118px);
+	transform: translateY(120px);
 	transition: all 250ms ease-out;
 	background: none;
 	box-shadow: none;
+	backdrop-filter: blur(0);
 
 	.toolbar,
 	widget > .palette-button {
