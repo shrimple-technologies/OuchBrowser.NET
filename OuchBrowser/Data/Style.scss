@@ -42,7 +42,6 @@ window.devel {
 
 	.mobile-bar.revealed {
 		@extend window, .devel;
-		background-position: top center;
 	}
 }
 
